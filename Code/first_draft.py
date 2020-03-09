@@ -16,7 +16,7 @@ from mpl_toolkits import mplot3d
 from sklearn.model_selection import train_test_split
 #%matplotlib notebook
 
-data = pd.read_csv('../data/Table_alpha_Data.txt', header=0, dtype=np.float64)
+data = pd.read_csv('../Data/Table_alpha_Data.txt', header=0, dtype=np.float64)
 X, y = data.values[:,:2], data.values[:,2]
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -34,7 +34,7 @@ plt.show()
 from pygam import LinearGAM, s, te, PoissonGAM, f, GAM
 
 gam = GAM(
-    s(0) + #, constraints="monotonic_inc", n_splines=15) + 
+    s(0, constraints="monotonic_inc", n_splines=15) + 
     s(1) + #, constraints="concave", n_splines=100) +
     te(1,0)
 )
