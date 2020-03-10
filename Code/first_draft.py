@@ -41,7 +41,7 @@ gam = GAM(
 gam.fit(X_train,y_train)
 
 titles = ['QDot[l/min*m]', 'TemperaturStart']
-fig, axs = plt.subplots(1,len(titles))
+fig, axs = plt.subplots(1,len(titles), figsize=(13,9))
 
 # plot partial dependences
 for i, ax in enumerate(axs):
@@ -50,6 +50,10 @@ for i, ax in enumerate(axs):
     ax.plot(XX[:, i], gam.partial_dependence(term=i, X=XX))
     ax.plot(XX[:, i], gam.partial_dependence(term=i, X=XX, width=.95)[1], c='r')
     ax.set_title(titles[i])
+    ax.grid()
+
+axs[0].axes.set_xticks(np.arange(0,61,10))
+axs[1].axes.set_xticks(np.arange(300,801,50))
 plt.show()
 #%%
 # plot meshs

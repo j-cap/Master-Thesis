@@ -11,7 +11,7 @@ URL: http://jmlr.org/papers/v17/15-243.html
 
 key interpretability issue in practical ML: can the learnd model be guaranteed to be monotonic wrt some input features → this paper proposes learning monotonic, efficient and flexible functinons by constraining and calibrating interpolated look-up tables in a structural risk minimization framework - the parameters of the ILT (interpolated look-up table) are the values of the function, regularly spaced in the input space, and these values are interpolated to compute $f(x)$ for any $x$.
 
-![Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/3x2_lattice_function.png](Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/3x2_lattice_function.png)
+![Figures/3x2_lattice_function.png](Figures/3x2_lattice_function.png)
 
 ILT are a classic strategy for representing low-dim functions (see most backs of textbooks). Here, ILT are defined over much larger feature spaces. Using efficient linear interpolation (*simplex interpolation*) the interpolation fo a D-dimensional LuT can be computed in $\mathcal O (D \log(D))$ time. 
 
@@ -102,13 +102,13 @@ Computing linear interpolation weights with the classical approach requires $\ma
 - **Fast  Multilinear Interpolation:** Makes use of the fact, that much of the computation can be shared between the different weights.
 - **Simplex Linear Interpolation:** was proposed be Kasson et al. (1993), Idea: find the simplices that sourround the test point $x$ and compute the linear interpolation only with these simplices. The problem here is that simplex interpolation is rotation dependent, which can cause problems
 
-    ![Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/rot_dependence_simplex.png](Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/rot_dependence_simplex.png)
+    ![Figures/rot_dependence_simplex.png](Figures/rot_dependence_simplex.png)
 
 ## 6. Regularizing the Lattice Regression to be more Linear
 
 Here, a new regularizer (additionally to the Graph Laplacian and Graph Hessian) is introduced. It encourages the fitted function to be more linear by penalizing differences in parallel edges → *torison regularizer*. 
 
-![Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/graph_regularizer.png](Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/graph_regularizer.png)
+![Figures/graph_regularizer.png](Figures/graph_regularizer.png)
 
 ## 7. Jointly Learning Feature Calibration
 
@@ -180,7 +180,7 @@ Standard projected SGD projects the parameters onto teh constraints after each S
 
 For each new stochastic subgradient $\eta \Delta$, we create a set of active constraints initialized to 0, and, starting from the last parameter values, move along the portion of $\eta \Delta$ that is orthogonal to the current active set until we encounter a constraint, add this constraint to the active set, and then continue unit the update $\eta \Delta$ is exhausted or it is not possible to move orthogonal to the current active set. At all times, the parameters satisfy the constraints. Can be particulary fast because it's possible to exploit the sparisty of the monotonicity constraints and the sparsity of $\Delta$. This strategy is sub-optimal, the parameters can "get stuck" at a corner of the feasible set, as illustrated in the following figure. In practice, the stochasticity eventually jiggles the parameters free. 
 
-![Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/got_stuck_constraints.png](Monotonic%20Calibrated%20Interpolated%20Look%20Up%20Tables/got_stuck_constraints.png)
+![Figures/got_stuck_constraints.png](Figures/got_stuck_constraints.png)
 
 **9.4.2. Stochastic Constraints with LightTouch**
 
