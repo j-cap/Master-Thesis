@@ -28,8 +28,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 # plotting
 fig = plt.figure()
 ax = plt.axes(projection='3d')
-ax.scatter3D(X[:,1][::10], X[:,0][::10], y[::10], c=y[::10], cmap='Spectral')
+nr = 2
+ax.scatter3D(X[:,1][::nr], X[:,0][::nr], y[::nr], c=y[::2], cmap='Spectral')
 plt.show()
+#%%
 # pyGAM
 from pygam import LinearGAM, s, te, PoissonGAM, f, GAM
 

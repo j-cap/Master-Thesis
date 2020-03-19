@@ -87,7 +87,7 @@ These same pairwise linear inequality constraints can be imposed when learing th
 
 ### 4.2. Monotonic Lattice Regression Objective
 
-The set of pairwise constraints can be expressed as $A \theta \se b$ (if constraints are relaxed to include equality constraints) for the appropriate sparse matrix A with one 1 and one -1 per row of A, and one row per constraint. 
+The set of pairwise constraints can be expressed as $A \theta \leq b$ (if constraints are relaxed to include equality constraints) for the appropriate sparse matrix A with one 1 and one -1 per row of A, and one row per constraint. 
 
 The monotonic lattice regression objective is convec with linear inequality constraints:
 
