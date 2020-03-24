@@ -21,7 +21,6 @@ def load_normalize_data(normalize=True):
 
     if normalize:
         data = (data - data.min()) / (data.max() - data.min())
-!
 
     return (data, descriptors)
 

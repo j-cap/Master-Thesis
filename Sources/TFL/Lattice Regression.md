@@ -4,8 +4,6 @@ Author: Garcia, Gupta
 Type: Paper
 URL: https://papers.nips.cc/paper/3694-lattice-regression
 
-Links and other stuff (e.g. github)
-
 ---
 
 ---

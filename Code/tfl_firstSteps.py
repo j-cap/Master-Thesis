@@ -18,6 +18,7 @@ import tensorflow_lattice as tfl
 import itertools
 import logging
 import matplotlib
+from mpl_toolkits import mplot3d
 import sys
 from tensorflow import feature_column as fc
 from sklearn.model_selection import train_test_split
@@ -33,8 +34,7 @@ os.environ["PATH"] += os.pathsep + "C:\\Program Files (x86)\Graphviz2.38\\bin"
 
 LEARNING_RATE = 0.01
 BATCH_SIZE = 128
-NUM_EPOCHS = 500
-PREFITTING_NUM_EPOCHS = 10
+NUM_EPOCHS = 5000
 
 data, descriptor = load_normalize_data(normalize=True)
 data = data.rename(columns={
@@ -51,19 +51,19 @@ data_train, data_test = train_test_split(
 
 #%%
 # plotting 
-fig = plt.figure(figsize=(11,9))
-ax = plt.axes(projection='3d')
-nr = 2
+# fig = plt.figure(figsize=(11,9))
+# ax = plt.axes(projection='3d')
+# nr = 2
 
-# ax.scatter3D(data["Temp"], data["QDot"], data["HTC"], c=data["HTC"], facecolors=None) #, cmap='Spectral')
-ax.scatter3D(data_test["Temp"], data_test["QDot"], data_test["HTC"], c='r', marker='d', label="Test")
-ax.scatter3D(data_train["Temp"], data_train["QDot"], data_train["HTC"], c='k', marker='x', label="Train")
+# # ax.scatter3D(data["Temp"], data["QDot"], data["HTC"], c=data["HTC"], facecolors=None) #, cmap='Spectral')
+# ax.scatter3D(data_test["Temp"], data_test["QDot"], data_test["HTC"], c='r', marker='d', label="Test")
+# ax.scatter3D(data_train["Temp"], data_train["QDot"], data_train["HTC"], c='k', marker='x', label="Train")
 
-ax.set_xlabel("Temp")
-ax.set_ylabel("QDot")
-ax.set_zlabel("HTC")
-plt.legend()
-plt.show()
+# ax.set_xlabel("Temp")
+# ax.set_ylabel("QDot")
+# ax.set_zlabel("HTC")
+# plt.legend()
+#plt.show()
 
 data_train.head()
 
@@ -126,9 +126,9 @@ serving_input_fn = (
 feature_configs = [
     tfl.configs.FeatureConfig(
         name="Temp",
-        lattice_size=2,
+        lattice_size=200,
         # By default, input keypoints of pwl are quantiles of the features
-        pwl_calibration_num_keypoints=20,
+        pwl_calibration_num_keypoints=100,
         # monotonicity="increasing",
         # pwl_calibration_clip_max=1,
         pwl_calibration_convexity="concave",
@@ -139,8 +139,9 @@ feature_configs = [
     ),
     tfl.configs.FeatureConfig(
         name="QDot",
-        pwl_calibration_num_keypoints=20,
+        pwl_calibration_num_keypoints=100,
         monotonicity="increasing",
+        lattice_size=100,
     ),
 ]
 
@@ -150,7 +151,7 @@ model_config = tfl.configs.CalibratedLatticeConfig(
     feature_configs=feature_configs,
     regularizer_configs=[
         # Torsion regularizer applied to the lattice to make it more linear.
-        # tfl.configs.RegularizerConfig(name='torsion', l2=1e-4),
+        tfl.configs.RegularizerConfig(name='torsion', l2=1e-4),
         # Globally defined calibration regularizer is applied to all features.
         tfl.configs.RegularizerConfig(name='calib_hessian', l2=1e-4),
     ]
@@ -173,26 +174,39 @@ model_graph = tfl.estimators.get_model_graph(saved_model_path)
 tfl.visualization.draw_model_graph(model_graph, calibrator_dpi=100)
 
 
-# %%
+#%%
 
 # visualize prediction test set
 def get_predictions(estimator, input_fn):
     pred_dicts = list(estimator.predict(input_fn))
-    preds = pd.Series([pred['predictions'][0] for pred in pred_dicts])
+    preds = pd.Series([pred['predictions'][0] for pred in pred_dicts], name="Pred")
     return preds
 
 pred = get_predictions(estimator=estimator, input_fn=test_input_fn)
 
-fig = plt.figure(figsize=(11,9))
-print(data_test["HTC"].values.shape)
-print(pred.shape)
+data_test["prediction"] = pred
+data_test.to_pickle("test_plus_prediction.pkl")
 
+fig = plt.figure(figsize=(11,9))
 plt.plot(data_test["HTC"].values, pred, marker='x', linestyle='')
 plt.xlabel("True data")
 plt.ylabel("Prediction")        
 plt.xlim((0, data_test["HTC"].max()))
 plt.ylim((0, data_test["HTC"].max()))
+plt.title("True vs. Prediction plot")
 plt.show()
+
+
+#%%
+fig = plt.figure(figsize=(11,9))
+ax = plt.axes(projection='3d')
+#ax.plot_surface(data_test["Temp"], data_test["QDot"], data_test["HTC"], cmap='viridis', edgecolor='none')
+ax.scatter(data_test["Temp"], data_test["QDot"], data_test["HTC"], c='k', marker='x', label="Test data")
+ax.scatter(data_test["Temp"], data_test["QDot"], data_test["prediction"], c='r', marker='o', label="Predictions")
+plt.legend()
+ax.set_title("DataPoints vs Prediction")
+plt.show()
+
 #%%
 #---------------------------------------------------------------------------------------------------------
 # %%
