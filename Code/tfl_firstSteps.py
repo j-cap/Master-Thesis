@@ -34,7 +34,7 @@ os.environ["PATH"] += os.pathsep + "C:\\Program Files (x86)\Graphviz2.38\\bin"
 
 LEARNING_RATE = 0.01
 BATCH_SIZE = 128
-NUM_EPOCHS = 5000
+NUM_EPOCHS = 1000
 
 data, descriptor = load_normalize_data(normalize=True)
 data = data.rename(columns={
@@ -147,8 +147,10 @@ feature_configs = [
 
 #%%
 # Training Calibrated Lattice Model
-model_config = tfl.configs.CalibratedLatticeConfig(
+model_config = tfl.configs.CalibratedLatticeEnsembleConfig(
     feature_configs=feature_configs,
+    num_lattices=5,
+    lattice_rank=2,
     regularizer_configs=[
         # Torsion regularizer applied to the lattice to make it more linear.
         tfl.configs.RegularizerConfig(name='torsion', l2=1e-4),
@@ -174,7 +176,7 @@ model_graph = tfl.estimators.get_model_graph(saved_model_path)
 tfl.visualization.draw_model_graph(model_graph, calibrator_dpi=100)
 
 
-#%%
+ #%%
 
 # visualize prediction test set
 def get_predictions(estimator, input_fn):
@@ -196,7 +198,10 @@ plt.ylim((0, data_test["HTC"].max()))
 plt.title("True vs. Prediction plot")
 plt.show()
 
+def nr_nan(series):
+    return np.sum(series.isna())
 
+print(f"\n Number of NaN-elements in pred vs in data: {nr_nan(pred)} -- {nr_nan(data_test['HTC'])} \n")
 #%%
 fig = plt.figure(figsize=(11,9))
 ax = plt.axes(projection='3d')
