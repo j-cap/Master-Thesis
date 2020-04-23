@@ -32,13 +32,21 @@ from tg_bot import send_TG_msg
 logging.disable(sys.maxsize)
 pio.renderers.default = "browser"
 
-#%%
-# load data
+#%% load data
 df = pd.read_csv('../../Data/data_2D-gaus-lin.csv', dtype=np.float64)
 # train test split
 X_train, X_test, y_train, y_test = train_test_split(
     df[df.columns[-2:]], df[df.columns[1]], test_size=0.33, random_state=42
 )
+# scatter raw data
+fig = px.scatter_3d(df,x="x0", y="x1", z="Exp_1")
+# update the markers
+fig.update_traces(marker=dict(size=2,
+                              line=dict(width=2,
+                                        color='DarkSlateGrey')),
+                  selector=dict(mode='markers'))
+fig.show()
+#%%
 def surf_plot_prep():
     # only for surface plotting
     x0 = np.linspace(X_test["x0"].min(), X_test["x0"].max(), 100)
@@ -56,16 +64,6 @@ def surf_plot_prep():
         num_threads=1
     )
     return input_fn_surface_plot, x0, x1
-
-# scatter raw data
-fig = px.scatter_3d(df,x="x0", y="x1", z="Exp_1")
-# update the markers
-fig.update_traces(marker=dict(size=2,
-                              line=dict(width=2,
-                                        color='DarkSlateGrey')),
-                  selector=dict(mode='markers'))
-fig.show()
-
 # %%
 LEARNING_RATE = 0.01
 BATCH_SIZE = 128
