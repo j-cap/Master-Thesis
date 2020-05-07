@@ -17,6 +17,7 @@ from pygam import LinearGAM, s, te, PoissonGAM, f, GAM
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
+from scipy.interpolate import BSpline
 pio.renderers.default = "browser"
 
 # load data
