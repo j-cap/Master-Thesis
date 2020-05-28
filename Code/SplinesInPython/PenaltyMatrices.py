@@ -3,11 +3,20 @@
 
 # **Implementation of the penalty matrices**
 
+# In[1]:
+
+
+# convert jupyter notebook to python script
+#!jupyter nbconvert --to script PenaltyMatrices.ipynb
+
+
+# In[2]:
+
 
 import numpy as np
 from scipy.sparse import diags
 
-class PenaltyMatrices():
+class PenaltyMatrix():
     """Implementation of the various penalty matrices for penalized B-Splines."""
     def __init__(self, n_param):
         self.n_param = n_param
@@ -66,17 +75,4 @@ class PenaltyMatrices():
             print("Shape of D2-Matrix: {}".format(D2.shape))
         return D2
     
-
-
-# In[3]:
-
-
-# convert jupyter notebook to python script
-# get_ipython().system('jupyter nbconvert --to script PenaltyMatrices.ipynb')
-
-
-# In[ ]:
-
-
-
 

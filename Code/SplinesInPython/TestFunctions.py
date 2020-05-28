@@ -1,12 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# ### Implementation of some test functions
+# 
+# This is the Jupyter notebook which implements the class TestFunctions with 4 different functions. Further work could be done on some plotting functionality.
+
 # In[ ]:
 
 
-import numpy as np
+# get_ipython().system('jupyter nbconvert --to script TestFunctions.ipynb')
 
-class TestFunctions:
+
+# In[7]:
+
+
+import numpy as np
+import pandas as pd       
+
+#import plotly.express as px
+#t = TestFunctions()
+#x, y = t.f3()
+#px.scatter(x=x, y=y).show()
+#t.save_data("f3_data", x=x, y=y)
+    
+class TestFunctions(SaveData):
     """
     Collection of test functions.
     
@@ -46,28 +63,43 @@ class TestFunctions:
         self.x2_max = x2_max
         self.n_samples = n_samples
         self.noise_level = noise_level
+        self.x1 = None
+        self.x2 = None
+        self.y = None
+        self.data = None
+        
+    def save_data(self, fname, x=None, y=None):
+        """Save data to csv."""
+        df = pd.DataFrame(data={"x": x, "y": y})
+        df.to_csv(fname+".csv", index=False)
+        return
         
     def f1(self):
-        x = np.linspace(self.x1_min, self.x1_max, self.n_samples)
-        y = np.tanh(-(x-5)) + np.exp(-(x)**2) + np.random.randn(len(x))*self.noise_level
-        return x, y
+        self.x = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
+        self.y = np.tanh(-(self.x-5)) + np.exp(-(self.x)**2) + np.random.randn(len(self.x))*self.noise_level
+        return self.x, self.y
     
     def f2(self, a=1, b=1):
-        x = np.linspace(self.x1_min, self.x1_max, self.n_samples)
-        y = a / (1 + (b*x)**2) + np.random.randn(len(x))*self.noise_level
-        return x, y
+        self.x = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
+        self.y = a / (1 + (b*x)**2) + np.random.randn(len(x))*self.noise_level
+        return self.x, self.y
     
     def f3(self): 
-        x = np.linspace(self.x1_min, self.x1_max, self.n_samples)
-        y = 0.5*np.sin(x) + 3.5*np.linspace(0,1,len(x)) + np.random.randn(len(x))*self.noise_level
-        return x, y
+        self.x = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
+        self.y = 0.5*np.sin(x) + 3.5*np.random.normal(0,1,len(x)) + np.random.randn(len(x))*self.noise_level
+        return self.x, self.y
     
     def f4(self, grid=True):
         """Evaluate the 2-d function on a grid """
-        x1 = np.linspace(self.x1_min, self.x1_max, self.n_samples)
-        x2 = np.linspace(self.x2_min, self.x2_max, self.n_samples)
-        y = x1**3 - 3*x1*x2**2 + np.random.randn(len(x1))*self.noise_level
-        return x1, x2, y
+        self.x1 = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
+        self.x2 = np.random.normal(self.x2_min, self.x2_max, self.n_samples)
+        if grid:
+            self.x1g, self.x2g = np.meshgrid(x1, x2)
+            self.y = x1g**3 - 3*x1g*x2g**2 + np.random.randn(*x1g.shape)*self.noise_level
+            return self.x1g, self.x2g, self.y
+        else:
+            self.y = x1**3 - 3*x1*x2**2 + np.random.randn(len(x1))*self.noise_level
+            return self.x1, self.x2, self.y
 
-
+    
 

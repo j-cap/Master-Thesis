@@ -1,7 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[15]:
+
+
+# convert jupyter notebook to python script
+#get_ipython().system('jupyter nbconvert --to script ClassBSplines.ipynb')
+
+
+# In[12]:
 
 
 import numpy as np
@@ -10,10 +17,11 @@ import plotly.graph_objects as go
 from numpy.linalg import lstsq
 from scipy.sparse import diags, kron
 
-from Helper import addVertLinePlotly
-from PenaltyMatrices import PenaltyMatrices
 
-class BSpline(PenaltyMatrices):
+from Helper import addVertLinePlotly
+from PenaltyMatrices import PenaltyMatrix
+
+class BSpline(PenaltyMatrix):
     
     def __init__(self, x=None, order="cubic"):
         self.order = order
@@ -41,17 +49,35 @@ class BSpline(PenaltyMatrices):
             z1 = (k[i+m+2] - self.x) / (k[i+m+2] - k[i+1])
             return z0*self.b_spline(k, i, m-1) + z1*self.b_spline(k, i+1, m-1)
         
-    def b_spline_basis(self, k=10, m=2):
+    def b_spline_basis(self, x_basis=None, k=10, m=2):
         """Set up model matrix for the B-spline basis.
-        One needs k + m + 1 knots for a spline basis of order m with k parameters
+        One needs k + m + 1 knots for a spline basis of order m with k parameters. 
+        If self.x is defined, x_basis is not used!
         
         Parameters:
         -------------
         k : integer   - number of parameters (== number of B-splines)
         m : interger  - specifies the order of the spline, m+1 = order
+        x_basis : None, ndarray - for the case that no x was defined
+                                  in the initialization of the BSpline
         
         """
+        # check_if_none(self.x, x_basis, self)
+        if self.x is None:
+            if type(x_basis) is None:
+                print("Type of x: ", type(x_basis))
+                print("Include data for 'x'!")
+                return    
+            elif type(x_basis) is np.ndarray:
+                print("Use 'x_basis' for the spline basis!")
+                self.x = x_basis
+            else:
+                print(f"Datatype for 'x':{type(x_basis)} not supported!")
+                return
+        else:
+            print("'x' from initialization is used for the spline basis!")
         x = self.x
+        assert (type(x) is np.ndarray), "Type of x is not ndarray!"
         n = len(x) # n = number of data
         xmin, xmax = np.min(x), np.max(x)
         xk = np.quantile(a=x, q=np.linspace(0,1,k))
@@ -84,7 +110,7 @@ class BSpline(PenaltyMatrices):
 #        self.coef_ = fit[0]
 #        return 
     
-    def plot_b_spline_basis(self):
+    def plot_basis(self):
         """Plot the B-spline basis matrix and the knot loactions.
         They are indicated by a vertical line.
         """
@@ -112,17 +138,4 @@ class BSpline(PenaltyMatrices):
         fig.show()
         return
                 
-
-
-# In[6]:
-
-
-# convert jupyter notebook to python script
-# get_ipython().system('jupyter nbconvert --to script ClassBSplines.ipynb')
-
-
-# In[ ]:
-
-
-
 
