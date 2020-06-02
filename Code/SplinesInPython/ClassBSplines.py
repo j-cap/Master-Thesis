@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[15]:
+# In[24]:
 
 
 # convert jupyter notebook to python script
 #get_ipython().system('jupyter nbconvert --to script ClassBSplines.ipynb')
 
 
-# In[12]:
+# In[1]:
 
 
 import numpy as np
@@ -63,7 +63,11 @@ class BSpline(PenaltyMatrix):
         
         """
         # check_if_none(self.x, x_basis, self)
-        if self.x is None:
+        if not hasattr(self, 'm'):
+            self.m = m
+        if not hasattr(self, 'x'):
+            self.x = None
+        if self.x is None :
             if type(x_basis) is None:
                 print("Type of x: ", type(x_basis))
                 print("Include data for 'x'!")
@@ -138,4 +142,14 @@ class BSpline(PenaltyMatrix):
         fig.show()
         return
                 
+
+
+# In[2]:
+
+
+x = np.linspace(0,1,100)
+b = BSpline()
+b.b_spline_basis(x_basis=x, k=10)
+b.D1_difference_matrix(print_shape=True)
+print("D1: \n", b.D1)
 
