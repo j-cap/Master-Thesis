@@ -5,25 +5,21 @@
 # 
 # This is the Jupyter notebook which implements the class TestFunctions with 4 different functions. Further work could be done on some plotting functionality.
 
-# In[ ]:
+# In[11]:
 
 
-# get_ipython().system('jupyter nbconvert --to script TestFunctions.ipynb')
+#!jupyter nbconvert --to script TestFunctions.ipynb
 
 
-# In[7]:
+# In[15]:
 
 
 import numpy as np
 import pandas as pd       
 
-#import plotly.express as px
-#t = TestFunctions()
-#x, y = t.f3()
-#px.scatter(x=x, y=y).show()
-#t.save_data("f3_data", x=x, y=y)
+
     
-class TestFunctions(SaveData):
+class TestFunctions:
     """
     Collection of test functions.
     
@@ -75,24 +71,24 @@ class TestFunctions(SaveData):
         return
         
     def f1(self):
-        self.x = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
+        self.x = np.random.uniform(self.x1_min, self.x1_max, self.n_samples)
         self.y = np.tanh(-(self.x-5)) + np.exp(-(self.x)**2) + np.random.randn(len(self.x))*self.noise_level
         return self.x, self.y
     
     def f2(self, a=1, b=1):
-        self.x = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
-        self.y = a / (1 + (b*x)**2) + np.random.randn(len(x))*self.noise_level
+        self.x = np.random.uniform(self.x1_min, self.x1_max, self.n_samples)
+        self.y = a / (1 + (b*self.x)**2) + np.random.randn(len(self.x))*self.noise_level
         return self.x, self.y
     
     def f3(self): 
-        self.x = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
-        self.y = 0.5*np.sin(x) + 3.5*np.random.normal(0,1,len(x)) + np.random.randn(len(x))*self.noise_level
+        self.x = np.random.uniform(self.x1_min, self.x1_max, self.n_samples)
+        self.y = 1.5*np.sin(self.x) + 1.5*np.random.normal(0,1,len(self.x)) +                  np.random.randn(len(self.x))*self.noise_level
         return self.x, self.y
     
     def f4(self, grid=True):
         """Evaluate the 2-d function on a grid """
-        self.x1 = np.random.normal(self.x1_min, self.x1_max, self.n_samples)
-        self.x2 = np.random.normal(self.x2_min, self.x2_max, self.n_samples)
+        self.x1 = np.random.uniform(self.x1_min, self.x1_max, self.n_samples)
+        self.x2 = np.random.uniform(self.x2_min, self.x2_max, self.n_samples)
         if grid:
             self.x1g, self.x2g = np.meshgrid(x1, x2)
             self.y = x1g**3 - 3*x1g*x2g**2 + np.random.randn(*x1g.shape)*self.noise_level
@@ -102,4 +98,13 @@ class TestFunctions(SaveData):
             return self.x1, self.x2, self.y
 
     
+
+
+# In[ ]:
+
+
+#import plotly.express as px
+#t = TestFunctions(n_samples=2000, noise_level=0.01, x1_min=-10, x1_max=10)
+#x, y = t.f1()
+#px.scatter(x=x, y=y).show()
 
