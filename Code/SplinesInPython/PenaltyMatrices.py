@@ -3,14 +3,14 @@
 
 # **Implementation of the penalty matrices**
 
-# In[1]:
+# In[2]:
 
 
 # convert jupyter notebook to python script
 #!jupyter nbconvert --to script PenaltyMatrices.ipynb
 
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -20,8 +20,10 @@ class PenaltyMatrix():
     """Implementation of the various penalty matrices for penalized B-Splines."""
     def __init__(self, n_param):
         self.n_param = n_param
+        self.D1 = None
+        self.D2 = None
         
-    def D1_differenceMatrix(self, n_param=0, print_shape=False):
+    def D1_difference_matrix(self, n_param=0, print_shape=False):
         """Calculated the first order difference matrix.  
         
         Parameters:
@@ -46,9 +48,10 @@ class PenaltyMatrix():
         D1[-1:] = 0.
         if print_shape:
             print("Shape of D1-Matrix: {}".format(D1.shape))
+        self.D1 = D1
         return D1
 
-    def D2_differenceMatrix(self, n_param=0, print_shape=False):
+    def D2_difference_matrix(self, n_param=0, print_shape=False):
         """Calculated the second order difference matrix. 
 
         Parameters:
@@ -73,6 +76,13 @@ class PenaltyMatrix():
         D2[-2:] = 0.
         if print_shape:
             print("Shape of D2-Matrix: {}".format(D2.shape))
+        self.D2 = D2
         return D2
     
+
+
+# In[ ]:
+
+
+
 
