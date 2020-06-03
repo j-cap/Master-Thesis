@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 EQL_Tensorflow
+EQL_Tensorflow
+.vscode/settings.json
