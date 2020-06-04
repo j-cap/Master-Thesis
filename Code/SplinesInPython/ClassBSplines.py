@@ -145,11 +145,9 @@ class BSpline(PenaltyMatrix):
 
 
 # In[2]:
-
-
-x = np.linspace(0,1,100)
-b = BSpline()
-b.b_spline_basis(x_basis=x, k=10)
-b.D1_difference_matrix(print_shape=True)
-print("D1: \n", b.D1)
+#x = np.linspace(0,1,100)
+#b = BSpline()
+#b.b_spline_basis(x_basis=x, k=10)
+#b.D1_difference_matrix(print_shape=True)
+#print("D1: \n", b.D1)
 

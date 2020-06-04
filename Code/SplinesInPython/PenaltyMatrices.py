@@ -18,7 +18,7 @@ from scipy.sparse import diags
 
 class PenaltyMatrix():
     """Implementation of the various penalty matrices for penalized B-Splines."""
-    def __init__(self, n_param):
+    def __init__(self, n_param=10):
         self.n_param = n_param
         self.D1 = None
         self.D2 = None
@@ -41,11 +41,12 @@ class PenaltyMatrix():
             k = self.n_param
         else:
             k = n_param
+            self.n_param = n_param
         assert (type(k) is int), "Type of input k must be integer!"
         d = np.array([-1*np.ones(k), np.ones(k)])
         offset=[0,1]
         D1 = diags(d,offset, dtype=np.int).toarray()
-        D1[-1:] = 0.
+        #D1[-1:] = 0.
         if print_shape:
             print("Shape of D1-Matrix: {}".format(D1.shape))
         self.D1 = D1
@@ -69,16 +70,45 @@ class PenaltyMatrix():
             k = self.n_param
         else:
             k = n_param
+            self.n_param = n_param
         assert (type(k) is int), "Type of input k is not integer!"
         d = np.array([np.ones(k), -2*np.ones(k), np.ones(k)])
         offset=[0,1,2]
         D2 = diags(d,offset, dtype=np.int).toarray()
-        D2[-2:] = 0.
+        #D2[-2:] = 0.
         if print_shape:
             print("Shape of D2-Matrix: {}".format(D2.shape))
         self.D2 = D2
         return D2
     
+    def Smoothness_matrix(self, n_param=0, print_shape=False):
+        """Calculated the smoothness penalty matrix. 
+
+        Parameters:
+        ------------
+        n_param : integer  - Dimension of the difference matrix, overwrites
+                             the specified dimension.
+        print_shape : bool - Prints the dimension of the penalty matrix.
+        
+        Returns:
+        ------------
+        S : ndarray   - a matrix of size [k x k], 
+                        where the last two row contains only zeros.
+        """
+        if n_param == 0:
+            k = self.n_param
+        else:
+            k = n_param
+            self.n_param = n_param
+        assert (type(k) is int), "Type of input k is not integer!"
+        d = np.array([np.ones(k-1), -2*np.ones(k), np.ones(k-1)])
+        offset=[-1,0,1]
+        S = diags(d,offset, dtype=np.int).toarray()
+        #S[-2:] = 0.
+        if print_shape:
+            print("Shape of S-Matrix: {}".format(S.shape))
+        self.S = S
+        return S
 
 
 # In[ ]:
