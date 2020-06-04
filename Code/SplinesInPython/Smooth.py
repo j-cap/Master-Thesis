@@ -39,7 +39,7 @@ class Smooths(BSpline):
         elif penalty is "peak":
             self.penalty_matrix = self.D1_difference_matrix()
         elif penalty is "no":
-            self.penalty_matrix = self.Zero_matrix()
+            self.penalty_matrix = self.Zero_matrix(n_param)
             print("No penalty used!")
         else:
             print(f"Penalty {penalty} not implemented!")
