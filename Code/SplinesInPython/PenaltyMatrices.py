@@ -46,7 +46,7 @@ class PenaltyMatrix():
         d = np.array([-1*np.ones(k), np.ones(k)])
         offset=[0,1]
         D1 = diags(d,offset, dtype=np.int).toarray()
-        #D1[-1:] = 0.
+        D1 = D1[:-1]
         if print_shape:
             print("Shape of D1-Matrix: {}".format(D1.shape))
         self.D1 = D1
@@ -75,7 +75,7 @@ class PenaltyMatrix():
         d = np.array([np.ones(k), -2*np.ones(k), np.ones(k)])
         offset=[0,1,2]
         D2 = diags(d,offset, dtype=np.int).toarray()
-        #D2[-2:] = 0.
+        D2 = D2[:-2]
         if print_shape:
             print("Shape of D2-Matrix: {}".format(D2.shape))
         self.D2 = D2
@@ -109,9 +109,18 @@ class PenaltyMatrix():
             print("Shape of S-Matrix: {}".format(S.shape))
         self.S = S
         return S
+    
+    def Zero_matrix(self, n_param=0, print_shape=False):
+        """Matrix for no penalty. Just zeros!"""
+        
+        if n_param == 0:
+            k = self.n_param
+        else:
+            k = n_param
+            self.n_param = n_param
+        Z = np.zeros((self.n_param, self.n_param))
+        return Z
 
-
-# In[ ]:
 
 
 

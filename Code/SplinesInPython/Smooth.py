@@ -12,13 +12,12 @@
 
 # In[4]:
 
-
 from ClassBSplines import BSpline
 
 class Smooths(BSpline):
     """Implementation of the 1d smooth used in Additive Models."""
 
-    def __init__(self, x_data, n_param, penalty="smooth"):
+    def __init__(self, x_data, n_param, penalty="no"):
         print("Type x_data: ", type(x_data))
         self.x_data = x_data
         self.n_param = n_param
@@ -39,6 +38,9 @@ class Smooths(BSpline):
             self.penalty_matrix = self.Smoothness_matrix()
         elif penalty is "peak":
             self.penalty_matrix = self.D1_difference_matrix()
+        elif penalty is "no":
+            self.penalty_matrix = self.Zero_matrix()
+            print("No penalty used!")
         else:
             print(f"Penalty {penalty} not implemented!")
     
