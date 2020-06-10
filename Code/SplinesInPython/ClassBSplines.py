@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[24]:
+# In[3]:
 
 
 # convert jupyter notebook to python script
 #get_ipython().system('jupyter nbconvert --to script ClassBSplines.ipynb')
 
 
-# In[1]:
+# In[3]:
 
 
 import numpy as np
@@ -48,7 +48,7 @@ class BSpline(PenaltyMatrix):
             z0 = (self.x - k[i]) / (k[i+m+1] - k[i])
             z1 = (k[i+m+2] - self.x) / (k[i+m+2] - k[i+1])
             return z0*self.b_spline(k, i, m-1) + z1*self.b_spline(k, i+1, m-1)
-        
+                
     def b_spline_basis(self, x_basis=None, k=10, m=2):
         """Set up model matrix for the B-spline basis.
         One needs k + m + 1 knots for a spline basis of order m with k parameters. 
@@ -83,43 +83,27 @@ class BSpline(PenaltyMatrix):
         x = self.x
         assert (type(x) is np.ndarray), "Type of x is not ndarray!"
         n = len(x) # n = number of data
+        X = np.zeros((n, k))
+        
         xmin, xmax = np.min(x), np.max(x)
-        xk = np.quantile(a=x, q=np.linspace(0,1,k))
+        xk = np.quantile(a=x, q=np.linspace(0,1,k - m))
         dx = xk[-1] - xk[-2]
         xk = np.insert(xk, 0, np.arange(xmin-(m+1)*dx, xmin, dx))    
-        xk = np.append(xk, np.arange(xmax+dx, xmax+(m+1)*dx, dx))
-        X = np.zeros(shape=(n, k))
+        xk = np.append(xk, np.arange(xmax+dx, xmax+(m+3)*dx, dx))
+        
         for i in range(k):
-            X[:,i] = self.b_spline(k=xk, i=i+1, m=m)
+            X[:,i] = self.b_spline(k=xk, i=i, m=m)
             
         self.basis = X
         self.knots = xk
         self.n_param = int(X.shape[1])
         return 
     
-#    def fit(self, y):
-#        """Compute Least Squares Fit of the B-spline basis with data y.
-#        fit the linear model with the basis given by the B-spline basis of k parameters using
-#        linear least squares with y = X.T beta
-#        Parameters:
-#        ---------------
-#        y     : array     - target data
-#        """
-#        self.y = y
-#        assert (self.basis is not None), "Please instantiate the B-Spline basis"
-#        print("Basis: ", self.basis.shape)
-#        print("Data: ", y.shape)
-#        fit = lstsq(a=self.basis, b=y, rcond=None)
-#        self.lstsq_fit = fit
-#        self.coef_ = fit[0]
-#        return 
-    
-    def plot_basis(self):
+    def plot_basis(self, title=""):
         """Plot the B-spline basis matrix and the knot loactions.
         They are indicated by a vertical line.
         """
         if self.basis is None or self.knots is None:
-            #k = int(input("Please specify the number of knots k: (int)"))
             k = 10
             self.b_spline_basis(k=k, m=self.m)
 
@@ -129,7 +113,10 @@ class BSpline(PenaltyMatrix):
                                      name=f"BSpline {i+1}", mode="lines"))
         for i in self.knots:
             addVertLinePlotly(fig, x0=i)
-        fig.update_layout(title="B-Spline basis")
+        if title:
+            fig.update_layout(title=title)
+        else:
+            fig.update_layout(title="B-Spline basis")
         fig.show()
         return
     
@@ -144,10 +131,12 @@ class BSpline(PenaltyMatrix):
                 
 
 
-# In[2]:
+# In[ ]:
+
+
 #x = np.linspace(0,1,100)
 #b = BSpline()
-#b.b_spline_basis(x_basis=x, k=10)
-#b.D1_difference_matrix(print_shape=True)
-#print("D1: \n", b.D1)
+#b.b_spline_basis(x_basis=x, k=25)
+#print(len(b.knots))
+#b.plot_basis()
 
