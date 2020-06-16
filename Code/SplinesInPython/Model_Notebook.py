@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[16]:
+# In[17]:
 
 
 # convert jupyter notebook to python script
@@ -69,7 +69,7 @@ class Model(DiagnosticPlotter):
             [x] include TPS
         
         """
-        assert (len(self.description_str) == X.shape[1]),"Nr of smooths must match Nr of predictors!"
+        #assert (len(self.description_str) == X.shape[1]),"Nr of smooths must match Nr of predictors!"
        
         # smooths without tensor product splines
         #self.smooths = [ 
@@ -182,6 +182,7 @@ class Model(DiagnosticPlotter):
         df_beta = df_beta.append(pd.Series(d), ignore_index=True)
         
         beta = np.copy(beta_0)
+        
         for i in range(max_iter):
             print("Create basis with penalty and weight")
             self.create_penalty_block_matrix(beta_test=beta)
@@ -237,7 +238,7 @@ class Model(DiagnosticPlotter):
                 
             fig.update_traces(
                 marker=dict(
-                    size=12, 
+                    size=8, 
                     line=dict(width=2, color='DarkSlateGrey')),
                 selector=dict(mode='markers'))
             fig.show()
