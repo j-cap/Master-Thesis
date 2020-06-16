@@ -5,7 +5,7 @@
 
 
 # convert jupyter notebook to python script
-get_ipython().system('jupyter nbconvert --to script Model_Notebook.ipynb')
+#get_ipython().system('jupyter nbconvert --to script Model_Notebook.ipynb')
 
 
 # In[1]:
