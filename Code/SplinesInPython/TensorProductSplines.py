@@ -3,14 +3,14 @@
 
 # **Tensor product spline implementation**
 
-# In[10]:
+# In[359]:
 
 
 # convert jupyter notebook to python script
-# get_ipython().system('jupyter nbconvert --to script TensorProductSplines.ipynb')
+#get_ipython().system('jupyter nbconvert --to script TensorProductSplines.ipynb')
 
 
-# In[275]:
+# In[ ]:
 
 
 import numpy as np
@@ -23,16 +23,16 @@ from ClassBSplines import BSpline
 from PenaltyMatrices import PenaltyMatrix
 
 
-class TensorProductSpline(BSpline):
+class TensorProductSpline(BSpline, PenaltyMatrix):
     """Implementation of the tensor product spline according to Simon Wood, 2006."""
     
     def __init__(self, x1=None, x2=None):
         """It is important that len(x1) == len(x2)."""
-        self.x1 = np.unique(x1)
-        self.x2 = np.unique(x2)
+        self.x1 = x1
+        self.x2 = x2
         self.basis = None
         
-    def tensor_product_spline_2d(self, k1=5, k2=5, print_shapes=False):
+    def tensor_product_spline_2d_basis(self, x_basis=None, k1=5, k2=5, print_shapes=False):
         """Calculate the TPS from two 1d B-splines.
         
         Parameters:
@@ -42,6 +42,31 @@ class TensorProductSpline(BSpline):
         print_shape : bool - prints the dimensions of the basis matrices.
         
         """
+        
+        # sanity checks
+        #if not hasattr(self, 'x1'):
+        #    self.x = None
+        #if not hasattr(self, "x2"):
+        #    self.x = None
+        
+        if self.x1 is None and self.x2 is None:
+            if type(x_basis) is None:
+                print("Type of x: ", type(x_basis))
+                print("Include data for 'x'!")
+                return    
+            elif type(x_basis) is np.ndarray:
+                print("Use 'x_basis' for the spline basis!")
+                self.x1 = x_basis[:,0]
+                self.x2 = x_basis[:,1]
+            else:
+                print(f"Datatype for 'x':{type(x_basis)} not supported!")
+                return
+        else:
+            print("'x' from initialization is used for the spline basis!")
+        
+        self.x1 = np.unique(self.x1)
+        self.x2 = np.unique(self.x2)
+        
         self.k1 = k1
         self.k2 = k2
         BSpline_x1 = BSpline(self.x1)
@@ -125,52 +150,53 @@ class TensorProductSpline(BSpline):
         fig.show()
 
 
-# In[352]:
+# In[ ]:
 
 
 # Test for tensorproductspline
+"""
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+from sklearn.metrics import mean_squared_error
 
-#import plotly.graph_objects as go
-#import plotly.express as px
-#from plotly.subplots import make_subplots
-#from sklearn.metrics import mean_squared_error
-#
-#
-## data generation on a grid
-#samples = 250
-#x = np.linspace(-3, 3, samples)
-#xgrid = np.meshgrid(x,x)
-#grid = np.array([xgrid[1].ravel(), xgrid[0].ravel()]).T
-#
-## define test functions
-#def binorm(x,y):
-#    return (15/(2*np.pi)) * np.exp(-0.5 * (x**2 + y**2)) + 0.1*np.random.randn(x.shape[0])
-#
-#def xtimesy(x,y):
-#    return x * y  + np.random.randn(1)
-#
-#Y = binorm(grid[:,0], grid[:,1]).reshape((samples, samples))
-##Y = xtimesy(grid[:,0], grid[:,1]).reshape((samples, samples))
-#
-#go.Figure(go.Surface(z=Y, name="Test function")).show()
-#
-#T = TensorProductSpline(x1=np.unique(grid[:,0]), 
-#                        x2=np.unique(grid[:,1]))
-#
-#T.tensor_product_spline_2d(k1=12, k2=12)
-#
-## OLS
-#X = T.basis
-#beta = (np.linalg.pinv(X.T @ X) @ X.T @ Y)
-## prediction
-#pred = X @ beta
-#
-#fig = go.Figure()
-#fig = make_subplots(rows=1, cols=2,
-#                    specs=[[{"type": "scene"}, {"type": "scene"}]],)
-#fig.add_trace(go.Scatter3d(x=grid[:,0], y=grid[:,1], z=Y.ravel(), name="data", mode="markers"), row=1, col=1)
-#fig.add_trace(go.Scatter3d(x=grid[:,0], y=grid[:,1], z=pred.ravel(), name="pred"), row=1, col=1)
-#fig.show()
-#
-#mean_squared_error(pred.ravel(), Y.ravel())
+
+# data generation on a grid
+samples = 250
+x = np.linspace(-3, 3, samples)
+xgrid = np.meshgrid(x,x)
+grid = np.array([xgrid[1].ravel(), xgrid[0].ravel()]).T
+
+# define test functions
+def binorm(x,y):
+    return (15/(2*np.pi)) * np.exp(-0.5 * (x**2 + y**2)) + 0.1*np.random.randn(x.shape[0])
+
+def xtimesy(x,y):
+    return x * y  + np.random.randn(1)
+
+Y = binorm(grid[:,0], grid[:,1]).reshape((samples, samples))
+#Y = xtimesy(grid[:,0], grid[:,1]).reshape((samples, samples))
+
+go.Figure(go.Surface(z=Y, name="Test function")).show()
+
+T = TensorProductSpline(x1=np.unique(grid[:,0]), 
+                        x2=np.unique(grid[:,1]))
+
+T.tensor_product_spline_2d_basis(k1=12, k2=12)
+
+# OLS
+X = T.basis
+beta = (np.linalg.pinv(X.T @ X) @ X.T @ Y)
+# prediction
+pred = X @ beta
+
+fig = go.Figure()
+fig = make_subplots(rows=1, cols=2,
+                    specs=[[{"type": "scene"}, {"type": "scene"}]],)
+fig.add_trace(go.Scatter3d(x=grid[:,0], y=grid[:,1], z=Y.ravel(), name="data", mode="markers"), row=1, col=1)
+fig.add_trace(go.Scatter3d(x=grid[:,0], y=grid[:,1], z=pred.ravel(), name="pred"), row=1, col=1)
+fig.show()
+
+mean_squared_error(pred.ravel(), Y.ravel())
+"""
 

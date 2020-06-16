@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[16]:
 
 
 # convert jupyter notebook to python script
-#get_ipython().system('jupyter nbconvert --to script Model_Notebook.ipynb')
+get_ipython().system('jupyter nbconvert --to script Model_Notebook.ipynb')
 
 
-# In[ ]:
+# In[1]:
 
 
 import plotly.express as px
@@ -22,6 +22,8 @@ from sklearn.metrics import mean_squared_error
 
 
 from Smooth import Smooths as s
+from Smooth import TP_Smooths as tps
+from TensorProductSplines import TensorProductSpline as t
 from ClassBSplines import BSpline as b
 from PenaltyMatrices import PenaltyMatrix
 from DiagnosticPlot import DiagnosticPlotter
@@ -63,19 +65,32 @@ class Model(DiagnosticPlotter):
         X : np.ndarray - data
         n_param : int  - number of parameters for the spline basis 
         
+        TODO:
+            [x] include TPS
+        
         """
         assert (len(self.description_str) == X.shape[1]),"Nr of smooths must match Nr of predictors!"
        
-        self.smooths = [ 
-            s(x_data=X[:, int(k[2])-1], 
-              n_param=int(v[1]), 
-              penalty=v[0]) for k, v in self.description_dict.items()
-        ]    
+        # smooths without tensor product splines
+        #self.smooths = [ 
+        #    s(x_data=X[:, int(k[2])-1], 
+        #      n_param=int(v[1]), 
+        #      penalty=v[0]) for k, v in self.description_dict.items()
+        #]    
+        
+        # smooths with tensor product splines
+        self.smooths = list()
+        for k,v in self.description_dict.items():
+            if k[0] is "s":
+                self.smooths.append(s(x_data=X[:,int(k[2])-1], n_param=int(v[1]), penalty=v[0]))
+            elif k[0] is "t":
+                self.smooths.append(tps(x_data=X[:, [int(k[2])-1, int(k[4])-1]], n_param=list(v[1]), penalty=v[0]))    
+        
         self.basis = np.concatenate([smooth.basis for smooth in self.smooths], axis=1) 
         
         return 
     
-    def create_penalty_block_matrix(self, X, beta_test=None):
+    def create_penalty_block_matrix(self, beta_test=None):
         """Create the penalty block matrix specified in self.description_str.
         
         Looks like: ------------
@@ -92,6 +107,7 @@ class Model(DiagnosticPlotter):
         
         TODO:
             [x]  include the weights !!! 
+            [ ]  include TPS penalty
         
         """
         assert (self.smooths is not None), "Run Model.create_basis() first!"
@@ -101,6 +117,7 @@ class Model(DiagnosticPlotter):
         
         idx = 0      
         penalty_matrix_list = []
+        
         for smooth in self.smooths:
             
             n = smooth.basis.shape[1]
@@ -132,8 +149,8 @@ class Model(DiagnosticPlotter):
         return y_fit, mse
     
     
-    def fit(self, X, y, lam_c=1, plot_=True):
-        """Lstsq fit try 2 using Smooths.
+    def fit(self, X, y, lam_c=1, plot_=True, max_iter=5):
+        """Lstsq fit using Smooths.
         
         Parameters:
         -------------
@@ -142,7 +159,8 @@ class Model(DiagnosticPlotter):
         plot_ : boolean
         
         TODO:
-            [ ] check constraint violation in the iterative fit
+            [x] check constraint violation in the iterative fit
+            [ ] incorporate TPS in the iterative fit
         """
         
         
@@ -152,12 +170,10 @@ class Model(DiagnosticPlotter):
         fitting = lstsq(a=self.basis, b=y, rcond=None)
         beta_0 = fitting[0].ravel()
         self.coef_ = beta_0
-        
         self.calc_y_pred_and_mse(y=y)
         
         # check constraint violation
         v_old = check_constraint_full_model(self)
-        #x.imshow(np.diag(v_old)).show()
         
         # create dataframe to save the beta values 
         colN = [ f"b_{i}" for i in range(len(beta_0))]        
@@ -165,10 +181,10 @@ class Model(DiagnosticPlotter):
         d = dict(zip(colN, beta_0))
         df_beta = df_beta.append(pd.Series(d), ignore_index=True)
         
-        beta = beta_0
-        for i in range(5):
+        beta = np.copy(beta_0)
+        for i in range(max_iter):
             print("Create basis with penalty and weight")
-            self.create_penalty_block_matrix(X, beta_test=beta)
+            self.create_penalty_block_matrix(beta_test=beta)
             
             print("Least squares fit iteration ", i+1)
             B = self.basis
@@ -178,8 +194,7 @@ class Model(DiagnosticPlotter):
             DVD = lam_c * D_c.T @ D_c
             By = B.T @ y
             
-            beta_new = (np.linalg.inv(BB + DVD) @ By).ravel()
-            self.coef_ = beta_new
+            beta_new = (np.linalg.pinv(BB + DVD) @ By).ravel()
 
             self.calc_y_pred_and_mse(y=y)
             
@@ -202,6 +217,7 @@ class Model(DiagnosticPlotter):
                 print("\n Violated constraints: ", np.sum(v_new))
             
         self.df_beta = df_beta
+        self.coef_ = self.df_beta.iloc[-1].values
         
         y_fit = self.basis @ self.coef_
     
@@ -209,11 +225,24 @@ class Model(DiagnosticPlotter):
         print(f"Mean squared error on the data: {np.round(self.mse, 4)}")
         
         if plot_:
-            fig = self.plot_xy(x=X[:,0], y=y.reshape((-1,)), name="Data")
-            fig.add_trace(go.Scatter(x=X[:,0], y=y_fit, name="Fit", mode="markers"))
+            dim = X.shape[1]
+            if dim == 1:
+                fig = self.plot_xy(x=X[:,0], y=y.ravel(), name="Data")
+                fig.add_trace(go.Scatter(x=X[:,0], y=y_fit, name="Fit", mode="markers"))
+            elif dim == 2:
+                fig = go.Figure()
+                fig.add_trace(go.Scatter3d(x=X[:,0], y=X[:,1], z=y.ravel(), name="Data", mode="markers"))
+                fig.add_trace(go.Scatter3d(x=X[:,0], y=X[:,1], z=y_fit, name="Fit", mode="markers"))
+
+                
+            fig.update_traces(
+                marker=dict(
+                    size=12, 
+                    line=dict(width=2, color='DarkSlateGrey')),
+                selector=dict(mode='markers'))
             fig.show()
             
-        return fitting
+        return 
     
     # not trusted
     def predict(self, X, y=None, plot_=False):
@@ -271,14 +300,14 @@ def check_constraint(beta, constraint, print_idx=False):
     elif constraint is "no":
         v = np.zeros(len(beta))
     elif constraint is "smooth":
-        v = np.ones(len(beta))
+        v = np.ones(len(b_diff_diff))
     else:
         print(f"Constraint [{constraint}] not implemented!")
         return
     
     V = np.diag(v)
     if print_idx:
-        print("Constraint violated at the followin indices: ")
+        print("Constraint violated at the following indices: ")
         print([idx for idx, n in enumerate(v) if n == 1])
     return V
     
@@ -338,4 +367,10 @@ def line_chart_of_coefficient_dataframe(df):
 
     fig.update_layout(title="Coefficients at different iterations",)
     fig.show()
+
+
+# In[ ]:
+
+
+
 
