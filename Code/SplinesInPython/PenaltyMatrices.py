@@ -3,18 +3,20 @@
 
 # **Implementation of the penalty matrices**
 
-# In[2]:
+# In[1]:
 
 
 # convert jupyter notebook to python script
-#!jupyter nbconvert --to script PenaltyMatrices.ipynb
+#get_ipython().system('jupyter nbconvert --to script PenaltyMatrices.ipynb')
 
 
-# In[1]:
+# In[9]:
 
 
 import numpy as np
 from scipy.sparse import diags
+from scipy.linalg import block_diag
+from scipy.signal import find_peaks
 
 class PenaltyMatrix():
     """Implementation of the various penalty matrices for penalized B-Splines."""
@@ -22,106 +24,176 @@ class PenaltyMatrix():
         self.n_param = n_param
         self.D1 = None
         self.D2 = None
+        self.Peak = None
+        self.Valley = None
         
-    def D1_difference_matrix(self, n_param=0, print_shape=False):
-        """Calculated the first order difference matrix.  
+    def D1_difference_matrix(self, n_param=0):
+        """Create the first order difference matrix.  
         
         Parameters:
         ------------
         n_param : integer  - Dimension of the difference matrix, overwrites
                              the specified dimension.
-        print_shape : bool - Prints the dimension of the penalty matrix.
         
         Returns:
         ------------
-        D1 : ndarray  - a matrix of size [k x k], 
-                        where the last row contains only zeros.
+        D1 : ndarray  - a matrix of size [k x k-1], 
         """
+        
         if n_param == 0:
             k = self.n_param
         else:
             k = n_param
-            self.n_param = n_param
         assert (type(k) is int), "Type of input k must be integer!"
         d = np.array([-1*np.ones(k), np.ones(k)])
         offset=[0,1]
         D1 = diags(d,offset, dtype=np.int).toarray()
-        D1 = D1[:-1]
-        if print_shape:
-            print("Shape of D1-Matrix: {}".format(D1.shape))
+        D1[-1:] = 0.
         self.D1 = D1
+        
         return D1
 
-    def D2_difference_matrix(self, n_param=0, print_shape=False):
-        """Calculated the second order difference matrix. 
+    def D2_difference_matrix(self, n_param=0):
+        """Create the second order difference matrix. 
 
         Parameters:
         ------------
         n_param : integer  - Dimension of the difference matrix, overwrites
                              the specified dimension.
-        print_shape : bool - Prints the dimension of the penalty matrix.
         
         Returns:
         ------------
-        D2 : ndarray  - a matrix of size [k x k], 
-                        where the last two row contains only zeros.
+        D2 : ndarray  - a matrix of size [k x k-2], 
         """
+        
         if n_param == 0:
             k = self.n_param
         else:
             k = n_param
-            self.n_param = n_param
         assert (type(k) is int), "Type of input k is not integer!"
         d = np.array([np.ones(k), -2*np.ones(k), np.ones(k)])
         offset=[0,1,2]
         D2 = diags(d,offset, dtype=np.int).toarray()
-        D2 = D2[:-2]
-        if print_shape:
-            print("Shape of D2-Matrix: {}".format(D2.shape))
+        D2[-2:] = 0.
         self.D2 = D2
+
         return D2
     
-    def Smoothness_matrix(self, n_param=0, print_shape=False):
-        """Calculated the smoothness penalty matrix. 
-
+    def Smoothness_matrix(self, n_param=0):
+        """Create the smoothness penalty matrix according to Hofner 2012.
+        
         Parameters:
-        ------------
+        -------------
         n_param : integer  - Dimension of the difference matrix, overwrites
                              the specified dimension.
-        print_shape : bool - Prints the dimension of the penalty matrix.
         
         Returns:
-        ------------
-        S : ndarray   - a matrix of size [k x k], 
-                        where the last two row contains only zeros.
+        -------------
+        S  : ndarray  -  Peak penalty matrix of size [k x k] of the form 
+                         |1 -2  1  0 0 . . . |
+                         |0  1 -2  1 0 . . . |
+                         |0  0  1 -2 1 . . . |
+                         |.  .  .  . . . . . |
+                         |.  .  .  . . . . . |
         """
+        
         if n_param == 0:
-            k = self.n_param
+            if type(self.n_param) is list:
+                k = int(np.product(self.n_param))
+            else:
+                k = self.n_param
         else:
-            k = n_param
-            self.n_param = n_param
-        assert (type(k) is int), "Type of input k is not integer!"
-        d = np.array([np.ones(k-1), -2*np.ones(k), np.ones(k-1)])
-        offset=[-1,0,1]
-        S = diags(d,offset, dtype=np.int).toarray()
-        #S[-2:] = 0.
-        if print_shape:
-            print("Shape of S-Matrix: {}".format(S.shape))
-        self.S = S
-        return S
+            if type(n_param) is list:
+                k = int(np.product(n_param))
+            else:
+                k = n_param
+                
+        assert (type(k) is int), f"Type of input k is not integer but {type(k)}"
+        s = np.array([np.ones(k), -2*np.ones(k), np.ones(k)])
+        offset=[0,1,2]
+        Smoothness = diags(s,offset, dtype=np.int).toarray()
+        self.Smoothness = Smoothness
+        
+        return Smoothness
+            
     
-    def Zero_matrix(self, n_param=0, print_shape=False):
-        """Matrix for no penalty. Just zeros!"""
+    def Peak_matrix(self, n_param=0, y_data=None, basis=None):
+        """Create the peak penalty matrix. Mon. inc. till the peak, then mon. dec.
+        
+        Parameters:
+        -------------
+        n_param : integer  - Dimension of the difference matrix, overwrites
+                             the specified dimension.
+        y_data  : array    - Array of data to find the peak location.
+        basis   : ndarray or None  - BSpline basis for the x,y data.
+                                     Only given, when Peak_matrix() is called outside of class Smooth()
+        
+        Returns:
+        -------------
+        P  : ndarray  -  Peak penalty matrix of size [k x k]
+        """
+        
+        assert (y_data is not None), "Include real y_data!!!"
         
         if n_param == 0:
             k = self.n_param
         else:
             k = n_param
-            self.n_param = n_param
-        Z = np.zeros((self.n_param, self.n_param))
-        return Z
+            
+        # find the peak index
+        peak, properties = find_peaks(x=y_data, distance=int(len(y_data)))
+        
+        # find idx of affected splines
+        border = np.argwhere(basis[peak,:] > 0)
+        left_border_spline_idx = int(border[0][1])
+        right_border_spline_idx = int(border[-1][1])
+        
+        # create inc, zero and dec penalty matrices for the corresponding ares
+        inc_matrix = self.D1_difference_matrix(n_param=left_border_spline_idx - 1)
+        plateu_matrix = np.zeros((len(border), len(border)), dtype=np.int)
+        dec_matrix = -1 * self.D1_difference_matrix(n_param= k - right_border_spline_idx)
 
-
-
-
+        self.Peak = block_diag(*[inc_matrix, plateu_matrix, dec_matrix])
+                
+        return self.Peak
+  
+    def Valley_matrix(self, n_param=0, y_data=None, basis=None):
+        """Create the valley penalty matrix. Mon. dec. till the valley, then mon. inc.
+        
+        Parameters:
+        -------------
+        n_param : integer  - Dimension of the difference matrix, overwrites
+                             the specified dimension.
+        y_data  : array    - Array of data to find the valley location.
+        basis   : ndarray or None  - BSpline basis for the x,y data.
+                                     Only given, when Valley_matrix() is called outside of class Smooth()
+        
+        Returns:
+        -------------
+        P  : ndarray  -  valley penalty matrix of size [k x k]
+        """
+        
+        assert (y_data is not None), "Include real y_data!!!"
+        
+        if n_param == 0:
+            k = self.n_param
+        else:
+            k = n_param
+            
+        # find the valley index
+        valley, properties = find_peaks(x=-y_data, distance=int(len(y_data)))
+        
+        # find idx of affected splines
+        border = np.argwhere(basis[valley,:] > 0)
+        left_border_spline_idx = int(border[0][1])
+        right_border_spline_idx = int(border[-1][1])
+        
+        # create dec, zero and inc penalty matrices for the corresponding ares
+        inc_matrix = -1* self.D1_difference_matrix(n_param=left_border_spline_idx - 1)
+        plateu_matrix = np.zeros((len(border), len(border)), dtype=np.int)
+        dec_matrix = self.D1_difference_matrix(n_param= k - right_border_spline_idx)
+        self.Valley = block_diag(*[inc_matrix, plateu_matrix, dec_matrix])
+        
+        return self.Valley
+        
 

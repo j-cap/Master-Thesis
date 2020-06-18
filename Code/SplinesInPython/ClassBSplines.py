@@ -129,14 +129,3 @@ class BSpline(PenaltyMatrix):
         fig.show()
         return
                 
-
-
-# In[ ]:
-
-
-#x = np.linspace(0,1,100)
-#b = BSpline()
-#b.b_spline_basis(x_basis=x, k=25)
-#print(len(b.knots))
-#b.plot_basis()
-

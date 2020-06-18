@@ -3,7 +3,7 @@
 
 # **Implementation of the 1D smooth for a BSpline basis with penalties**
 
-# In[27]:
+# In[4]:
 
 
 # convert jupyter notebook to python script
@@ -23,14 +23,19 @@ from TensorProductSplines import TensorProductSpline
 class Smooths(BSpline):
     """Implementation of the 1d smooth used in Additive Models."""
 
-    def __init__(self, x_data, n_param, penalty="smooth"):
+    def __init__(self, x_data, n_param, penalty="smooth", y_peak_or_valley=None, lam_c=None, lam_s=None):
         print("Type x_data: ", type(x_data))
         self.x_data = x_data
         self.n_param = n_param
         self.penalty = penalty
-        self.lam = None
+        self.lam_constraint = lam_c
+        self.lam_smooth = lam_s
         self.bspline = BSpline()
         self.b_spline_basis(x_basis=self.x_data, k=self.n_param)
+        
+        # sanity check
+        if penalty is "peak" or penalty is "valley":
+            assert (y_peak_or_valley is not None), "Include real y_data in Smooths()"
         
         if penalty is "inc":
             self.penalty_matrix = self.D1_difference_matrix()
@@ -41,23 +46,26 @@ class Smooths(BSpline):
         elif penalty is "conc":
             self.penalty_matrix = -1 * self.D2_difference_matrix()
         elif penalty is "smooth":
-            self.penalty_matrix = self.D2_difference_matrix()
+            self.penalty_matrix = self.Smoothness_matrix()
+        elif penalty is "peak":
+            self.penalty_matrix = self.Peak_matrix(basis=self.basis, y_data=y_peak_or_valley)
+        elif penalty is "valley":
+            self.penalty_matrix = self.Valley_matrix(basis=self.basis, y_data=y_peak_or_valley)
         else:
             print(f"Penalty {penalty} not implemented!")
     
 class TP_Smooths(TensorProductSpline):
     """Implementation of the 2d tensor product spline smooth in Additive Models."""
     
-    def __init__(self, x_data=None, n_param=(1,1), penalty="smooth"):
+    def __init__(self, x_data=None, n_param=(1,1), penalty="smooth", lam_c=None, lam_s=None):
         self.x_data = x_data
-        self.x1, self.x2 = None, None
+        self.x1, self.x2 = x_data[:,0], x_data[:,1]
         self.n_param = n_param
         self.penalty = penalty
-        self.lam = None
+        self.lam_constraint = lam_c
+        self.lam_smooth = lam_s
         self.tps = TensorProductSpline()
         self.tensor_product_spline_2d_basis(x_basis=self.x_data, k1=n_param[0], k2=n_param[1])
-
-        
         
         if penalty is "inc":
             self.penalty_matrix = self.D1_difference_matrix()
@@ -68,6 +76,8 @@ class TP_Smooths(TensorProductSpline):
         elif penalty is "conc":
             self.penalty_matrix = -1 * self.D2_difference_matrix()
         elif penalty is "smooth":
+            self.penalty_matrix = self.Smoothness_matrix()
+        elif penalty is "tps":
             self.penalty_matrix = self.D2_difference_matrix(
                 n_param=int(np.product(self.n_param)))
         else:

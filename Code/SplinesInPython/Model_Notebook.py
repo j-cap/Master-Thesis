@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[17]:
+# In[19]:
 
 
 # convert jupyter notebook to python script
 #get_ipython().system('jupyter nbconvert --to script Model_Notebook.ipynb')
 
 
-# In[1]:
+# In[14]:
 
 
 import plotly.express as px
@@ -18,6 +18,7 @@ np.random.seed(42)
 import pandas as pd
 from numpy.linalg import lstsq
 from scipy.linalg import block_diag
+from scipy.signal import find_peaks
 from sklearn.metrics import mean_squared_error
 
 
@@ -41,52 +42,74 @@ class Model(DiagnosticPlotter):
         """
         descr : tuple - ever entry describens one part of 
                         the model, e.g.
-                        descr =( ("s(0)"", "smooth", 10),
-                                 ("s(1)"", "inc", 10), 
-                                (t(0,1), 5) 
+                        descr =( ("s(1)", "smooth", 10, 1),
+                                 ("s(2)", "inc", 10, 1), 
+                                 ("t(1,2)", "tps", [5,5], 1) 
                                )
                         with the scheme: (type of smooth, number of knots)
-        
-        !!! currently only smooths with BSpline basis !!!
-        
+               
         TODO:
-            [ ] incorporate tensor product splines
+            [x] incorporate tensor product splines
         """
         self.description_str = descr
-        self.description_dict = { t: (p, n) for t, p, n  in self.description_str}
+        self.description_dict = {
+            t: {"constraint": p, "n_param": n, 
+                "lambda" : {"smoothness": l[0], "constraint": l[1]}
+               } 
+            for t, p, n, l  in self.description_str}
         self.smooths = None
         self.coef_ = None
+        self.y = None
+        self.X = None
         
-    def create_basis(self, X):
+    def create_basis(self, X, y=None):
         """Create the unpenalized BSpline basis for the data X.
         
         Parameters:
         ------------
         X : np.ndarray - data
         n_param : int  - number of parameters for the spline basis 
-        
+        y : np.ndarray or None  - For peak/valley penalty. 
+                                  Catches assertion if None and peak or valley penalty. 
         TODO:
             [x] include TPS
         
         """
-        #assert (len(self.description_str) == X.shape[1]),"Nr of smooths must match Nr of predictors!"
-       
-        # smooths without tensor product splines
-        #self.smooths = [ 
-        #    s(x_data=X[:, int(k[2])-1], 
-        #      n_param=int(v[1]), 
-        #      penalty=v[0]) for k, v in self.description_dict.items()
-        #]    
         
-        # smooths with tensor product splines
         self.smooths = list()
+        self.y = y.ravel()
+        
         for k,v in self.description_dict.items():
             if k[0] is "s":
-                self.smooths.append(s(x_data=X[:,int(k[2])-1], n_param=int(v[1]), penalty=v[0]))
+                self.smooths.append(
+                    s(
+                        x_data=X[:,int(k[2])-1], 
+                        n_param=v["n_param"], 
+                        penalty=v["constraint"], 
+                        y_peak_or_valley=y.ravel(),
+                        lam_s=v["lambda"]["smoothness"],
+                        lam_c=v["lambda"]["constraint"]
+                    )
+                )
             elif k[0] is "t":
-                self.smooths.append(tps(x_data=X[:, [int(k[2])-1, int(k[4])-1]], n_param=list(v[1]), penalty=v[0]))    
+                self.smooths.append(
+                    tps(
+                        x_data=X[:, [int(k[2])-1, int(k[4])-1]], 
+                        n_param=list(v["n_param"]), 
+                        penalty=v["constraint"],
+                        lam_s=v["lambda"]["smoothness"],
+                        lam_c=v["lambda"]["constraint"]
+                    )
+                )    
         
         self.basis = np.concatenate([smooth.basis for smooth in self.smooths], axis=1) 
+               
+        self.smoothness_penalty_list = [np.sqrt(s.lam_smooth) * s.Smoothness_matrix() for s in self.smooths]
+        self.smoothness_penalty_matrix = block_diag(*self.smoothness_penalty_list)
+
+        n_coef_list = [0] + [np.product(smooth.n_param) for smooth in self.smooths]
+        n_coef_cumsum = np.cumsum(n_coef_list)
+        self.coef_list = n_coef_cumsum
         
         return 
     
@@ -103,14 +126,17 @@ class Model(DiagnosticPlotter):
 
         Parameters:
         ---------------
-        X : np.ndarray  - data
+        beta_test  : array  - Test beta for sanity checks.
+        lam_c      : array  - Array of lambdas for the different constraints. 
         
         TODO:
             [x]  include the weights !!! 
-            [ ]  include TPS penalty
+            [x]  include TPS smoothnes penalty
+            [ ]  include TPS shape penalty
         
         """
         assert (self.smooths is not None), "Run Model.create_basis() first!"
+        assert (self.y is not None), "Run Model.fit(X,y) first!"
         
         if beta_test is None:
             beta_test = np.zeros(self.basis.shape[1])
@@ -124,9 +150,9 @@ class Model(DiagnosticPlotter):
             b = beta_test[idx:idx+n]
             
             D = smooth.penalty_matrix
-            V = check_constraint(beta=b, constraint=smooth.penalty)
-
-            penalty_matrix_list.append(D.T @ V @ D )
+            V = check_constraint(beta=b, constraint=smooth.penalty, y=self.y, basis=smooth.basis)
+            
+            penalty_matrix_list.append(smooth.lam_constraint * D.T @ V @ D )
             idx += n
             
         #self.penalty_matrix_list_and_weight = np.concatenate(penalty_matrix_list, axis=1)
@@ -163,9 +189,9 @@ class Model(DiagnosticPlotter):
             [ ] incorporate TPS in the iterative fit
         """
         
-        
+        self.X, self.y = X, y.ravel()
         # create the basis for the initial fit without penalties
-        self.create_basis(X)    
+        self.create_basis(X=X, y=y)    
 
         fitting = lstsq(a=self.basis, b=y, rcond=None)
         beta_0 = fitting[0].ravel()
@@ -190,12 +216,17 @@ class Model(DiagnosticPlotter):
             print("Least squares fit iteration ", i+1)
             B = self.basis
             D_c = self.penalty_block_matrix
+            D_s = self.smoothness_penalty_matrix
         
             BB = B.T @ B
-            DVD = lam_c * D_c.T @ D_c
             By = B.T @ y
+
+            # user defined constraint
+            DVD = D_c.T             
+            # smoothing constraint
+            DD = D_s.T @ D_s
             
-            beta_new = (np.linalg.pinv(BB + DVD) @ By).ravel()
+            beta_new = (np.linalg.pinv(BB + DD + DVD) @ By).ravel()
 
             self.calc_y_pred_and_mse(y=y)
             
@@ -285,33 +316,75 @@ class Model(DiagnosticPlotter):
         return
                         
     
-def check_constraint(beta, constraint, print_idx=False):
-    """Checks if beta fits the constraint."""
+def check_constraint(beta, constraint, print_idx=False, y=None, basis=None):
+    """Checks if beta fits the constraint.
+    
+    Parameters:
+    ---------------
+    beta  : array     - Array of coefficients to be tested against the constraint.
+    constraint : str  - Name of the constraint.
+    print_idx : bool  - .
+    y  : array        - Array of data for constraint "peak" and "valley".
+    basis : ndarray   - Matrix of the basis for constraint "peak" and "valley".
+    
+    Returns:
+    ---------------
+    V : ndarray       - Matrix with 1 where the constraint is violated, 0 else.
+    
+    """
     V = np.zeros((len(beta), len(beta)))
     b_diff = np.diff(beta)
     b_diff_diff = np.diff(b_diff)
     if constraint is "inc":
-        v = [0 if i > 0 else 1 for i in b_diff] 
+        v = [0 if i > 0 else 1 for i in b_diff] + [0]
     elif constraint is "dec":
-        v = [0 if i < 0 else 1 for i in b_diff] 
+        v = [0 if i < 0 else 1 for i in b_diff] + [0]
     elif constraint is "conv":
-        v = [0 if i > 0 else 1 for i in b_diff_diff]
+        v = [0 if i > 0 else 1 for i in b_diff_diff] + [0,0]
     elif constraint is "conc":
-        v = [0 if i < 0 else 1 for i in b_diff_diff]
+        v = [0 if i < 0 else 1 for i in b_diff_diff] + [0,0]
     elif constraint is "no":
-        v = np.zeros(len(beta))
+        v = list(np.zeros(len(beta), dtype=np.int))
     elif constraint is "smooth":
-        v = np.ones(len(b_diff_diff))
+        v = list(np.ones(len(b_diff_diff), dtype=np.int)) + [0,0]
+    elif constraint is "tps":
+        v = list(np.ones(len(beta), dtype=np.int))
+    elif constraint is "peak":
+        assert (y is not None), "Include y in check_constraints for penalty=[peak]"
+        assert (basis is not None), "Include basis in check_constraints for penalty=[peak]"
+
+        peak, properties = find_peaks(x=y, distance=int(len(y)))
+        border = np.argwhere(basis[peak,:] > 0)
+        left_border_spline_idx = int(border[0][1])
+        right_border_spline_idx = int(border[-1][1])
+        v_inc = [0 if i > 0 else 1 for i in b_diff[:left_border_spline_idx]]
+        v_dec = [0 if i < 0 else 1 for i in b_diff[right_border_spline_idx:]]
+        v_plateau = np.zeros(right_border_spline_idx - left_border_spline_idx + 1)
+        v = np.concatenate([v_inc, v_plateau, v_dec]) 
+        
+    elif constraint is "valley":
+        assert (y is not None), "Include y in check_constraints for penalty=[valley]"
+        assert (basis is not None), "Include basis in check_constraints for penalty=[peak]"
+
+        peak, properties = find_peaks(x= -1*y, distance=int(len(y)))
+        border = np.argwhere(basis[peak,:] > 0)
+        left_border_spline_idx = int(border[0][1])
+        right_border_spline_idx = int(border[-1][1])
+        v_dec = [0 if i < 0 else 1 for i in b_diff[:left_border_spline_idx:]]
+        v_inc = [0 if i > 0 else 1 for i in b_diff[right_border_spline_idx:]]
+        v_plateau = np.zeros(right_border_spline_idx - left_border_spline_idx + 1)
+        v = np.concatenate([v_dec, v_plateau, v_inc])
+    
     else:
         print(f"Constraint [{constraint}] not implemented!")
-        return
+        return    
     
     V = np.diag(v)
+    
     if print_idx:
         print("Constraint violated at the following indices: ")
         print([idx for idx, n in enumerate(v) if n == 1])
     return V
-    
 
 def check_constraint_full_model(model):
     """Checks if the coefficients in the model violate the given constraints.
@@ -325,14 +398,13 @@ def check_constraint_full_model(model):
     v : list   - list of boolean wheter the constraint is violated. 
     """
 
+    assert (model.coef_ is not None), "Please run Model.fit(X, y) first!"
     v = []
-    n_coef_list = np.array([smooth.n_param for smooth in model.smooths])
-    n_coef_cumsum = np.append(0, np.cumsum(n_coef_list))
-    
+
     for i, smooth in enumerate(model.smooths):
-        beta = model.coef_[n_coef_cumsum[i]:n_coef_cumsum[i+1]]
+        beta = model.coef_[model.coef_list[i]:model.coef_list[i+1]]
         penalty = smooth.penalty
-        V = check_constraint(beta, constraint=penalty)
+        V = check_constraint(beta, constraint=penalty, y=model.y, basis=model.basis)
         v += list(np.diag(V))
     
     return np.array(v, dtype=np.int)    
