@@ -92,7 +92,7 @@ class BSpline(PenaltyMatrix):
         xk = np.quantile(a=x, q=np.linspace(0,1,k - m))
         dx = xk[-1] - xk[-2]
         xk = np.insert(xk, 0, np.arange(xmin-(m+1)*dx, xmin, dx))    
-        xk = np.append(xk, np.arange(xmax+dx, xmax+(m+3)*dx, dx))
+        xk = np.append(xk, np.arange(xmax+dx, xmax+(m+2)*dx, dx))
         
         for i in range(k):
             X[:,i] = self.b_spline(k=xk, i=i, m=m)
@@ -102,7 +102,7 @@ class BSpline(PenaltyMatrix):
         self.n_param = int(X.shape[1])
         return 
     
-    def plot_basis(self, title=""):
+    def plot_basis(self, title="", show=True):
         """Plot the B-spline basis matrix and the knot loactions.
         They are indicated by a vertical line.
         """
@@ -120,8 +120,9 @@ class BSpline(PenaltyMatrix):
             fig.update_layout(title=title)
         else:
             fig.update_layout(title="B-Spline basis")
-        fig.show()
-        return
+        if show:
+            fig.show()
+        return fig
     
     def plot_fitted_b_spline(self):
         """Plot the computed LS-fit."""
