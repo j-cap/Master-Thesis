@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[10]:
 
 
 # convert jupyter notebook to python script
 #get_ipython().system('jupyter nbconvert --to script Model_Notebook.ipynb')
+
+
+# In[24]:
 
 
 import plotly.express as px
@@ -363,17 +366,17 @@ def check_constraint(beta, constraint, print_idx=False, y=None, basis=None):
     b_diff = np.diff(beta)
     b_diff_diff = np.diff(b_diff)
     if constraint is "inc":
-        v = [0 if i > 0 else 1 for i in b_diff] + [0]
+        v = [0 if i > 0 else 1 for i in b_diff] #+ [0]
     elif constraint is "dec":
-        v = [0 if i < 0 else 1 for i in b_diff] + [0]
+        v = [0 if i < 0 else 1 for i in b_diff] #+ [0]
     elif constraint is "conv":
-        v = [0 if i > 0 else 1 for i in b_diff_diff] + [0,0]
+        v = [0 if i > 0 else 1 for i in b_diff_diff] #+ [0,0]
     elif constraint is "conc":
-        v = [0 if i < 0 else 1 for i in b_diff_diff] + [0,0]
+        v = [0 if i < 0 else 1 for i in b_diff_diff] #+ [0,0]
     elif constraint is "no":
         v = list(np.zeros(len(beta), dtype=np.int))
     elif constraint is "smooth":
-        v = list(np.ones(len(b_diff_diff), dtype=np.int)) + [0,0]
+        v = list(np.ones(len(b_diff_diff), dtype=np.int)) #+ [0,0]
     elif constraint is "tps":
         v = list(np.ones(len(beta), dtype=np.int))
     elif constraint is "peak":
@@ -389,6 +392,9 @@ def check_constraint(beta, constraint, print_idx=False, y=None, basis=None):
         v_plateau = np.zeros(right_border_spline_idx - left_border_spline_idx + 1)
         v = np.concatenate([v_inc, v_plateau, v_dec]) 
         
+        # delete the last two entries
+        v = v[:-2]
+        
     elif constraint is "valley":
         assert (y is not None), "Include y in check_constraints for penalty=[valley]"
         assert (basis is not None), "Include basis in check_constraints for penalty=[peak]"
@@ -401,6 +407,9 @@ def check_constraint(beta, constraint, print_idx=False, y=None, basis=None):
         v_inc = [0 if i > 0 else 1 for i in b_diff[right_border_spline_idx:]]
         v_plateau = np.zeros(right_border_spline_idx - left_border_spline_idx + 1)
         v = np.concatenate([v_dec, v_plateau, v_inc])
+        
+        # delete the last two entries
+        v = v[:-2]
     
     else:
         print(f"Constraint [{constraint}] not implemented!")
@@ -467,6 +476,26 @@ def line_chart_of_coefficient_dataframe(df):
 
     fig.update_layout(title="Coefficients at different iterations",)
     fig.show()
+
+
+# In[26]:
+
+
+import numpy as np
+
+basis = np.random.randn(10,10)
+y = np.sin(np.linspace(0,1,10)*2*np.pi)
+beta_test = np.linspace(0,10,10)
+check_constraint(beta=beta_test, basis=basis, y=y, constraint="valley").shape
+
+
+# In[31]:
+
+
+r1 = np.random.randn(8,10)
+r2 = np.random.randn(8,8)
+
+(r1.T @ r2 @ r1).shape
 
 
 # In[ ]:

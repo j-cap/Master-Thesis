@@ -3,14 +3,14 @@
 
 # **Implementation of the penalty matrices**
 
-# In[1]:
+# In[38]:
 
 
 # convert jupyter notebook to python script
 #get_ipython().system('jupyter nbconvert --to script PenaltyMatrices.ipynb')
 
 
-# In[9]:
+# In[39]:
 
 
 import numpy as np
@@ -48,7 +48,7 @@ class PenaltyMatrix():
         d = np.array([-1*np.ones(k), np.ones(k)])
         offset=[0,1]
         D1 = diags(d,offset, dtype=np.int).toarray()
-        D1[-1:] = 0.
+        D1 = D1[:-1,:]
         self.D1 = D1
         
         return D1
@@ -74,7 +74,7 @@ class PenaltyMatrix():
         d = np.array([np.ones(k), -2*np.ones(k), np.ones(k)])
         offset=[0,1,2]
         D2 = diags(d,offset, dtype=np.int).toarray()
-        D2[-2:] = 0.
+        D2 = D2[:-2,:]
         self.D2 = D2
 
         return D2
@@ -96,25 +96,23 @@ class PenaltyMatrix():
                          |.  .  .  . . . . . |
                          |.  .  .  . . . . . |
         """
-        
         if n_param == 0:
-            if type(self.n_param) is list:
-                k = int(np.product(self.n_param))
-            else:
-                k = self.n_param
+            k = self.n_param
         else:
-            if type(n_param) is list:
-                k = int(np.product(n_param))
-            else:
+            if type(n_param) is int:
                 k = n_param
-                
-        assert (type(k) is int), f"Type of input k is not integer but {type(k)}"
+            elif type(n_param) is list:
+                k = int(np.product(n_param))
+            
+        assert (type(k) is int), "Type of input k is not integer!"
         s = np.array([np.ones(k), -2*np.ones(k), np.ones(k)])
         offset=[0,1,2]
-        Smoothness = diags(s,offset, dtype=np.int).toarray()
-        self.Smoothness = Smoothness
+        S = diags(s,offset, dtype=np.int).toarray()
+        S = S[:-2,:]
         
-        return Smoothness
+        self.Smoothness = S
+        
+        return S
             
     
     def Peak_matrix(self, n_param=0, y_data=None, basis=None):
@@ -134,6 +132,7 @@ class PenaltyMatrix():
         """
         
         assert (y_data is not None), "Include real y_data!!!"
+        assert (basis is not None), "Include basis!"
         
         if n_param == 0:
             k = self.n_param
@@ -174,6 +173,7 @@ class PenaltyMatrix():
         """
         
         assert (y_data is not None), "Include real y_data!!!"
+        assert (basis is not None), "Include basis!"
         
         if n_param == 0:
             k = self.n_param
@@ -196,4 +196,25 @@ class PenaltyMatrix():
         
         return self.Valley
         
+
+
+# In[46]:
+
+
+def test():
+
+    # generate data
+    from Smooth import Smooths
+    np.random.seed(42)
+    x = np.linspace(-3,3,1000)
+    y = np.exp(x**2) + 0.1*np.random.randn(len(x))
+    s = Smooths(x_data=x, n_param=20, penalty="valley", y_peak_or_valley=y)
+
+    # test Penalty_matrix
+    P = PenaltyMatrix()
+    print("D1 Difference matrix shape: ", P.D1_difference_matrix(n_param=10).shape)
+    print("D2 Difference matrix shape: ", P.D2_difference_matrix(n_param=10).shape)
+    print("Smoothness matrix shape: ", P.Smoothness_matrix(n_param=10).shape)
+    print("Peak matrix shape: ", P.Peak_matrix(n_param=10, y_data=y, basis=s.basis).shape)
+    print("Valley matrix shape: \n", P.Valley_matrix(n_param=10, y_data=-y, basis=s.basis))
 
