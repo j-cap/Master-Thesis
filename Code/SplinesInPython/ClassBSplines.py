@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[23]:
+# In[24]:
 
 
 # convert jupyter notebook to python script
@@ -17,8 +17,7 @@ import plotly.graph_objects as go
 from numpy.linalg import lstsq
 from scipy.sparse import diags, kron
 
-
-from Helper import addVertLinePlotly
+from Code_snippets import addVertLinePlotly
 from PenaltyMatrices import PenaltyMatrix
 
 class BSpline(PenaltyMatrix):
@@ -80,10 +79,8 @@ class BSpline(PenaltyMatrix):
                 return
         else:
             print("'x' from initialization is used for the spline basis!")
-        
+        self.x.sort()
         x = self.x
-        x.sort()
-        print("type x: ", type(x))
         assert (type(x) is np.ndarray), "Type of x is not ndarray!"
         n = len(x) # n = number of data
         X = np.zeros((n, k))
@@ -92,7 +89,7 @@ class BSpline(PenaltyMatrix):
         xk = np.quantile(a=x, q=np.linspace(0,1,k - m))
         dx = xk[-1] - xk[-2]
         xk = np.insert(xk, 0, np.arange(xmin-(m+1)*dx, xmin, dx))    
-        xk = np.append(xk, np.arange(xmax+dx, xmax+(m+2)*dx, dx))
+        xk = np.append(xk, np.arange(xmax+dx, xmax+(m+3)*dx, dx))
         
         for i in range(k):
             X[:,i] = self.b_spline(k=xk, i=i, m=m)
@@ -102,7 +99,7 @@ class BSpline(PenaltyMatrix):
         self.n_param = int(X.shape[1])
         return 
     
-    def plot_basis(self, title="", show=True):
+    def plot_basis(self, title=""):
         """Plot the B-spline basis matrix and the knot loactions.
         They are indicated by a vertical line.
         """
@@ -120,9 +117,8 @@ class BSpline(PenaltyMatrix):
             fig.update_layout(title=title)
         else:
             fig.update_layout(title="B-Spline basis")
-        if show:
-            fig.show()
-        return fig
+        fig.show()
+        return
     
     def plot_fitted_b_spline(self):
         """Plot the computed LS-fit."""

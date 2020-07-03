@@ -7,16 +7,27 @@
 # - Fast calculations
 # - Test
 
-# In[ ]:
+# In[8]:
 
 
 # convert jupyter notebook to python script
 #get_ipython().system('jupyter nbconvert --to script Code_snippets.ipynb')
 
 
-# In[8]:
+# In[1]:
 
-# In[6]:
+
+# add a vertical line to a plotly plot
+import plotly.graph_objects as go
+
+def addVertLinePlotly(fig, x0=0, y0=0, y1=1):
+    """ plots a vertical line to the given figure at position x"""
+    fig.add_shape(dict(type="line", x0=x0, x1=x0, y0=y0, y1=1.2*y1, 
+                       line=dict(color="LightSeaGreen", width=1)))
+    return
+
+
+# In[5]:
 
 
 def find_peak_and_basis(x=None, y=None):
@@ -25,8 +36,7 @@ def find_peak_and_basis(x=None, y=None):
     import plotly.express as px
     from scipy.signal import find_peaks
     from Smooth import Smooths
-    from Helper import addVertLinePlotly
-
+    
     np.random.seed(42)
 
     if x is None and y is None:
@@ -61,6 +71,17 @@ def find_peak_and_basis(x=None, y=None):
 
     )   
     fig.show()
+
+
+# In[6]:
+
+
+def test__find_peak_and_pasis():
+    import numpy as np
+    x = np.linspace(-3,3,1000)
+    y = np.sin(x) + 0.1*np.random.randn(len(x))
+
+    find_peak_and_basis(x=x, y=y)
 
 
 # In[ ]:
