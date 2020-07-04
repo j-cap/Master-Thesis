@@ -117,4 +117,14 @@ class B_spline(PenaltyMatrix):
         fig.show()
         return
                     
+<<<<<<< HEAD
         
+=======
+
+
+# In[21]:
+
+
+
+
+>>>>>>> 2315986091bc2e2a4b015ec4bab177fe161d0bd4
