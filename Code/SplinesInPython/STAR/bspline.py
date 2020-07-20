@@ -14,8 +14,8 @@
 import numpy as np
 import plotly.graph_objects as go
 
-from Code_snippets import addVertLinePlotly
-from penalty_matrix import PenaltyMatrix
+from .Code_snippets import addVertLinePlotly
+from .penalty_matrix import PenaltyMatrix
 
 class B_spline(PenaltyMatrix):
     
@@ -117,14 +117,3 @@ class B_spline(PenaltyMatrix):
         fig.show()
         return
                     
-<<<<<<< HEAD
-        
-=======
-
-
-# In[21]:
-
-
-
-
->>>>>>> 2315986091bc2e2a4b015ec4bab177fe161d0bd4

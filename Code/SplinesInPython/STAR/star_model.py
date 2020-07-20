@@ -19,11 +19,11 @@ from scipy.linalg import block_diag
 from scipy.signal import find_peaks
 from sklearn.metrics import mean_squared_error
 
-from smooth import Smooths as s
-from smooth import TensorProductSmooths as tps
-from tensorproductspline import TensorProductSpline as t
-from bspline import B_spline as b
-from penalty_matrix import PenaltyMatrix
+from .smooth import Smooths as s
+from .smooth import TensorProductSmooths as tps
+from .tensorproductspline import TensorProductSpline as t
+from .bspline import B_spline as b
+from .penalty_matrix import PenaltyMatrix
 
 class StarModel():
     

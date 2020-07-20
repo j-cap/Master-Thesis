@@ -19,8 +19,8 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from scipy.sparse import kron
 
-from bspline import B_spline
-from penalty_matrix import PenaltyMatrix
+from .bspline import B_spline
+from .penalty_matrix import PenaltyMatrix
 
 
 class TensorProductSpline(B_spline, PenaltyMatrix):

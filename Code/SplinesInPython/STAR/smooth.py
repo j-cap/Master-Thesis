@@ -15,8 +15,8 @@
 
 import numpy as np
 
-from bspline import B_spline
-from tensorproductspline import TensorProductSpline
+from .bspline import B_spline
+from .tensorproductspline import TensorProductSpline
 
 class Smooths(B_spline):
     """Implementation of the 1d smooth used in Additive Models."""
