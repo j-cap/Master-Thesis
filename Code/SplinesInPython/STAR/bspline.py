@@ -97,7 +97,7 @@ class B_spline(PenaltyMatrix):
         return 
     
     def plot_basis(self, title=""):
-        """Plot the B-spline basis matrix and the knot loactions.
+        """Plot the B-spline basis matrix and the knot locations.
         They are indicated by a vertical line.
         """
         if self.basis is None or self.knots is None:
