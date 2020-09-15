@@ -17,7 +17,7 @@
 \usepackage{csvsimple} % automatic table generation from csv files
 \usepackage{comment}
 
-\title{Chapter 3 - Solution Approach}
+\title{Chapter 3 - Solution Approach DRAFT}
 \author{Weber Jakob}
 
 \begin{document}
@@ -56,14 +56,13 @@
 	
 	The difference operator $\Delta^d$ is defined by
 		
-	\begin{equation}
+	
 	\begin{align*}
 		\Delta^1 \beta_j &= \beta_j - \beta_{j-1} \\
 		\Delta^2 \beta_j &= \Delta^1(\Delta^1 \beta_j) = \beta_j - 2\beta_{j-1} + \beta_{j-2} \\ 
 	  	\vdots \\ 
 	  	\Delta^d \beta_j &= \Delta^1(...(\Delta^1 \beta_j))
 	\end{align*}
-	\end{equation}
 	
 	and in matrix notation for order $d=1$
 	
@@ -286,11 +285,11 @@
 	
 	for $x_1 \in [0,1]$ and $x_2 \in [0,1]$ and random gaussian noise with $\sigma_{noise} = 0.01$. We therefore expect a peak in the data. Using this knowledge, we create a model using the following smooths:
 	
-	\begin{list}{label}{}
-	- B-spline smooth $s_1(x_1)$ using $k_{x_1} = 20$, $c = \text{peak}$, $\lambda_s = 1$ and $\lambda_c = 1000$
-	- B-spline smooth $s_2(x_2)$ using $k_{x_2} = 20$, $c = \text{peak}$, $\lambda_s = 1$ and $\lambda_c = 1000$
-	- Tensor-product smooth $t_{1,2}(x_1, x_2)$ using $k_{x_1} = k_{x_2} = 10$, $c = \text{smoothness}$, $\lambda_s = 1$, $\lambda_c=1000$	
-	\end{list}
+	\begin{itemize}
+		\item B-spline smooth $s_1(x_1)$ using $k_{x_1} = 20$, $c = \text{peak}$, $\lambda_s = 1$ and $\lambda_c = 1000$
+		\item B-spline smooth $s_2(x_2)$ using $k_{x_2} = 20$, $c = \text{peak}$, $\lambda_s = 1$ and $\lambda_c = 1000$
+		\item Tensor-product smooth $t_{1,2}(x_1, x_2)$ using $k_{x_1} = k_{x_2} = 10$, $c = \text{smoothness}$, $\lambda_s = 1$, $\lambda_c=1000$	
+	\end{itemize}
 		
 	The fit for this model is shown in the following figure. The model fits the data quite well and holds the specified constraints.
 		
