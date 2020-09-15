@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.2.25)  14 SEP 2020 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.2.25)  15 SEP 2020 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,7 +360,21 @@ File: thesisplots/smooth_wiggly_plus_basis.pdf Graphic file (type pdf)
 Package pdftex.def Info: thesisplots/smooth_wiggly_plus_basis.pdf  used on inpu
 t line 50.
 (pdftex.def)             Requested size: 345.0pt x 183.7034pt.
- [2 <./thesisplots/smooth_plus_basis.pdf
+
+
+! Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 	\end{align*}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[2 <./thesisplots/smooth_plus_basis.pdf
 
 pdfTeX warning: pdflatex.exe (file ./thesisplots/smooth_plus_basis.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
@@ -374,7 +388,7 @@ array>); ignored.
 <thesisplots/p_splines.pdf, id=41, 1449.49525pt x 817.13275pt>
 File: thesisplots/p_splines.pdf Graphic file (type pdf)
 <use thesisplots/p_splines.pdf>
-Package pdftex.def Info: thesisplots/p_splines.pdf  used on input line 87.
+Package pdftex.def Info: thesisplots/p_splines.pdf  used on input line 104.
 (pdftex.def)             Requested size: 345.0pt x 194.4825pt.
  [3] [4 <./thesisplots/p_splines.pdf
 
@@ -385,7 +399,7 @@ d.
 <thesisplots/inc_spline.pdf, id=60, 1449.49525pt x 817.13275pt>
 File: thesisplots/inc_spline.pdf Graphic file (type pdf)
 <use thesisplots/inc_spline.pdf>
-Package pdftex.def Info: thesisplots/inc_spline.pdf  used on input line 120.
+Package pdftex.def Info: thesisplots/inc_spline.pdf  used on input line 137.
 (pdftex.def)             Requested size: 345.0pt x 194.4825pt.
  [5 <./thesisplots/inc_spline.pdf
 
@@ -393,46 +407,59 @@ pdfTeX warning: pdflatex.exe (file ./thesisplots/inc_spline.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
 >] [6] [7] [8] [9]
-<thesisplots/2d_function.png, id=91, 903.375pt x 1003.75pt>
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 	\end{list}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<thesisplots/2d_function.png, id=92, 903.375pt x 1003.75pt>
 File: thesisplots/2d_function.png Graphic file (type png)
 <use thesisplots/2d_function.png>
-Package pdftex.def Info: thesisplots/2d_function.png  used on input line 271.
+Package pdftex.def Info: thesisplots/2d_function.png  used on input line 299.
 (pdftex.def)             Requested size: 345.0pt x 383.34346pt.
- [10 <./thesisplots/2d_function.png>]
+[10]
 <thesisplots/2d_function_partition.png, id=97, 1003.75pt x 803.0pt>
 File: thesisplots/2d_function_partition.png Graphic file (type png)
 <use thesisplots/2d_function_partition.png>
 Package pdftex.def Info: thesisplots/2d_function_partition.png  used on input l
-ine 280.
+ine 308.
 (pdftex.def)             Requested size: 345.0pt x 276.00607pt.
- [11 <./thesisplots/2d_function_partition.png>] (./chapter3.aux) ) 
+ [11 <./thesisplots/2d_function.png>] [12 <./thesisplots/2d_function_partition.
+png>] (./chapter3.aux) ) 
 Here is how much of TeX's memory you used:
- 6391 strings out of 481228
- 104788 string characters out of 5921397
+ 6393 strings out of 481228
+ 104809 string characters out of 5921397
  356718 words of memory out of 5000000
- 21549 multiletter control sequences out of 15000+600000
- 542650 words of font info for 63 fonts, out of 8000000 for 9000
+ 21550 multiletter control sequences out of 15000+600000
+ 542996 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,15n,48p,794b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pf
-b><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2019/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb>
-Output written on chapter3.pdf (11 pages, 639936 bytes).
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c
+:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on chapter3.pdf (12 pages, 649158 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 158 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

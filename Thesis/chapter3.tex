@@ -55,16 +55,33 @@
 	To prevent this, Eilers and Marx (1996) introduced the P-splines, which include a penalty based on the squared finite difference of order $d$ of adjacent coefficients. If $d=2$, this qualitatively  corresponds to a penalized second derivative, which itself is a measure for function wiggliness.
 	
 	The difference operator $\Delta^d$ is defined by
-	
-	$$\Delta^1 \beta_j = \beta_j - \beta_{j-1} \\ \Delta^2 \beta_j = \Delta^1(\Delta^1 \beta_j) = \beta_j - 2\beta_{j-1} + \beta_{j-2} \\ \vdots \\ \Delta^d \beta_j = \Delta^1(...(\Delta^1 \beta_j))$$
+		
+	\begin{equation}
+	\begin{align*}
+		\Delta^1 \beta_j &= \beta_j - \beta_{j-1} \\
+		\Delta^2 \beta_j &= \Delta^1(\Delta^1 \beta_j) = \beta_j - 2\beta_{j-1} + \beta_{j-2} \\ 
+	  	\vdots \\ 
+	  	\Delta^d \beta_j &= \Delta^1(...(\Delta^1 \beta_j))
+	\end{align*}
+	\end{equation}
 	
 	and in matrix notation for order $d=1$
 	
-	$$D_1 = \begin{pmatrix} -1& 1 &  & &    \\  & -1 & 1 & &  \\  &  & \ddots & \ddots  & \\ & & & -1 & 1 \end{pmatrix} \in R^{(k-1)\times k}$$
+	$$D_1 = \begin{pmatrix} 
+					-1& 1 &  & & \\  
+					-1& 1 &  & & \\  
+					  &   & \ddots & \ddots & \\ 
+					  &   &  & -1 & 1 
+			\end{pmatrix} \in R^{k-1\times k}$$
 	
 	and order $d=2$
 	
-	$$D_2 = \begin{pmatrix} 1& -2& 1& &    \\  & 1 & -2 & 1&  \\  &  & \ddots & \ddots  & \ddots \\ & & & 1 & -2 & 1 \end{pmatrix} \in R^{(k-2)\times k}$$
+	$$D_2 = \begin{pmatrix} 
+				1& -2& 1& &    \\  
+				 & 1 & -2 & 1& \\ 
+				 &  & \ddots & \ddots  & \ddots \\ 
+				 & & & 1 & -2 & 1 
+			\end{pmatrix} \in R^{k-2\times k}$$
 	
 	Using the finite difference operator of order $d$, the least squares objective function is expanded to the penalized least squares objective function given by
 	
@@ -76,7 +93,7 @@
 	
 	$$\hat \beta_{PLS} = (X^TX + \lambda_s D_d^TD_d)^{-1} X^T y.$$
 	
-	For small values $\lambda_s \leftarrow 0$, the penalized least squares estimate $\hat \beta_{PLS}$ approaches the least squares estimate $\hat \beta_{LS}$, while for large values $\lambda_s >> 0$, the fitted function shows the behavior of a polynomial with $d-1$ degrees of freedom. For example, using $d=2$ and a large smoothing parameter $\lambda_s$ is leading to a linear function, while using $d=1$ would lead to a constant function.
+	For small values $\lambda_s \rightarrow 0$, the penalized least squares estimate $\hat \beta_{PLS}$ approaches the least squares estimate $\hat \beta_{LS}$, while for large values $\lambda_s >> 0$, the fitted function shows the behavior of a polynomial with $d-1$ degrees of freedom. For example, using $d=2$ and a large smoothing parameter $\lambda_s$ is leading to a linear function, while using $d=1$ would lead to a constant function.
 	
 	The following figure shows the behavior of P-splines for several values of the smoothing parameter $\lambda_s = \{10^{-2}, 10^{0},10^{2},10^{6}\}.$  As the value of $\lambda_s$ gets larger, the fitted curve is more smooth and finally approaches a straight line.
 	
@@ -89,7 +106,7 @@
 		\label{fig:pspline}
 	\end{figure}
 			
-	A priori knowledge can now be incorporated by an iterative approach using a sophisticated choice of the penalty matrix $D$ and the use of a weight matrix $V$. The scheme is depicted using the user defined constraint of monotonic increasing behavior.  
+	A priori knowledge can now be incorporated by an iterative approach using a sophisticated choice of the penalty matrix $D_c$ and the use of a weight matrix $V$. The scheme is depicted using the user defined constraint of monotonic increasing behavior.  
 	
 	Monotonic increasing behavior can be obtained using the $D_1$ matrix as penalty matrix and a diagonal weight matrix $V$, where the diagonal elements $v_j$ are given by
 	
@@ -105,11 +122,11 @@
 	
 	where $\mathcal J_c(\beta; c) = \beta^T D_c^T V D_c \beta$ using the user defined penalty matrix $D_c$ and $\lambda_c$ as parameter which determines the influence of the penalty. The parameter $\lambda_c$ is generally set quite large, i.e. $\lambda_c > 10^4$, to enforce the user defined constraint. 
 	
-	Again, an explicit formula for the constraint penalized least squares estimate can be given
+	Again, an explicit formula for the constraint penalized least squares estimate can be given as
 	
 	$$\hat \beta_{PLS,c} = (X^TX + \lambda_s D_d^T D_d  + \lambda_c D_c^T V D_c)^{-1} X^T y.$$
 	
-	An initial estimate $\hat \beta_{init}$ is needed to compute the weight matrix. The unconstraint least squares estimate $\hat \beta_{LS}$ is a valid candidate. Now the calculation of the constraint penalized least squares estimate $\hat \beta_{PLS, c}$ and the calculation of the weight matrix $V$ is iterated until no more changes in the weight matrix $V$ appear. This scheme is called penalized iteratively-reweighted least squares and is abbreviated by *PIRLS.* 
+	An initial estimate $\hat \beta_{init}$ is needed to compute the weight matrix. The unconstraint least squares estimate $\hat \beta_{LS}$ is a valid candidate. Now the calculation of the constraint penalized least squares estimate $\hat \beta_{PLS, c}$ and the calculation of the weight matrix $V$ is iterated until no more changes in the weight matrix $V$ appear. This scheme is called penalized iteratively-reweighted least squares and is abbreviated by \emph{PIRLS}. 
 	
 	The parameter $\lambda_c$ plays a similar role as the smoothing parameter $\lambda_s$, but should be set orders of magnitude higher than $\lambda_s$ to enforce the user defined constraint. 
 	
@@ -122,30 +139,35 @@
 		\label{fig:incspline}
 	\end{figure}	
 
-	This shows, that the incorporation of a priori knowledge in the fitting process using B-splines is in principle possible using a sophisticated choice of the penalty matrix and an iterative fitting approach using penalized iteratively-reweighted least squares. It is important to note that this approach incorporates the a priori knowledge as soft constraints. Therefore, no guarantee can be given that the smooth holds the constraint for every possible input. 
+	This shows, that the incorporation of a priori knowledge in the fitting process using B-splines is in principle possible using a sophisticated choice of the penalty matrix $D_c$ and an iterative fitting approach using penalized iteratively-reweighted least squares. It is important to note that this approach incorporates the a priori knowledge as soft constraints. Therefore, no guarantee can be given that the fit holds the constraint for every possible input. 
 
 						
 	\section{Penalty Matrices}
 	
 	
-	As stated before, a priori knowledge can be introduced by the choice of the penalty matrix $D_c$ and the weight matrix $V$. It now follows a description of the penalty matrices, which are used to enforce different behavior. 
+	As stated before, a priori knowledge can be introduced by the choice of the penalty matrix $D_c$ and the weight matrix $V$. It now follows a description of the different penalty matrices, which are used to enforce a priori known behavior. 
 	
 	
 	\subsection{Monotonicity}
 	
 	The penalty matrix enforcing monotonic behavior is given by the use of the first order difference operator $\Delta^1$. In matrix form for $k$ splines, it is given as
 	
-	$$D_{monoton} = \begin{pmatrix} -1 & 1  \\ & -1 & 1 \\ & & \ddots & \ddots  \end{pmatrix} \in \mathbb{R}^{k-1, k}.$$
+	$$D_{monoton} = \begin{pmatrix} -1 & 1  \\ 
+									& -1 & 1 \\ 
+									& & \ddots & \ddots  
+				    \end{pmatrix} \in \mathbb{R}^{k-1 \times k}.$$
 	
 	The difference between monotonic increasing and decreasing behavior is controlled by the weight matrix $V$. For increasing behavior, the weight matrix $V$ is given by the weights $v_j$ according to
 	
 	$$v_j = \begin{cases} 0, \quad \text{if} \ \Delta^1\beta_j > 0 \\ 
-	1, \quad \text{if} \ \Delta^1\beta_j \le 0.\end{cases}$$
+					      1, \quad \text{if} \ \Delta^1\beta_j \le 0.
+			\end{cases}$$
 	
 	For decreasing behavior, the weight matrix $V$ is given by the weights $v_j$ according to
 	
 	$$v_j = \begin{cases} 0, \quad \text{if} \ \Delta^1\beta_j < 0 \\ 
-	1, \quad \text{if} \ \Delta^1\beta_j \ge 0.\end{cases}$$
+						  1, \quad \text{if} \ \Delta^1\beta_j \ge 0.
+			\end{cases}$$
 	
 	This states, that the penalty term is only applied if adjacent coefficients $\beta_{j-1}$ and $\beta_j$ are increasing or decreasing, respectively. 
 	
@@ -165,9 +187,14 @@
 	
 	\subsection{Unimodality}
 	
-	The penalty matrix enforcing unimodal behavior can be constructed using the first order difference operator $\Delta^1$. The weight matrix $V$ now has a special structure. We now assume that there is a peak in the data and we therefore want to constrain the fit to include a peak. We then need to find the index $i_{peak}$ of the spline, which has the maximal value around this  peak. The index $i_{peak}$ is now used as splitting point for the weight matrix $V$. All coefficients $i$ for $i < i_{peak}$ are constraint to be monotonic increasing, while all coefficients $i$ for $i > i_{peak}$ are constraint to be monotonic decreasing. The coefficent at position $i_{peak}$ stays unconstraint. [**Eilers 2005]** The unimodal penalty matrix has the form 
+	The penalty matrix enforcing unimodal behavior can be constructed using the first order difference operator $\Delta^1$. The weight matrix $V$ now has a special structure. We assume that there is a peak in the data and therefore want to constrain the fit to include a peak. We then need to find the index $i_{peak}$ of the spline, which has the maximal value around this  peak. The index $i_{peak}$ is now used as splitting point for the weight matrix $V$. All coefficients $i$ for $i < i_{peak}$ are constraint to be monotonic increasing, while all coefficients $i$ for $i > i_{peak}$ are constraint to be monotonic decreasing. The coefficient at position $i_{peak}$ stays unconstraint.  The unimodal penalty matrix has the form 
 	
-	$$D^{unimodal} = \begin{pmatrix} -1 & 1 \\ & \ddots & \ddots  \\ & & 0 & 0 \\ & & & -1 & 1 \\ & & & &  \ddots & \ddots \end{pmatrix} \in R^{k-1 \times k}$$
+	$$D_{unimodal} = \begin{pmatrix} -1 & 1 \\ 
+									    & \ddots & \ddots  \\
+									    & & 0 & 0 \\ 
+									    & & & -1 & 1 \\
+									    & & & &  \ddots & \ddots 
+					 \end{pmatrix} \in R^{k-1 \times k}$$
 	
 	The weights $v_j$ have the following structure:
 	
@@ -175,7 +202,7 @@
 	1, \quad \text{if} \ \Delta^1\beta_j \le 0.\end{cases}, \quad \text{if} \ j < i_{peak} \\ \begin{cases} 0, \quad \text{if} \ \Delta^1\beta_j < 0 \\ 
 	1, \quad \text{if} \ \Delta^1\beta_j \ge 0.\end{cases}  , \quad \text{if} \ j > i_ {peak}  \end{cases}$$
 	
-	When assuming a valley in the data, the same approach as above can easily be used by multiplying the date with $-1$ or by always doing the inverse, i.e. finding the spline index of the valley $i_{valley}$, then constraining all splines for $i < i_{valley}$ to be monotonic decreasing and all splines for $i > i_{valley}$ to be monotonic increasing. The coefficient at position $i_{valley}$ stays unconstraint. The weights $v_j$ for the weight matrix are the given by
+	When assuming a valley in the data, the same approach as above can easily be used by multiplying the data with $-1$ or by always doing the inverse operation, i.e. finding the spline index of the valley $i_{valley}$, then constraining all splines for $i < i_{valley}$ to be monotonic decreasing and all splines for $i > i_{valley}$ to be monotonic increasing. The coefficient at position $i_{valley}$ stays unconstraint. The weights $v_j$ for the weight matrix are the given by
 	
 	$$v_j = \begin{cases}\begin{cases} 0, \quad \text{if} \ \Delta^1\beta_j < 0 \\ 
 	1, \quad \text{if} \ \Delta^1\beta_j \ge 0.\end{cases}  , \quad \text{if} \ j < i_{valley}  \\ \begin{cases} 0, \quad \text{if} \ \Delta^1\beta_j > 0 \\ 
@@ -185,39 +212,39 @@
 	
 	The penalty and weight matrices for the multi-modality constraint can be constructed using the scheme of unimodal constraints for each mode. It is important to find the right peak or valley points, which can be difficult with noisy data. 
 	
-	**Penalty Matrices for Tensor-Product Splines**
+	\subsection{Penalty Matrices for Tensor-Product Splines}
 	
 	The tensor-product spline basis is given by the Kronecker product of two B-spline bases, as depicted in Chapter *Tensor-product splines.* To extend the framework of penalty matrices to two dimensions and tensor-product splines, we again use the concept of the Kronecker product. 
 	
 	We want to penalized adjacent coefficient differences, but this time, in two dimensions. Therefore, an appropriate spatial neighbourhood needs to be defined. An example for such neighbourhood for the coefficient $\beta_{jk}$ is given by the coefficients left and right, i.e. $\beta_{j-1, k}$ and $\beta_{j+1, k}$, and the coefficients above and below, i.e. $\beta_{j, k-1}$ and $\beta_{j,k+1}$. 
 	
-	Let us now define a penalty matrix of order $d$ for each dimension and denote them by $D_1^d$ for dimension $1$ and $D_2^d$ for dimension. Using the Kronecker product, we generate the expanded difference matrix $D_{1, exp}^d = I_{d_2} \otimes D_1^d$ for $I_{d_2}$ as identity matrix of dimensions $d_2 \times d_2$ and $D_{2,exp}^d = D_2^d \otimes I_{d_1}$ for $I_{d_1}$ as identiy matrix of dimensions $d_1 \times d_1$. 
+	Let us now define a penalty matrix of order $d$ for each dimension and denote them by $D^1_d$ for dimension $1$ and $D^2_d$ for dimension. Using the Kronecker product, we generate the expanded difference matrix $D_{d, exp}^1 = I_{d_2} \otimes D^1_d$ for $I_{d_2}$ as identity matrix of dimensions $d_2 \times d_2$ and $D_{d,exp}^2 = D^2_d \otimes I_{d_1}$ for $I_{d_1}$ as identity matrix of dimensions $d_1 \times d_1$. 
 	
-	Row-wise differences of order $d$ and column-wise differences of order $d$ are now obtained by applying the expanded difference matrix $D_{1,exp}^d$ and $D_{2,exp}^d$ to the coefficient vector $\beta$, respectively. 
+	Row-wise differences of order $d$ and column-wise differences of order $d$ are now obtained by applying the expanded difference matrix $D_{d,exp}^1$ and $D_{d,exp}^2$ to the coefficient vector $\beta$, respectively. 
 	
 	Using these concepts, in principle every possible pair of one dimensional constraints can now be constructed, e.g. unimodality in two dimensions would be obtained using the unimodal penalty matrix depicted above for each dimension. The penalty term then has the form
 	
-	$$\mathcal J_c(\beta; d) = \beta^T D{^c_{1,exp}}^T V_1 D_{1,exp}^c \beta + \beta^T D{^c_{2,exp}}^T V_2D_{2,exp}^c \beta$$
+	$$\mathcal J_c(\beta; d) = \beta^T D{^1_{c,exp}}^T V_1 D_{c,exp}^1 \beta + \beta^T D{^2_{c,exp}}^T V_2 D_{c,exp}^2 \beta$$
 	
-	with $D_{1,exp}^c = I_{d_2} \otimes D_1^{unimodal}$ and $D_{2,exp}^c = D_2^{unimodal} \otimes I_{d_1}$ as individual penalty terms and $V_1$ and $V_2$ as weight matrices. The same constraint penalized least squares objective function can now be used to estimate the coefficients $\beta_{PLS,c}$.
+	with $D_{c,exp}^1 = I_{d_2} \otimes D_{unimodal}^1$ and $D_{c,exp}^2 = D_{unimodal}^2 \otimes I_{d_1}$ as individual penalty terms and $V_1$ and $V_2$ as weight matrices. The same constraint penalized least squares objective function can now be used to estimate the coefficients $\beta_{PLS,c}$.
 	
 	\section{Other constraints}
 	
 	\subsection{Positivity}
 	
-	For certain physical systems, it is known a priori that the measured quantity cannot be smaller than zero. Using data-driven modelling on noisy data can lead to predictions in the interpolation and extrapolation regime which may not hold this constraint. It is therefore appropriate to use user-defined constraints for positivity.
+	For certain physical systems, it is known a priori that the measured quantity cannot be smaller than zero. Using data-driven modeling on noisy data can lead to predictions in the interpolation and extrapolation regime which may not hold this constraint. It is therefore appropriate to use user-defined constraints for positivity.
 	
 	The user defined constraint for positivity again uses a weight matrix $V_{pos}$, with individual weights $v_j$ specified as follows:
 	
 	$$v_j = \begin{cases} 0, \quad \text{if} \ \hat y = X\hat \beta > 0\\ 1, \quad \text{if} \ \hat y = X \hat \beta \le 0 \end{cases}$$
 	
-	The constraint penalized least squares objective function is the of the form
+	The constraint penalized least squares objective function is then of the form
 	
 	$$Q(y; \beta) = \lVert y - X\beta \rVert^2 + \lambda_s \mathcal J_s(\beta; d) + \lambda_{pos} \mathcal J_{pos}(\beta) $$
 	
-	where $\mathcal J_{pos} = \beta^T X^T V_{pos} X \beta$ is the penalty term specifying positivity and $\lambda_{pos}$ is the constraint paramter, which is set multiple orders of magnitude higher than the smoothness parameter $\lambda_s$ to enforce the constraint.
+	where $\mathcal J_{pos} = \beta^T X^T V_{pos} X \beta$ is the penalty term specifying positivity and $\lambda_{pos}$ is the constraint parameter, which is set multiple orders of magnitude higher than the smoothness parameter $\lambda_s$ to enforce the constraint.
 	
-	Using this approach, negativity and special threshhold value constraints, e.g. the output is constraint to be larger than $2$, can also be enforced.
+	Using this approach, negativity and special threshold value constraints, e.g. the output is constraint to be larger than $2$, can also be enforced.
 	
 	\section{Extension to Multiple Dimensions}
 	
@@ -231,19 +258,19 @@
 	
 	where the combined basis matrix $X \in \mathbb{R}^{n \times k_{smooths}}$ is given by a horizontal concatenation of the individual bases and the combined coefficient vector $\beta \in \mathbb{R}^{k_{smooths}}$ is given by a vertical concatenation of the individual coefficient vectors. The combined model $\hat y_{comb}$ now has the following form
 		
-	$$\hat y_{comb} = X \beta = \begin{pmatrix} X_1 \dots X_p \ X_{1,2} \dots X_{p-1,p}\end{pmatrix} \begin{pmatrix} \beta_1 \\ \vdots \\ \beta_p \\ \beta_{12} \\ \vdots \\ \beta_{p-1, p}  \end{pmatrix}$$
+	$$\hat y_{comb} = X \beta = \begin{pmatrix} X_1 \dots X_p \ X_{1,2} \dots X_{p-1,p}\end{pmatrix} \begin{pmatrix} \beta_1 \\ \vdots \\ \beta_p \\ \beta_{12} \\ \vdots \\ \beta_{p-1, p}  \end{pmatrix}.$$
 	
 	The data term in the constraint penalized least squares objective function given above can now be evaluated using arbitrary input dimensions. The remaining question is now how the smoothness penalty term and the constraint penalty term are constructed. For both, the concept of block diagonal matrices is applied. The smoothness penalty term $\mathcal J_s(\beta, \mathbf d)$ is now given as
 	
-	$$\mathcal J_s(\beta, \mathbf d) = \text{blockdiag}(\mathcal J_1, \dots, \mathcal J_p, J_{1,2}, \dots, \mathcal J_{p-1,p}) $$
+	$$\mathcal J_s(\beta; \mathbf d) = \text{blockdiag}(\mathcal J_1, \dots, \mathcal J_p, J_{1,2}, \dots, \mathcal J_{p-1,p}) $$
 	
-	with $\mathcal J_i := \mathcal J_i(\beta_i, d_i) = \beta_i^T D_{d_i}^T D_{d_i} \beta_i$ determining the smoothness penalty term for each individual smooth $i$. 
+	with $\mathcal J_i := \mathcal J_i(\beta_i; d_i) = \beta_i^T D_{d_i}^T D_{d_i} \beta_i$ determining the smoothness penalty term for each individual smooth $i$. 
 	
-	The constraint penalty term $\mathcal J_c(\beta, c)$ is then given as
+	The constraint penalty term $\mathcal J_c(\beta; c)$ is then given as
 	
-	$$\mathcal J_c(\beta, c) = \text{blockdiag}(\mathcal J_{1,c}, \dots, \mathcal J_{p,c}, \mathcal J_{1,2,c} \dots, \mathcal J_{p-1,p,c})$$
+	$$\mathcal J_c(\beta; c) = \text{blockdiag}(\mathcal J_{1,c}, \dots, \mathcal J_{p,c}, \mathcal J_{1,2,c} \dots, \mathcal J_{p-1,p,c})$$
 	
-	with $\mathcal J_{i,c} := \mathcal J_{i,c}(\beta_i, c_i) = \beta_i^T D_{c_i}^T V_{c_i} D_{c_i} \beta_i$ determining the constraint penalty term for each individual smooth $i$ with individual weight matrix $V_{c_i}$. 
+	with $\mathcal J_{i,c} := \mathcal J_{i,c}(\beta_i; c_i) = \beta_i^T D_{c_i}^T V_{c_i} D_{c_i} \beta_i$ determining the constraint penalty term for each individual smooth $i$ with individual weight matrix $V_{c_i}$. 
 	
 	The constraint penalized least squares objective function can now be written as
 	
@@ -259,12 +286,13 @@
 	
 	for $x_1 \in [0,1]$ and $x_2 \in [0,1]$ and random gaussian noise with $\sigma_{noise} = 0.01$. We therefore expect a peak in the data. Using this knowledge, we create a model using the following smooths:
 	
+	\begin{list}{label}{}
 	- B-spline smooth $s_1(x_1)$ using $k_{x_1} = 20$, $c = \text{peak}$, $\lambda_s = 1$ and $\lambda_c = 1000$
 	- B-spline smooth $s_2(x_2)$ using $k_{x_2} = 20$, $c = \text{peak}$, $\lambda_s = 1$ and $\lambda_c = 1000$
-	- Tensor-product smooth $t_{1,2}(x_1, x_2)$ using $k_{x_1} = k_{x_2} = 10$, $c = \text{smoothness}$, $\lambda_s = 1$, $\lambda_c = 1000$
-	
+	- Tensor-product smooth $t_{1,2}(x_1, x_2)$ using $k_{x_1} = k_{x_2} = 10$, $c = \text{smoothness}$, $\lambda_s = 1$, $\lambda_c=1000$	
+	\end{list}
+		
 	The fit for this model is shown in the following figure. The model fits the data quite well and holds the specified constraints.
-	
 		
 	\begin{figure}[H]
 		\centering
