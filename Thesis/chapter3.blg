@@ -1,0 +1,15 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'chapter3.blg'
+[37] biber-MSWIN32:313> INFO - === 
+[99] Biber.pm:371> INFO - Reading 'chapter3.bcf'
+[192] Biber.pm:857> INFO - Found 5 citekeys in bib section 0
+[207] Biber.pm:3976> INFO - Processing section 0
+[230] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[242] bibtex.pm:1500> INFO - LaTeX decoding ...
+[260] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[311] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[311] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[311] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
+[311] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[316] bbl.pm:617> INFO - Writing 'chapter3.bbl' with encoding 'UTF-8'
+[318] bbl.pm:720> INFO - Output to chapter3.bbl
