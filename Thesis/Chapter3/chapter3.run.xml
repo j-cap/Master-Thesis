@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>chapter2.bcf</file>
+      <file>chapter3.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>chapter2.bbl</file>
+      <file>chapter3.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,22 +64,22 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>chapter2</infile>
+      <infile>chapter3</infile>
     </cmdline>
     <input>
-      <file>chapter2.bcf</file>
+      <file>chapter3.bcf</file>
     </input>
     <output>
-      <file>chapter2.bbl</file>
+      <file>chapter3.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>chapter2.bbl</file>
+      <file>chapter3.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>chapter2.bcf</file>
+      <file>chapter3.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bibliography.bib</file>
+      <file>../bibliography.bib</file>
     </requires>
   </external>
 </requests>
