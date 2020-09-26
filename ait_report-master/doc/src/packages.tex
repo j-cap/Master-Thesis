@@ -1,0 +1,57 @@
+\usepackage{dsfont}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{todonotes}
+\usepackage{mdframed}
+\usepackage{lpic}
+\usepackage{overpic}
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{media9}
+\usetikzlibrary{spy}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usepackage{ifthen}
+\usepackage{xstring}     % Used for string equality query in Title generation
+%\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=6cm, text centered, node distance=3cm, inner sep=0pt]
+%\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5cm, text centered, rounded corners, minimum height=4em]
+%\tikzstyle{line} = [draw, -latex']
+%\tikzstyle{cloud} = [draw, ellipse,fill=blue!20, node distance=3cm]
+    %
+%\tikzstyle{blockctrl} = [draw, fill=blue!20, rectangle, minimum height=3em, minimum width=6em]
+%\tikzstyle{sum} = [draw, circle, node distance=1cm]
+%%\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+%\tikzstyle{input} = [coordinate]
+%\tikzstyle{output} = [coordinate]
+%\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]   
+%\tikzset{circled node/.style={shape=circle, draw} } 
+
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{pgfplots.units}
+\pgfplotsset{compat=newest,
+	height=0.3\textheight,
+	legend cell align=left,
+	tick scale binop=\times,
+	grid style={loosely dotted,color=darkgray!30!gray,line width=0.6pt},
+	tick style={black,thin},
+	every axis plot/.append style={line width=0.8pt},
+	unit markings=slash space % label / unit
+	}
+	%
+\usepgfplotslibrary{external}
+ %%Für die Verwendung von 'external' müssen die folgenden Anpassungen in Abhängigkeit der
+ %%LaTeX Distribution durchgeführt werden:
+%
+ %%fuer Texlive: pdflatex.exe -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+%%\tikzexternalize[shell escape=-shell-escape]   % fuer TeXLive und MacTex
+%
+%% fuer MikTeX:  pdflatex.exe -enable-write18 -synctex=1 -interaction=nonstopmode %.tex
+\tikzexternalize[shell escape=-enable-write18] % fuer MikTex
+%
+\tikzsetexternalprefix{graphics/pgfplots/} % Ordner muss ev. zuerst haendisch erstellt werden
+

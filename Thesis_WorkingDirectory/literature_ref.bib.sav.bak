@@ -1,0 +1,21 @@
+% Encoding: UTF-8
+
+@Book{rodgers2015,
+  author    = {NFL},
+  publisher = {Aaron Rodgers},
+  title     = {Hail Mary},
+  year      = {2015},
+}
+
+@Article{kroboth1999dhea,
+  author    = {Kroboth, Patricia D and Salek, Firoozeh S and Pittenger, Amy L and Fabian, Tanya J and Frye, Reginald F},
+  journal   = {The Journal of Clinical Pharmacology},
+  title     = {DHEA and DHEA-S: a review},
+  year      = {1999},
+  number    = {4},
+  pages     = {327--348},
+  volume    = {39},
+  publisher = {Wiley Online Library},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

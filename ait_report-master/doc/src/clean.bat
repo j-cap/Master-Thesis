@@ -1,0 +1,20 @@
+del *.aux
+del *.nls
+del *.ilg
+del *.blg
+del *.toc
+del *.bbl
+del *.blg
+del *.dvi
+del *.synctex.gz
+del *.out
+del *.log
+del *.lot
+del *.lof
+del *.brf
+del .\images\*-eps-converted-to.pdf
+del main.pdf
+del *.bcf
+del main.run.xml
+del /F /S /Q .\figs\pgfplots
+del chapters\*.log

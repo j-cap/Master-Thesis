@@ -1,0 +1,18 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[32] biber-MSWIN32:313> INFO - === 
+[65] Biber.pm:371> INFO - Reading 'main.bcf'
+[159] Biber.pm:857> INFO - Found 15 citekeys in bib section 0
+[175] Biber.pm:3976> INFO - Processing section 0
+[187] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[196] bibtex.pm:1500> INFO - LaTeX decoding ...
+[230] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[305] Utils.pm:193> WARN - I didn't find a database entry for 'osullivan1986statistical' (section 0)
+[305] Utils.pm:193> WARN - I didn't find a database entry for 'wood2006GAM' (section 0)
+[321] UCollate.pm:68> INFO - Overriding locale 'de-AT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[322] UCollate.pm:68> INFO - Overriding locale 'de-AT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[322] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-AT'
+[322] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-AT'
+[331] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'ansinew'
+[337] bbl.pm:720> INFO - Output to main.bbl
+[343] Biber.pm:110> INFO - WARNINGS: 2

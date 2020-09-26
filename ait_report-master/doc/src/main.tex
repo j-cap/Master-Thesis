@@ -1,0 +1,42 @@
+%Define relative or absolute path of template. 
+% Don´t change anything if you use the template as it is. 
+\newcommand*{\MyPath}{../../tex/latex/}% 
+\IfFileExists{\MyPath/AIT_report.cls}{}{\renewcommand*{\MyPath}{}}
+
+\documentclass[
+%NoTableOfContents,  % do not create a Table Of Contents
+NoListOfFigures,		% do not create a List Of Figures
+NoListOfTables,		% do not create a List Of Tables
+language=de, 
+%language=en,
+]{\MyPath AIT_report}
+\setboolean{FormatSlides}{false}
+\setboolean{FormatScript}{true}
+
+\input{doc_settings}
+\DeclareTextFontCommand{\emph}{\bfseries\boldmath}
+\graphicspath{{./figs/}}
+\input{packages}	
+
+\addbibresource{my_reportbib.bib}
+\addbibresource{publikationenjabref.bib}
+
+\begin{document}
+	
+	\maketitle{}
+	% Include all the chapters...
+	%=============================
+	\pagenumbering{arabic}
+	\include{./chapters/content_shortreport}
+	% Include chapter bib for CDS publications
+	\include{./chapters/A1_Literaturverzeichnis_CDS}
+	
+	% Appendix...
+	%=============
+	\appendix
+	%\include{./chapters/Grundlagen_Naehen}
+	%\addcontentsline{toc}{chapter}{Literatur}
+	\printbibliography
+	
+	\include{AIT_report_Contact}
+\end{document}

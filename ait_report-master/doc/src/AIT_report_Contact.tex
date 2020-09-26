@@ -1,0 +1,33 @@
+% ===================
+% ||   Contact   ||
+% ===================
+		\clearscrheadfoot
+		\pagestyle{scrheadings}
+		\sffamily
+
+		\begin{center}
+		\@ifundefined{tikz@library@external@loaded}{}{\tikzset{external/export=false}}
+		\begin{tikzpicture}[remember picture,overlay,outer sep=0pt,inner sep=0pt]
+		
+\node [anchor=south west,xshift=7cm,yshift=2cm] at (current page.south west){
+\begin{tabularx}{\textwidth}{c}
+%\arrayrulecolor{purple}
+\fontsize{12}{12}\bfseries\selectfont\color{ait_red}{\Contact} \\
+\newline\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{AIT Austrian Institue of Technolgy GmbH}\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{Argentiniertra\ss e 2/4, 1040 Wien, \"Osterreich}\\
+\newline\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{www.ait.ac.at}\\
+\newline\\
+\newline\\
+\fontsize{9}{9}\bfseries\selectfont\color{ait_gray}{\insertAuthor}\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{\Jobdescription}\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{Center for Vision, Automation \& Control}\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{Complex Dynamcial Systems}\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{\Telefonnumber}\\
+\fontsize{9}{9}\selectfont\color{ait_gray}{\Email}\\
+\end{tabularx}};
+\end{tikzpicture}
+\end{center}
+
+

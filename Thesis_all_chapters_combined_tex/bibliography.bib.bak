@@ -1,0 +1,171 @@
+% Encoding: UTF-8
+
+@Book{fahrmeir2013regression,
+  author    = {Fahrmeir, Ludwig and Kneib, Thomas and Lang, Stefan and Marx, Brian},
+  publisher = {Springer},
+  title     = {Regression models},
+  year      = {2013},
+  booktitle = {Regression},
+  pages     = {21--72},
+}
+
+@Article{eilers1996flexible,
+  author    = {Eilers, Paul HC and Marx, Brian D},
+  journal   = {Statistical science},
+  title     = {Flexible smoothing with B-splines and penalties},
+  year      = {1996},
+  pages     = {89--102},
+  publisher = {JSTOR},
+}
+
+@Article{eilers2003perfect,
+  author    = {Eilers, Paul HC},
+  journal   = {Analytical chemistry},
+  title     = {A perfect smoother},
+  year      = {2003},
+  number    = {14},
+  pages     = {3631--3636},
+  volume    = {75},
+  publisher = {ACS Publications},
+}
+
+@Article{bro1998least,
+  author    = {Bro, Rasmus and Sidiropoulos, Nicholaos D},
+  journal   = {Journal of Chemometrics: A Journal of the Chemometrics Society},
+  title     = {Least squares algorithms under unimodality and non-negativity constraints},
+  year      = {1998},
+  number    = {4},
+  pages     = {223--247},
+  volume    = {12},
+  publisher = {Wiley Online Library},
+}
+
+@Article{eilers2005unimodal,
+  author    = {Eilers, Paul HC},
+  journal   = {Journal of Chemometrics: A Journal of the Chemometrics Society},
+  title     = {Unimodal smoothing},
+  year      = {2005},
+  number    = {5-7},
+  pages     = {317--328},
+  volume    = {19},
+  publisher = {Wiley Online Library},
+}
+
+@Article{he1998monotone,
+  author    = {He, Xuming and Shi, Peide},
+  journal   = {Journal of the American statistical Association},
+  title     = {Monotone B-spline smoothing},
+  year      = {1998},
+  number    = {442},
+  pages     = {643--650},
+  volume    = {93},
+  publisher = {Taylor \& Francis Group},
+}
+
+@Book{sammut2011,
+  author    = {Sammut, Claude and Webb, Geoffrey I},
+  publisher = {Springer Science \& Business Media},
+  title     = {Encyclopedia of machine learning},
+  year      = {2011},
+}
+
+@Article{hofner2011monotonicity,
+  author    = {Hofner, Benjamin and M{\"u}ller, J{\"o}rg and Hothorn, Torsten},
+  journal   = {Ecology},
+  title     = {Monotonicity-constrained species distribution models},
+  year      = {2011},
+  number    = {10},
+  pages     = {1895--1901},
+  volume    = {92},
+  publisher = {Wiley Online Library},
+}
+
+@Book{bishop2006patternRecognition,
+  author    = {Bishop, Christopher M},
+  publisher = {springer},
+  title     = {Pattern recognition and machine learning},
+  year      = {2006},
+}
+
+@Article{golub1979,
+  author    = {Golub, Gene H and Heath, Michael and Wahba, Grace},
+  journal   = {Technometrics},
+  title     = {Generalized cross-validation as a method for choosing a good ridge parameter},
+  year      = {1979},
+  number    = {2},
+  pages     = {215--223},
+  volume    = {21},
+  publisher = {Taylor \& Francis Group},
+}
+
+@Article{hoerl1970ridge,
+  author    = {Hoerl, Arthur E and Kennard, Robert W},
+  journal   = {Technometrics},
+  title     = {Ridge regression: Biased estimation for nonorthogonal problems},
+  year      = {1970},
+  number    = {1},
+  pages     = {55--67},
+  volume    = {12},
+  publisher = {Taylor \& Francis Group},
+}
+
+@Article{tibshirani1996lasso,
+  author    = {Tibshirani, Robert},
+  journal   = {Journal of the Royal Statistical Society: Series B (Methodological)},
+  title     = {Regression shrinkage and selection via the lasso},
+  year      = {1996},
+  number    = {1},
+  pages     = {267--288},
+  volume    = {58},
+  publisher = {Wiley Online Library},
+}
+
+@Article{efron2004leastangleregression,
+  author    = {Efron, Bradley and Hastie, Trevor and Johnstone, Iain and Tibshirani, Robert and others},
+  journal   = {The Annals of statistics},
+  title     = {Least angle regression},
+  year      = {2004},
+  number    = {2},
+  pages     = {407--499},
+  volume    = {32},
+  publisher = {Institute of Mathematical Statistics},
+}
+
+@Article{eubank1990regressionsplines,
+  author    = {Eubank, Randall L and Spiegelman, Clifford H},
+  journal   = {Journal of the American Statistical Association},
+  title     = {Testing the goodness of fit of a linear model via nonparametric regression techniques},
+  year      = {1990},
+  number    = {410},
+  pages     = {387--392},
+  volume    = {85},
+  publisher = {Taylor \& Francis Group},
+}
+
+@Book{deBoor1978practicalGuideToSplines,
+  author    = {De Boor, Carl and De Boor, Carl and Math{\'e}maticien, Etats-Unis and De Boor, Carl and De Boor, Carl},
+  publisher = {springer-verlag New York},
+  title     = {A practical guide to splines},
+  year      = {1978},
+  volume    = {27},
+}
+
+@Article{osullivan1986penalties,
+  author    = {O'Sullivan, Finbarr},
+  journal   = {Statistical science},
+  title     = {A statistical perspective on ill-posed inverse problems},
+  year      = {1986},
+  pages     = {502--518},
+  publisher = {JSTOR},
+}
+
+@Article{fahrmeir2004penalized,
+  author    = {Fahrmeir, Ludwig and Kneib, Thomas and Lang, Stefan},
+  journal   = {Statistica Sinica},
+  title     = {Penalized structured additive regression for space-time data: a Bayesian perspective},
+  year      = {2004},
+  pages     = {731--761},
+  publisher = {JSTOR},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

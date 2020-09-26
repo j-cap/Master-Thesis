@@ -1,0 +1,58 @@
+% Definition eines einheitlichen Farbschemas und Definition von styles.
+%=======================================================================
+
+% Um ein einheitliches Farbschema zu gewährleisten werden hier einige Farben und
+% davon abgeleitete Variationen definiert. Diese Farben werden in der Vorlage
+% bereits für die entsprechenden Befehle (Links, Hervorhebung, usw.) verwendet.
+% Die Farben sollten auch in Grafiken verwendet werden. Die RGB- bzw. CMYK Codes
+% werden hierzu in der Dokumentation angegeben.
+% Es werden außerdem einige styles hier definiert, die von verschiedenen
+% Befehlen verwendet werden.
+
+% AIT Farben
+%============================
+
+\definecolor{ait_red}{cmyk}{0,1,0.8,0.6}
+\definecolor{ait_gray}{cmyk}{.1,0,0,.6}
+\definecolor{ait_darggray}{cmyk}{.80,0,0,1}
+\definecolor{ait_white}{cmyk}{0,0,0,0}
+\definecolor{ait_violett}{rgb}{0.51,0,0.64}
+\definecolor{ait_tuerkis}{rgb}{0.64,1.7,1.54}
+
+\definecolor{acin_yellow}{RGB}{252, 204, 71}
+\definecolor{acin_green}{RGB}{25, 150, 0}
+\definecolor{TU_blue}{RGB}{0, 102, 153}
+\definecolor{TU_gray}{RGB}{102, 102, 102}
+
+\definecolor{ait_gray}{cmyk}{.1,0,0,.6}
+\definecolor{ait_darggray}{cmyk}{.80,0,0,1}
+\definecolor{ait_white}{cmyk}{0,0,0,0}
+
+\definecolor{ait_sek_1}{cmyk}{.66,.58,.53,.52}
+\definecolor{ait_sek_2}{cmyk}{.27,.21,.20,.5}
+\definecolor{ait_sek_3}{cmyk}{.15,.10,.10,0}
+
+
+% Festlegen der Farben von Gestaltungselementen
+%===============================================
+	\definecolor{emph}{named}{ait_red} % Farbe für Hervorhebungen
+	\definecolor{env}{named}{ait_red} % Farbe für Umgebungen
+	\definecolor{env_bck}{RGB}{235,235,235} % Hintergrundfarbe für Umgebungen
+	\definecolor{link_color}{named}{ait_gray} % Links
+	\definecolor{url_color}{named}{ait_gray} % urls
+	\definecolor{cite_color}{named}{ait_darggray} % Zitate
+	
+	
+	\definecolor{HinweisRed}{named}{ait_red}
+	\colorlet{HinweisRed_bck}{HinweisRed!15!white}
+		
+	\definecolor{EditorNote}{named}{orange}
+	\colorlet{EditorNote_bck}{EditorNote!25!white}
+	
+	\colorlet{eqn}{ait_tuerkis!70!black!15!white}
+	\colorlet{eqn_bck}{ait_tuerkis!70!black!15!white}
+	
+	\colorlet{proof}{ait_tuerkis!70!black!15!white}
+	
+
+

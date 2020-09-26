@@ -1,0 +1,201 @@
+% Definition von Umgebungen
+% --------------------------------------------------
+
+\mdfsetup{skipabove=5pt, skipbelow=5pt,%
+	splittopskip=0.4cm,splitbottomskip=5pt,%
+	innertopmargin=0.4\baselineskip,%
+	innerbottommargin=0.4\baselineskip}
+	
+% Die ganzen Abstandsgeschichten funktionieren nur, wenn parskip=false ist.
+% Ansonsten sind immer die Abstände zwischen 2 Umgebungen anders, als der
+% Abstand zwischen Umgebung und Text. -> galt zumindest für die alten
+% mdframed-packages und die alten Definitionen der Umgebungen. Könnte
+% mittlerweile auch funktionieren.
+
+%================================================================
+% style definitions
+%================================================================
+
+% basic styles
+\mdfdefinestyle{SideMargins}{leftmargin=0pt,innerleftmargin=10pt,%
+			rightmargin=0pt,innerrightmargin=10pt}
+\mdfdefinestyle{SideLine}{linewidth=2,%
+			leftline=true,rightline=false,bottomline=false,topline=false}
+\mdfdefinestyle{NoSideLine}{linewidth=0pt, hidealllines=true}
+
+\mdfdefinestyle{StyleOpen}%
+		{innerbottommargin=0.25\baselineskip, skipbelow=-0.05\baselineskip}
+\mdfdefinestyle{StyleClose}%
+	{innertopmargin=0.25\baselineskip, skipabove=-0.05\baselineskip}
+\mdfdefinestyle{StyleMiddle}%
+	{innerbottommargin=0.25\baselineskip, skipbelow=-0.05\baselineskip, %
+	innertopmargin=0.25\baselineskip, skipabove=-0.05\baselineskip}
+				
+\mdfdefinestyle{ImpEqnStyle}{style=SideMargins, style=NoSideLine,%
+			innertopmargin=3pt,innerbottommargin=3pt,%
+			linecolor=eqn, backgroundcolor=eqn_bck}
+			
+\mdfdefinestyle{EnvStyle}{style=SideMargins, style=SideLine, %
+			linecolor=env}
+
+\mdfdefinestyle{ImpEnvStyle}{style=SideMargins, style=NoSideLine, %
+			linecolor=env_bck, backgroundcolor=env_bck}
+
+\mdfdefinestyle{EnvStyleOpen}{style=EnvStyle, style=StyleOpen}
+\mdfdefinestyle{EnvStyleClose}{style=EnvStyle, style=StyleClose}
+\mdfdefinestyle{EnvStyleMiddle}{style=EnvStyle, style=StyleMiddle}
+
+\mdfdefinestyle{ImpEnvStyleOpen}{style=ImpEnvStyle, style=StyleOpen}
+\mdfdefinestyle{ImpEnvStyleClose}{style=ImpEnvStyle, style=StyleClose}
+\mdfdefinestyle{ImpEnvStyleMiddle}{style=ImpEnvStyle, style=StyleMiddle}
+
+\mdfdefinestyle{NotesStyle}{style=SideMargins, style=SideLine, %
+			linecolor=EditorNote,backgroundcolor=EditorNote_bck}
+						
+\mdfdefinestyle{HinweisStyle}{style=SideMargins, style=SideLine, %
+			linecolor=HinweisRed,backgroundcolor=HinweisRed_bck}
+
+%\mdfdefinestyle{HinweisStyleYellow}{style=SideMargins, style=SideLine, %
+			%linecolor=HinweisYellow,backgroundcolor=HinweisYellow_bck}
+%\mdfdefinestyle{HinweisStyleBlue}{style=SideMargins, style=SideLine, %
+			%linecolor=HinweisBlue,backgroundcolor=HinweisBlue_bck}
+%\mdfdefinestyle{HinweisStyleBW}{style=SideMargins, style=SideLine, %
+			%linecolor=HinweisBW,backgroundcolor=HinweisBW_bck}
+
+%=======================================================================
+% Definition der Umgebungen
+%=======================================================================
+
+% Beweis
+%-----------------------------------------------------------------------
+% \newenvironment{beweis}{
+% 	\begin{proof}
+% }{
+% 	\end{proof}
+% }
+% \surroundwithmdframed[style=ProofStyle]{beweis}
+% 	
+% \newenvironment{beweisopen}[1][\proofname]{\par%
+%   	\normalfont
+%   	\topsep6\p@\@plus6\p@\relax%
+%   	\trivlist%
+%   	\item[\hskip\labelsep%
+%         \itshape%
+%     #1\@addpunct{.}]\ignorespaces%
+% }{%
+% 	\endtrivlist\@endpefalse%
+% }
+% 
+% \newenvironment{beweisclose}{%\par
+%   	\pushQED{\qed}%
+% }{%
+%   	\popQED%
+% }
+% 
+% \surroundwithmdframed[style=ProofStyleOpen]{beweisopen}
+% \surroundwithmdframed[style=ProofStyleClose]{beweisclose}
+% \newenvironment{beweismiddle}{}{}
+% \surroundwithmdframed[style=ProofStyleMiddle]{beweismiddle}
+	
+	
+	
+		
+\theoremstyle{definition}
+
+% Definition
+%-----------------------------------------------------------------------
+
+ \newmdtheoremenv[style=ImpEnvStyle]{definition}{\color{env}Definition}[chapter]
+ 
+ \newmdtheoremenv[style=ImpEnvStyleOpen]{definitionopen}{\color{env}Definition}[chapter]
+ \newenvironment{definitionclose}{}{}
+ \surroundwithmdframed[style=ImpEnvStyleClose]{definitionclose}
+ \newenvironment{definitionmiddle}{}{}
+ \surroundwithmdframed[style=ImpEnvStyleMiddle]{definitionmiddle}
+
+	
+	
+% 	\theoremstyle{plain}
+
+% Lemma
+%-----------------------------------------------------------------------
+
+% \newmdtheoremenv[style=ImpEnvStyle]{lemma}{\color{env}Lemma}[chapter]
+% 
+% \newmdtheoremenv[style=ImpEnvStyleOpen]{lemmaopen}{\color{env}Lemma}[chapter]
+% \newenvironment{lemmaclose}{}{}
+% \surroundwithmdframed[style=ImpEnvStyleClose]{lemmaclose}
+% \newenvironment{lemmamiddle}{}{}
+% \surroundwithmdframed[style=ImpEnvStyleMiddle]{lemmamiddle}
+
+	
+% Satz
+%-----------------------------------------------------------------------
+
+% \newmdtheoremenv[style=ImpEnvStyle]{satz}{\color{env}Satz}[chapter]
+% 
+% \newmdtheoremenv[style=ImpEnvStyleOpen]{satzopen}{\color{env}Satz}[chapter]
+% \newenvironment{satzclose}{}{}
+% \surroundwithmdframed[style=ImpEnvStyleClose]{satzclose}
+% \newenvironment{satzmiddle}{}{}
+% \surroundwithmdframed[style=ImpEnvStyleMiddle]{satzmiddle}
+% 	
+% 	
+\theoremstyle{remark}
+	
+% Beispiel
+%-----------------------------------------------------------------------
+
+\newmdtheoremenv[style=EnvStyle]{beispiel}{\color{env}Beispiel}[chapter]
+\newmdtheoremenv[style=EnvStyleOpen]{beispielopen}{\color{env}Beispiel}[chapter]
+\newenvironment{beispielclose}{}{}
+\surroundwithmdframed[style=EnvStyleClose]{beispielclose}
+\newenvironment{beispielmiddle}{}{}
+\surroundwithmdframed[style=EnvStyleMiddle]{beispielmiddle}
+
+
+% Bemerkung
+%-----------------------------------------------------------------------
+
+\newmdtheoremenv[style=EnvStyle]{bemerkung}{\color{env}Bemerkung}[chapter]
+\newmdtheoremenv[style=EnvStyleOpen]{bemerkungopen}{\color{env}Bemerkung}[chapter]
+\newenvironment{bemerkungclose}{}{}
+\surroundwithmdframed[style=EnvStyleClose]{bemerkungclose}
+\newenvironment{bemerkungmiddle}{}{}
+\surroundwithmdframed[style=EnvStyleMiddle]{bemerkungmiddle}
+	
+% markeqn
+%-----------------------------------------------------------------------
+	
+\newenvironment{markeqn}{%
+	\abovedisplayshortskip=0pt%
+	\abovedisplayskip=0pt%
+	\belowdisplayshortskip=0pt%
+	\belowdisplayskip=0pt%
+}{%
+	\noindent%
+}%
+\surroundwithmdframed[style=ImpEqnStyle]{markeqn}
+	
+% Hinweis
+%-----------------------------------------------------------------------
+
+\newenvironment{hinweis}{%
+	\noindent {\color{HinweisRed}\textbf{Hinweis: }}%
+}{}
+\surroundwithmdframed[style=HinweisStyle]{hinweis}
+
+%\newenvironment{hinweisBlue}{%
+	%\noindent {\color{HinweisBlue}\textbf{Hinweis: }}%
+%}{}
+%\surroundwithmdframed[style=HinweisStyleBlue]{hinweisBlue}
+%
+%\newenvironment{hinweisYellow}{%
+	%\noindent {\color{HinweisYellow}\textbf{Hinweis: }}%
+%}{}
+%\surroundwithmdframed[style=HinweisStyleYellow]{hinweisYellow}
+%
+%\newenvironment{hinweisBW}{%
+	%\noindent {\color{HinweisBW}\textbf{Hinweis: }}%
+%}{}
+%\surroundwithmdframed[style=HinweisStyleBW]{hinweisBW}

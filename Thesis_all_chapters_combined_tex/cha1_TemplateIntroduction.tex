@@ -1,0 +1,385 @@
+\ifthenelse{\boolean{Bachelor}}
+{}
+{\chapter{Organisation und zeitlicher Ablauf}
+Bevor die Arbeit niedergeschrieben wird, sollte der Status der eigenen Arbeit in TISS überprüft werden. Dabei sollte die Arbeit im Status "`Genehmigt"' (2 Häckchen gesetzt) sein. Wenn dies nicht zutrifft, so ist der Betreuer bzw. die Betreuerin zu informieren.
+Die Diplomarbeit wird nach der Einarbeitung der Korrekturen des unmittelbaren Betreuers bzw. der Betreuerin auch von Prof. Kugi korrigiert. Damit die zeitlichen Fristen des Dekanats bzgl. der Abgabe von Diplomarbeiten eingehalten werden können, muss die Arbeit (in der Regel) spätestens 1 Monat vor dem eigentlichen Diplomprüfungstermin bei Prof. Kugi abgegeben werden. Bei Verletzung dieser Frist kann der Diplomprüfungstermin leider nicht mehr wahrgenommen werden! 
+
+In der Zeit der Korrektur sind die entsprechend erarbeiteten Daten (\Matlab, \Maple, Messdaten, Aufbauten, \ldots) zu sortieren, dokumentieren und zu kommentieren(Quellcode!), sodass diese von Dritten in Betrieb genommen/verwendet werden können. Erst nachdem dies erfolgt ist, wird die Korrektur von Prof. Kugi retourniert und die Arbeit benotet.}
+
+\chapter{Verwendung der Vorlage}\label{cha:TemplateIntroduction}
+
+\emph{\color{acin_red}Es wird dringend empfohlen, sich vor dem Erstellen einer
+Arbeit mit \LaTeX{} vertraut zu machen. Dazu gibt es zahlreiche Anleitungen im
+Internet, wobei darauf geachtet werden muss, dass diese nicht bereits veraltet sind.
+Empfehlenswert ist beispielsweise:
+\url{http://latex.tugraz.at/start} oder die Kurzanleitung \texttt{\href{http://tug.ctan.org/info/lshort/german/l2kurz.pdf}{l2kurz.pdf}}}
+
+\vspace{\baselineskip}
+Mit dieser Klasse wird eine Vorlage zum Schreiben von Bachelor- und Diplomarbeiten zur Verfügung gestellt, um einen einheitlichen Stil für alle Diplomarbeiten zu erhalten. Die Dateien in der Vorlage sollten daher nicht verändert werden!
+
+Zur Verwendung der Vorlage muss das gesamte Vorlagenverzeichnis zu den \LaTeX-Suchpfaden hinzugefügt werden. Das kann \zB für MikTeX über die mitgelieferte Anwendung \texttt{"'MikTeX Settings"'} in der Registerkarte \texttt{Roots} einfach durchgeführt werden. Siehe dazu \prettyref{fig:miktexSettings}. Für die Distribution \TeX-Live muss die Vorlage in den \texttt{TEXMFHOME} oder \texttt{texmf-local} Ordner kopiert und anschließend \texttt{texhash} über die Kommandozeile ausgeführt werden.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[height=.35\textheight]{MikTeX_Settings.png}
+	\caption{Suchpfad für MikTeX hinzufügen.}
+	\label{fig:miktexSettings}
+\end{figure}
+
+Im Anschluss kann der Ordner \texttt{doc} an eine beliebige Stelle kopiert und als Template für Ihre Arbeit verwendet werden. Bitte auf keinen Fall direkt im \texttt{doc} Ordner der Vorlage zu arbeiten beginnen, da mit MikTeX Probleme entstehen können wenn direkt in den Suchpfaden gearbeitet wird!
+
+\section{Auswahl des Arbeitstyps}
+Der Typ der Abschlussarbeit kann über die Klassenoption \texttt{thesis} ausgewählt werden. Sämtliche Dokumentteile, wie \zB das Deckblatt, werden dadurch automatisch für die jeweilige Arbeit angepasst. Folgende Werte für die Klassenoption sind erlaubt:
+\begin{itemize}
+    \item \texttt{thesis=master}
+    \item \texttt{thesis=bachelor}
+\end{itemize}
+
+%\section{Dateien in der Vorlage}
+%\begin{itemize}
+%  \item \emph{ACIN\_diploma\_thesis.cls} Die Klassendatei. Diese Datei sollte
+%  nicht geändert werden.
+%  \item \emph{graphics/logos/AcinLogo.pdf} ACIN Logo.
+%  \item \emph{graphics/logos/TULogo\_CMYK.pdf} TU Logo
+%  \item \emph{main.tex} Die Hauptdatei. Hier müssen Informationen zur
+%  Diplomarbeit (Titel, Autor, \usw) definiert werden. Die Kapitel der
+%  Diplomarbeit müssen in main.tex eingebunden werden.
+%  \item \emph{packages.tex} Die hier angegebenen packages müssen nicht
+%  zwingend eingebunden werden, insbesondere wird aber zum Erstellen von Grafiken und Plots \texttt{pgf/tikz} 
+%  empfohlen. Zusätzlich benötigte packages können hier eingetragen werden.
+%  \item \emph{settings.tex} Hier können weitere Einstellungen vorgenommen
+%  werden.
+%  \item \emph{pre1\_Preface.tex} Vorwort bitte in diese Datei schreiben.
+%  \item \emph{pre2\_Abstract.tex} Abstract bitte in diese Datei schreiben.
+%  \item \emph{pre3\_Kurzzusammenfassung.tex} Kurzzusammenfassung bitte in
+%  diese Datei schreiben.
+%  \item \emph{hyphen\_english.tex} Hier können weitere englische Trennmuster
+%  eingetragen werden.
+%  \item \emph{hyphen\_german.tex} Hier können weitere deutsche Trennmuster
+%  eingetragen werden.
+%  \item \emph{IEEEtranS\_de.bst} Deutscher bib-style.
+%  \item \emph{IEEEtranS.bst} Englischer bib-style.
+%  \item \emph{bibliography.bib} Hier können die Literaturverweise eingetragen
+%  werden.
+%  \item \emph{cha1\_TemplateIntroduction.tex} Dient nur als kurze Einführung
+%  \item \emph{make.bat} make file zum Kompilieren des Dokumentes. 
+%  %(Beachte, dass bei dvips die Option -ta4 angegeben werden muss.)
+%\end{itemize}
+
+\section{Verweise}
+\pagestyle{scrheadings}
+
+Das \texttt{prettyref}-package ist bereits eingebunden. Verweise können also mit
+\texttt{prettyref} gesetzt werden. 
+Beispiele: siehe
+\prettyref{cha:TemplateIntroduction} oder \eqref{eq:Test} oder \prettyref{tab:Example}. \cite{fahrmeir2004penalized}
+
+
+Verweis auf Literatur \cite{DIN13} und mehrfacher Verweis \cite{fahrmeir2013regression}
+\section{Grafiken}
+Generell wird zum Erstellen von Plots das Package \textsc{pgfplots} empfohlen. Die umfangreiche Dokumentation ist auf \url{http://pgfplots.sourceforge.net/} zu finden. Nachfolgend sind einige kurze Beispiele mit unterschiedlicher Dateneingabe angeführt. 
+\begin{itemize}
+	\item direkte Koordinateneingabe
+	\item Funktionsplot (\zB $f(x)=x^2$)
+	\item Auslesen aus einer *.txt Datei
+\end{itemize}
+
+Um die notwendige Zeit für die Übersetzung des Dokuments zu reduzieren, wird zusätzlich die automatische Externalisierung für \textsc{pgfplots} verwendet. Dazu muss der Aufruf von \texttt{pdfLaTeX} entsprechend angepasst werden. Für MikTeX muss die Option \verb+-enable-write18+ (TeXLive: \verb+-shell-escape+) hinzugefügt werden. Bei Verwendung von TeXLive sind weiters Änderungen in der Datei \texttt{packages.tex} entsprechend der enthaltenen Beschreibung vorzunehmen. Will man eine Grafik verändern, die schon einmal erstellt wurde, so kann man entweder die 
+zugehörigen Dateien im temporären \texttt{pgfplots} Ordner (entsprechend dem Eintrag in \texttt{packages.tex}) löschen, oder man fügt wie im tex-Code von \prettyref{fig:logbild} den Befehl \verb|\tikzset{external/force remake}| hinzu.
+%\subsection{tikz/pgfplots} 
+	\begin{figure}[htbp]
+		\centering
+		%\tikzset{external/force remake} % Achtung: Hier wird die Grafik zwingend neu kompiliert!!!
+		\begin{tikzpicture}
+			\begin{loglogaxis}[xlabel=$t$ in \si{\second},ylabel=$v$ in \si{\meter \per \second}, 
+							   grid, width=.75\textwidth, height=6cm]
+			\addplot coordinates {
+				(5, 8.31160034e-02)
+				(17, 2.54685628e-02)
+				(49, 7.40715288e-03)
+				(129, 2.10192154e-03)
+				(321, 5.87352989e-04)
+				(769, 1.62269942e-04)
+				(1793, 4.44248889e-05)
+				(4097, 1.20714122e-05)
+				(9217, 3.26101452e-06)
+			};
+			\addplot coordinates {
+				(7, 8.47178381e-02)
+				(31, 3.04409349e-02)
+				(111, 1.02214539e-02)
+				(351, 3.30346265e-03)
+				(1023, 1.03886535e-03)
+				(2815, 3.19646457e-04)
+				(7423, 9.65789766e-05)
+				(18943, 2.87339125e-05)
+				(47103, 8.43749881e-06)
+			};
+			\legend{Case 1,Case 2}
+			\end{loglogaxis}
+		\end{tikzpicture}%
+		\caption{Logarithmischer Plot mit direkter Koordinateneingabe.}%
+		\label{fig:logbild}%
+	\end{figure}
+	
+Beim Plotten von sehr vielen Datenpunkten kann es vorkommen, dass der interne Speicher 
+von \LaTeX{} nicht mehr ausreicht, um eine Grafik erstellen zu können. In diesem Fall 
+muss der interne Speicher von \LaTeX{} erhöht werden. Für MikTeX ist hierfür die Kommandozeilenoption von \texttt{pdfLaTeX} um das Argument \verb+-extra-mem-top=50000000+
+zu ergänzen. Dies bitte bei Bedarf in der \texttt{make.bat} entprechend eintragen.
+ 
+Bei TeXLive müssen in der Konfigurationsdatei \texttt{C:\textbackslash{}texlive\textbackslash{}2013\textbackslash{}texmf.cnf} die Einträge \verb+main_memory = 12000000+ und 
+\verb+extra_mem_top = 10000000+ hinzugefügt werden. Im Gegensatz zu MikTeX sollten die Kommandozeilenoptionen nicht verändert werden. 
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[width=0.99\linewidth,xlabel=$x$,ylabel={$y$}, grid, xmin=-5, xmax=5,samples=100]
+				\addplot[blue,style=dashdotted,line width=0.6pt] {x^2};
+				\addplot[red,line width=1.2pt,style=dashed]  {exp(0.5*x)};
+				\addplot[green]  {0.05*x^4};
+			\end{axis}
+		\end{tikzpicture}%
+		\caption{Interner Funktionsplotter mit 100 Punkten.}%
+	\end{figure}
+	\begin{figure}[htbp]
+	\centering
+	\begin{overpic}[width=0.6\linewidth]{./graphics/FederMasseDaempfer}
+		\put(230,235){$F_k(t)$}
+		\put(440,160){$k$}
+		\put(590,275){$m$}
+		\put(780,300){$F(t)$}
+		\put(630,580){$x(t)$}
+		\put(345,430){$d$}
+		\put(230,560){$F_d(t)$}
+	\end{overpic}
+	\caption{Einfaches Feder-Masse-Dämpfer System.}%
+	\label{fig:overpic}%
+	\end{figure}
+	%
+	\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}
+	\begin{groupplot}[xmin=0,xmax=14,xtick={0,2,...,14},
+	group style={
+	group size=1 by 2,
+	%xlabels at=edge bottom,
+	ylabels at=edge left,
+	x descriptions at=edge bottom,
+	horizontal sep=1.25cm,
+	vertical sep=0.25cm,
+	},
+	width=0.98\linewidth,
+	height=0.25\textheight,
+	grid,
+	xlabel={$H$ in \si{\kilo\ampere}},
+	legend style={at={(1,1)},anchor=north east}
+	]
+	\nextgroupplot[ymin=0,ylabel={$\mu_r$},y tick label style={/pgf/number format/1000 sep=}]
+	\addplot[only marks,mark=x,color=red,mark options={thin,mark size=3pt}] table[x=H,y=mur] {./graphics/murH_ohne_Neukurve.txt};
+	\addlegendentry{Datenpunkte}
+	\addplot[color=blue] table[x=H,y=mur] {./graphics/murH_approx_final.txt};
+	\addlegendentry{Approximation}
+	\nextgroupplot[ylabel=Fehler in \%]
+	\addplot[only marks,mark=o,mark size={2pt},color=blue] table[x=H,y=fehler] {./graphics/approx_fehler.txt};
+	\end{groupplot}
+	\end{tikzpicture}%
+	\caption{Untereinander ausgerichtete Plots, Werte aus Dateien eingelesen.}%
+	\label{fig:approx-mur}
+\end{figure}
+%
+%
+%\subsection{Laprint}
+%Um Grafiken aus \Matlab einzubinden, werden diese zunächst wie folgt erzeugt.
+%Der Befehl \verb+daspect+ dient dabei dem Einstellen der
+%Seitenverhältnisse und wird oft gar nicht benötigt. Bei
+%\verb+laprint_kiefer+ handelt es sich um eine abgewandelte Form des
+%\verb+labrint+-Befehls, mit dessen Hilfe ein eps-file und ein tex-file mit
+%den benötigten psfrag-Befehlen erstellt wird.
+%
+%\begin{verbatim}
+%close all; 
+%
+%x = 0:100;
+%y = sin(x*2*pi/100);
+%y1 = cos(x*2*pi/100);
+%
+%h_fig = figure('name', 'testplot');
+%plot(x,y,x,y1);
+%
+%set(0, 'defaulttextinterpreter','none');
+%xlabel('\xlabel');
+%ylabel('\ylabel');
+%
+%h_leg = legend('sin','cos');
+%set(h_leg, 'fontsize', 14);
+%
+%daspect([100 2 1]);
+%laprint_kiefer(h_fig, 'fig_1_1', 'width', 15, 'factor', 1);
+%
+%daspect([100 4 1]);
+%laprint_kiefer(h_fig, 'fig_1_2', 'width', 15, 'factor', 1);
+%
+%\end{verbatim}
+%
+%\begin{figure}
+%	\begin{center}
+%	\newcommand{\xlabel}{$t$ in \si{\second}}
+%	\newcommand{\ylabel}{$v$ in \si{\metre\per\second}}
+%%	\input{graphics/fig_1_1}
+%	\includegraphics[width=0.8\linewidth]{graphics/fig_1_1}
+%	\caption{Beispielgrafik mit Seitenverhältnis 1:1.}
+%	\label{fig:bspBA1}
+%	\end{center}
+%\end{figure}
+%
+%\begin{figure}
+%	\begin{center}
+%	\newcommand{\xlabel}{$t$ in \si{\second}}
+%	\newcommand{\ylabel}{$v$ in \si{\metre\per\second}}
+%%	\input{graphics/fig_1_2}
+%	\includegraphics[width=0.8\linewidth]{graphics/fig_1_2}
+%	\caption{Beispielgrafik mit Seitenverhältnis 2:1.}
+%	\label{fig:bspBA2}
+%	\end{center}
+%\end{figure}
+% \section{Subfigures}
+
+% \begin{figure}
+% 	\centering
+% 	\newcommand{\Legend}[1]{\alpha = \unit{#1}{\degree}}
+%
+% 	\captionsetup[subfloat]{captionskip=12pt}
+% 	\subfloat[$h = \unit{60}{\milli\metre}$] {
+% 		\input{graphics/fig_FEM_60}
+% 		\includegraphics[width=7cm]{graphics/fig_FEM_60}
+% 	}
+% 	\quad
+% 	\subfloat[$h = \unit{120}{\milli\metre}$] {
+% 		\input{graphics/fig_FEM_120}
+% 		\includegraphics[width=7cm]{graphics/fig_FEM_120}
+% 	}
+% 	\\
+% 	\subfloat[$h = \unit{180}{\milli\metre}$] {
+% 		\input{graphics/fig_FEM_180}
+% 		\includegraphics[width=7cm]{graphics/fig_FEM_180}
+% 	}
+% 	\quad
+% 	\subfloat[$h = \unit{220}{\milli\metre}$] {
+% 		\input{graphics/fig_FEM_220}
+% 		\includegraphics[width=7cm]{graphics/fig_FEM_220}
+% 	}
+%
+% 	\subfloat {%[Legende]
+% 		\psfrag{FEM-Simulation}{FE-Simulation}
+% 		\psfrag{linear}{linear ($\Legend{0}$)}
+% 		\psfrag{Linear klein}{linear ($\Legend{90}$)}
+% 		\psfrag{Leg30}{$\Legend{30}$}
+% 		\psfrag{Leg45}{$\Legend{45}$}
+% 		\psfrag{Leg60}{$\Legend{60}$}
+% 		\psfrag{Leg75}{$\Legend{75}$}
+%
+% 		\includegraphics[width=5cm]{graphics/LegendeFEM}
+% 	}
+% 	\caption{Vergleich Verformungskegel mit FE-Simulation.}
+% 	\label{fig:FEMVergleich}
+%
+% \end{figure}
+\FloatBarrier % flush figures
+%
+%Alternativ kann das package NumericPlots verwendet werden. Beispiele können der
+%Dokumentation des packages entnommen werden.\\
+%\href{http://www.ctan.org/tex-archive/graphics/numericplots/}{http://www.ctan.org/tex-archive/graphics/numericplots/}
+%
+\subsection{Tabelle}
+\begin{table}[htbp]
+	\begin{center}
+	\begin{tabular}{lcSS[table-format=4.3]s[table-unit-alignment=left]}
+		\toprule
+		Kategorie & center & {Zahlen} & \multicolumn{2}{c}{Maße}\\
+		\midrule
+		A & xx & 5.84e17 & 12.500 & \metre \\
+		B & y & 17.45+-5i & 1.456 & \metre\per\second \\
+		C & zzz & 5 & 124.521 & \metre\squared \\
+		D & bla & 17345.87 & 5000.34 & \kelvin \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+	\caption{Beispiel einer Tabelle.}
+	\label{tab:Example}
+\end{table}
+
+%\subsection{sidewayfigure}
+
+% \begin{sidewaysfigure}
+% 	\centering
+%
+% 	\input{graphics/fig_Ergebnisse}
+%
+% 	\includegraphics[width=205mm]{graphics/Ergebnisse}%[width=205mm]
+% 	\caption{Vergleich von Modell und Studien.}
+% 	\label{fig:Ergebnisse}
+% \end{sidewaysfigure}
+
+
+\section{Einheiten}
+
+Einheiten und Werte von verschiedenen Größen werden mit dem \texttt{siunitx}-package gesetzt. Beispielsweise
+$E=\SI{2.1e11}{\newton\per\square\metre}$.
+\begin{align}
+E=\SI{2.1e11}{\newton\per\square\metre}
+\end{align}
+
+
+\section{\texorpdfstring{$H_2O$}{Wasser}}
+
+Und hier noch eine Formel:
+\begin{equation}\label{eq:Test}
+	H_2O
+\end{equation}
+
+In \prettyref{sec:Commands} sind einige vordefinierte \LaTeX Makros zur Verwendung in Formeln angeführt. 
+\zB: \verb+\Diff{}{x}p(x), \DiffT{x}, \PartDiff{u(x,y)}{y}+
+\begin{equation}
+ \Diff{}{x}p(x), \DiffT{x}, \PartDiff{u(x,y)}{y}
+\end{equation}
+
+Benutze Abkürzungen wie \eg, \ie, \zB, \dh, \sog, \ua, \bzw, \usw nur mit den
+Befehlen \verb+\eg+, \verb+\ie+, \verb+\zB+, \verb+\dh+, \verb+\sog+,
+\verb+\ua+, \verb+\bzw+, \verb+\usw+.
+
+\section{Matrix}
+Für Matrizen wird die Umgebung \texttt{bmatrix} verwendet. Vergleich zweier Matrizen mit unterschiedlicher Spaltenausrichtung
+
+\begin{equation}
+	\vec{A}=\begin{bmatrix}
+		2 & -1\\
+		-1 & 2\\
+		-1 & -1
+	\end{bmatrix}\Comma\quad
+	\transpose{\vec{B}}=\begin{bmatrix*}[r]
+		2 & -1\\
+		-1 & 2\\
+		-1 & -1
+	\end{bmatrix*}
+\end{equation}
+
+\section{Einige Makros}
+
+\begin{itemize}
+  \item \verb+\Matlab+ \Matlab
+  \item \verb+\MatlabSimulink+ \MatlabSimulink
+  \item \verb+\Doxygen+ \Doxygen
+\end{itemize}
+
+
+Für equation-Umgebungen stehen die Befehle \verb+\Comma+ und \verb+\FullStop+
+zur Verfügung.
+
+
+
+
+\section{Befehle}\label{sec:Commands}
+
+Im File \texttt{ACIN\_thesis\_GeneralMacros.tex} sind einige Befehle vordefiniert.  %\href{../../tex/latex/ACIN_diploma_GeneralMacros.tex}{\texttt{ACIN\_diploma\_GeneralMacros.tex}}
+Es wird gebeten, diese zu verwenden. Insbesondere sollten für die bereits vorhandenen Befehle keine neuen Befehle definiert werden.
+%
+\lstinputlisting[breaklines]{ACIN_thesis_GeneralMacros.tex}

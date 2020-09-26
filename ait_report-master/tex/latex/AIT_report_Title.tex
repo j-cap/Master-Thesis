@@ -1,0 +1,119 @@
+% ===================
+% ||   maketitle   ||
+% ===================
+\renewcommand{\maketitle}{
+	
+	\pagenumbering{Alph}
+	
+	\begin{titlepage}
+		\sffamily
+		
+		\newlength{\Top}\setlength{\Top}{2cm} % Oberer Rand (bis Logos)
+		\newlength{\Left}\setlength{\Left}{2cm} % linker Rand
+		\newlength{\Right}\setlength{\Right}{1.5cm} % rechter Rand
+		\newlength{\Bottom}\setlength{\Bottom}{2cm} % unterer Rand
+		\newlength{\DistVersion}\setlength{\DistVersion}{8cm} % Abstand Logos - Art/Version 
+		\newlength{\relDistAuthor}\setlength{\relDistAuthor}{0.5cm} % Abstand Art/Version - Mitte Autor ( Beachte, dass Autor 2 oder 3 zeilig sein kann.)
+		\newlength{\DistHoriAut}\setlength{\DistHoriAut}{4cm} %Buchstabenhöhe bei 12pt
+		\newlength{\PictureSize}\setlength{\PictureSize}{12cm}
+		\newlength{\TitleLength}\setlength{\TitleLength}{16.8cm}
+		%\tikzexternaldisable
+		\@ifundefined{tikz@library@external@loaded}{}{\tikzset{external/export=false}}
+		\begin{tikzpicture}[remember picture,overlay,outer sep=0pt,inner sep=0pt, text centered]
+		
+		
+		% AIT logo
+		\node [anchor=north east, xshift=-\Right,yshift=-\Top-1.5cm] at (current page.north east) {%
+			\includegraphics[width=8cm]{\MyPath logos/AITlogo}%
+		};
+		% script title
+		\@ifundefined{TitleSecondLine}{
+			\node [anchor=south west, xshift=\Left, yshift=\TitleLength] at (current page.south west) {
+				\fontsize{26}{26}\selectfont\color{ait_red}%
+				\insertTitle%
+			};
+		}{
+			\node [anchor=south west, xshift=\Left, yshift=\TitleLength] at (current page.south west) {
+				\fontsize{26}{26}\selectfont\color{ait_red}{\TitleFirstLine}
+			};
+			\node [anchor=south west, xshift=\Left, yshift=\TitleLength-1cm] at (current page.south west) {
+				\fontsize{26}{26}\selectfont\color{ait_red}{\TitleSecondLine}
+			};
+		}
+		% Add authors if defined
+		
+		\IfStrEq{\insertAuthor}{<Autor>}{}{
+			\node [anchor=west, xshift=\Left, yshift=\TitleLength-3.3cm] at (current page.south west) {%
+				\insertAuthor };}	
+		
+		\IfStrEq{\insertAuthorSecond}{<Autor>}{}{
+			\node [anchor=west, xshift=\Left, yshift=\TitleLength-3.3cm-\relDistAuthor] at (current page.south west) {%
+				\insertAuthorSecond };}
+		
+		\IfStrEq{\insertAuthorThird}{<Autor>}{}{
+			\node [anchor=west, xshift=\Left, yshift=\TitleLength-3.3cm-\relDistAuthor*2] at (current page.south west) {%
+				\insertAuthorThird};}
+		
+		\IfStrEq{\insertAuthorFourth}{<Autor>}{}{
+			\node [anchor=west, xshift=\Left, yshift=\TitleLength-3.3cm-\relDistAuthor*3] at (current page.south west) {%
+				\insertAuthorFourth};}
+		
+		\IfStrEq{\insertAuthorFifth}{<Autor>}{}{
+			\node [anchor=west, xshift=\Left, yshift=\TitleLength-3.3cm-\relDistAuthor*4] at (current page.south west) {%
+				\insertAuthorFifth};}
+		
+		
+		% Insert Subject		
+		\node [anchor=south west, xshift=\Left, yshift=\TitleLength+1.7cm] at (current page.south west) {%
+			\fontsize{13}{13}\selectfont\textls{\textbf{\insertSubject}}
+		};
+		\node [anchor=south west, xshift=\Left, yshift=3cm] at (current page.south west) {%
+			\color{ait_gray}{\number\day.\the\month.\number\year}
+		};
+		\@ifundefined{Exemplarnummer}{}
+		{
+			\node [anchor=south west, xshift=\Left, yshift=2.5cm] at (current page.south west) {%
+				\color{ait_gray}{Exemplar \Exemplarnummer}
+			};}
+		\@ifundefined{Versionsnummer}{}
+		{
+			\node [anchor=south east, xshift=\Right-3.5cm, yshift=1.1cm, align = flush right] at (current page.south east) {%
+				\fontsize{11}{11}\selectfont\color{ait_gray}{\Version\ \Versionsnummer}
+			};}
+		\end{tikzpicture}
+		%\tikzexternalenable
+		\clearpage
+		
+	\end{titlepage}
+	
+	
+	% Include all the preface-stuff...
+	%==================================
+	%\pagestyle{Preface}
+	\pagestyle{scrheadings}
+	\setcounter{page}{1}
+	\pagenumbering{Roman}
+	
+	\ifthenelse{\boolean{LanguageDE}}{ 
+		\selectlanguage{ngerman}}
+	{
+		\selectlanguage{USenglish}
+	}
+	
+	% Create table of contents, figures...
+	%--------------------------------------
+	\ifthenelse{\boolean{NoTableOfContents}}{}{\tableofcontents}
+	\ifthenelse{\boolean{NoListOfFigures}}{}{\listoffigures}
+	\ifthenelse{\boolean{NoListOfTables}}{}{\listoftables}
+	
+	%	\cleardoublepage
+	\clearpage
+	\pagestyle{scrheadings}
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	
+	
+}
+
+
+
