@@ -1,4 +1,4 @@
-
+	
 
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
@@ -40,60 +40,68 @@ These are evaluated on two functions with a priori known behavior. The first fun
 	f(x) = \begin{cases}
 			 0 \quad &\text{if} \ x \le 0.8 \\ 
 			 20\sin (x-1.2) \quad &\text{else}  
-		  \end{cases}, \quad \text{for} \ x \in [0,2.5]. \quad 
+		  \end{cases}, \quad \text{for} \ x \in [0, 2.5].
 \end{equation}
 	
 It is therefor a constant function till $x=0.8$ and afterwards increasing. An example of the true function as well as noisy samples from this function is given in Fig. \ref{eq:test_func_1}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1.pdf}
+	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1_data.pdf}
 	\caption{Test Function 1}
 	\label{fig:test_func_1}
 \end{figure}
 
 The second function that will be investigated is given by
 \begin{equation} \label{eq:test_func_2}
-	f(x) = 2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 2.5x, \quad \text{for} \ x \in [0,1]
+f(x) = \begin{cases}
+2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 3x  &,\text{if} \ x \le 0.85 \\
+2\exp \big(-\frac{(0.85-0.5)^2}{0.05} \big) + 3*0.85  &,\text{else}
+\end{cases}, \quad \text{for} \ x \in [0,1]. 	
 \end{equation}
 
-We therefor use the a priori knowledge that the function is unimodal. An example of the true function as well as noisy samples is given in the following figure.
+The true functions depicts a unimodal behavior and is constant for $x > 0.85$. To test the algorithm, we deliberately generate "wrong" data using the following function
+\begin{equation} \label{eq:test_func_2_wrong}
+	f(x) = 2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 3x  \quad \text{for} \ x \in [0, 1]. 
+\end{equation}
+
+An example of the true Function \ref{eq:test_func_2} as well as noisy samples from Function \ref{eq:test_func_2_wrong} is given in the following figure.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak1.pdf}
+	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak_data.pdf}
 	\caption{Test Function 2}
 	\label{fig:test_func_2}
 \end{figure}
 
 \subsection{Static Function Approximation using a priori Knowledge}
 
-For the test using function \ref{eq:test_func_1}, the data set contains 1000 points. We use $k=35$ as number of used splines. The smoothing parameter $\lambda_s$ is optimized using cross-validation. The parameter regulating the influence of the constraint is set to the 1000-fold of the smoothing parameter $\lambda_s$. The resulting constrained fit, and for comparison, the unconstrained fit using the optimal smoothing parameter $\lambda_s = 4.15$ are shown in the following figure.
+For the test using Function \ref{eq:test_func_1}, the data set contains 100 points. We use $k=35$ as number of used splines. The smoothing parameter $\lambda_s$ is optimized using cross-validation. The parameter regulating the influence of the constraint is set to the 1000-fold of the smoothing parameter $\lambda_s$. The resulting constrained fit, and for comparison, the unconstrained fit using the optimal smoothing parameter $\lambda_s = 0.1615$ are shown in the following figure.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1.pdf}
-	\caption{Constrained and Unconstrained Fit for Test Function 1}
-	\label{fig:fit_test_func_1}
+	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1_fit.pdf}
+	\caption{Constr. and Unconstr. Fit and Residuals (lower plot) for Function 1}
+	\label{fig:test_func_1_fit}
 \end{figure}
 
-The red line follows the a priori knowledge of increasing behavior better than the blue, unconstrained line. Especially in the constant area, e.g. $x \in  [0, 1]$ and $x > 2.5$, the constraint improves the static function approximation. In the area of increasing behavior, the two fits are almost identical. The mean squared error on the training data, on the test data and on the true function are given in the Table Results.
+The red line follows the a priori knowledge of increasing behavior better than the blue, unconstrained line. Especially in the constant area, e.g. $x \in  [0, 0.8]$, the constraint improves the static function approximation and lowers the residual. In the area of increasing behavior, the two fits are almost identical. The mean squared error on the training data, on the test data and on the true function are given in the Table Results.
 
-For the test using function \ref{eq:test_func_2} the data set contains 500 points. There are two possibilities to include the a priori knowledge of a peak. First we can use the peak constraint matrix given in Chapter Penalty Matrices. On the other hand, we can simply use the concavity constraint, since concave functions are likely to have a peak when the data shows a peak. We examine both possibilities in the following figure. For each fit, we used $k=35$ as number of used splines and the smoothing parameter $\lambda_s = 1.2115$ was again optimized using cross-validation. The constraint parameter $\lambda_c$ was set equal to 1211.5.
+For the test using Function \ref{eq:test_func_2} the data set contains 500 points. There are two possibilities to include the a priori knowledge of a peak. First we can use the peak constraint matrix given in Chapter Penalty Matrices. On the other hand, we can use the concavity constraint, since concave functions are likely to have a peak when the data shows a peak. We examine both possibilities in Figure \ref{fig:test_func_2_fit}. For each fit, we used $k=35$ as number of splines and the smoothing parameter $\lambda_s=0.6189$ was again optimized using cross-validation. The constraint parameter $\lambda_c$ was set to $618.9$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak1.pdf}
-	\caption{Test Function 2}
-	\label{fig:fit_test_func_2}
+	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak_fit.pdf}
+	\caption{Constr. and Unconstr. Fit and Residuals (lower plots) for Function 2}
+	\label{fig:test_func_2_fit}
 \end{figure}
  
-The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit. The mean squared errors are given in the results table. 
+The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for large $x >0.8$, i.e. the region where the data is on purpose "wrong", the residual of the peak constraint fit is lower than the unconstrained ones. The mean squared errors are given in the results table. 
 It is important to notice that the concavity constraint must be used carefully, since not all functions with a peak are also concave or vice versa.
 
 \subsection{Constraint vs. Noise}
 
-In this section, we investigate the effect of different noise levels as well as noise types on the fitting process. In the first part, various levels of Gaussian noise are applied to function \ref{eq:test_func_2}. In the second part, we will use different colors of noise acting on function \ref{eq:test_func_1}. For both examples we use $k=35$ splines and optimize the smoothing parameter $\lambda_s$ using cross-validation. 
+In this section, we investigate the effect of different noise levels as well as noise types on the fitting process. In the first part, various levels of Gaussian noise are applied to Function \ref{eq:test_func_2}. In the second part, we will use different colors of noise acting on Function \ref{eq:test_func_1}. For both examples we use $k=35$ splines and optimize the smoothing parameter $\lambda_s$ using cross-validation. 
 
 \subsubsection{Noise Level}
 
