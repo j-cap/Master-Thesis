@@ -81,7 +81,7 @@ For the test using Function \ref{eq:test_func_1}, the data set contains 100 poin
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1_fit.pdf}
-	\caption{Constr. and Unconstr. Fit and Residuals (lower plot) for Function 1}
+	\caption{Constr. Fit, Unconstr. Fit and Residuals (lower plot) for Function 1}
 	\label{fig:test_func_1_fit}
 \end{figure}
 
@@ -92,11 +92,11 @@ For the test using Function \ref{eq:test_func_2} the data set contains 500 point
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak_fit.pdf}
-	\caption{Constr. and Unconstr. Fit and Residuals (lower plots) for Function 2}
+	\caption{Constr. Fit, Unconstr. Fit and Residuals (lower plots) for Function 2}
 	\label{fig:test_func_2_fit}
 \end{figure}
  
-The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for large $x >0.8$, i.e. the region where the data is on purpose "wrong", the residual of the peak constraint fit is lower than the unconstrained ones. The mean squared errors are given in the results table. 
+The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for $x >0.8$, i.e. the region where the data is on purpose "wrong", the residual of the peak constraint fit is lower than the unconstrained ones. The mean squared errors are given in the results table. 
 It is important to notice that the concavity constraint must be used carefully, since not all functions with a peak are also concave or vice versa.
 
 \subsection{Constraint vs. Noise}
@@ -113,20 +113,20 @@ Gaussian noise is characterized by the following two parameters:
 
 We set the location equal to zero and vary the scale value. The effect of the noise on the fitting procedure is shown in the following figure. The chosen noise levels are $\sigma^2 = \{0.01, 0.05, 0.1\}$.
 
-For these values of $\sigma^2$, the correspond optimized smoothing parameters are $\lambda_{0.01} = 9.0$, $\lambda_{0.05} = \lambda_{0.1} = 68.1$.
+For these values of $\sigma^2$, the correspond optimized smoothing parameters are $\lambda_{0.01} = 0.3162$, $\lambda_{0.05} = 2.3713$ and $\lambda_{0.1} = 1.211$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_noise_levels.pdf}
-	\caption{Constrained and Unconstraint Fit for various Noise Levels}
+	\caption{Constr. Fit, Unconstr. Fit and Residuals for various Noise Levels}
 	\label{fig:fit_noise_levels}
 \end{figure}
 
-The left plot shows the fit for $\sigma^2 = 0.01$. The noise level is quite moderate, which leads to a smooth and satisfying fit. The peak constraint is well satisfied. The constraint parameter $\lambda_c$ was set to $\lambda_c = 1000\lambda_s$. 
+The left plot shows the fit for $\sigma^2 = 0.01$. The noise level is moderate, which leads to a smooth and satisfying fit. The peak constraint is well satisfied. The constraint parameter $\lambda_c$ was set to $\lambda_{c, 0.01} = 1000\lambda_s$. 
 
-The noise level in the middle plot is already high. The unconstrained fit is therefore wiggly and shows 2 peaks. The constrained fit holds the peak constraint and generalizes better to the test set, as seen in *table resulst MSES.* The constraint parameter was again set to $\lambda_c = 1000\lambda_s.$ 
+The noise level in the middle plot is already high. The unconstrained fit is nevertheless smooth, but it underestimates the peak and violates the constraint for $x$. The constrained fit holds the peak constraint and generalizes better to the test set, as seen in Table Results MSES. The constraint parameter was again set to $\lambda_{c, 0.05} = 1000\lambda_{s, 0.05}.$ 
 
-For the right plot and $\sigma^2=0.1$, both constrained and unconstrained fit are wiggly but for larger $x$, the constraint fit follows the constraint better. The constraint parameter was set to $\lambda_c = 1000\lambda_s$.
+For the right plot and $\sigma^2=0.1$, both constrained and unconstrained fit are smooth but overestimate the fit especially in the peak region. The constraint parameter was set to $\lambda_{c, 0.1} = 1000\lambda_{s, 0.1}$. 
 
 \subsubsection{Noise Colors}
 
@@ -138,20 +138,20 @@ We investigate the effect of different noise color on the function fitting proce
 	\item Brownian Noise
 \end{itemize}
 
-The unconstrained as well as the increasing constrained fit for all noise colors are shown in the following figure.
+The unconstrained as well as the increasing constrained fit for all noise colors are shown in Figure \ref{fig:fit_noise_colors}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_noise_colors.pdf}
-	\caption{Constrained and Unconstrained Fit for various Noise Colors}
+	\caption{Constr. and Unconstr. Fit and Residuals for Noise Colors}
 	\label{fig:fit_noise_colors}
 \end{figure}
 
-For the white noise data in the left plot, the increasing constraint produces a very good fit according to the constraint. The optimized smoothing parameter for the unconstrained fit was given by $\lambda_s = 9.08$ and the constraint parameter was set to $\lambda_c = 9080$. The fit recovers the true function quite well. 
+For the white noise data in the left plot, the increasing constraint produces a very good fit according to the constraint and the residual. The optimized smoothing parameter for the unconstrained fit was given by $\lambda_s = 9.08$ and the constraint parameter was set to $\lambda_c = 9080$. The fit recovers the true function quite well. 
 
 For the pink noise data in the middle plot, the constraint helps regularizing the fit, but the increasing constraint is not satisfied especially for low $x$. The increasing part of the function, i.e. $f(x)$ for $x \ge 1.2$,  was fit well. The smoothing parameter was optimized using cross-validation and set to $\lambda_s = 0.3$. The constraint parameter was set to $\lambda_c = 6000$. 
 
-For the brownian noise data in the right plot, the increasing part of the function was fit well, but for larger $x \ge 2$, the fit diverges the true function because of the strong noise component. The increasing constraint is hold quite well. The optimized smoothing parameter used was $\lambda_s = 0.0056$ and the constraint parameter was set to $\lambda_c = 6000$.
+For the brownian noise data in the right plot, the increasing part of the function was fit well, but for $x \ge 2$, the fit diverges the true function because of the strong noise component. The increasing constraint is hold quite well. The optimized smoothing parameter used was $\lambda_s = 0.0056$ and the constraint parameter was set to $\lambda_c = 6000$.
 
 \subsection{Well-distributed vs. Skewed Data and Knot Placement}
 
