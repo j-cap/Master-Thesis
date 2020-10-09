@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.2.25)  8 OCT 2020 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.2.25)  9 OCT 2020 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -635,16 +635,26 @@ Package pdftex.def Info: ../thesisplots/exp_noise_colors.pdf  used on input lin
 e 145.
 (pdftex.def)             Requested size: 345.0pt x 198.65326pt.
  [6 <../thesisplots/exp_noise_levels.pdf>] [7 <../thesisplots/exp_noise_colors.
-pdf>] (./chapter4.aux)
+pdf>]
+<../thesisplots/exp_beta/exp_left_skewed_data_ndata_250_rseed_1.pdf, id=267, 12
+68.66096pt x 595.08511pt>
+File: ../thesisplots/exp_beta/exp_left_skewed_data_ndata_250_rseed_1.pdf Graphi
+c file (type pdf)
+<use ../thesisplots/exp_beta/exp_left_skewed_data_ndata_250_rseed_1.pdf>
+Package pdftex.def Info: ../thesisplots/exp_beta/exp_left_skewed_data_ndata_250
+_rseed_1.pdf  used on input line 179.
+(pdftex.def)             Requested size: 345.0pt x 161.81923pt.
+ [8 <../thesisplots/exp_beta/exp_left_skewed_data_ndata_250_rseed_1.pdf>] (./ch
+apter4.aux)
 Package logreq Info: Writing requests to 'chapter4.run.xml'.
 \openout1 = `chapter4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12731 strings out of 481228
- 230805 string characters out of 5921397
- 857695 words of memory out of 5000000
- 27828 multiletter control sequences out of 15000+600000
+ 12739 strings out of 481228
+ 231267 string characters out of 5921397
+ 858703 words of memory out of 5000000
+ 27834 multiletter control sequences out of 15000+600000
  540536 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,11n,48p,813b,1602s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -661,10 +671,10 @@ texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/201
 t/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publi
 c/cm-super/sfrm1000.pfb>
-Output written on chapter4.pdf (7 pages, 307393 bytes).
+Output written on chapter4.pdf (8 pages, 370780 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 376 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

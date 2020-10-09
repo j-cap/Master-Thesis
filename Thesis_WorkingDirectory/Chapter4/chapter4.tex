@@ -154,7 +154,38 @@ For the pink noise data in the middle plot, the constraint helps regularizing th
 For the brownian noise data in the right plot, the increasing part of the function was fit well, but for $x \ge 2$, the fit diverges the true function because of the strong noise component. The increasing constraint is hold quite well. The optimized smoothing parameter used was $\lambda_s = 0.0056$ and the constraint parameter was set to $\lambda_c = 6000$.
 
 \subsection{Well-distributed vs. Skewed Data and Knot Placement}
+We will now investigate the effect of irregular data distributions on the fitting process. We therefore examine input data generated on a grid vs. data generated from a beta distribution given by
 
+\begin{align}
+	f(x) = \frac{1}{B(a, b))} x^{a-1} (1-x)^{b-1} 
+\end{align}
+with
+\begin{align*}
+	B(a,b) = \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} = \int_0^1 u^{a-1} (1-u)^{b-1} du
+\end{align*}
+
+
+for different values of the parameters $a$ and $b$. We will investigate the effect of the knot placement, which can either be equidistant knot placement or quantile-based knot placement, using this data. We again use noisy samples from Function \ref{eq:test_func_2}.
+
+\subsubsection{Equidistant vs. Quantile Based Knot Placement for Grid Data}
+We will use 250 noisy samples from function (2) generated from a linear sequence of $x$. The smoothing parameters for the equidistant knot placement fit and for the quantile based knot placement fit were optimized using cross-validation and set to $\lambda_{s,equidistant} = 1.211$ and $\lambda_{s, quantile} = 4.641$. The constraint parameter for the peak constraint was set to $\lambda_c = 6000$ for both fits. We use 35 splines for both fits. The resulting fits are shown in the following figure.
+
+As expected for grid data, there is not much difference in the fits between the knot placement types. The peak constraint is hold by both fits quite well. It is important to notice that the discontinuities in first derivative of the spline basis for both fits is just visual and comes from the number of used data points for the plot.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{../thesisplots/exp_grid/exp_grid_ndata_250_rseed_1.pdf}
+	\caption{Constr. and Unconstr. Fit and Residuals for Grid Data}
+	\label{fig:fit_grid_250}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{../thesisplots/exp_beta/exp_left_skewed_data_ndata_250_rseed_1.pdf}
+	\caption{Constr. and Unconstr. Fit and Residuals for Left Skewed Data}
+	\label{fig:fit_left_skew_250}
+\end{figure}
 
 \begin{itemize}
 	\item Phasendiagram: $\sigma^2 vs. \lambda_c$
