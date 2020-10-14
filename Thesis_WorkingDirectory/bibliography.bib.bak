@@ -1,6 +1,6 @@
 % Encoding: UTF-8
 
-@Book{fahrmeir2013,
+@Book{fahrmeir2013regression,
   author    = {Fahrmeir, Ludwig and Kneib, Thomas and Lang, Stefan and Marx, Brian},
   publisher = {Springer},
   title     = {Regression models},
@@ -166,6 +166,20 @@
   year      = {2004},
   pages     = {731--761},
   publisher = {JSTOR},
+}
+
+@Book{ferziger2008numerische,
+  author    = {Ferziger, Joel H and Peric, Milovan},
+  publisher = {Springer-Verlag},
+  title     = {Numerische Str{\"o}mungsmechanik},
+  year      = {2008},
+}
+
+@Article{strutz2016data,
+  author  = {Strutz, Tilo},
+  journal = {A Practical Introduction to Weighted Least Squares and Beyond},
+  title   = {Data fitting and uncertainty},
+  year    = {2016},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -80,7 +80,7 @@
       \field{pages}{317\bibrangedash 328}
       \range{pages}{12}
     \endentry
-    \entry{fahrmeir2013regression}{incollection}{}
+    \entry{fahrmeir2013regression}{book}{}
       \name{author}{4}{}{%
         {{hash=476d0247462120c31452a2a58cbd6cdc}{%
            family={Fahrmeir},
@@ -121,6 +121,35 @@
       \field{year}{2013}
       \field{pages}{21\bibrangedash 72}
       \range{pages}{52}
+    \endentry
+    \entry{ferziger2008numerische}{book}{}
+      \name{author}{2}{}{%
+        {{hash=3aa88c71e105ea70dee9c5754e53957e}{%
+           family={Ferziger},
+           familyi={F\bibinitperiod},
+           given={Joel\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=4e5eff4468ed6699d8db9b51d1f99a6f}{%
+           family={Peric},
+           familyi={P\bibinitperiod},
+           given={Milovan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{fullhash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{bibnamehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{authorbibnamehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{authornamehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{authorfullhash}{66ed60340bf30587bab76229df8bbf02}
+      \field{sortinit}{f}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Numerische Str{ö}mungsmechanik}
+      \field{year}{2008}
     \endentry
     \entry{hofner2011monotonicity}{article}{}
       \name{author}{3}{}{%
@@ -189,6 +218,28 @@
       \field{labeltitlesource}{title}
       \field{title}{Encyclopedia of machine learning}
       \field{year}{2011}
+    \endentry
+    \entry{strutz2016data}{article}{}
+      \name{author}{1}{}{%
+        {{hash=42f9ac57533c4cb4a69e39a886f3b6fc}{%
+           family={Strutz},
+           familyi={S\bibinitperiod},
+           given={Tilo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
+      \strng{fullhash}{42f9ac57533c4cb4a69e39a886f3b6fc}
+      \strng{bibnamehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
+      \strng{authorbibnamehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
+      \strng{authornamehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
+      \strng{authorfullhash}{42f9ac57533c4cb4a69e39a886f3b6fc}
+      \field{sortinit}{s}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{A Practical Introduction to Weighted Least Squares and Beyond}
+      \field{title}{Data fitting and uncertainty}
+      \field{year}{2016}
     \endentry
   \enddatalist
 \endrefsection
