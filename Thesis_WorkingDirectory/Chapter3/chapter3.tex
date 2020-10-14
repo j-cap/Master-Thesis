@@ -33,9 +33,9 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Introduction}
 	
-	We are now going to use the theory defined in Chapter 2 to estimate smooth, constraint functions. An overview of the different problems is given in Table \ref{tab:problem_overview}. At first, we are using B-splines as basis functions for the estimation of the one dimensional, unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\}$ for $i = 1, \dots, n$.  Next, we use the concept of P-splines introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one- and multi-dimensional functions. \cite{hofner2011monotonicity} 
+	We are now going to use the theory defined in Chapter 2 to estimate smooth, constraint functions. An overview of the different problems is given in Table \ref{tab:problem_overview}. At first, we are using B-splines as basis functions for the estimation of the one dimensional, unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\}$ for $i = 1, \dots, n$.  Next, we use the concept of P-splines introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one- and two-dimensional functions. \cite{hofner2011monotonicity} 
 
-	\begin{table}[h]
+	\begin{table}[H]
 	\centering
 	\begin{tabular}{|lll|}
 		\hline
@@ -45,26 +45,26 @@
 		1d Constraint Function Estimation  & P-Splines + Constraint Penalty       & PIRLS 			    \\ \hline 
 		n-d Constraint Function Estimation & P+TP-Splines + Constraint Penalty & PIRLS 			    \\ \hline \bottomrule
 	\end{tabular}
-	\caption{Problem Overview}
+	\caption{Problem overview}
 	\label{tab:problem_overview}
 	\end{table}
 
-	The a priori knowledge can be incorporated using different kinds of constraints. The possible constraints are listed in Table \ref{tab:constraint_overview}.
+	The a priori knowledge can be incorporated using different types of constraints. The possible constraints are listed in Table \ref{tab:constraint_overview}.
 	
 	\begin{table}[h]
 	\centering
 	\begin{tabular}{|lll|}
 		\hline
-		\textbf{Constraint} & \textbf{Description}                         & \textbf{Math. Description} 	\\ \hline  \toprule
-		Monotonicity        & Functions is either increasing or decreasing.& $\abs{f'(x)} \ge 0$ 			\\ \hline
-		Curvature           & Function is either convex or concave.        & $\abs{f''(x)} \ge 0$ 			\\ \hline
-		Unimodality        & Function has a mode/peak.                    & $m = \arg \max f(x)$ 				\\ 
-							&	   										   & $f'(x) \ge 0 \quad \text{if} \ x < m$  \\ 
-							&  											   & $f'(x) \le 0 \quad \text{if} \ x > m$  \\ \hline
-		Boundedness         & Function is bounded by the value M.          & $\abs{f(x)} \le M$ 			\\ \hline
-		Jamming             & Function is jammed by the value M.           & $f(x^{(M)}) \approx y^{(M)}$	\\ \hline \bottomrule
+		\textbf{Constraint}& \textbf{Description}                         & \textbf{Math. Description}\\ \hline \toprule
+		Monotonicity       & Functions is either increasing or decreasing.& $\lvert f'(x) \rvert \ge 0$ 	\\ \hline
+		Curvature          & Function is either convex or concave.        & $\lvert f''(x) \rvert \ge 0$ 	\\ \hline
+		Unimodality        & Function has a mode/peak.                    & $m = \arg \max_{x} f(x)$ 				\\ 
+						   &	   										  & $f'(x) \ge 0 \quad \text{if} \ x < m$  \\ 
+						   &  											  & $f'(x) \le 0 \quad \text{if} \ x > m$  \\ \hline
+		Boundedness        & Function is bounded by the value M.          & $\lvert f(x)\rvert \le M$ 		\\ \hline
+		Jamming            & Function is jammed by the value M.           & $f(x^{(M)}) \approx y^{(M)}$	\\ \hline \bottomrule
 	\end{tabular}
-	\caption{Overview of the Possible Constraints}
+	\caption{Overview of the possible constraints}
 	\label{tab:constraint_overview}
 	\end{table}
 		
@@ -86,7 +86,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Function Estimation}
 	
-	\subsection{1D Function Estimation} \label{1D}
+	\subsection{1d Function Estimation} \label{1D}
  	 
  	The goal is to model given data
  	
@@ -100,7 +100,7 @@
 		y = f(x) = \sum_{j=1}^k \beta_k x_k(x) = \boldsymbol{X} \boldsymbol{\beta},
 	\end{align}
 	
-	where $\boldsymbol{X} \in \mathbb{R}^{n\times k}$ is the B-spline basis matrix $\boldsymbol{\beta} \in \mathbb{R}^k$ are the coefficients to be estimated. 
+	where $\boldsymbol{X} \in \mathbb{R}^{n\times k}$ is the B-spline basis matrix and $\boldsymbol{\beta} \in \mathbb{R}^k$ are the coefficients to be estimated. 
 	
  	The least squares objective function to be minimized using the complete data is then given by
 	
@@ -108,13 +108,13 @@
 		Q_1(\boldsymbol{y}, \boldsymbol{\beta}) = \lVert \boldsymbol{y} - f(\boldsymbol{x}) \rVert^2 = \lVert \boldsymbol{y} - \boldsymbol{X}\boldsymbol{\beta} \rVert^2 
 	\end{align}	
 	
-	The coefficients are determined by minimizing the objective function (\ref{eq:OF_1}) with respect to $\boldsymbol{\beta}$, i.e.
+	The coefficients are determined by minimizing the objective function given in (\ref{eq:OF_1}) with respect to $\boldsymbol{\beta}$, i.e.
 	
 	\begin{align}\label{eq:optimization_problem_1}
 		\boldsymbol{\hat \beta}_{LS} = \arg \min_{\boldsymbol{\beta}} Q_1(\boldsymbol{y}, \boldsymbol{\beta}).
 	\end{align}
 	
-	This yields 
+	Using the least squares algorithm LS, this yields 
 	
 	\begin{align} \label{eq:LS_coef}
 		\boldsymbol{\hat \beta}_{LS}= (\boldsymbol{X}^T \boldsymbol{X})^{-1} \boldsymbol{X}^T \boldsymbol{y}.
@@ -131,7 +131,7 @@
     \end{figure}
 	
 	
-	The number of splines $k$ has a strong influence on the amount of smoothing. A small number of splines $k$ leads to a very smooth estimate, but a large data error. On the other hand, when the number of splines is relatively large, the data error is very small but the smoothness of the estimate is poor. This behavior is an example of the bias-variance dilemma and depicted in Figure \ref{fig:smooth_bf_large}. \cite{sammut2011}
+	The number of splines $k$ has a strong influence on the amount of smoothing. A small number $k$ leads to a very smooth estimate, but a large data error. On the other hand, when the number of splines is relatively large, the data error is very small but the smoothness of the estimate is poor. This behavior is an example of the bias-variance dilemma and depicted in Figure \ref{fig:smooth_bf_large}. \cite{sammut2011}
 
 
 	\begin{figure}[H]
@@ -143,9 +143,9 @@
 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{1D Smooth Function Estimation} \label{1D_smooth}
+	\subsection{1d Smooth Function Estimation} \label{1D_smooth}
 
-	To overcome this problem, the second derivative of the estimate $f(x)$, i.e. $f''(x) = \sum_{j=1}^k \beta_k x_k''(x)$, has to be penalized to realize a smoother estimate. Eilers and Marx have introduced the so-called P-splines. \cite{eilers1996flexible} Therefore, the objective function (\ref{eq:OF_1}) is extended by an additional term considering the smoothness, 
+	To overcome this problem, the second derivative of the estimated function $f(x)$, i.e. $f''(x) = \sum_{j=1}^k \beta_k x_k''(x)$, has to be penalized to realize a smoother estimate. Eilers and Marx have introduced the so-called P-splines. \cite{eilers1996flexible} Therefore, the objective function (\ref{eq:OF_1}) is extended by an additional term considering the smoothness, 
 	
 	\begin{align}\label{eq:OF_2}
 		Q_2(\boldsymbol{y}, \boldsymbol{\beta}) = Q_1(\boldsymbol{y}, \boldsymbol{\beta}) + \lambda_s \mathcal{J}_s(\boldsymbol{\beta}; d) = \lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta} \rVert^2 + \lambda_s \boldsymbol{\beta}^T \boldsymbol{D}_d^T \boldsymbol{D}_d^T \boldsymbol{\beta}, 
@@ -153,7 +153,7 @@
 	
 	with the smoothing parameter $\lambda_s$ and an appropriate mapping matrix $\boldsymbol{D}_d$ capturing the second derivative, which itself is a measure for function wiggliness. Here, an approximation of the second derivative can be performed by the squared finite difference of order $d$ of adjacent coefficients using the matrix form of the difference operator of order $d$. 
 	
-	The difference operator  $\Delta^d$ of order $d$ for an equidistant knot placement of the B-splines is defined by
+	The difference operator  $\Delta^d$ of order $d$ for equidistant knot placement of B-splines is defined by
 	
 	\begin{align*}
 		\Delta^1 \beta_j &= \beta_j - \beta_{j-1} \\
@@ -182,7 +182,7 @@
 				 & & & 1 & -2 & 1 
 			\end{pmatrix} \in \mathbb R^{k-2\times k}.$$
 	
-	For non-equidistant knot placement, the difference operator needs to include some kind of weighting determining the influence of the individual splines. Here we chose to take the approach given in \cite{ferziger2008numerische}.
+	For non-equidistant knot placement, the difference operator $\Delta^d$ needs to include some kind of weighting determining the influence of the individual splines. A possible approach can be found in \cite{ferziger2008numerische}.
 	
 	By minimizing the objective function (\ref{eq:OF_2}), i.e.
 	
@@ -190,15 +190,16 @@
 		\boldsymbol{\hat \beta}_{PLS} = \arg \min_{\boldsymbol{\beta}} Q_2(\boldsymbol{y}, \boldsymbol{\beta}),
 	\end{align}
 	
-	the penalized least squares coefficients are given by
+	using the penalized least squares algorithm PLS, the penalized least squares coefficients are given by
+	
 	\begin{align} \label{eq:PLS_coef}
 		\boldsymbol{\hat \beta}_{PLS}= (\boldsymbol{X}^T \boldsymbol{X} + \lambda_s \boldsymbol{D}_d^T \boldsymbol{D}_d)^{-1} \boldsymbol{X}^T \boldsymbol{y}.
 	\end{align} 
 	
 	The smoothing parameter $\lambda_s$ plays a critical role and can be optimized using the information criteria specified in Chapter Model Selection Criteria, e.g. AIC and BIC, or by using cross-validation techniques. \cite{fahrmeir2013regression}
-	For small values $\lambda_s \rightarrow 0$, the penalized least squares estimate $\hat{\boldsymbol{\beta}}_{PLS}$ approaches the least squares estimate $\hat{\boldsymbol{\beta}}_{LS}$, while for large values $\lambda_s \gg 0$, the fitted function shows the behavior of a polynomial with $d-1$ degrees of freedom. For example, using $d=2$ and a large smoothing parameter $\lambda_s$ is leading to a linear function, while using $d=1$ would lead to a constant function. \cite{fahrmeir2013regression}
+	For small values $\lambda_s \rightarrow 0$, the penalized least squares estimate $\boldsymbol{\hat{\beta}}_{PLS}$ approaches the least squares estimate $\boldsymbol{\hat{\beta}}_{LS}$, while for large values $\lambda_s \gg 0$, the fitted function shows the behavior of a polynomial with $d-1$ degrees of freedom. For example, using $d=2$ and a large smoothing parameter $\lambda_s$ is leading to a linear function, while using $d=1$ would lead to a constant function. \cite{fahrmeir2013regression}
 	
-	Figure \ref{fig:pspline} shows the behavior of P-splines using $k=50$ splines for several values of the smoothing parameter $\lambda_s = \{10^{-2}, 10^{0},10^{2},10^{6}\}$ and a smoothness penalty of order $d=2$.  As the value of $\lambda_s$ gets larger, the fitted curve becomes more smooth and thus the $2^{nd}$ derivative becomes smaller. For very large values of $\lambda$, the estimate approaches a straight line.
+	Figure \ref{fig:pspline} shows the behavior of P-splines using $k=50$ splines for several values of the smoothing parameter $\lambda_s = \{10^{-2}, 10^{2},10^{5},10^{6}\}$ and a smoothness penalty of order $d=2$.  As the value of $\lambda_s$ gets larger, the fitted curve becomes more smooth and thus the $2^{nd}$ derivative becomes smaller. For very large values of $\lambda$, the estimate approaches a straight line.
 	
 	\begin{figure}[H]
 		\centering
@@ -208,7 +209,7 @@
 	\end{figure}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{1D Constraint Function Estimation}
+	\subsection{1d Constraint Function Estimation}
 	
 	A priori knowledge can now be systematically incorporated by the extension of the objective function (\ref{eq:OF_2}) using an additional term representing the user-defined constraint. Note that this approach incorporates the a priori knowledge as soft constraints. Therefore, no guarantee can be given that the fit holds the constraint for every possible input. The constraint penalized least-squares objective function is given by
 	
@@ -224,7 +225,7 @@
 		\mathcal{J}_c(\boldsymbol{\beta}; c) = \boldsymbol{\beta}^T \boldsymbol{D}_c^T \boldsymbol{V} \boldsymbol{D}_c  \boldsymbol{\beta}
 	\end{align}
 
-	with the mapping matrix $\boldsymbol{D}_c$ and the diagonal weighting matrix $\boldsymbol{V} \coloneqq \boldsymbol{V}(\boldsymbol{\beta}; c)$ capturing if a constraint $c$ is active or inactive. These matrices will further be defined in Chapter \ref{sec:user-defined-constraints}.
+	with the mapping matrix $\boldsymbol{D}_c$ and the diagonal weighting matrix $\boldsymbol{V} \coloneqq \boldsymbol{V}(\boldsymbol{\beta}; c)$ capturing if the constraint $c$ is active or inactive. These matrices will further be defined in Chapter \ref{sec:user-defined-constraints}.
 	
 	The constraint of jamming the fit by some critical points can be incorporated using the weighted least squares approach and large weights for the critical points. \cite{strutz2016data}
 	
@@ -240,20 +241,20 @@
 		\boldsymbol{\hat \beta}_{PLS, c} = (\boldsymbol{X}^T \boldsymbol{X} + \lambda_s \boldsymbol{D}_d^T \boldsymbol{D}_d + \lambda_c \boldsymbol{D}^T_c \boldsymbol{V} \boldsymbol{D}_c)^{-1} \boldsymbol{X}^T \boldsymbol{y}.
 	\end{align}	
  
- 	Note, (\ref{eq:OF_3}) is a nonlinear equation because the matrix $\boldsymbol{V}$ depends on $\boldsymbol{\beta}$. Thus, it has to be solved iteratively. The algorithm is shown in Figure \ref{fig:pirls}. 
+ 	Note, (\ref{eq:PLS,c_coef}) is a nonlinear equation because the matrix $\boldsymbol{V}$ depends on $\boldsymbol{\beta}$. Thus, it has to be solved iteratively. The algorithm is shown in Figure \ref{fig:pirls}. 
  	
  	\begin{figure}[H]
  		\centering
- 		\includegraphics[width=0.5\linewidth]{../thesisplots/algorithm.pdf}
+ 		\includegraphics[width=0.6\linewidth]{../thesisplots/algorithm.pdf}
  		\caption{Penalized iteratively reweighted least squares algorithm}
  		\label{fig:pirls}
  	\end{figure}
  	  
 
-	The initial estimate $\hat{\boldsymbol{\beta}}_{init}$ needed to compute the weighting matrix $\boldsymbol{V}$ is given by the least squares estimate $\hat{\boldsymbol{\beta}}_{LS}$. Now the calculation of the constrained least squares estimate $\hat{\boldsymbol{\beta}}_{PLS,c}$ and the calculation of the weighting matrix $\boldsymbol{V}$ is performed until no more changes in the weighting matrix $\boldsymbol{V}$ appear. This scheme is called penalized iteratively reweighted least squares and is abbreviated by PIRLS. \cite{hofner2011monotonicity}
+	The initial estimate $\boldsymbol{\hat{\beta}}_{init}$ needed to compute the weighting matrix $\boldsymbol{V}$ is given by the least squares estimate $\boldsymbol{\hat{\beta}}_{LS}$. Now the calculation of the constrained least squares estimate $\boldsymbol{\hat{\beta}}_{PLS,c}$ and the calculation of the weighting matrix $\boldsymbol{V}$ is performed until no more changes in the weighting matrix $\boldsymbol{V}$ appear. This scheme is called penalized iteratively reweighted least squares and is abbreviated by PIRLS. \cite{hofner2011monotonicity}
 	
 	
-	Figure \ref{fig:incspline} shows an example, where the noisy data is approximated by considering the monotonicity constraint. The smoothing parameter was optimized using cross-validation and set to $\lambda_s=271.9$. The constraint parameter was set to $\lambda_c = 6000$. For both function estimations, the number of used splines $k$ was set to $30$. 	
+	Figure \ref{fig:incspline} shows an example, where noisy data is approximated by considering the monotonicity constraint. The smoothing parameter was optimized using cross-validation, set to $\lambda_s=271.9$ and used for both estimates. The constraint parameter was set to $\lambda_c = 6000$. For both function estimations, the number of used splines $k$ was set to $30$. 	
 	
 	\begin{figure}[H]
 		\centering
@@ -262,7 +263,7 @@
 		\label{fig:incspline}
 	\end{figure}	
 
-	The red, constraint function estimation follows the monotonicity constraint far better that the blue, smooth function estimation. For $x \in [0, 0.2]$ and $x < 0.6$, the two fits are identical, since no constraint violation is present. The weighting matrix $\boldsymbol{V}$ is therefore $0$ everywhere and the constraint is not active. For $x \in [0.2, 0.6]$ the constraint is active. The red fit produces a constant line as optimal solution for the competing goals of data accuracy, smoothness and constraint fidelity.
+	The red, constraint function estimation follows the monotonicity constraint far better that the blue, smooth function estimation. For $x \in [0, 0.2]$ and $x > 0.6$, the two fits are identical, since no constraint violation is present. The weighting matrix $\boldsymbol{V}$ is therefore $0$ everywhere and the constraint is not active. For $x \in [0.15, 0.6]$ the constraint is active. The red fit produces a almost constant line as optimal solution for the competing goals of data accuracy, smoothness and constraint fidelity.
 
 	This shows, that the incorporation of a priori knowledge in the fitting process using B-splines is in principle possible using a appropriate choice of the mapping matrix $\boldsymbol{D}_c$ and the weighting matrix $\boldsymbol{V}$ as well as an iterative fitting approach using penalized iteratively reweighted least squares. 
 		
@@ -297,7 +298,7 @@
 						    					1, \quad \text{if} \ \Delta^1\beta_j > 0.
 			\end{cases}	
 	\end{align}
-	This states, that the penalty term $\mathcal{J}(\boldsymbol{\beta}; c)$ only contributes if adjacent coefficients $\beta_{j-1}$ and $\beta_j$ are increasing or decreasing, respectively. \cite{hofner2011monotonicity} \cite{eilers2005unimodal}
+	This states, that the penalty term $\mathcal{J}_c(\boldsymbol{\beta}; c)$ only contributes if adjacent coefficients $\beta_{j-1}$ and $\beta_j$ are increasing or decreasing, respectively. \cite{hofner2011monotonicity} \cite{eilers2005unimodal}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	\subsection{Curvature Constraint}
@@ -329,7 +330,7 @@
 								  \end{cases}
 	\end{align}	
 	
-	Therefore, the penalty term $\mathcal{J}_c(\boldsymbol{\beta}; c)$ is only contributes if the second order difference of adjacent coefficients $\boldsymbol{\beta}$ is either positive or negative, respectively. \cite{eilers2005unimodal}
+	Therefore, the penalty term $\mathcal{J}_c(\boldsymbol{\beta}; c)$ only contributes if the second order difference of adjacent coefficients $\boldsymbol{\beta}$ is either positive or negative, respectively. \cite{eilers2005unimodal}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	\subsection{Unimodality Constraint}
@@ -338,7 +339,7 @@
 	
 	The mapping matrix $\boldsymbol{D}_c^{unimodal}$ enforcing unimodal behavior can be constructed using the first order difference operator $\Delta^1$. The weighting matrix $\boldsymbol{V}$ now has a special structure. 
 	
-	First, we construct the B-spline basis according to the given data. We then need to find the index $j_{peak}$ of the spline, which has the maximal value at the peak, see Figure \ref{fig:peak_spline}. The index $j_{peak}$ is now used as splitting point for the weighting matrix $\boldsymbol{V}$. All coefficients $\beta_j$ for $j < j_{peak}$ are constrained to be monotonic increasing, i.e. $\Delta^1 \beta_j \ge 0$ for $j = 1, \dots, j_{peak}-1$, while all coefficients $\beta_j$ for $j > j_{peak}$ are constrained to be monotonic decreasing, i.e. $\Delta^1 \beta_j \le 0$ for $j = j_{peak}+1, \dots, k$. The coefficient $\beta_{j_{peak}}$ stays unconstrained. \cite{eilers2005unimodal} 
+	First, we construct the B-spline basis according to the given data. We then need to find the index $j_{peak}$ of the \emph{peak spline}, which has the maximal value at the peak data point, see Figure \ref{fig:peak_spline}. The index $j_{peak}$ is now used as splitting point for the weighting matrix $\boldsymbol{V}$. All coefficients $\beta_j$ for $j < j_{peak}$ are constrained to be monotonic increasing, i.e. $\Delta^1 \beta_j \ge 0$ for $j = 1, \dots, j_{peak}-1$, while all coefficients $\beta_j$ for $j > j_{peak}$ are constrained to be monotonic decreasing, i.e. $\Delta^1 \beta_j \le 0$ for $j = j_{peak}+1, \dots, k$. The coefficient $\beta_{j_{peak}}$ stays unconstrained. \cite{eilers2005unimodal} 
 	
 	\begin{figure}[H]
 		\centering
@@ -348,7 +349,7 @@
 	\end{figure}
 	
 	
-	The corresponding matrix has for $k$ splines is given as 
+	The corresponding matrix for $k$ splines is given as 
 	
 	\begin{align}\label{eq:D_c_unimodal}
 		\boldsymbol{D}_c^{unimodal} = \begin{pmatrix} -1 & 1 \\ 
@@ -379,7 +380,7 @@
 								  \end{cases}, \quad \text{if} \ j > j_{peak}
 	\end{align}
 	
-	When assuming a valley in the data, the same approach as above can easily be used by multiplying the data with $-1$ or by always doing the inverse operation, i.e. finding the spline index of the valley $j_{valley}$, then constraining all splines for $j < j_{valley}$ to be monotonic decreasing, i.e. $\Delta^1 \beta_j \le 0$ for $j = 1, \dots, j_{valley}-1$, and all splines for $j > j_{valley}$ to be monotonic increasing, i.e. $\Delta^1 \beta_j \ge 0$ for $j = j_{valley}+1, \dots, k$. The coefficient $\beta_{j_{valley}}$ stays unconstrained. 
+	When assuming a valley in the data, the same approach as above can easily be used by multiplying the data with $-1$ or by always doing the inverse operation, i.e. finding the index $j_{valley}$ of the \emph{valley spline}, then constraining all splines for $j < j_{valley}$ to be monotonic decreasing, i.e. $\Delta^1 \beta_j \le 0$ for $j = 1, \dots, j_{valley}-1$, and all splines for $j > j_{valley}$ to be monotonic increasing, i.e. $\Delta^1 \beta_j \ge 0$ for $j = j_{valley}+1, \dots, k$. The coefficient $\beta_{j_{valley}}$ stays unconstrained. 
 	
 	The weights $v_j$ to consider a valley constraint are given by
 	
@@ -399,7 +400,7 @@
 									\end{cases}, \quad \text{if} \ j > j_{valley}.
 	\end{align}
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Boundedness Constraint}
 	
 	For certain physical systems, it is known a priori that the measured quantity cannot be smaller than zero, i.e. $f(x) \ge 0$. Using data-driven modeling on noisy data can lead to predictions in the interpolation and extrapolation regime, which may not hold this constraint. It is therefore appropriate to apply the user-defined constraint of boundedness from below.
@@ -408,12 +409,12 @@
 	
 	\begin{align} \label{eq:v_boundedness}
 		v_j(\boldsymbol{\beta}) = \begin{cases} 
-										0, \quad \text{if} \ \hat y_j(\boldsymbol{\beta}) \ge M\\ 
-										1, \quad \text{if} \ \hat y_j(\boldsymbol{\beta})  < M 		
+										0, \quad \text{if} \ f(x^{(j)}) \ge M\\ 
+										1, \quad \text{if} \ f(x^{(j)})  < M 		
 			  \end{cases}
 	\end{align}
 	
-	The constrained penalized least squares objective function is then of the form
+	The constrained,penalized least squares objective function is then of the form
 	
 	\begin{align}\label{eq:OF_4}
 		Q_4(\boldsymbol{y}, \boldsymbol{\beta}) = Q_1(\boldsymbol{y}, \boldsymbol{\beta}) + \lambda_s \mathcal J_s(\boldsymbol{\beta}; d) + \lambda_{bounded} \mathcal J_{bounded}(\boldsymbol{\beta}) 
@@ -429,10 +430,10 @@
 	
 	Using different values of $M$ allows us to bound from below from any number $M$. Switching the comparison operators in (\ref{eq:v_boundedness}) enables us to bound functions from above. 
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Jamming Constraint}
 	
-	Jamming the function $f(x)$ by some point $p = \{x^{(jamm)}, y^{(jamm)}\}$ means that the estimate $\hat f(x^{(jamm)}) \approx y^{(jamm)}$. This can be incorporated using the weighted least squares appraoch. \cite{strutz2016data} We can therefore use a priori knowledge that the estimated function should be in the proximity of $y^{(jamm)}$ for $x = x^{(jamm)}$. 
+	Jamming the function $f(x)$ by some point $p = \{x^{(jamm)}, y^{(jamm)}\}$ means that the estimated function $f(x^{(jamm)}) \approx y^{(jamm)}$. This can be incorporated using the weighted least squares approach. \cite{strutz2016data} We can therefore use a priori knowledge that the estimated function should be in the proximity of $y^{(jamm)}$ for $x = x^{(jamm)}$. 
 	
 	The constraint, weighted objective function is then of the form
 	
@@ -442,31 +443,71 @@
 	
 	using the matrix norm $\lVert .\rVert_W$ induced by the weighting matrix $\boldsymbol{W} \in \mathbb{R}^{n \times n}$. The weights $w_i$ for $i=1, \dots, n$ are equal to $1$, except for the point $p$ for which the weight $w_p$ is set to some high value, e.g. $w_p = 1000$.
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	By minimizing the objective function in (\ref{eq:OF_5}), i.e.
+	
+	\begin{align}\label{eq:optimization_problem_5}
+		\boldsymbol{\hat \beta}_{WLS} = \arg \min_{\boldsymbol{\beta}} Q_5(\boldsymbol{y}, \boldsymbol{\beta}),
+	\end{align}
+
+	we obtain the weighted least squares estimate
+	
+	\begin{align} \label{eq:WLS_coef}
+	\boldsymbol{\hat \beta}_{WLS} = (\boldsymbol{X}^T \boldsymbol{W} \boldsymbol{X})^{-1} \boldsymbol{X}^T \boldsymbol{W} \boldsymbol{y}.
+	\end{align}	
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{n-d Constraint Function Estimation}
 	
-	The extension from one input to multiple inputs uses the concept of additive models given in Chapter \emph{Additive Models}. Given input data $\{ x_1^{(i)}, \dots, x_p^{(i)}, y^{(i)}\}$ for $i = 1, \dots, n$ and $p$ as the number of inputs, the combined model using all available B-splines and tensor-product splines is given as
+	The extension from one input to multiple input dimensions uses the concept of additive models given in Chapter \emph{Additive Models}. Given input data $\{ x_1^{(i)}, \dots, x_p^{(i)}, y^{(i)}\}$ for $i = 1, \dots, n$ and $p$ as the number of inputs, the combined model using all available B-splines and tensor-product splines is given as
 	
 	\begin{align} \label{eq:tps_all}
-		y = f(x_1,..., x_p) = \sum_{j=1}^p s_j(x_j) + \sum_{j=1}^{p-1} \sum_{l>j}^p t_{l,j}(x_l, x_j)
+		y = f(x_1,..., x_p) = \sum_{j=1}^p s_j(x_j) + \sum_{j=1}^{p-1} \sum_{l>j}^p t_{j, l}(x_j, x_l)
 	\end{align}
 	
-	where $s_j(x_j)$ is the B-spline estimate given by $s_j(x_j) = \boldsymbol{X}_j \boldsymbol{\beta}_j$ and $t_{l, j}(x_l,x_j)$ is the tensor-product estimate is given by $t_{l, j}(x_l,x_j) = \boldsymbol{X}_{l,j} \boldsymbol{\beta}_{l,j}$. 
+	where $s_j(x_j)$ is the B-spline estimate given by $s_j(x_j) = \boldsymbol{X}_j \boldsymbol{\beta}_j$ and $t_{l, j}(x_l,x_j)$ is the tensor-product estimate is given by $t_{j, l}(x_j,x_l) = \boldsymbol{X}_{j, l} \boldsymbol{\beta}_{j, l}$. The number of individual estimates is given by 
 	
-	The number of individual estimates is given by $n_{total} = p + \frac{p(p-1)}{2}$.  \cite{fahrmeir2013regression} Assuming the use of $k$ splines for the B-spline estimates and $k^2$ splines for the tensor-product estimates, the total number of coefficients to be determined is given by 
+	\begin{align}
+		n_{total} = p + \frac{p(p-1)}{2}.  
+	\end{align}
+	
+	
+	The constrained penalized least squares objective function for additive models can now be written similar to (\ref{eq:OF_3}) as
+	
+	\begin{align}\label{eq:OF_6}
+		Q_6(\boldsymbol{y}, \boldsymbol{\beta}) = Q_1(\boldsymbol{y}, \boldsymbol{\beta}) + \boldsymbol{\lambda}_s^T	\boldsymbol{\mathcal{J}}_s(\boldsymbol{\beta}; \boldsymbol{d}) + \boldsymbol{\lambda}_c^T \boldsymbol{\mathcal{J}}_c(\boldsymbol{\beta}; \boldsymbol{c}).
+	\end{align}
+	
+	with $\boldsymbol{\lambda}_s \in \mathbb{R}^{n_{total}}$ and  $\boldsymbol{\lambda}_c \in \mathbb{R}^{n_{total}}$  defined as vectors with one value of smoothness and constraint parameter for each estimate, respectively. 
+	
+	The objective function (\ref{eq:OF_6}) is then optimized, i.e.
+	
+	\begin{align}\label{eq:optimization_problem_6}
+		\boldsymbol{\hat \beta}_{PLS,c,nd} = \arg \min_{\boldsymbol{\beta}} Q_5(\boldsymbol{y}, \boldsymbol{\beta}),
+	\end{align}
+	
+	using the penalized iteratively reweighted least squares algorithm to obtain the coefficients $\boldsymbol{\hat{\beta}}_{PLS,c,nd}$. 
+	
+	We now need to specify the three parts of the objective function in (\ref{eq:OF_6}). 
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Data Term}
+		
+
+	
+	Assuming the use of $k$ splines for the B-spline estimates and $k^2$ splines for the tensor-product estimates, the total number of coefficients to be determined is given by 
 	
 	\begin{align}\label{eq:tps_total_number_of_coef}
 		k_{total} = pk + \frac{p(p-1)}{2}k^2. 
 	\end{align}
 	
-	Since all B-spline smooths and tensor-product spline smooths follow a linear model structure, we can combine them into one large model given by
+	Since all B-spline and tensor-product spline models follow a linear model structure, we can combine them into one large model given by
 	
 	\begin{align}\label{eq:tps_lin_mod}
 		\boldsymbol{y} = \boldsymbol{X} \boldsymbol{\beta}
 	\end{align}
 		
-	where the matrix $\boldsymbol{X} \in \mathbb{R}^{n \times k_{total}}$ is given by a horizontal concatenation of the individual bases and the combined coefficient vector $\boldsymbol{\beta} \in \mathbb{R}^{k_{total}}$ is given by a vertical concatenation of the individual coefficient vectors. The model now has the following form
+	where the matrix $\boldsymbol{X} \in \mathbb{R}^{n \times k_{total}}$ is given by a horizontal concatenation of the individual bases and the combined coefficient vector $\boldsymbol{\beta} \in \mathbb{R}^{k_{total}}$ is given by a vertical concatenation of the individual coefficient vectors. The model has then the following form
 		
 	\begin{align}\label{eq:tps_lin_model_verbose}
 		\boldsymbol{y} = \boldsymbol{X} \boldsymbol{\beta} = 
@@ -480,9 +521,10 @@
 					\end{pmatrix}.
 	\end{align}
 	
-	The first term $Q_1(\boldsymbol{y}, \boldsymbol{\beta})$ in the constrained penalized least squares objective function given in (\ref{eq:OF_3}) can now be evaluated using arbitrary input dimensions. 
-	
-	The remaining question is now how the smoothness penalty term and the constraint penalty term are constructed. We have one smoothness term and one penalty term for each individual estimate. 
+	The data term $Q_1(\boldsymbol{y}, \boldsymbol{\beta})$ in the constrained penalized least squares objective function given in (\ref{eq:OF_6}) can now be evaluated using arbitrary input dimensions. 
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Smoothness Term}
 	
 	The combined smoothness penalty term $\boldsymbol{\mathcal{J}}_s(\boldsymbol{\beta}; \boldsymbol{d}) \in \mathbb{R}^{n_{total}}$ is then given as
 	
@@ -499,7 +541,9 @@
 	\end{align}
 	
 	with $\mathcal J_e(\boldsymbol{\beta}_e; d_e) = \boldsymbol{\beta}_e^T \boldsymbol{D}_{d_e}^T \boldsymbol{D}_{d_e} \boldsymbol{\beta}_e$ determining the smoothness penalty term using the coefficients $\boldsymbol{\beta}_e$ and mapping matrix $\boldsymbol{D}_{d_e}$ for each estimate $e$ for $e=s_1, \dots, s_p, t_{1,2}, \dots, t_{p-1,p}$. The vector $\boldsymbol{d} \in \mathbb{R}^{n_{total}}$ consists of the orders $d_e$ determining the mapping matrix $\boldsymbol{D}_{d_e}$ of the smoothness constraint for each individual estimate $e$. 
-	
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Constraint Term}
 	The combined constraint penalty term $\boldsymbol{\mathcal{J}}_c(\boldsymbol{\beta}; \boldsymbol{c}) \in \mathbb{R}^{n_{total}}$ is then given as
 	
 	\begin{align}\label{eq:J_c_ndim}
@@ -516,15 +560,6 @@
 
 	with $\mathcal J_e(\boldsymbol{\beta}_e; c_e) = \boldsymbol{\beta}_e^T \boldsymbol{D}_{c_e}^T \boldsymbol{V}_e \boldsymbol{D}_{c_e} \boldsymbol{\beta}_e$ determining the constraint penalty term using the coefficients $\boldsymbol{\beta}_e$, the mapping matrix $\boldsymbol{D}_{c_e}$ and the weighting matrix $\boldsymbol{V}_e$ for each estimate $e$ for $e=s_1, \dots, s_p, t_{1,2}, \dots, t_{p-1,p}$. The vector $\boldsymbol{c} \in \mathbb{R}^{n_{total}}$ consists of the constraint type $c_e$, e.g. monoton increasing, determining the mapping matrix $\boldsymbol{D}_{c_e}$ for each individual estimate $e$. 
 	
-	The constrained penalized least squares objective function can now be written similar to (\ref{eq:OF_3}) as
-	
-	\begin{align}\label{eq:OF_6}
-		Q_6(\boldsymbol{y}, \boldsymbol{\beta}) = Q_1(\boldsymbol{y}, \boldsymbol{\beta}) + \boldsymbol{\lambda}_s^T	\boldsymbol{\mathcal{J}}_s(\boldsymbol{\beta}; \boldsymbol{d}) + \boldsymbol{\lambda}_c^T \boldsymbol{\mathcal{J}}_c(\boldsymbol{\beta}; \boldsymbol{c}).
-	\end{align}
-	
-	with $\boldsymbol{\lambda}_s \in \mathbb{R}^{n_{total}}$ and  $\boldsymbol{\lambda}_c \in \mathbb{R}^{n_{total}}$  defined as vectors with one value of smoothness and constraint parameter for each estimate, respectively. 
-	
-	The objective function (\ref{eq:OF_6}) is then optimized using the penalized iteratively reweighted least squares algorithm. 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Mapping Matrices for Tensor-Product Splines}
@@ -542,21 +577,23 @@
 	The penalty term for the constraint given by $c_1$ for dimension $1$ and $c_2$ for dimension $2$ then has the form
 	
 	\begin{align} \label{eq:J_c_tps}
-		\mathcal J_c(\boldsymbol{\beta}; c) = \boldsymbol{\beta}^T \boldsymbol{D}_{c_1,exp}^T \boldsymbol{V}_1 \boldsymbol{D}_{c_1,exp} \boldsymbol{\beta} + \boldsymbol{\beta}^T \boldsymbol{D}_{c_2,exp}^T \boldsymbol{V}_2 \boldsymbol{D}_{c_2,exp} \boldsymbol{\beta}
+		\mathcal J_c(\boldsymbol{\beta}; c_1, c_2) = \boldsymbol{\beta}^T \boldsymbol{D}_{c_1,exp}^T \boldsymbol{V}_1 \boldsymbol{D}_{c_1,exp} \boldsymbol{\beta} + \boldsymbol{\beta}^T \boldsymbol{D}_{c_2,exp}^T \boldsymbol{V}_2 \boldsymbol{D}_{c_2,exp} \boldsymbol{\beta}
 	\end{align}
 	
 	with $\boldsymbol{D}_{c_1,exp} = \boldsymbol{I}_{d_2} \otimes \boldsymbol{D}_{c_1}$ and $\boldsymbol{D}_{c_2,exp} = \boldsymbol{D}_{c_2} \otimes \boldsymbol{I}_{d_1}$ as individual mapping matrices  and the weighting matrices $\boldsymbol{V}_1$ and $\boldsymbol{V}_2$ according to the given constraints.
 		
-	The constrained penalized least squares objective function in (\ref{eq:OF_6}) can now be used to estimate the coefficients $\boldsymbol{\beta}_{PLS,c}$. \cite{fahrmeir2013regression}
+	The constrained penalized least squares objective function in (\ref{eq:OF_6}) can now be used to estimate the coefficients $\boldsymbol{\beta}_{PLS,c, nd}$. \cite{fahrmeir2013regression}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{2-d Example}
 	
 	As example for the n-d constraint function estimation, we take a look at the function 
 	
-	$$f(x_1, x_2) = 2\exp{\Big(-\frac{(x_1 - 0.25)^2}{0.08}\Big)} + x_2^2 $$
+	\begin{align} \label{eq:2d_test_func}
+		f(x_1, x_2) = 2\exp{\Big(-\frac{(x_1 - 0.25)^2}{0.08}\Big)} + x_2^2 + \eta
+	\end{align}
 	
-	for $x_1 \in [0,1]$ and $x_2 \in [0,1]$ and random Gaussian noise with $\sigma_{noise} = 0.1$. Therefore we expect a peak in dimension $x_1$ as well as increasing behavior for dimension $x_2$, see Figure \ref{fig:2d_example}. The user-defined constraints are therefore $c_1 = \text{unimodal}$ and $c_2 = \text{monotonic increasing}$ Using this knowledge, we create a model with the following characteristics:
+	for $x_1 \in [0,1]$ and $x_2 \in [0,1]$ and random Gaussian noise $\eta$ with $\sigma_{noise} = 0.1$. Therefore we expect a peak in dimension $x_1$ as well as increasing behavior for dimension $x_2$, see Figure \ref{fig:2d_example}. The user-defined constraints are therefore $c_1 = \text{unimodal}$ and $c_2 = \text{monotonic increasing}$ Using this knowledge, we create a model with the following characteristics:
 	
 	\begin{itemize}
 		\item B-spline smooth $s_1(x_1)$: $k_{x_1} = 50$, $c = c_1$, $\lambda_s = 1$ and $\lambda_c = 6000$

@@ -1988,7 +1988,6 @@
     <bcf:citekey order="13">eilers2005unimodal</bcf:citekey>
     <bcf:citekey order="14">strutz2016data</bcf:citekey>
     <bcf:citekey order="15">fahrmeir2013regression</bcf:citekey>
-    <bcf:citekey order="16">fahrmeir2013regression</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="debug">

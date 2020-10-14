@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  14 OCT 2020 10:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  14 OCT 2020 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -621,119 +621,105 @@ Overfull \hbox (60.92542pt too wide) in paragraph at lines 40--48
  [][] 
  []
 
+[1
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (34.41942pt too wide) in paragraph at lines 56--67
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[1
-
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <../thesisplots/test_func.pdf, id=15, 572.2724pt x 348.8831pt>
 File: ../thesisplots/test_func.pdf Graphic file (type pdf)
 <use ../thesisplots/test_func.pdf>
 Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 81.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [2 <../thesisplots/test_func.pdf>]
-<../thesisplots/smooth_bf.pdf, id=38, 572.2724pt x 348.8831pt>
+[2] [3 <../thesisplots/test_func.pdf>]
+<../thesisplots/smooth_bf.pdf, id=44, 572.2724pt x 348.8831pt>
 File: ../thesisplots/smooth_bf.pdf Graphic file (type pdf)
 <use ../thesisplots/smooth_bf.pdf>
 Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 128.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [3 <../thesisplots/smooth_bf.pdf>]
-<../thesisplots/smooth_wiggly_bf.pdf, id=81, 566.34401pt x 348.8831pt>
+<../thesisplots/smooth_wiggly_bf.pdf, id=45, 566.34401pt x 348.8831pt>
 File: ../thesisplots/smooth_wiggly_bf.pdf Graphic file (type pdf)
 <use ../thesisplots/smooth_wiggly_bf.pdf>
 Package pdftex.def Info: ../thesisplots/smooth_wiggly_bf.pdf  used on input lin
 e 139.
 (pdftex.def)             Requested size: 345.0pt x 212.53622pt.
- [4 <../thesisplots/smooth_wiggly_bf.pdf>]
-<../thesisplots/p_splines.pdf, id=126, 572.2724pt x 348.8831pt>
+ [4 <../thesisplots/smooth_bf.pdf>]
+[5 <../thesisplots/smooth_wiggly_bf.pdf>]
+<../thesisplots/p_splines.pdf, id=129, 572.2724pt x 348.8831pt>
 File: ../thesisplots/p_splines.pdf Graphic file (type pdf)
 <use ../thesisplots/p_splines.pdf>
-Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 205.
+Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 206.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [5] [6 <../thesisplots/p_splines.pdf>]
-<../thesisplots/algorithm.pdf, id=161, 614.26657pt x 794.94157pt>
+ [6] [7 <../thesisplots/p_splines.pdf>]
+<../thesisplots/algorithm.pdf, id=165, 614.26657pt x 794.94157pt>
 File: ../thesisplots/algorithm.pdf Graphic file (type pdf)
 <use ../thesisplots/algorithm.pdf>
-Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 247.
-(pdftex.def)             Requested size: 172.5pt x 223.23714pt.
-<../thesisplots/inc_spline.pdf, id=162, 572.2724pt x 348.8831pt>
+Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 248.
+(pdftex.def)             Requested size: 207.0021pt x 267.88698pt.
+<../thesisplots/inc_spline.pdf, id=166, 572.2724pt x 348.8831pt>
 File: ../thesisplots/inc_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/inc_spline.pdf>
-Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 260.
+Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 261.
 
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [7 <../thesisplots/algorithm.pdf>] [8 <../thesisplots/inc_spline.pdf>]
-Overfull \hbox (35.64676pt too wide) in paragraph at lines 299--301
+ [8 <../thesisplots/algorithm.pdf>] [9 <../thesisplots/inc_spline.pdf>]
+Overfull \hbox (35.64676pt too wide) in paragraph at lines 300--302
 \OT1/cmr/m/n/10 cients $\OML/cmm/m/it/10 ^^L[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m
 /it/10 ^^L[]$ \OT1/cmr/m/n/10 are in-creas-ing or de-creas-ing, re-spec-tively.
  $\OT1/cmr/bx/n/10 hofner2011monotonicity$
  []
 
-[9]
-<../thesisplots/peak_spline.pdf, id=240, 580.33377pt x 348.8831pt>
+[10]
+<../thesisplots/peak_spline.pdf, id=243, 580.33377pt x 348.8831pt>
 File: ../thesisplots/peak_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/peak_spline.pdf>
-Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 345
+Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 346
 .
 (pdftex.def)             Requested size: 345.0pt x 207.40967pt.
- [10 <../thesisplots/peak_spline.pdf>] [11]
-Overfull \hbox (1.4549pt too wide) in paragraph at lines 435--436
-\OT1/cmr/m/n/10 the es-ti-mate $[](\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS/c
-msy/m/n/10 ^^Y \OML/cmm/m/it/10 y[]$\OT1/cmr/m/n/10 . This can be in-cor-po-rat
-ed us-ing the weighted
+ [11 <../thesisplots/peak_spline.pdf>] [12]
+Overfull \hbox (30.43452pt too wide) in paragraph at lines 462--463
+\OT1/cmr/m/n/10 ad-di-tive mod-els given in Chap-ter \OT1/cmr/m/it/10 Ad-di-tiv
+e Mod-els\OT1/cmr/m/n/10 . Given in-put data $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/1
+0 x[]; [] ; x[]; y[]\OMS/cmsy/m/n/10 g$
  []
 
-
-Overfull \hbox (70.17868pt too wide) in paragraph at lines 457--458
-[]\OT1/cmr/m/n/10 The num-ber of in-di-vid-ual es-ti-mates is given by $\OML/cm
-m/m/it/10 n[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 p \OT1/cmr/m/n/10 + []$. $\OT1
-/cmr/bx/n/10 fahrmeir2013regression$
- []
-
-[12] [13] [14]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 562.
+[13] [14] [15]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 599.
 
  (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 562.
-<../thesisplots/2d_example.pdf, id=299, 513.51651pt x 450.9648pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 599.
+<../thesisplots/2d_example.pdf, id=302, 513.51651pt x 450.9648pt>
 File: ../thesisplots/2d_example.pdf Graphic file (type pdf)
 <use ../thesisplots/2d_example.pdf>
-Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 570.
+Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 607.
 
 (pdftex.def)             Requested size: 345.0pt x 302.98433pt.
- [15 <../thesisplots/2d_example.pdf>]
-Overfull \hbox (68.75261pt too wide) in paragraph at lines 578--578
+ [16]
+Overfull \hbox (68.75261pt too wide) in paragraph at lines 615--615
 []\OT1/cmr/m/n/10 Joel H Ferziger and Milo-van Peric. \OT1/cmr/m/it/10 Nu-meris
 che Str^^?omungsmechanik\OT1/cmr/m/n/10 .
  []
 
 
-Overfull \hbox (7.16621pt too wide) in paragraph at lines 578--578
+Overfull \hbox (7.16621pt too wide) in paragraph at lines 615--615
 []\OT1/cmr/m/n/10 Benjamin Hofner, J^^?org M^^?uller, and Torsten Hothorn.
  []
 
-[16] (./chapter3.aux)
+[17 <../thesisplots/2d_example.pdf>] (./chapter3.aux)
 Package logreq Info: Writing requests to 'chapter3.run.xml'.
 \openout1 = `chapter3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12531 strings out of 492649
- 221133 string characters out of 6133383
- 647441 words of memory out of 5000000
- 16220 multiletter control sequences out of 15000+600000
+ 12536 strings out of 492649
+ 221226 string characters out of 6133383
+ 645463 words of memory out of 5000000
+ 16225 multiletter control sequences out of 15000+600000
  14404 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,18n,46p,794b,1660s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -754,10 +740,10 @@ amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chapter3.pdf (16 pages, 413159 bytes).
+Output written on chapter3.pdf (17 pages, 413961 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
+ 412 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
