@@ -43,6 +43,35 @@
       \field{title}{Pattern recognition and machine learning}
       \field{year}{2006}
     \endentry
+    \entry{blobel2013statistische}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e9a0f10afa5f8acf6e43a8dab360efb8}{%
+           family={Blobel},
+           familyi={B\bibinitperiod},
+           given={Volker},
+           giveni={V\bibinitperiod}}}%
+        {{hash=2d2e393c08e408b016a2db3027e1b766}{%
+           family={Lohrmann},
+           familyi={L\bibinitperiod},
+           given={Erich},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{e29aa91dbf106462ef3a351531606e75}
+      \strng{fullhash}{e29aa91dbf106462ef3a351531606e75}
+      \strng{bibnamehash}{e29aa91dbf106462ef3a351531606e75}
+      \strng{authorbibnamehash}{e29aa91dbf106462ef3a351531606e75}
+      \strng{authornamehash}{e29aa91dbf106462ef3a351531606e75}
+      \strng{authorfullhash}{e29aa91dbf106462ef3a351531606e75}
+      \field{sortinit}{b}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Statistische und numerische Methoden der Datenanalyse}
+      \field{year}{2013}
+    \endentry
     \entry{deBoor1978practicalGuideToSplines}{book}{}
       \name{author}{5}{}{%
         {{hash=a3747fdbf34be22dcaea8a037357e822}{%
@@ -237,6 +266,84 @@
       \field{pages}{731\bibrangedash 761}
       \range{pages}{31}
     \endentry
+    \entry{fahrmeir2013regression}{book}{}
+      \name{author}{4}{}{%
+        {{hash=476d0247462120c31452a2a58cbd6cdc}{%
+           family={Fahrmeir},
+           familyi={F\bibinitperiod},
+           given={Ludwig},
+           giveni={L\bibinitperiod}}}%
+        {{hash=eda2d58a1b493691fe187a3fe6b03c41}{%
+           family={Kneib},
+           familyi={K\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2979075266629fa1d790fb7c7f4a940a}{%
+           family={Lang},
+           familyi={L\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d09128dc18322e290995419e6ae9dba3}{%
+           family={Marx},
+           familyi={M\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{db761f4cd757345a30ce4eb384db4b6f}
+      \strng{fullhash}{c284caa51b5a1a00f2286988c7d17f6d}
+      \strng{bibnamehash}{db761f4cd757345a30ce4eb384db4b6f}
+      \strng{authorbibnamehash}{db761f4cd757345a30ce4eb384db4b6f}
+      \strng{authornamehash}{db761f4cd757345a30ce4eb384db4b6f}
+      \strng{authorfullhash}{c284caa51b5a1a00f2286988c7d17f6d}
+      \field{sortinit}{f}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Regression}
+      \field{title}{Regression models}
+      \field{year}{2013}
+      \field{pages}{21\bibrangedash 72}
+      \range{pages}{52}
+    \endentry
+    \entry{friedman2001elements}{book}{}
+      \name{author}{3}{}{%
+        {{hash=971cf69058b64a94326dea0f2a8bbcce}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Jerome},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0cb8fe4210baa81c4b0e67913b4d2768}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Trevor},
+           giveni={T\bibinitperiod}}}%
+        {{hash=88eea600247d798f8b2ce0b2dc614492}{%
+           family={Tibshirani},
+           familyi={T\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer series in statistics New York}%
+      }
+      \strng{namehash}{568e7b5149c552567af3c9b520d96bb3}
+      \strng{fullhash}{568e7b5149c552567af3c9b520d96bb3}
+      \strng{bibnamehash}{568e7b5149c552567af3c9b520d96bb3}
+      \strng{authorbibnamehash}{568e7b5149c552567af3c9b520d96bb3}
+      \strng{authornamehash}{568e7b5149c552567af3c9b520d96bb3}
+      \strng{authorfullhash}{568e7b5149c552567af3c9b520d96bb3}
+      \field{sortinit}{f}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{10}
+      \field{title}{The elements of statistical learning}
+      \field{volume}{1}
+      \field{year}{2001}
+    \endentry
     \entry{golub1979}{article}{}
       \name{author}{3}{}{%
         {{hash=778fc9ba86bf5c2638440df94f0d0729}{%
@@ -339,8 +446,31 @@
       \field{pages}{267\bibrangedash 288}
       \range{pages}{22}
     \endentry
+    \entry{wood2017generalized}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c79fd5adec7b0069e4d4a385d68d4b93}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima N},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC press}%
+      }
+      \strng{namehash}{c79fd5adec7b0069e4d4a385d68d4b93}
+      \strng{fullhash}{c79fd5adec7b0069e4d4a385d68d4b93}
+      \strng{bibnamehash}{c79fd5adec7b0069e4d4a385d68d4b93}
+      \strng{authorbibnamehash}{c79fd5adec7b0069e4d4a385d68d4b93}
+      \strng{authornamehash}{c79fd5adec7b0069e4d4a385d68d4b93}
+      \strng{authorfullhash}{c79fd5adec7b0069e4d4a385d68d4b93}
+      \field{sortinit}{w}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Generalized additive models: an introduction with R}
+      \field{year}{2017}
+    \endentry
   \enddatalist
-  \missing{fahrmeir2013regression}
   \missing{osullivan1986statistical}
   \missing{wood2006GAM}
 \endrefsection

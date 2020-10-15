@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  22 SEP 2020 17:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  15 OCT 2020 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,13 +559,6 @@ Package biblatex Info: ... file 'chapter2.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                fahrmeir2013regression
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                osullivan1986statistical
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -588,91 +581,83 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (111.07507pt too wide) in paragraph at lines 50--52
-\OT1/cmr/m/n/10 model is there-fore lin-ear in its pa-ram-e-ters as well as in 
-its in-puts. $\OT1/cmr/bx/n/10 bishop2006patternRecognition$
- []
+) (./chapter2.toc)
+\tf@toc=\write7
+\openout7 = `chapter2.toc'.
+
 
 [1
 
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (10.66342pt too wide) in paragraph at lines 81--83
-\OT1/cmr/m/n/10 tain a unique es-ti-ma-tor for the re-gres-sion co-ef-fi-cients
- $\OML/cmm/m/it/10 ^^L$\OT1/cmr/m/n/10 . [] 
+Overfull \hbox (111.07507pt too wide) in paragraph at lines 57--58
+\OT1/cmr/m/n/10 model is there-fore lin-ear in its pa-ram-e-ters as well as in 
+its in-puts. $\OT1/cmr/bx/n/10 bishop2006patternRecognition$
+ []
+
+
+Overfull \hbox (17.72879pt too wide) in paragraph at lines 78--79
+[]\OT1/cmr/m/n/10 To es-ti-mate the un-known pa-ram-e-ters $[]$, we de-fine the
+ vec-tors $[] = (\OML/cmm/m/it/10 y[]; [] ; y[]\OT1/cmr/m/n/10 )[]$
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 129.
+Overfull \hbox (21.97246pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/10 ob-tain a unique es-ti-ma-tor for the re-gres-sion co-ef-fi-cie
+nts $[]$. $\OT1/cmr/bx/n/10 fahrmeir2013regression$ 
+ []
+
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 141.
 
  (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
-
- []
-
-[5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 401--402
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-
+Overfull \hbox (15.89497pt too wide) in paragraph at lines 423--424
+[]\OT1/cmr/m/n/10 Lower val-ues of AIC cor-re-spond to a bet-ter model fit. $\O
+T1/cmr/bx/n/10 fahrmeir2013regression$ 
  []
 
 
@@ -680,86 +665,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
-[10]
+
+Overfull \hbox (15.47832pt too wide) in paragraph at lines 437--438
+[]\OT1/cmr/m/n/10 Lower val-ues of BIC cor-re-spond to a bet-ter model fit. $\O
+T1/cmr/bx/n/10 fahrmeir2013regression$ 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
 
-Overfull \hbox (54.7379pt too wide) in paragraph at lines 445--446
-\OT1/cmr/m/n/10 for small co-ef-fi-cient val-ues, the Lasso penalty has much mo
-re in-flu-ence. $\OT1/cmr/bx/n/10 tibshirani1996lasso$ 
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
  []
 
 
-Overfull \hbox (21.526pt too wide) in paragraph at lines 450--451
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+
+ []
+
+
+Overfull \hbox (27.18878pt too wide) in paragraph at lines 511--512
+[]\OT1/cmr/m/n/10 Ridge re-gres-sion is com-monly when the in-put di-men-sion $
+\OML/cmm/m/it/10 p$ \OT1/cmr/m/n/10 is high. $\OT1/cmr/bx/n/10 hoerl1970ridge$ 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
+
+ []
+
+[12]
+Overfull \hbox (83.47252pt too wide) in paragraph at lines 527--528
+\OT1/cmr/m/n/10 given in $\OT1/cmr/bx/n/10 tibshirani1996lasso$\OT1/cmr/m/n/10 
+, or least an-gle re-gres-sion, given in $\OT1/cmr/bx/n/10 efron2004leastangler
+egression$\OT1/cmr/m/n/10 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
+
+ []
+
+
+Overfull \hbox (21.526pt too wide) in paragraph at lines 535--537
 \OT1/cmr/m/n/10 va-ri-ety of splines, rang-ing from re-gres-sion splines in $\O
 T1/cmr/bx/n/10 eubank1990regressionsplines$\OT1/cmr/m/n/10 ,
  []
 
 
-Overfull \hbox (9.97289pt too wide) in paragraph at lines 450--451
+Overfull \hbox (9.97289pt too wide) in paragraph at lines 535--537
 \OT1/cmr/m/n/10 over B-splines in $\OT1/cmr/bx/n/10 deBoor1978practicalGuideToS
 plines$ \OT1/cmr/m/n/10 to nat-u-ral cu-bic splines
  []
 
-[11]
-<../thesisplots/linear_and_quadratic_spline.pdf, id=50, 442.27734pt x 253.33333
+<../thesisplots/linear_and_quadratic_spline.pdf, id=55, 442.27734pt x 253.33333
 pt>
 File: ../thesisplots/linear_and_quadratic_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/linear_and_quadratic_spline.pdf>
 Package pdftex.def Info: ../thesisplots/linear_and_quadratic_spline.pdf  used o
-n input line 458.
+n input line 543.
 (pdftex.def)             Requested size: 345.0pt x 197.62239pt.
-
-Overfull \hbox (34.56123pt too wide) in paragraph at lines 480--481
+[13]
+Overfull \hbox (34.56123pt too wide) in paragraph at lines 565--566
 \OT1/cmr/m/n/10 quence $\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  f\OML/cmm/m/it/10 x[]; [] ; x[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 ac-cord-ing
  to $\OT1/cmr/bx/n/10 deBoor1978practicalGuideToSplines$
  []
 
-[12 <../thesisplots/linear_and_quadratic_spline.pdf>] [13] [14] [15]
-Overfull \hbox (0.73257pt too wide) in paragraph at lines 574--574
+[14 <../thesisplots/linear_and_quadratic_spline.pdf>] [15] [16]
+
+LaTeX Warning: Reference `SubsectionLinModelDefAndAssump' on page 17 undefined 
+on input line 658.
+
+
+Overfull \hbox (0.73257pt too wide) in paragraph at lines 662--662
 []\OT1/cmr/m/n/10 Bradley Efron et al. ``Least an-gle re-gres-sion''.
  []
 
-
-Overfull \hbox (4.56575pt too wide) in paragraph at lines 574--574
+[17]
+Overfull \hbox (4.56575pt too wide) in paragraph at lines 662--662
 \OT1/cmr/m/n/10 via the lasso''. In: \OT1/cmr/m/it/10 Jour-nal of the Royal Sta
 -tis-ti-cal So-ci-ety: Se-ries B (Method-
  []
 
-[16] (./chapter2.aux)
+[18] (./chapter2.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'chapter2.run.xml'.
 \openout1 = `chapter2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11765 strings out of 492649
- 208772 string characters out of 6133383
- 629040 words of memory out of 5000000
- 15491 multiletter control sequences out of 15000+600000
- 11849 words of font info for 46 fonts, out of 8000000 for 9000
+ 11813 strings out of 492649
+ 209861 string characters out of 6133383
+ 631583 words of memory out of 5000000
+ 15528 multiletter control sequences out of 15000+600000
+ 14298 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,19n,46p,794b,1597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,19n,46p,794b,1679s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb>
-Output written on chapter2.pdf (16 pages, 228148 bytes).
+s/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextr
+a/cmmib7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on chapter2.pdf (18 pages, 252500 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
