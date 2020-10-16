@@ -32,10 +32,10 @@
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Linear Models} \label{SectionLinModel}
+\section{Linear Models} \label{sec:LinModel}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Definition and Model Assumptions}  \label{subsec:SubsectionLinModelDefAndAssump}
+\subsection{Definition and Model Assumptions}  \label{subsec:LinModelDefAndAssump}
 
 Given the set of data points $\{x^{(i)}_1, \dots, x^{(i)}_q; y^{(i)} \}$ for $i = 1, \dots, n$ , we aim to model the relation between the input or predictor variables $\{x_1, \dots, x_p\}$ and the output $y$ with a function $y = f(x_1, \dots, x_p)$ and an additive noise term $\epsilon$. Thus we obtain the model formulation for the data point $i$ as
 
@@ -277,7 +277,7 @@ Therefore we need techniques and criteria to select the \emph{best possible mode
 
 One way of comparing various models, i.e models using different sets of variables, is the use of model choice criteria, e.g. Mallow's CP or AIC. Generally, model choice criteria can be split in two components. The first one measures the goodness of fit, e.g. using the sum of squared errors, while the second measures the complexity of the model. Most model choice criteria are based on the sum of squared prediction error $SPSE$. Therefore, the derivation of the sum of squared prediction error $SPSE$ is given first. 
 
-\subsubsubsection{Sum of expected Squared Prediction Error SPSE}
+\subsubsubsection{Sum of expected Squared Prediction Error}
 
 We assume given data $\{ x^{(i)}_{1}, \dots, x^{(p)}_{i}; y_i\}$ for $i =1, \dots, n$. Further, we assume that the expectation $\mathbb{E}[y_i] = \mu_i$ and the variance $\mathbb{V}ar[y_i] = \sigma^2$. Using the $q$ variables $x_j$ we can generate the corresponding design matrix $\boldsymbol{X}$ for the linear model as in (\ref{eq:LinearModel}), i.e.
 
@@ -371,9 +371,9 @@ In practice, the true value for the SPSE is not accessible since $\mu_i$ and $\s
 
 Typically used model choice criteria follow the basic idea of the SPSE. \cite{fahrmeir2013regression}
 
-\subsubsubsection{Corrected Coefficient of Determination $R^2_{corr}$}
+\subsubsubsection{Corrected Coefficient of Determination}
 
-The corrected coefficient of determination is an is an improvement over the coefficient of determination $R^2$, which is defined as 
+The corrected coefficient of determination $R^2_{corr}$ is an is an improvement over the coefficient of determination $R^2$, which is defined as 
 
 \begin{align}
 	R^2 = 1 - \frac{\sum_{i=1}^n \hat \epsilon^{(i)} \hat \epsilon^{(i)}}{\sum_{i=1}^n (y^{(i)} - \bar y)^2},
@@ -530,21 +530,33 @@ Ridge regression penalized large coefficients much stronger than Lasso regressio
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Splines} \label{SectionSplines}
+\section{Splines} \label{sec:Splines}
 	
-In it's most general definition a spline is a piece-wise polynomial defined on a sequence of knots. This definition is quite general. Therefore, there exist a large variety of splines, ranging from regression splines in \cite{eubank1990regressionsplines}, over B-splines in \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more.
+A spline is a piece-wise polynomial defined on a sequence of knots. This definition is quite general. Therefore, there exist a large variety of splines, ranging from regression splines in \cite{eubank1990regressionsplines}, over B-splines in \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines and tensor-product splines, as the multi-dimensional expansion of B-splines, as well as P-splines. \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{B-Splines}
 
-We lay the focus on the definition and use of B-splines, which are constructed from polynomial pieces in a recursive manner. The following figure shows a simple example of a B-spline of degree 1 on the left. It consists of two linear pieces, one from $x_1$ to $x_2$ and the other from $x_2$ to $x_3$. Everywhere else, the B-spline is equal to zero. This locality is a very attractive feature of B-splines. In the right part of the figure, a B-spline of degree 2 is shown, which consist of three quadratic pieces. At the joining points, the values as well as the first derivatives of the quadratic pieces are equal. 
+We lay the focus on the definition and use of B-splines, which are constructed from polynomial pieces in a recursive manner. Given the knot sequence $K = \{k_i, \dots, k_{i+m+2}\}$,  the B-spline $B_i^m(x)$ of degree $m$ is defined by means of the Cox-de Boor recursion formula as
 
-\begin{figure}[H]
+\begin{align} \label{eq:Bspline_recDef1}
+	B_i^0(x) = \begin{cases} 1, & \text{if} \quad k_i \le x < k_{i+1} \\ 
+					 		 0, & \text{otherwise} 
+	\end{cases}
+\end{align}
+\begin{align} \label{eq:Bspline_recDef2}
+	B_i^m(x) = \frac{x - k_i}{k_{i+m} - k_i} B_i^{m-1}(x) + \frac{k_{i+m+1} - k}{k_{i+m+1} - k_{i+1}} B_{i+1}^{m-1}(x).
+\end{align}
+
+Therefore, $B_j^0(x)$ is the zero function, except for $x \in [k_j, k_{j+1}]$ where it is equal to 1. $B_j^1(x)$ is then the known \emph{hat function}, being zero except for $x \in [k_j, k_{j+2}]$. 
+
+Figure \ref{fig:lin_and_quad_spline} shows an example of a B-spline of degree $m=1$ on the left. It consists of two linear pieces, one defined from $k_1$ to $k_2$ and the other from $k_2$ to $k_3$. Everywhere else, the B-spline is equal to zero. At the joining points, the values of the polynomial pieces are equal. This locality is a very attractive feature of B-splines. In the right part of Figure \ref{fig:lin_and_quad_spline}, a B-spline of degree $m=2$ is shown, which consist of three quadratic pieces, defined on the knot sequence $\{k_1, k_2, k_3, k_4\}$. At the joining points, the values as well as the first derivatives of the quadratic pieces are equal. 
+
+\begin{figure}[H] 
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/linear_and_quadratic_spline.pdf}
 	\caption{Linear and Quadratic Spline}
 	\label{fig:lin_and_quad_spline}
 \end{figure}
-
 
 The general properties of a B-spline of degree $m$ are the following:
 
@@ -552,111 +564,146 @@ The general properties of a B-spline of degree $m$ are the following:
 	\item It consists of $m+1$ polynomial pieces of degree $m$, e.g. a cubic spline ($m=3$) consists of 4 cubic pieces.
 	\item The pieces join at $m$ inner knots.
 	\item At these knots, the derivatives up to order $m-1$ are continuous.
-	\item The B-spline is positive on the domain spanned by $m+2$ knots, everywhere else it is zero.
+	\item The B-spline is positive on the domain spanned by $m+2$ knots, everywhere else it is zero, e.g. for $m=2$, a sequence of 4 knots is necessary.
 	\item At every given $x$, only $m+1$ B-splines are non-zero.
 \end{itemize}
 
 The collection of $k$ B-splines of degree $m$ over a sequence of $k+2(m-1)$ knots is called B-spline basis. The $2(m-1)$-knots are the boundary knots while the $k$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence.
 
-A smooth function can then be represented using the basis function approach given by
+A smooth function $f(x)$ can then be represented using the basis function approach given by
 
-$$f(x) = \sum_{i=1}^k B_i^m(x) \beta_i $$
+\begin{align} \label{eq:bspline_bf_approach}
+	f(x) = \sum_{i=1}^k B_i^m(x) \beta_i = \boldsymbol{x}' \boldsymbol{\beta}
+\end{align}
 
-using the B-spline basis $B_i^m(x)$ which is defined recursively using the knot sequence $x_i = \{x_1, \dots, x_{k+2(m-1)}\}$ according to \cite{deBoor1978practicalGuideToSplines} as follows:
+using the B-spline basis functions $B_i^m(x)$  of degree $m$ and the coefficients $\boldsymbol{\beta} \in \mathbb{R}^{k}$. The basis functions can also be given in vector notation as $\boldsymbol{x}' = (B_1^m(x), \dots, B_k^m(x))$. 
 
-$$B_i^m(x) = \frac{x - x_i}{x_{i+m} - x_i} B_i^{m-1}(x) + \frac{x_{i+m+1} - x}{x_{i+m+1} - x_{i+1}} B_{i+1}^{m-1}(x)$$
+The use of B-splines as basis functions for uni-variate and non-parametric regression is very attractive. A linear combination of cubic B-splines gives a smooth curve, i.e. first and second order derivatives are continuous. A further advantage of B-splines is that once the basis is given, the coefficients can be estimated using the Least Squares algorithm as in (\ref{eq:MethodOfLS}). 
 
-and
+Given a set of data points $\{x^{(i)}, y^{(i)}\}$ for $i = 1, \dots, n$, the least squares objective function for B-splines is the given by
 
-$$B_i^0(x) = \begin{cases} 1, & x_i \le x < x_{i+1} \\ 0, & \text{otherwise} \end{cases}.$$
+\begin{align} \label{eq:OF_Bsplines}
+	Q_{bsplines}(\boldsymbol{y}, \boldsymbol{\beta}) = \lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta} \rVert^2
+\end{align}
 
-The use of B-splines as basis functions for uni-variate or non-parametric regression is very attractive. A linear combination of cubic B-splines gives a smooth curve (first and second order derivatives are continuous). A further advantage of B-splines is that once the basis is given, the coefficients can be estimated using the Least Squares algorithm. The least squares formulation for splines is the given by
+for the B-spline basis $\boldsymbol{X} \in \mathbb{R}^{n \times k}$ for $n$ data points and $k$ splines. Solving the optimization problem, i.e.
 
-$$Q(\beta) = \lVert y - X\beta\rVert^2$$
+\begin{align} \label{eq:opti_problem_bsplines}
+	\boldsymbol{\hat{\beta}} = \arg \min_{\boldsymbol{\beta}} Q_{bsplines}(\boldsymbol{y}, \boldsymbol{\beta})
+\end{align}
 
-for the B-spline basis $X \in \mathbb{R}^{n \times k}$ for $n$ data points and $k$ splines, which leads to the estimated coefficients 
+leads to the estimated coefficients 
 
-$$\boldsymbol{\beta}_{LS} = (X^TX)^{-1}X^T y$$
+\begin{align}
+	\boldsymbol{\hat{\beta}} = (\boldsymbol{X}^T \boldsymbol{X})^{-1} \boldsymbol{X}^T \boldsymbol{y}.
+\end{align}
 
 Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to calculate e.g confidence intervals for the regression coefficients and the prediction.
 
-B-splines of appropriate order  produce smooths curves, where the smoothness is determined by the number of splines used. For a low number, the curve will be quite smooth, but with a large data error. When using a high number of splines, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and machine learning. It is therefore necessary to introduce some kind of regularization. \cite{deBoor1978practicalGuideToSplines}  
+B-splines of appropriate order $m > 2$ produce smooths curves, where the smoothness is mostly determined by the number of splines used. For a low number, the curve will be quite smooth, but possess a large data error. When using a high number of splines, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and machine learning. It is therefore necessary to introduce some kind of regularization. \cite{deBoor1978practicalGuideToSplines}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{P-Splines} \label{SubsectionPspline}
+\subsection{P-Splines} \label{subsec:Pspline}
 
-P-splines where introduced by Eilers and Marx in \cite{eilers1996flexible} to tackle the problem introduced above. Eilers and Marx simplified and generalized the idea of \cite{osullivan1986statistical}, who introduced a penalty on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. Eilers and Marx proposed to use equidistant knots and to base the penalty on finite differences of order $d$ of the coefficients of adjacent B-splines. In \cite{osullivan1986statistical}, O'Sullivan implicitly used a modified second-order penalty. The finite differences of order $1$ for $k$ splines are given by
+P-splines use the concepts of regularization to produce smooth function estimations. They where introduced by Eilers and Marx in \cite{eilers1996flexible} to tackle the problem introduced above. Eilers and Marx simplified and generalized the idea of \cite{osullivan1986statistical}, who introduced a smoothness penalty on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knots and penalty based on finite differences of order $d$ of the coefficients of adjacent B-splines. The finite differences of order $d=1$ for $p$ splines acting on the coefficient vector $\boldsymbol{\beta} = (\beta_1, \dots, \beta_k)'$ are given by
 
-$$\Delta^1 \beta = \sum_{j=2}^{k-1} \beta_{j} - \beta_{j-1}$$
+\begin{align}
+	\Delta^1 \boldsymbol{\beta} = \sum_{j=2}^{k-1} \beta_{j} - \beta_{j-1}
+\end{align}
 
 and in matrix form
 
-$$\Delta^1 = D_1 = \begin{pmatrix} -1 & 1 \\ & \ddots & \ddots \\   \end{pmatrix} \in \mathbb{R}^{k-1 \times k}.$$
+\begin{align}
+	\Delta^1 = \boldsymbol{D}_1 = \begin{pmatrix} -1 & 1 \\ 
+		                                             & \ddots & \ddots \\   
+	                              \end{pmatrix} \in \mathbb{R}^{k-1 \times k}.
+\end{align}
 
-This leads to the penalized least squares formulation
+This leads to the penalized least squares formulation, similar to (\ref{eq:PLS_crit}),
 
-$$Q(\beta; d) = \lVert y - X\beta\rVert^2 + \lambda_s \mathcal J_s(\beta;d)$$
+\begin{align} \label{eq:OF_psplines}
+	Q_{pslines}(\boldsymbol{y}, \boldsymbol{\beta}) = \lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta}\rVert^2 + \lambda_s \mathcal J_s(\boldsymbol{\beta};d)
+\end{align}
 
-where $\lVert y - X\beta \rVert^2$ is the mean squared error on the data for the spline smooth, $\mathcal J_s(\beta;d) = \beta^T D_d^T D_d \beta$ is the smoothness penalty term and $\lambda_s$ is the smoothness parameter effect of the smoothing penalty. The estimated coefficients are then given by
+where $\lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta} \rVert^2$ is the mean squared error on the data for the spline fit, $\mathcal J_s(\boldsymbol{\beta};d) = \boldsymbol{\beta}^T \boldsymbol{D}_d^T \boldsymbol{D}_d \boldsymbol{\beta}$ is the smoothness penalty term given by the matrix form of the difference operator $\Delta^d$ of order $d$ and $\lambda_s$ is the smoothness parameter determining the effect of the smoothing penalty. The estimated coefficients are then given by the minimization of
 
-$$\boldsymbol{\beta}_{LS,p} = (X^TX + \lambda_s D_d^T D_d)^{-1}X^Ty$$
+\begin{align}
+	\boldsymbol{\hat{\beta}} = \arg \min_{\boldsymbol{\beta}} Q_{psplines}(\boldsymbol{y}, \boldsymbol{\beta})
+\end{align}
+
+as
+
+\begin{align}
+	\boldsymbol{\beta} = (\boldsymbol{X}^T \boldsymbol{X} + \lambda_s \boldsymbol{D}_d^T \boldsymbol{D}_d)^{-1} \boldsymbol{X}^T \boldsymbol{y}.
+\end{align}
 
 The main advantage of P-splines is their easy set up. This advantage is diminished if uneven knot placement is chosen. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tensor-Product Splines}
 
-Tensor-product splines can be seen as the multi-dimensional extension of univariate splines. The basic approach is to start with a spline basis for each dimension and construct the tensor-product spline from these. 
+Tensor-product splines can be seen as the multi-dimensional extension of uni-variate B-splines. We start with a B-spline basis for each dimension and construct the tensor-product spline from these. 
 
-We examine an example for two input dimensions $x_1$ and $x_2$. Assume that we have bases available for representing the functions $f_1(x_1)$ and $f_2(x_2)$ given by
+We examine an example for two input dimensions $x_1$ and $x_2$. Assume that we have B-spline bases available, i.e. $\boldsymbol{A} \in \mathbb{R}^{n \times k}$ and $\boldsymbol{B} \in \mathbb{R}^{n \times k}$ using the same number of splines $k$ for both bases, for representing the functions $f_1(x_1)$ and $f_2(x_2)$ given by
 
-$$f_1(x_1) = \sum_{i=1}^{k_1} \alpha_i a_i(x_1), \quad f_2(x_2) = \sum_{j=1}^{k_2} \beta_j b_j(x_2),$$
+\begin{align}
+	f_1(x_1) &= \sum_{i=1}^{k} \alpha_i a_i(x_1) = \boldsymbol{A} \boldsymbol{\alpha}, \\
+	f_2(x_2) &= \sum_{j=1}^{k} \beta_j b_j(x_2) = \boldsymbol{B} \boldsymbol{\beta}
+\end{align}
 
-where $\alpha_i \in \mathbb{R}^{k_1}$ and $\boldsymbol{\beta}_j \in \mathbb{R}^{k_2}$ are the coefficients and $a_i(x_1)$ and $b_j(x_2)$ are the known basis functions. To allow the function $f_1(x_1)$ to smoothly vary with $x_2$, its coefficients $\alpha_i$ must vary smoothly with $x_2$. By using the already available basis for representing smooth functions in $x_2$, we can write
+where $\alpha_i \in \mathbb{R}^{k}$ and $\boldsymbol{\beta}_j \in \mathbb{R}^{k}$ are the coefficients and $a_i(x_1)$ and $b_j(x_2)$ are the known basis functions. To allow the function $f_1(x_1)$ to smoothly vary with $x_2$, its coefficients $\alpha_i$ must vary smoothly with $x_2$. By using the already available basis for representing smooth functions in $x_2$, we can write
 
-$$\alpha_i(x_2) = \sum_{j=1}^{k_2} \beta_{ij} b_j(x_2)$$
+\begin{align}
+	\alpha_i(x_2) = \sum_{j=1}^{k} \beta_{ij} b_j(x_2)
+\end{align}
 
 which leads to
 
-$$f_{1,2}(x_1, x_2) = \sum_{i=1}^{k_1} \sum_{j=1}^{k_2} \beta_{ij} b_j(x_2) a_i(x_1).$$
+\begin{align}
+	f_{1,2}(x_1, x_2) = \sum_{i=1}^{k} \sum_{j=1}^{k} \beta_{ij} b_j(x_2) a_i(x_1).
+\end{align}
 
-For any set of data $(x_{1i}, x_{2i})$ for $i = 1, \dots, n$ there is a relationship between the model matrix $X$ of the tensor-product smooth and the marginal model matrices $X_1$ and $X_2$, which is given by 
+We can therefore combine the individual basis matrices to generated a new basis matrix for the tensor-product spline. For any set of data $(x^{(i)}_{1}, x^{(i)}_{2})$ for $i = 1, \dots, n$, the relationship between the model matrix $\boldsymbol{X}$ of the tensor-product smooth and the marginal model matrices $\boldsymbol{A}$ and $\boldsymbol{B}$ is given by 
 
-$$X_i = X_1 \otimes X_2.$$
+\begin{align}
+	\boldsymbol{X} = \boldsymbol{A} \otimes \boldsymbol{B}
+\end{align}
 
-where $\otimes$ indicates the use of the Kronecker product, $X_1$ denotes the B-spline basis for dimension $1$ and $X_2$ denotes the B-spline basis for dimension $2$. \cite{wood2006GAM} The model matrix for the tensor-product smooth is therefore given by the Kronecker product of the marginal model matrices. 
+where $\otimes$ indicates the use of the Kronecker product, $\boldsymbol{X} \in \mathbb{R}^{n \times k^2}$ denotes the tensor-product spline basis, $\boldsymbol{A} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $1$ and $\boldsymbol{B} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $2$. The model matrix for the tensor-product smooth is therefore given by the Kronecker product of the marginal model matrices. \cite{wood2006GAM}  
 
-This approach can in theory be continued for as much input dimensions as required. In practice, modeling more than two input dimensions using tensor-product splines becomes infeasible because if the enormous increase in used basis functions. A smoothness penalty term for tensor-product splines can also be constructed using the Kronecker product. Further explanations are given in Chapter 3.
+This approach can in theory be continued for as much input dimensions as required. In practice, modeling more than two input dimensions using tensor-product splines becomes infeasible because if the enormous increase of basis functions and therefore coefficients to estimate. A smoothness penalty term for tensor-product splines can also be constructed using the Kronecker product. Further explanations are given in Chapter 3.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Structured Additive Regression}
+\section{Structured Additive Regression} \label{sec:STAR}
 
-We have again some given data $\{x_{i1}, \dots, x_{iq}; y_i\}$ for $i = 1, \dots, n$, where we want to model the generally non-linear relationship between the input data $\{x_{i1}, \dots, x_{iq}\}$ and the output $y$ by some function $f(x_1, \dots, x_q)$.  Using, e.g. high-dimensional tensor-product splines, to model the function is computationally expensive, since the number of regression coefficients increases exponentially.
+We have again some given data $\{x^{(i)}_{1}, \dots, x^{(i)}_{q}; y^i\}$ for $i = 1, \dots, n$ and want to model the generally non-linear relationship between the input data $\{x^{(i)}_{1}, \dots, x^{(i)}_{q}\}$ and the output $y^{(i)}$ by some multi-dimensional function $f(x_1, \dots, x_q)$.  Using, e.g. high-dimensional tensor-product splines, to model the function is computationally expensive, since the number of regression coefficients increases exponentially.
 
 To circumvent this problem, we now assume the restrictive structure of additive models, given by
 
-\begin{equation} \label{addRegBaseEquation}
-	f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q). 
-\end{equation}
-Hence, we use one smooth function per input dimension and assume an additive structure. \cite{fahrmeir2013regression} Using the concepts introduced in Chapter \ref{SectionSplines}, we obtain for each smooth function a linear model
+\begin{align} \label{eq:addRegBaseEquation}
+	f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q).
+\end{align}
 
-$$f_i(x_i) = X_i \beta_i$$
+Hence, we use one smooth function $f_i(x_i)$ per input dimension and assume an additive structure. \cite{fahrmeir2013regression} Using the concepts introduced in Chapter \ref{sec:Splines}, we obtain for each smooth function a linear model
 
-where $X_i \in \mathbb R^{n \times k_i}$ is the B-spline basis using $k_i$ splines for input dimension $i$ and $\boldsymbol{\beta}_i \in \mathbb R^{k_i}$ are the coefficients to be estimated. We can also use the already described penalization approaches given in Chapter \ref{SubsectionPspline}. 
+\begin{align}
+	f_i(x_i) = \boldsymbol{X}_i \boldsymbol{beta}_i
+\end{align}
 
-The model given in Eq. \ref{addRegBaseEquation} does not contain interaction terms between variables. Nevertheless, these can be easily introduced for 2 dimensions using tensor-product splines without an overflowing increase of the number of regression coefficients.
+where $\boldsymbol{X}_i \in \mathbb R^{n \times k_i}$ is the B-spline basis using $k_i$ splines for the smooth function $f_i(x_i)$ of input dimension $i$ and $\boldsymbol{\beta}_i \in \mathbb R^{k_i}$ are the coefficients to be estimated. We can also use the already described penalization approaches given in Chapter \ref{subsec:Pspline}. 
+
+The model given in (\ref{eq:addRegBaseEquation}) does not contain interaction terms between variables. Nevertheless, these can be easily introduced for 2 dimensions using tensor-product splines without an overflowing increase of the number of coefficients.
 
 We can then write the structured additive model in matrix notation as 
 
-\begin{equation} \label{structAddRegressionEquation}
-	y = X_1\beta_1 + \dots + X_q\beta_q + \sum_{i=1}^{n_{interact}} X_{tps, i} \beta_{tps,i} + \epsilon
-\end{equation}
+\begin{align} \label{eq:STAR}
+	\boldsymbol{y} = \boldsymbol{X}_1 \boldsymbol{\beta}_1 + \dots + \boldsymbol{X}_q \boldsymbol{\beta}_q + \sum_{i=1}^{n_{interact}} \boldsymbol{X}_{tps, i} \boldsymbol{\beta}_{tps,i} + \boldsymbol{\epsilon}
+\end{align}
 
-using the error term $\epsilon$ and $n_{interact}$ as the number of interactions to include via tensor-product spline bases $X_{tps,i}$. This can be solved using ordinary least squares. If we choose to include penalization, we can solve this using penalized least squares. 
+using the error term $\boldsymbol{\epsilon}$ and $n_{interact}$ as the number of interactions to include via tensor-product spline bases $\boldsymbol{X}_{tps,i}$. This can be solved using ordinary least squares. If we choose to include penalization, we can solve this using penalized least squares. 
 
-Using the notation in Eq. \ref{structAddRegressionEquation} the theoretical framework of linear models can be applied to structured additive regression models. Therefore, the assumptions given in Chapter \ref{SubsectionLinModelDefAndAssump} on the error term, as well as on the model functions are used. \cite{fahrmeir2004penalized}
-
+Using the notation in (\ref{eq:STAR}) the theoretical framework of linear models can be applied to structured additive regression models. Therefore, the assumptions given in Chapter \ref{subsec:LinModelDefAndAssump} on the error term, as well as on the model functions are used. \cite{fahrmeir2004penalized}
 
 \printbibliography
 	

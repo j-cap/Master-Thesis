@@ -18,24 +18,37 @@
 
 \addbibresource{../bibliography.bib}
 
-\title{Experiments}
+\title{Chapter 4 - Experiments}
 \author{Weber Jakob}
 
 \begin{document}
 	\maketitle
 	
-\section{Simulations}
+\tableofcontents
 
-Following the descriptions given in the previous chapters, we are now going to test the algorithm of structured additive regression using a priori knowledge on the following problems:	
+\section{Overview}
 
-\begin{itemize}
-	\item Static Function Approximation using a priori Knowledge
-	\item Equidistant vs. Non-equidistant Knot Placement
-	\item Different Levels and Colors of Noise $\lambda^2$
-	\item Well-distributed Data vs. Skewed Data
-\end{itemize}
+Following the descriptions given in the previous chapters, we are now going to test the algorithm of structured additive regression using a priori knowledge on the problems given in Table \ref{tab:experiments}. We will use two different, artificial functions with known behavior and one set of real life data, for which the physical a priori knowledge is given. 
 
-These are evaluated on two functions with a priori known behavior. The first function is given by
+\begin{table}[h]
+	%\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		\textbf{Exp.} & \textbf{Problem Definition} & \textbf{Function} & \textbf{$\boldsymbol{n_{data}}$} & \textbf{k}  \\ \hline
+		1.1 & Static function approx. using a priori knowledge & 1 & 100 & 35  \\ \hline
+		1.2 & Static function approx. using a priori knowledge & 2 & 500 & 35  \\ \hline
+		2   & Different noise levels                                 & 2 & 150 & 35  \\ \hline
+		3   & Different noise colors                                 & 1 & 200 & 35  \\ \hline
+		4   & Well-distributed data and knot placement               & 2 & 250 & 35  \\ \hline
+		5   & Skewed data distribution and knot placement            & 2 & 250 & 35  \\ \hline
+		6   & Real life data                                         & - & -   & -   \\ \hline
+	\end{tabular}
+	\caption{}
+	\label{tab:experiments}
+\end{table}
+
+The first function is given by
+
 \begin{equation} \label{eq:test_func_1}
 	f(x) = \begin{cases}
 			 0 \quad &\text{if} \ x \le 0.8 \\ 
@@ -43,67 +56,73 @@ These are evaluated on two functions with a priori known behavior. The first fun
 		  \end{cases}, \quad \text{for} \ x \in [0, 2.5].
 \end{equation}
 	
-It is therefor a constant function till $x=0.8$ and afterwards increasing. An example of the true function as well as noisy samples from this function is given in Fig. \ref{eq:test_func_1}.
+It is a constant function till $x=0.8$ and afterwards increasing. An example of the true function as well as noisy samples from it is given in Fig. \ref{eq:test_func_1}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1_data.pdf}
-	\caption{Test Function 1}
+	\caption{Test function 1}
 	\label{fig:test_func_1}
 \end{figure}
 
 The second function that will be investigated is given by
+
 \begin{equation} \label{eq:test_func_2}
-f(x) = \begin{cases}
-2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 3x  &,\text{if} \ x \le 0.85 \\
-2\exp \big(-\frac{(0.85-0.5)^2}{0.05} \big) + 3*0.85  &,\text{else}
-\end{cases}, \quad \text{for} \ x \in [0,1]. 	
+	f(x) = \begin{cases}
+					2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 3x  &,\text{if} \ x \le 0.85 \\
+					2\exp \big(-\frac{(0.85-0.5)^2}{0.05} \big) + 3*0.85  &,\text{else}
+	       \end{cases}, \quad \text{for} \ x \in [0,1]. 	
 \end{equation}
 
 The true functions depicts a unimodal behavior and is constant for $x > 0.85$. To test the algorithm, we deliberately generate "wrong" data using the following function
+
 \begin{equation} \label{eq:test_func_2_wrong}
 	f(x) = 2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 3x  \quad \text{for} \ x \in [0, 1]. 
 \end{equation}
 
-An example of the true Function \ref{eq:test_func_2} as well as noisy samples from Function \ref{eq:test_func_2_wrong} is given in the following figure.
+An example of the true function \ref{eq:test_func_2} as well as noisy samples from function \ref{eq:test_func_2_wrong} are given in the figure \ref{fig:test_func_2}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak_data.pdf}
-	\caption{Test Function 2}
+	\caption{Test function 2}
 	\label{fig:test_func_2}
 \end{figure}
 
-\subsection{Static Function Approximation using a priori Knowledge}
+\section{Experiments}
 
-For the test using Function \ref{eq:test_func_1}, the data set contains 100 points. We use $k=35$ as number of used splines. The smoothing parameter $\lambda_s$ is optimized using cross-validation. The parameter regulating the influence of the constraint is set to the 1000-fold of the smoothing parameter $\lambda_s$. The resulting constrained fit, and for comparison, the unconstrained fit using the optimal smoothing parameter $\lambda_s = 0.1615$ are shown in the following figure.
+\subsection{Exp. 1.1: Static Function Approx.using a priori Knowledge on Function \ref{eq:test_func_1}}
+
+For the experiment using function \ref{eq:test_func_1}, the data set contains 100 points. We use $k=35$ as number of splines. The smoothing parameter $\lambda_s$ is optimized using cross-validation given in Chapter \emph{CrossValidation}. The parameter $\lambda_c$ regulating the influence of the constraint is set to the 1000-fold of the smoothing parameter $\lambda_s$. The resulting constrained fit, and for comparison, the unconstrained fit using the optimal smoothing parameter $\lambda_s = 0.1615$ are shown in the following figure.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1_fit.pdf}
-	\caption{Constr. Fit, Unconstr. Fit and Residuals (lower plot) for Function 1}
+	\caption{Constr. fit, unconstr. fit and residuals (lower plot) for function 1}
 	\label{fig:test_func_1_fit}
 \end{figure}
 
-The red line follows the a priori knowledge of increasing behavior better than the blue, unconstrained line. Especially in the constant area, e.g. $x \in  [0, 0.8]$, the constraint improves the static function approximation and lowers the residual. In the area of increasing behavior, the two fits are almost identical. The mean squared error on the training data, on the test data and on the true function are given in the Table Results.
+The red line follows the a priori knowledge of increasing behavior better than the blue, unconstrained line. Especially in the constant area, e.g. $x \in  [0, 0.8]$, the constraint improves the static function approximation and lowers the residual as seen in the lower part of figure \ref{fig:test_func_1_fit}. In the area of increasing behavior, the two fits are almost identical since the constraint is inactive. The mean squared error on the training data, on the test data and on the true function are given in the Table \emph{Results}.
 
-For the test using Function \ref{eq:test_func_2} the data set contains 500 points. There are two possibilities to include the a priori knowledge of a peak. First we can use the peak constraint matrix given in Chapter Penalty Matrices. On the other hand, we can use the concavity constraint, since concave functions are likely to have a peak when the data shows a peak. We examine both possibilities in Figure \ref{fig:test_func_2_fit}. For each fit, we used $k=35$ as number of splines and the smoothing parameter $\lambda_s=0.6189$ was again optimized using cross-validation. The constraint parameter $\lambda_c$ was set to $618.9$.
+\subsection{Exp. 1.2: Static Function Approx. using a priori Knowledge on Function \ref{eq:test_func_2}}
+
+For the test using function \ref{eq:test_func_2} the data set contains 500 points. There are two possibilities to include the a priori knowledge of a unimodal behavior. First we can use the peak constraint matrix given in Chapter \emph{Penalty Matrices}. On the other hand, we can use the concavity constraint, since concave functions are likely to have a peak when the data shows a peak. We examine both possibilities in Figure \ref{fig:test_func_2_fit}. For each fit, we used $k=35$ as number of splines and the smoothing parameter $\lambda_s=0.6189$ was again optimized using cross-validation. The constraint parameter $\lambda_c$ was set to $618.9$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak_fit.pdf}
-	\caption{Constr. Fit, Unconstr. Fit and Residuals (lower plots) for Function 2}
+	\caption{Constr. fit, unconstr. fit and residuals (lower plots) for function 2}
 	\label{fig:test_func_2_fit}
 \end{figure}
  
-The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for $x >0.8$, i.e. the region where the data is on purpose "wrong", the residual of the peak constraint fit is lower than the unconstrained ones. The mean squared errors are given in the results table. 
+The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit as seen in the lower part of figure \ref{fig:test_func_2_fit}. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for $x >0.8$, i.e. the region where the data is on purpose "wrong", the residual of the peak constraint fit is lower than the unconstrained ones. The mean squared errors are given in the \emph{results table}. 
 It is important to notice that the concavity constraint must be used carefully, since not all functions with a peak are also concave or vice versa.
 
 \subsection{Constraint vs. Noise}
 
-In this section, we investigate the effect of different noise levels as well as noise types on the fitting process. In the first part, various levels of Gaussian noise are applied to Function \ref{eq:test_func_2}. In the second part, we will use different colors of noise acting on Function \ref{eq:test_func_1}. For both examples we use $k=35$ splines and optimize the smoothing parameter $\lambda_s$ using cross-validation. 
+In this section, we investigate the effect of different noise levels as well as noise types on the fitting process. In the first part, various levels of Gaussian noise are applied to function \ref{eq:test_func_2}. In the second part, we will use different colors of noise acting on function \ref{eq:test_func_1}. For both examples we use $k=35$ splines and optimize the smoothing parameter $\lambda_s$ using cross-validation. 
 
-\subsubsection{Noise Level}
+\subsubsection{Exp. 2: Different Noise Levels}
 
 Gaussian noise is characterized by the following two parameters:
 \begin{itemize}
@@ -113,22 +132,22 @@ Gaussian noise is characterized by the following two parameters:
 
 We set the location equal to zero and vary the scale value. The effect of the noise on the fitting procedure is shown in the following figure. The chosen noise levels are $\sigma^2 = \{0.01, 0.05, 0.1\}$.
 
-For these values of $\sigma^2$, the correspond optimized smoothing parameters are $\lambda_{0.01} = 0.3162$, $\lambda_{0.05} = 2.3713$ and $\lambda_{0.1} = 1.211$.
+For these values of $\sigma^2$, the correspond optimized smoothing parameters are $\lambda_{0.01} = 0.3162$, $\lambda_{0.05} = 2.3713$ and $\lambda_{0.1} = 1.211$. The constraint parameter $\lambda_c$ was set to $\lambda_c = 1000 \lambda_s$. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_noise_levels.pdf}
-	\caption{Constr. Fit, Unconstr. Fit and Residuals for various Noise Levels}
+	\caption{Constr. fit, unconstr. fit and residuals for various noise levels}
 	\label{fig:fit_noise_levels}
 \end{figure}
 
-The left plot shows the fit for $\sigma^2 = 0.01$. The noise level is moderate, which leads to a smooth and satisfying fit. The peak constraint is well satisfied. The constraint parameter $\lambda_c$ was set to $\lambda_{c, 0.01} = 1000\lambda_s$. 
+The left plot shows the fit for $\sigma^2 = 0.01$. The noise level is moderate, which leads to a smooth and satisfying fit. The peak constraint is well satisfied. 
 
-The noise level in the middle plot is already high. The unconstrained fit is nevertheless smooth, but it underestimates the peak and violates the constraint for $x$. The constrained fit holds the peak constraint and generalizes better to the test set, as seen in Table Results MSES. The constraint parameter was again set to $\lambda_{c, 0.05} = 1000\lambda_{s, 0.05}.$ 
+The noise level in the middle plot is already high. The unconstrained fit is nevertheless smooth, but it underestimates the peak and violates the constraint for $x > 0.9$. The constrained fit holds the peak constraint and generalizes better to the test set, as seen in \emph{Table Results MSES}.  
 
-For the right plot and $\sigma^2=0.1$, both constrained and unconstrained fit are smooth but overestimate the fit especially in the peak region. The constraint parameter was set to $\lambda_{c, 0.1} = 1000\lambda_{s, 0.1}$. 
+For the right plot and $\sigma^2=0.1$, both constrained and unconstrained fit are smooth but overestimate the fit especially in the peak region. The noise level is very high and the fits must be used carefully.
 
-\subsubsection{Noise Colors}
+\subsubsection{Exp. 3: Different Noise Colors}
 
 We investigate the effect of different noise color on the function fitting process. The tested colors are the following power-law noise types:
 
@@ -143,18 +162,18 @@ The unconstrained as well as the increasing constrained fit for all noise colors
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_noise_colors.pdf}
-	\caption{Constr. and Unconstr. Fit and Residuals for Noise Colors}
+	\caption{Constr. and unconstr. fit and residuals for noise colors}
 	\label{fig:fit_noise_colors}
 \end{figure}
 
-For the white noise data in the left plot, the increasing constraint produces a very good fit according to the constraint and the residual. The optimized smoothing parameter for the unconstrained fit was given by $\lambda_s = 9.08$ and the constraint parameter was set to $\lambda_c = 9080$. The fit recovers the true function quite well. 
+For the white noise data in the left plot, the increasing constraint produces a good fit according to the constraint and the residual except for low $x < 0.2$. The optimized smoothing parameter for the unconstrained fit was given by $\lambda_s = 9.08$ and the constraint parameter was set to $\lambda_c = 9080$. The fit recovers the true function quite well. 
 
-For the pink noise data in the middle plot, the constraint helps regularizing the fit, but the increasing constraint is not satisfied especially for low $x$. The increasing part of the function, i.e. $f(x)$ for $x \ge 1.2$,  was fit well. The smoothing parameter was optimized using cross-validation and set to $\lambda_s = 0.3$. The constraint parameter was set to $\lambda_c = 6000$. 
+For the pink noise data in the middle plot, the constraint helps regularizing the fit, but the increasing constraint is not satisfied for low $x<0.01$. The increasing part of the function, i.e. $f(x)$ for $x \ge 1.2$,  was fit well. The smoothing parameter was optimized using cross-validation and set to $\lambda_s = 0.3$. The constraint parameter was set to $\lambda_c = 6000$. 
 
-For the brownian noise data in the right plot, the increasing part of the function was fit well, but for $x \ge 2$, the fit diverges the true function because of the strong noise component. The increasing constraint is hold quite well. The optimized smoothing parameter used was $\lambda_s = 0.0056$ and the constraint parameter was set to $\lambda_c = 6000$.
+For the brownian noise data in the right plot, the increasing part of the function was recovered well, but for $x \ge 2$, the fit diverges the true function because of the strong noise component. The increasing constraint is hold quite well. The optimized smoothing parameter used was $\lambda_s = 0.0056$ and the constraint parameter was set to $\lambda_c = 6000$.
 
 \subsection{Well-distributed vs. Skewed Data and Knot Placement}
-We will now investigate the effect of irregular data distributions on the fitting process. We therefore examine input data generated on a grid vs. data generated from a beta distribution given by
+We will now investigate the effect of irregular data distributions on the fitting process. We therefore examine input data $x^{(i)}$ for $i = 1, \dots, n$ sgenerated on a grid vs. data generated from a beta distribution given by
 
 \begin{align}
 	f(x) = \frac{1}{B(a, b))} x^{a-1} (1-x)^{b-1} 
@@ -165,31 +184,47 @@ with
 \end{align*}
 
 
-for different values of the parameters $a$ and $b$. We will investigate the effect of the knot placement, which can either be equidistant knot placement or quantile-based knot placement, using this data. We again use noisy samples from Function \ref{eq:test_func_2}.
+for different values of the parameters $a$ and $b$. We will investigate the effect of the knot placement, which can either be equidistant knot placement or quantile-based knot placement, using this data. We again use noisy samples from function \ref{eq:test_func_2}.
 
-\subsubsection{Equidistant vs. Quantile Based Knot Placement for Grid Data}
-We will use 250 noisy samples from function (2) generated from a linear sequence of $x$. The smoothing parameters for the equidistant knot placement fit and for the quantile based knot placement fit were optimized using cross-validation and set to $\lambda_{s,equidistant} = 1.211$ and $\lambda_{s, quantile} = 4.641$. The constraint parameter for the peak constraint was set to $\lambda_c = 6000$ for both fits. We use 35 splines for both fits. The resulting fits are shown in the following figure.
+\subsubsection{Exp. 4: Equidistant vs. Quantile Based Knot Placement for Grid Data}
 
-As expected for grid data, there is not much difference in the fits between the knot placement types. The peak constraint is hold by both fits quite well. It is important to notice that the discontinuities in first derivative of the spline basis for both fits is just visual and comes from the number of used data points for the plot.
+We will use 250 noisy samples from function (\ref{eq:test_func_1}) generated from a linear sequence of $x$. The smoothing parameters for the equidistant knot placement fit and for the quantile based knot placement fit were optimized using cross-validation and set to $\lambda_{s,equidistant} = 1.211$ and $\lambda_{s, quantile} = 4.641$. The constraint parameter for the peak constraint was set to $\lambda_c = 6000$ for both fits. We use 35 splines for both fits. The resulting fits are shown in figure \ref{fig:fit_grid_250}.
+
+As expected for grid data, there is not much difference in the fits between the knot placement types. The peak constraint is hold by both fits quite well. The residuals for  equidistant knot placement are overall lower than for quantile-based knot placement. It is important to notice that the discontinuities in first derivative of the spline basis for both fits is just visual and comes from the number of used data points for the plot.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_grid/exp_grid_ndata_250_rseed_1.pdf}
-	\caption{Constr. and Unconstr. Fit and Residuals for Grid Data}
+	\caption{Constr. and unconstr. fit and residuals for grid data}
 	\label{fig:fit_grid_250}
 \end{figure}
+
+\subsubsection{Exp. 5: Equidistant vs. Quantile Based Knot Placement for Skewed Data}
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_beta/exp_left_skewed_data_ndata_250_rseed_1.pdf}
-	\caption{Constr. and Unconstr. Fit and Residuals for Left Skewed Data}
+	\caption{Constr. and unconstr. fit and residuals for left skewed data}
 	\label{fig:fit_left_skew_250}
 \end{figure}
 
-\begin{itemize}
-	\item Phasendiagram: $\sigma^2 vs. \lambda_c$
-	\item Ebner Data
-\end{itemize}
+\section{Exp. 6: Real life data}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{../thesisplots/ebner/data_distribution.png}
+	\caption{Data Situation}
+	\label{fig:ebner_data_situation}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{../thesisplots/ebner/Model_constraint.png}
+	\caption{Constr. and unconstr. fit for Ebner Data}
+	\label{fig:ebner_fit_s250}
+\end{figure}
 
 \end{document}
