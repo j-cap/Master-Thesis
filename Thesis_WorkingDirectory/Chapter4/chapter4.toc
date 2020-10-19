@@ -1,24 +1,32 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Overview}{1}%
+\contentsline {section}{\numberline {1}Overview}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Experiments}{3}%
+\contentsline {section}{\numberline {2}Experiments}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Exp. 1.1: Static Function Approx.using a priori Knowledge on Function \ref {eq:test_func_1}}{3}%
+\contentsline {subsection}{\numberline {2.1}Exp. 1.1: Static Function Approx. using a priori Knowledge on Function \ref {eq:test_func_1}}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Exp. 1.2: Static Function Approx. using a priori Knowledge on Function \ref {eq:test_func_2}}{4}%
+\contentsline {subsection}{\numberline {2.2}Exp. 1.2: Static Function Approx. using a priori Knowledge on Function \ref {eq:test_func_2}}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Constraint vs. Noise}{5}%
+\contentsline {subsection}{\numberline {2.3}Constraint vs. Noise}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.1}Exp. 2: Different Noise Levels}{5}%
+\contentsline {subsubsection}{\numberline {2.3.1}Exp. 2: Different Noise Levels}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.2}Exp. 3: Different Noise Colors}{6}%
+\contentsline {subsubsection}{\numberline {2.3.2}Exp. 3: Different Noise Colors}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Well-distributed vs. Skewed Data and Knot Placement}{7}%
+\contentsline {subsection}{\numberline {2.4}Well-distributed vs. Skewed Data and Knot Placement}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.1}Exp. 4: Equidistant vs. Quantile Based Knot Placement for Grid Data}{8}%
+\contentsline {subsubsection}{\numberline {2.4.1}Exp. 4: Equidistant vs. Quantile Based Knot Placement for Grid Data}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.2}Exp. 5: Equidistant vs. Quantile Based Knot Placement for Skewed Data}{9}%
+\contentsline {subsubsection}{\numberline {2.4.2}Exp. 5.1: Equidistant vs. Quantile Based Knot Placement for Skewed Data}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Exp. 6: Real life data}{9}%
+\contentsline {subsubsection}{\numberline {2.4.3}Exp. 5.2: Equidistant vs. Quantile Based Knot Placement for Skewed Data}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.4.4}Exp. 5.3: Equidistant vs. Quantile Based Knot Placement for Skewed Data}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.4.5}Exp. 5.4: Equidistant vs. Quantile Based Knot Placement for Skewed Data}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Exp. 6: Real life data}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Summary}{17}

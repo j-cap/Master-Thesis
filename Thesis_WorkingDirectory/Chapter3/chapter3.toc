@@ -1,36 +1,36 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Introduction}{1}%
+\contentsline {section}{\numberline {1}Introduction}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Function Estimation}{3}%
+\contentsline {section}{\numberline {2}Function Estimation}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}1d Function Estimation}{3}%
+\contentsline {subsection}{\numberline {2.1}1d Function Estimation}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}1d Smooth Function Estimation}{5}%
+\contentsline {subsection}{\numberline {2.2}1d Smooth Function Estimation}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}1d Constraint Function Estimation}{7}%
+\contentsline {subsection}{\numberline {2.3}1d Constraint Function Estimation}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}User-defined Constraints}{9}%
+\contentsline {section}{\numberline {3}User-defined Constraints}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Monotonicity Constraint}{9}%
+\contentsline {subsection}{\numberline {3.1}Monotonicity Constraint}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Curvature Constraint}{10}%
+\contentsline {subsection}{\numberline {3.2}Curvature Constraint}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Unimodality Constraint}{11}%
+\contentsline {subsection}{\numberline {3.3}Unimodality Constraint}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Boundedness Constraint}{12}%
+\contentsline {subsection}{\numberline {3.4}Boundedness Constraint}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Jamming Constraint}{13}%
+\contentsline {subsection}{\numberline {3.5}Jamming Constraint}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}n-d Constraint Function Estimation}{13}%
+\contentsline {section}{\numberline {4}n-d Constraint Function Estimation}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Data Term}{14}%
+\contentsline {subsection}{\numberline {4.1}Data Term}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Smoothness Term}{15}%
+\contentsline {subsection}{\numberline {4.2}Smoothness Term}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Constraint Term}{15}%
+\contentsline {subsection}{\numberline {4.3}Constraint Term}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Mapping Matrices for Tensor-Product Splines}{15}%
+\contentsline {subsection}{\numberline {4.4}Mapping Matrices for Tensor-Product Splines}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}2-d Example}{16}%
+\contentsline {subsection}{\numberline {4.5}2-d Example}{16}

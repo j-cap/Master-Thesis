@@ -1,0 +1,54 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{debug/global//global/global}
+    \entry{ferziger2008numerische}{book}{}
+      \name{author}{2}{}{%
+        {{hash=3aa88c71e105ea70dee9c5754e53957e}{%
+           family={Ferziger},
+           familyi={F\bibinitperiod},
+           given={Joel\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=4e5eff4468ed6699d8db9b51d1f99a6f}{%
+           family={Peric},
+           familyi={P\bibinitperiod},
+           given={Milovan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{fullhash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{bibnamehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{authorbibnamehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{authornamehash}{66ed60340bf30587bab76229df8bbf02}
+      \strng{authorfullhash}{66ed60340bf30587bab76229df8bbf02}
+      \field{sortinit}{f}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Numerische Str{ö}mungsmechanik}
+      \field{year}{2008}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

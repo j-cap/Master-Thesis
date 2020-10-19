@@ -9,7 +9,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{float}
-\usepackage{array}
+\usepackage{array} 
 \usepackage{booktabs}	% for horizontal lines
 \usepackage{varwidth}% http://ctan.org/pkg/varwidth
 \usepackage{csvsimple} % automatic table generation from csv files
@@ -40,7 +40,7 @@
 Given the set of data points $\{x^{(i)}_1, \dots, x^{(i)}_q; y^{(i)} \}$ for $i = 1, \dots, n$ , we aim to model the relation between the input or predictor variables $\{x_1, \dots, x_p\}$ and the output $y$ with a function $y = f(x_1, \dots, x_p)$ and an additive noise term $\epsilon$. Thus we obtain the model formulation for the data point $i$ as
 
 \begin{align} \label{eq:lin_mod_single_data_point}
-	y^{(i)} = f(x^{(i)}_{1}, \dots, x^{(i)}_{p}) + \epsilon^{(i)}
+	y^{(i)} = f(x^{(i)}_{1}, \dots, x^{(i)}_{q}) + \epsilon^{(i)}
 \end{align}.
 
 The goal is now the estimation of the unknown function $f$. For this, several assumptions on the model structure are taken:
@@ -48,20 +48,20 @@ The goal is now the estimation of the unknown function $f$. For this, several as
 \begin{enumerate}
 	\item \emph{The unknown function $f$ is a linear combination of the input variables}
 	
-	The function $f(x_1, \dots, x_p)$ is modeled as a linear combination of inputs, i.e.,
+	The function $f(x_1, \dots, x_q)$ is modeled as a linear combination of inputs, i.e.,
 	
 	\begin{align} \label{eq:linCombOfInputs}
-		f(x_1, \dots, x_p) = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p,
+		f(x_1, \dots, x_q) = \beta_0 + \beta_1 x_1 + \dots + \beta_q x_q,
 	\end{align}
 	
-	with unknown parameters $\beta_0, \dots, \beta_p$, which need to be estimated. The model is therefore linear in its parameters as well as in its inputs. \cite{bishop2006patternRecognition} The parameter $\beta_0$ is called intercept or bias in the machine learning community. For centered data, i.e. the expected value $\mathbb{E}[x^{(i)}] = 0$, the intercept is equal to zero and can be neglected.
+	with unknown parameters $\beta_0, \dots, \beta_q$, which need to be estimated. The model is therefore linear in its parameters as well as in its inputs. \cite{bishop2006patternRecognition} The parameter $\beta_0$ is called intercept or bias in the machine learning community. For centered data, i.e. the expected value $\mathbb{E}[x^{(i)}] = 0$, the intercept is equal to zero and can be neglected.
 		
 	\item \emph{Additive errors}
 	
 	The assumptions of additive errors adds the error term $\epsilon$ to the unknown function in (\ref{eq:linCombOfInputs}), which leads to the following model structure for the data point $i$
 	
 	\begin{align} \label{eq:linModelOneDim}
-		y^{(i)} = f(x^{(i)}_1, \dots, x^{(i)}_p) + \epsilon^{(i)}.
+		y^{(i)} = f(x^{(i)}_1, \dots, x^{(i)}_q) + \epsilon^{(i)}.
 	\end{align}
 
 	This is reasonable for many practical applications, even though it appears quite restrictive. 
@@ -70,29 +70,29 @@ The goal is now the estimation of the unknown function $f$. For this, several as
 Commonly, the linear model in (\ref{eq:lin_mod_single_data_point}) is represented in vector notation given by
 
 \begin{align} \label{eq:lin_mod_sp_vec_notation}
-	 y^{(i)} = f(x^{(i)}_{1}, \dots, x^{(i)}_{p})  = \boldsymbol{x}' \boldsymbol{\beta} + \epsilon^{(i)}
+	 y^{(i)} = f(x^{(i)}_{1}, \dots, x^{(i)}_{q})  = \boldsymbol{x}' \boldsymbol{\beta} + \epsilon^{(i)}
 \end{align}
 
-where $\boldsymbol{x}' = (1, x^{(i)}_{1}, \dots, x^{(i)}_{p})$ and $\boldsymbol{\beta} = (\beta_0, \dots, \beta_p)'$.
+where $\boldsymbol{x}' = (1, x^{(i)}_{1}, \dots, x^{(i)}_{q})$ and $\boldsymbol{\beta} = (\beta_0, \dots, \beta_q)'$.
 
-To estimate the unknown parameters $\boldsymbol{\beta}$, we define the vectors $\boldsymbol{y} = (y^{(i)}, \dots, y^{(n)})'$ and $\boldsymbol{\epsilon} = (\epsilon^{(i)}, \dots, \epsilon^{(n)})'$ as well as the design matrix $\boldsymbol{X}$, 
+To estimate the unknown parameters or coefficients $\boldsymbol{\beta}$, we define the vectors $\boldsymbol{y} = (y^{(i)}, \dots, y^{(n)})'$ and $\boldsymbol{\epsilon} = (\epsilon^{(i)}, \dots, \epsilon^{(n)})'$ as well as the design matrix $\boldsymbol{X}$, 
 
 \begin{align}
 	\boldsymbol{X} = \begin{pmatrix}   1     & x_{11} & \dots & x_{1q} \\ 
 								  	  \vdots &        &       & \vdots \\ 
 				  		  			   1     & x_{n1} & \dots & x_{nq}  
-		\end{pmatrix} \in \mathbb{R}^{n \times p+1}		
+		\end{pmatrix} \in \mathbb{R}^{n \times q+1}		
 \end{align}
 
-and generate $n$ equations like Eq.\ref{eq:linModelOneDim}, which can be combined as 
+and generate $n$ equations like (\ref{eq:linModelOneDim}), which can be combined as 
 
 \begin{align} \label{eq:LinearModel}
 	\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}.
 \end{align}
 
-We assume that the design matrix $\boldsymbol{X}$ has full column rank, i.e. $rk(\boldsymbol{X}) = p + 1 = q$, implying linear independence of the columns of $\boldsymbol{X}$, which is necessary to obtain a unique estimator for the regression coefficients $\boldsymbol{\beta}$. \cite{fahrmeir2013regression}
+We assume that the design matrix $\boldsymbol{X}$ has full column rank, i.e. $rk(\boldsymbol{X}) = q + 1 = p$, implying linear independence of the columns of $\boldsymbol{X}$, which is necessary to obtain a unique estimator for the regression coefficients $\boldsymbol{\beta}$. \cite{fahrmeir2013regression}
 
-Another necessary requirement is that the number of data points $n$ is larger or equal to the number of regression coefficients $q$, which is equivalent to the statement that the linear system in \ref{eq:LinearModel} is not under-determined.
+Another necessary requirement is that the number of data points $n$ is larger or equal to the number of regression coefficients $p$, which is equivalent to the statement that the linear system in (\ref{eq:LinearModel}) is not under-determined.
 
 In addition to the assumptions on the unknown function $f$, the necessary assumptions on the error term $\epsilon_i$ are the following:
 
@@ -119,18 +119,18 @@ It follows from the assumptions on the model function and on the error term that
 	\mathbb Cov[y_i, y_j] = \mathbb Cov[\epsilon_i, \epsilon_j] = 0, 
 \end{equation}
 	
-for the mean $\mathbb{E}$ and variance $\mathbb{V}$ of $\boldsymbol{y}$, and the covariance $\mathbb{Cov}$ between $y_i$ and $y_j$. With the additionally assumed Gaussian errors, we have
+for the mean $\mathbb{E}$ and variance $\mathbb{V}$ of $\boldsymbol{y}$, and the covariance $\mathbb Cov$ between $y_i$ and $y_j$. With the additionally assumed Gaussian errors, we obtain
 
 \begin{equation} \label{eq:linModelAsDistribution}
 	\boldsymbol{y} \sim \mathcal N(\boldsymbol{X} \boldsymbol{\beta}, \sigma^2 \boldsymbol{I}).
 \end{equation}
 
-A linear model with multiple input variables can therefore be interpreted as a normal distribution with its mean vector given by $\boldsymbol{\mu} = \boldsymbol{X} \boldsymbol{\beta}$ and its covariance matrix given by $sigma^2 \boldsymbol{I}$. To specify the linear model given in (\ref{eq:linModelAsDistribution}), we need to estimate the regression coefficients $\boldsymbol{\beta}$ and the variance $\sigma^2$.
+A linear model with multiple input variables can therefore be interpreted as a normal distribution with its mean vector given by $\boldsymbol{\mu} = \boldsymbol{X} \boldsymbol{\beta}$ and its covariance matrix given by $\sigma^2 \boldsymbol{I}$. To specify the linear model given in (\ref{eq:linModelAsDistribution}), we need to estimate the regression coefficients $\boldsymbol{\beta}$ and the variance $\sigma^2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Parameter Estimation}
 
-The linear model given in Eq. \ref{eq:linModelAsDistribution} has the unknown parameters $\boldsymbol{\beta}$ and $\sigma$ which need to be estimated using given data. In the following part, the estimators $\boldsymbol{\hat{\beta}}$ and $\hat \sigma$ are introduced, and their statistical properties are derived. 
+The linear model given in (\ref{eq:linModelAsDistribution}) has the unknown parameters $\boldsymbol{\beta}$ and $\sigma$ which need to be estimated using given data. In the following part, the estimators $\boldsymbol{\hat{\beta}}$ and $\hat \sigma$ are introduced, and their statistical properties are derived. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Estimation of the Regression Coefficients $\boldsymbol{\beta}$}
@@ -142,9 +142,9 @@ The two main methods for the estimation of the regression coefficients in the co
 	\item Method of Maximum Likelihood
 \end{itemize}	
 
-For Gaussian errors, the maximum likelihood estimator for the regression coefficients coincides with the least squares estimator. 
+For Gaussian errors, the maximum likelihood estimator $\boldsymbol{\hat{\beta}}_{ML}$ for the regression coefficients coincides with the least squares estimator $\boldsymbol{\hat{\beta}}_{LS}$. 
 
-\subsubsubsection{The Method of Least Squares}
+\subsubsubsection{The Method of Least Squares} \label{subsubsubsec:Method-of-LS}
 
 The unknown regression coefficients $\boldsymbol{\beta}$ are estimated by minimizing the sum of squared error
 
@@ -163,22 +163,22 @@ with respect to $\boldsymbol{\beta} \in \mathbb{R}^p$. \cite{friedman2001element
 The least squares criterion is minimized by setting its first derivative equal to zero and by showing that the matrix of second derivatives is positive definite. Applying the rules of differentiation, we obtain
 
 \begin{align} \label{eq:LS_1st_derivative}
-	\frac{\partial LS(\boldsymbol{y}, \boldsymbol{\beta})}{\partial \boldsymbol{\beta}} = -2\boldsymbol{X}' \boldsymbol{y} + 2\boldsymbol{X}'\boldsymbol{X} \boldsymbol{\beta}.
+	\frac{\partial \text{LS}(\boldsymbol{y}, \boldsymbol{\beta})}{\partial \boldsymbol{\beta}} = -2\boldsymbol{X}' \boldsymbol{y} + 2\boldsymbol{X}'\boldsymbol{X} \boldsymbol{\beta}.
 \end{align}
 
 The second derivative is given by
 
 \begin{align} \label{eq:LS_2nd_derivative}
-	\frac{\partial^2LS(\boldsymbol{y}, \boldsymbol{\beta})}{\partial \boldsymbol{\beta} \partial \boldsymbol{\beta}'} = 2\boldsymbol{X}'\boldsymbol{X}
+	\frac{\partial^2 \text{LS}(\boldsymbol{y}, \boldsymbol{\beta})}{\partial \boldsymbol{\beta} \partial \boldsymbol{\beta}'} = 2\boldsymbol{X}'\boldsymbol{X}
 \end{align}
 	
-Since $\boldsymbol{X} \in \mathbb{R}^{n \times q}$ has, per assumption in Chapter \ref{subsec:SubsectionLinModelDefAndAssump},  full rank, the matrix $ \boldsymbol{X}'\boldsymbol{X}$ is positive definite. The least squares estimate $\boldsymbol{\hat{\beta}}_{LS}$ is then obtained by solving the so-called \emph{normal equations}
+Since $\boldsymbol{X} \in \mathbb{R}^{n \times p}$ has, per assumption in Chapter \ref{subsec:LinModelDefAndAssump},  full rank, the matrix $ \boldsymbol{X}'\boldsymbol{X}$ is positive definite. The least squares estimate $\boldsymbol{\hat{\beta}}_{LS}$ is then obtained by solving the so-called \emph{normal equations}
 
 \begin{align} \label{eq:NormalEquations}
 	\boldsymbol{X}' \boldsymbol{X} \boldsymbol{\beta} = \boldsymbol{X}' \boldsymbol{y}.
 \end{align}
 
-Since $\boldsymbol{X}'\boldsymbol{X}$ is positive definite and invertible, the \emph{normal equations} in (\ref{eq:NormalEquations}) have a unique solution given by the least squares estimate
+Since $\boldsymbol{X}'\boldsymbol{X}$ is positive definite and invertible, the \emph{normal equations} in (\ref{eq:NormalEquations}) have a unique solution given by the least squares estimator
 
 \begin{align} \label{eq:LS_estimator}
 	\boldsymbol{\hat{\beta}}_{LS} = (\boldsymbol{X}'\boldsymbol{X})^{-1} \boldsymbol{X}'\boldsymbol{y}.
@@ -203,11 +203,11 @@ Thus, maximizing the log-likelihood $l(\boldsymbol{\beta}, \sigma^2)$ with respe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Estimation of the Variance $\sigma^2$}
 
-The estimation of the variance $\sigma^2$ is necessary for the construction of confidence intervals of the regression coefficients and for the construction of prediction intervals. It is further used in all kinds of statistical tests. \cite{blobel2013statistische}
+The estimation of the variance $\sigma^2$ is necessary for the construction of confidence intervals of the regression coefficients and for the construction of prediction intervals. It is further used in all kinds of statistical tests as well as in model selection approaches and model choice criteria. \cite{blobel2013statistische}
 
 \subsubsubsection{Maximum Likelihood Estimation}
 
-The variance $\sigma^2$ can be estimated using the maximum likelihood method by differentiation of the log-likelihood $l(\beta, \sigma^2)$ in \ref{eq:log_liklihood} with respect to $\sigma^2$. The derivative is given by
+The variance $\sigma^2$ can be estimated using the maximum likelihood method by differentiation of the log-likelihood $l(\boldsymbol{\beta}, \sigma^2)$ in \ref{eq:log_liklihood} with respect to $\sigma^2$. The derivative is given by
 
 \begin{align} \label{eq:log_likelihood_derivative_sigma}
 	\frac{\partial l(\boldsymbol{\beta}, \sigma^2)}{\partial \sigma^2} = -\frac{n}{2\sigma^2} + \frac{1}{2\sigma^4}(\boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta})'(\boldsymbol{y} - \boldsymbol{X}\boldsymbol{\beta}). 
@@ -224,13 +224,13 @@ This estimator for $\sigma^2$ is rarely used since it is biased, i.e. $\mathbb{E
 
 \subsubsubsection{Restricted Maximum Likelihood Estimation}
 
-Using $\mathbb{E}[\boldsymbol{\hat{\epsilon}}' \boldsymbol{\hat{\epsilon}}] = (n - q)\sigma^2$, we obtain for the restricted maximum likelihood estimation of the variance $\sigma^2$ the following:
+Using $\mathbb{E}[\boldsymbol{\hat{\epsilon}}' \boldsymbol{\hat{\epsilon}}] = (n - p)\sigma^2$, we obtain the restricted maximum likelihood estimation of the variance $\sigma^2$ as
 
 \begin{align} \label{eq:sigma_REML}
-	\hat \sigma^2_{REML} = \frac{1}{n-q} \boldsymbol{\hat{\epsilon}}' \boldsymbol{\hat{\epsilon}},
+	\hat \sigma^2_{REML} = \frac{1}{n-q} \boldsymbol{\hat{\epsilon}}' \boldsymbol{\hat{\epsilon}}.
 \end{align}
 
-which is the commonly used estimator for the variance $\sigma^2$. The restricted maximum likelihood estimator for the variance is in general less biased. Therefore, it is a better choice to use this estimator.
+The restricted maximum likelihood estimator for the variance is in general less biased. Therefore, it is a better choice to use this estimator and the commonly used estimator for the variance $\sigma^2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Hat Matrix}
@@ -263,29 +263,29 @@ The \emph{hat matrix} $\boldsymbol{H}$ has the following useful properties:
 	\item The matrix $(\boldsymbol{I} - \boldsymbol{H})$ is also idempotent and symmetric, with $rk(\boldsymbol{I} - \boldsymbol{H}) = n - q$.
 \end{itemize}
 
-The hat matrix is used in model selection techniques like cross-validation as well as in outlier detection and in the diagnostic plots for linear models.
+The hat matrix is used in model selection techniques like cross-validation as well as in outlier detection and in diagnostic plots for linear models.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Model Selection}
 
-Linear models are a widely used technique for regression problems on large data sets $n \gg 0$, since the solution of the \emph{normal equations} in (\ref{eq:NormalEquations}) can be computed efficiently for large $n$. If these data sets also contain a large number of input variables $p \gg 0$, the situation becomes more complicated because possible interaction effects or correlation of input variables may occur. This limits the, otherwise perfect, interpretability of the linear model. 
+Linear models are a widely used technique for regression problems on large data sets $n \gg 0$, since the solution of the \emph{normal equations} in (\ref{eq:NormalEquations}) can be computed efficiently even for large $n$. If these data sets also contain a large number of input variables $q \gg 0$, the situation becomes more complicated because possible interaction effects or correlation of input variables may occur. This interaction terms limits the, otherwise perfect, interpretability of the linear model. 
 
 Therefore we need techniques and criteria to select the \emph{best possible model} out of the variety of different models for some given data set. Model choice criteria, see Chapter \ref{subsubsec:MCC} are used to compare different models while model selection techniques, see Chapter \ref{subsubsec:MST} give an algorithmic approach to model creation. Further, we can influence the estimated coefficients $\boldsymbol{\beta}$ directly via regularization, see Chapter \ref{subsubsec:Regularization}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Model Choice Criteria} \label{subsubsec:MCC}
 
-One way of comparing various models, i.e models using different sets of variables, is the use of model choice criteria, e.g. Mallow's CP or AIC. Generally, model choice criteria can be split in two components. The first one measures the goodness of fit, e.g. using the sum of squared errors, while the second measures the complexity of the model. Most model choice criteria are based on the sum of squared prediction error $SPSE$. Therefore, the derivation of the sum of squared prediction error $SPSE$ is given first. 
+One way of comparing various models, i.e models using different sets of input variables, is the use of model choice criteria, e.g. Mallow's CP or AIC. Generally, model choice criteria can be split in two components. The first one measures the goodness of fit, e.g. using the sum of squared errors, while the second measures the complexity of the model. Most model choice criteria are based on the sum of squared prediction error $\text{SPSE}$. Therefore, the derivation of the sum of squared prediction error $\text{SPSE}$ is given first. 
 
 \subsubsubsection{Sum of expected Squared Prediction Error}
 
-We assume given data $\{ x^{(i)}_{1}, \dots, x^{(p)}_{i}; y_i\}$ for $i =1, \dots, n$. Further, we assume that the expectation $\mathbb{E}[y_i] = \mu_i$ and the variance $\mathbb{V}ar[y_i] = \sigma^2$. Using the $q$ variables $x_j$ we can generate the corresponding design matrix $\boldsymbol{X}$ for the linear model as in (\ref{eq:LinearModel}), i.e.
+We assume given data $\{ x^{(i)}_{1}, \dots, x^{(i)}_{p}; y_i\}$ for $i =1, \dots, n$. Further, we assume that the expectation $\mathbb{E}[y_i] = \mu_i$ and the variance $\mathbb{V}ar[y_i] = \sigma^2$. Using the $q$ variables $x_j$ we can generate the corresponding design matrix $\boldsymbol{X}$ for the linear model as in (\ref{eq:LinearModel}), i.e.
 
 \begin{align}
 	\boldsymbol{y} = \boldsymbol{X} \boldsymbol{\beta}
 \end{align}
 
-with $\boldsymbol{y} \in \mathbb{R}^n$, $\boldsymbol{X} in \mathbb{R}^{n \times q}$ and $\boldsymbol{\beta} \in \mathbb{R}^q$. The least squares estimator for $\boldsymbol{\beta}$ is then given by
+with $\boldsymbol{y} \in \mathbb{R}^n$, $\boldsymbol{X} \in \mathbb{R}^{n \times p}$ and $\boldsymbol{\beta} \in \mathbb{R}^p$. The least squares estimator for $\boldsymbol{\beta}$ is then given by
 
 \begin{align}
 	\boldsymbol{\hat{\beta}}_{LS} = (\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}'\boldsymbol{y}.
@@ -302,7 +302,7 @@ The following properties for $\boldsymbol{\hat{y}}$ hold:
 \begin{itemize}
 	\item $\mathbb{E} [\boldsymbol{\hat{y}}] = \boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}'\mathbb{E}[\boldsymbol{y}]$
 	\item $\mathbb Cov[\boldsymbol{\hat{y}}] = \sigma^2 \boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}'$
-	\item $\sum_{i=1}^n \text{Var} [\hat y^{(i)}i] = \sigma^2 \text{tr}(\boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}') = \vert M \vert \sigma^2$, where $M$ represents the number  of used variables.
+	\item $\sum_{i=1}^n \text{Var} [\hat y^{(i)}] = \sigma^2 \text{tr}(\boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}') = \sigma^2 \vert M \vert $, where $M$ represents the number  of used variables.
 	\item Sum of Mean Squared Error
 		\begin{equation}  
 		\begin{split} 
@@ -316,7 +316,7 @@ The following properties for $\boldsymbol{\hat{y}}$ hold:
 If we now assume new data 
 
 \begin{align} \label{eq:new_data}
-	\{ x^{(i)}_{1}, \dots, x^{(i)}_{p}; \ y^{(n+i)} = \mu^{(i)} + \epsilon^{(n+1)}\} \quad \text{for} \ i = 1, \dots, n,
+	\{ x^{(i)}_{1}, \dots, x^{(i)}_{q}; \ y^{(n+i)} = \mu^{(i)} + \epsilon^{(n+i)}\} \quad \text{for} \ i = 1, \dots, n,
 \end{align}
 
 we can use the estimator $\boldsymbol{\hat{y}}$ as a prediction for these new observations. We can then derive the sum of the expected squared prediction errors SPSE, given by
@@ -325,8 +325,8 @@ we can use the estimator $\boldsymbol{\hat{y}}$ as a prediction for these new ob
 \begin{split}
 	\text{SPSE} &= \sum_{i=1}^{n} \mathbb{E}[y^{(n+i)} - \hat y^{(i)}]^2 \\ 
 				&= \sum_{i=1}^{n} \mathbb{E}\big[(y^{(n+i)} - \mu^{(i)}) - (\hat y^{(i)} - \mu^{(i)})\big]^2 \\ 
-				&= \sum_{i=1}^{n} \mathbb{E}[y^{(n+i)} - \mu^{(i)}]^2 + 2\mathbb{E}[(y^{(n+i)} - \mu^{(i)})(\hat y^{(i)} - \mu^{(i)})] + \mathbb{E}[\hat y^{(i)}] - \mu^{(i)}]^2 \\
-				&= \sum_{i=1}^{n}\mathbb{E}[y^{(n+i)} - \mu^{(i)}] + \sum_{i=1}^{n}(\mathbb{E}[\hat y^{(i)}] - \mu^{(i)})^2 \\ 
+				&= \sum_{i=1}^{n} \mathbb{E}[y^{(n+i)} - \mu^{(i)}]^2 + 2\mathbb{E}[(y^{(n+i)} - \mu^{(i)})(\hat y^{(i)} - \mu^{(i)})] + \mathbb{E}[\hat y^{(i)} - \mu^{(i)}]^2 \\
+				&= \sum_{i=1}^{n}\mathbb{E}[y^{(n+i)} - \mu^{(i)}]^2 + \sum_{i=1}^{n}(\mathbb{E}[\hat y^{(i)}] - \mu^{(i)})^2 \\ 
 				&= n\sigma^2 + \text{SMSE} \\ 
 				&= n\sigma^2 + \vert M \vert \sigma^2 + \sum_{i=1}^{n}(\mathbb{E}[\hat y^{(i)}] - \mu^{(i)})^2.
 \end{split}
@@ -345,7 +345,7 @@ The sum of the expected squared prediction error can be split into three parts
 	The last term can be interpreted as bias. It can be reduced by increasing the model complexity.
 \end{itemize}
 
-The sum of expected squared prediction error is an example of the bias-variance trade-off, which is characteristic for all statistical models. It states that by increasing model complexity, the bias is reduced but instead the variance is increased. On the other side, by decreasing model complexity, the variance of the model is reduced, but the bias is increased. \cite{bishop2006patternRecognition}
+The sum of expected squared prediction error acts as an example of the bias-variance trade-off, which is characteristic for all statistical models. It states that by increasing model complexity, the bias is reduced but instead the variance is increased. On the other side, by decreasing model complexity, the variance of the model is reduced, but the bias is increased. \cite{bishop2006patternRecognition}
 
 %[https://en.wikipedia.org/wiki/Bias–variance_tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
 
@@ -383,7 +383,7 @@ where $\bar y$ is defined as the mean value of $\boldsymbol{y}$. The major drawb
 
 The corrected coefficient of determination $R_{corr}^2$ reduces this problem by an correction term depending on the  number of parameters and is given by
 \begin{align}
-	R_{corr}^2 = 1 - \frac{n-1}{n-q}(1-R^2).
+	R_{corr}^2 = 1 - \frac{n-1}{n-p}(1-R^2).
 \end{align}
 
 The corrected coefficient of determination is a standard output parameter in many statistical programs and may be used to compare even models with different number of used variables. \cite{fahrmeir2013regression}
@@ -393,7 +393,7 @@ The corrected coefficient of determination is a standard output parameter in man
 Mallow's complexity parameter is based directly on the ideas specified for the estimation of the SPSE and is given by
 
 \begin{align}
-	\text C_p = \frac{\sum_{i=1}^n (y^{(i)} - \mathbb{E}[y^2{(i)}])^2}{\hat \sigma^2} - n + 2 \vert M \vert,
+	\text C_p = \frac{\sum_{i=1}^n (y^{(i)} - \mathbb{E}[y{(i)}])^2}{\hat \sigma^2} - n + 2 \vert M \vert,
 \end{align}
 
 where $M$ is again the number of used parameters. Lower values of Mallow's $\text C_p$ correspond to a better model fit. \cite{fahrmeir2013regression}
@@ -436,33 +436,33 @@ $$\text{BIC} = n\log(\hat \sigma_{ML}^2) + \log(n)(\vert M\vert + 1).$$
 
 Lower values of BIC correspond to a better model fit. \cite{fahrmeir2013regression}
 
-\subsubsubsection{Cross Validation}
+\subsubsubsection{Cross-validation}
 
-The basic idea of cross validations is to split the existing data set into multiple smaller ones and to fit one model to each of these smaller data sets. These models are then evaluated by the calculation of the SPSE on the data which it was not trained on. The model which has the smallest error is then chosen as final estimate. 
+The basic idea of cross-validations is to split the existing data set into multiple smaller ones and to fit one model to each of these smaller data sets. These models are then evaluated by the calculation of the SPSE on the data which it was not trained on. The model which has the smallest error is then chosen as final estimate. 
 
-A special case of cross validation is the "leave-one-out" cross validation, where all but one data point are used for training and the model is then evaluated on this held-out data point. This seems to be quite expensive, since one needs to estimate one model per data point. 
+A special case of cross-validation is the "leave-one-out" cross-validation, where all but one data point are used for training and the model is then evaluated on this held-out data point. This seems to be quite expensive, since one needs to estimate one model per data point. 
 
-However, in the context of linear models, it can be shown that the cross validation score can be computed using one model trained on all data $\boldsymbol{y}$ and the \emph{hat matrix} $\boldsymbol{H} = \boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}'$. The cross validation score is then given by
+However, in the context of linear models, it can be shown that the cross-validation score can be computed using one model trained on all data $\boldsymbol{y}$ and the \emph{hat matrix} $\boldsymbol{H} = \boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}'$. The cross-validation score is then given by
 
 \begin{align} \label{eq:cross-validation}
 	\text{CV} = \frac{1}{n} \sum_{i=1}^n\big( \frac{y^{(i)} - \hat y^{(i)}}{1 - h_{ii}}\big)^2.
 \end{align}
 
-where $h_{ii}$ denotes the diagonal elements of the \emph{hat matrix} and $\hat y^{(i)}$ is defined as the prediction of the model for the input $\{x^{(i)}_1, \dots, x^{(i)}_p \}$. A lower cross validation score corresponds to a better model fit. \cite{golub1979}
+where $h_{ii}$ denotes the diagonal elements of the \emph{hat matrix} and $\hat y^{(i)}$ is defined as the prediction of the model for the input $\{x^{(i)}_1, \dots, x^{(i)}_q \}$. A lower cross-validation score corresponds to a better model fit. \cite{golub1979}
 
-An approximation to the cross validation score is given by the so-called generalized cross validation score. It is mainly used in the context of non-parametric regression or when the hat matrix $H$ is numerically expensive to compute. In the GCV score, the diagonal elements of the hat matrix $h_{ii}$ are replaced by the mean of the trace of $H$. The GCV score is then given by
+An approximation to the cross-validation score is given by the so-called generalized cross-validation score. It is mainly used in the context of non-parametric regression or when the hat matrix $\boldsymbol{H}$ is numerically expensive to compute. In the GCV score, the diagonal elements of the hat matrix $h_{ii}$ are replaced by the mean of the trace of $\boldsymbol{H}$. The GCV score is then given by
 
 \begin{align} \label{eq:generalizied-cross-validation}
-	\text{GCV} = \frac{1}{n}\sum_{i=1}^n \Big( \frac{y^{(i)} - \hat y^{(i)}}{1 - \text{trace(H)}/n}\Big)^2.
+	\text{GCV} = \frac{1}{n}\sum_{i=1}^n \Big( \frac{y^{(i)} - \hat y^{(i)}}{1 - \text{trace}(\boldsymbol{H})/n}\Big)^2.
 \end{align}
 
-The numerical advantage comes from the fact that the trace of a product of matrices is not changed when cyclically permuting the product of matrices, i.e.
+The numerical advantage comes from the fact that the trace of a product of matrices is invariant to cyclical permutations, i.e.
 
 \begin{align}
 	\text{trace}(\boldsymbol{H}) = \text{trace}(\boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}\boldsymbol{X}') =\text{trace}(\boldsymbol{X}'\boldsymbol{X}(\boldsymbol{X}'\boldsymbol{X})^{-1}).
 \end{align} 
  
-The trace can therefore be computed from the product of two matrices of shape $q\times q$. \cite{fahrmeir2013regression}
+The trace can therefore be computed from the product of two matrices of shape $p\times p$. \cite{fahrmeir2013regression}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Model Selection Techniques} \label{subsubsec:MST}
@@ -503,10 +503,10 @@ In Ridge regression, the penalty term in the penalized least squares criterion i
 with the closed form solution 
 
 \begin{align}
-	\boldsymbol{\hat{\beta}}_{PLS,r} = \arg \min_{\boldsymbol{\beta}} \text{PLS}_{Ridge} = (\boldsymbol{X}'\boldsymbol{X} + \lambda \boldsymbol{I})^{-1}\boldsymbol{X}'\boldsymbol{y},
+	\boldsymbol{\hat{\beta}}_{PLS,r} = \arg \min_{\boldsymbol{\beta}} \text{PLS}_{Ridge}(\boldsymbol{\beta}) = (\boldsymbol{X}'\boldsymbol{X} + \lambda \boldsymbol{I})^{-1}\boldsymbol{X}'\boldsymbol{y},
 \end{align}
 
-where $\boldsymbol{I} \in \mathbb R^{q \times q}$ is the identity matrix. The additional penalty term in Ridge regression leads to smaller parameter estimates $\boldsymbol{\hat{\beta}}_{PLS,r}$ compared to the un-penalized estimate $\boldsymbol{\hat{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will be converge towards, but never reach, zero. 
+where $\boldsymbol{I} \in \mathbb R^{p \times p}$ is the identity matrix. The additional penalty term in Ridge regression leads to smaller parameter estimates $\boldsymbol{\hat{\beta}}_{PLS,r}$ compared to the un-penalized estimate $\boldsymbol{\hat{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will be converge towards, but never reach, zero. 
 
 Ridge regression is commonly when the input dimension $p$ is high. \cite{hoerl1970ridge}
 
@@ -521,7 +521,7 @@ One drawback of Ridge regression is that it does not produce sparse solutions, i
 where $\lambda$ again plays the role of a smoothing parameter. Therefore, we need to solve the optimization problem
 
 \begin{align} \label{eq:Lasso_OP}
-	\boldsymbol{\hat{\beta}}_{PLS,l} = \arg \min_{\boldsymbol{\beta}} \text{PLS}_{Lasso}.
+	\boldsymbol{\hat{\beta}}_{PLS,l} = \arg \min_{\boldsymbol{\beta}} \text{PLS}_{Lasso}(\boldsymbol{\beta}).
 \end{align}
 
 No closed form solution for the problem given in (\ref{eq:Lasso_OP}) is available. The Lasso estimates $\boldsymbol{\hat{\beta}}_{PLS,l}$ are calculated using either quadratic programming techniques, given in \cite{tibshirani1996lasso}, or least angle regression, given in \cite{efron2004leastangleregression}. \\
@@ -532,7 +532,7 @@ Ridge regression penalized large coefficients much stronger than Lasso regressio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Splines} \label{sec:Splines}
 	
-A spline is a piece-wise polynomial defined on a sequence of knots. This definition is quite general. Therefore, there exist a large variety of splines, ranging from regression splines in \cite{eubank1990regressionsplines}, over B-splines in \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines and tensor-product splines, as the multi-dimensional expansion of B-splines, as well as P-splines. \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}
+A spline is a piece-wise polynomial defined on a sequence of knots. This definition is quite general. Therefore, there exist a large variety of splines, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines and tensor-product splines, as the multi-dimensional expansion of B-splines, as well as P-splines. \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{B-Splines}
 
@@ -544,17 +544,17 @@ We lay the focus on the definition and use of B-splines, which are constructed f
 	\end{cases}
 \end{align}
 \begin{align} \label{eq:Bspline_recDef2}
-	B_i^m(x) = \frac{x - k_i}{k_{i+m} - k_i} B_i^{m-1}(x) + \frac{k_{i+m+1} - k}{k_{i+m+1} - k_{i+1}} B_{i+1}^{m-1}(x).
+	B_i^m(x) = \frac{x - k_i}{k_{i+m} - k_i} B_i^{m-1}(x) + \frac{k_{i+m+1} - x}{k_{i+m+1} - k_{i+1}} B_{i+1}^{m-1}(x).
 \end{align}
 
-Therefore, $B_j^0(x)$ is the zero function, except for $x \in [k_j, k_{j+1}]$ where it is equal to 1. $B_j^1(x)$ is then the known \emph{hat function}, being zero except for $x \in [k_j, k_{j+2}]$. 
+Therefore, $B_i^0(x)$ is the zero function, except for $x \in [k_i, k_{i+1}]$ where it is equal to 1. $B_i^1(x)$ is then the well known \emph{hat function}, being zero except for $x \in [k_i, k_{i+2}]$. 
 
 Figure \ref{fig:lin_and_quad_spline} shows an example of a B-spline of degree $m=1$ on the left. It consists of two linear pieces, one defined from $k_1$ to $k_2$ and the other from $k_2$ to $k_3$. Everywhere else, the B-spline is equal to zero. At the joining points, the values of the polynomial pieces are equal. This locality is a very attractive feature of B-splines. In the right part of Figure \ref{fig:lin_and_quad_spline}, a B-spline of degree $m=2$ is shown, which consist of three quadratic pieces, defined on the knot sequence $\{k_1, k_2, k_3, k_4\}$. At the joining points, the values as well as the first derivatives of the quadratic pieces are equal. 
 
 \begin{figure}[H] 
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/linear_and_quadratic_spline.pdf}
-	\caption{Linear and Quadratic Spline}
+	\caption{Linear ($m=1$) and quadratic ($m=2$) spline}
 	\label{fig:lin_and_quad_spline}
 \end{figure}
 
@@ -568,7 +568,7 @@ The general properties of a B-spline of degree $m$ are the following:
 	\item At every given $x$, only $m+1$ B-splines are non-zero.
 \end{itemize}
 
-The collection of $k$ B-splines of degree $m$ over a sequence of $k+2(m-1)$ knots is called B-spline basis. The $2(m-1)$-knots are the boundary knots while the $k$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence.
+The collection of $k$ B-splines of degree $m$ over a sequence of $k+2(m-1)$ knots is called B-spline basis. The $2(m-1)$-knots are the boundary knots while the $k$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence. \cite{eilers1996flexible}
 
 A smooth function $f(x)$ can then be represented using the basis function approach given by
 
@@ -578,7 +578,7 @@ A smooth function $f(x)$ can then be represented using the basis function approa
 
 using the B-spline basis functions $B_i^m(x)$  of degree $m$ and the coefficients $\boldsymbol{\beta} \in \mathbb{R}^{k}$. The basis functions can also be given in vector notation as $\boldsymbol{x}' = (B_1^m(x), \dots, B_k^m(x))$. 
 
-The use of B-splines as basis functions for uni-variate and non-parametric regression is very attractive. A linear combination of cubic B-splines gives a smooth curve, i.e. first and second order derivatives are continuous. A further advantage of B-splines is that once the basis is given, the coefficients can be estimated using the Least Squares algorithm as in (\ref{eq:MethodOfLS}). 
+The use of B-splines as basis functions for uni-variate and non-parametric regression is very attractive. A linear combination of cubic B-splines gives a smooth curve, i.e. first and second order derivatives are continuous. A further advantage of B-splines is that once the basis is given, the coefficients can be estimated using the Least Squares algorithm given in Chapter \ref{subsubsubsec:Method-of-LS}. 
 
 Given a set of data points $\{x^{(i)}, y^{(i)}\}$ for $i = 1, \dots, n$, the least squares objective function for B-splines is the given by
 
@@ -598,14 +598,14 @@ leads to the estimated coefficients
 	\boldsymbol{\hat{\beta}} = (\boldsymbol{X}^T \boldsymbol{X})^{-1} \boldsymbol{X}^T \boldsymbol{y}.
 \end{align}
 
-Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to calculate e.g confidence intervals for the regression coefficients and the prediction.
+Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to use model selection and regularization approaches as well as to calculate e.g confidence intervals for the regression coefficients and the prediction.
 
-B-splines of appropriate order $m > 2$ produce smooths curves, where the smoothness is mostly determined by the number of splines used. For a low number, the curve will be quite smooth, but possess a large data error. When using a high number of splines, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and machine learning. It is therefore necessary to introduce some kind of regularization. \cite{deBoor1978practicalGuideToSplines}  
+B-splines of appropriate order $m > 2$ produce smooths curves, where the smoothness is mostly determined by the number of splines used. For a low number, the curve will be quite smooth, but possess a large data error. When using a high number of splines, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and machine learning and further discussed in \emph{Chapter 1d Function Estimation}. It is therefore necessary to introduce some kind of regularization. \cite{deBoor1978practicalGuideToSplines}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{P-Splines} \label{subsec:Pspline}
 
-P-splines use the concepts of regularization to produce smooth function estimations. They where introduced by Eilers and Marx in \cite{eilers1996flexible} to tackle the problem introduced above. Eilers and Marx simplified and generalized the idea of \cite{osullivan1986statistical}, who introduced a smoothness penalty on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knots and penalty based on finite differences of order $d$ of the coefficients of adjacent B-splines. The finite differences of order $d=1$ for $p$ splines acting on the coefficient vector $\boldsymbol{\beta} = (\beta_1, \dots, \beta_k)'$ are given by
+P-splines use the concepts of regularization to produce smooth function estimations. They where introduced by Eilers and Marx in \cite{eilers1996flexible} to tackle the problem introduced above. Eilers and Marx simplified and generalized the idea of \cite{osullivan1986statistical}, who introduced a smoothness penalty based on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knots and a penalty based on finite differences of order $d$ of the coefficients of adjacent B-splines as approximation of the derivative. The finite differences of order $d=1$ for $k$ splines acting on the coefficient vector $\boldsymbol{\beta} = (\beta_1, \dots, \beta_k)'$ are given by
 
 \begin{align}
 	\Delta^1 \boldsymbol{\beta} = \sum_{j=2}^{k-1} \beta_{j} - \beta_{j-1}
@@ -625,7 +625,7 @@ This leads to the penalized least squares formulation, similar to (\ref{eq:PLS_c
 	Q_{pslines}(\boldsymbol{y}, \boldsymbol{\beta}) = \lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta}\rVert^2 + \lambda_s \mathcal J_s(\boldsymbol{\beta};d)
 \end{align}
 
-where $\lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta} \rVert^2$ is the mean squared error on the data for the spline fit, $\mathcal J_s(\boldsymbol{\beta};d) = \boldsymbol{\beta}^T \boldsymbol{D}_d^T \boldsymbol{D}_d \boldsymbol{\beta}$ is the smoothness penalty term given by the matrix form of the difference operator $\Delta^d$ of order $d$ and $\lambda_s$ is the smoothness parameter determining the effect of the smoothing penalty. The estimated coefficients are then given by the minimization of
+where $\lVert \boldsymbol{y} - \boldsymbol{X} \boldsymbol{\beta} \rVert^2$ is the mean squared error on the data for the spline fit, $\mathcal J_s(\boldsymbol{\beta};d) = \boldsymbol{\beta}^T \boldsymbol{D}_d^T \boldsymbol{D}_d \boldsymbol{\beta}$ is the smoothness penalty term given by the matrix form of the difference operator $\Delta^d$ of order $d$ and $\lambda_s$ is the smoothness parameter determining the effect of the smoothness penalty. The estimated coefficients are then given by the minimization of
 
 \begin{align}
 	\boldsymbol{\hat{\beta}} = \arg \min_{\boldsymbol{\beta}} Q_{psplines}(\boldsymbol{y}, \boldsymbol{\beta})
@@ -651,7 +651,7 @@ We examine an example for two input dimensions $x_1$ and $x_2$. Assume that we h
 	f_2(x_2) &= \sum_{j=1}^{k} \beta_j b_j(x_2) = \boldsymbol{B} \boldsymbol{\beta}
 \end{align}
 
-where $\alpha_i \in \mathbb{R}^{k}$ and $\boldsymbol{\beta}_j \in \mathbb{R}^{k}$ are the coefficients and $a_i(x_1)$ and $b_j(x_2)$ are the known basis functions. To allow the function $f_1(x_1)$ to smoothly vary with $x_2$, its coefficients $\alpha_i$ must vary smoothly with $x_2$. By using the already available basis for representing smooth functions in $x_2$, we can write
+where $\boldsymbol{\alpha} \in \mathbb{R}^{k}$ and $\boldsymbol{\beta} \in \mathbb{R}^{k}$ are the coefficients and $a_i(x_1)$ and $b_j(x_2)$ are the known basis functions. To allow the function $f_1(x_1)$ to smoothly vary with $x_2$, its coefficients $\alpha_i$ must vary smoothly with $x_2$. By using the already available basis for representing smooth functions in $x_2$, we can write
 
 \begin{align}
 	\alpha_i(x_2) = \sum_{j=1}^{k} \beta_{ij} b_j(x_2)
@@ -669,9 +669,9 @@ We can therefore combine the individual basis matrices to generated a new basis 
 	\boldsymbol{X} = \boldsymbol{A} \otimes \boldsymbol{B}
 \end{align}
 
-where $\otimes$ indicates the use of the Kronecker product, $\boldsymbol{X} \in \mathbb{R}^{n \times k^2}$ denotes the tensor-product spline basis, $\boldsymbol{A} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $1$ and $\boldsymbol{B} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $2$. The model matrix for the tensor-product smooth is therefore given by the Kronecker product of the marginal model matrices. \cite{wood2006GAM}  
+where $\otimes$ indicates the use of the Kronecker product, $\boldsymbol{X} \in \mathbb{R}^{n \times k^2}$ denotes the tensor-product spline basis, $\boldsymbol{A} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $x_1$ and $\boldsymbol{B} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $x_2$. The model matrix for the tensor-product smooth is therefore given by the Kronecker product of the marginal model matrices. \cite{wood2006GAM}  
 
-This approach can in theory be continued for as much input dimensions as required. In practice, modeling more than two input dimensions using tensor-product splines becomes infeasible because if the enormous increase of basis functions and therefore coefficients to estimate. A smoothness penalty term for tensor-product splines can also be constructed using the Kronecker product. Further explanations are given in Chapter 3.
+This approach can in theory be continued for as much input dimensions as required. In practice, modeling more than two input dimensions using tensor-product splines becomes infeasible because of the enormous increase of basis functions and therefore coefficients to estimate. A smoothness penalty term for tensor-product splines can also be constructed using the Kronecker product. Further explanations are given in Chapter 3.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -688,12 +688,12 @@ To circumvent this problem, we now assume the restrictive structure of additive 
 Hence, we use one smooth function $f_i(x_i)$ per input dimension and assume an additive structure. \cite{fahrmeir2013regression} Using the concepts introduced in Chapter \ref{sec:Splines}, we obtain for each smooth function a linear model
 
 \begin{align}
-	f_i(x_i) = \boldsymbol{X}_i \boldsymbol{beta}_i
+	f_i(\boldsymbol{x}_i) = \boldsymbol{X}_i \boldsymbol{beta}_i
 \end{align}
 
-where $\boldsymbol{X}_i \in \mathbb R^{n \times k_i}$ is the B-spline basis using $k_i$ splines for the smooth function $f_i(x_i)$ of input dimension $i$ and $\boldsymbol{\beta}_i \in \mathbb R^{k_i}$ are the coefficients to be estimated. We can also use the already described penalization approaches given in Chapter \ref{subsec:Pspline}. 
+where $\boldsymbol{X}_i \in \mathbb R^{n \times k_i}$ is the B-spline basis using $k_i$ splines for the smooth function $f_i(x_i)$ of input dimension $i$, $\boldsymbol{x}_i = (x_i^{(1)}, \dots, x_i^{(n)})$ is the data vector of input dimension $i$ and $\boldsymbol{\beta}_i \in \mathbb R^{k_i}$ are the coefficients to be estimated. We can also use the already described penalization approaches given in Chapter \ref{subsec:Pspline}. 
 
-The model given in (\ref{eq:addRegBaseEquation}) does not contain interaction terms between variables. Nevertheless, these can be easily introduced for 2 dimensions using tensor-product splines without an overflowing increase of the number of coefficients.
+The model given in (\ref{eq:addRegBaseEquation}) does not contain interaction terms between variables. Nevertheless, these can be easily introduced for 2 dimensions using tensor-product splines without an overflowing increase in the number of coefficients.
 
 We can then write the structured additive model in matrix notation as 
 
@@ -701,7 +701,7 @@ We can then write the structured additive model in matrix notation as
 	\boldsymbol{y} = \boldsymbol{X}_1 \boldsymbol{\beta}_1 + \dots + \boldsymbol{X}_q \boldsymbol{\beta}_q + \sum_{i=1}^{n_{interact}} \boldsymbol{X}_{tps, i} \boldsymbol{\beta}_{tps,i} + \boldsymbol{\epsilon}
 \end{align}
 
-using the error term $\boldsymbol{\epsilon}$ and $n_{interact}$ as the number of interactions to include via tensor-product spline bases $\boldsymbol{X}_{tps,i}$. This can be solved using ordinary least squares. If we choose to include penalization, we can solve this using penalized least squares. 
+using the error term $\boldsymbol{\epsilon} \in \mathbb{R}^n$ and $n_{interact}$ as the number of interactions to include via tensor-product spline bases $\boldsymbol{X}_{tps,i} \in \mathbb{R}^{n \times k_i^2}$. This can be solved using ordinary least squares. If we choose to include penalization, we can solve this using penalized least squares. 
 
 Using the notation in (\ref{eq:STAR}) the theoretical framework of linear models can be applied to structured additive regression models. Therefore, the assumptions given in Chapter \ref{subsec:LinModelDefAndAssump} on the error term, as well as on the model functions are used. \cite{fahrmeir2004penalized}
 
