@@ -205,4 +205,99 @@
   year      = {2013},
 }
 
+@Book{nelles2013nonlinear,
+  author    = {Nelles, Oliver},
+  publisher = {Springer Science \& Business Media},
+  title     = {Nonlinear system identification: from classical approaches to neural networks and fuzzy models},
+  year      = {2013},
+}
+
+@Article{friedman1991multivariate,
+  author    = {Friedman, Jerome H},
+  journal   = {The annals of statistics},
+  title     = {Multivariate adaptive regression splines},
+  year      = {1991},
+  pages     = {1--67},
+  publisher = {JSTOR},
+}
+
+@Book{goodfellow2016deep,
+  author    = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron and Bengio, Yoshua},
+  publisher = {MIT press Cambridge},
+  title     = {Deep learning},
+  year      = {2016},
+  volume    = {1},
+}
+
+@Article{cybenko1989approximation,
+  author    = {Cybenko, George},
+  journal   = {Mathematics of control, signals and systems},
+  title     = {Approximation by superpositions of a sigmoidal function},
+  year      = {1989},
+  number    = {4},
+  pages     = {303--314},
+  volume    = {2},
+  publisher = {Springer},
+}
+
+@Article{hornik1991approximation,
+  author    = {Hornik, Kurt},
+  journal   = {Neural networks},
+  title     = {Approximation capabilities of multilayer feedforward networks},
+  year      = {1991},
+  number    = {2},
+  pages     = {251--257},
+  volume    = {4},
+  publisher = {Elsevier},
+}
+
+@Article{abu1990learning,
+  author    = {Abu-Mostafa, Yaser S},
+  journal   = {Journal of complexity},
+  title     = {Learning from hints in neural networks},
+  year      = {1990},
+  number    = {2},
+  pages     = {192--198},
+  volume    = {6},
+  publisher = {Elsevier},
+}
+
+@InProceedings{sill1997monotonicity,
+  author    = {Sill, Joseph and Abu-Mostafa, Yaser S},
+  booktitle = {Advances in neural information processing systems},
+  title     = {Monotonicity hints},
+  year      = {1997},
+  pages     = {634--640},
+}
+
+@InProceedings{garcia2009lattice,
+  author    = {Garcia, Eric and Gupta, Maya},
+  booktitle = {Advances in Neural Information Processing Systems},
+  title     = {Lattice regression},
+  year      = {2009},
+  pages     = {594--602},
+}
+
+@Article{gupta2016monotonic,
+  author    = {Gupta, Maya and Cotter, Andrew and Pfeifer, Jan and Voevodski, Konstantin and Canini, Kevin and Mangylov, Alexander and Moczydlowski, Wojciech and Van Esbroeck, Alexander},
+  journal   = {The Journal of Machine Learning Research},
+  title     = {Monotonic calibrated interpolated look-up tables},
+  year      = {2016},
+  number    = {1},
+  pages     = {3790--3836},
+  volume    = {17},
+  publisher = {JMLR. org},
+}
+
+@InProceedings{you2017deep,
+  author    = {You, Seungil and Ding, David and Canini, Kevin and Pfeifer, Jan and Gupta, Maya},
+  booktitle = {Advances in neural information processing systems},
+  title     = {Deep lattice networks and partial monotonic functions},
+  year      = {2017},
+  pages     = {2981--2989},
+}
+
+@InProceedings{,
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

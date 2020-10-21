@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  23 SEP 2020 14:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  21 OCT 2020 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,6 +483,26 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
+(c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -566,43 +586,91 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
+) [1
+
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+
+Overfull \hbox (0.52843pt too wide) in paragraph at lines 55--56
+[]\OT1/cmr/m/n/10 The com-mon start-ing point for the dif-fer-ent data-driven m
+od-el-ing ap-proaches
+ []
+
+[2]
+Overfull \hbox (10.90944pt too wide) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 Mul-ti-vari-ate Ad-dap-tive Re-gres-sion Splines (MARS). $\OT1/
+cmr/bx/n/10 friedman1991multivariate$
+ []
 
 
-LaTeX Warning: Empty bibliography on input line 38.
+Overfull \hbox (4.79892pt too wide) in paragraph at lines 110--111
+\OT1/cmr/m/n/10 tion can be found in $\OT1/cmr/bx/n/10 friedman1991multivariate
+$ \OT1/cmr/m/n/10 and $\OT1/cmr/bx/n/10 friedman2001elements$\OT1/cmr/m/n/10 .
+ []
 
-[1
+[3]
+Overfull \hbox (29.3807pt too wide) in paragraph at lines 139--140
+\OT1/cmr/m/n/10 wide va-ri-ety of functions.$\OT1/cmr/bx/n/10 cybenko1989approx
+imation$ $hornik1991approximation$
+ []
 
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./chapter1.aux)
+[4] [5]
+Overfull \hbox (2.64503pt too wide) in paragraph at lines 193--193
+\OT1/cmr/m/n/10 look-up ta-bles''. In: \OT1/cmr/m/it/10 The Jour-nal of Ma-chin
+e Learn-ing Re-search \OT1/cmr/m/n/10 17.1 (2016),
+ []
+
+
+Overfull \hbox (7.16621pt too wide) in paragraph at lines 193--193
+[]\OT1/cmr/m/n/10 Benjamin Hofner, J^^?org M^^?uller, and Torsten Hothorn.
+ []
+
+
+Overfull \hbox (0.95087pt too wide) in paragraph at lines 193--193
+[]\OT1/cmr/m/n/10 Kurt Hornik. ``Ap-prox-i-ma-tion ca-pa-bil-i-ties of mul-
+ []
+
+
+Overfull \hbox (8.6065pt too wide) in paragraph at lines 193--193
+\OT1/cmr/m/n/10 hints''. In: \OT1/cmr/m/it/10 Ad-vances in neu-ral in-for-ma-ti
+on pro-cess-ing sys-tems\OT1/cmr/m/n/10 . 1997, pp. 634{
+ []
+
+[6] [7] (./chapter1.aux)
 Package logreq Info: Writing requests to 'chapter1.run.xml'.
 \openout1 = `chapter1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11505 strings out of 492649
- 203060 string characters out of 6133383
- 621868 words of memory out of 5000000
- 15237 multiletter control sequences out of 15000+600000
- 9189 words of font info for 35 fonts, out of 8000000 for 9000
+ 12309 strings out of 492649
+ 215482 string characters out of 6133383
+ 642205 words of memory out of 5000000
+ 16020 multiletter control sequences out of 15000+600000
+ 14298 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,46p,794b,1579s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2018/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb>
-Output written on chapter1.pdf (1 page, 53556 bytes).
+ 44i,13n,46p,809b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on chapter1.pdf (7 pages, 162123 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

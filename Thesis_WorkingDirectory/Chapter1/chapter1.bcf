@@ -1973,6 +1973,25 @@
     <bcf:datasource type="file" datatype="bibtex">../bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">fahrmeir2013regression</bcf:citekey>
+    <bcf:citekey order="2">hofner2011monotonicity</bcf:citekey>
+    <bcf:citekey order="3">nelles2013nonlinear</bcf:citekey>
+    <bcf:citekey order="4">nelles2013nonlinear</bcf:citekey>
+    <bcf:citekey order="5">friedman1991multivariate</bcf:citekey>
+    <bcf:citekey order="6">friedman1991multivariate</bcf:citekey>
+    <bcf:citekey order="7">friedman2001elements</bcf:citekey>
+    <bcf:citekey order="8">nelles2013nonlinear</bcf:citekey>
+    <bcf:citekey order="9">nelles2013nonlinear</bcf:citekey>
+    <bcf:citekey order="10">bishop2006patternRecognition</bcf:citekey>
+    <bcf:citekey order="11">goodfellow2016deep</bcf:citekey>
+    <bcf:citekey order="12">cybenko1989approximation</bcf:citekey>
+    <bcf:citekey order="13">hornik1991approximation</bcf:citekey>
+    <bcf:citekey order="14">abu1990learning</bcf:citekey>
+    <bcf:citekey order="15">sill1997monotonicity</bcf:citekey>
+    <bcf:citekey order="16">garcia2009lattice</bcf:citekey>
+    <bcf:citekey order="17">fard2016fast</bcf:citekey>
+    <bcf:citekey order="18">gupta2016monotonic</bcf:citekey>
+    <bcf:citekey order="19">you2017deep</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="debug">

@@ -2,14 +2,14 @@
 [0] Config.pm:305> INFO - Logfile is 'chapter4.blg'
 [31] biber-MSWIN32:313> INFO - === 
 [61] Biber.pm:371> INFO - Reading 'chapter4.bcf'
-[153] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
-[168] Biber.pm:3976> INFO - Processing section 0
-[181] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
-[190] bibtex.pm:1500> INFO - LaTeX decoding ...
-[226] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
-[255] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[255] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[256] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
-[256] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[258] bbl.pm:617> INFO - Writing 'chapter4.bbl' with encoding 'UTF-8'
-[258] bbl.pm:720> INFO - Output to chapter4.bbl
+[154] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[169] Biber.pm:3976> INFO - Processing section 0
+[182] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
+[192] bibtex.pm:1500> INFO - LaTeX decoding ...
+[235] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
+[259] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[259] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[260] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
+[260] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[261] bbl.pm:617> INFO - Writing 'chapter4.bbl' with encoding 'UTF-8'
+[262] bbl.pm:720> INFO - Output to chapter4.bbl
