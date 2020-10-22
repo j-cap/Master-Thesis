@@ -1,5 +1,65 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is 'chapter4.blg'
-[49] biber-MSWIN32:313> INFO - === 
-[76] Utils.pm:209> ERROR - chapter4.bcf is malformed, last biblatex run probably failed. Deleted chapter4.bbl
-[76] Biber.pm:114> INFO - ERRORS: 1
+This is BibTeX, Version 0.99d (TeX Live 2019/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: chapter4.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: chapter4-blx.bib
+Database file #2: ../bibliography.bib
+Biblatex version: 3.13
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 2 entries,
+            6365 wiz_defined-function locations,
+            1198 strings with 9008 characters,
+and the built_in function-call counts, 7755 in all, are:
+= -- 513
+> -- 206
+< -- 43
++ -- 194
+- -- 81
+* -- 463
+:= -- 981
+add.period$ -- 0
+call.type$ -- 2
+change.case$ -- 26
+chr.to.int$ -- 44
+cite$ -- 4
+duplicate$ -- 620
+empty$ -- 668
+format.name$ -- 68
+if$ -- 1660
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 0
+newline$ -- 48
+num.names$ -- 59
+pop$ -- 391
+preamble$ -- 1
+purify$ -- 31
+quote$ -- 0
+skip$ -- 302
+stack$ -- 0
+substring$ -- 915
+swap$ -- 144
+text.length$ -- 46
+text.prefix$ -- 1
+top$ -- 1
+type$ -- 56
+warning$ -- 0
+while$ -- 137
+width$ -- 0
+write$ -- 47

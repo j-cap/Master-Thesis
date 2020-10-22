@@ -14,7 +14,9 @@
 \usepackage{varwidth}% http://ctan.org/pkg/varwidth
 \usepackage{csvsimple} % automatic table generation from csv files
 \usepackage{comment}
-\usepackage[style=draft, backend=biber]{biblatex}
+\usepackage[style=draft, backend=bibtex]{biblatex}
+
+\input{../AIT_report_macros}
 
 \addbibresource{../bibliography.bib}
 
@@ -28,13 +30,14 @@
 
 \section{Overview}
 
+
 Following the descriptions given in the previous chapters, we are now going to test the algorithm of structured additive regression using a priori knowledge on the problems given in Table \ref{tab:experiments}. We will use two different, artificial functions with known behavior and one set of real life data, for which physical a priori knowledge is given. 
 
 \begin{table}[h]
 	%\centering
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
-		\textbf{Exp.} & \textbf{Problem Definition} & \textbf{Function} & \textbf{$\boldsymbol{n_{data}}$} & \textbf{k}  \\ \hline \toprule
+		\textbf{Exp.} & \textbf{Problem Definition} & \textbf{Function} & \textbf{$\vec{n_{data}}$} & \textbf{k}  \\ \hline \toprule
 		1.1 & Static function approx. using a priori knowledge & 1 & 100 & 35  \\ \hline
 		1.2 & Static function approx. using a priori knowledge & 2 & 500 & 35  \\ \hline
 		2   & Different noise levels                                 & 2 & 150 & 35  \\ \hline

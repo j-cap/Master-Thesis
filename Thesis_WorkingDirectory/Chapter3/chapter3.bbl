@@ -1,10 +1,10 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
+% This file may safely be deleted. It will be recreated as
+% required.
 %
 \begingroup
 \makeatletter
@@ -16,232 +16,219 @@
   {}
 \endgroup
 
+\datalist[entry]{debug/global//global/global}
+  \entry{eilers1996flexible}{article}{}
+    \name{author}{2}{}{%
+      {{hash=EPH}{%
+         family={Eilers},
+         familyi={E\bibinitperiod},
+         given={Paul\bibnamedelima HC},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=MBD}{%
+         family={Marx},
+         familyi={M\bibinitperiod},
+         given={Brian\bibnamedelima D},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{EPHMBD1}
+    \strng{fullhash}{EPHMBD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{pages}{89\bibrangedash 102}
+    \field{title}{Flexible smoothing with B-splines and penalties}
+    \field{journaltitle}{Statistical science}
+    \field{year}{1996}
+  \endentry
 
-\refsection{0}
-  \datalist[entry]{debug/global//global/global}
-    \entry{eilers1996flexible}{article}{}
-      \name{author}{2}{}{%
-        {{hash=8d2122b25223ef54155145f1cb103df2}{%
-           family={Eilers},
-           familyi={E\bibinitperiod},
-           given={Paul\bibnamedelima HC},
-           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=b31c1e36dd6bf51ed95548a34f79da52}{%
-           family={Marx},
-           familyi={M\bibinitperiod},
-           given={Brian\bibnamedelima D},
-           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{ca74999702861bf2da7929befff9bbbb}
-      \strng{fullhash}{ca74999702861bf2da7929befff9bbbb}
-      \strng{bibnamehash}{ca74999702861bf2da7929befff9bbbb}
-      \strng{authorbibnamehash}{ca74999702861bf2da7929befff9bbbb}
-      \strng{authornamehash}{ca74999702861bf2da7929befff9bbbb}
-      \strng{authorfullhash}{ca74999702861bf2da7929befff9bbbb}
-      \field{sortinit}{e}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Statistical science}
-      \field{title}{Flexible smoothing with B-splines and penalties}
-      \field{year}{1996}
-      \field{pages}{89\bibrangedash 102}
-      \range{pages}{14}
-    \endentry
-    \entry{eilers2005unimodal}{article}{}
-      \name{author}{1}{}{%
-        {{hash=8d2122b25223ef54155145f1cb103df2}{%
-           family={Eilers},
-           familyi={E\bibinitperiod},
-           given={Paul\bibnamedelima HC},
-           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{8d2122b25223ef54155145f1cb103df2}
-      \strng{fullhash}{8d2122b25223ef54155145f1cb103df2}
-      \strng{bibnamehash}{8d2122b25223ef54155145f1cb103df2}
-      \strng{authorbibnamehash}{8d2122b25223ef54155145f1cb103df2}
-      \strng{authornamehash}{8d2122b25223ef54155145f1cb103df2}
-      \strng{authorfullhash}{8d2122b25223ef54155145f1cb103df2}
-      \field{sortinit}{e}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Chemometrics: A Journal of the Chemometrics Society}
-      \field{number}{5-7}
-      \field{title}{Unimodal smoothing}
-      \field{volume}{19}
-      \field{year}{2005}
-      \field{pages}{317\bibrangedash 328}
-      \range{pages}{12}
-    \endentry
-    \entry{fahrmeir2013regression}{book}{}
-      \name{author}{4}{}{%
-        {{hash=476d0247462120c31452a2a58cbd6cdc}{%
-           family={Fahrmeir},
-           familyi={F\bibinitperiod},
-           given={Ludwig},
-           giveni={L\bibinitperiod}}}%
-        {{hash=eda2d58a1b493691fe187a3fe6b03c41}{%
-           family={Kneib},
-           familyi={K\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-        {{hash=2979075266629fa1d790fb7c7f4a940a}{%
-           family={Lang},
-           familyi={L\bibinitperiod},
-           given={Stefan},
-           giveni={S\bibinitperiod}}}%
-        {{hash=d09128dc18322e290995419e6ae9dba3}{%
-           family={Marx},
-           familyi={M\bibinitperiod},
-           given={Brian},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{fullhash}{c284caa51b5a1a00f2286988c7d17f6d}
-      \strng{bibnamehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{authorbibnamehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{authornamehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{authorfullhash}{c284caa51b5a1a00f2286988c7d17f6d}
-      \field{sortinit}{f}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Regression}
-      \field{title}{Regression models}
-      \field{year}{2013}
-      \field{pages}{21\bibrangedash 72}
-      \range{pages}{52}
-    \endentry
-    \entry{ferziger2008numerische}{book}{}
-      \name{author}{2}{}{%
-        {{hash=3aa88c71e105ea70dee9c5754e53957e}{%
-           family={Ferziger},
-           familyi={F\bibinitperiod},
-           given={Joel\bibnamedelima H},
-           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=4e5eff4468ed6699d8db9b51d1f99a6f}{%
-           family={Peric},
-           familyi={P\bibinitperiod},
-           given={Milovan},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer-Verlag}%
-      }
-      \strng{namehash}{66ed60340bf30587bab76229df8bbf02}
-      \strng{fullhash}{66ed60340bf30587bab76229df8bbf02}
-      \strng{bibnamehash}{66ed60340bf30587bab76229df8bbf02}
-      \strng{authorbibnamehash}{66ed60340bf30587bab76229df8bbf02}
-      \strng{authornamehash}{66ed60340bf30587bab76229df8bbf02}
-      \strng{authorfullhash}{66ed60340bf30587bab76229df8bbf02}
-      \field{sortinit}{f}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Numerische Str{ö}mungsmechanik}
-      \field{year}{2008}
-    \endentry
-    \entry{hofner2011monotonicity}{article}{}
-      \name{author}{3}{}{%
-        {{hash=6575547dd947a080e5676449c6e52223}{%
-           family={Hofner},
-           familyi={H\bibinitperiod},
-           given={Benjamin},
-           giveni={B\bibinitperiod}}}%
-        {{hash=933f68cca3978c4020d34cf1b379b7c7}{%
-           family={M{ü}ller},
-           familyi={M\bibinitperiod},
-           given={J{ö}rg},
-           giveni={J\bibinitperiod}}}%
-        {{hash=2df5fa9113f59f6da45be87390cb41f4}{%
-           family={Hothorn},
-           familyi={H\bibinitperiod},
-           given={Torsten},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{fullhash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{bibnamehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{authorbibnamehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{authornamehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{authorfullhash}{f6692fd64d6bef24c97fb21dc9136048}
-      \field{sortinit}{h}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology}
-      \field{number}{10}
-      \field{title}{Monotonicity-constrained species distribution models}
-      \field{volume}{92}
-      \field{year}{2011}
-      \field{pages}{1895\bibrangedash 1901}
-      \range{pages}{7}
-    \endentry
-    \entry{sammut2011}{book}{}
-      \name{author}{2}{}{%
-        {{hash=e94495f7b9c258a3a6722a976198d15b}{%
-           family={Sammut},
-           familyi={S\bibinitperiod},
-           given={Claude},
-           giveni={C\bibinitperiod}}}%
-        {{hash=da5fdbc1e50d7547a3e1e1aef241d2e3}{%
-           family={Webb},
-           familyi={W\bibinitperiod},
-           given={Geoffrey\bibnamedelima I},
-           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer Science \& Business Media}%
-      }
-      \strng{namehash}{eb9ef5c115e8a6951c531b0339b24ba0}
-      \strng{fullhash}{eb9ef5c115e8a6951c531b0339b24ba0}
-      \strng{bibnamehash}{eb9ef5c115e8a6951c531b0339b24ba0}
-      \strng{authorbibnamehash}{eb9ef5c115e8a6951c531b0339b24ba0}
-      \strng{authornamehash}{eb9ef5c115e8a6951c531b0339b24ba0}
-      \strng{authorfullhash}{eb9ef5c115e8a6951c531b0339b24ba0}
-      \field{sortinit}{s}
-      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Encyclopedia of machine learning}
-      \field{year}{2011}
-    \endentry
-    \entry{strutz2016data}{article}{}
-      \name{author}{1}{}{%
-        {{hash=42f9ac57533c4cb4a69e39a886f3b6fc}{%
-           family={Strutz},
-           familyi={S\bibinitperiod},
-           given={Tilo},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
-      \strng{fullhash}{42f9ac57533c4cb4a69e39a886f3b6fc}
-      \strng{bibnamehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
-      \strng{authorbibnamehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
-      \strng{authornamehash}{42f9ac57533c4cb4a69e39a886f3b6fc}
-      \strng{authorfullhash}{42f9ac57533c4cb4a69e39a886f3b6fc}
-      \field{sortinit}{s}
-      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{A Practical Introduction to Weighted Least Squares and Beyond}
-      \field{title}{Data fitting and uncertainty}
-      \field{year}{2016}
-    \endentry
-  \enddatalist
-\endrefsection
+  \entry{eilers2005unimodal}{article}{}
+    \name{author}{1}{}{%
+      {{hash=EPH}{%
+         family={Eilers},
+         familyi={E\bibinitperiod},
+         given={Paul\bibnamedelima HC},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{EPH1}
+    \strng{fullhash}{EPH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{5-7}
+    \field{pages}{317\bibrangedash 328}
+    \field{title}{Unimodal smoothing}
+    \field{volume}{19}
+    \field{journaltitle}{Journal of Chemometrics: A Journal of the Chemometrics
+  Society}
+    \field{year}{2005}
+  \endentry
+
+  \entry{fahrmeir2013regression}{book}{}
+    \name{author}{4}{}{%
+      {{hash=FL}{%
+         family={Fahrmeir},
+         familyi={F\bibinitperiod},
+         given={Ludwig},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kneib},
+         familyi={K\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Marx},
+         familyi={M\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{FL+1}
+    \strng{fullhash}{FLKTLSMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Regression}
+    \field{pages}{21\bibrangedash 72}
+    \field{title}{Regression models}
+    \field{year}{2013}
+  \endentry
+
+  \entry{ferziger2008numerische}{book}{}
+    \name{author}{2}{}{%
+      {{hash=FJH}{%
+         family={Ferziger},
+         familyi={F\bibinitperiod},
+         given={Joel\bibnamedelima H},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Peric},
+         familyi={P\bibinitperiod},
+         given={Milovan},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{FJHPM1}
+    \strng{fullhash}{FJHPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Numerische Str{\"o}mungsmechanik}
+    \field{year}{2008}
+  \endentry
+
+  \entry{hofner2011monotonicity}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HB}{%
+         family={Hofner},
+         familyi={H\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={M{\"u}ller},
+         familyi={M\bibinitperiod},
+         given={J{\"o}rg},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hothorn},
+         familyi={H\bibinitperiod},
+         given={Torsten},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{HBMJHT1}
+    \strng{fullhash}{HBMJHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{10}
+    \field{pages}{1895\bibrangedash 1901}
+    \field{title}{Monotonicity-constrained species distribution models}
+    \field{volume}{92}
+    \field{journaltitle}{Ecology}
+    \field{year}{2011}
+  \endentry
+
+  \entry{sammut2011}{book}{}
+    \name{author}{2}{}{%
+      {{hash=SC}{%
+         family={Sammut},
+         familyi={S\bibinitperiod},
+         given={Claude},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WGI}{%
+         family={Webb},
+         familyi={W\bibinitperiod},
+         given={Geoffrey\bibnamedelima I},
+         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{SCWGI1}
+    \strng{fullhash}{SCWGI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Encyclopedia of machine learning}
+    \field{year}{2011}
+  \endentry
+
+  \entry{strutz2016data}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ST}{%
+         family={Strutz},
+         familyi={S\bibinitperiod},
+         given={Tilo},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST1}
+    \strng{fullhash}{ST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Data fitting and uncertainty}
+    \field{journaltitle}{A Practical Introduction to Weighted Least Squares and
+  Beyond}
+    \field{year}{2016}
+  \endentry
+\enddatalist
 \endinput
-

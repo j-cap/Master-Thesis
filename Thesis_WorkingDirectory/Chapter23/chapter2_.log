@@ -1,24 +1,25 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.2.25)  22 OCT 2020 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.2.25)  22 OCT 2020 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**chapter3.tex
-(./chapter3.tex
+**chapter2_.tex
+(./chapter2_.tex
 LaTeX2e <2020-02-02> patch level 3
 L3 programming layer <2020-02-21>
-(c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(c:/texlive/2019/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (c:/texlive/2019/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
@@ -39,12 +40,12 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (c:/texlive/2019/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
-\babel@savecnt=\count175
+\babel@savecnt=\count176
 \U@D=\dimen135
 
 (c:/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count176
+\bbl@dirlevel=\count177
 )
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
@@ -73,13 +74,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count177
+\inf@bad=\count178
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count178
-\leftroot@=\count179
+\uproot@=\count179
+\leftroot@=\count180
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count180
-\DOTSCASE@=\count181
+\classnum@=\count181
+\DOTSCASE@=\count182
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
@@ -88,15 +89,15 @@ LaTeX Info: Redefining \cdots on input line 610.
 \big@size=\dimen138
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count182
-\c@MaxMatrixCols=\count183
+\macc@depth=\count183
+\c@MaxMatrixCols=\count184
 \dotsspace@=\muskip16
-\c@parentequation=\count184
-\dspbrk@lvl=\count185
+\c@parentequation=\count185
+\dspbrk@lvl=\count186
 \tag@help=\toks17
-\row@=\count186
-\column@=\count187
-\maxfields@=\count188
+\row@=\count187
+\column@=\count188
+\maxfields@=\count189
 \andhelp@=\toks18
 \eqnshift@=\dimen139
 \alignsep@=\dimen140
@@ -110,47 +111,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-)
-(c:/texlive/2019/texmf-dist/tex/latex/commath/commath.sty
-(c:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-))
-(c:/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
-
-(c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
-)
-(c:/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count189
-\calc@Bcount=\count190
-\calc@Adimen=\dimen145
-\calc@Bdimen=\dimen146
-\calc@Askip=\skip52
-\calc@Bskip=\skip53
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count191
-\calc@Cskip=\skip54
-)
-(c:/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
-)
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count192
-\l_MT_multwidth_dim=\dimen147
-\origjot=\skip55
-\l_MT_shortvdotswithinadjustabove_dim=\dimen148
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen149
-\l_MT_above_intertext_sep=\dimen150
-\l_MT_below_intertext_sep=\dimen151
-\l_MT_above_shortintertext_sep=\dimen152
-\l_MT_below_shortintertext_sep=\dimen153
 )
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -166,6 +126,10 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
+(c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
 (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
@@ -180,8 +144,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen154
-\Gin@req@width=\dimen155
+\Gin@req@height=\dimen145
+\Gin@req@width=\dimen146
 )
 (c:/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -189,21 +153,21 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (c:/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen156
-\captionmargin@=\dimen157
-\captionwidth=\dimen158
-\caption@tempdima=\dimen159
-\caption@indent=\dimen160
-\caption@parindent=\dimen161
-\caption@hangindent=\dimen162
+\captionmargin=\dimen147
+\captionmargin@=\dimen148
+\captionwidth=\dimen149
+\caption@tempdima=\dimen150
+\caption@indent=\dimen151
+\caption@parindent=\dimen152
+\caption@hangindent=\dimen153
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count193
-\c@continuedfloat=\count194
+\c@caption@flags=\count190
+\c@continuedfloat=\count191
 )
 (c:/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count195
+\c@float@type=\count192
 \float@exts=\toks22
 \float@box=\box47
 \@float@everytoks=\toks23
@@ -211,40 +175,40 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (c:/texlive/2019/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen163
+\col@sep=\dimen154
 \ar@mcellbox=\box49
-\extrarowheight=\dimen164
+\extrarowheight=\dimen155
 \NC@list=\toks24
-\extratabsurround=\skip56
-\backup@length=\skip57
+\extratabsurround=\skip52
+\backup@length=\skip53
 \ar@cellbox=\box50
 )
 (c:/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen165
-\lightrulewidth=\dimen166
-\cmidrulewidth=\dimen167
-\belowrulesep=\dimen168
-\belowbottomsep=\dimen169
-\aboverulesep=\dimen170
-\abovetopsep=\dimen171
-\cmidrulesep=\dimen172
-\cmidrulekern=\dimen173
-\defaultaddspace=\dimen174
-\@cmidla=\count196
-\@cmidlb=\count197
-\@aboverulesep=\dimen175
-\@belowrulesep=\dimen176
-\@thisruleclass=\count198
-\@lastruleclass=\count199
-\@thisrulewidth=\dimen177
+\heavyrulewidth=\dimen156
+\lightrulewidth=\dimen157
+\cmidrulewidth=\dimen158
+\belowrulesep=\dimen159
+\belowbottomsep=\dimen160
+\aboverulesep=\dimen161
+\abovetopsep=\dimen162
+\cmidrulesep=\dimen163
+\cmidrulekern=\dimen164
+\defaultaddspace=\dimen165
+\@cmidla=\count193
+\@cmidlb=\count194
+\@aboverulesep=\dimen166
+\@belowrulesep=\dimen167
+\@thisruleclass=\count195
+\@lastruleclass=\count196
+\@thisrulewidth=\dimen168
 )
 (c:/texlive/2019/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box51
-\sift@deathcycles=\count266
-\@vwid@loff=\dimen178
-\@vwid@roff=\dimen179
+\sift@deathcycles=\count197
+\@vwid@loff=\dimen169
+\@vwid@roff=\dimen170
 )
 (c:/texlive/2019/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 Package: csvsimple 2019/04/09 version 1.21 LaTeX CSV file processing
@@ -252,8 +216,8 @@ Package: csvsimple 2019/04/09 version 1.21 LaTeX CSV file processing
 (c:/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks25
-\pgfutil@tempdima=\dimen180
-\pgfutil@tempdimb=\dimen181
+\pgfutil@tempdima=\dimen171
+\pgfutil@tempdimb=\dimen172
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
 ) (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -273,18 +237,21 @@ Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks28
-))) (c:/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+))) (c:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count267
+\etb@tempcnta=\count198
 )
 (c:/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 \csv@file=\read3
-\c@csvinputline=\count268
-\c@csvrow=\count269
-\c@csvcol=\count270
+\c@csvinputline=\count199
+\c@csvrow=\count266
+\c@csvcol=\count267
 \csv@out=\write3
 )
 (c:/texlive/2019/texmf-dist/tex/latex/comment/comment.sty
@@ -319,7 +286,7 @@ Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ))
 (c:/texlive/2019/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count271
+\lrq@indent=\count268
 
 (c:/texlive/2019/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -328,61 +295,61 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count272
-\c@listtotal=\count273
-\c@listcount=\count274
-\c@liststart=\count275
-\c@liststop=\count276
-\c@citecount=\count277
-\c@citetotal=\count278
-\c@multicitecount=\count279
-\c@multicitetotal=\count280
-\c@instcount=\count281
-\c@maxnames=\count282
-\c@minnames=\count283
-\c@maxitems=\count284
-\c@minitems=\count285
-\c@citecounter=\count286
-\c@maxcitecounter=\count287
-\c@savedcitecounter=\count288
-\c@uniquelist=\count289
-\c@uniquename=\count290
-\c@refsection=\count291
-\c@refsegment=\count292
-\c@maxextratitle=\count293
-\c@maxextratitleyear=\count294
-\c@maxextraname=\count295
-\c@maxextradate=\count296
-\c@maxextraalpha=\count297
-\c@abbrvpenalty=\count298
-\c@highnamepenalty=\count299
-\c@lownamepenalty=\count300
-\c@maxparens=\count301
-\c@parenlevel=\count302
-\blx@tempcnta=\count303
-\blx@tempcntb=\count304
-\blx@tempcntc=\count305
-\blx@maxsection=\count306
-\blx@maxsegment@0=\count307
-\blx@notetype=\count308
-\blx@parenlevel@text=\count309
-\blx@parenlevel@foot=\count310
-\blx@sectionciteorder@0=\count311
-\blx@entrysetcounter=\count312
-\labelnumberwidth=\skip58
-\labelalphawidth=\skip59
-\biblabelsep=\skip60
-\bibitemsep=\skip61
-\bibnamesep=\skip62
-\bibinitsep=\skip63
-\bibparsep=\skip64
-\bibhang=\skip65
+\c@tabx@nest=\count269
+\c@listtotal=\count270
+\c@listcount=\count271
+\c@liststart=\count272
+\c@liststop=\count273
+\c@citecount=\count274
+\c@citetotal=\count275
+\c@multicitecount=\count276
+\c@multicitetotal=\count277
+\c@instcount=\count278
+\c@maxnames=\count279
+\c@minnames=\count280
+\c@maxitems=\count281
+\c@minitems=\count282
+\c@citecounter=\count283
+\c@maxcitecounter=\count284
+\c@savedcitecounter=\count285
+\c@uniquelist=\count286
+\c@uniquename=\count287
+\c@refsection=\count288
+\c@refsegment=\count289
+\c@maxextratitle=\count290
+\c@maxextratitleyear=\count291
+\c@maxextraname=\count292
+\c@maxextradate=\count293
+\c@maxextraalpha=\count294
+\c@abbrvpenalty=\count295
+\c@highnamepenalty=\count296
+\c@lownamepenalty=\count297
+\c@maxparens=\count298
+\c@parenlevel=\count299
+\blx@tempcnta=\count300
+\blx@tempcntb=\count301
+\blx@tempcntc=\count302
+\blx@maxsection=\count303
+\blx@maxsegment@0=\count304
+\blx@notetype=\count305
+\blx@parenlevel@text=\count306
+\blx@parenlevel@foot=\count307
+\blx@sectionciteorder@0=\count308
+\blx@entrysetcounter=\count309
+\labelnumberwidth=\skip54
+\labelalphawidth=\skip55
+\biblabelsep=\skip56
+\bibitemsep=\skip57
+\bibnamesep=\skip58
+\bibinitsep=\skip59
+\bibparsep=\skip60
+\bibhang=\skip61
 \blx@bcfin=\read4
 \blx@bcfout=\write5
 \blx@langwohyphens=\language85
-\c@mincomprange=\count313
-\c@maxcomprange=\count314
-\c@mincompwidth=\count315
+\c@mincomprange=\count310
+\c@maxcomprange=\count311
+\c@mincompwidth=\count312
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -393,88 +360,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'draft.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count316
-\c@savedafterword=\count317
-\c@annotator=\count318
-\c@savedannotator=\count319
-\c@author=\count320
-\c@savedauthor=\count321
-\c@bookauthor=\count322
-\c@savedbookauthor=\count323
-\c@commentator=\count324
-\c@savedcommentator=\count325
-\c@editor=\count326
-\c@savededitor=\count327
-\c@editora=\count328
-\c@savededitora=\count329
-\c@editorb=\count330
-\c@savededitorb=\count331
-\c@editorc=\count332
-\c@savededitorc=\count333
-\c@foreword=\count334
-\c@savedforeword=\count335
-\c@holder=\count336
-\c@savedholder=\count337
-\c@introduction=\count338
-\c@savedintroduction=\count339
-\c@namea=\count340
-\c@savednamea=\count341
-\c@nameb=\count342
-\c@savednameb=\count343
-\c@namec=\count344
-\c@savednamec=\count345
-\c@translator=\count346
-\c@savedtranslator=\count347
-\c@shortauthor=\count348
-\c@savedshortauthor=\count349
-\c@shorteditor=\count350
-\c@savedshorteditor=\count351
-\c@labelname=\count352
-\c@savedlabelname=\count353
-\c@institution=\count354
-\c@savedinstitution=\count355
-\c@lista=\count356
-\c@savedlista=\count357
-\c@listb=\count358
-\c@savedlistb=\count359
-\c@listc=\count360
-\c@savedlistc=\count361
-\c@listd=\count362
-\c@savedlistd=\count363
-\c@liste=\count364
-\c@savedliste=\count365
-\c@listf=\count366
-\c@savedlistf=\count367
-\c@location=\count368
-\c@savedlocation=\count369
-\c@organization=\count370
-\c@savedorganization=\count371
-\c@origlocation=\count372
-\c@savedoriglocation=\count373
-\c@origpublisher=\count374
-\c@savedorigpublisher=\count375
-\c@publisher=\count376
-\c@savedpublisher=\count377
-\c@language=\count378
-\c@savedlanguage=\count379
-\c@origlanguage=\count380
-\c@savedoriglanguage=\count381
-\c@pageref=\count382
-\c@savedpageref=\count383
-\shorthandwidth=\skip66
-\shortjournalwidth=\skip67
-\shortserieswidth=\skip68
-\shorttitlewidth=\skip69
-\shortauthorwidth=\skip70
-\shorteditorwidth=\skip71
-\locallabelnumberwidth=\skip72
-\locallabelalphawidth=\skip73
-\localshorthandwidth=\skip74
-\localshortjournalwidth=\skip75
-\localshortserieswidth=\skip76
-\localshorttitlewidth=\skip77
-\localshortauthorwidth=\skip78
-\localshorteditorwidth=\skip79
+\c@afterword=\count313
+\c@savedafterword=\count314
+\c@annotator=\count315
+\c@savedannotator=\count316
+\c@author=\count317
+\c@savedauthor=\count318
+\c@bookauthor=\count319
+\c@savedbookauthor=\count320
+\c@commentator=\count321
+\c@savedcommentator=\count322
+\c@editor=\count323
+\c@savededitor=\count324
+\c@editora=\count325
+\c@savededitora=\count326
+\c@editorb=\count327
+\c@savededitorb=\count328
+\c@editorc=\count329
+\c@savededitorc=\count330
+\c@foreword=\count331
+\c@savedforeword=\count332
+\c@holder=\count333
+\c@savedholder=\count334
+\c@introduction=\count335
+\c@savedintroduction=\count336
+\c@namea=\count337
+\c@savednamea=\count338
+\c@nameb=\count339
+\c@savednameb=\count340
+\c@namec=\count341
+\c@savednamec=\count342
+\c@translator=\count343
+\c@savedtranslator=\count344
+\c@shortauthor=\count345
+\c@savedshortauthor=\count346
+\c@shorteditor=\count347
+\c@savedshorteditor=\count348
+\c@labelname=\count349
+\c@savedlabelname=\count350
+\c@institution=\count351
+\c@savedinstitution=\count352
+\c@lista=\count353
+\c@savedlista=\count354
+\c@listb=\count355
+\c@savedlistb=\count356
+\c@listc=\count357
+\c@savedlistc=\count358
+\c@listd=\count359
+\c@savedlistd=\count360
+\c@liste=\count361
+\c@savedliste=\count362
+\c@listf=\count363
+\c@savedlistf=\count364
+\c@location=\count365
+\c@savedlocation=\count366
+\c@organization=\count367
+\c@savedorganization=\count368
+\c@origlocation=\count369
+\c@savedoriglocation=\count370
+\c@origpublisher=\count371
+\c@savedorigpublisher=\count372
+\c@publisher=\count373
+\c@savedpublisher=\count374
+\c@language=\count375
+\c@savedlanguage=\count376
+\c@origlanguage=\count377
+\c@savedoriglanguage=\count378
+\c@pageref=\count379
+\c@savedpageref=\count380
+\shorthandwidth=\skip62
+\shortjournalwidth=\skip63
+\shortserieswidth=\skip64
+\shorttitlewidth=\skip65
+\shortauthorwidth=\skip66
+\shorteditorwidth=\skip67
+\locallabelnumberwidth=\skip68
+\locallabelalphawidth=\skip69
+\localshorthandwidth=\skip70
+\localshortjournalwidth=\skip71
+\localshortserieswidth=\skip72
+\localshorttitlewidth=\skip73
+\localshortauthorwidth=\skip74
+\localshorteditorwidth=\skip75
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -496,19 +463,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (c:/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-\c@textcitecount=\count384
-\c@textcitetotal=\count385
-\c@textcitemaxnames=\count386
-\c@biburlbigbreakpenalty=\count387
-\c@biburlbreakpenalty=\count388
-\c@biburlnumpenalty=\count389
-\c@biburlucpenalty=\count390
-\c@biburllcpenalty=\count391
+\c@textcitecount=\count381
+\c@textcitetotal=\count382
+\c@textcitemaxnames=\count383
+\c@biburlbigbreakpenalty=\count384
+\c@biburlbreakpenalty=\count385
+\c@biburlnumpenalty=\count386
+\c@biburlucpenalty=\count387
+\c@biburllcpenalty=\count388
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count392
+\c@smartand=\count389
 )
 Package biblatex Info: Trying to load bibliography style 'draft'...
 Package biblatex Info: ... file 'draft.bbx' found.
@@ -520,8 +487,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (c:/texlive/2019/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count393
-\c@bbx:relatedtotal=\count394
+\c@bbx:relatedcount=\count390
+\c@bbx:relatedtotal=\count391
 ))
 Package biblatex Info: Trying to load citation style 'draft'...
 Package biblatex Info: ... file 'draft.cbx' found.
@@ -541,18 +508,6 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (c:/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-(c:/texlive/2019/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box53
-\UL@hyphenbox=\box54
-\UL@skip=\skip80
-\UL@hook=\toks29
-\UL@height=\dimen182
-\UL@pe=\count395
-\UL@pixel=\dimen183
-\ULC@box=\box55
-Package: ulem 2019/11/18
-\ULdepth=\dimen184
-)
 (../AIT_report_macros.tex
 LaTeX Info: Redefining \vec on input line 30.
 )
@@ -560,15 +515,15 @@ LaTeX Info: Redefining \vec on input line 30.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count396
-\@quotereset=\count397
+\@quotelevel=\count392
+\@quotereset=\count393
 (c:/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-21 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count398
-\l__pdf_internal_box=\box56
+\l__kernel_color_stack_int=\count394
+\l__pdf_internal_box=\box53
 )
-(./chapter3.aux)
-\openout1 = `chapter3.aux'.
+(./chapter2_.aux)
+\openout1 = `chapter2_.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
@@ -587,17 +542,17 @@ LaTeX Font Info:    ... okay on input line 31.
 
 (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count399
-\scratchdimen=\dimen185
-\scratchbox=\box57
-\nofMPsegments=\count400
-\nofMParguments=\count401
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count402
-\MPscratchDim=\dimen186
-\MPnumerator=\count403
-\makeMPintoPDFobject=\count404
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count395
+\scratchdimen=\dimen173
+\scratchbox=\box54
+\nofMPsegments=\count396
+\nofMParguments=\count397
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count398
+\MPscratchDim=\dimen174
+\MPnumerator=\count399
+\makeMPintoPDFobject=\count400
+\everyMPtoPDFconversion=\toks30
 ) (c:/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -635,11 +590,12 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Input encoding 'utf8' specified.
 Package biblatex Info: Data encoding 'utf8' specified.
 (biblatex)             No need to reencode data.
-\openout5 = `chapter3-blx.bib'.
+\openout5 = `chapter2_-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'chapter3.bbl' found.
- (./chapter3.bbl)
+Package biblatex Info: ... file 'chapter2_.bbl' found.
+
+(./chapter2_.bbl)
 Package biblatex Info: Reference section=0 on input line 31.
 Package biblatex Info: Reference segment=0 on input line 31.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
@@ -652,110 +608,287 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./chapter3.toc)
-\tf@toc=\write6
-\openout6 = `chapter3.toc'.
+) [1
 
-
-Overfull \hbox (60.92542pt too wide) in paragraph at lines 43--51
- [][] 
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./chapter2_.to
+c
+Overfull \hbox (1.97282pt too wide) in paragraph at lines 28--28
+ [][] []\OT1/cmr/m/n/10 Sum of ex-pected Squared Pre-dic-tion Er- 
  []
 
 [1
 
-{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (34.41942pt too wide) in paragraph at lines 59--70
+])
+\tf@toc=\write6
+\openout6 = `chapter2_.toc'.
+
+
+Overfull \hbox (111.07507pt too wide) in paragraph at lines 59--60
+\OT1/cmr/m/n/10 model is there-fore lin-ear in its pa-ram-e-ters as well as in 
+its in-puts. $\OT1/cmr/bx/n/10 bishop2006patternRecognition$
+ []
+
+[2]
+Overfull \hbox (21.97246pt too wide) in paragraph at lines 95--96
+\OT1/cmr/m/n/10 ob-tain a unique es-ti-ma-tor for the re-gres-sion co-ef-fi-cie
+nts $[]$. $\OT1/cmr/bx/n/10 fahrmeir2013regression$ 
+ []
+
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Overfull \hbox (15.89497pt too wide) in paragraph at lines 425--426
+[]\OT1/cmr/m/n/10 Lower val-ues of AIC cor-re-spond to a bet-ter model fit. $\O
+T1/cmr/bx/n/10 fahrmeir2013regression$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Overfull \hbox (15.47832pt too wide) in paragraph at lines 439--440
+[]\OT1/cmr/m/n/10 Lower val-ues of BIC cor-re-spond to a bet-ter model fit. $\O
+T1/cmr/bx/n/10 fahrmeir2013regression$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
+
+ []
+
+
+Overfull \hbox (27.18878pt too wide) in paragraph at lines 513--514
+[]\OT1/cmr/m/n/10 Ridge re-gres-sion is com-monly when the in-put di-men-sion $
+\OML/cmm/m/it/10 p$ \OT1/cmr/m/n/10 is high. $\OT1/cmr/bx/n/10 hoerl1970ridge$ 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
+
+ []
+
+[12]
+Overfull \hbox (83.47252pt too wide) in paragraph at lines 529--530
+\OT1/cmr/m/n/10 given in $\OT1/cmr/bx/n/10 tibshirani1996lasso$\OT1/cmr/m/n/10 
+, or least an-gle re-gres-sion, given in $\OT1/cmr/bx/n/10 efron2004leastangler
+egression$\OT1/cmr/m/n/10 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
+
+ []
+
+
+Overfull \hbox (120.4083pt too wide) in paragraph at lines 537--539
+\OT1/cmr/m/n/10 the multi-dimensional ex-pan-sion of B-splines, as well as P-sp
+lines. $\OT1/cmr/bx/n/10 deBoor1978practicalGuideToSplines$
+ []
+
+[13]
+<../thesisplots/linear_and_quadratic_spline.pdf, id=63, 442.27734pt x 253.78815
+pt>
+File: ../thesisplots/linear_and_quadratic_spline.pdf Graphic file (type pdf)
+<use ../thesisplots/linear_and_quadratic_spline.pdf>
+Package pdftex.def Info: ../thesisplots/linear_and_quadratic_spline.pdf  used o
+n input line 558.
+(pdftex.def)             Requested size: 345.0pt x 197.97717pt.
+ [14 <../thesisplots/linear_and_quadratic_spline.pdf>]
+
+LaTeX Warning: Citation 'osullivan1986statistical' on page 15 undefined on inpu
+t line 610.
+
+[15] [16]
+
+LaTeX Warning: Citation 'wood2006GAM' on page 17 undefined on input line 674.
+
+
+Overfull \hbox (4.33957pt too wide) in paragraph at lines 682--683
+\OT1/cmr/m/n/10 model the gen-er-ally non-linear re-la-tion-ship be-tween the i
+n-put data $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; [] ; x[]\OMS/cmsy/m/n/10 g$
+
+ []
+
+[17] [18]
+Chapter 1.
+
+Overfull \hbox (60.92542pt too wide) in paragraph at lines 742--750
  [][] 
  []
 
-<../thesisplots/test_func.pdf, id=15, 572.2724pt x 348.8831pt>
+
+Overfull \hbox (34.41942pt too wide) in paragraph at lines 758--769
+ [][] 
+ []
+
+[19
+
+]
+<../thesisplots/test_func.pdf, id=104, 572.2724pt x 348.8831pt>
 File: ../thesisplots/test_func.pdf Graphic file (type pdf)
 <use ../thesisplots/test_func.pdf>
-Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 84.
+Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 783.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
-[2] [3 <../thesisplots/test_func.pdf>]
-<../thesisplots/smooth_bf.pdf, id=44, 572.2724pt x 348.8831pt>
+ [20 <../thesisplots/test_func.pdf>]
+<../thesisplots/smooth_bf.pdf, id=125, 572.2724pt x 348.8831pt>
 File: ../thesisplots/smooth_bf.pdf Graphic file (type pdf)
 <use ../thesisplots/smooth_bf.pdf>
-Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 131.
+Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 830.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
-<../thesisplots/smooth_wiggly_bf.pdf, id=45, 566.34401pt x 348.8831pt>
+<../thesisplots/smooth_wiggly_bf.pdf, id=126, 566.34401pt x 348.8831pt>
 File: ../thesisplots/smooth_wiggly_bf.pdf Graphic file (type pdf)
 <use ../thesisplots/smooth_wiggly_bf.pdf>
 Package pdftex.def Info: ../thesisplots/smooth_wiggly_bf.pdf  used on input lin
-e 142.
+e 841.
 (pdftex.def)             Requested size: 345.0pt x 212.53622pt.
- [4 <../thesisplots/smooth_bf.pdf>]
-[5 <../thesisplots/smooth_wiggly_bf.pdf>]
-<../thesisplots/p_splines.pdf, id=129, 572.2724pt x 348.8831pt>
+ [21 <../thesisplots/smooth_bf.pdf>]
+[22 <../thesisplots/smooth_wiggly_bf.pdf>]
+<../thesisplots/p_splines.pdf, id=210, 572.2724pt x 348.8831pt>
 File: ../thesisplots/p_splines.pdf Graphic file (type pdf)
 <use ../thesisplots/p_splines.pdf>
-Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 209.
+Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 908.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [6] [7 <../thesisplots/p_splines.pdf>]
-<../thesisplots/algorithm.pdf, id=165, 614.26657pt x 794.94157pt>
+ [23] [24 <../thesisplots/p_splines.pdf>]
+<../thesisplots/algorithm.pdf, id=246, 614.26657pt x 794.94157pt>
 File: ../thesisplots/algorithm.pdf Graphic file (type pdf)
 <use ../thesisplots/algorithm.pdf>
-Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 251.
+Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 950.
 (pdftex.def)             Requested size: 207.0021pt x 267.88698pt.
-<../thesisplots/inc_spline.pdf, id=166, 572.2724pt x 348.8831pt>
+<../thesisplots/inc_spline.pdf, id=247, 572.2724pt x 348.8831pt>
 File: ../thesisplots/inc_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/inc_spline.pdf>
-Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 264.
+Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 963.
 
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [8 <../thesisplots/algorithm.pdf>] [9 <../thesisplots/inc_spline.pdf>]
-Overfull \hbox (35.64676pt too wide) in paragraph at lines 303--305
+ [25 <../thesisplots/algorithm.pdf>] [26 <../thesisplots/inc_spline.pdf>]
+Overfull \hbox (35.64676pt too wide) in paragraph at lines 1002--1004
 \OT1/cmr/m/n/10 cients $\OML/cmm/m/it/10 ^^L[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m
 /it/10 ^^L[]$ \OT1/cmr/m/n/10 are in-creas-ing or de-creas-ing, re-spec-tively.
  $\OT1/cmr/bx/n/10 hofner2011monotonicity$
  []
 
-[10]
-<../thesisplots/peak_spline.pdf, id=243, 580.33377pt x 348.8831pt>
+[27]
+<../thesisplots/peak_spline.pdf, id=325, 580.33377pt x 348.8831pt>
 File: ../thesisplots/peak_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/peak_spline.pdf>
-Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 349
-.
+Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 104
+8.
 (pdftex.def)             Requested size: 345.0pt x 207.40967pt.
- [11 <../thesisplots/peak_spline.pdf>] [12]
-Overfull \hbox (30.43452pt too wide) in paragraph at lines 465--466
+ [28 <../thesisplots/peak_spline.pdf>] [29]
+Overfull \hbox (30.43452pt too wide) in paragraph at lines 1164--1165
 \OT1/cmr/m/n/10 ad-di-tive mod-els given in Chap-ter \OT1/cmr/m/it/10 Ad-di-tiv
 e Mod-els\OT1/cmr/m/n/10 . Given in-put data $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/1
 0 x[]; [] ; x[]; y[]\OMS/cmsy/m/n/10 g$
  []
 
-[13] [14] [15]
-<../thesisplots/2d_example.pdf, id=301, 513.51651pt x 450.9648pt>
+[30] [31] [32]
+<../thesisplots/2d_example.pdf, id=380, 513.51651pt x 450.9648pt>
 File: ../thesisplots/2d_example.pdf Graphic file (type pdf)
 <use ../thesisplots/2d_example.pdf>
-Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 610.
-
+Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 1309
+.
 (pdftex.def)             Requested size: 345.0pt x 302.98433pt.
- [16]
-Overfull \hbox (68.75261pt too wide) in paragraph at lines 618--618
+ [33] [34 <../thesisplots/2d_example.pdf>]
+Overfull \hbox (0.73257pt too wide) in paragraph at lines 1317--1317
+[]\OT1/cmr/m/n/10 Bradley Efron et al. ``Least an-gle re-gres-sion''.
+ []
+
+
+Overfull \hbox (68.75261pt too wide) in paragraph at lines 1317--1317
 []\OT1/cmr/m/n/10 Joel H Ferziger and Milo-van Peric. \OT1/cmr/m/it/10 Nu-meris
 che Str^^?omungsmechanik\OT1/cmr/m/n/10 .
  []
 
 
-Overfull \hbox (7.16621pt too wide) in paragraph at lines 618--618
+Overfull \hbox (7.16621pt too wide) in paragraph at lines 1317--1317
 []\OT1/cmr/m/n/10 Benjamin Hofner, J^^?org M^^?uller, and Torsten Hothorn.
  []
 
-[17 <../thesisplots/2d_example.pdf>] (./chapter3.aux)
-Package logreq Info: Writing requests to 'chapter3.run.xml'.
-\openout1 = `chapter3.run.xml'.
+[35
+
+]
+Overfull \hbox (4.56575pt too wide) in paragraph at lines 1317--1317
+\OT1/cmr/m/n/10 via the lasso''. In: \OT1/cmr/m/it/10 Jour-nal of the Royal Sta
+-tis-ti-cal So-ci-ety: Se-ries B (Method-
+ []
+
+[36] (./chapter2_.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                chapter2_
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'chapter2_.run.xml'.
+\openout1 = `chapter2_.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13779 strings out of 481228
- 248868 string characters out of 5921397
- 698883 words of memory out of 5000000
- 28835 multiletter control sequences out of 15000+600000
- 543437 words of font info for 66 fonts, out of 8000000 for 9000
+ 13196 strings out of 481228
+ 241152 string characters out of 5921397
+ 684678 words of memory out of 5000000
+ 28270 multiletter control sequences out of 15000+600000
+ 544543 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,18n,48p,813b,1670s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,19n,48p,843b,1704s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-di
@@ -774,10 +907,10 @@ m/cmsy5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 b><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on chapter3.pdf (17 pages, 410356 bytes).
+Output written on chapter2_.pdf (37 pages, 481254 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 500 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

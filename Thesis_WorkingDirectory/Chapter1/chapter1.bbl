@@ -1,10 +1,10 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
+% This file may safely be deleted. It will be recreated as
+% required.
 %
 \begingroup
 \makeatletter
@@ -16,645 +16,629 @@
   {}
 \endgroup
 
+\datalist[entry]{debug/global//global/global}
+  \entry{abu1990learning}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AMYS}{%
+         family={Abu-Mostafa},
+         familyi={A\bibinithyphendelim M\bibinitperiod},
+         given={Yaser\bibnamedelima S},
+         giveni={Y\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{AMYS1}
+    \strng{fullhash}{AMYS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{2}
+    \field{pages}{192\bibrangedash 198}
+    \field{title}{Learning from hints in neural networks}
+    \field{volume}{6}
+    \field{journaltitle}{Journal of complexity}
+    \field{year}{1990}
+  \endentry
 
-\refsection{0}
-  \datalist[entry]{debug/global//global/global}
-    \entry{abu1990learning}{article}{}
-      \name{author}{1}{}{%
-        {{hash=de934bfee8ca33b64a9ad2bfd699ba84}{%
-           family={Abu-Mostafa},
-           familyi={A\bibinithyphendelim M\bibinitperiod},
-           given={Yaser\bibnamedelima S},
-           giveni={Y\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{de934bfee8ca33b64a9ad2bfd699ba84}
-      \strng{fullhash}{de934bfee8ca33b64a9ad2bfd699ba84}
-      \strng{bibnamehash}{de934bfee8ca33b64a9ad2bfd699ba84}
-      \strng{authorbibnamehash}{de934bfee8ca33b64a9ad2bfd699ba84}
-      \strng{authornamehash}{de934bfee8ca33b64a9ad2bfd699ba84}
-      \strng{authorfullhash}{de934bfee8ca33b64a9ad2bfd699ba84}
-      \field{sortinit}{a}
-      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of complexity}
-      \field{number}{2}
-      \field{title}{Learning from hints in neural networks}
-      \field{volume}{6}
-      \field{year}{1990}
-      \field{pages}{192\bibrangedash 198}
-      \range{pages}{7}
-    \endentry
-    \entry{ashby1961introduction}{book}{}
-      \name{author}{1}{}{%
-        {{hash=32d7e8f11ac3dc9a88a1c8b97b3ab78a}{%
-           family={Ashby},
-           familyi={A\bibinitperiod},
-           given={W\bibnamedelima Ross},
-           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Chapman \& Hall Ltd}%
-      }
-      \strng{namehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
-      \strng{fullhash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
-      \strng{bibnamehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
-      \strng{authorbibnamehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
-      \strng{authornamehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
-      \strng{authorfullhash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
-      \field{sortinit}{a}
-      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{An introduction to cybernetics}
-      \field{year}{1961}
-    \endentry
-    \entry{bishop2006patternRecognition}{book}{}
-      \name{author}{1}{}{%
-        {{hash=7952b575a987ace852cfb8965a4da182}{%
-           family={Bishop},
-           familyi={B\bibinitperiod},
-           given={Christopher\bibnamedelima M},
-           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {springer}%
-      }
-      \strng{namehash}{7952b575a987ace852cfb8965a4da182}
-      \strng{fullhash}{7952b575a987ace852cfb8965a4da182}
-      \strng{bibnamehash}{7952b575a987ace852cfb8965a4da182}
-      \strng{authorbibnamehash}{7952b575a987ace852cfb8965a4da182}
-      \strng{authornamehash}{7952b575a987ace852cfb8965a4da182}
-      \strng{authorfullhash}{7952b575a987ace852cfb8965a4da182}
-      \field{sortinit}{b}
-      \field{sortinithash}{276475738cc058478c1677046f857703}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Pattern recognition and machine learning}
-      \field{year}{2006}
-    \endentry
-    \entry{cybenko1989approximation}{article}{}
-      \name{author}{1}{}{%
-        {{hash=5f82e084564c9fa2622446ae39f882ed}{%
-           family={Cybenko},
-           familyi={C\bibinitperiod},
-           given={George},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{5f82e084564c9fa2622446ae39f882ed}
-      \strng{fullhash}{5f82e084564c9fa2622446ae39f882ed}
-      \strng{bibnamehash}{5f82e084564c9fa2622446ae39f882ed}
-      \strng{authorbibnamehash}{5f82e084564c9fa2622446ae39f882ed}
-      \strng{authornamehash}{5f82e084564c9fa2622446ae39f882ed}
-      \strng{authorfullhash}{5f82e084564c9fa2622446ae39f882ed}
-      \field{sortinit}{c}
-      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mathematics of control, signals and systems}
-      \field{number}{4}
-      \field{title}{Approximation by superpositions of a sigmoidal function}
-      \field{volume}{2}
-      \field{year}{1989}
-      \field{pages}{303\bibrangedash 314}
-      \range{pages}{12}
-    \endentry
-    \entry{deBoor1978practicalGuideToSplines}{book}{}
-      \name{author}{5}{}{%
-        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
-           family={De\bibnamedelima Boor},
-           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
-           given={Carl},
-           giveni={C\bibinitperiod}}}%
-        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
-           family={De\bibnamedelima Boor},
-           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
-           given={Carl},
-           giveni={C\bibinitperiod}}}%
-        {{hash=51349d598b94a606a2abea14e516b484}{%
-           family={Math{é}maticien},
-           familyi={M\bibinitperiod},
-           given={Etats-Unis},
-           giveni={E\bibinithyphendelim U\bibinitperiod}}}%
-        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
-           family={De\bibnamedelima Boor},
-           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
-           given={Carl},
-           giveni={C\bibinitperiod}}}%
-        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
-           family={De\bibnamedelima Boor},
-           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
-           given={Carl},
-           giveni={C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {springer-verlag New York}%
-      }
-      \strng{namehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
-      \strng{fullhash}{4c4221bfb0a938e3b9253f01e70ffca7}
-      \strng{bibnamehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
-      \strng{authorbibnamehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
-      \strng{authornamehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
-      \strng{authorfullhash}{4c4221bfb0a938e3b9253f01e70ffca7}
-      \field{sortinit}{d}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{A practical guide to splines}
-      \field{volume}{27}
-      \field{year}{1978}
-    \endentry
-    \entry{dovsilovic2018explainable}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=3ee135d55ade693247e7601abb5a3375}{%
-           family={Do{š}ilovi{ć}},
-           familyi={D\bibinitperiod},
-           given={Filip\bibnamedelima Karlo},
-           giveni={F\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-        {{hash=daca8148717de318f77a58318a9a379c}{%
-           family={Br{č}i{ć}},
-           familyi={B\bibinitperiod},
-           given={Mario},
-           giveni={M\bibinitperiod}}}%
-        {{hash=baa1307e0c726592df6d87a77c13b82c}{%
-           family={Hlupi{ć}},
-           familyi={H\bibinitperiod},
-           given={Nikica},
-           giveni={N\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{202681f4e7f76e50c920644ea4595ce7}
-      \strng{fullhash}{202681f4e7f76e50c920644ea4595ce7}
-      \strng{bibnamehash}{202681f4e7f76e50c920644ea4595ce7}
-      \strng{authorbibnamehash}{202681f4e7f76e50c920644ea4595ce7}
-      \strng{authornamehash}{202681f4e7f76e50c920644ea4595ce7}
-      \strng{authorfullhash}{202681f4e7f76e50c920644ea4595ce7}
-      \field{sortinit}{d}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2018 41st International convention on information and communication technology, electronics and microelectronics (MIPRO)}
-      \field{title}{Explainable artificial intelligence: A survey}
-      \field{year}{2018}
-      \field{pages}{0210\bibrangedash 0215}
-      \range{pages}{6}
-    \endentry
-    \entry{fahrmeir2013regression}{book}{}
-      \name{author}{4}{}{%
-        {{hash=476d0247462120c31452a2a58cbd6cdc}{%
-           family={Fahrmeir},
-           familyi={F\bibinitperiod},
-           given={Ludwig},
-           giveni={L\bibinitperiod}}}%
-        {{hash=eda2d58a1b493691fe187a3fe6b03c41}{%
-           family={Kneib},
-           familyi={K\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-        {{hash=2979075266629fa1d790fb7c7f4a940a}{%
-           family={Lang},
-           familyi={L\bibinitperiod},
-           given={Stefan},
-           giveni={S\bibinitperiod}}}%
-        {{hash=d09128dc18322e290995419e6ae9dba3}{%
-           family={Marx},
-           familyi={M\bibinitperiod},
-           given={Brian},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{fullhash}{c284caa51b5a1a00f2286988c7d17f6d}
-      \strng{bibnamehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{authorbibnamehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{authornamehash}{db761f4cd757345a30ce4eb384db4b6f}
-      \strng{authorfullhash}{c284caa51b5a1a00f2286988c7d17f6d}
-      \field{sortinit}{f}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Regression}
-      \field{title}{Regression models}
-      \field{year}{2013}
-      \field{pages}{21\bibrangedash 72}
-      \range{pages}{52}
-    \endentry
-    \entry{fard2016fast}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=55c20d3f2c1130326b4ba51cc0b38a2f}{%
-           family={Fard},
-           familyi={F\bibinitperiod},
-           given={Mahdi\bibnamedelima Milani},
-           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=53fd9e4b2ec2e2dafa5dd8d177fb3e81}{%
-           family={Canini},
-           familyi={C\bibinitperiod},
-           given={Kevin},
-           giveni={K\bibinitperiod}}}%
-        {{hash=613db2338508afa613a024f7a8ebcddf}{%
-           family={Cotter},
-           familyi={C\bibinitperiod},
-           given={Andrew},
-           giveni={A\bibinitperiod}}}%
-        {{hash=9593c188424e417a82ba098eb7bf2b98}{%
-           family={Pfeifer},
-           familyi={P\bibinitperiod},
-           given={Jan},
-           giveni={J\bibinitperiod}}}%
-        {{hash=d2fb2666446a11dcaeaab6fd1c0d70f3}{%
-           family={Gupta},
-           familyi={G\bibinitperiod},
-           given={Maya},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{7dbb38099f781ebb76349fceaf16368e}
-      \strng{fullhash}{2f96f6160947fbdba99ec1cc7923731c}
-      \strng{bibnamehash}{7dbb38099f781ebb76349fceaf16368e}
-      \strng{authorbibnamehash}{7dbb38099f781ebb76349fceaf16368e}
-      \strng{authornamehash}{7dbb38099f781ebb76349fceaf16368e}
-      \strng{authorfullhash}{2f96f6160947fbdba99ec1cc7923731c}
-      \field{sortinit}{f}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Neural Information Processing Systems}
-      \field{title}{Fast and flexible monotonic functions with ensembles of lattices}
-      \field{year}{2016}
-      \field{pages}{2919\bibrangedash 2927}
-      \range{pages}{9}
-    \endentry
-    \entry{friedman1991multivariate}{article}{}
-      \name{author}{1}{}{%
-        {{hash=35b9098abeddd115c394c7b2e7ea0264}{%
-           family={Friedman},
-           familyi={F\bibinitperiod},
-           given={Jerome\bibnamedelima H},
-           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{35b9098abeddd115c394c7b2e7ea0264}
-      \strng{fullhash}{35b9098abeddd115c394c7b2e7ea0264}
-      \strng{bibnamehash}{35b9098abeddd115c394c7b2e7ea0264}
-      \strng{authorbibnamehash}{35b9098abeddd115c394c7b2e7ea0264}
-      \strng{authornamehash}{35b9098abeddd115c394c7b2e7ea0264}
-      \strng{authorfullhash}{35b9098abeddd115c394c7b2e7ea0264}
-      \field{sortinit}{f}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The annals of statistics}
-      \field{title}{Multivariate adaptive regression splines}
-      \field{year}{1991}
-      \field{pages}{1\bibrangedash 67}
-      \range{pages}{67}
-    \endentry
-    \entry{friedman2001elements}{book}{}
-      \name{author}{3}{}{%
-        {{hash=971cf69058b64a94326dea0f2a8bbcce}{%
-           family={Friedman},
-           familyi={F\bibinitperiod},
-           given={Jerome},
-           giveni={J\bibinitperiod}}}%
-        {{hash=0cb8fe4210baa81c4b0e67913b4d2768}{%
-           family={Hastie},
-           familyi={H\bibinitperiod},
-           given={Trevor},
-           giveni={T\bibinitperiod}}}%
-        {{hash=88eea600247d798f8b2ce0b2dc614492}{%
-           family={Tibshirani},
-           familyi={T\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer series in statistics New York}%
-      }
-      \strng{namehash}{568e7b5149c552567af3c9b520d96bb3}
-      \strng{fullhash}{568e7b5149c552567af3c9b520d96bb3}
-      \strng{bibnamehash}{568e7b5149c552567af3c9b520d96bb3}
-      \strng{authorbibnamehash}{568e7b5149c552567af3c9b520d96bb3}
-      \strng{authornamehash}{568e7b5149c552567af3c9b520d96bb3}
-      \strng{authorfullhash}{568e7b5149c552567af3c9b520d96bb3}
-      \field{sortinit}{f}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{number}{10}
-      \field{title}{The elements of statistical learning}
-      \field{volume}{1}
-      \field{year}{2001}
-    \endentry
-    \entry{garcia2009lattice}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=97ed483167720fc840134415850348d7}{%
-           family={Garcia},
-           familyi={G\bibinitperiod},
-           given={Eric},
-           giveni={E\bibinitperiod}}}%
-        {{hash=d2fb2666446a11dcaeaab6fd1c0d70f3}{%
-           family={Gupta},
-           familyi={G\bibinitperiod},
-           given={Maya},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{71e05d128bd9b15d8b624c02fcaa20ac}
-      \strng{fullhash}{71e05d128bd9b15d8b624c02fcaa20ac}
-      \strng{bibnamehash}{71e05d128bd9b15d8b624c02fcaa20ac}
-      \strng{authorbibnamehash}{71e05d128bd9b15d8b624c02fcaa20ac}
-      \strng{authornamehash}{71e05d128bd9b15d8b624c02fcaa20ac}
-      \strng{authorfullhash}{71e05d128bd9b15d8b624c02fcaa20ac}
-      \field{sortinit}{g}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Neural Information Processing Systems}
-      \field{title}{Lattice regression}
-      \field{year}{2009}
-      \field{pages}{594\bibrangedash 602}
-      \range{pages}{9}
-    \endentry
-    \entry{goodfellow2016deep}{book}{}
-      \name{author}{4}{}{%
-        {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
-           family={Goodfellow},
-           familyi={G\bibinitperiod},
-           given={Ian},
-           giveni={I\bibinitperiod}}}%
-        {{hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
-           family={Courville},
-           familyi={C\bibinitperiod},
-           given={Aaron},
-           giveni={A\bibinitperiod}}}%
-        {{hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MIT press Cambridge}%
-      }
-      \strng{namehash}{d17e6557c5836d2d978179999ea1037f}
-      \strng{fullhash}{d84b0b9d19401c079b1a67dd4962d9e0}
-      \strng{bibnamehash}{d17e6557c5836d2d978179999ea1037f}
-      \strng{authorbibnamehash}{d17e6557c5836d2d978179999ea1037f}
-      \strng{authornamehash}{d17e6557c5836d2d978179999ea1037f}
-      \strng{authorfullhash}{d84b0b9d19401c079b1a67dd4962d9e0}
-      \field{sortinit}{g}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Deep learning}
-      \field{volume}{1}
-      \field{year}{2016}
-    \endentry
-    \entry{gupta2016monotonic}{article}{}
-      \name{author}{8}{}{%
-        {{hash=d2fb2666446a11dcaeaab6fd1c0d70f3}{%
-           family={Gupta},
-           familyi={G\bibinitperiod},
-           given={Maya},
-           giveni={M\bibinitperiod}}}%
-        {{hash=613db2338508afa613a024f7a8ebcddf}{%
-           family={Cotter},
-           familyi={C\bibinitperiod},
-           given={Andrew},
-           giveni={A\bibinitperiod}}}%
-        {{hash=9593c188424e417a82ba098eb7bf2b98}{%
-           family={Pfeifer},
-           familyi={P\bibinitperiod},
-           given={Jan},
-           giveni={J\bibinitperiod}}}%
-        {{hash=c7510ddb706484d55cca72ecf2c9f4bf}{%
-           family={Voevodski},
-           familyi={V\bibinitperiod},
-           given={Konstantin},
-           giveni={K\bibinitperiod}}}%
-        {{hash=53fd9e4b2ec2e2dafa5dd8d177fb3e81}{%
-           family={Canini},
-           familyi={C\bibinitperiod},
-           given={Kevin},
-           giveni={K\bibinitperiod}}}%
-        {{hash=bec6b7be1c272d6092c5bafe06f0596a}{%
-           family={Mangylov},
-           familyi={M\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-        {{hash=060229b164b2e787f54bf9740a2253af}{%
-           family={Moczydlowski},
-           familyi={M\bibinitperiod},
-           given={Wojciech},
-           giveni={W\bibinitperiod}}}%
-        {{hash=b49811f3e3f62889b95f5b9f5028ba2f}{%
-           family={Van\bibnamedelima Esbroeck},
-           familyi={V\bibinitperiod\bibinitdelim E\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {JMLR. org}%
-      }
-      \strng{namehash}{4a2867f49ede32d8fa247726e7f978c4}
-      \strng{fullhash}{4d366f0ec0b73d1a0ecc883532679345}
-      \strng{bibnamehash}{4a2867f49ede32d8fa247726e7f978c4}
-      \strng{authorbibnamehash}{4a2867f49ede32d8fa247726e7f978c4}
-      \strng{authornamehash}{4a2867f49ede32d8fa247726e7f978c4}
-      \strng{authorfullhash}{4d366f0ec0b73d1a0ecc883532679345}
-      \field{sortinit}{g}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Journal of Machine Learning Research}
-      \field{number}{1}
-      \field{title}{Monotonic calibrated interpolated look-up tables}
-      \field{volume}{17}
-      \field{year}{2016}
-      \field{pages}{3790\bibrangedash 3836}
-      \range{pages}{47}
-    \endentry
-    \entry{hofner2011monotonicity}{article}{}
-      \name{author}{3}{}{%
-        {{hash=6575547dd947a080e5676449c6e52223}{%
-           family={Hofner},
-           familyi={H\bibinitperiod},
-           given={Benjamin},
-           giveni={B\bibinitperiod}}}%
-        {{hash=933f68cca3978c4020d34cf1b379b7c7}{%
-           family={M{ü}ller},
-           familyi={M\bibinitperiod},
-           given={J{ö}rg},
-           giveni={J\bibinitperiod}}}%
-        {{hash=2df5fa9113f59f6da45be87390cb41f4}{%
-           family={Hothorn},
-           familyi={H\bibinitperiod},
-           given={Torsten},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{fullhash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{bibnamehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{authorbibnamehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{authornamehash}{f6692fd64d6bef24c97fb21dc9136048}
-      \strng{authorfullhash}{f6692fd64d6bef24c97fb21dc9136048}
-      \field{sortinit}{h}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology}
-      \field{number}{10}
-      \field{title}{Monotonicity-constrained species distribution models}
-      \field{volume}{92}
-      \field{year}{2011}
-      \field{pages}{1895\bibrangedash 1901}
-      \range{pages}{7}
-    \endentry
-    \entry{hornik1991approximation}{article}{}
-      \name{author}{1}{}{%
-        {{hash=bec8dd1340457a82c21b54971e4c9417}{%
-           family={Hornik},
-           familyi={H\bibinitperiod},
-           given={Kurt},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{bec8dd1340457a82c21b54971e4c9417}
-      \strng{fullhash}{bec8dd1340457a82c21b54971e4c9417}
-      \strng{bibnamehash}{bec8dd1340457a82c21b54971e4c9417}
-      \strng{authorbibnamehash}{bec8dd1340457a82c21b54971e4c9417}
-      \strng{authornamehash}{bec8dd1340457a82c21b54971e4c9417}
-      \strng{authorfullhash}{bec8dd1340457a82c21b54971e4c9417}
-      \field{sortinit}{h}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Neural networks}
-      \field{number}{2}
-      \field{title}{Approximation capabilities of multilayer feedforward networks}
-      \field{volume}{4}
-      \field{year}{1991}
-      \field{pages}{251\bibrangedash 257}
-      \range{pages}{7}
-    \endentry
-    \entry{nelles2013nonlinear}{book}{}
-      \name{author}{1}{}{%
-        {{hash=a6482c9439d17117e06bb1190135d3f1}{%
-           family={Nelles},
-           familyi={N\bibinitperiod},
-           given={Oliver},
-           giveni={O\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer Science \& Business Media}%
-      }
-      \strng{namehash}{a6482c9439d17117e06bb1190135d3f1}
-      \strng{fullhash}{a6482c9439d17117e06bb1190135d3f1}
-      \strng{bibnamehash}{a6482c9439d17117e06bb1190135d3f1}
-      \strng{authorbibnamehash}{a6482c9439d17117e06bb1190135d3f1}
-      \strng{authornamehash}{a6482c9439d17117e06bb1190135d3f1}
-      \strng{authorfullhash}{a6482c9439d17117e06bb1190135d3f1}
-      \field{sortinit}{n}
-      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Nonlinear system identification: from classical approaches to neural networks and fuzzy models}
-      \field{year}{2013}
-    \endentry
-    \entry{sill1997monotonicity}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=28e669cc7cba46ad4d5275d19e87b597}{%
-           family={Sill},
-           familyi={S\bibinitperiod},
-           given={Joseph},
-           giveni={J\bibinitperiod}}}%
-        {{hash=de934bfee8ca33b64a9ad2bfd699ba84}{%
-           family={Abu-Mostafa},
-           familyi={A\bibinithyphendelim M\bibinitperiod},
-           given={Yaser\bibnamedelima S},
-           giveni={Y\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \strng{namehash}{9b8829aa529d0ab0331711c111b793d9}
-      \strng{fullhash}{9b8829aa529d0ab0331711c111b793d9}
-      \strng{bibnamehash}{9b8829aa529d0ab0331711c111b793d9}
-      \strng{authorbibnamehash}{9b8829aa529d0ab0331711c111b793d9}
-      \strng{authornamehash}{9b8829aa529d0ab0331711c111b793d9}
-      \strng{authorfullhash}{9b8829aa529d0ab0331711c111b793d9}
-      \field{sortinit}{s}
-      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in neural information processing systems}
-      \field{title}{Monotonicity hints}
-      \field{year}{1997}
-      \field{pages}{634\bibrangedash 640}
-      \range{pages}{7}
-    \endentry
-    \entry{you2017deep}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=8190eb841c3e539921592a4981e53883}{%
-           family={You},
-           familyi={Y\bibinitperiod},
-           given={Seungil},
-           giveni={S\bibinitperiod}}}%
-        {{hash=352c5147960594f5c84dd22ea170817e}{%
-           family={Ding},
-           familyi={D\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-        {{hash=53fd9e4b2ec2e2dafa5dd8d177fb3e81}{%
-           family={Canini},
-           familyi={C\bibinitperiod},
-           given={Kevin},
-           giveni={K\bibinitperiod}}}%
-        {{hash=9593c188424e417a82ba098eb7bf2b98}{%
-           family={Pfeifer},
-           familyi={P\bibinitperiod},
-           given={Jan},
-           giveni={J\bibinitperiod}}}%
-        {{hash=d2fb2666446a11dcaeaab6fd1c0d70f3}{%
-           family={Gupta},
-           familyi={G\bibinitperiod},
-           given={Maya},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{0998f1069e07662c7cd912ae04d347c8}
-      \strng{fullhash}{301444a8354d1843a5a98b3f611eed21}
-      \strng{bibnamehash}{0998f1069e07662c7cd912ae04d347c8}
-      \strng{authorbibnamehash}{0998f1069e07662c7cd912ae04d347c8}
-      \strng{authornamehash}{0998f1069e07662c7cd912ae04d347c8}
-      \strng{authorfullhash}{301444a8354d1843a5a98b3f611eed21}
-      \field{sortinit}{y}
-      \field{sortinithash}{b8d711a035f7be9840c721c82920477e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in neural information processing systems}
-      \field{title}{Deep lattice networks and partial monotonic functions}
-      \field{year}{2017}
-      \field{pages}{2981\bibrangedash 2989}
-      \range{pages}{9}
-    \endentry
-  \enddatalist
-\endrefsection
+  \entry{ashby1961introduction}{book}{}
+    \name{author}{1}{}{%
+      {{hash=AWR}{%
+         family={Ashby},
+         familyi={A\bibinitperiod},
+         given={W\bibnamedelima Ross},
+         giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Chapman \& Hall Ltd}%
+    }
+    \strng{namehash}{AWR1}
+    \strng{fullhash}{AWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{An introduction to cybernetics}
+    \field{year}{1961}
+  \endentry
+
+  \entry{bishop2006patternRecognition}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BCM}{%
+         family={Bishop},
+         familyi={B\bibinitperiod},
+         given={Christopher\bibnamedelima M},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {springer}%
+    }
+    \strng{namehash}{BCM1}
+    \strng{fullhash}{BCM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Pattern recognition and machine learning}
+    \field{year}{2006}
+  \endentry
+
+  \entry{cybenko1989approximation}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CG}{%
+         family={Cybenko},
+         familyi={C\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{CG1}
+    \strng{fullhash}{CG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{4}
+    \field{pages}{303\bibrangedash 314}
+    \field{title}{Approximation by superpositions of a sigmoidal function}
+    \field{volume}{2}
+    \field{journaltitle}{Mathematics of control, signals and systems}
+    \field{year}{1989}
+  \endentry
+
+  \entry{deBoor1978practicalGuideToSplines}{book}{}
+    \name{author}{5}{}{%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MEU}{%
+         family={Math{\'e}maticien},
+         familyi={M\bibinitperiod},
+         given={Etats-Unis},
+         giveni={E\bibinithyphendelim U\bibinitperiod},
+      }}%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {springer-verlag New York}%
+    }
+    \strng{namehash}{DBC+1}
+    \strng{fullhash}{DBCDBCMEUDBCDBC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{A practical guide to splines}
+    \field{volume}{27}
+    \field{year}{1978}
+  \endentry
+
+  \entry{dovsilovic2018explainable}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=DFK}{%
+         family={Do{\v{s}}ilovi{\'c}},
+         familyi={D\bibinitperiod},
+         given={Filip\bibnamedelima Karlo},
+         giveni={F\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Br{\v{c}}i{\'c}},
+         familyi={B\bibinitperiod},
+         given={Mario},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HN}{%
+         family={Hlupi{\'c}},
+         familyi={H\bibinitperiod},
+         given={Nikica},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{DFKBMHN1}
+    \strng{fullhash}{DFKBMHN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{booktitle}{2018 41st International convention on information and
+  communication technology, electronics and microelectronics (MIPRO)}
+    \field{pages}{0210\bibrangedash 0215}
+    \field{title}{Explainable artificial intelligence: A survey}
+    \field{year}{2018}
+  \endentry
+
+  \entry{fahrmeir2013regression}{book}{}
+    \name{author}{4}{}{%
+      {{hash=FL}{%
+         family={Fahrmeir},
+         familyi={F\bibinitperiod},
+         given={Ludwig},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kneib},
+         familyi={K\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Marx},
+         familyi={M\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{FL+1}
+    \strng{fullhash}{FLKTLSMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Regression}
+    \field{pages}{21\bibrangedash 72}
+    \field{title}{Regression models}
+    \field{year}{2013}
+  \endentry
+
+  \entry{fard2016fast}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=FMM}{%
+         family={Fard},
+         familyi={F\bibinitperiod},
+         given={Mahdi\bibnamedelima Milani},
+         giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Canini},
+         familyi={C\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Cotter},
+         familyi={C\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pfeifer},
+         familyi={P\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gupta},
+         familyi={G\bibinitperiod},
+         given={Maya},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FMM+1}
+    \strng{fullhash}{FMMCKCAPJGM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Advances in Neural Information Processing Systems}
+    \field{pages}{2919\bibrangedash 2927}
+    \field{title}{Fast and flexible monotonic functions with ensembles of
+  lattices}
+    \field{year}{2016}
+  \endentry
+
+  \entry{friedman1991multivariate}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FJH}{%
+         family={Friedman},
+         familyi={F\bibinitperiod},
+         given={Jerome\bibnamedelima H},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{FJH1}
+    \strng{fullhash}{FJH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{pages}{1\bibrangedash 67}
+    \field{title}{Multivariate adaptive regression splines}
+    \field{journaltitle}{The annals of statistics}
+    \field{year}{1991}
+  \endentry
+
+  \entry{friedman2001elements}{book}{}
+    \name{author}{3}{}{%
+      {{hash=FJ}{%
+         family={Friedman},
+         familyi={F\bibinitperiod},
+         given={Jerome},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hastie},
+         familyi={H\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer series in statistics New York}%
+    }
+    \strng{namehash}{FJHTTR1}
+    \strng{fullhash}{FJHTTR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{10}
+    \field{title}{The elements of statistical learning}
+    \field{volume}{1}
+    \field{year}{2001}
+  \endentry
+
+  \entry{garcia2009lattice}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=GE}{%
+         family={Garcia},
+         familyi={G\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gupta},
+         familyi={G\bibinitperiod},
+         given={Maya},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GEGM1}
+    \strng{fullhash}{GEGM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{Advances in Neural Information Processing Systems}
+    \field{pages}{594\bibrangedash 602}
+    \field{title}{Lattice regression}
+    \field{year}{2009}
+  \endentry
+
+  \entry{goodfellow2016deep}{book}{}
+    \name{author}{4}{}{%
+      {{hash=GI}{%
+         family={Goodfellow},
+         familyi={G\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT press Cambridge}%
+    }
+    \strng{namehash}{GI+1}
+    \strng{fullhash}{GIBYCABY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Deep learning}
+    \field{volume}{1}
+    \field{year}{2016}
+  \endentry
+
+  \entry{gupta2016monotonic}{article}{}
+    \name{author}{8}{}{%
+      {{hash=GM}{%
+         family={Gupta},
+         familyi={G\bibinitperiod},
+         given={Maya},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Cotter},
+         familyi={C\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pfeifer},
+         familyi={P\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VK}{%
+         family={Voevodski},
+         familyi={V\bibinitperiod},
+         given={Konstantin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Canini},
+         familyi={C\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Mangylov},
+         familyi={M\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MW}{%
+         family={Moczydlowski},
+         familyi={M\bibinitperiod},
+         given={Wojciech},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=VEA}{%
+         family={Van\bibnamedelima Esbroeck},
+         familyi={V\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JMLR. org}%
+    }
+    \strng{namehash}{GM+1}
+    \strng{fullhash}{GMCAPJVKCKMAMWVEA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{1}
+    \field{pages}{3790\bibrangedash 3836}
+    \field{title}{Monotonic calibrated interpolated look-up tables}
+    \field{volume}{17}
+    \field{journaltitle}{The Journal of Machine Learning Research}
+    \field{year}{2016}
+  \endentry
+
+  \entry{hofner2011monotonicity}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HB}{%
+         family={Hofner},
+         familyi={H\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={M{\"u}ller},
+         familyi={M\bibinitperiod},
+         given={J{\"o}rg},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hothorn},
+         familyi={H\bibinitperiod},
+         given={Torsten},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{HBMJHT1}
+    \strng{fullhash}{HBMJHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{10}
+    \field{pages}{1895\bibrangedash 1901}
+    \field{title}{Monotonicity-constrained species distribution models}
+    \field{volume}{92}
+    \field{journaltitle}{Ecology}
+    \field{year}{2011}
+  \endentry
+
+  \entry{hornik1991approximation}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HK}{%
+         family={Hornik},
+         familyi={H\bibinitperiod},
+         given={Kurt},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{HK1}
+    \strng{fullhash}{HK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{2}
+    \field{pages}{251\bibrangedash 257}
+    \field{title}{Approximation capabilities of multilayer feedforward
+  networks}
+    \field{volume}{4}
+    \field{journaltitle}{Neural networks}
+    \field{year}{1991}
+  \endentry
+
+  \entry{nelles2013nonlinear}{book}{}
+    \name{author}{1}{}{%
+      {{hash=NO}{%
+         family={Nelles},
+         familyi={N\bibinitperiod},
+         given={Oliver},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{NO1}
+    \strng{fullhash}{NO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Nonlinear system identification: from classical approaches to
+  neural networks and fuzzy models}
+    \field{year}{2013}
+  \endentry
+
+  \entry{sill1997monotonicity}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Sill},
+         familyi={S\bibinitperiod},
+         given={Joseph},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AMYS}{%
+         family={Abu-Mostafa},
+         familyi={A\bibinithyphendelim M\bibinitperiod},
+         given={Yaser\bibnamedelima S},
+         giveni={Y\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJAMYS1}
+    \strng{fullhash}{SJAMYS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Advances in neural information processing systems}
+    \field{pages}{634\bibrangedash 640}
+    \field{title}{Monotonicity hints}
+    \field{year}{1997}
+  \endentry
+
+  \entry{you2017deep}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=YS}{%
+         family={You},
+         familyi={Y\bibinitperiod},
+         given={Seungil},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Ding},
+         familyi={D\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Canini},
+         familyi={C\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pfeifer},
+         familyi={P\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gupta},
+         familyi={G\bibinitperiod},
+         given={Maya},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YS+1}
+    \strng{fullhash}{YSDDCKPJGM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{booktitle}{Advances in neural information processing systems}
+    \field{pages}{2981\bibrangedash 2989}
+    \field{title}{Deep lattice networks and partial monotonic functions}
+    \field{year}{2017}
+  \endentry
+\enddatalist
 \endinput
-

@@ -190,6 +190,33 @@
     \field{year}{1996}
   \endentry
 
+  \entry{eilers2005unimodal}{article}{}
+    \name{author}{1}{}{%
+      {{hash=EPH}{%
+         family={Eilers},
+         familyi={E\bibinitperiod},
+         given={Paul\bibnamedelima HC},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{EPH1}
+    \strng{fullhash}{EPH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{5-7}
+    \field{pages}{317\bibrangedash 328}
+    \field{title}{Unimodal smoothing}
+    \field{volume}{19}
+    \field{journaltitle}{Journal of Chemometrics: A Journal of the Chemometrics
+  Society}
+    \field{year}{2005}
+  \endentry
+
   \entry{eubank1990regressionsplines}{article}{}
     \name{author}{2}{}{%
       {{hash=ERL}{%
@@ -302,6 +329,34 @@
     \field{year}{2013}
   \endentry
 
+  \entry{ferziger2008numerische}{book}{}
+    \name{author}{2}{}{%
+      {{hash=FJH}{%
+         family={Ferziger},
+         familyi={F\bibinitperiod},
+         given={Joel\bibnamedelima H},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Peric},
+         familyi={P\bibinitperiod},
+         given={Milovan},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{FJHPM1}
+    \strng{fullhash}{FJHPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Numerische Str{\"o}mungsmechanik}
+    \field{year}{2008}
+  \endentry
+
   \entry{friedman2001elements}{book}{}
     \name{author}{3}{}{%
       {{hash=FJ}{%
@@ -408,6 +463,93 @@
     \field{volume}{12}
     \field{journaltitle}{Technometrics}
     \field{year}{1970}
+  \endentry
+
+  \entry{hofner2011monotonicity}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HB}{%
+         family={Hofner},
+         familyi={H\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={M{\"u}ller},
+         familyi={M\bibinitperiod},
+         given={J{\"o}rg},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hothorn},
+         familyi={H\bibinitperiod},
+         given={Torsten},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{HBMJHT1}
+    \strng{fullhash}{HBMJHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{10}
+    \field{pages}{1895\bibrangedash 1901}
+    \field{title}{Monotonicity-constrained species distribution models}
+    \field{volume}{92}
+    \field{journaltitle}{Ecology}
+    \field{year}{2011}
+  \endentry
+
+  \entry{sammut2011}{book}{}
+    \name{author}{2}{}{%
+      {{hash=SC}{%
+         family={Sammut},
+         familyi={S\bibinitperiod},
+         given={Claude},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WGI}{%
+         family={Webb},
+         familyi={W\bibinitperiod},
+         given={Geoffrey\bibnamedelima I},
+         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{SCWGI1}
+    \strng{fullhash}{SCWGI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Encyclopedia of machine learning}
+    \field{year}{2011}
+  \endentry
+
+  \entry{strutz2016data}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ST}{%
+         family={Strutz},
+         familyi={S\bibinitperiod},
+         given={Tilo},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST1}
+    \strng{fullhash}{ST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Data fitting and uncertainty}
+    \field{journaltitle}{A Practical Introduction to Weighted Least Squares and
+  Beyond}
+    \field{year}{2016}
   \endentry
 
   \entry{tibshirani1996lasso}{article}{}

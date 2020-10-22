@@ -1,62 +1,62 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Linear Models}{2}
+\contentsline {section}{\numberline {1}Linear Models}{2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Definition and Model Assumptions}{2}
+\contentsline {subsection}{\numberline {1.1}Definition and Model Assumptions}{2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Parameter Estimation}{4}
+\contentsline {subsection}{\numberline {1.2}Parameter Estimation}{4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1}Estimation of the Regression Coefficients $\boldsymbol {\beta }$}{4}
+\contentsline {subsubsection}{\numberline {1.2.1}Estimation of the Regression Coefficients $\boldsymbol {\beta }$}{4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.1.1}The Method of Least Squares}{4}
+\contentsline {paragraph}{\numberline {1.2.1.1}The Method of Least Squares}{4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.1.2}Maximum Likelihood Estimation}{5}
+\contentsline {paragraph}{\numberline {1.2.1.2}Maximum Likelihood Estimation}{5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.2}Estimation of the Variance $\sigma ^2$}{5}
+\contentsline {subsubsection}{\numberline {1.2.2}Estimation of the Variance $\sigma ^2$}{5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.2.1}Maximum Likelihood Estimation}{5}
+\contentsline {paragraph}{\numberline {1.2.2.1}Maximum Likelihood Estimation}{5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.2.2}Restricted Maximum Likelihood Estimation}{6}
+\contentsline {paragraph}{\numberline {1.2.2.2}Restricted Maximum Likelihood Estimation}{6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}The Hat Matrix}{6}
+\contentsline {subsection}{\numberline {1.3}The Hat Matrix}{6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Model Selection}{6}
+\contentsline {subsection}{\numberline {1.4}Model Selection}{6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.1}Model Choice Criteria}{7}
+\contentsline {subsubsection}{\numberline {1.4.1}Model Choice Criteria}{7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.1.1}Sum of expected Squared Prediction Error}{7}
+\contentsline {paragraph}{\numberline {1.4.1.1}Sum of expected Squared Prediction Error}{7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.1.2}Corrected Coefficient of Determination}{9}
+\contentsline {paragraph}{\numberline {1.4.1.2}Corrected Coefficient of Determination}{9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.1.3}Mallow's Cp}{10}
+\contentsline {paragraph}{\numberline {1.4.1.3}Mallow's Cp}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.1.4}Akaike Information Criterion}{10}
+\contentsline {paragraph}{\numberline {1.4.1.4}Akaike Information Criterion}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.1.5}Bayesian Information Criteria}{10}
+\contentsline {paragraph}{\numberline {1.4.1.5}Bayesian Information Criteria}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.1.6}Cross-validation}{11}
+\contentsline {paragraph}{\numberline {1.4.1.6}Cross-validation}{11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.2}Model Selection Techniques}{11}
+\contentsline {subsubsection}{\numberline {1.4.2}Model Selection Techniques}{11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.2.1}Forward Selection}{11}
+\contentsline {paragraph}{\numberline {1.4.2.1}Forward Selection}{11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.2.2}Backward selection}{12}
+\contentsline {paragraph}{\numberline {1.4.2.2}Backward selection}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.2.3}Step-wise Selection}{12}
+\contentsline {paragraph}{\numberline {1.4.2.3}Step-wise Selection}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.3}Regularization}{12}
+\contentsline {subsubsection}{\numberline {1.4.3}Regularization}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.3.1}Ridge Regression}{12}
+\contentsline {paragraph}{\numberline {1.4.3.1}Ridge Regression}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.4.3.2}Lasso Regression}{13}
+\contentsline {paragraph}{\numberline {1.4.3.2}Lasso Regression}{13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Splines}{13}
+\contentsline {section}{\numberline {2}Splines}{13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}B-Splines}{13}
+\contentsline {subsection}{\numberline {2.1}B-Splines}{13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}P-Splines}{15}
+\contentsline {subsection}{\numberline {2.2}P-Splines}{15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Tensor-Product Splines}{16}
+\contentsline {subsection}{\numberline {2.3}Tensor-Product Splines}{16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Structured Additive Regression}{17}
+\contentsline {section}{\numberline {3}Structured Additive Regression}{17}%

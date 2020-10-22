@@ -1,0 +1,42 @@
+% Macros zum Setzen von Formeln
+%-------------------------------
+
+
+
+ 
+% transponiert
+\newcommand{\transpose}[1]{#1^\mathrm{T}}
+% Exponentialfunktion
+\newcommand{\e}{\mathrm{e}}
+% Imaginäre Einheit
+
+% Einheitsmatrix E
+\newcommand{\II}{\vec{E}} 
+
+
+
+% Macro für die Abstände in Gleichungen mit Nebenbedingungen
+\providecommand{\with}{\,, & \qquad}
+% Satzzeichen nach Formeln
+\providecommand{\FullStop}{\text{~\@.\xspace}}
+\providecommand{\Comma}{\text{~,\xspace}}
+
+
+
+%\newcommand{\diag}{\operatorname*{diag}}
+
+
+% Makro für Vektoren (unterscheide griechische Buchstaben)
+\DeclareRobustCommand{\vec}[1]{ 				
+	\ifthenelse{\equal{#1}{\omega} \OR \equal{#1}{\varphi} \OR \equal{#1}{\alpha} \OR \equal{#1}{\beta} \OR \equal{#1}{\chi} \OR \equal{#1}{\delta} \OR \equal{#1}{\varepsilon} \OR \equal{#1}{\phi} \OR \equal{#1}{\epsilon} \OR \equal{#1}{\gamma} \OR \equal{#1}{\eta} \OR \equal{#1}{\iota} \OR \equal{#1}{\kappa} \OR \equal{#1}{\lambda} \OR \equal{#1}{\mu} \OR \equal{#1}{\nu} \OR \equal{#1}{\pi} \OR \equal{#1}{\theta} \OR \equal{#1}{\vartheta} \OR \equal{#1}{\rho} \OR \equal{#1}{\sigma} \OR \equal{#1}{\varsigma} \OR \equal{#1}{\tau} \OR \equal{#1}{\upsilon} \OR \equal{#1}{\xi} \OR \equal{#1}{\psi} \OR \equal{#1}{\zeta}}{
+		% Für griechische Kleinbuchstaben muss boldsymbol verwendet werden (deckt mathbf nicht ab)
+		\boldsymbol{#1}
+	}{
+		% Alle anderen Symbole verwenden mathbf
+		\mathbf{#1}
+	}
+}
+
+
+
+
