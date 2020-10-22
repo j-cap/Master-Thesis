@@ -1,0 +1,604 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{debug/global//global/global}
+  \entry{bishop2006patternRecognition}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BCM}{%
+         family={Bishop},
+         familyi={B\bibinitperiod},
+         given={Christopher\bibnamedelima M},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {springer}%
+    }
+    \strng{namehash}{BCM1}
+    \strng{fullhash}{BCM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Pattern recognition and machine learning}
+    \field{year}{2006}
+  \endentry
+
+  \entry{blobel2013statistische}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BV}{%
+         family={Blobel},
+         familyi={B\bibinitperiod},
+         given={Volker},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lohrmann},
+         familyi={L\bibinitperiod},
+         given={Erich},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{BVLE1}
+    \strng{fullhash}{BVLE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Statistische und numerische Methoden der Datenanalyse}
+    \field{year}{2013}
+  \endentry
+
+  \entry{deBoor1978practicalGuideToSplines}{book}{}
+    \name{author}{5}{}{%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MEU}{%
+         family={Math{\'e}maticien},
+         familyi={M\bibinitperiod},
+         given={Etats-Unis},
+         giveni={E\bibinithyphendelim U\bibinitperiod},
+      }}%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DBC}{%
+         family={De\bibnamedelima Boor},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {springer-verlag New York}%
+    }
+    \strng{namehash}{DBC+1}
+    \strng{fullhash}{DBCDBCMEUDBCDBC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{A practical guide to splines}
+    \field{volume}{27}
+    \field{year}{1978}
+  \endentry
+
+  \entry{efron2004leastangleregression}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{4}{}{%
+      {{hash=EB}{%
+         family={Efron},
+         familyi={E\bibinitperiod},
+         given={Bradley},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hastie},
+         familyi={H\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=JI}{%
+         family={Johnstone},
+         familyi={J\bibinitperiod},
+         given={Iain},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Institute of Mathematical Statistics}%
+    }
+    \strng{namehash}{EB+1}
+    \strng{fullhash}{EBHTJITR+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{2}
+    \field{pages}{407\bibrangedash 499}
+    \field{title}{Least angle regression}
+    \field{volume}{32}
+    \field{journaltitle}{The Annals of statistics}
+    \field{year}{2004}
+  \endentry
+
+  \entry{eilers1996flexible}{article}{}
+    \name{author}{2}{}{%
+      {{hash=EPH}{%
+         family={Eilers},
+         familyi={E\bibinitperiod},
+         given={Paul\bibnamedelima HC},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=MBD}{%
+         family={Marx},
+         familyi={M\bibinitperiod},
+         given={Brian\bibnamedelima D},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{EPHMBD1}
+    \strng{fullhash}{EPHMBD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{pages}{89\bibrangedash 102}
+    \field{title}{Flexible smoothing with B-splines and penalties}
+    \field{journaltitle}{Statistical science}
+    \field{year}{1996}
+  \endentry
+
+  \entry{eilers2005unimodal}{article}{}
+    \name{author}{1}{}{%
+      {{hash=EPH}{%
+         family={Eilers},
+         familyi={E\bibinitperiod},
+         given={Paul\bibnamedelima HC},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{EPH1}
+    \strng{fullhash}{EPH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{5-7}
+    \field{pages}{317\bibrangedash 328}
+    \field{title}{Unimodal smoothing}
+    \field{volume}{19}
+    \field{journaltitle}{Journal of Chemometrics: A Journal of the Chemometrics
+  Society}
+    \field{year}{2005}
+  \endentry
+
+  \entry{eubank1990regressionsplines}{article}{}
+    \name{author}{2}{}{%
+      {{hash=ERL}{%
+         family={Eubank},
+         familyi={E\bibinitperiod},
+         given={Randall\bibnamedelima L},
+         giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SCH}{%
+         family={Spiegelman},
+         familyi={S\bibinitperiod},
+         given={Clifford\bibnamedelima H},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis Group}%
+    }
+    \strng{namehash}{ERLSCH1}
+    \strng{fullhash}{ERLSCH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{number}{410}
+    \field{pages}{387\bibrangedash 392}
+    \field{title}{Testing the goodness of fit of a linear model via
+  nonparametric regression techniques}
+    \field{volume}{85}
+    \field{journaltitle}{Journal of the American Statistical Association}
+    \field{year}{1990}
+  \endentry
+
+  \entry{fahrmeir2004penalized}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FL}{%
+         family={Fahrmeir},
+         familyi={F\bibinitperiod},
+         given={Ludwig},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kneib},
+         familyi={K\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{FLKTLS1}
+    \strng{fullhash}{FLKTLS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{pages}{731\bibrangedash 761}
+    \field{title}{Penalized structured additive regression for space-time data:
+  a Bayesian perspective}
+    \field{journaltitle}{Statistica Sinica}
+    \field{year}{2004}
+  \endentry
+
+  \entry{fahrmeir2013regression}{book}{}
+    \name{author}{4}{}{%
+      {{hash=FL}{%
+         family={Fahrmeir},
+         familyi={F\bibinitperiod},
+         given={Ludwig},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kneib},
+         familyi={K\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Marx},
+         familyi={M\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{FL+1}
+    \strng{fullhash}{FLKTLSMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Regression}
+    \field{pages}{21\bibrangedash 72}
+    \field{title}{Regression models}
+    \field{year}{2013}
+  \endentry
+
+  \entry{ferziger2008numerische}{book}{}
+    \name{author}{2}{}{%
+      {{hash=FJH}{%
+         family={Ferziger},
+         familyi={F\bibinitperiod},
+         given={Joel\bibnamedelima H},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Peric},
+         familyi={P\bibinitperiod},
+         given={Milovan},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{FJHPM1}
+    \strng{fullhash}{FJHPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Numerische Str{\"o}mungsmechanik}
+    \field{year}{2008}
+  \endentry
+
+  \entry{friedman2001elements}{book}{}
+    \name{author}{3}{}{%
+      {{hash=FJ}{%
+         family={Friedman},
+         familyi={F\bibinitperiod},
+         given={Jerome},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hastie},
+         familyi={H\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer series in statistics New York}%
+    }
+    \strng{namehash}{FJHTTR1}
+    \strng{fullhash}{FJHTTR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{10}
+    \field{title}{The elements of statistical learning}
+    \field{volume}{1}
+    \field{year}{2001}
+  \endentry
+
+  \entry{golub1979}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GGH}{%
+         family={Golub},
+         familyi={G\bibinitperiod},
+         given={Gene\bibnamedelima H},
+         giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Heath},
+         familyi={H\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wahba},
+         familyi={W\bibinitperiod},
+         given={Grace},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis Group}%
+    }
+    \strng{namehash}{GGHHMWG1}
+    \strng{fullhash}{GGHHMWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{2}
+    \field{pages}{215\bibrangedash 223}
+    \field{title}{Generalized cross-validation as a method for choosing a good
+  ridge parameter}
+    \field{volume}{21}
+    \field{journaltitle}{Technometrics}
+    \field{year}{1979}
+  \endentry
+
+  \entry{hoerl1970ridge}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HAE}{%
+         family={Hoerl},
+         familyi={H\bibinitperiod},
+         given={Arthur\bibnamedelima E},
+         giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=KRW}{%
+         family={Kennard},
+         familyi={K\bibinitperiod},
+         given={Robert\bibnamedelima W},
+         giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis Group}%
+    }
+    \strng{namehash}{HAEKRW1}
+    \strng{fullhash}{HAEKRW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{1}
+    \field{pages}{55\bibrangedash 67}
+    \field{title}{Ridge regression: Biased estimation for nonorthogonal
+  problems}
+    \field{volume}{12}
+    \field{journaltitle}{Technometrics}
+    \field{year}{1970}
+  \endentry
+
+  \entry{hofner2011monotonicity}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HB}{%
+         family={Hofner},
+         familyi={H\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={M{\"u}ller},
+         familyi={M\bibinitperiod},
+         given={J{\"o}rg},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hothorn},
+         familyi={H\bibinitperiod},
+         given={Torsten},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{HBMJHT1}
+    \strng{fullhash}{HBMJHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{10}
+    \field{pages}{1895\bibrangedash 1901}
+    \field{title}{Monotonicity-constrained species distribution models}
+    \field{volume}{92}
+    \field{journaltitle}{Ecology}
+    \field{year}{2011}
+  \endentry
+
+  \entry{sammut2011}{book}{}
+    \name{author}{2}{}{%
+      {{hash=SC}{%
+         family={Sammut},
+         familyi={S\bibinitperiod},
+         given={Claude},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WGI}{%
+         family={Webb},
+         familyi={W\bibinitperiod},
+         given={Geoffrey\bibnamedelima I},
+         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{SCWGI1}
+    \strng{fullhash}{SCWGI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Encyclopedia of machine learning}
+    \field{year}{2011}
+  \endentry
+
+  \entry{strutz2016data}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ST}{%
+         family={Strutz},
+         familyi={S\bibinitperiod},
+         given={Tilo},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST1}
+    \strng{fullhash}{ST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Data fitting and uncertainty}
+    \field{journaltitle}{A Practical Introduction to Weighted Least Squares and
+  Beyond}
+    \field{year}{2016}
+  \endentry
+
+  \entry{tibshirani1996lasso}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TR}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{TR1}
+    \strng{fullhash}{TR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{number}{1}
+    \field{pages}{267\bibrangedash 288}
+    \field{title}{Regression shrinkage and selection via the lasso}
+    \field{volume}{58}
+    \field{journaltitle}{Journal of the Royal Statistical Society: Series B
+  (Methodological)}
+    \field{year}{1996}
+  \endentry
+
+  \entry{wood2017generalized}{book}{}
+    \name{author}{1}{}{%
+      {{hash=WSN}{%
+         family={Wood},
+         familyi={W\bibinitperiod},
+         given={Simon\bibnamedelima N},
+         giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC press}%
+    }
+    \strng{namehash}{WSN1}
+    \strng{fullhash}{WSN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Generalized additive models: an introduction with R}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

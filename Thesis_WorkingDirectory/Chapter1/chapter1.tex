@@ -34,7 +34,7 @@ The ongoing digitalization of complex, large-scale industrial plants is leading 
 
 Data driven approaches are state-of-the-art in many fields, including e.g. image and speech recognition. The usage of data driven methods, e.g. artificial neural networks, parametric models, etc., to model process quantities for which measurements are expensive or not practical, gains more and more influence and acceptance in the field of process control and optimization. The application of the specific algorithm depends on issues like data quality, interpretability of the model or computational efficiency. 
 
-In most process optimization tasks massive amounts of domain specific knowledge in form of physical theories and a priori knowledge is available. The combination of the use of domain knowledge and data driven modeling techniques is called hybrid modeling or grey-box modeling. It lies between the two modeling extrema of white-box models, which are derived from first principles and physical models, [white box source] and black-box models, which are derived from data only.\cite{ashby1961introduction} The incorporation of this knowledge in state-of-the-art data driven approaches is not trivial and not solved for some algorithms. Nevertheless, its inclusion should improve the interpretability, which itself is of importance in the context of the emerging field of explainable artificial intelligence (XAI). XAI refers to modeling approaches and techniques in which the main goal is that the resulting model is understandable by humans. \cite{dovsilovic2018explainable}
+In most process optimization tasks massive amounts of domain specific knowledge in form of physical theories and a priori knowledge is available. The combination of the use of domain knowledge and data driven modeling techniques is called hybrid modeling or grey-box modeling. It lies between the two modeling extrema of white-box models, which are derived from first principles and physical models and black-box models, which are derived from data only.\cite{ashby1961introduction} The incorporation of this knowledge in state-of-the-art data driven approaches is not trivial and not solved for some algorithms. Nevertheless, its inclusion should improve the interpretability, which itself is of importance in the context of the emerging field of explainable artificial intelligence (XAI). XAI refers to modeling approaches and techniques in which the main goal is that the resulting model is understandable by humans. \cite{dovsilovic2018explainable}
 
 In this thesis, we are going to develop an algorithm for efficient, static, multi-dimensional function approximation using a priori domain knowledge. The algorithm is based on structured additive regression using splines. \cite{fahrmeir2013regression}. We use user-defined constraints to include the a priori domain knowledge in the fitting process. \cite{hofner2011monotonicity} It should produce interpretable and efficient models based on the given domain knowledge. The incorporation of domain specific knowledge should improve the model quality and robustness as well as interpolation and extrapolation behavior in situations where the measured data is sparse and/or noisy. Further, we are going to evaluate the algorithm using noisy samples from artificial test functions with known behavior as well as real-world data collected in a heat treatment process. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -55,7 +55,7 @@ and focuses on the interpretability, computational efficiency and the ability to
 The common starting point for the different data-driven modeling approaches is that we have some data $\{x_1^{(i)}, \dots, x_q^{(i)}, y^{(i)} \}$ for $i = 1, \dots, n$. We restrict the following discussion to the single-input setting, i.e. $\{x^{(i)}, y^{(i)}\}$ for $i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. The model function $f$ is then used to predict the response or output variable $y$, i.e.
 
 \begin{align} \label{eq:basic-model-structure}
-	y = f(x)).
+	y = f(x).
 \end{align}
 
 Therefore we are in the setting of supervised learning. 
@@ -113,7 +113,7 @@ MARS fits the model using an recursive splitting approach. More information can 
 Another widely used methods using basis functions is the use of \emph{splines}. Splines are defined as piece-wise polynomials on a sequence of knots. Further information can be found in \emph{Chapter Splines}. \cite{deBoor1978practicalGuideToSplines} Using $k$ splines to model some data, we obtain the following model formulation
 
 \begin{align} \label{eq:Spline-basis-formulation}
-	y = f(x) = \beta_i \sum_{i=1}^k b_i(x) 
+	y = f(x) = \sum_{i=1}^k \beta_i b_i(x) 
 \end{align}
 
 with the spline basis functions $b_i$ and the parameters $\beta_i$. The parameters can be calculated used the least squares algorithm. The usage of splines allows a lot of flexibility and computational efficiency. A priori domain knowledge can be incorporated using the approach given by Hofner.\cite{hofner2011monotonicity}
