@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'chapter1.blg'
 [31] biber-MSWIN32:313> INFO - === 
-[61] Biber.pm:371> INFO - Reading 'chapter1.bcf'
-[156] Biber.pm:857> INFO - Found 15 citekeys in bib section 0
-[171] Biber.pm:3976> INFO - Processing section 0
-[184] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
-[194] bibtex.pm:1500> INFO - LaTeX decoding ...
-[243] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
-[347] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[347] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[347] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
-[348] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[360] bbl.pm:617> INFO - Writing 'chapter1.bbl' with encoding 'UTF-8'
-[366] bbl.pm:720> INFO - Output to chapter1.bbl
+[62] Biber.pm:371> INFO - Reading 'chapter1.bcf'
+[175] Biber.pm:857> INFO - Found 18 citekeys in bib section 0
+[190] Biber.pm:3976> INFO - Processing section 0
+[203] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
+[550] bibtex.pm:1500> INFO - LaTeX decoding ...
+[603] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
+[727] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[727] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[727] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
+[727] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[742] bbl.pm:617> INFO - Writing 'chapter1.bbl' with encoding 'UTF-8'
+[749] bbl.pm:720> INFO - Output to chapter1.bbl

@@ -297,7 +297,28 @@
   pages     = {2981--2989},
 }
 
-@InProceedings{,
+@InProceedings{fard2016fast,
+  author    = {Fard, Mahdi Milani and Canini, Kevin and Cotter, Andrew and Pfeifer, Jan and Gupta, Maya},
+  booktitle = {Advances in Neural Information Processing Systems},
+  title     = {Fast and flexible monotonic functions with ensembles of lattices},
+  year      = {2016},
+  pages     = {2919--2927},
+}
+
+@InProceedings{dovsilovic2018explainable,
+  author       = {Do{\v{s}}ilovi{\'c}, Filip Karlo and Br{\v{c}}i{\'c}, Mario and Hlupi{\'c}, Nikica},
+  booktitle    = {2018 41st International convention on information and communication technology, electronics and microelectronics (MIPRO)},
+  title        = {Explainable artificial intelligence: A survey},
+  year         = {2018},
+  organization = {IEEE},
+  pages        = {0210--0215},
+}
+
+@Book{ashby1961introduction,
+  author    = {Ashby, W Ross},
+  publisher = {Chapman \& Hall Ltd},
+  title     = {An introduction to cybernetics},
+  year      = {1961},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

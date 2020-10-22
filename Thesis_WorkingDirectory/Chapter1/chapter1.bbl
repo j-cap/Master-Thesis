@@ -48,6 +48,30 @@
       \field{pages}{192\bibrangedash 198}
       \range{pages}{7}
     \endentry
+    \entry{ashby1961introduction}{book}{}
+      \name{author}{1}{}{%
+        {{hash=32d7e8f11ac3dc9a88a1c8b97b3ab78a}{%
+           family={Ashby},
+           familyi={A\bibinitperiod},
+           given={W\bibnamedelima Ross},
+           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Chapman \& Hall Ltd}%
+      }
+      \strng{namehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
+      \strng{fullhash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
+      \strng{bibnamehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
+      \strng{authorbibnamehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
+      \strng{authornamehash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
+      \strng{authorfullhash}{32d7e8f11ac3dc9a88a1c8b97b3ab78a}
+      \field{sortinit}{a}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An introduction to cybernetics}
+      \field{year}{1961}
+    \endentry
     \entry{bishop2006patternRecognition}{book}{}
       \name{author}{1}{}{%
         {{hash=7952b575a987ace852cfb8965a4da182}{%
@@ -100,6 +124,88 @@
       \field{year}{1989}
       \field{pages}{303\bibrangedash 314}
       \range{pages}{12}
+    \endentry
+    \entry{deBoor1978practicalGuideToSplines}{book}{}
+      \name{author}{5}{}{%
+        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
+           family={De\bibnamedelima Boor},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
+           family={De\bibnamedelima Boor},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+        {{hash=51349d598b94a606a2abea14e516b484}{%
+           family={Math{é}maticien},
+           familyi={M\bibinitperiod},
+           given={Etats-Unis},
+           giveni={E\bibinithyphendelim U\bibinitperiod}}}%
+        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
+           family={De\bibnamedelima Boor},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a3747fdbf34be22dcaea8a037357e822}{%
+           family={De\bibnamedelima Boor},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {springer-verlag New York}%
+      }
+      \strng{namehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
+      \strng{fullhash}{4c4221bfb0a938e3b9253f01e70ffca7}
+      \strng{bibnamehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
+      \strng{authorbibnamehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
+      \strng{authornamehash}{f7a0809a2d36cb3fcf8d42f3b759a96b}
+      \strng{authorfullhash}{4c4221bfb0a938e3b9253f01e70ffca7}
+      \field{sortinit}{d}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A practical guide to splines}
+      \field{volume}{27}
+      \field{year}{1978}
+    \endentry
+    \entry{dovsilovic2018explainable}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3ee135d55ade693247e7601abb5a3375}{%
+           family={Do{š}ilovi{ć}},
+           familyi={D\bibinitperiod},
+           given={Filip\bibnamedelima Karlo},
+           giveni={F\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=daca8148717de318f77a58318a9a379c}{%
+           family={Br{č}i{ć}},
+           familyi={B\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+        {{hash=baa1307e0c726592df6d87a77c13b82c}{%
+           family={Hlupi{ć}},
+           familyi={H\bibinitperiod},
+           given={Nikica},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{202681f4e7f76e50c920644ea4595ce7}
+      \strng{fullhash}{202681f4e7f76e50c920644ea4595ce7}
+      \strng{bibnamehash}{202681f4e7f76e50c920644ea4595ce7}
+      \strng{authorbibnamehash}{202681f4e7f76e50c920644ea4595ce7}
+      \strng{authornamehash}{202681f4e7f76e50c920644ea4595ce7}
+      \strng{authorfullhash}{202681f4e7f76e50c920644ea4595ce7}
+      \field{sortinit}{d}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 41st International convention on information and communication technology, electronics and microelectronics (MIPRO)}
+      \field{title}{Explainable artificial intelligence: A survey}
+      \field{year}{2018}
+      \field{pages}{0210\bibrangedash 0215}
+      \range{pages}{6}
     \endentry
     \entry{fahrmeir2013regression}{book}{}
       \name{author}{4}{}{%

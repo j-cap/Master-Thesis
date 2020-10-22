@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  21 OCT 2020 10:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  22 OCT 2020 07:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,91 +586,116 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) (./chapter1.toc)
+\tf@toc=\write7
+\openout7 = `chapter1.toc'.
+
+
+[1
 
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
+Overfull \hbox (39.72948pt too wide) in paragraph at lines 39--42
+\OT1/cmr/m/n/10 rithm is based on struc-tured ad-di-tive re-gres-sion us-ing sp
+lines. $\OT1/cmr/bx/n/10 fahrmeir2013regression$\OT1/cmr/m/n/10 .
+ []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
 (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
 
 Overfull \hbox (0.52843pt too wide) in paragraph at lines 55--56
 []\OT1/cmr/m/n/10 The com-mon start-ing point for the dif-fer-ent data-driven m
 od-el-ing ap-proaches
  []
 
-[2]
-Overfull \hbox (10.90944pt too wide) in paragraph at lines 97--98
-\OT1/cmr/m/n/10 Mul-ti-vari-ate Ad-dap-tive Re-gres-sion Splines (MARS). $\OT1/
-cmr/bx/n/10 friedman1991multivariate$
+
+Overfull \hbox (15.92493pt too wide) in paragraph at lines 66--67
+\OT1/cmr/m/n/10 the true pro-cess be-hav-ior us-ing a fi-nite num-ber of parame
+ters.$\OT1/cmr/bx/n/10 nelles2013nonlinear$
  []
 
+[2]
+Overfull \hbox (5.35387pt too wide) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 Mul-ti-vari-ate Adap-tive Re-gres-sion Splines (MARS). $\OT1/cm
+r/bx/n/10 friedman1991multivariate$
+ []
 
-Overfull \hbox (4.79892pt too wide) in paragraph at lines 110--111
+[3]
+Overfull \hbox (4.79892pt too wide) in paragraph at lines 111--112
 \OT1/cmr/m/n/10 tion can be found in $\OT1/cmr/bx/n/10 friedman1991multivariate
 $ \OT1/cmr/m/n/10 and $\OT1/cmr/bx/n/10 friedman2001elements$\OT1/cmr/m/n/10 .
  []
 
-[3]
-Overfull \hbox (29.3807pt too wide) in paragraph at lines 139--140
-\OT1/cmr/m/n/10 wide va-ri-ety of functions.$\OT1/cmr/bx/n/10 cybenko1989approx
-imation$ $hornik1991approximation$
+
+Overfull \hbox (22.89653pt too wide) in paragraph at lines 113--114
+\OT1/cmr/m/n/10 for-ma-tion can be found in \OT1/cmr/m/it/10 Chap-ter Splines\O
+T1/cmr/m/n/10 . $\OT1/cmr/bx/n/10 deBoor1978practicalGuideToSplines$
  []
 
-[4] [5]
-Overfull \hbox (2.64503pt too wide) in paragraph at lines 193--193
+[4]
+Overfull \hbox (30.24185pt too wide) in paragraph at lines 148--149
+\OT1/cmr/m/n/10 ap-prox-i-ma-tion theorems.$\OT1/cmr/bx/n/10 cybenko1989approxi
+mation$ $hornik1991approximation$
+ []
+
+[5] [6]
+Overfull \hbox (1.5771pt too wide) in paragraph at lines 201--201
+[]\OT1/cmr/m/n/10 W Ross Ashby. \OT1/cmr/m/it/10 An in-tro-duc-tion to cy-ber-n
+et-ics\OT1/cmr/m/n/10 . Chap-
+ []
+
+
+Overfull \hbox (2.64503pt too wide) in paragraph at lines 201--201
 \OT1/cmr/m/n/10 look-up ta-bles''. In: \OT1/cmr/m/it/10 The Jour-nal of Ma-chin
 e Learn-ing Re-search \OT1/cmr/m/n/10 17.1 (2016),
  []
 
 
-Overfull \hbox (7.16621pt too wide) in paragraph at lines 193--193
+Overfull \hbox (7.16621pt too wide) in paragraph at lines 201--201
 []\OT1/cmr/m/n/10 Benjamin Hofner, J^^?org M^^?uller, and Torsten Hothorn.
  []
 
 
-Overfull \hbox (0.95087pt too wide) in paragraph at lines 193--193
+Overfull \hbox (0.95087pt too wide) in paragraph at lines 201--201
 []\OT1/cmr/m/n/10 Kurt Hornik. ``Ap-prox-i-ma-tion ca-pa-bil-i-ties of mul-
  []
 
-
-Overfull \hbox (8.6065pt too wide) in paragraph at lines 193--193
+[7]
+Overfull \hbox (8.6065pt too wide) in paragraph at lines 201--201
 \OT1/cmr/m/n/10 hints''. In: \OT1/cmr/m/it/10 Ad-vances in neu-ral in-for-ma-ti
 on pro-cess-ing sys-tems\OT1/cmr/m/n/10 . 1997, pp. 634{
  []
 
-[6] [7] (./chapter1.aux)
+[8] (./chapter1.aux)
 Package logreq Info: Writing requests to 'chapter1.run.xml'.
 \openout1 = `chapter1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12309 strings out of 492649
- 215482 string characters out of 6133383
- 642205 words of memory out of 5000000
- 16020 multiletter control sequences out of 15000+600000
- 14298 words of font info for 54 fonts, out of 8000000 for 9000
+ 12306 strings out of 492649
+ 215773 string characters out of 6133383
+ 642487 words of memory out of 5000000
+ 16022 multiletter control sequences out of 15000+600000
+ 11849 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,13n,46p,809b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,12n,46p,1052b,1654s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/font
-s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chapter1.pdf (7 pages, 162123 bytes).
+ic/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on chapter1.pdf (8 pages, 159627 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 75 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

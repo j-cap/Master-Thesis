@@ -24,18 +24,19 @@
 \begin{document}
 	\maketitle
 
+\tableofcontents
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-The ongoing digitalization of complex, large-scale industrial plants is leading to a massive increase of process data. This data can be used to enhance the overall understanding of the characterizing physical process inside the plant. Modern observer and control concepts are used to enhance the efficiency and quality the the plant. They use mathematical models of the ongoing process. Using an exact physical description as mathematical model for the relevant quantities is nevertheless often not feasible because of the complexity of the process as well as computational and measurement limitations.
+The ongoing digitalization of complex, large-scale industrial plants is leading to a massive increase of process data. This data can be used to enhance the overall understanding of the characterizing physical process inside the plant. Modern observer and control concepts are used to enhance the efficiency and quality the plant. They use mathematical models of the ongoing process. Using an exact physical description as mathematical model for the relevant quantities is nevertheless often not feasible because of the complexity of the process as well as computational and measurement limitations.
 
 Data driven approaches are state-of-the-art in many fields, including e.g. image and speech recognition. The usage of data driven methods, e.g. artificial neural networks, parametric models, etc., to model process quantities for which measurements are expensive or not practical, gains more and more influence and acceptance in the field of process control and optimization. The application of the specific algorithm depends on issues like data quality, interpretability of the model or computational efficiency. 
 
-In most process optimization tasks massive amounts of domain specific knowledge in form of physical theories and a priori knowledge is available. The combination of the use of domain knowledge and data driven modeling techniques is called hybrid modeling or grey-boy modeling. It lies between the two modeling extrema of white-box models, which are derived from first principles and physical models, [white box source] and black-box models, which are derived from data only. [black box source] The incorporation of this knowledge in state-of-the-art data driven approaches is not trivial and not solved for some algorithms. Nevertheless, its inclusion should improve the interpretability, which itself is of importance in the context of the emerging field of explainable artificial intelligence (XAI). XAI refers to modeling approaches and techniques in which the main goal is that the resulting model is understandable by humans. 
+In most process optimization tasks massive amounts of domain specific knowledge in form of physical theories and a priori knowledge is available. The combination of the use of domain knowledge and data driven modeling techniques is called hybrid modeling or grey-box modeling. It lies between the two modeling extrema of white-box models, which are derived from first principles and physical models, [white box source] and black-box models, which are derived from data only.\cite{ashby1961introduction} The incorporation of this knowledge in state-of-the-art data driven approaches is not trivial and not solved for some algorithms. Nevertheless, its inclusion should improve the interpretability, which itself is of importance in the context of the emerging field of explainable artificial intelligence (XAI). XAI refers to modeling approaches and techniques in which the main goal is that the resulting model is understandable by humans. \cite{dovsilovic2018explainable}
 
-In this thesis, we are going to develop an algorithm for efficient, static, multi-dimensional function approximation using a priori knowledge. The algorithm is based on structured additive regression \cite{fahrmeir2013regression} and the use of user-defined constraints to include the a priori domain knowledge in the fitting process. \cite{hofner2011monotonicity} The incorporation of domain specific knowledge should improve the model quality and robustness in situations where the measured data is sparse and/or noisy as well as interpolation and extrapolation behavior. 
-
+In this thesis, we are going to develop an algorithm for efficient, static, multi-dimensional function approximation using a priori domain knowledge. The algorithm is based on structured additive regression using splines. \cite{fahrmeir2013regression}. We use user-defined constraints to include the a priori domain knowledge in the fitting process. \cite{hofner2011monotonicity} It should produce interpretable and efficient models based on the given domain knowledge. The incorporation of domain specific knowledge should improve the model quality and robustness as well as interpolation and extrapolation behavior in situations where the measured data is sparse and/or noisy. Further, we are going to evaluate the algorithm using noisy samples from artificial test functions with known behavior as well as real-world data collected in a heat treatment process. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}
@@ -47,31 +48,30 @@ We will now discuss some of the most used data-driven algorithms. The discussion
 	\item Non-parametric models: Basis function models
 	\item Artificial neural networks
 	\item Look-up tables
-	\item Gaussian process regression
 \end{itemize}
 
-and focuses on the interpretability, computational efficiency as well as the ability to include domain knowledge of the individual modeling approaches. The list given above is not intended to be complete. 
+and focuses on the interpretability, computational efficiency and the ability to include domain knowledge of the individual modeling approaches. The list given above is not intended to be complete. 
 
-The common starting point for the different data-driven modeling approaches is that we have some data $\{x_1^{(i)}, \dots, x_q^{(i)}, y^{(i)} \}$ for $i = 1, \dots, n$. The set of explanatory or input variables $\boldsymbol{x} = \{x_1, \dots, x_q\}$ is used by the model function $f$ to predict the response or output variable $y$, i.e.
+The common starting point for the different data-driven modeling approaches is that we have some data $\{x_1^{(i)}, \dots, x_q^{(i)}, y^{(i)} \}$ for $i = 1, \dots, n$. We restrict the following discussion to the single-input setting, i.e. $\{x^{(i)}, y^{(i)}\}$ for $i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. The model function $f$ is then used to predict the response or output variable $y$, i.e.
 
 \begin{align} \label{eq:basic-model-structure}
-	y = f(\boldsymbol{x}).
+	y = f(x)).
 \end{align}
 
-We are therefore in the setting of supervised learning. 
+Therefore we are in the setting of supervised learning. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Parametric Models}
 
-According to Nelles \cite{nelles2013nonlinear}, parametric models are defined as models that can describe the true process behavior using a finite number of parameters. An example is given by the linear regression model for one input variable $x$, i.e
+According to Nelles, parametric models are defined as models that can describe the true process behavior using a finite number of parameters.\cite{nelles2013nonlinear} An example is given by the linear regression model for one input variable $x$ as
 
 \begin{align} \label{eq:classical-linear-model}
 	y= f(x) = \beta_0 + \beta_1 x.
 \end{align}
 
-Both parameters $\beta_0$ and $\beta_1$ allow for a direct interpretation as $\beta_0$ is the intercept, i.e. the output for the input $x=0$, and $\beta_1$ is the slope, i.e. the constant defining the relationship between the increase of the output $y$ with respect to the increase of the input $x$.  
+Both parameters $\beta_0$ and $\beta_1$ allow for a direct interpretation as $\beta_0$ is the intercept, i.e. the output for the input $x=0$, and $\beta_1$ is the slope, i.e. the constant defining the relationship between the increase of the output $y$ with respect to the increase of the input $x$.  The interpretability of linear regression models is therefore very high. 
 
-Linear regression models are widely used and part of standard software tools. Their parameters can be efficiently computed using the least squares algorithm. One major drawback of linear models is that they can only recover a linear relationship between input and output variables. They are therefore quite restrictive and do not allow the incorporation of a priori domain knowledge. 
+Linear regression models are widely used and part of standard software tools. Their parameters can be efficiently computed using the least squares algorithm. One major drawback is that they can only recover linear relationships between input and output variables. They are therefore quite restrictive and do not allow the incorporation of a priori domain knowledge. 
 
 An extension of the linear regression model is given by polynomial regression. Here, we try to model the output data $y$ using a polynomial of degree $p$, i.e.
 
@@ -79,7 +79,7 @@ An extension of the linear regression model is given by polynomial regression. H
 	y = f(x) = \beta_0 + \beta_1 x + \beta_2 x^2 + \dots + \beta_p x^p.
 \end{align}
 
-Polynomial regression introduces more flexibility in the fitting process, since the restriction of linear relationship is relaxed to a polynomial relationship of degree $p$. As for linear models, we can again use the least squares algorithm for parameter estimation. The incorporation of a priori domain knowledge is possible, e.g. as the degree of the polynomial regression model. One major problem of polynomial regression is that the model function becomes quite wiggly for high polynomial degrees $p$. 
+Polynomial regression introduces more flexibility in the fitting process, since the restriction of linear relationship is relaxed to a polynomial relationship of degree $p$. As for linear models, the interpretability of the parameters is given. We can use the least squares algorithm for parameter estimation. The incorporation of a some priori domain knowledge is possible, e.g. as the degree of the polynomial regression model. One major problem of polynomial regression is that the model function becomes quite wiggly for high polynomial degrees $p$. 
 
 Linear and polynomial regression models are so-called global models. Their parameters act on the complete input space. This property makes the incorporation of specific a priori domain knowledge, e.g. unimodal behavior, difficult and in most cases nearly impossible for parametric models. 
 
@@ -89,54 +89,63 @@ Linear and polynomial regression models are so-called global models. Their param
 Nelles defines non-parametric models as models which require a infinite number of parameters to describe a process exactly. \cite{nelles2013nonlinear} In almost all practical applications this infinite series is approximated by a finite number of parameters using the basis function approach given by
 
 \begin{align} \label{eq:basis-function-approach}
-	y = f(\boldsymbol{x}) = \sum_{i=1}^M \theta_i^{(l)} \Phi_i(\boldsymbol{x}, \theta_i^{(nl)})
+	y = f(x) = \sum_{i=1}^M \theta_i^{(l)} \Phi_i(x, \theta_i^{(nl)})
 \end{align} 
 
-with the linear parameters $\theta_i^{(l)}$, the basis functions $\Phi_i(.)$, the input variables $\boldsymbol{x} \in \mathbb R^{q}$ and the non-linear parameters $\theta_i^{(nl)}$. The output $y$ is therefore given by a linear combination of $M$ basis functions $\Phi_i(.)$. To model a non-linear relationship between $y$ and $\boldsymbol{x}$, the basis functions $\Phi(.)$ need to be non-linear. Commonly used basis functions are e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function}. 
+with the linear parameters $\theta_i^{(l)}$, the basis functions $\Phi_i(.)$, the input variables $x$ and the non-linear parameters $\theta_i^{(nl)}$. The output $y$ is therefore given by a linear combination of $M$ basis functions $\Phi_i(.)$. To model a non-linear relationship between $y$ and $x$, the basis functions $\Phi(.)$ need to be non-linear. Commonly used basis functions are e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function}. 
 
-One commonly used algorithm using the basis function approach is called Multivariate Addaptive Regression Splines (MARS). \cite{friedman1991multivariate} MARS approximates data using the following model
+One commonly used algorithm using the basis function approach is called Multivariate Adaptive Regression Splines (MARS). \cite{friedman1991multivariate} MARS approximates data, as example again for a single input dimension, using the following model
 
 \begin{align} \label{eq:MARS}
-	y = \sum_{i=1}^M \theta_i \Phi_i(\boldsymbol{x})
+	y = \sum_{i=1}^M \theta_i \Phi_i(x)
 \end{align}
 
-using constant parameters $\theta_i$. The used basis functions are one of the following three alternatives:
+using constant parameters $\theta_i$. The basis functions $\Phi_i(.)$ are one of the following three alternatives:
+
 \begin{enumerate}
-	\item $\Phi_i(\boldsymbol{x}) = 1$, representing the intercept.
-	\item $\Phi_i(\boldsymbol{x}) = \max(0, x - \text{constant}_i)$ or $= \max(0, \text{constant}_i - x)$, representing the \emph{hinge function} $h_i$.
-	\item $\Phi_i(\boldsymbol{x}) = h_i  h_j$, representing a product of two \emph{hinge functions}.
+	\item $\Phi_i(x) = 1$, representing the intercept.
+	\item $\Phi_i(x) = \max(0, x - \text{constant}_i)$ or $= \max(0, \text{constant}_i - x)$, representing the \emph{hinge function} $h_i$.
+	\item $\Phi_i(x) = h_i  h_j$, representing a product of two \emph{hinge functions}.
 \end{enumerate}
 
 MARS fits the model using an recursive splitting approach. More information can be found in \cite{friedman1991multivariate} and \cite{friedman2001elements}. MARS models are more flexible compared to the parametric linear and polynomial regression models. As only hinge functions and products of hinge functions are used, MARS models are efficient and in general simple to understand and interpret. To our knowledge, there is currently no possibility to include a priori domain knowledge in the fitting process when using MARS. 
 
-The basis function approach in (\ref{eq:basis-function-approach}) may be extended by changing the parameters $\theta_i^{(l)}$ to more complex forms. An example for this is the so-called local linear neuro-fuzzy model, for which each parameter $\theta_i^{(i)}$ is changed to be a \emph{local linear model} and each basis function $\Phi_i(.)$ is then called \emph{validity function} determining the region of validity for the local linear model. \cite{nelles2013nonlinear} The validity functions are normalized for any model input $\boldsymbol{x}$, i.e.
+Another widely used methods using basis functions is the use of \emph{splines}. Splines are defined as piece-wise polynomials on a sequence of knots. Further information can be found in \emph{Chapter Splines}. \cite{deBoor1978practicalGuideToSplines} Using $k$ splines to model some data, we obtain the following model formulation
+
+\begin{align} \label{eq:Spline-basis-formulation}
+	y = f(x) = \beta_i \sum_{i=1}^k b_i(x) 
+\end{align}
+
+with the spline basis functions $b_i$ and the parameters $\beta_i$. The parameters can be calculated used the least squares algorithm. The usage of splines allows a lot of flexibility and computational efficiency. A priori domain knowledge can be incorporated using the approach given by Hofner.\cite{hofner2011monotonicity}
+
+The basis function approach in (\ref{eq:basis-function-approach}) may be extended by changing the parameters $\theta_i^{(l)}$ to more complex forms. An example for this is the so-called local linear neuro-fuzzy model, for which each parameter $\theta_i^{(i)}$ is changed to be a \emph{local linear model} and each basis function $\Phi_i(.)$ is then called \emph{validity function} determining the region of validity of the local linear model. \cite{nelles2013nonlinear} The validity functions are normalized for any model input $x$, i.e.
 
 \begin{align} \label{eq:LILOMOT-normalized-basis-fucntions}
-	\sum_{i=1}^M \Phi_i(\boldsymbol{x}) = 1.
+	\sum_{i=1}^M \Phi_i(x) = 1.
 \end{align}
 
 and typically chosen to be \emph{Gaussian} functions, i.e. 
 
 \begin{align} \label{eq:validity-function}
-	\Phi_i(\boldsymbol{x}) = a_i \exp \big(\frac{(\boldsymbol{x} - \boldsymbol{\mu}_i)^2}{\sigma_i^2} \big)	
+	\Phi_i(x) = a_i \exp \big(\frac{(x - \mu_i)^2}{\sigma_i^2} \big)	
 \end{align}
 
-with the normalization constant $a_i$ and the parameters $\boldsymbol{\mu}_i$ and $\sigma_i$ determining the location and scale of the Gaussian function. The output of the local linear neuro-fuzzy model using $M$ local linear models is then given by
+with the normalization constant $a_i$ and the parameters $\mu_i$ and $\sigma_i$ determining the location and scale of the Gaussian function. The output of the local linear neuro-fuzzy model using $M$ local linear models is then given by
 
 \begin{align} \label{eq:LOLIMOT}
-	y = \sum_{i=1}^M (\beta_{i0} + \beta_{i1} x_1 + \dots + \beta_{iq} x_q) \Phi_i(\boldsymbol{x}).
+	y = \sum_{i=1}^M (\beta_{i0} + \beta_{i1} x_1) \Phi_i(x).
 \end{align}
 
-where the first term in the summation are the \emph{local linear models}. The parameters $\beta_{ij}$ for $i=1, \dots, M$ and $j=1, \dots, q$ as well as the parameters $\boldsymbol{\mu}_i$ and $\sigma_i$ from the validity functions $\Phi_i$ need to be optimized. This is done using the LOLIMOT algorithm. Further information is given in \cite{nelles2013nonlinear}. 
+The first term in the summation are the \emph{local linear models}. The parameters $\beta_{ij}$ for $i=1, \dots, M$ and $j=0, 1$ as well as the parameters $\mu_i$ and $\sigma_i$ from the validity functions $\Phi_i$ need to be optimized. This is done using the LOLIMOT algorithm. Further information is given in \cite{nelles2013nonlinear}. 
 
 Local linear models as extension of linear models possess more flexibility with regards to non-linear relationships in the data. They can also be efficiently evaluated after the iterative training process. The interpretability is high since each local linear model contributes to the prediction according to its validity function. The ability to include a priori domain knowledge in the fitting process is currently not available.   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Artificial Neural Networks}
 
-Artificial neural networks are currently the state-of-the-art solution method for many problems ranging from computer vision over time-series prediction to regression tasks. They utilize a high number of parameters to model hidden, high-dimensional relationships in the data. Further information can be found in standard textbook about neural networks, e.g. \cite{bishop2006patternRecognition} or \cite{goodfellow2016deep}. 
+Artificial neural networks are currently the state-of-the-art solution method for many problems ranging from computer vision over time-series prediction to regression tasks. They are constructed as coarse model of the human brain, consisting of neurons which are connected by some weights. These connections are adapted in the learning process using an algorithm called "backpropagation". They utilize a high number of parameters to model hidden, high-dimensional relationships in the data. Further information can be found in standard textbook about neural networks, e.g. \cite{bishop2006patternRecognition} or \cite{goodfellow2016deep}. 
 
-In terms of modeling flexibility, artificial neural networks of sufficient size are proven by so-called universal approximation theorems to be able to represent a wide variety of functions.\cite{cybenko1989approximation} \cite{hornik1991approximation} The computational complexity of a neural network depends on its size, aka. the number of parameters. Large networks need many training samples to generate sufficiently accurate predictions. The inclusion of a priori domain knowledge into the learning process of neural networks is possible for specific types of knowledge using the concepts of hints, see \cite{abu1990learning} \cite{sill1997monotonicity}
+In terms of modeling flexibility, artificial neural networks of sufficient size are proven to be able to represent a wide variety of functions by so-called universal approximation theorems.\cite{cybenko1989approximation} \cite{hornik1991approximation} The computational complexity of a neural network depends on its size, aka. the number of parameters. Large networks need many training samples to generate sufficiently accurate predictions. Artificial neural networks are an example of a black-box model. The inclusion of a priori domain knowledge into the learning process of neural networks is possible for specific types of knowledge using the concepts of hints, see \cite{abu1990learning} \cite{sill1997monotonicity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Look-up Tables}
@@ -151,8 +160,7 @@ Lattice regression tackles this problems by jointly estimating all lookup-table 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Outline}
 
-
-
+The thesis is divided into 5 chapters: Chapter 2 provides an overview of the fundamental mathematical concepts used. We focus on the description of linear models, splines and the topic of structured additive regression. In chapter 3, we develop the algorithm using the concepts given in chapter 2. In chapter 4, we test the algorithm using different artificial functions and a priori domain knowledge as well as real-world data. Chapter 5 gives a summary and outlines future, possible work. 
 
 
 \section{Stages in a thesis introduction}

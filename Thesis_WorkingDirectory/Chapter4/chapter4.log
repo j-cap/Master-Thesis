@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  20 OCT 2020 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  22 OCT 2020 07:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -553,13 +553,13 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `chapter4.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'chapter4.bbl' found.
+Package biblatex Info: ... file 'chapter4.bbl' not found.
 
-(./chapter4.bbl)
+No file chapter4.bbl.
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
 LaTeX Font Info:    Try loading font information for U+msa on input line 25.
- (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 25.
@@ -675,13 +675,17 @@ Package pdftex.def Info: ../thesisplots/exp_beta/exp_left_skewed_data_ndata_250
 0_rseed_1.pdf  used on input line 354.
 (pdftex.def)             Requested size: 345.0pt x 220.42168pt.
  [13 <../thesisplots/exp_beta/exp_left_skewed_data_ndata_2500_rseed_1.pdf>]
+
+LaTeX Warning: Citation 'ferziger2008numerische' on page 14 undefined on input 
+line 378.
+
 <../thesisplots/ebner/data_distribution.png, id=628, 657.45625pt x 447.6725pt>
 File: ../thesisplots/ebner/data_distribution.png Graphic file (type png)
 <use ../thesisplots/ebner/data_distribution.png>
 Package pdftex.def Info: ../thesisplots/ebner/data_distribution.png  used on in
 put line 392.
 (pdftex.def)             Requested size: 345.0pt x 234.91545pt.
- [14]
+[14]
 <../thesisplots/ebner/Model_constraint_lam_s1_383_lam_s2_908.pdf, id=633, 487.6
 5332pt x 450.9648pt>
 File: ../thesisplots/ebner/Model_constraint_lam_s1_383_lam_s2_908.pdf Graphic f
@@ -699,18 +703,28 @@ pe pdf)
 Package pdftex.def Info: ../thesisplots/ebner/Model_unc_lam_s1_383_lam_s2_908.p
 df  used on input line 408.
 (pdftex.def)             Requested size: 345.0pt x 319.05873pt.
- [16 <../thesisplots/ebner/Model_constraint_lam_s1_383_lam_s2_908.pdf>]
-[17 <../thesisplots/ebner/Model_unc_lam_s1_383_lam_s2_908.pdf>] [18]
-(./chapter4.aux)
+ [16 <../thesisplots/ebner/Model_constraint_lam_s1_383_lam_s2_908.pdf>] [17 <..
+/thesisplots/ebner/Model_unc_lam_s1_383_lam_s2_908.pdf>] [18] (./chapter4.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                chapter4
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'chapter4.run.xml'.
 \openout1 = `chapter4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11845 strings out of 492649
- 211772 string characters out of 6133383
- 629205 words of memory out of 5000000
- 15543 multiletter control sequences out of 15000+600000
+ 11830 strings out of 492649
+ 211382 string characters out of 6133383
+ 629204 words of memory out of 5000000
+ 15530 multiletter control sequences out of 15000+600000
  14298 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,13n,46p,899b,1654s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -728,7 +742,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti10.pfb>
-Output written on chapter4.pdf (18 pages, 1110099 bytes).
+Output written on chapter4.pdf (18 pages, 1110104 bytes).
 PDF statistics:
  779 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams
