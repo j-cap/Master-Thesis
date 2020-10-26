@@ -14,7 +14,11 @@
 \usepackage{varwidth}% http://ctan.org/pkg/varwidth
 \usepackage{csvsimple} % automatic table generation from csv files
 \usepackage{comment}
-\usepackage[style=draft, backend=bibtex]{biblatex}
+\usepackage[style=ieee]{biblatex}
+\bibliography{../bibliography}
+%\addbibresource{../bibliography.bib}
+%\bibliography{../bibliography.bib}
+%\usepackage[numbers]{natbib}
 
 \input{../AIT_report_macros}
 
@@ -23,25 +27,23 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
-\addbibresource{../bibliography.bib}
-
 \title{Chapter 2 \& 3}
 \author{Weber Jakob}
 
 \begin{document}
-\maketitle
 
+\maketitle
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Fundamentals}
+\chapter{Fundamentals} \label{chap:fundamentals}
 
 \section{Linear Models} \label{sec:LinModel}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definition and Model Assumptions}  \label{subsec:LinModelDefAndAssump}
 
-Given the set of data points $\{x^{(i)}_1, \dots, x^{(i)}_q; y^{(i)} \}$ for $i = 1, \dots, n$ , we aim to model the relation between the input or predictor variables $\{x_1, \dots, x_p\}$ and the output $y$ with a function $y = f(x_1, \dots, x_p)$ and an additive noise term $\epsilon$. Thus we obtain the model formulation for the data point $i$ as
+Given the set of data points $\{x^{(i)}_1, \dots, x^{(i)}_q; y^{(i)} \}, \ i = 1, \dots, n$ , we aim to model the relation between the input or predictor variables $\{x_1, \dots, x_q\}$ and the output $y$ with a function $y = f(x_1, \dots, x_q)$ and an additive noise term $\epsilon$. Thus we obtain the model formulation for the data point $i$ as
 
 \begin{align} \label{eq:lin_mod_single_data_point}
 	y^{(i)} = f(x^{(i)}_{1}, \dots, x^{(i)}_{q}) + \epsilon^{(i)}
@@ -71,7 +73,7 @@ The goal is now the estimation of the unknown function $f$. For this, several as
 	This is reasonable for many practical applications, even though it appears quite restrictive. 
 \end{enumerate}
 
-Commonly, the linear model in (\ref{eq:lin_mod_single_data_point}) is represented in vector notation given by
+Commonly, the linear model in (\ref{eq:linCombOfInputs}) is represented in vector notation given by
 
 \begin{align} \label{eq:lin_mod_sp_vec_notation}
 	 y^{(i)} = f(x^{(i)}_{1}, \dots, x^{(i)}_{q})  = \transpose{\vec{x}} \vec{\beta} + \epsilon^{(i)}
@@ -102,13 +104,13 @@ In addition to the assumptions on the unknown function $f$, the necessary assump
 
 \begin{enumerate}
 	\item \emph{Expectation of the error} \\
-	The errors have a mean of zero, i.e. $\mathbb E[\epsilon_i] = 0$
+	The errors have a mean of zero, i.e. $\mathbb E[\epsilon^{(i)}] = 0$
 
 	\item \emph{Variances and correlation structure of the errors} \\
-	We assume constant error variance with $\mathbb Var[\epsilon_i] = \sigma^2$. This property is called homoscedasticity. Additionally, we assume that the errors are uncorrelated, which means $\mathbb Cov[\epsilon_i, \epsilon_j] = 0$ for $i \ne j$. These assumptions combined lead to the covariance matrix $\mathbb Cov[\epsilon] = \mathbb E[\vec{\epsilon} \transpose{\vec{\epsilon}}] = \sigma^2 \vec{I}$.
+	We assume constant error variance with $\mathbb Var[\epsilon^{(i)}] = \sigma^2$. This property is called homoscedasticity. Additionally, we assume that the errors are uncorrelated, which means $\mathbb Cov[\epsilon^{(i)}, \epsilon^{(i)}] = 0$ for $i \ne j$. These assumptions combined lead to the covariance matrix $\mathbb Cov[\epsilon] = \mathbb E[\vec{\epsilon} \transpose{\vec{\epsilon}}] = \sigma^2 \vec{I}$.
 
 	\item \emph{Gaussian errors} \\
-	The errors follow at least approximately a normal distribution. With assumptions 1 and 2, we obtain that $\epsilon_i = \mathcal N(0, \sigma^2)$ 
+	The errors follow at least approximately a normal distribution. With assumptions 1 and 2, we obtain that $\epsilon^{(i)} = \mathcal N(0, \sigma^2)$ 
 \end{enumerate}
 
 It follows from the assumptions on the model function and on the error term that
@@ -120,10 +122,10 @@ It follows from the assumptions on the model function and on the error term that
 	\mathbb V[\vec{y}] = \mathbb V[\vec{X} \vec{\beta} + \vec{\epsilon}] = \mathbb{E}\big[(\vec{X} \vec{\beta} + \vec{\epsilon} - \mathbb{E}[\vec{y}])^2\big] = \mathbb V[\vec{\epsilon}] = \sigma^2 \vec{I} \\
 \end{equation}
 \begin{equation}
-	\mathbb Cov[y_i, y_j] = \mathbb Cov[\epsilon_i, \epsilon_j] = 0, 
+	\mathbb Cov[y^{(i)}, y^{(i)}] = \mathbb Cov[\epsilon^{(i)}, \epsilon^{(i)}] = 0, 
 \end{equation}
 	
-for the mean $\mathbb{E}$ and variance $\mathbb{V}$ of $\vec{y}$, and the covariance $\mathbb Cov$ between $y_i$ and $y_j$. With the additionally assumed Gaussian errors, we obtain
+for the mean $\mathbb{E}$ and variance $\mathbb{V}$ of $\vec{y}$, and the covariance $\mathbb Cov$ between $y^{(i)}$ and $y^{(i)}$. With the additionally assumed Gaussian errors, we obtain
 
 \begin{equation} \label{eq:linModelAsDistribution}
 	\vec{y} \sim \mathcal N(\vec{X} \vec{\beta}, \sigma^2 \vec{I}).
@@ -251,7 +253,7 @@ This results in
 	\vec{\hat{y}} = \vec{X}(\transpose{\vec{X}} \vec{X})^{-1} \transpose{\vec{X}} \vec{y} = \vec{H} \vec{y},
 \end{equation}
 
-with the matrix $\vec{X} \in \mathbb{R}^{n \times n}$, which is called \emph{hat matrix}. Using the \emph{hat matrix}, we can express the residuals $\hat \epsilon_i = y_i - \hat y_i$ in matrix notation as
+with the matrix $\vec{X} \in \mathbb{R}^{n \times n}$, which is called \emph{hat matrix}. Using the \emph{hat matrix}, we can express the residuals $\hat \epsilon^{(i)} = y^{(i)} - \hat y^{(i)}$ in matrix notation as
 
 \begin{align} \label{eq:residal_with_hat_matrix}
 	\hat{\vec{\epsilon}} = \vec{y} - \vec{y} = (\vec{I} - \vec{H}) \vec{y}.
@@ -264,7 +266,7 @@ The \emph{hat matrix} $\vec{H}$ has the following useful properties:
 	\item $\vec{H}$ is idempotent, i.e. $\vec{H}^2 = \vec{H}$.
 	\item The rank of $\vec{H}$ is equal to its trace.
 	\item $\frac{1}{n} \le h_{ii} \le 1$, if all data points are different, i.e. $x^{(i)} \ne x^{(j)}$ for $i \ne j$.
-	\item The matrix $(\vec{I} - \vec{H})$ is also idempotent and symmetric, with $rk(\vec{I} - \vec{H}) = n - q$.
+	\item The matrix $(\vec{I} - \vec{H})$ is also idempotent and symmetric, with $rk(\vec{I} - \vec{H}) = n - p$.
 \end{itemize}
 
 The hat matrix is used in model selection techniques like cross-validation as well as in outlier detection and in diagnostic plots for linear models.
@@ -272,7 +274,7 @@ The hat matrix is used in model selection techniques like cross-validation as we
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Model Selection}
 
-Linear models are a widely used technique for regression problems on large data sets $n \gg 0$, since the solution of the \emph{normal equations} in (\ref{eq:NormalEquations}) can be computed efficiently even for large $n$. If these data sets also contain a large number of input variables $q \gg 0$, the situation becomes more complicated because possible interaction effects or correlation of input variables may occur. This interaction terms limits the, otherwise perfect, interpretability of the linear model. 
+Linear models are a widely used technique for regression problems on large data sets $n \gg 0$, since the solution of the \emph{normal equations} in (\ref{eq:NormalEquations}) can be computed efficiently even for large $n$. If these data sets also contain a large number of input variables $q \gg 0$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. This interaction terms limits the, otherwise perfect, interpretability of the linear model. 
 
 Therefore we need techniques and criteria to select the \emph{best possible model} out of the variety of different models for some given data set. Model choice criteria, see Chapter \ref{subsubsec:MCC}, are used to compare different models while model selection techniques, see Chapter \ref{subsubsec:MST}, give an algorithmic approach to model creation. Further, we can influence the estimated coefficients $\vec{\beta}$ directly via regularization, see Chapter \ref{subsubsec:Regularization}. 
 
@@ -283,19 +285,19 @@ One way of comparing various models, i.e models using different sets of input va
 
 \subsubsubsection{Sum of expected Squared Prediction Error}
 
-We assume given data $\{ x^{(i)}_{1}, \dots, x^{(i)}_{q}; y_i\}$ for $i =1, \dots, n$. Further, we assume that the expectation $\mathbb{E}[y_i] = \mu_i$ and the variance $\mathbb{V}ar[y_i] = \sigma^2$. Using the $q$ variables $x_j$ we can generate the corresponding design matrix $\vec{X}$ for the linear model as in (\ref{eq:LinearModel}), i.e.
+We assume given data $\{ x^{(i)}_{1}, \dots, x^{(i)}_{q}; y_i\}, \ i =1, \dots, n$. Further, we assume that the expectation $\mathbb{E}[y^{(i)}] = \mu^{(i)}$ and the variance $\mathbb{V}ar[y^{(i)}] = \sigma^2$. Using the $q$ variables $x_j$ we can generate the corresponding design matrix $\vec{X}$ for the linear model as in (\ref{eq:LinearModel}), i.e.
 
 \begin{align}
 	\vec{y} = \vec{X} \vec{\beta}
 \end{align}
 
-with $\vec{y} \in \mathbb{R}^n$, $\vec{X} \in \mathbb{R}^{n \times p}$ and $\vec{\beta} \in \mathbb{R}^p$. The least squares estimator for $\vec{\beta}$, cf. (\ref{eq:LS_estimator}) is then given by
+with $\vec{y} \in \mathbb{R}^n$, $\vec{X} \in \mathbb{R}^{n \times p}$ and $\vec{\beta} \in \mathbb{R}^p$. The least squares estimator for $\vec{\beta}$, cf. (\ref{eq:LS_estimator}), is then given by
 
 \begin{align*}
-	\vec{\hat{\beta}}_{LS} = (\transpose{\vec{X}} \vec{X})^{-1} \transpose{\vec{X}} \vec{y}.
+	\hat{\vec{\beta}}_{LS} = (\transpose{\vec{X}} \vec{X})^{-1} \transpose{\vec{X}} \vec{y}.
 \end{align*}
 
-The data $\vec{y}$ can be interpreted as random variable. We can then define an estimator $\hat{\vec{y}}$ for the vector $\vec{\mu}$ of expectations $\mu_i = \mathbb{E}[y_i]$ by
+The data $\vec{y}$ can be interpreted as random variable. We can then define an estimator $\hat{\vec{y}}$ for the vector $\vec{\mu}$ of expectations $\mu^{(i)} = \mathbb{E}[y^{(i)}]$ by
 
 \begin{align} 
 	\vec{\hat{y}} = \vec{X}  \hat{\vec{\beta}}.
@@ -353,7 +355,7 @@ The sum of expected squared prediction error acts as an example of the bias-vari
 
 %[https://en.wikipedia.org/wiki/Bias–variance_tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
 
-In practice, the true value for the SPSE is not accessible since $\mu_i$ and $\sigma^2$ are unknown. Therefore, we need to estimate the SPSE. This can be done by using one of the following two strategies:
+In practice, the true value for the SPSE is not accessible since $\mu^{(i)}$ and $\sigma^2$ are unknown. Therefore, we need to estimate the SPSE. This can be done by using one of the following two strategies:
 
 \begin{enumerate}
 
@@ -397,7 +399,7 @@ The corrected coefficient of determination is a standard output parameter in man
 Mallow's complexity parameter is based directly on the ideas specified for the estimation of the SPSE and is given by
 
 \begin{align}
-	\text C_p = \frac{\sum_{i=1}^n (y^{(i)} - \mathbb{E}[y{(i)}])^2}{\hat \sigma^2} - n + 2 \vert M \vert,
+	\text C_p = \frac{\sum_{i=1}^n (y^{(i)} - \mathbb{E}[y^{(i)}])^2}{\hat \sigma^2} - n + 2 \vert M \vert,
 \end{align}
 
 where $M$ is again the number of used parameters. Lower values of Mallow's $\text C_p$ correspond to a better model fit. \cite{fahrmeir2013regression}
@@ -418,7 +420,7 @@ The log-likelihood for a linear model assuming Gaussian errors is given by
 	-2l(\hat{\vec{\beta}}_{ML}, \hat \sigma_{ML}^2) = n \log(\hat \sigma_{ML}^2) + n.
 \end{align}
 
-Therefore, neglecting the constant value $n$, the AIC evaluates to
+Therefore, neglecting the constant $n$, the AIC evaluates to
 
 \begin{align}
 	\text{AIC} = n \log(\hat \sigma^2_{ML}) + 2(\vert M \vert + 1).
@@ -442,7 +444,7 @@ Lower values of BIC correspond to a better model fit. \cite{fahrmeir2013regressi
 
 \subsubsubsection{Cross-validation} \label{subsubsubsec:Cross-validation}
 
-The basic idea of cross-validations is to split the existing data set into multiple smaller ones and to fit one model to each of these smaller data sets. These models are then evaluated by the calculation of the SPSE on the data which it was not trained on. The model which has the smallest error is then chosen as final estimate. 
+The basic idea of cross-validations is to split the existing data set into multiple smaller ones and to fit one model to each of these smaller data sets. These models are then evaluated by the calculation of the SPSE on the data which it was not trained on. The model which possesses the smallest error is then chosen as final estimate. 
 
 A special case of cross-validation is the "leave-one-out" cross-validation, where all but one data point are used for training and the model is then evaluated on this held-out data point. This seems to be quite expensive, since one needs to estimate one model per data point. 
 
@@ -491,7 +493,7 @@ In step-wise selection, forward and backward selection are combined to enable th
 Model selection can also be achieved using regularization techniques by directly influencing the coefficients $\vec{\beta}$ which need to be estimated given some data. In general, regularization restricts the parameter space by adding some penalty term depending on the complexity of the model to the least squares objective function in (\ref{eq:MethodOfLS}). This leads to the penalized least squares criterion
 
 \begin{align} \label{eq:PLS_crit}
-	\text{PLS}(\vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta}\rVert^2 + \lambda \text{pen}(\vec{\beta})
+	\text{PLS}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta}\rVert^2 + \lambda \text{pen}(\vec{\beta})
 \end{align}
 
 where $\lambda$ is the so-called smoothing parameter and $\text{pen}(\vec{\beta})$ is the penalty term describing the regularization technique. The two most commonly used forms of regularization are Ridge regression and Lasso regression. Both are explained in detail in the following.
@@ -501,16 +503,16 @@ where $\lambda$ is the so-called smoothing parameter and $\text{pen}(\vec{\beta}
 In Ridge regression, the penalty term in the penalized least squares criterion in (\ref{eq:PLS_crit}) is given by the squared $L_2$-norm of the coefficient vector $\vec{\beta}$. The objective function to minimize is therefore given by
 
 \begin{align}
-	\text{PLS}_{Ridge}(\vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert^2 + \lambda \transpose{\vec{\beta}} \vec{\beta}
+	\text{PLS}_{Ridge}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert^2 + \lambda \transpose{\vec{\beta}} \vec{\beta}
 \end{align}
 
 with the closed form solution 
 
 \begin{align}
-	\hat{\vec{\beta}}_{PLS,r} = \arg \min_{\vec{\beta}} \text{PLS}_{Ridge}(\vec{\beta}) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{I})^{-1} \transpose{\vec{X}}\vec{y},
+	\hat{\vec{\beta}}_{PLS,r} = \arg \min_{\vec{\beta}} \text{PLS}_{Ridge}(\vec{y}, \vec{\beta}) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{I})^{-1} \transpose{\vec{X}}\vec{y},
 \end{align}
 
-where $\vec{I} \in \mathbb R^{p \times p}$ is the identity matrix. The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{PLS,r}$ compared to the un-penalized estimate $\hat{\vec{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will be converge towards, but never reach, zero. 
+where $\vec{I} \in \mathbb R^{p \times p}$ is the identity matrix. The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{PLS,r}$ compared to the un-penalized estimate $\hat{\vec{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will converge towards, but never reach, zero. 
 
 Ridge regression is commonly used when the input dimension $p$ is high and also known under then name of Tikhonov regularization \cite{hoerl1970ridge}
 
@@ -519,13 +521,13 @@ Ridge regression is commonly used when the input dimension $p$ is high and also 
 One drawback of Ridge regression is that it does not produce sparse solutions, i.e. all estimated coefficients will be different from zero. Lasso regression tackles this problem by the use of the $L_1$-norm as penalty term. The penalized least squares objective function is then given by
 
 \begin{align}
-	\text{PLS}_{Lasso}(\vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert + \lambda \sum_{i=1}^k\vert \beta_i \vert,
+	\text{PLS}_{Lasso}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert + \lambda \sum_{i=1}^k\vert \beta_i \vert,
 \end{align}
 
 where $\lambda$ again plays the role of a smoothing parameter. Therefore, we need to solve the optimization problem
 
 \begin{align} \label{eq:Lasso_OP}
-	\hat{\vec{\beta}}_{PLS,l} = \arg \min_{\vec{\beta}} \text{PLS}_{Lasso}(\vec{\beta}).
+	\hat{\vec{\beta}}_{PLS,l} = \arg \min_{\vec{\beta}} \text{PLS}_{Lasso}(\vec{y}, \vec{\beta}).
 \end{align}
 
 No closed form solution for the problem given in (\ref{eq:Lasso_OP}) is available. The Lasso estimates $\hat{\vec{\beta}}_{PLS,l}$ are calculated using either quadratic programming techniques, given in \cite{tibshirani1996lasso}, or least angle regression, given in \cite{efron2004leastangleregression}. \\
@@ -557,7 +559,7 @@ Figure \ref{fig:lin_and_quad_spline} shows an example of a B-spline of degree $m
 
 \begin{figure}[H] 
 	\centering
-	\includegraphics[width=\columnwidth]{../thesisplots/linear_and_quadratic_spline.pdf}
+	\includegraphics[width=0.8\columnwidth]{../thesisplots/linear_and_quadratic_spline.pdf}
 	\caption{Linear ($m=1$) and quadratic ($m=2$) spline}
 	\label{fig:lin_and_quad_spline}
 \end{figure}
@@ -587,7 +589,7 @@ using the B-spline basis functions $B_i^m(x)$ of appropriate degree $m$ and the 
 				B_1^m(x^{(1)}) & \dots & B_k^m(x^{(1)})  \\
 				\vdots         &       & \vdots 		 \\
 				B_1^m(x^{(n)}) & \dots & B_k^m(x^{(n)})  \\
-	\end{pmatrix} \ \mathbb{R}^{n \times k}.
+	\end{pmatrix} \in \mathbb{R}^{n \times k}.
 \end{align}
 
 The linear combination of cubic B-splines gives a smooth function $f(x)$, i.e. first and second order derivatives are continuous. A further advantage of B-splines is that once the basis in (\ref{eq:bspline-basis-matrix}) is given, the coefficients can be estimated using the Least Squares algorithm given in Chapter \ref{subsubsubsec:Method-of-LS}. 
@@ -617,7 +619,7 @@ B-splines of appropriate order $m > 2$ produce smooths curves, where the smoothn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{P-Splines} \label{subsec:p-splines}
 
-P-splines use the concepts of regularization to produce smooth function estimations. In our context, a function is said to be smooth if its $2^{nd}$ derivative is continuous and does not vary much. They where introduced by Eilers and Marx in \cite{eilers1996flexible} to overcome the problem stated above. Eilers and Marx simplified and generalized the idea of \cite{osullivan1986statistical}, who introduced a smoothness penalty based on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knot placement and a penalty based on finite differences of order $d$ of the coefficients of adjacent B-splines as approximation of the derivative.
+P-splines use the concepts of regularization to produce smooth function estimations. In our context, a function is said to be smooth if its $2^{nd}$ derivative is continuous and does not vary much. They where introduced by Eilers and Marx in \cite{eilers1996flexible} to overcome the problem stated above. Eilers and Marx simplified and generalized the idea of Osullivan in \cite{osullivan1986penalties}, who introduced a smoothness penalty based on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knot placement and a penalty based on finite differences of order $d$ of the coefficients of adjacent B-splines as approximation of the derivative.
 
 The difference operator  $\Delta^d$ of order $d$ for equidistant knot placement of B-splines is defined by
 
@@ -666,7 +668,7 @@ with the denominator given by
 	\delta_{j, j-1} = \operatorname*{arg\, max}_x B_j^m(x) - \operatorname*{arg\, max}_x B_{j-1}^m(x)
 \end{align}
 
-for the B-spline basis function s$B_j^m(x)$ and $B_{j-1}^m(x)$ of degree $m$. 
+for the B-spline basis functions $B_j^m(x)$ and $B_{j-1}^m(x)$ of degree $m$. 
 The second order difference operator is further defined using the first order difference operator $\Delta^1$ as 
 
 \begin{align} \label{eq:d2-operator-nonequidistant}
@@ -720,7 +722,7 @@ The main advantage of P-splines is their easy set up. This advantage is diminish
 
 Tensor-product splines can be seen as the multi-dimensional extension of uni-variate B-splines. We start with a B-spline basis, cf. (\ref{eq:bspline-basis-matrix}), for each dimension and construct the tensor-product spline from these. 
 
-We examine an example for two input dimensions $x_1$ and $x_2$. Tensor-product splines can in general be constructed for arbitrary dimensions using the approach given below. Assume that we have B-spline bases available, i.e. $\vec{A} \in \mathbb{R}^{n \times k}$ and $\vec{B} \in \mathbb{R}^{n \times k}$ using the same number of splines $k$ for both bases, for representing the functions $f_1(x_1)$ and $f_2(x_2)$, cf. (\ref{eq:basis_function_approach}), given by
+We examine an example for two input dimensions $x_1$ and $x_2$. Tensor-product splines can in general be constructed for arbitrary dimensions using the approach given below. Assume that we have B-spline bases available, i.e. $\vec{A} \in \mathbb{R}^{n \times k}$ and $\vec{B} \in \mathbb{R}^{n \times k}$ using the same number of splines $k$ for both bases and degree $m=3$, for representing the functions $f_1(x_1)$ and $f_2(x_2)$, cf. (\ref{eq:bspline-bf-approach}), given by
 
 \begin{align}
 	f_1(x_1) &= \sum_{i=1}^{k} A_i^m(x_1) \alpha_i  = \transpose{\vec{a}} \vec{\alpha}, \\
@@ -739,13 +741,13 @@ which leads to
 	f_{1,2}(x_1, x_2) = \sum_{i=1}^{k} \sum_{j=1}^{k} A_i^m(x_1) B_j^m(x_2) \beta_{ij} .
 \end{align}
 
-We can therefore combine the individual basis matrices to generated a new basis matrix for the tensor-product spline. For any set of data $\{x^{(i)}_{1}, x^{(i)}_{2} \}, \ i = 1, \dots, n$, the relationship between the model matrix $\vec{X}$ of the tensor-product spline and the marginal basis matrices $\vec{A}$ and $\vec{B}$, cf. (\ref{eq:bspline-basis-matrix}), is given by 
+We can therefore combine the individual basis matrices to generated a new basis matrix for the tensor-product spline. For any set of data $\{x^{(i)}_{1}, x^{(i)}_{2} \}, \ i = 1, \dots, n$, the relationship between the basis matrix $\vec{X}$ of the tensor-product spline and the marginal basis matrices $\vec{A}$ and $\vec{B}$, cf. (\ref{eq:bspline-basis-matrix}), is given by 
 
 \begin{align}
 	\vec{X} = \vec{A} \otimes \vec{B}
 \end{align}
 
-where $\otimes$ indicates the use of the Kronecker product, $\vec{X} \in \mathbb{R}^{n \times k^2}$ denotes the tensor-product spline basis, $\vec{A} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $x_1$ and $\vec{B} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $x_2$. The model matrix for the tensor-product spline is therefore given by the Kronecker product of the marginal basis matrices. \cite{wood2006GAM}  
+where $\otimes$ indicates the use of the Kronecker product, $\vec{X} \in \mathbb{R}^{n \times k^2}$ denotes the tensor-product spline basis, $\vec{A} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $x_1$ and $\vec{B} \in \mathbb{R}^{n \times k}$ denotes the B-spline basis for dimension $x_2$. The basis matrix for the tensor-product spline is therefore given by the Kronecker product of the marginal basis matrices. \cite{wood2017generalized}  
 
 We can then model a two dimensional function $f(x_1, x_2)$ using data $\{x_1^{(i)}, x_2^{(i)}; y^{(i)} \}, \ i=i, \dots, n$ as in (\ref{eq:bspline-bf-approach}) as
 
@@ -772,7 +774,7 @@ The adjacent coefficients to penalized for the coefficient $\gamma_{i,j}$, as in
 	\transpose{\vec{\gamma}} \transpose{(\vec{I}^2 \otimes \vec{D}_d^1)} (\vec{I}^2 \otimes \vec{D}_d^1) \vec{\gamma} = \sum_{j=1}^k \sum_{i=1}^k (\gamma_{i,j} - \gamma_{i-1,j})^2 
 \end{align}
 
-using the identity matrix $\vec{I}^2 \in \mathbb{R}^{k \times k}$ of dimension $x_2$ and the difference matrix $\vec{D}_d^1$, cf. (\ref{eq:d1-difference-matrix}) and (\ref{eq:d2-difference-matrix}) for dimension $x_1$. The column wise differences are obtained analogously using the identity matrix $\vec{I}^1 \in \mathbb{R}^{k \times k}$ of dimension $x_1$ and the difference matrix $\vec{D}_d^2$. Summing up all column-wise and row-wise differences and using the properties of the Kronecker-product yields the penalty term $\mathcal{J}_s(\vec{\gamma; d})$ as
+using the identity matrix $\vec{I}^2 \in \mathbb{R}^{k \times k}$ of dimension $x_2$ and the difference matrix $\vec{D}_d^1$, cf. (\ref{eq:d1-difference-matrix}) and (\ref{eq:d2-difference-matrix}) for dimension $x_1$. The column wise differences are obtained analogously using the identity matrix $\vec{I}^1 \in \mathbb{R}^{k \times k}$ of dimension $x_1$ and the difference matrix $\vec{D}_d^2$. Summing up all column-wise and row-wise differences and using the properties of the Kronecker-product yields the penalty term $\mathcal{J}_s(\vec{\gamma}; d)$ as
 
 \begin{align} \label{eq:tps-penalty-term}
 	\mathcal{J}_s(\vec{\gamma}; d) = \transpose{\vec{\gamma}} \Big[ \vec{I}^2 \otimes \vec{K}_d^1 + \vec{K}_d^2 \otimes \vec{I}^1\Big] \vec{\gamma}
@@ -792,13 +794,13 @@ We have again some given data $\{x^{(i)}_{1}, \dots, x^{(i)}_{q}; y^i\}, \ i = 1
 To circumvent this problem, we now assume the restrictive structure of additive models, given by
 
 \begin{align} \label{eq:addRegBaseEquation}
-	f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q).
+	f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q) + \epsilon.
 \end{align}
 
-Hence, we use one function $f_i(x_i)$ per input dimension and assume an additive structure. \cite{fahrmeir2013regression} Using the concepts introduced in Chapter \ref{sec:Splines}, i.e. using B-splines to estimate the function $f_i(x_i)$, we obtain for each function a linear model
+Hence, we use one function $f_i(x_i)$ per input dimension. \cite{fahrmeir2013regression} Using the concepts introduced in Chapter \ref{sec:Splines}, i.e. using B-splines to estimate the function $f_i(x_i)$, we obtain for each function a linear model
 
 \begin{align} \label{eq:addRegBaseEquation-as-linModel}
-	f_i(\vec{x}_i) = \vec{X}_{s_i} \vec{beta}_{s_i}
+	f_i(\vec{x}_i) = \vec{X}_{s_i} \vec{\beta}_{s_i}
 \end{align}
 
 where $\vec{X}_{s_i} \in \mathbb R^{n \times k_i}$ is the B-spline basis using $k_i$ splines for the smooth function $f_i(x_i)$ of input dimension $i$, $\vec{x}_i = \transpose{(x_i^{(1)}, \dots, x_i^{(n)})}$ is the data vector of input dimension $i$ and $\vec{\beta}_{s_i} \in \mathbb R^{k_i}$ are the coefficients to be estimated. We can also use the already described penalization approaches given in Chapter \ref{subsec:p-splines}. 
@@ -808,24 +810,18 @@ The model given in (\ref{eq:addRegBaseEquation-as-linModel}) does not contain in
 We can then write the structured additive model in matrix notation as 
 
 \begin{align} \label{eq:STAR}
-	\vec{y} = \vec{X}_{s_1} \vec{\beta}_{s_1} + \dots + \vec{X}_{s_q} \vec{\beta}_{s_q} + \sum_{i=1}^{q} \sum_{j>i}^{q-1} \vec{X}_{t_{i, j}} \vec{\beta}_{t_{i, j}} + \vec{\epsilon}
+	\vec{y} = \vec{X}_{s_1} \vec{\beta}_{s_1} + \dots + \vec{X}_{s_q} \vec{\beta}_{s_q} + \sum_{j=1}^{q-1} \sum_{l>j}^{q} \vec{X}_{t_{j, l}} \vec{\beta}_{t_{j, l}} + \vec{\epsilon}
 \end{align}
 
-using the error term $\vec{\epsilon} \in \mathbb{R}^n$, the tensor-product spline bases $\vec{X}_{t_{i,j}} \in \mathbb{R}^{n \times k_i k_j}$ and the tensor-product spline bases coefficients $\vec{\beta}_{t_{i,j}}$. This can be solved using ordinary least squares. If we choose to include penalization, we can solve this using penalized least squares. 
+using the error term $\vec{\epsilon} \in \mathbb{R}^n$, the tensor-product spline bases $\vec{X}_{t_{j,l}} \in \mathbb{R}^{n \times k_j k_l}$ and the tensor-product spline basis coefficients $\vec{\beta}_{t_{j, l}}$. This can be solved using ordinary least squares. If we choose to include penalization, we can solve this using penalized least squares. 
 
-Using the notation in (\ref{eq:STAR}) the theoretical framework of linear models can be applied to structured additive regression models, since (\ref{eq:STAR}) can be formulated as large linear model using the concept of block diagonal matrices as
+Using the notation in (\ref{eq:STAR}) the theoretical framework of linear models can be applied to structured additive regression models, since (\ref{eq:STAR}) can be formulated as large linear model as
 
 \begin{align} \label{eq:STAR-block-diag}
 	\vec{y} = \vec{X} \vec{\beta} = 
 			\begin{pmatrix}
-				\vec{X}_{s_1} &     \\
-				 		      & \vec{X}_{s_2} & \\
-				 		      &               & \ddots & \\
-				 		      &               &        & \vec{X}_{s_q} & \\
-				 		      &               &        &               & \vec{X}_{t_{1,2}} & \\ 
-				 		      &               &        &               &                   & \ddots & \\
-				 		      & 			  & 	   & 			   & 				   & 		& \vec{X}_{t_{q, q-1}}    
-			\end{pmatrix} \begin{pmatrix} \vec{\beta}_{s_1} \\ \vec{\beta}_{s_2} \\ \vdots \\ \vec{\beta}_{s_q} \\ \vec{\beta}_{t_{1,2}} \\ \vdots \\ \vec{\beta}_{t_{q, q-1}} \\
+				\vec{X}_{s_1} &   \vec{X}_{s_2} & \dots & \vec{X}_{s_q} & \vec{X}_{t_{1,2}} & \dots & \vec{X}_{t_{q-1, q}}    
+			\end{pmatrix} \begin{pmatrix} \vec{\beta}_{s_1} \\ \vec{\beta}_{s_2} \\ \vdots \\ \vec{\beta}_{s_q} \\ \vec{\beta}_{t_{1,2}} \\ \vdots \\ \vec{\beta}_{t_{q-1, q}} \\
 		\end{pmatrix}
 \end{align}
 
@@ -833,9 +829,9 @@ with $\vec{X}$ as large design matrix and $\vec{\beta}$ as combined coefficient 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Solution Approach}
+\chapter{Solution Approach} \label{chap:solution-approach}
 
-We are now going to use the theory discussed in Chapter 2 to estimate functions using available data and a priori domain knowledge. An overview of the different problems considered in this work is given in Table \ref{tab:problem_overview}. First, we are using B-splines, see Chapter \ref{subsec:b-splines}, as basis functions for the estimation of the unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\} \ i = 1, \dots, n$.  Next, we use the concept of P-splines, see \ref{subsec:p-splines},  introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one and two dimensional functions. \cite{hofner2011monotonicity} 
+We are now going to use the theory discussed in Chapter \ref{chap:fundamentals} to estimate functions using available data and a priori domain knowledge. An overview of the different problems considered in this work is given in Table \ref{tab:problem_overview}. First, we are using B-splines, see Chapter \ref{subsec:b-splines}, as basis functions for the estimation of the unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\} \ i = 1, \dots, n$.  Next, we use the concept of P-splines, see \ref{subsec:p-splines},  introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one and two dimensional functions. \cite{hofner2011monotonicity} 
 
 \begin{table}[H]
 	\centering
@@ -910,7 +906,7 @@ The least squares objective function to be minimized using the complete data is 
 	Q_1(\vec{y}, \vec{\beta}) = \lVert \vec{y} - f(\vec{x}) \rVert^2 = \lVert \vec{y} - \vec{X}\vec{\beta} \rVert^2 
 \end{align}	
 
-The coefficients are determined by minimizing the objective function $Q_1$ given in (\ref{eq:OF_1}) with respect to $\vec{\beta}$, i.e.
+The coefficients are determined ive function $Q_1$ given in (\ref{eq:OF_1}) with respect to $\vec{\beta}$, i.e.
 
 \begin{align}\label{eq:optimization_problem_1}
 	\hat{\vec{\beta}}_{LS} = \arg \min_{\vec{\beta}} Q_1(\vec{y}, \vec{\beta}).
@@ -1002,7 +998,7 @@ with the mapping matrix $\vec{D}_c$ and the diagonal weighting matrix $\vec{V} :
 By minimizing the objective function (\ref{eq:OF_3}), i.e.
 
 \begin{align}\label{eq:optimization_problem_3}
-	\hat{\vec{\beta}}_{PLS, c} = \arg \min_{\vec{\beta}} Q_(\vec{y}, \vec{\beta}),
+	\hat{\vec{\beta}}_{PLS, c} = \arg \min_{\vec{\beta}} Q_6(\vec{y}, \vec{\beta}),
 \end{align}
 
 the constraint penalized least-squares estimate can be given as
@@ -1024,7 +1020,7 @@ Note, (\ref{eq:PLS,c_coef}) is a nonlinear equation because the matrix $\vec{V}$
 The initial estimate $\hat{\vec{\beta}}_{init}$ needed to compute the weighting matrix $\vec{V}$ is given by the least squares estimate $\hat{\vec{\beta}}_{LS}$. Based on the initial estimate $\hat{\vec{\beta}}_{init}$, the weighting matrix $\vec{V}$ and then the constraint least-squares estimate $\hat{\vec{\beta}}_{PLS,c}$ are calculated. The algorithm is performed until no more changes in the weighting matrix $\vec{V}$ appear. This scheme is called the penalized iteratively reweighted least squares and is abbreviated by PIRLS. \cite{hofner2011monotonicity}
 
 
-Figure \ref{fig:incspline} shows an example, where the noisy data shown in Figure \ref{fig:test_func} is approximated by considering the monotonicity constraint. The estimate has to be monotonically increasing in contrast to the data, i.e. $f'(x) \ge 0$.  The smoothing parameter $\lambda_s$ was optimized using cross-validation and set to $\lambda_s=271.9$. The constraint parameter $\lambda_c$ was set to $\lambda_c = 6000$. For both function estimations, i.e. using P-splines vs. using constraint P-splines, the number of used splines $k$ was set to $k=30$. 	
+Figure \ref{fig:incspline} shows an example, where the noisy data shown in Figure \ref{fig:test_func} is approximated by considering the monotonicity constraint. The estimate has to be monotonically increasing in contrast to the data, i.e. $f'(x) \ge 0$.  The smoothing parameter $\lambda_s$ was optimized using cross-validation and set to $\lambda_s=271.9$. The constraint parameter $\lambda_c$ was set to $\lambda_c = 6000$. For both function estimations, i.e. using P-splines (blue curve) vs. using constraint P-splines (red curve), the number of used splines $k$ was set to $k=30$. 	
 
 \begin{figure}[H]
 	\centering
@@ -1035,7 +1031,7 @@ Figure \ref{fig:incspline} shows an example, where the noisy data shown in Figur
 
 The constraint function estimation (red curve in Figure \ref{fig:incspline}), follows the monotonicity constraint far better that the smooth function estimation (blue curve in Figure \ref{fig:incspline}). For $x < 0.15$ and $x > 0.6$, the two fits are nearly identical, since no constraint violation is present. Note, the entries of the weighting matrix $\vec{V}$ in this region are therefore $0$ because the constraint is not active. For $x \in [0.15, 0.6]$ the constraint is active. The red fit produces an almost constant line in this region as an optimal solution for the competing goals of data accuracy, smoothness and constraint fidelity.
 
-This shows, that the incorporation of a priori knowledge in the fitting process using P-splines is in principle possible using an appropriate choice of the mapping matrix $\vec{D}_c$ and the weighting matrix $\vec{V}$ as well as an iterative fitting approach using penalized iteratively reweighted least squares. These matrices are futer discussed in the following chapters.
+This shows, that the incorporation of a priori knowledge in the fitting process using P-splines is in principle possible using an appropriate choice of the mapping matrix $\vec{D}_c$ and the weighting matrix $\vec{V}$ as well as an iterative fitting approach using penalized iteratively reweighted least squares. These matrices are futher discussed in the following chapters.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
@@ -1108,7 +1104,9 @@ Therefore, the penalty term $\mathcal{J}_c(\vec{\beta}; c)$ in (\ref{eq:OF_3}) o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \subsection{Unimodality Constraint}
 
-We assume that there is a peak in the data $\{x^{(i)}, y^{(i)}\}$ and therefore want to constrain the fit to include a peak. The peak constraint is given y the unimodal mapping matrix $D_{unimodal}$ and the peak weighting matrix $V$. A function $f(x)$ is said to be unimodal if for some value $m$, it is monotonically increasing for $x \le m$ and monotonically decreasing for $x \ge m$. The mapping matrix $\vec{D}_{unimodal}$ enforcing unimodal behavior can be constructed using the first order difference operator $\Delta^1$ for equidistant knot placement, cf. (\ref{eq:d1-difference-matrix}), and is given for $k$ splines as 
+We assume that there is a peak in the data $\{x^{(i)}, y^{(i)}\}$ and therefore want to constrain the fit to include a peak. The peak constraint is given by the unimodal mapping matrix $D_{unimodal}$ and the peak weighting matrix $V$. A function $f(x)$ is said to be unimodal if for some value $m$, it is monotonically increasing for $x \le m$ and monotonically decreasing for $x \ge m$. 
+
+The mapping matrix $\vec{D}_{unimodal}$ enforcing unimodal behavior can be constructed using the first order difference operator $\Delta^1$ for equidistant knot placement, cf. (\ref{eq:d1-difference-matrix}), and is given for $k$ splines as 
 
 \begin{align}\label{eq:D_c_unimodal}
 	\vec{D}_{unimodal} = \begin{pmatrix} -1 & 1 \\ 
@@ -1117,7 +1115,7 @@ We assume that there is a peak in the data $\{x^{(i)}, y^{(i)}\}$ and therefore 
 	\end{pmatrix} \in \mathbb{R}^{k-1 \times k}
 \end{align}
 
-The weighting matrix $\vec{V}$ now has a special structure. First, we construct the B-spline basis using the given data as in Chapter \ref{subsec:b-splines}. We then need to find the index $j_{peak}$ of the \emph{peak spline}, which has the maximal value at the peak data point $\max \{f(x^{(j)}) \ \forall \ j\}$, see Figure \ref{fig:peak_spline}. The index $j_{peak}$ is now used as splitting point for the weighting matrix $\vec{V}$. All coefficients $\beta_j$ for $j < j_{peak}$ are constrained to be monotonic increasing, i.e. $\Delta^1 \beta_j \ge 0$ for $j = 1, \dots, j_{peak}-1$, while all coefficients $\beta_j$ for $j > j_{peak}$ are constrained to be monotonic decreasing, i.e. $\Delta^1 \beta_j \le 0$ for $j = j_{peak}+1, \dots, k$. The coefficient $\beta_{j_{peak}}$ stays unconstrained. \cite{eilers2005unimodal} 
+The weighting matrix $\vec{V}$ now has a special structure. First, we construct the B-spline basis using the given data as in Chapter \ref{subsec:b-splines}. We then need to find the index $j_{peak}$ of the \emph{peak spline}, which has the maximal value at the peak data point $\max \{f(x^{(i)}) \ \forall \ i \}$, see Figure \ref{fig:peak_spline}. The index $j_{peak}$ is now used as splitting point for the weighting matrix $\vec{V}$. All coefficients $\beta_j$ for $j < j_{peak}$ are constrained to be monotonic increasing, i.e. $\Delta^1 \beta_j \ge 0$ for $j = 1, \dots, j_{peak}-1$, while all coefficients $\beta_j$ for $j > j_{peak}$ are constrained to be monotonic decreasing, i.e. $\Delta^1 \beta_j \le 0$ for $j = j_{peak}+1, \dots, k$. The coefficient $\beta_{j_{peak}}$ stays unconstrained. \cite{eilers2005unimodal} 
 
 \begin{figure}[H]
 	\centering
@@ -1198,12 +1196,24 @@ Jamming the function $f(x)$ by some point $p = \{x^{(jamm)}, y^{(jamm)}\}$ means
 	\end{cases} \text{for} \ j = 1, \dots, n.
 \end{align} 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Penalty Term for Tensor-Product Splines}
+
+To extend the framework of mapping matrices to two dimensions and tensor-product splines, we again use the concept of Kronecker products given in Chapter \ref{subsec:tp-splines}. In principle, every possible pair of one dimensional user-defined constraints can be constructed using the approach in Chapter \ref{subsec:tp-splines}, e.g. unimodality in two dimensions would be obtained using the unimodal mapping matrix depicted above for each dimension. We then also need to include the constraint specific weight matrices $\vec{V}$.
+
+The penalty term for the constraint given by $c_1$ for dimension $1$ and $c_2$ for dimension $2$ then has the form
+
+\begin{align} \label{eq:J-c-tps}
+	\mathcal{J}_c(\vec{\beta}; c) = \transpose{\vec{\beta}} \Big[ \vec{I}^2 \otimes \vec{K}_{c_1} + \vec{K}_{c_2} \otimes \vec{I}^1\Big] \vec{\beta}
+\end{align}
+
+with the respective penalty matrices $\vec{K}_{c_1} = \vec{D}_{c_1}^{\text{T}} \vec{V}_1 \vec{D}_{c_1}$ for dimension $x_1$ and $\vec{K}_{c_2} = \vec{D}_{c_2}^{\text{T}} \vec{V}_2 \vec{D}_{c_2}$ for dimension $x_2$ using the weighting matrices $\vec{V}_1$ and $\vec{V}_2$, the mapping matrices $\vec{D}_{c_1}$ and $\vec{D}_{c_2}$ and the identity matrices $\vec{I}^1$ and $\vec{I}^2$ for the respective dimension.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{n-d Constraint Function Estimation}
 
-The extension from one input to multiple input dimensions uses the concept of additive models given in Chapter \ref{sec:STAR}. Given input data $\{ x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)}\}, \ i = 1, \dots, n$ and $q$ as the number of inputs, the combined model using all available B-splines and tensor-product splines is given as
+The extension from one input to multiple input dimensions uses the concept of additive models given in Chapter \ref{sec:STAR}. Given input data $\{ x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)}\}, \ i = 1, \dots, n$ and $q$ as the number of inputs, the combined model using all available B-splines and tensor-product splines is given, cf. (\ref{eq:STAR}), as
 
 \begin{align} \label{eq:tps_all}
 	y = f(x_1,..., x_q) = \sum_{j=1}^q s_j(x_j) + \sum_{j=1}^{q-1} \sum_{l>j}^q t_{j, l}(x_j, x_l)
@@ -1223,14 +1233,6 @@ The constrained penalized least squares objective function for additive models c
 
 with $\vec{\lambda}_s \in \mathbb{R}^{n_{total}}$ and  $\vec{\lambda}_c \in \mathbb{R}^{n_{total}}$  defined as vectors with one value of smoothness and constraint parameter for each individual estimate, respectively. 
 
-The objective function (\ref{eq:OF_6}) is then optimized, i.e.
-
-\begin{align}\label{eq:optimization_problem_6}
-	\hat{\vec{\beta}}_{PLS,c,nd} = \arg \min_{\vec{\beta}} Q_6(\vec{y}, \vec{\beta}),
-\end{align}
-
-using the penalized iteratively reweighted least squares algorithm to obtain the coefficients $\hat{\vec{\beta}}_{PLS,c,nd}$. 
-
 We now need to specify the three parts of the objective function in (\ref{eq:OF_6}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1242,25 +1244,13 @@ Assuming the use of $k$ splines for the B-spline estimates and $k^2$ splines for
 	k_{total} = qk + \frac{q(q-1)}{2}k^2. 
 \end{align}
 
-Since all B-spline and tensor-product spline models follow a linear model structure, see Chapter \ref{subsec:b-splines} and \ref{subsec:tp-splines}, we can combine them into one large model given by
+Since all B-spline and tensor-product spline models follow a linear model structure, see Chapter \ref{subsec:b-splines} and \ref{subsec:tp-splines}, we can combine them into one large model, cf. (\ref{eq:STAR-block-diag}), given by
 
 \begin{align}\label{eq:tps_lin_mod}
 	\vec{y} = \vec{X} \vec{\beta}
 \end{align}
 
-where the matrix $\vec{X} \in \mathbb{R}^{n \times k_{total}}$ is given by a horizontal concatenation of the individual bases and the combined coefficient vector $\vec{\beta} \in \mathbb{R}^{k_{total}}$ is given by a vertical concatenation of the individual coefficient vectors. The model has then the following form
-
-\begin{align}\label{eq:tps_lin_model_verbose}
-	\vec{y} = \vec{X} \vec{\beta} = 
-	\begin{pmatrix} \vec{X}_{s_1} \dots \vec{X}_{s_p} \ \vec{X}_{t_{1,2}} \dots \vec{X}_{t_{p-1,p}} \end{pmatrix} 
-	\begin{pmatrix} \vec{\beta}_{s_1} \\ 
-		\vdots  \\ 
-		\vec{\beta}_{s_p} \\ 
-		\vec{\beta}_{t_{1,2}} \\ 
-		\vdots \\ 
-		\vec{\beta}_{t_{p-1,p}} \\
-	\end{pmatrix}.
-\end{align}
+where the matrix $\vec{X} \in \mathbb{R}^{n \times k_{total}}$ is given in (\ref{eq:STAR-block-diag}) as horizontal concatenation of the individual bases and the combined coefficient vector $\vec{\beta} \in \mathbb{R}^{k_{total}}$ is given in (\ref{eq:STAR-block-diag}) by a vertical concatenation of the individual coefficient vectors. 
 
 The data term $Q_1(\vec{y}, \vec{\beta})$ in the constrained penalized least squares objective function given in (\ref{eq:OF_6}) can now be evaluated using arbitrary input dimensions. 
 
@@ -1274,14 +1264,14 @@ The combined smoothness penalty term $\vec{\mathcal{J}}_s(\vec{\beta}; \vec{d}) 
 	\begin{pmatrix}
 		\mathcal J_{s_1}(\vec{\beta}_{s_1}; d_{s_1}) \\ 
 		\vdots \\ 
-		\mathcal J_{s_p}(\vec{\beta}_{s_p}; d_{s_p}) \\
+		\mathcal J_{s_q}(\vec{\beta}_{s_q}; d_{s_q}) \\
 		\mathcal J_{t_{1,2}}(\vec{\beta}_{t_{1,2}}; d_{t_{1,2}}) \\
 		\vdots \\
-		\mathcal J_{t_{p-1,p}}(\vec{\beta}_{t_{p-1,p}}; d_{t_{p-1,p}}) \\
+		\mathcal J_{t_{q-1,q}}(\vec{\beta}_{t_{q-1,q}}; d_{t_{q-1,q}}) \\
 	\end{pmatrix}
 \end{align}
 
-with $\mathcal J_e(\vec{\beta}_e; d_e) = \transpose{\vec{\beta}}_e \transpose{\vec{D}}_{d_e} \vec{D}_{d_e} \vec{\beta}_e$ determining the smoothness penalty term using the coefficients $\vec{\beta}_e$ and mapping matrix $\vec{D}_{d_e}$ for each estimate $e \in \{s_1, \dots, s_p, t_{1,2}, \dots, t_{p-1,p}\}$. The vector $\vec{d} \in \mathbb{R}^{n_{total}}$ consists of the orders $d_e$ determining the mapping matrix $\vec{D}_{d_e}$ of the smoothness constraint for each individual estimate $e$. 
+with $\mathcal J_e(\vec{\beta}_e; d_e) = \transpose{\vec{\beta}}_e \transpose{\vec{D}}_{d_e} \vec{D}_{d_e} \vec{\beta}_e$ determining the smoothness penalty term using the coefficients $\vec{\beta}_e$ and mapping matrix $\vec{D}_{d_e}$, see Chapter \ref{subsec:p-splines} and Chapter \ref{subsec:tp-splines}, for each estimate $e \in \{s_1, \dots, s_q, t_{1,2}, \dots, t_{q-1,q}\}$. The vector $\vec{d} \in \mathbb{R}^{n_{total}}$ consists of the orders $d_e$ determining the mapping matrix $\vec{D}_{d_e}$ of the smoothness constraint for each individual estimate $e$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Constraint Term}
@@ -1292,30 +1282,57 @@ The combined constraint penalty term $\vec{\mathcal{J}}_c(\vec{\beta}; \vec{c}) 
 	\begin{pmatrix}
 		\mathcal J_{s_1}(\vec{\beta}_{s_1}; c_{s_1}) \\ 
 		\vdots \\ 
-		\mathcal J_{s_p}(\vec{\beta}_{s_p}; c_{s_p}) \\
+		\mathcal J_{s_q}(\vec{\beta}_{s_q}; c_{s_q}) \\
 		\mathcal J_{t_{1,2}}(\vec{\beta}_{t_{1,2}}; c_{t_{1,2}}) \\
 		\vdots \\
-		\mathcal J_{t_{p-1,p}}(\vec{\beta}_{t_{p-1,p}}; c_{t_{p-1,p}}) \\
+		\mathcal J_{t_{q-1,q}}(\vec{\beta}_{t_{q-1,q}}; c_{t_{q-1,q}}) \\
 	\end{pmatrix}
 \end{align}
 
-with $\mathcal J_e(\vec{\beta}_e; c_e) = \transpose{\vec{\beta}}_e \transpose{\vec{D}}_{c_e} \vec{V}_e \vec{D}_{c_e} \vec{\beta}_e$ determining the constraint penalty term using the coefficients $\vec{\beta}_e$, the mapping matrix $\vec{D}_{c_e}$ and the weighting matrix $\vec{V}_e$ for each estimate $e \in \{s_1, \dots, s_p, t_{1,2}, \dots, t_{p-1,p}\}$. The vector $\vec{c} \in \mathbb{R}^{n_{total}}$ consists of the constraint type $c_e$, e.g. monoton increasing, determining the mapping matrix $\vec{D}_{c_e}$ for each individual estimate $e$. 
+with $\mathcal J_e(\vec{\beta}_e; c_e) = \transpose{\vec{\beta}}_e \transpose{\vec{D}}_{c_e} \vec{V}_{c_e} \vec{D}_{c_e} \vec{\beta}_e$ determining the constraint penalty term using the coefficients $\vec{\beta}_e$, the mapping matrix $\vec{D}_{c_e}$ and the weighting matrix $\vec{V}_e$ for each estimate $e \in \{s_1, \dots, s_q, t_{1,2}, \dots, t_{q-1,q}\}$, see Chapter (\ref{sec:user-defined-constraints}). The vector $\vec{c} \in \mathbb{R}^{n_{total}}$ consists of the constraint type $c_e$, e.g. monoton increasing, determining the mapping matrix $\vec{D}_{c_e}$ for each individual estimate $e$. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Mapping Matrices for Tensor-Product Splines}
+The objective function (\ref{eq:OF_6}) is then optimized, i.e.
 
-To extend the framework of mapping matrices to two dimensions and tensor-product splines, we again use the concept of Kronecker products given in Chapter \ref{subsec:tp-splines}. In principle, every possible pair of one dimensional user-defined constraints can be constructed using the approach in Chapter \ref{subsec:tp-splines}, e.g. unimodality in two dimensions would be obtained using the unimodal penalty matrix depicted above for each dimension. We only need to include the constraint specific weight matrices $\vec{V}$.
-
-The penalty term for the constraint given by $c_1$ for dimension $1$ and $c_2$ for dimension $2$ then has the form
-
-\begin{align} \label{eq:J-c-tps}
-	\mathcal{J}_c(\vec{\beta}; c) = \transpose{\vec{\beta}} \Big[ \vec{I}^2 \otimes \vec{K}_{c_1} + \vec{K}_{c_2} \otimes \vec{I}^1\Big] \vec{\beta}
+\begin{align}\label{eq:optimization_problem_6}
+	\hat{\vec{\beta}}_{PLS,c,nd} = \arg \min_{\vec{\beta}} Q_6(\vec{y}, \vec{\beta}),
 \end{align}
 
-with the respective penalty matrices $\vec{K}_{c_1} = \vec{D}_{c_1}^{\text{T}} \vec{V}_1 \vec{D}_{c_1}$ for dimension $x_1$ and $\vec{K}_{c_2} = \vec{D}_{c_2}^{\text{T}} \vec{V}_2 \vec{D}_{c_2}$ for dimension $x_2$ using the weighting matrices $\vec{V}_1$ and $\vec{V}_2$ and the mapping matrices $\vec{D}_{c_1}$ and $\vec{D}_{c_2}$ for the respective dimension.
+using the penalized iteratively reweighted least squares algorithm, cf. (\ref{eq:PLS,c_coef}), to obtain the coefficients $\hat{\vec{\beta}}_{PLS,c,nd}$ as
 
-The constrained penalized least squares objective function in (\ref{eq:OF_6}) can now be used to estimate the coefficients $\vec{\beta}_{PLS,c, nd}$. \cite{fahrmeir2013regression}
+\begin{align} \label{eq:beta-pls-c-nd-formula}
+	\hat{\vec{\beta}}_{PLS,c,nd} = (\transpose{\vec{X}} \vec{X} +\vec{K}_s + \vec{K}_c)^{-1} \transpose{\vec{X}} \vec{y}. 
+\end{align}
+
+In (\ref{eq:beta-pls-c-nd-formula}), $\vec{X} \in \mathbb{R}^{n \times k_{total}}$ is the combined basis matrix, cf. (\ref{eq:STAR-block-diag}), $\vec{K}_s \in \mathbb{R}^{k_{total} \times k_{total}}$ is the combined smoothness matrix given as
+
+\begin{align} \label{eq:combined-smoothness-matrix}
+	\vec{K}_s = \rotatebox{-90}{$\begin{pmatrix} 
+					\lambda_{s_1} \transpose{\vec{D}_{d_{s_1}}} \vec{D}_{d_{s_1}} & 0 \\
+					 							0 						  &	\ddots & 0 \\
+					 													  &  0 	   & \lambda_{s_q} \transpose{\vec{D}_{d_{s_q}}} \vec{D}_{d_{s_q}} & 0 \\
+					 													  &        &           0										   & \lambda_{s_{1,2}} \transpose{\vec{D}_{d_{t_{1,2}}}} \vec{D}_{d_{t_{1,2}}} & 0 \\
+					 													  &  & &    0 & \ddots & 0 \\
+					 													  &  & &      &   0    & \lambda_{s_{q-1,q}} \transpose{\vec{D}_{d_{t_{q-1,q}}}} \vec{D}_{d_{t_{q-1,q}}}
+			\end{pmatrix}$} 
+\end{align}
+
+and $\vec{K}_c \in \mathbb{R}^{k_{total} \times k_{total}}$ is the combined constraint matrix as 
+
+\begin{align} \label{eq:combined-constraint-matrix}
+	\vec{K}_c = \rotatebox{-90}{$\begin{pmatrix} 
+					\lambda_{c_1} \transpose{\vec{D}_{c_{s_1}}} \vec{V}_{c_{s_1}} \vec{D}_{c_{s_1}} & 0 \\
+													 			0 						& \ddots & 0 \\
+													 			                 		&  0 	 & \lambda_{c_q} \transpose{\vec{D}_{c_{s_q}}} \vec{V}_{c_{s_q}} \vec{D}_{c_{s_q}} & 0 \\
+													 			                 		&        &           0										    & \lambda_{c_{1,2}} \transpose{\vec{D}_{c_{t_{1,2}}}} \vec{V}_{c_{t_{1,2}}} \vec{D}_{c_{t_{1,2}}} & 0 \\
+													 			                 		& &  &   0 & \ddots & 0 \\
+																			         	& &  & 	   &	0   & \lambda_{c_{q-1,q}} \transpose{\vec{D}_{c_{t_{q-1,q}}}} \vec{V}_{c_{t_{q-1,q}}} \vec{D}_{c_{t_{q-1,q}}}
+	\end{pmatrix}$}. 
+\end{align}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{2-d Example} \label{subsec:2d-example}
@@ -1342,8 +1359,12 @@ The fit for this model as well as the individual estimates $s_1(x_1)$ and $s_2(x
 	\label{fig:2d_example}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
 
 \printbibliography
+
 
 \end{document}
