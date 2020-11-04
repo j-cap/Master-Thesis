@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  4 NOV 2020 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  4 NOV 2020 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -692,53 +692,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 533--534
  []
 
 [14]
-<../thesisplots/linear_and_quadratic_spline.pdf, id=65, 442.27734pt x 253.78815
+<../thesisplots/linear_and_quadratic_spline.pdf, id=65, 442.27734pt x 253.33333
 pt>
 File: ../thesisplots/linear_and_quadratic_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/linear_and_quadratic_spline.pdf>
 Package pdftex.def Info: ../thesisplots/linear_and_quadratic_spline.pdf  used o
-n input line 572.
-(pdftex.def)             Requested size: 276.00105pt x 158.38097pt.
+n input line 570.
+(pdftex.def)             Requested size: 276.00105pt x 158.09714pt.
  [15 <../thesisplots/linear_and_quadratic_spline.pdf>] [16] [17]
-Overfull \hbox (47.24551pt too wide) detected at line 708
-[]
- []
-
-[18]
-Overfull \hbox (43.13948pt too wide) in paragraph at lines 762--763
+Overfull \hbox (43.13948pt too wide) in paragraph at lines 670--671
 []\OT1/cmr/m/n/10 We can then model a two di-men-sional func-tion $\OML/cmm/m/i
 t/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 )$ us-ing data 
 $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 
 y[]\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 ;  i \OT1/cmr/m/n/10 =
  []
 
-[19]
+[18] [19]
+Overfull \hbox (46.73093pt too wide) detected at line 802
+[]
+ []
+
+[20]
 
 pdfTeX warning: pdflatex.exe (file ../thesisplots/tps-neighborhood-2cropped.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<../thesisplots/tps-neighborhood-2cropped.pdf, id=105, 150.81946pt x 152.31305p
+<../thesisplots/tps-neighborhood-2cropped.pdf, id=108, 150.81946pt x 152.31305p
 t>
 File: ../thesisplots/tps-neighborhood-2cropped.pdf Graphic file (type pdf)
 <use ../thesisplots/tps-neighborhood-2cropped.pdf>
 Package pdftex.def Info: ../thesisplots/tps-neighborhood-2cropped.pdf  used on 
-input line 776.
+input line 828.
 (pdftex.def)             Requested size: 68.99895pt x 69.68369pt.
-[20 <../thesisplots/tps-neighborhood-2cropped.pdf>]
-Overfull \hbox (4.33957pt too wide) in paragraph at lines 802--803
-\OT1/cmr/m/n/10 model the gen-er-ally non-linear re-la-tion-ship be-tween the i
-n-put data $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; [] ; x[]\OMS/cmsy/m/n/10 g$
-
- []
-
-[21] [22]
+[21 <../thesisplots/tps-neighborhood-2cropped.pdf>] [22]
 Chapter 2.
 
-Overfull \hbox (60.92542pt too wide) in paragraph at lines 848--856
+Overfull \hbox (60.92542pt too wide) in paragraph at lines 857--865
  [][] 
  []
 
 
-Overfull \hbox (34.41942pt too wide) in paragraph at lines 864--875
+Overfull \hbox (34.41942pt too wide) in paragraph at lines 873--884
  [][] 
  []
 
@@ -748,22 +741,22 @@ Overfull \hbox (34.41942pt too wide) in paragraph at lines 864--875
 <../thesisplots/test_func.pdf, id=122, 572.2724pt x 348.8831pt>
 File: ../thesisplots/test_func.pdf Graphic file (type pdf)
 <use ../thesisplots/test_func.pdf>
-Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 889.
+Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 898.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
  [24 <../thesisplots/test_func.pdf>]
 <../thesisplots/smooth_bf.pdf, id=144, 572.2724pt x 348.8831pt>
 File: ../thesisplots/smooth_bf.pdf Graphic file (type pdf)
 <use ../thesisplots/smooth_bf.pdf>
-Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 936.
+Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 945.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
 <../thesisplots/smooth_wiggly_bf.pdf, id=145, 566.34401pt x 348.8831pt>
 File: ../thesisplots/smooth_wiggly_bf.pdf Graphic file (type pdf)
 <use ../thesisplots/smooth_wiggly_bf.pdf>
 Package pdftex.def Info: ../thesisplots/smooth_wiggly_bf.pdf  used on input lin
-e 947.
+e 956.
 (pdftex.def)             Requested size: 345.0pt x 212.53622pt.
  [25 <../thesisplots/smooth_bf.pdf>]
-Overfull \hbox (5.36104pt too wide) in paragraph at lines 956--957
+Overfull \hbox (5.36104pt too wide) in paragraph at lines 965--966
 \OT1/cmr/m/n/10 The sec-ond deriva-tive of the es-ti-mated func-tion $\OML/cmm/
 m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$, i.e. $\OML/cmm/
 m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [][] \OML/cmm
@@ -775,13 +768,13 @@ m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [][] \OML/cmm
 <../thesisplots/p_splines.pdf, id=229, 572.2724pt x 348.8831pt>
 File: ../thesisplots/p_splines.pdf Graphic file (type pdf)
 <use ../thesisplots/p_splines.pdf>
-Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 984.
+Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 993.
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
  [27 <../thesisplots/p_splines.pdf>]
 <../thesisplots/algorithm.pdf, id=261, 614.26657pt x 794.94157pt>
 File: ../thesisplots/algorithm.pdf Graphic file (type pdf)
 <use ../thesisplots/algorithm.pdf>
-Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 1024.
+Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 1033.
 
 (pdftex.def)             Requested size: 207.0021pt x 267.88698pt.
 
@@ -789,7 +782,7 @@ Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 1024.
 <../thesisplots/inc_spline.pdf, id=283, 572.2724pt x 348.8831pt>
 File: ../thesisplots/inc_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/inc_spline.pdf>
-Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 1037
+Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 1046
 .
 (pdftex.def)             Requested size: 345.0pt x 210.33229pt.
  [29 <../thesisplots/inc_spline.pdf>]
@@ -797,11 +790,18 @@ Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 1037
 <../thesisplots/peak_spline.pdf, id=341, 580.33377pt x 348.8831pt>
 File: ../thesisplots/peak_spline.pdf Graphic file (type pdf)
 <use ../thesisplots/peak_spline.pdf>
-Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 113
-2.
+Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 114
+1.
 (pdftex.def)             Requested size: 345.0pt x 207.40967pt.
- [31] [32 <../thesisplots/peak_spline.pdf>] [33]
-Overfull \hbox (1.96155pt too wide) in paragraph at lines 1232--1233
+ [31] [32 <../thesisplots/peak_spline.pdf>]
+Overfull \hbox (11.1579pt too wide) in paragraph at lines 1235--1236
+\OT1/cmr/m/n/10 ad-di-tive mod-els given in Chap-ter 1.2.1.2[]. Given in-put da
+ta $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; [] ; x[]\OT1/cmr/m/n/10 ; \OML/cmm/
+m/it/10 y[]\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 ;  i \OT1/cmr/m/n/10 =
+ []
+
+[33]
+Overfull \hbox (4.24858pt too wide) in paragraph at lines 1241--1242
 []\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ is the B-spline es-ti-mate given by $\OML/cmm/m/it/10 s[]
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) = \OT1/cmr/bx/n/10 X[][]
@@ -813,7 +813,7 @@ x[]; x[]\OT1/cmr/m/n/10 )$
 <../thesisplots/2d_example.pdf, id=401, 513.51651pt x 450.9648pt>
 File: ../thesisplots/2d_example.pdf Graphic file (type pdf)
 <use ../thesisplots/2d_example.pdf>
-Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 1367
+Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 1376
 .
 (pdftex.def)             Requested size: 345.0pt x 302.98433pt.
  [38 <../thesisplots/2d_example.pdf>] [39
@@ -825,10 +825,10 @@ Package logreq Info: Writing requests to 'chapter23.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12072 strings out of 492649
- 216165 string characters out of 6133383
- 639578 words of memory out of 5000000
- 15765 multiletter control sequences out of 15000+600000
+ 12074 strings out of 492649
+ 216236 string characters out of 6133383
+ 640631 words of memory out of 5000000
+ 15767 multiletter control sequences out of 15000+600000
  15510 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,19n,46p,906b,1711s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -849,7 +849,7 @@ sfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 ><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chapter23.pdf (41 pages, 496117 bytes).
+Output written on chapter23.pdf (41 pages, 496467 bytes).
 PDF statistics:
  516 PDF objects out of 1000 (max. 8388607)
  227 compressed objects within 3 object streams
