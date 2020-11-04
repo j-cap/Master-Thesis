@@ -31,7 +31,7 @@
 \section{Overview}
 
 
-Following the descriptions given in the previous chapters, we are now going to test the algorithm of structured additive regression using a priori knowledge on the problems given in Table \ref{tab:experiments}. We will use two different, artificial functions with known behavior and one set of real life data, for which physical a priori knowledge is given. 
+Following the descriptions given in the previous chapters, we are now going to test the algorithm of structured additive regression using a priori domain knowledge on the problems given in Table \ref{tab:experiments}. We will use two different, artificial functions with known behavior and one set of real life data, for which physical a priori knowledge is given. 
 
 \begin{table}[h]
 	%\centering
@@ -62,12 +62,12 @@ The first function is given by
 		  \end{cases}, \quad \text{for} \ x \in [0, 1].
 \end{equation}
 	
-It is a constant function till $x=0.45$ and afterwards increasing. An example of the true function as well as noisy samples from it are given in Fig. \ref{eq:test_func_1}.
+It is a constant function till $x=0.45$ and afterwards increasing. An example of the true function as well as noisy samples from it are given in Figure \ref{eq:test_func_1}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_inc1_data.pdf}
-	\caption{Test function 1}
+	\caption{Test function 1 and noisy samples}
 	\label{fig:test_func_1}
 \end{figure}
 
@@ -86,12 +86,12 @@ The true functions depicts a unimodal behavior and is constant for $x > 0.85$. T
 	f(x) = 2\exp \big(-\frac{(x-0.5)^2}{0.05} \big) + 3x  \quad \text{for} \ x \in [0, 1]. 
 \end{equation}
 
-An example of the true function \ref{eq:test_func_2} as well as noisy samples from function \ref{eq:test_func_2_wrong} are given in the figure \ref{fig:test_func_2}.
+An example of the true function \ref{eq:test_func_2} as well as noisy samples from function \ref{eq:test_func_2_wrong} are given in Figure \ref{fig:test_func_2}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{../thesisplots/exp_peak_data.pdf}
-	\caption{Test function 2}
+	\caption{Test function 2 and noisy samples}
 	\label{fig:test_func_2}
 \end{figure}
 
@@ -99,7 +99,7 @@ An example of the true function \ref{eq:test_func_2} as well as noisy samples fr
 
 \subsection{Exp. 1.1: Static Function Approx. using a priori Knowledge on Function \ref{eq:test_func_1}} \label{subsec:exp11}
 
-For the experiment using function \ref{eq:test_func_1}, the data set contains 100 points. We use $k=35$ as number of splines. The smoothing parameter $\lambda_s$ is optimized using cross-validation given in Chapter \emph{CrossValidation}. The parameter $\lambda_c$ regulating the influence of the constraint is set to the 1000-fold of the smoothing parameter $\lambda_s$. The resulting constrained fit, and for comparison, the unconstrained fit using the optimal smoothing parameter $\lambda_s = 2.3714$ are shown in figure \ref{fig:test_func_1_fit}.
+For the experiment using Function \ref{eq:test_func_1} in (\ref{eq:test_func_1}), the data set consists of 100 points. We use $k=35$ as number of splines. The smoothing parameter $\lambda_s$ is optimized using cross-validation given in Chapter \emph{CrossValidation}. The parameter $\lambda_c$ regulating the influence of the constraint is set to the 1000-fold of the smoothing parameter $\lambda_s$. The resulting constrained fit, and for comparison, the unconstrained fit using the optimal smoothing parameter $\lambda_s = 2.3714$ are shown in Figure \ref{fig:test_func_1_fit}.
 
 \begin{figure}[H]
 	\centering
@@ -108,7 +108,7 @@ For the experiment using function \ref{eq:test_func_1}, the data set contains 10
 	\label{fig:test_func_1_fit}
 \end{figure}
 
-The red line follows the a priori knowledge of increasing behavior better than the blue, unconstrained line. Especially in the constant area, e.g. $x \in  [0, 0.45]$, the constraint improves the static function approximation and lowers the residual as seen in the lower part of figure \ref{fig:test_func_1_fit}. In the area of increasing behavior, the two fits are almost identical since the constraint is inactive. The mean squared errors MSE on train and test set as well as the AIC value are given in table \ref{tab:metrics_1-1}. The mean squared errors for the train and test set are similar. Therefore, we can conclude that no overfitting is present. The AIC value for the constrained fit, as well as the MSEs, is/are fit are lower that the one for the unconstrained fit. 
+The red line follows the a priori knowledge of increasing behavior better than the blue, unconstrained line. Especially in the constant area, e.g. $x \in  [0, 0.45]$, the constraint improves the static function approximation and lowers the residual as seen in the lower part of Figure \ref{fig:test_func_1_fit}. In the area of increasing behavior, the two fits are almost identical since the constraint is inactive. The mean squared errors MSE on train and test set as well as the AIC value are given in Table \ref{tab:metrics_1-1}. The mean squared errors for the train and test set are of similar magnitude. Therefore, we can conclude that no overfitting is present. The AIC value for the constrained fit, as well as the MSEs, are fit are lower that the one for the unconstrained fit. 
 
 \begin{table}[h]
 	\centering
@@ -122,6 +122,8 @@ The red line follows the a priori knowledge of increasing behavior better than t
 	\label{tab:metrics_1-1}
 \end{table}
 
+The use of a priori domain knowledge through user-defined constraints therefore improves the fitting quality quantitatively, see Table \ref{tab:metrics_1-1}, as well as qualitatively, see Figure \ref{fig:test_func_1_fit}.
+
 %%
 %As with likelihood, the absolute value of AIC is largely meaningless (being determined by the arbitrary constant). As this constant depends on the data, AIC can be used to compare models fitted on identical samples. The best model from the set of plausible models being considered is therefore the one with the smallest AIC value (the least information loss relative to the true model).
 
@@ -132,9 +134,9 @@ The red line follows the a priori knowledge of increasing behavior better than t
 
 \subsection{Exp. 1.2: Static Function Approx. using a priori Knowledge on Function \ref{eq:test_func_2}} \label{subsec:exp12}
 
-For the test using function \ref{eq:test_func_2} the data set contains 500 points. There are two possibilities to include the a priori knowledge of a unimodal behavior. First we can use the peak constraint matrix given in Chapter \emph{Unimodality Constraint}. On the other hand, we can use the concavity constraint, since concave functions are likely to have a peak when the data shows a peak. 
+For the test using Function \ref{eq:test_func_2} in (\ref{eq:test_func_2}), the data set consists of 500 points. There are two possibilities to include the a priori knowledge of a unimodal behavior. First we can use the peak constraint matrix given in Chapter \emph{Unimodality Constraint}. On the other hand, we can use the concavity constraint, since concave functions are likely to have a peak when the data shows a peak. 
 
-We examine both possibilities in figure \ref{fig:test_func_2_fit}. For each fit, we used $k=35$ as number of splines and the smoothing parameter $\lambda_s=510.87$ was again optimized using cross-validation. The constraint parameter $\lambda_c$ was set to $5109$.
+We examine both possibilities in Figure \ref{fig:test_func_2_fit}. For each fit, we used $k=35$ as number of splines and the smoothing parameter $\lambda_s=510.87$ was again optimized using cross-validation. The constraint parameter $\lambda_c$ was set to $5109$.
 
 \begin{figure}[H]
 	\centering
@@ -143,9 +145,9 @@ We examine both possibilities in figure \ref{fig:test_func_2_fit}. For each fit,
 	\label{fig:test_func_2_fit}
 \end{figure}
  
-The estimate for the concave constraint shows a the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit as seen in the lower part of figure \ref{fig:test_func_2_fit}. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for $x >0.8$, i.e. the region where the data is on purpose "wrong", the residual and the estimate of the peak constrained fit are almost constant while the concave constrained fit is decreasing. 
+The estimate for the concave constraint shows the desired peak behavior, and is more smooth than the peak constraint estimate. This smoothness leads to changes in the sign of the residuals compared to the unconstrained fit as seen in the lower part of Figure \ref{fig:test_func_2_fit}. The peak constraint identifies the peak correctly and produces a sufficiently smooth fit with low residual. Especially for $x >0.8$, i.e. the region where the data is on purpose "wrong", the estimate of the peak constrained fit is almost constant while the concave constrained fit is decreasing. 
 
-The mean squared errors and the ACI value are given in the table \ref{tab:metrics_1-2}. They show that the concave constraint fit is has higher MSE on train and test set, as well as a higher AIC value. The more accurate fit are therefore produced by the peak constraint. The AIC value implies to use the unconstrained model, since it possesses the lowest value. Nevertheless, as seen in figure \ref{fig:test_func_2_fit}, it violates the constraint for larger $x$. Therefore, the peak constrained model is the best model with respect to the a priori knowledge. 
+The mean squared errors and the ACI value are given in the Table \ref{tab:metrics_1-2}. They show that the concave constraint fit is has higher MSE on train and test set, as well as a higher AIC value. The more accurate fit are therefore produced by the peak constraint. The AIC value implies to use the unconstrained model, since it possesses the lowest value. Nevertheless, as seen in Figure \ref{fig:test_func_2_fit}, it violates the user-defined constraint for larger $x$. Therefore, the peak constrained model is the best model with respect to the a priori knowledge. 
 
 \begin{table}[h]
 	\centering
@@ -162,7 +164,7 @@ The mean squared errors and the ACI value are given in the table \ref{tab:metric
 
 \subsection{Constraint vs. Noise} \label{subsec:constraint-vs-noise}
 
-In this section, we investigate the effect of different noise levels as well as noise types on the fitting process. In the first part, various levels of Gaussian noise are applied to function \ref{eq:test_func_2}. In the second part, we will use different colors of noise acting on function \ref{eq:test_func_1}. For both examples we use $k=35$ splines and optimize the smoothing parameter $\lambda_s$ using cross-validation. 
+In this section, we investigate the effect of different noise levels as well as noise types on the fitting process. In the first part, various levels of Gaussian noise are applied to Function \ref{eq:test_func_2}. In the second part, we will use different colors of noise acting on Function \ref{eq:test_func_1}. For both examples we use $k=35$ splines and optimize the smoothing parameter $\lambda_s$ using cross-validation. 
 
 \subsubsection{Exp. 2: Different Noise Levels}
 
@@ -172,7 +174,7 @@ Gaussian noise is characterized by the following two parameters:
 	\item Scale: The variance value $\sigma^2$ of the Gaussian distribution.
 \end{itemize}
 
-We set the location equal to zero and vary the scale value. The effect of the noise on the fitting procedure is shown in the following figure. The chosen noise levels are $\sigma^2 = \{0.01, 0.05, 0.1\}$.
+We set the location equal to zero and vary the scale value. The effect of the noise on the fitting procedure is shown in Figure \ref{fig:fit_noise_levels}. The chosen noise levels are $\sigma^2 = \{0.01, 0.05, 0.1\}$.
 
 For these values of $\sigma^2$, the correspond optimized smoothing parameters are $\lambda_{0.01} = 320$, $\lambda_{0.05} = 1892$ and $\lambda_{0.1} = 1516$. The constraint parameter $\lambda_c$ was set to $\lambda_c = 1000 \lambda_s$. 
 
@@ -185,9 +187,11 @@ For these values of $\sigma^2$, the correspond optimized smoothing parameters ar
 
 The left plot shows the fit for $\sigma^2 = 0.01$. The noise level is moderate, which leads to a smooth and satisfying fit except for large $x$ where the fit does not meet the constant function level. The peak constraint is well satisfied. 
 
-The noise level in the middle plot is already high. The unconstrained fit is nevertheless smooth, but it underestimates the peak and violates the constraint for $x > 0.8$. The constrained fit holds the peak constraint. 
+The noise level in the middle plot is already high. The unconstrained fit is nevertheless smooth, but it underestimates the peak and violates the constraint for $x > 0.8$. The constrained fit holds the peak constraint and produces a satisfying fit despite the high noise level.
 
-For the right plot and $\sigma^2=0.1$, both constrained and unconstrained fit are smooth but overestimate the fit especially in the peak region. The noise level is very high and the fits must be used carefully. Nevertheless, the peak constraint improves the estimate for large $x > 0.8$. 
+For the right plot and $\sigma^2=0.1$, both constrained and unconstrained fit are smooth but overestimate the fit especially in the peak region. The noise level is very high and the fits must be used carefully. 
+
+Structured additive regression using a priori domain knowledge can be used to estimate smooth, constraint functions even if the measurement noise is quite high, see the middle plot in Figure \ref{fig:fit_noise_levels}. For very high noise levels, the constraint can also be used to enforce a priori known behavior.  
 
 \subsubsection{Exp. 3: Different Noise Colors}
 
@@ -208,9 +212,9 @@ The unconstrained as well as the increasing constrained fit for all noise colors
 	\label{fig:fit_noise_colors}
 \end{figure}
 
-For the white noise data in the left plot, the increasing constraint produces a good fit according to the constraint and the residual except for low $x < 0.2$. The optimized smoothing parameter for the unconstrained fit was given by $\lambda_s = 132.07$ and the constraint parameter was set to $\lambda_c = 1320$. The fit recovers the true function quite well. 
+For the white noise data in the left plot, the increasing constraint produces a good fit according to the constraint and the residual except for low $x < 0.1$. The optimized smoothing parameter for the unconstrained fit was given by $\lambda_s = 132.07$ and the constraint parameter was set to $\lambda_c = 1320$. The fit recovers the true function quite well. 
 
-For the pink noise data in the middle plot, the constraint helps regularizing the fit. The constant function part was fit very well, as seen in the residual part in figure \ref{fig:fit_noise_colors}. The increasing part of the function, i.e. $f(x)$ for $x \ge 0.45$,  was fit well. The smoothing parameter was optimized using cross-validation and set to $\lambda_s = 20.67$. The constraint parameter was set to $\lambda_c = 2067$. 
+For the pink noise data in the middle plot, the constraint helps regularizing the fit. The constant function part was fit very well, as seen in the residual part in Figure \ref{fig:fit_noise_colors}. The increasing part of the function, i.e. $f(x)$ for $x \ge 0.45$,  was fit well. The smoothing parameter was optimized using cross-validation and set to $\lambda_s = 20.67$. The constraint parameter was set to $\lambda_c = 2067$. 
 
 For the brownian noise data in the right plot, the increasing part of the function was recovered well. The increasing constraint is hold quite well. Nevertheless, the brownian noise leads to step function like artifacts in the estimate for the constrained fit. The optimized smoothing parameter used was $\lambda_s = 0.4209$ and the constraint parameter was set to $\lambda_c = 4208$.
 
@@ -226,11 +230,11 @@ with
 \end{align}
 
 
-for different values of the parameters $a$ and $b$. We will investigate the effect of the knot placement, which can either be equidistant knot placement or quantile based knot placement, using this data. We again use noisy samples from function \ref{eq:test_func_2} and $k=35$ as number of splines. The smoothing parameters were optimized using cross-validation. The constraint parameters were set to the $1000-\text{fold}$ of $\lambda_s$ or adjusted by hand if to low.
+for different values of the parameters $a$ and $b$. We will investigate the effect of the knot placement, which can either be equidistant knot placement or quantile based knot placement, using this data. We again use noisy samples from function \ref{eq:test_func_2} and $k=35$ as number of splines. The smoothing parameters were optimized using cross-validation. The constraint parameters were set to the $1000-\text{fold}$ of $\lambda_s$ or adjusted by hand.
 
 \subsubsection{Exp. 4: Equidistant vs. Quantile Based Knot Placement for Grid Data}
 
-We will use 250 noisy samples from function (\ref{eq:test_func_2}) generated from a equidistant sequence of $x$. The smoothing parameters for the equidistant knot placement fit and for the quantile based knot placement fit were optimized using cross-validation and set to $\lambda_{s,equidistant} = 17.7828$ and $\lambda_{s, quantile} = 0.0056$. The constraint parameter for the peak constraint was set to $\lambda_c = 4000$ for both fits. We use 35 splines for both fits. The resulting fits are shown in figure \ref{fig:fit_grid_250}.
+We will use 250 noisy samples from Function \ref{eq:test_func_2} in (\ref{eq:test_func_2}) generated from a equidistant sequence of $x$. The smoothing parameters for the equidistant knot placement fit and for the quantile based knot placement fit were optimized using cross-validation and set to $\lambda_{s,equidistant} = 17.7828$ and $\lambda_{s, quantile} = 0.0056$. The constraint parameter for the peak constraint was set to $\lambda_c = 4000$ for both fits. The resulting fits are shown in Figure \ref{fig:fit_grid_250}.
 
 \begin{figure}[H]
 	\centering
@@ -239,9 +243,9 @@ We will use 250 noisy samples from function (\ref{eq:test_func_2}) generated fro
 	\label{fig:fit_grid_250}
 \end{figure}
 
-Figure \ref{fig:fit_grid_250} shows not much difference between the fits for the knot placement types. The peak constraint is hold by both quite well. The residuals for  equidistant knot placement are overall lower. The fit using equidistant knot placement is more smooth, since its optimal smoothing parameter is higher compared to the quantile based knot placement estimate. It is important to notice that the discontinuities in first derivative of the spline basis for both fits is just visual and comes from the number of used data points for the plot. 
+Figure \ref{fig:fit_grid_250} shows not much difference between the fits for the knot placement types. The peak constraint is hold by both quite well. The residuals for  equidistant knot placement are overall lower. The fit using equidistant knot placement is more smooth, since its optimal smoothing parameter is higher compared to the quantile based knot placement estimate. This can also be seen in the residual part of Figure \ref{fig:fit_grid_250}. 
 
-The mean squared errors and AIC values are given in table \ref{tab:metrics_4}. In this table, "E" stands for equidistant knot placement and "Q" stands for quantile based knot placement. The equidistant model has lower MSEs for train and test set, as well as a lower AIC value, compared to the quantile model for both the constrained and unconstrained fit. 
+The mean squared errors and AIC values are given in Table \ref{tab:metrics_4}. In this table, "E" stands for equidistant knot placement and "Q" stands for quantile based knot placement. The equidistant model has lower MSEs for train and test set, as well as a lower AIC value, compared to the quantile model for both the constrained and unconstrained fit. 
 
 \begin{table}[h]
 	\centering
@@ -258,9 +262,9 @@ The mean squared errors and AIC values are given in table \ref{tab:metrics_4}. I
 \end{table}
 
 
-\subsubsection{Exp. 5.1: Equidistant vs. Quantile Based Knot Placement for Skewed Data} \label{subsubsec:left_skew}
+\subsubsection{Exp. 5.1: Equidistant vs. Quantile Based Knot Placement for Left Skewed Data} \label{subsubsec:left_skew}
 
-We will now investigate the effect of non-regular data distributions for function (\ref{eq:test_func_2}) given by a beta distribution with $a = 1$ and $b = 3$. Therefore the situation is that we have many data points in the increasing part for $x \le 0.4$ and very little points for the constant function part at $x > 0.8$. The question is if any knot placement type is superior to the other. The fits for equidistant and quantile based knot placement can be seen in figure \ref{fig:fit_left_skew_250}. 
+We will now investigate the effect of non-regular data distributions for Function \ref{eq:test_func_2} in (\ref{eq:test_func_2}) given by a beta distribution with $a = 1$ and $b = 3$. Therefore the situation is that we have many data points in the increasing part for $x \le 0.4$ and little points for the constant function part at $x > 0.8$. The fits for equidistant and quantile based knot placement can be seen in Figure \ref{fig:fit_left_skew_250}. 
 
 \begin{figure}[H]
 	\centering
@@ -269,9 +273,9 @@ We will now investigate the effect of non-regular data distributions for functio
 	\label{fig:fit_left_skew_250}
 \end{figure}
 
-The smoothing parameters were set to $\lambda_{s, equidistant} = 305.3856$ for equidistant knot placement and $\lambda_{s, quantile} = 0.3275$ for quantile based knot placement. This low optimal smoothing parameter leads to a wiggly estimate for the quantile based knot placement fit compared the the smooth estimate for equidistant knot placement. This can also be seen in the residual part of figure \ref{fig:fit_left_skew_250}. The constraint parameters were set to $\lambda_{c, equidistant} = 3053.9$ and $\lambda_{c, quantile} = 3274.5$. The constraint is hold for both knot types. Especially for large $x > 0.9$ we see an improvement in the residual as well as the qualitative behavior for the constraint fits. 
+The smoothing parameters were set to $\lambda_{s, equidistant} = 305.39$ for equidistant knot placement and $\lambda_{s, quantile} = 0.3275$ for quantile based knot placement. This low optimal smoothing parameter leads to a wiggly estimate for the quantile based knot placement fit compared the the smooth estimate for equidistant knot placement. This can also be seen in the residual part of Figure \ref{fig:fit_left_skew_250}. The constraint parameters were set to $\lambda_{c, equidistant} = 3053.9$ and $\lambda_{c, quantile} = 3274.5$. The constraint is hold for both knot types. Especially for large $x > 0.9$ we see an improvement in the residual as well as the qualitative behavior for the constraint fits. 
 
-The mean squared errors on training and test set as well as the AIC values are given in table \ref{tab:metrics_51}. Again, "E" stands for equidistant knot placement and "Q" stands for quantile based knot placement. The constraint, equidistant model produces the lowest $\text{MSE}_{train}$. The MSEs on the test set are of the same magnitude as for the train set, indication that there is no overfitting present. The lowest AIC values is present for the unconstraint equidistant model. Nevertheless, the constraint violation of this model is clearly visible in figure \ref{fig:fit_left_skew_250}.
+The mean squared errors on training and test set as well as the AIC values are given in Table \ref{tab:metrics_51}. Again, "E" stands for equidistant knot placement and "Q" stands for quantile based knot placement. The constraint, equidistant model produces the lowest $\text{MSE}_{train}$. The MSEs on the test set are of the same magnitude as for the train set, indication that there is no overfitting present. The lowest AIC values is present for the unconstraint equidistant model. Nevertheless, the constraint violation of this model is clearly visible in Figure \ref{fig:fit_left_skew_250}.
 
 \begin{table}[H]
 	\centering
@@ -288,9 +292,9 @@ The mean squared errors on training and test set as well as the AIC values are g
 \end{table}
 
 
-\subsubsection{Exp. 5.2: Equidistant vs. Quantile Based Knot Placement for Skewed Data}
+\subsubsection{Exp. 5.2: Equidistant vs. Quantile Based Knot Placement for Middle Skewed Data}
 
-We will now investigate the effect of non-regular data distributions for function (\ref{eq:test_func_2}) given by a beta distribution with $a = 3$ and $b = 3$. Therefore the situation is that we have many data points in the peak part for $x \in [0.3, 0.7]$ and less points for the constant function part at $x > 0.7$ and the increasing part at $x < 0.3$. The fits for equidistant and quantile based knot placement can be seen in figure \ref{fig:fit_middle_skew_250}. 
+We will now investigate the effect of non-regular data distributions for Function \ref{eq:test_func_2} in (\ref{eq:test_func_2}) given by a beta distribution with $a = 3$ and $b = 3$. Therefore the situation is that we have many data points in the peak part for $x \in [0.3, 0.7]$ and less points for the constant function part at $x > 0.7$ and the increasing part at $x < 0.3$. The fits for equidistant and quantile based knot placement can be seen in Figure \ref{fig:fit_middle_skew_250}. 
 
 \begin{figure}[H]
 	\centering
@@ -299,9 +303,9 @@ We will now investigate the effect of non-regular data distributions for functio
 	\label{fig:fit_middle_skew_250}
 \end{figure}
 
-The smoothing parameters were set to $\lambda_{s, equidistant} = 422.92$ for equidistant knot placement and $\lambda_{s, quantile} = 0.0091$ for quantile based knot placement. The low optimal smoothing parameter again leads to a wiggly estimate in the peak region for the quantile based knot placement fit compared the the smooth estimate for equidistant knot placement. This can also be seen in the residual part of figure \ref{fig:fit_middle_skew_250}. The constraint parameters were set to $\lambda_{c, equidistant} = 4229$ and $\lambda_{c, quantile} = 9111.6$. The constraint is hold for both knot types. The equidistant knot placement produces a nearly optimal fit especially for the peak region. The quantile based knot placements fit is also quite good compared to the true function, but the estimate is quite wiggly.
+The smoothing parameters were set to $\lambda_{s, equidistant} = 422.92$ for equidistant knot placement and $\lambda_{s, quantile} = 0.0091$ for quantile based knot placement. The low optimal smoothing parameter again leads to a wiggly estimate in the peak region for the quantile based knot placement fit compared the the smooth estimate for equidistant knot placement. This can also be seen in the residual part of Figure \ref{fig:fit_middle_skew_250}. The constraint parameters were set to $\lambda_{c, equidistant} = 4229$ and $\lambda_{c, quantile} = 9111.6$. The constraint is hold for both knot types. The equidistant knot placement produces a almost optimal fit especially for the peak region. The quantile based knot placements fit is also quite good compared to the true function, but the estimate is quite wiggly.
 
-The mean squared errors on training and test set as well as the AIC values are given in table \ref{tab:metrics_52}. The situation is quite similar to the left skewed data experiment given in Chapter \ref{subsubsec:left_skew}. The constraint equidistant model is the overall best model producing the lowest $\text{MSE}_{train}$ and $\text{MSE}_{test}$ as well as AIC value.
+The mean squared errors on training and test set as well as the AIC values are given in Table \ref{tab:metrics_52}. The situation is quite similar to the left skewed data experiment given in Chapter \ref{subsubsec:left_skew}. The constraint equidistant model is the overall best model producing the lowest $\text{MSE}_{train}$ and $\text{MSE}_{test}$ as well as AIC value. This coincides with the plots in Figure \ref{fig:fit_middle_skew_250}. 
 
 \begin{table}[H]
 	\centering
@@ -318,9 +322,9 @@ The mean squared errors on training and test set as well as the AIC values are g
 \end{table}
 
 
-\subsubsection{Exp. 5.3: Equidistant vs. Quantile Based Knot Placement for Skewed Data}
+\subsubsection{Exp. 5.3: Equidistant vs. Quantile Based Knot Placement for Right Skewed Data}
 
-We will now investigate the effect of non-regular data distributions for function (\ref{eq:test_func_2}) given by a beta distribution with $a = 3$ and $b = 1$. Therefore the situation is that we have many data points in the constant part for $x > 0.7$ and less points for the increasing and peak part $x < 0.7$. The fits for equidistant and quantile based knot placement can be seen in figure \ref{fig:fit_right_skew_250}. 
+We will now investigate the effect of non-regular data distributions for Function \ref{eq:test_func_2} in (\ref{eq:test_func_2}) given by a beta distribution with $a = 3$ and $b = 1$. Therefore the situation is that we have many data points in the constant part for $x > 0.7$ and less points for the increasing and peak part $x < 0.7$. The fits for equidistant and quantile based knot placement can be seen in Figure \ref{fig:fit_right_skew_250}. 
 
 \begin{figure}[H]
 	\centering
@@ -329,9 +333,9 @@ We will now investigate the effect of non-regular data distributions for functio
 	\label{fig:fit_right_skew_250}
 \end{figure}
 
-The smoothing parameters were set to $\lambda_{s, equidistant} = 303.39$ for equidistant knot placement and $\lambda_{s, quantile} = 0.0091$ for quantile based knot placement. The low optimal smoothing parameter again leads to a wiggly estimate  especially for the decreasing part of the quantile based knot placement fit compared the the smooth estimate for equidistant knot placement. This can also be seen in the residual part of figure \ref{fig:fit_right_skew_250}. The constraint parameters were set to $\lambda_{c, equidistant} = 3033.9$ and $\lambda_{c, quantile} = 9111.6$. The constraint is hold for both knot types, except for $x \approx 0.73$ for quantile based knot placement. Both fits overestimate the level of the constant function part.
+The smoothing parameters were set to $\lambda_{s, equidistant} = 303.39$ for equidistant knot placement and $\lambda_{s, quantile} = 0.0091$ for quantile based knot placement. The low optimal smoothing parameter again leads to a wiggly estimate  especially for the decreasing part of the quantile based knot placement fit compared the the smooth estimate for equidistant knot placement. This can also be seen in the residual part of Figure \ref{fig:fit_right_skew_250}. The constraint parameters were set to $\lambda_{c, equidistant} = 3053.9$ and $\lambda_{c, quantile} = 9111.6$. The constraint is hold for both knot types, except for $x \approx 0.73$ for quantile based knot placement. Both fits overestimate the level of the constant function part.
 
-The mean squared errors on training and test set as well as the AIC values are given in table \ref{tab:metrics_53}. The situation is quite similar to the left skewed data experiment and middle skewed data experiment given in the previous chapters. The constraint equidistant model is the overall best model producing the lowest $\text{MSE}_{train}$ and $\text{MSE}_{test}$ as well as AIC value.
+The mean squared errors on training and test set as well as the AIC values are given in Table \ref{tab:metrics_53}. The situation is quite similar to the left skewed data experiment and middle skewed data experiment given in the previous chapters. The constraint equidistant model is the overall best model producing the lowest $\text{MSE}_{train}$ and $\text{MSE}_{test}$ as well as AIC value.
 
 \begin{table}[H]
 	\centering
@@ -348,9 +352,9 @@ The mean squared errors on training and test set as well as the AIC values are g
 \end{table}
 
 
-\subsubsection{Exp. 5.4: Equidistant vs. Quantile Based Knot Placement for Skewed Data}
+\subsubsection{Exp. 5.4: Equidistant vs. Quantile Based Knot Placement for Left Skewed Data and Many Data Points}
 
-We will now investigate the effect of non-regular data distributions for function (\ref{eq:test_func_2}) given by a beta distribution with $a = 1$ and $b = 3$, this time using $n=2500$ data points. The fits for equidistant and quantile based knot placement can be seen in figure \ref{fig:fit_left_skew_2500}. 
+We will now investigate the effect of non-regular data distributions for Function \ref{eq:test_func_2} in (\ref{eq:test_func_2}) given by a beta distribution with $a = 1$ and $b = 3$, this time using $n=2500$ data points. The fits for equidistant and quantile based knot placement can be seen in Figure \ref{fig:fit_left_skew_2500}. 
 
 \begin{figure}[H]
 	\centering
@@ -359,9 +363,9 @@ We will now investigate the effect of non-regular data distributions for functio
 	\label{fig:fit_left_skew_2500}
 \end{figure}
 
-The smoothing parameters were set to $\lambda_{s, equidistant} = 1123.32$ for equidistant knot placement and $\lambda_{s, quantile} = 0.628$ for quantile based knot placement. The constraint parameters were set to $\lambda_{c, equidistant} = 11233.2$ and $\lambda_{c, quantile} = 6280.3$. The constraint is hold for both knot types. Both fits produces a nearly optimal fit especially for the peak region. Using a higher number of data points relaxes the problem of a wiggly estimate for the quantile based knot placement fit. Nevertheless, its residual is higher than for equidistant knot placement, which is not affected by the number of data point.
+The smoothing parameters were set to $\lambda_{s, equidistant} = 1123.32$ for equidistant knot placement and $\lambda_{s, quantile} = 0.628$ for quantile based knot placement. The constraint parameters were set to $\lambda_{c, equidistant} = 11233.2$ and $\lambda_{c, quantile} = 6280.3$. The constraint is hold for both knot types. Both fits produces a nearly optimal fit especially for the peak region. Using a higher number of data points relaxes the problem of a wiggly estimate for the quantile based knot placement fit. Nevertheless, its residual is higher than for equidistant knot placement.
 
-The mean squared errors on training and test set as well as the AIC values are given in table \ref{tab:metrics_54}. The situation is similar to the experiment given in the previous chapters. The constraint equidistant model is the overall best model producing the lowest $\text{MSE}_{train}$ and second lowest $\text{MSE}_{test}$ as well as AIC value, while holding the constraint. Nevertheless, using a larger number of data points, the differences between equidistant and quantile based knot placement in terms of accuracy and constraint fidelity vanish. 
+The mean squared errors on training and test set as well as the AIC values are given in Table \ref{tab:metrics_54}. The situation is similar to the experiment given in the previous chapters. The constraint equidistant model is the overall best model producing the lowest $\text{MSE}_{train}$ and second lowest $\text{MSE}_{test}$ as well as AIC value, while holding the constraint. Using a larger number of data points, the differences between equidistant and quantile based knot placement in terms of accuracy and constraint fidelity nearly vanish. 
 
 \begin{table}[H]
 	\centering
@@ -378,16 +382,16 @@ The mean squared errors on training and test set as well as the AIC values are g
 \end{table}
 
 
-In summary, equidistant knot placement produces better fits in terms of smoothness and accuracy for a low number of data points. Its residuals are overall lower than the ones from quantile based knot placement. This comes mostly from the fact that the optimal smoothing parameter for quantile based knot placement is quite low for all experiments compared to the equidistant equivalent. We can therefore conclude that quantile based knot placement using the weighting approach given in \cite{ferziger2008numerische} for a lower number of data points is not beneficial in terms of fit quality compared to equidistant knot placement. Further, we can conclude that the incorporation of a priori knowledge improves the qualitative and quantitative behavior of the fit even in situations where the data is not well distributed.  
+In summary, equidistant knot placement produces better fits in terms of smoothness and accuracy for a low number of data points. Its residuals are overall lower than the ones from quantile based knot placement. This comes mostly from the fact that the optimal smoothing parameter for quantile based knot placement is quite low for all experiments compared to the equidistant equivalent. We can therefore conclude that quantile based knot placement for a lower number of data points is not beneficial in terms of fit quality compared to equidistant knot placement. Further, we can conclude that the incorporation of a priori domain knowledge improves the qualitative and quantitative behavior of the fit even in situations where the data is not well distributed.  
 
 
 \subsection{Exp. 6: Real life data} \label{subsec:real-life-data}
 
-We will now try to incorporate a priori knowledge in the fitting process using real-life data. The data is generated from a heat treatment process of aluminum. The aluminum is heated to a specific temperature and then cooled using water jets.
+We will now try to incorporate a priori domain knowledge in the fitting process using real-life data. The data is generated from a heat treatment process of aluminum. The aluminum is heated to a specific temperature and then cooled using water jets.
 
 We try to estimate the heat transfer coefficient $\alpha := \alpha(T, \dot m)$ as a function of the temperature $T$ and the mass flow $\dot m$. We know beforehand, that the heat transfer coefficient $\alpha$ may only increase when increasing the mass flow $\dot m$ and that it shows a peak behavior for increasing temperature $T$. 
 
-A further problem is the data situation given in figure \ref{fig:ebner_data_situation}. Here we show how many data points are given in a area of approximately $50 K$ and $0.9 [kg/s]$. We have some regions, where no data is available, while the majority of data points is located in small areas.
+A further problem is the data situation given in Figure \ref{fig:ebner_data_situation}. Here we show how many data points are given in a area of approximately $50 K$ and $0.9 [kg/s]$. We have some regions, where no data is available, while the majority of data points is located in small areas.
 
 
 \begin{figure}[H]
@@ -397,7 +401,7 @@ A further problem is the data situation given in figure \ref{fig:ebner_data_situ
 	\label{fig:ebner_data_situation}
 \end{figure}
 
-We use the additive model ansatz using two spline models, $s_1(T)$ and $s_2(\dot m)$, and constrain $s_1(T)$ by the unimodality constraint and $s_2(\dot m)$ by the increasing constraint. We use $k=50$ splines for both. The smoothing parameters were set to $\lambda_{s, s_1} = 908.52$ and $\lambda_{s, s_2} = 383.12$. The constraint parameters were set to $\lambda_{c, s_1} = 9085.2$ and $\lambda_{c, s_2} = 3831.2$. 
+We use the additive model ansatz using two spline models, $s_1(T)$ and $s_2(\dot m)$, and constrain $s_1(T)$ by the unimodality constraint and $s_2(\dot m)$ by the increasing constraint. We use $k=50$ splines for both. The smoothing parameters were set to $\lambda_{s, s_1} = 908.52$ and $\lambda_{s, s_2} = 383.12$. The constraint parameters were set to $\lambda_{c, s_1} = 9085.2$ and $\lambda_{c, s_2} = 3831.2$. The fit using the a priori domain knowledge is given in Figure \ref{fig:ebner_fit_s250}. The unconstrained fit is given in Figure \ref{fig:ebner_fit_unc_s250}. 
 
 \begin{figure}[H]
 	\centering
@@ -414,9 +418,9 @@ We use the additive model ansatz using two spline models, $s_1(T)$ and $s_2(\dot
 \end{figure}
 
 
-The a priori knowledge is hold quite well for the constraint fit given in figure \ref{fig:ebner_fit_s250}. In comparison, the unconstraint fit using the same smoothing parameters is given in figure \ref{fig:ebner_fit_unc_s250}. Here, especially the mass flow dependent function $s_2(\dot m)$ does not hold the constraint of being increasing. The temperature dependent function $s_1(T)$ is quite smooth, but also violates the unimodality constraint for $T \approx 700$. 
+The a priori domain knowledge is hold quite well for the constraint fit given in Figure \ref{fig:ebner_fit_s250}. In comparison, the unconstraint fit using the same smoothing parameters is given in Figure \ref{fig:ebner_fit_unc_s250}. Here, especially the mass flow dependent function $s_2(\dot m)$ does not hold the constraint of being increasing. The temperature dependent function $s_1(T)$ is quite smooth, but also violates the unimodality constraint for $T \approx 700 \text{K}$ and $T \approx 450 \text{K}$. 
 
-The mean squared errors and AIC values for both fits are shown in table \ref{tab:metrics_6}. The constraint fit has lower $\text{MSE}_{train}$ and $\text{MSE}_test$ as well as AIC value. 
+The mean squared errors and AIC values for both fits are shown in Table \ref{tab:metrics_6}. The constraint fit has lower $\text{MSE}_{train}$ and $\text{MSE}_{test}$ as well as AIC value. 
 
 
 \begin{table}[H]
@@ -434,7 +438,7 @@ The mean squared errors and AIC values for both fits are shown in table \ref{tab
 
 \section{Summary}
 
-The incorporation of a priori knowledge in the fitting process using structured additive regression, B-splines, a smoothness penalty and a user-defined constraint penalty is possible for simulated and real-life data. The use of a priori knowledge improves the quality of the fit and makes the estimation process more robust against noise, data outliers and measurements errors. 
+The incorporation of a priori domain knowledge in the fitting process using structured additive regression, B-splines, a smoothness penalty and a user-defined constraint penalty is possible for simulated and real-life data. The use of a priori domain knowledge improves the quality of the fit and makes the estimation process more robust against noise, data outliers and measurements errors. 
 
 
 \end{document}

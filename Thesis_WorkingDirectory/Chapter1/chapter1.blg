@@ -1,65 +1,15 @@
-This is BibTeX, Version 0.99d (MiKTeX 2.9.7350 64-bit)
-Capacity: max_strings=4000, hash_size=5000, hash_prime=4253
-The top-level auxiliary file: chapter1.aux
-The style file: biblatex.bst
-Reallocating 'glb_str_end' (item size: 4) to 20 items.
-Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
-Reallocating 'global_strs' (item size: 1) to 20000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'wiz_functions' (item size: 4) to 6000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Database file #1: chapter1-blx.bib
-Database file #2: ../bibliography.bib
-Biblatex version: 3.13
-Reallocating 'wiz_functions' (item size: 4) to 9000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 19 entries,
-            6365 wiz_defined-function locations,
-            1301 strings with 11780 characters,
-and the built_in function-call counts, 126013 in all, are:
-= -- 9376
-> -- 2154
-< -- 635
-+ -- 3045
-- -- 747
-* -- 8933
-:= -- 13577
-add.period$ -- 0
-call.type$ -- 19
-change.case$ -- 401
-chr.to.int$ -- 44
-cite$ -- 72
-duplicate$ -- 12836
-empty$ -- 11390
-format.name$ -- 1295
-if$ -- 26140
-int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 0
-newline$ -- 640
-num.names$ -- 987
-pop$ -- 6456
-preamble$ -- 1
-purify$ -- 511
-quote$ -- 0
-skip$ -- 3749
-stack$ -- 0
-substring$ -- 16568
-swap$ -- 2867
-text.length$ -- 444
-text.prefix$ -- 18
-top$ -- 1
-type$ -- 634
-warning$ -- 0
-while$ -- 1801
-width$ -- 0
-write$ -- 622
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'chapter1.blg'
+[45] biber-MSWIN32:313> INFO - === 
+[129] Biber.pm:371> INFO - Reading 'chapter1.bcf'
+[222] Biber.pm:857> INFO - Found 18 citekeys in bib section 0
+[238] Biber.pm:3976> INFO - Processing section 0
+[266] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
+[276] bibtex.pm:1500> INFO - LaTeX decoding ...
+[328] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
+[463] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[463] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[463] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[463] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[475] bbl.pm:617> INFO - Writing 'chapter1.bbl' with encoding 'UTF-8'
+[482] bbl.pm:720> INFO - Output to chapter1.bbl

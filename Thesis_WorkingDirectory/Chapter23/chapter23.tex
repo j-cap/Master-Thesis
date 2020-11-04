@@ -542,16 +542,26 @@ A spline is a piece-wise polynomial defined on a sequence of knots. This definit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{B-Splines} \label{subsec:b-splines}
 
-We lay the focus on the definition and use of B-splines, which are constructed from polynomial pieces in a recursive manner. Given the knot sequence $K = \{k_i, \dots, k_{i+m+2}\}$,  the B-spline $B_i^m(x)$ of degree $m$ is defined by means of the Cox-de Boor recursion formula as
+% Given the knot sequence $K = \{k_i, \dots, k_{i+m+2}\}$,  
+
+We lay the focus on the definition and use of B-splines, which are constructed from polynomial pieces in a recursive manner. The B-spline $B_j^l(x)$ of degree $l$ is defined by means of the Cox-de Boor recursion formula as
 
 \begin{align} \label{eq:Bspline_recDef1}
-	B_i^0(x) = \begin{cases} 1, & \text{if} \quad k_i \le x < k_{i+1} \\ 
+	B_j^0(x) = \begin{cases} 1, & \text{if} \quad \kappa_j \le x < \kappa_{j+1} \\ 
 					 		 0, & \text{otherwise} 
 	\end{cases}
 \end{align}
 \begin{align} \label{eq:Bspline_recDef2}
-	B_i^m(x) = \frac{x - k_i}{k_{i+m} - k_i} B_i^{m-1}(x) + \frac{k_{i+m+1} - x}{k_{i+m+1} - k_{i+1}} B_{i+1}^{m-1}(x).
+	B_j^l(x) = \frac{x - \kappa_{j-l}}{\kappa_{j} - \kappa_{j-l}} B_{j-1}^{l-1}(x) + \frac{\kappa_{j+1} - x}{\kappa_{j+1} - \kappa_{j+1-l}} B_{j}^{l-1}(x).
 \end{align}
+
+given the knot sequence 
+
+\begin{align}\label{eq:knot_sequence}
+	K = \{\kappa_{1-l}, \kappa_{1-l+1}, \dots, \kappa_{m+l-1}, \kappa_{m+l}\}
+\end{align}
+
+with the interior knots $\kappa_1, \dots, \kappa_m$ and the $2l$ boundary knots. \cite{fahrmeir2013regression}
 
 Therefore, $B_i^0(x)$ is the zero function, except for $x \in [k_i, k_{i+1}]$ where it is equal to 1. $B_i^1(x)$ is then the well known \emph{hat function}, being zero except for $x \in [k_i, k_{i+2}]$. 
 

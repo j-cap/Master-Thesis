@@ -1,577 +1,242 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.10.6)  22 OCT 2020 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  28 OCT 2020 10:58
 entering extended mode
-**./chapter1.tex
-(chapter1.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06>
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**chapter1.tex
+(./chapter1.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty
-"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty
-"
-Package: babel 2020/02/28 3.41 The Babel package
+(c:/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.de
-f"
-File: switch.def 2020/02/28 3.41 Babel switching mechanism
+(c:/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
 )
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg
-"
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\eng
-lish.ldf"
+(c:/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def
-"
-File: babel.def 2020/02/28 3.41 Babel common definitions
-\babel@savecnt=\count175
-\U@D=\dimen135
+(c:/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.
-def")
-\bbl@readstream=\read2
-\bbl@dirlevel=\count176
+(c:/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
 )
-Package babel Info: \l@canadian = using hyphenrules for english
-(babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language72) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language72) on input line 108.
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
-ty"
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip49
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.st
-y"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen136
+\@emptytoks=\toks16
+\ex@=\dimen104
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.st
-y"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen137
+\pmbraise@=\dimen105
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
-y"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count177
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count178
-\leftroot@=\count179
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count180
-\DOTSCASE@=\count181
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen138
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count182
-\c@MaxMatrixCols=\count183
-\dotsspace@=\muskip16
-\c@parentequation=\count184
-\dspbrk@lvl=\count185
-\tag@help=\toks18
-\row@=\count186
-\column@=\count187
-\maxfields@=\count188
-\andhelp@=\toks19
-\eqnshift@=\dimen139
-\alignsep@=\dimen140
-\tagshift@=\dimen141
-\tagwidth@=\dimen142
-\totwidth@=\dimen143
-\lineht@=\dimen144
-\@envbody=\toks20
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks17
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts
-.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.
-sty"
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx
-.sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks22
+\KV@toks@=\toks21
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
-.sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
-"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\grap
-hics.cfg"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdft
-ex.def"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen145
-\Gin@req@width=\dimen146
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.s
-ty"
-Package: caption 2020/09/12 v3.5b Customizing captions (AR)
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.
-sty"
-Package: caption3 2020/09/17 v2.1b caption3 kernel (AR)
-\captionmargin=\dimen147
-\captionmargin@=\dimen148
-\captionwidth=\dimen149
-\caption@tempdima=\dimen150
-\caption@indent=\dimen151
-\caption@parindent=\dimen152
-\caption@hangindent=\dimen153
-Package caption Info: Standard document class detected.
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen115
+\captionmargin@=\dimen116
+\captionwidth=\dimen117
+\caption@tempdima=\dimen118
+\caption@indent=\dimen119
+\caption@parindent=\dimen120
+\caption@hangindent=\dimen121
 )
-\c@caption@flags=\count189
-\c@continuedfloat=\count190
+\c@ContinuedFloat=\count102
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count191
-\float@exts=\toks23
-\float@box=\box47
-\@float@everytoks=\toks24
-\@floatcapt=\box48
-) ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
-"
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen154
-\ar@mcellbox=\box49
-\extrarowheight=\dimen155
-\NC@list=\toks25
-\extratabsurround=\skip52
-\backup@length=\skip53
-\ar@cellbox=\box50
+\c@float@type=\count103
+\float@exts=\toks22
+\float@box=\box28
+\@float@everytoks=\toks23
+\@floatcapt=\box29
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs
-.sty"
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen156
-\lightrulewidth=\dimen157
-\cmidrulewidth=\dimen158
-\belowrulesep=\dimen159
-\belowbottomsep=\dimen160
-\aboverulesep=\dimen161
-\abovetopsep=\dimen162
-\cmidrulesep=\dimen163
-\cmidrulekern=\dimen164
-\defaultaddspace=\dimen165
-\@cmidla=\count192
-\@cmidlb=\count193
-\@aboverulesep=\dimen166
-\@belowrulesep=\dimen167
-\@thisruleclass=\count194
-\@lastruleclass=\count195
-\@thisrulewidth=\dimen168
+(c:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen122
+\ar@mcellbox=\box30
+\extrarowheight=\dimen123
+\NC@list=\toks24
+\extratabsurround=\skip46
+\backup@length=\skip47
+\ar@cellbox=\box31
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth
-.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count104
+\@cmidlb=\count105
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count106
+\@lastruleclass=\count107
+\@thisrulewidth=\dimen136
+)
+(c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box51
-\sift@deathcycles=\count196
-\@vwid@loff=\dimen169
-\@vwid@roff=\dimen170
+\@vwid@box=\box32
+\sift@deathcycles=\count108
+\@vwid@loff=\dimen137
+\@vwid@roff=\dimen138
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csvsimple\csvsimp
-le.sty"
-Package: csvsimple 2019/04/09 version 1.21 LaTeX CSV file processing
+(c:/texlive/2018/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2016/07/01 version 1.20 LaTeX CSV file processing
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgf
-rcs.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfutil-common.tex"
-\pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen171
-\pgfutil@tempdimb=\dimen172
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfutil-common-lists.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfutil-latex.def"
-\pgfutil@abb=\box52
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfrcs.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revisio
-n.tex")
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgf
-keys.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfkeys.code.tex"
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfkeysfiltered.code.tex"
-\pgfkeys@tmptoks=\toks29
-)))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks27
+))) (c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox
-.sty"
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count197
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count109
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.st
-y"
-Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+(c:/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
 )
-\csv@file=\read3
-\c@csvinputline=\count198
-\c@csvrow=\count199
-\c@csvcol=\count266
+\csv@file=\read1
+\c@csvinputline=\count110
+\c@csvrow=\count111
+\c@csvcol=\count112
 \csv@out=\write3
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/comment\comment.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write4
- Excluding comment 'comment')
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex
-.sty"
-Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftex
-cmds.sty"
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwa
-rerr.sty"
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
-"
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds
-.sty"
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvoptio
-ns.sty"
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvset
-keys.sty"
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.sty
-"
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count267
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.def
-"
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-\c@tabx@nest=\count268
-\c@listtotal=\count269
-\c@listcount=\count270
-\c@liststart=\count271
-\c@liststop=\count272
-\c@citecount=\count273
-\c@citetotal=\count274
-\c@multicitecount=\count275
-\c@multicitetotal=\count276
-\c@instcount=\count277
-\c@maxnames=\count278
-\c@minnames=\count279
-\c@maxitems=\count280
-\c@minitems=\count281
-\c@citecounter=\count282
-\c@maxcitecounter=\count283
-\c@savedcitecounter=\count284
-\c@uniquelist=\count285
-\c@uniquename=\count286
-\c@refsection=\count287
-\c@refsegment=\count288
-\c@maxextratitle=\count289
-\c@maxextratitleyear=\count290
-\c@maxextraname=\count291
-\c@maxextradate=\count292
-\c@maxextraalpha=\count293
-\c@abbrvpenalty=\count294
-\c@highnamepenalty=\count295
-\c@lownamepenalty=\count296
-\c@maxparens=\count297
-\c@parenlevel=\count298
-\blx@tempcnta=\count299
-\blx@tempcntb=\count300
-\blx@tempcntc=\count301
-\blx@maxsection=\count302
-\blx@maxsegment@0=\count303
-\blx@notetype=\count304
-\blx@parenlevel@text=\count305
-\blx@parenlevel@foot=\count306
-\blx@sectionciteorder@0=\count307
-\blx@entrysetcounter=\count308
-\labelnumberwidth=\skip54
-\labelalphawidth=\skip55
-\biblabelsep=\skip56
-\bibitemsep=\skip57
-\bibnamesep=\skip58
-\bibinitsep=\skip59
-\bibparsep=\skip60
-\bibhang=\skip61
-\blx@bcfin=\read4
-\blx@bcfout=\write5
-\blx@langwohyphens=\language78
-\c@mincomprange=\count309
-\c@maxcomprange=\count310
-\c@mincompwidth=\count311
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-dm.d
-ef"
-File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'draft.dbx' not found.
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count312
-\c@savedafterword=\count313
-\c@annotator=\count314
-\c@savedannotator=\count315
-\c@author=\count316
-\c@savedauthor=\count317
-\c@bookauthor=\count318
-\c@savedbookauthor=\count319
-\c@commentator=\count320
-\c@savedcommentator=\count321
-\c@editor=\count322
-\c@savededitor=\count323
-\c@editora=\count324
-\c@savededitora=\count325
-\c@editorb=\count326
-\c@savededitorb=\count327
-\c@editorc=\count328
-\c@savededitorc=\count329
-\c@foreword=\count330
-\c@savedforeword=\count331
-\c@holder=\count332
-\c@savedholder=\count333
-\c@introduction=\count334
-\c@savedintroduction=\count335
-\c@namea=\count336
-\c@savednamea=\count337
-\c@nameb=\count338
-\c@savednameb=\count339
-\c@namec=\count340
-\c@savednamec=\count341
-\c@translator=\count342
-\c@savedtranslator=\count343
-\c@shortauthor=\count344
-\c@savedshortauthor=\count345
-\c@shorteditor=\count346
-\c@savedshorteditor=\count347
-\c@labelname=\count348
-\c@savedlabelname=\count349
-\c@institution=\count350
-\c@savedinstitution=\count351
-\c@lista=\count352
-\c@savedlista=\count353
-\c@listb=\count354
-\c@savedlistb=\count355
-\c@listc=\count356
-\c@savedlistc=\count357
-\c@listd=\count358
-\c@savedlistd=\count359
-\c@liste=\count360
-\c@savedliste=\count361
-\c@listf=\count362
-\c@savedlistf=\count363
-\c@location=\count364
-\c@savedlocation=\count365
-\c@organization=\count366
-\c@savedorganization=\count367
-\c@origlocation=\count368
-\c@savedoriglocation=\count369
-\c@origpublisher=\count370
-\c@savedorigpublisher=\count371
-\c@publisher=\count372
-\c@savedpublisher=\count373
-\c@language=\count374
-\c@savedlanguage=\count375
-\c@origlanguage=\count376
-\c@savedoriglanguage=\count377
-\c@pageref=\count378
-\c@savedpageref=\count379
-\shorthandwidth=\skip62
-\shortjournalwidth=\skip63
-\shortserieswidth=\skip64
-\shorttitlewidth=\skip65
-\shortauthorwidth=\skip66
-\shorteditorwidth=\skip67
-\locallabelnumberwidth=\skip68
-\locallabelalphawidth=\skip69
-\localshorthandwidth=\skip70
-\localshortjournalwidth=\skip71
-\localshortserieswidth=\skip72
-\localshorttitlewidth=\skip73
-\localshortauthorwidth=\skip74
-\localshorteditorwidth=\skip75
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-comp
-at.def"
-File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-)
-Package biblatex Info: Trying to load BibTeX backend compatibility...
-Package biblatex Info: ... file 'blx-bibtex.def' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-bibt
-ex.def"
-File: blx-bibtex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-
-
-Package biblatex Warning: Using fall-back BibTeX(8) backend:
-(biblatex)                functionality may be reduced/unavailable.
-
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex
-.def"
-File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-\c@textcitecount=\count380
-\c@textcitetotal=\count381
-\c@textcitemaxnames=\count382
-\c@biburlbigbreakpenalty=\count383
-\c@biburlbreakpenalty=\count384
-\c@biburlnumpenalty=\count385
-\c@biburlucpenalty=\count386
-\c@biburllcpenalty=\count387
-\biburlbigskip=\muskip18
-\biburlnumskip=\muskip19
-\biburlucskip=\muskip20
-\biburllcskip=\muskip21
-\c@smartand=\count388
-)
-Package biblatex Info: Trying to load bibliography style 'draft'...
-Package biblatex Info: ... file 'draft.bbx' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\draf
-t.bbx"
-File: draft.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\stan
-dard.bbx"
-File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count389
-\c@bbx:relatedtotal=\count390
-))
-Package biblatex Info: Trying to load citation style 'draft'...
-Package biblatex Info: ... file 'draft.cbx' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/cbx\draf
-t.cbx"
-File: draft.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\textcite'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex
-.cfg"
-File: biblatex.cfg 
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty
-"
+Excluding comment 'comment')
+(c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\colo
-r.cfg"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -585,216 +250,422 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\dvipsnam
-.def"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count113
+
+(c:/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write5
+\integerpart=\count114
+\decimalpart=\count115
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count116
+\c@listtotal=\count117
+\c@listcount=\count118
+\c@liststart=\count119
+\c@liststop=\count120
+\c@citecount=\count121
+\c@citetotal=\count122
+\c@multicitecount=\count123
+\c@multicitetotal=\count124
+\c@instcount=\count125
+\c@maxnames=\count126
+\c@minnames=\count127
+\c@maxitems=\count128
+\c@minitems=\count129
+\c@citecounter=\count130
+\c@savedcitecounter=\count131
+\c@uniquelist=\count132
+\c@uniquename=\count133
+\c@refsection=\count134
+\c@refsegment=\count135
+\c@maxextratitle=\count136
+\c@maxextratitleyear=\count137
+\c@maxextradate=\count138
+\c@maxextraalpha=\count139
+\c@abbrvpenalty=\count140
+\c@highnamepenalty=\count141
+\c@lownamepenalty=\count142
+\c@maxparens=\count143
+\c@parenlevel=\count144
+\blx@tempcnta=\count145
+\blx@tempcntb=\count146
+\blx@tempcntc=\count147
+\blx@maxsection=\count148
+\blx@maxsegment@0=\count149
+\blx@notetype=\count150
+\blx@parenlevel@text=\count151
+\blx@parenlevel@foot=\count152
+\blx@sectionciteorder@0=\count153
+\labelnumberwidth=\skip48
+\labelalphawidth=\skip49
+\biblabelsep=\skip50
+\bibitemsep=\skip51
+\bibnamesep=\skip52
+\bibinitsep=\skip53
+\bibparsep=\skip54
+\bibhang=\skip55
+\blx@bcfin=\read2
+\blx@bcfout=\write6
+\c@mincomprange=\count154
+\c@maxcomprange=\count155
+\c@mincompwidth=\count156
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count157
+\c@savedafterword=\count158
+\c@annotator=\count159
+\c@savedannotator=\count160
+\c@author=\count161
+\c@savedauthor=\count162
+\c@bookauthor=\count163
+\c@savedbookauthor=\count164
+\c@commentator=\count165
+\c@savedcommentator=\count166
+\c@editor=\count167
+\c@savededitor=\count168
+\c@editora=\count169
+\c@savededitora=\count170
+\c@editorb=\count171
+\c@savededitorb=\count172
+\c@editorc=\count173
+\c@savededitorc=\count174
+\c@foreword=\count175
+\c@savedforeword=\count176
+\c@holder=\count177
+\c@savedholder=\count178
+\c@introduction=\count179
+\c@savedintroduction=\count180
+\c@namea=\count181
+\c@savednamea=\count182
+\c@nameb=\count183
+\c@savednameb=\count184
+\c@namec=\count185
+\c@savednamec=\count186
+\c@translator=\count187
+\c@savedtranslator=\count188
+\c@shortauthor=\count189
+\c@savedshortauthor=\count190
+\c@shorteditor=\count191
+\c@savedshorteditor=\count192
+\c@labelname=\count193
+\c@savedlabelname=\count194
+\c@institution=\count195
+\c@savedinstitution=\count196
+\c@lista=\count197
+\c@savedlista=\count198
+\c@listb=\count199
+\c@savedlistb=\count266
+\c@listc=\count267
+\c@savedlistc=\count268
+\c@listd=\count269
+\c@savedlistd=\count270
+\c@liste=\count271
+\c@savedliste=\count272
+\c@listf=\count273
+\c@savedlistf=\count274
+\c@location=\count275
+\c@savedlocation=\count276
+\c@organization=\count277
+\c@savedorganization=\count278
+\c@origlocation=\count279
+\c@savedoriglocation=\count280
+\c@origpublisher=\count281
+\c@savedorigpublisher=\count282
+\c@publisher=\count283
+\c@savedpublisher=\count284
+\c@language=\count285
+\c@savedlanguage=\count286
+\c@origlanguage=\count287
+\c@savedoriglanguage=\count288
+\c@pageref=\count289
+\c@savedpageref=\count290
+\shorthandwidth=\skip56
+\shortjournalwidth=\skip57
+\shortserieswidth=\skip58
+\shorttitlewidth=\skip59
+\shortauthorwidth=\skip60
+\shorteditorwidth=\skip61
+\locallabelnumberwidth=\skip62
+\locallabelalphawidth=\skip63
+\localshorthandwidth=\skip64
+\localshortjournalwidth=\skip65
+\localshortserieswidth=\skip66
+\localshorttitlewidth=\skip67
+\localshortauthorwidth=\skip68
+\localshorteditorwidth=\skip69
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+\c@textcitecount=\count291
+\c@textcitetotal=\count292
+\c@textcitemaxnames=\count293
+\c@biburlnumpenalty=\count294
+\c@biburlucpenalty=\count295
+\c@biburllcpenalty=\count296
+\c@smartand=\count297
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2017/03/27 v1.2d biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count298
+\c@bbx:relatedtotal=\count299
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2017/03/27 v1.2d biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count300
+\c@cbx@tempcntb=\count301
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count391
-\@quotereset=\count392
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
-nd-pdfmode.def"
-File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count393
-\l__pdf_internal_box=\box53
-) (chapter1.aux)
+\@quotelevel=\count302
+\@quotereset=\count303
+(./chapter1.aux)
 \openout1 = `chapter1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
-pdf.mkii"
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count394
-\scratchdimen=\dimen173
-\scratchbox=\box54
-\nofMPsegments=\count395
-\nofMParguments=\count396
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count397
-\MPscratchDim=\dimen174
-\MPnumerator=\count398
-\makeMPintoPDFobject=\count399
-\everyMPtoPDFconversion=\toks31
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
-opdf-base.sty"
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+\scratchcounter=\count304
+\scratchdimen=\dimen139
+\scratchbox=\box33
+\nofMPsegments=\count305
+\nofMParguments=\count306
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count307
+\MPscratchDim=\dimen140
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
+\everyMPtoPDFconversion=\toks29
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grfext\grfext.sty
-"
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\kv
-definekeys.sty"
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
-)
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lbx\engl
-ish.lbx"
-File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
-)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Input encoding 'utf8' specified.
-Package biblatex Info: Data encoding 'utf8' specified.
-(biblatex)             No need to reencode data.
-\openout5 = `chapter1-blx.bib'.
+\openout6 = `chapter1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'chapter1.bbl' found.
- (chapter1.bbl)
-Package biblatex Info: Reference section=0 on input line 24.
-Package biblatex Info: Reference segment=0 on input line 24.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+(./chapter1.bbl)
+Package biblatex Info: Reference section=0 on input line 27.
+Package biblatex Info: Reference segment=0 on input line 27.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
- ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
-"
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (chapter1.toc)
-\tf@toc=\write6
-\openout6 = `chapter1.toc'.
-
- [1
-
-{C:/Users/WeberJ/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (39.72948pt too wide) in paragraph at lines 39--42
-\OT1/cmr/m/n/10 rithm is based on struc-tured ad-di-tive re-gres-sion us-ing sp
-lines. $\OT1/cmr/bx/n/10 fahrmeir2013regression$\OT1/cmr/m/n/10 .
- []
+) (./chapter1.toc)
+\tf@toc=\write7
+\openout7 = `chapter1.toc'.
 
 
-Overfull \hbox (0.52843pt too wide) in paragraph at lines 55--56
+[1
+
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
+
+Overfull \hbox (0.52843pt too wide) in paragraph at lines 58--59
 []\OT1/cmr/m/n/10 The com-mon start-ing point for the dif-fer-ent data-driven m
 od-el-ing ap-proaches
  []
 
-
-Overfull \hbox (15.92493pt too wide) in paragraph at lines 66--67
-\OT1/cmr/m/n/10 the true pro-cess be-hav-ior us-ing a fi-nite num-ber of parame
-ters.$\OT1/cmr/bx/n/10 nelles2013nonlinear$
+[2] [3] [4] [5]
+Overfull \hbox (1.18425pt too wide) in paragraph at lines 184--184
+\OT1/cmr/m/it/10 and com-mu-ni-ca-tion tech-nol-ogy, elec-tron-ics and mi-cro-e
+lec-tron-ics (MIPRO)\OT1/cmr/m/n/10 ,
  []
 
-[2]
-Overfull \hbox (5.35387pt too wide) in paragraph at lines 97--98
-\OT1/cmr/m/n/10 Mul-ti-vari-ate Adap-tive Re-gres-sion Splines (MARS). $\OT1/cm
-r/bx/n/10 friedman1991multivariate$
- []
-
-[3]
-Overfull \hbox (4.79892pt too wide) in paragraph at lines 111--112
-\OT1/cmr/m/n/10 tion can be found in $\OT1/cmr/bx/n/10 friedman1991multivariate
-$ \OT1/cmr/m/n/10 and $\OT1/cmr/bx/n/10 friedman2001elements$\OT1/cmr/m/n/10 .
- []
-
-
-Overfull \hbox (22.89653pt too wide) in paragraph at lines 113--114
-\OT1/cmr/m/n/10 for-ma-tion can be found in \OT1/cmr/m/it/10 Chap-ter Splines\O
-T1/cmr/m/n/10 . $\OT1/cmr/bx/n/10 deBoor1978practicalGuideToSplines$
- []
-
-[4]
-Overfull \hbox (30.24185pt too wide) in paragraph at lines 148--149
-\OT1/cmr/m/n/10 ap-prox-i-ma-tion theorems.$\OT1/cmr/bx/n/10 cybenko1989approxi
-mation$ $hornik1991approximation$
- []
-
-[5] [6]
-Overfull \hbox (1.5771pt too wide) in paragraph at lines 196--196
-[]\OT1/cmr/m/n/10 W Ross Ashby. \OT1/cmr/m/it/10 An in-tro-duc-tion to cy-ber-n
-et-ics\OT1/cmr/m/n/10 . Chap-
- []
-
-
-Overfull \hbox (2.64503pt too wide) in paragraph at lines 196--196
-\OT1/cmr/m/n/10 look-up ta-bles''. In: \OT1/cmr/m/it/10 The Jour-nal of Ma-chin
-e Learn-ing Re-search \OT1/cmr/m/n/10 17.1 (2016),
- []
-
-
-Overfull \hbox (7.16621pt too wide) in paragraph at lines 196--196
-[]\OT1/cmr/m/n/10 Benjamin Hofner, Jorg Muller, and Torsten Hothorn.
- []
-
-
-Overfull \hbox (0.95087pt too wide) in paragraph at lines 196--196
-[]\OT1/cmr/m/n/10 Kurt Hornik. ``Ap-prox-i-ma-tion ca-pa-bil-i-ties of mul-
- []
-
-[7]
-Overfull \hbox (8.6065pt too wide) in paragraph at lines 196--196
-\OT1/cmr/m/n/10 hints''. In: \OT1/cmr/m/it/10 Ad-vances in neu-ral in-for-ma-ti
-on pro-cess-ing sys-tems\OT1/cmr/m/n/10 . 1997, pp. 634{
- []
-
-[8] (chapter1.aux)
+[6] [7] (./chapter1.aux)
 Package logreq Info: Writing requests to 'chapter1.run.xml'.
 \openout1 = `chapter1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13653 strings out of 480934
- 251578 string characters out of 2899449
- 698841 words of memory out of 3000000
- 29329 multiletter control sequences out of 15000+200000
- 540882 words of font info for 57 fonts, out of 3000000 for 9000
+ 12398 strings out of 492649
+ 217954 string characters out of 6133383
+ 646276 words of memory out of 5000000
+ 16105 multiletter control sequences out of 15000+600000
+ 11849 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,12n,48p,1034b,1664s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\WeberJ\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
-\tcrm1000.pk><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/WeberJ/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/WeberJ/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/
-WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.p
-fb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/WeberJ/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/WeberJ/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/W
-eberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.p
-fb>
-Output written on chapter1.pdf (8 pages, 170081 bytes).
+ 44i,12n,46p,1031b,1662s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on chapter1.pdf (7 pages, 162811 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
+ 76 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
