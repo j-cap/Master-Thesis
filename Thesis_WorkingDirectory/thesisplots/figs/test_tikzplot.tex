@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+
+
+\begin{document}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel=Model Complexity,
+			xmin=0, xmax=2.1, 
+			x label style={at={(axis description cs:0.5,.05),anchor=south}},
+			ylabel=Error,
+			y label style={at={(axis description cs:0.1,.5)},rotate=-90,anchor=south},
+			ymin=0, ymax=40, 
+			axis lines = left,
+			ticks = none,
+			legend entries={Bias Error, Variance Error, Total Error, Optimal Model},
+			] 
+			\addplot [red] table [x=x, y=bias] {bvd.txt};		  		
+			\addplot [blue] table [x=x, y=variance] {bvd.txt};	
+			\addplot [black] table [x=x, y=both] {bvd.txt};	  
+			\draw (axis cs:0.672,8.9341) circle [gray, radius=4];
+			\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
+			
+		\end{axis}	
+	\end{tikzpicture}
+	\caption{Bias-variance decomposition}
+	\label{fig:bv-decomposition}
+\end{figure}
+
+
+\end{document}
