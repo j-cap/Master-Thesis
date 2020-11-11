@@ -14,6 +14,8 @@
 \usepackage{csquotes}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.16} 
 \usepackage{array} 
 \usepackage{booktabs}	% for horizontal lines
 \usepackage{varwidth}% http://ctan.org/pkg/varwidth
@@ -331,26 +333,26 @@ The SPSE can be split into three parts:
 %
 The SPSE acts as an example of the bias-variance trade-off, which is characteristic for all statistical models. It states that by increasing the model complexity, the bias is reduced but instead the variance is increased. On the other hand, by decreasing model complexity, the variance of the model is reduced, but the bias is increased, see Figure~\ref{fig:bv-decomposition} \cite{bishop2006patternRecognition}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
+		\pgfplotstableread{../thesisplots/figs/bvd.txt}{\data}
 		\begin{axis}[
 			xlabel=Model Complexity,
 			xmin=0, xmax=2.1, 
-			x label style={at={(axis description cs:0.5,.05),anchor=south}},
+			x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
 			ylabel=Error,
-			y label style={at={(axis description cs:0.1,.5)},rotate=-90,anchor=south},
+			y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
 			ymin=0, ymax=40, 
 			axis lines = left,
 			ticks = none,
 			legend entries={Bias Error, Variance Error, Total Error, Optimal Model},
 			] 
-			\addplot [red] table [x=x, y=bias] {../thesisplots/figs/bvd.txt};		  		
-			\addplot [blue] table [x=x, y=variance] {../thesisplots/figs/bvd.txt};	
-			\addplot [black] table [x=x, y=both] {../thesisplots/figs/bvd.txt};	  
-			\draw (axis cs:0.672,8.9341) circle [gray, radius=4];
+			\addplot [red] table [x=x, y=bias] {\data};		  		
+			\addplot [blue] table [x=x, y=variance] {\data};	
+			\addplot [black] table [x=x, y=both] {\data};	  
+			\draw (0.672, 8.9341) circle [gray, radius=2pt];
 			\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
-			
 		\end{axis}	
 	\end{tikzpicture}
 	\caption{Bias-variance decomposition}
@@ -445,7 +447,7 @@ Again, assuming Gaussian errors for a linear model and neglecting the constant t
 %
 A lower value of the BIC correspond to a better model fit \cite{fahrmeir2007regression}.
 
-\subsubsection{Cross-validation} \label{subsubsubsec:Cross-validation}
+\subsubsection{Cross-validation} \label{subsubsec:Cross-validation}
 
 The basic idea of cross-validations is to split the given data set into a training set to estimate the parameters and a validation set to assess the prediction quality. A special case of cross-validation is the "leave-one-out" cross-validation, where all but one data point are used for training and the model is then evaluated on this held-out data point. This seems to be quite expensive, since one needs to estimate one model per data point. However, in the context of linear models, it can be shown that the cross-validation score can be computed using one model trained on all data $\vec{y}$ and the \emph{hat matrix} $\vec{H}_M = \vec{X}_M (\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M$. The cross-validation score is then given by
 
@@ -483,89 +485,113 @@ In step-wise selection, forward and backward selection are combined to enable th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Regularization} \label{subsec:Regularization}
 
-Model selection can also be achieved using regularization techniques by directly influencing the coefficients $\vec{\beta}$ which need to be estimated given some data. In general, regularization restricts the parameter space by adding some penalty term depending on the complexity of the model to the least squares objective function in (\ref{eq:MethodOfLS}). This leads to the penalized least squares criterion
+Model selection can also be achieved using regularization techniques by directly influencing the parameters $\vec{\beta}$, which need to be estimated given a data set. In general, regularization restricts the parameter space by adding some penalty term depending on the complexity of the model to the least squares objective function according to (\ref{eq:MethodOfLS}). This leads to the penalized least squares (PLS) criterion
 
 \begin{align} \label{eq:PLS_crit}
-	\text{PLS}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta}\rVert^2 + \lambda \text{pen}(\vec{\beta})
+	\text{PLS}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta}\rVert^2_2 + \lambda \cdot \text{pen}(\vec{\beta}),
 \end{align}
+%
+where $\lambda$ is the so-called smoothing parameter and $\text{pen}(\vec{\beta})$ is the penalty term describing the regularization technique. 
 
-where $\lambda$ is the so-called smoothing parameter and $\text{pen}(\vec{\beta})$ is the penalty term describing the regularization technique. The two most commonly used forms of regularization are Ridge regression and Lasso regression. Both are explained in detail in the following.
-
-\subsubsubsection{Ridge Regression}
-
-In Ridge regression, the penalty term in the penalized least squares criterion in (\ref{eq:PLS_crit}) is given by the squared $L_2$-norm of the coefficient vector $\vec{\beta}$. The objective function to minimize is therefore given by
+In Ridge regression, the penalty term in the penalized least squares criterion in (\ref{eq:PLS_crit}) is given by the squared weighted $L_2$-norm of the parameter vector $\vec{\beta}$, i.e. $\text{pen}(\vec{\beta}) = \lVert \vec{\beta} \rVert^2_{\vec{K}} = \transpose{\vec{\beta}} \vec{K} \vec{\beta}$ with penalty matrix $\vec{K} \in \mathbb{R}^{p \times p}$. The closed form solution reads as
 
 \begin{align}
-	\text{PLS}_{Ridge}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert^2 + \lambda \transpose{\vec{\beta}} \vec{\beta}
+	\hat{\vec{\beta}}_{PLS} = \arg \min_{\vec{\beta}} \big(\text{PLS}(\vec{y}, \vec{\beta}) \big) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}}\vec{y},
 \end{align}
+%
+The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{PLS}$ compared to the unpenalized estimate $\hat{\vec{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will converge towards, but never reach, zero. 
 
-with the closed form solution 
+Ridge regression is commonly used when the input dimension $q$ is high, i.e. the number of parameters $\beta_i$ is large, and also known as Tikhonov regularization \cite{hoerl1970ridge}. Note that it is also possible to use a nonlinear penalty matrix $\vec{K}(\vec{\beta})$ resulting in
 
 \begin{align}
-	\hat{\vec{\beta}}_{PLS,r} = \arg \min_{\vec{\beta}} \text{PLS}_{Ridge}(\vec{y}, \vec{\beta}) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{I})^{-1} \transpose{\vec{X}}\vec{y},
+	\text{pen}(\vec{\beta}) = \lVert \vec{\beta} \rVert^2_{\vec{K}(\vec{\beta})} = \transpose{\vec{\beta}} \vec{K}(\vec{\beta}) \vec{\beta}.
 \end{align}
+%
+However, the resulting penalized least squares problem  has no closed form solution and must be solved by an iterative approach. We start with an initial guess $\vec{\beta}^{[0]}$ and iterate for $k = 0, 1, 2, \dots$ the iteration
 
-where $\vec{I} \in \mathbb R^{p \times p}$ is the identity matrix. The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{PLS,r}$ compared to the un-penalized estimate $\hat{\vec{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will converge towards, but never reach, zero. 
-
-Ridge regression is commonly used when the input dimension $p$ is high and also known under then name of Tikhonov regularization \cite{hoerl1970ridge}
-
-\subsubsubsection{Lasso Regression}
-
-One drawback of Ridge regression is that it does not produce sparse solutions, i.e. all estimated coefficients will be different from zero. Lasso regression tackles this problem by the use of the $L_1$-norm as penalty term. The penalized least squares objective function is then given by
-
-\begin{align}
-	\text{PLS}_{Lasso}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert + \lambda \sum_{i=1}^k\vert \beta_i \vert,
+\begin{align} \label{eq:PLS-iterative-approach}
+	\vec{\beta}^{[k+1]} = \big(\transpose{\vec{X}} \vec{X} + \lambda \vec{K}(\vec{\beta}^{[k]}) \big)^{-1} \transpose{\vec{X}} \vec{y}.
 \end{align}
+%
+until $\vert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]} \vert \le \text{Tol}$ with $\text{Tol}$ being some given tolerance.
 
-where $\lambda$ again plays the role of a smoothing parameter. Therefore, we need to solve the optimization problem
-
-\begin{align} \label{eq:Lasso_OP}
-	\hat{\vec{\beta}}_{PLS,l} = \arg \min_{\vec{\beta}} \text{PLS}_{Lasso}(\vec{y}, \vec{\beta}).
-\end{align}
-
-No closed form solution for the problem given in (\ref{eq:Lasso_OP}) is available. The Lasso estimates $\hat{\vec{\beta}}_{PLS,l}$ are calculated using either quadratic programming techniques, given in \cite{tibshirani1996lasso}, or least angle regression, given in \cite{efron2004leastangleregression}. \\
-
-Ridge regression penalized large coefficients much stronger than Lasso regression due the the quadratic penalty, while for small coefficient values, the Lasso penalty has much more influence. \cite{tibshirani1996lasso}
+?? Convergence ??
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Splines} \label{sec:Splines}
 	
-A spline is a piece-wise polynomial defined on a sequence of knots. This definition is quite general. Therefore, there exist a large variety of splines, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines, see Chapter \ref{subsec:b-splines}, and tensor-product splines as the multi-dimensional expansion of B-splines, see Chapter \ref{subsubsec:tp-splines}, as well as P-splines, see Chapter \ref{subsec:p-splines}. \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}
+A spline is a piecewise polynomial defined on a sequence of knots. This definition is quite general. Therefore, a large variety of splines exists, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines in Section~\ref{subsec:b-splines}, tensor-product B-splines as the multi-dimensional expansion of B-splines in Section~\ref{subsubsec:tp-splines}, and P-splines in Section~\ref{subsec:p-splines} \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{B-Splines} \label{subsec:b-splines}
 
-% Given the knot sequence $K = \{k_i, \dots, k_{i+m+2}\}$,  
-
-We lay the focus on the definition and use of B-splines, which are constructed from polynomial pieces in a recursive manner. The B-spline $B_j^l(x)$ of degree $l$ is defined by means of the Cox-de Boor recursion formula as
+We put the focus on the definition and use of B-splines, which are constructed from polynomial pieces in a recursive manner. The B-spline $B_j^l(x)$ of degree $l$ is defined by means of the Cox-de Boor recursion formula as \cite{fahrmeir2007regression}
 
 \begin{align} \label{eq:Bspline_recDef1}
-	B_j^0(x) = \begin{cases} 1, & \text{if} \quad \kappa_j \le x < \kappa_{j+1} \\ 
-					 		 0, & \text{otherwise} 
+	B_j^0(x) = \begin{cases} 1 & \text{for} \quad \kappa_j \le x < \kappa_{j+1} \\ 
+					 		 0 & \text{otherwise} 
 	\end{cases}
 \end{align}
 \begin{align} \label{eq:Bspline_recDef2}
 	B_j^l(x) = \frac{x - \kappa_{j-l}}{\kappa_{j} - \kappa_{j-l}} B_{j-1}^{l-1}(x) + \frac{\kappa_{j+1} - x}{\kappa_{j+1} - \kappa_{j+1-l}} B_{j}^{l-1}(x)
 \end{align}
-
+%
 given the knot sequence 
 
 \begin{align}\label{eq:knot_sequence}
 	K = \{\kappa_{1-l}, \kappa_{1-l+1}, \dots, \kappa_{m+l-1}, \kappa_{m+l}\}
 \end{align}
+%
+with the $m$ interior knots $\kappa_1, \dots, \kappa_m$ and the $2l$ boundary knots \cite{fahrmeir2007regression}. 
 
-with the $m$ interior knots $\kappa_1, \dots, \kappa_m$ and the $2l$ boundary knots. \cite{fahrmeir2007regression} Therefore, $B_j^0(x)$ is the zero function, except for $x \in [\kappa_j, \kappa_{j+1}]$ where it is equal to 1. $B_j^1(x)$ is then the well known \emph{hat function}, being zero except for $x \in [\kappa_j, \kappa_{j+2}]$. 
+An example of B-splines of order $l=0, 1, 2$ and $3$ is given in Figure~\ref{fig:spline-types-both}. The left chart shows the B-splines based on an equidistant sequence of knots. The B-spline $B^0$ is the zero function, except for $x \in [\kappa_1, \kappa_2]$ where it is equal to 1. The B-spline $B^1$ is the well known \emph{hat function}, being zero except for $x \in [\kappa_1, \kappa_3]$. It consists of two linear pieces, one defined from $\kappa_1$ to $\kappa_2$ and the other from $\kappa_2$ to $\kappa_3$. Everywhere else, $B^1$ is equal to zero. At the joining points, the values of the linear pieces are equal. The B-spline $B^2$ consists of three quadratic pieces, joining at the knots $\kappa_2$ and $\kappa_3$. At these point, the values of the quadratic pieces, as well as their first derivatives are equal. Finally, the B-spline $B^3$ consists of 4 cubic pieces with the joining points at $\kappa_2$, $\kappa_3$ and $\kappa_4$ at which respective cubic polynomials possess equal values as well as equal first and second derivatives. The right part of Figure~\ref{fig:spline-types-both} shows the same B-splines defined on a non-equidistant knot sequence. The basic properties of these B-splines are the same as for B-splines based on equidistant knots. 
 
-Figure \ref{fig:lin_and_quad_spline} shows an example of a B-spline of degree $l=1$ on the left. It consists of two linear pieces, one defined from $\kappa_1$ to $\kappa_2$ and the other from $\kappa_2$ to $\kappa_3$. Everywhere else, the B-spline is equal to zero. At the joining points, the values of the polynomial pieces are equal. This locality is a very attractive feature of B-splines. In the right part of Figure \ref{fig:lin_and_quad_spline}, a B-spline of degree $l=2$ is shown, which consist of three quadratic pieces, defined on the knot sequence $\{\kappa_1, \kappa_2, \kappa_3, \kappa_4\}$. At the joining points, the values as well as the first derivatives of the quadratic pieces are equal. 
-
-\begin{figure}[H] 
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\columnwidth]{../thesisplots/linear_and_quadratic_spline.pdf}
-	\caption{Linear ($l=1$) and quadratic ($l=2$) spline}
-	\label{fig:lin_and_quad_spline}
+	\begin{tikzpicture}
+	\pgfplotstableread{../thesisplots/figs/spline-types-equidistant.txt}{\equidistant}
+	\pgfplotstableread{../thesisplots/figs/spline-types-quantile.txt}{\quantile}
+	\begin{groupplot}[
+			group style = {group size = 2 by 1},
+			width=0.5\columnwidth,
+			]
+			\nextgroupplot[
+			xmin=0.05, xmax=0.55, 
+			xticklabels={$\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$},			
+			xtick={0.1, 0.2, 0.3, 0.4, 0.5},
+			xtick align=outside,
+			xtick pos = bottom,
+			ytick pos = left,
+			ytick align=outside,
+			ymin=-0.05, ymax=1.05, 
+			legend entries={{$B^0$}, {$B^1$}, {$B^2$}, {$B^3$}},
+			] 
+			\addplot [black, dashed] table [x=x, y= B0] {\equidistant};		  		
+			\addplot [violet, densely dotted] table [x=x, y=B1]{\equidistant};	
+			\addplot [blue, dotted] table [x=x, y=B2]{\equidistant};
+			\addplot [red, densely dashed] table [x=x, y=B3]{\equidistant};	  			
+			\nextgroupplot[
+			xmin=0.05, xmax=0.55, 
+			xticklabels={$\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$},			
+			xtick={0.1, 0.2, 0.38, 0.46, 0.52 },
+			xtick align=outside,
+			xtick pos = bottom,
+			ytick pos = left,
+			ytick align=outside,
+			ymin=-0.05, ymax=1.05, 
+			legend entries={{$B^0$}, {$B^1$}, {$B^2$}, {$B^3$}},
+			] 
+			\addplot [black, dashed] table [x=x, y= B0] {\quantile};		  		
+			\addplot [violet, densely dotted] table [x=x, y=B1]{\quantile};	
+			\addplot [blue, dotted] table [x=x, y=B2]{\quantile};
+			\addplot [red, densely dashed] table [x=x, y=B3]{\quantile};	  	
+		\end{groupplot}
+	\end{tikzpicture}
+	\caption{B-splines of orders $l=0, 1, 2, 3$ for equidistant (left) and non-equidistant (right) knots}
+	\label{fig:spline-types-both}
 \end{figure}
 
-The general properties of a B-spline of degree $l$ are the following:
+The shown locality is a very attractive feature leading to an enhanced numerical stability compared to other types of splines. Some general properties of B-splines of degree $l$ are summarized in the following list:
 
 \begin{itemize}
 	\item It consists of $l+1$ polynomial pieces of degree $l$, e.g. a cubic spline ($l=3$) consists of 4 cubic pieces.
@@ -575,57 +601,45 @@ The general properties of a B-spline of degree $l$ are the following:
 	\item At every given $x$, only $l+1$ B-splines are non-zero.
 \end{itemize}
 
-The collection of $d = m + l - 1$ B-splines of degree $l$ over a sequence of $m+2l$ knots is called B-spline basis. The $2l$-knots are the boundary knots while the $m$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence. \cite{eilers1996flexible} For equidistant knots, we split the domain $[a,b]$ into $m-1$ intervals, i.e
+The collection of $d = m + l - 1$ B-splines of degree $l$ over a sequence $K$ of $m+2l$ knots is called B-spline basis. The $2l$-knots are the boundary knots while the $m$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence \cite{eilers1996flexible}. For equidistant knots, we split the domain $[a,b]$ into $m-1$ intervals, i.e
+
 \begin{align} \label{eq:equidistant-knots-interval}
 	h = \frac{b - a} {m - 1}
 \end{align}
+%
 and obtain the sequence
 
 \begin{align} \label{eq:equidistant-knots-sequence}
 	\kappa_j = a + h(j-1), \quad j=1, \dots, m.
 \end{align} 
+%
+Non-equidistant knot placement can be obtained using quantile-based knots, i.e. by using the $(j-1)/(m-1)$-quantiles for $j=1, \dots, m$ of the observed inputs $x^{(1)}, \dots, x^{(n)}$ as knots. Using this approach, more knots are placed in the areas where lots of data is present \cite{fahrmeir2007regression}. The boundary knots are usually set to be apart from each other by at least the minimal knot distance. 
 
-Non-equidistant knot placement can be obtained using quantile-based knots, i.e. by using the $(j-1)/(m-1)$-quantiles for $j=1, \dots, m$ of the observed inputs $x^{(1)}, \dots, x^{(n)}$ as knots. Using this approach, more knots are placed in the areas where lots of data is present. \cite{fahrmeir2007regression}
 
-A function $f(x)$ can then be represented using the basis function approach by 
+A function $f(x)$ can then be represented utilizing the basis function approach by 
 
 \begin{align} \label{eq:bspline-bf-approach}
-	f(x) = \sum_{j=1}^d B_j^l(x) \beta_j = \transpose{\vec{b}} \vec{\beta}
+	f(x) = \sum_{j=1}^d B_j^l(x) \beta_j = \transpose{\vec{b}} \vec{\beta},
 \end{align}
-
-using the B-spline basis functions $B_j^l(x)$ of appropriate degree $l$ and the coefficient vector $\vec{\beta} \in \mathbb{R}^{d}$. The basis functions can be given in vector notation as $\transpose{\vec{b}} = (B_1^l(x), \dots, B_d^l(x))$. Using the set of data $\{ x^{(i)}; y^{(i)}\}, \ i=1, \dots, n$, the B-spline basis for $d$ splines of degree $l$ is given by the matrix $\vec{X}$ as
+%
+using the B-spline basis functions $B_j^l(x)$ of appropriate degree $l$ and the parameter vector $\transpose{\vec{\beta}} = [\beta_1, \dots, \beta_d] \in \mathbb{R}^{d}$. The basis functions can be given in vector notation as $\transpose{\vec{b}} = [B_1^l(x), \dots, B_d^l(x)]$. Using the set of data $D = \{ (x^{(i)}, y^{(i)}), \ i=1, \dots, n \}$, the B-spline basis for $d$ splines of degree $l$ is given by the matrix $\vec{B}$ as
 
 \begin{align} \label{eq:bspline-basis-matrix}
-	\vec{X} = \begin{pmatrix}
+	\vec{B} = \begin{bmatrix}
 				B_1^l(x^{(1)}) & \dots & B_d^l(x^{(1)})  \\
 				\vdots         &       & \vdots 		 \\
 				B_1^l(x^{(n)}) & \dots & B_d^l(x^{(n)})  \\
-	\end{pmatrix} \in \mathbb{R}^{n \times d}.
+	\end{bmatrix} \in \mathbb{R}^{n \times d}.
 \end{align}
+%
+The $n$ equations~(\ref{eq:bspline-bf-approach}) can be arranged as a linear model in the form
 
-The linear combination of cubic B-splines gives a smooth function $f(x)$, i.e. first and second order derivatives are continuous. A further advantage of B-splines is that once the basis in (\ref{eq:bspline-basis-matrix}) is given, the coefficients can be estimated using the Least Squares algorithm given in Chapter \ref{subsubsec:Method-of-LS}. 
-
-Given a set of data points $\{x^{(i)}; y^{(i)}\}, \ i = 1, \dots, n$, the least squares objective function, see Chapter \ref{subsubsec:Method-of-LS}, for B-splines is the given by
-
-\begin{align} \label{eq:OF_Bsplines}
-	Q_{bsplines}(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert^2
+\begin{align}
+	\vec{y} = \vec{B} \vec{\beta}.
 \end{align}
-
-for the B-spline basis matrix $\vec{X} \in \mathbb{R}^{n \times d}$ for $n$ data points and $d$ splines. Solving the optimization problem, i.e.
-
-\begin{align} \label{eq:opti_problem_bsplines}
-	\hat{\vec{\beta}} = \arg \min_{\vec{\beta}} Q_{bsplines}(\vec{y}, \vec{\beta})
-\end{align}
-
-leads to the estimated coefficients as in (\ref{eq:LS_estimator}) 
-
-\begin{align*}
-	\hat{\vec{\beta}} = (\transpose{\vec{X}} \vec{X})^{-1} \transpose{\vec{X}} \vec{y}.
-\end{align*}
-
-Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to use model selection and regularization approaches as well as to calculate e.g confidence intervals for the regression coefficients and the prediction.
-
-B-splines of appropriate order $l > 2$ produce smooths curves, where the smoothness is mostly determined by the number of splines used. Using a low number $d$, the curve will be quite smooth, but possess a large data error. When using a high number of splines $d$, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and machine learning and further discussed in Chapter \ref{subsec:1d-function-estimation}. It is therefore necessary to introduce some kind of regularization. \cite{deBoor1978practicalGuideToSplines}  
+%
+A further advantage of B-splines is that once the basis in (\ref{eq:bspline-basis-matrix}) is given, the parameter can be estimated using the Least Squares algorithm given in Section~\ref{subsubsec:Method-of-LS}. Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to use model selection and regularization approaches as well as to calculate e.g confidence intervals for the regression coefficients and the prediction.
+B-splines of appropriate order $l > 2$ produce smooths curves, i.e. first and second order derivatives are continuous, where the smoothness is mostly determined by the number of splines used. Using a low number $d$, the curve will be quite smooth, but possess a large data error. When using a high number of splines $d$, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and machine learning and further discussed in Section~\ref{subsec:1d-function-estimation}. It is therefore necessary to introduce some kind of regularization \cite{deBoor1978practicalGuideToSplines}.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -974,8 +988,8 @@ using the penalized least squares algorithm PLS, the penalized least squares est
 \begin{align} \label{eq:PLS_coef}
 	\hat{\vec{\beta}}_{PLS}= (\transpose{\vec{X}} \vec{X} + \lambda_s \transpose{\vec{D}}_d \vec{D}_d)^{-1} \transpose{\vec{X}} \vec{y}.
 \end{align} 
-
-In (\ref{eq:PLS_coef}), the smoothing parameter $\lambda_s$ plays a critical role and can be optimized using the information criteria specified in Chapter \ref{subsec:MAC}, e.g. AIC and BIC, or by using cross-validation techniques, see Chapter \ref{subsubsubsec:Cross-validation}. \cite{fahrmeir2007regression}
+%
+In (\ref{eq:PLS_coef}), the smoothing parameter $\lambda_s$ plays a critical role and can be optimized using the information criteria specified in Chapter \ref{subsec:MAC}, e.g. AIC and BIC, or by using cross-validation techniques, see Chapter \ref{subsubsec:Cross-validation}. \cite{fahrmeir2007regression}
 
 For small values $\lambda_s \rightarrow 0$, the penalized least squares estimate $\hat{\vec{\beta}}_{PLS}$ approaches the least squares estimate $\hat{\vec{\beta}}_{LS}$, cf. (\ref{eq:LS_coef}), while for large values $\lambda_s \gg 0$, the fitted function shows the behavior of a polynomial with $d-1$ degrees of freedom. For example, using $d=2$ and a large smoothing parameter $\lambda_s$ this configuration leads to a linear function, while using $d=1$ would lead to a constant function. \cite{fahrmeir2007regression}
 

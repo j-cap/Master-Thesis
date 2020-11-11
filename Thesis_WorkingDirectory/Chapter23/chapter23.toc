@@ -1,88 +1,84 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Fundamentals}{3}%
+\contentsline {chapter}{\numberline {1}Fundamentals}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Linear Models}{3}%
+\contentsline {section}{\numberline {1.1}Linear Models}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Parameter Estimation}{5}%
+\contentsline {subsection}{\numberline {1.1.1}Parameter Estimation}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.1.1}The Method of Least Squares}{5}%
+\contentsline {subsubsection}{\numberline {1.1.1.1}The Method of Least Squares}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.1.2}Maximum Likelihood Estimation}{6}%
+\contentsline {subsubsection}{\numberline {1.1.1.2}Maximum Likelihood Estimation}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.2}Estimation of the Variance $\sigma ^2$}{6}%
+\contentsline {subsection}{\numberline {1.1.2}Estimation of the Variance $\sigma ^2$}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.2.1}Maximum Likelihood Estimation}{7}%
+\contentsline {subsubsection}{\numberline {1.1.2.1}Maximum Likelihood Estimation}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.2.2}Restricted Maximum Likelihood Estimation}{7}%
+\contentsline {subsubsection}{\numberline {1.1.2.2}Restricted Maximum Likelihood Estimation}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.3}The Hat Matrix}{7}%
+\contentsline {subsection}{\numberline {1.1.3}The Hat Matrix}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Model Selection}{8}%
+\contentsline {section}{\numberline {1.2}Model Selection}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Model Assessment Criteria}{8}%
+\contentsline {subsection}{\numberline {1.2.1}Model Assessment Criteria}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.1}Sum of Expected Squared Prediction Error}{8}%
+\contentsline {subsubsection}{\numberline {1.2.1.1}Sum of Expected Squared Prediction Error}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.2}Corrected Coefficient of Determination}{11}%
+\contentsline {subsubsection}{\numberline {1.2.1.2}Corrected Coefficient of Determination}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.3}Mallow's Cp}{11}%
+\contentsline {subsubsection}{\numberline {1.2.1.3}Mallow's Cp}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.4}Akaike Information Criterion}{11}%
+\contentsline {subsubsection}{\numberline {1.2.1.4}Akaike Information Criterion}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.5}Bayesian Information Criteria}{12}%
+\contentsline {subsubsection}{\numberline {1.2.1.5}Bayesian Information Criteria}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.6}Cross-validation}{12}%
+\contentsline {subsubsection}{\numberline {1.2.1.6}Cross-validation}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Subset Selection Methods}{13}%
+\contentsline {subsection}{\numberline {1.2.2}Subset Selection Methods}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.3}Regularization}{13}%
+\contentsline {subsection}{\numberline {1.2.3}Regularization}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.3.0.1}Ridge Regression}{13}%
+\contentsline {section}{\numberline {1.3}Splines}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.3.0.2}Lasso Regression}{14}%
+\contentsline {subsection}{\numberline {1.3.1}B-Splines}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Splines}{14}%
+\contentsline {subsubsection}{\numberline {1.3.1.1}Tensor-Product Splines}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}B-Splines}{14}%
+\contentsline {subsubsection}{\numberline {1.3.1.2}Additive Regression}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.1.1}Tensor-Product Splines}{17}%
+\contentsline {subsection}{\numberline {1.3.2}P-Splines}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.1.2}Additive Regression}{18}%
+\contentsline {chapter}{\numberline {2}Solution Approach}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}P-Splines}{19}%
+\contentsline {section}{\numberline {2.1}Function Estimation}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Solution Approach}{23}%
+\contentsline {subsection}{\numberline {2.1.1}1d Function Estimation}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Function Estimation}{24}%
+\contentsline {subsection}{\numberline {2.1.2}1d Smooth Function Estimation}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}1d Function Estimation}{24}%
+\contentsline {subsection}{\numberline {2.1.3}1d Constraint Function Estimation}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}1d Smooth Function Estimation}{26}%
+\contentsline {section}{\numberline {2.2}User-defined Constraints}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}1d Constraint Function Estimation}{27}%
+\contentsline {subsection}{\numberline {2.2.1}Monotonicity Constraint}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}User-defined Constraints}{30}%
+\contentsline {subsection}{\numberline {2.2.2}Curvature Constraint}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Monotonicity Constraint}{30}%
+\contentsline {subsection}{\numberline {2.2.3}Unimodality Constraint}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Curvature Constraint}{30}%
+\contentsline {subsection}{\numberline {2.2.4}Boundedness Constraint}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Unimodality Constraint}{31}%
+\contentsline {subsection}{\numberline {2.2.5}Jamming Constraint}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}Boundedness Constraint}{33}%
+\contentsline {subsection}{\numberline {2.2.6}Penalty Term for Tensor-Product Splines}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.5}Jamming Constraint}{33}%
+\contentsline {section}{\numberline {2.3}n-d Constraint Function Estimation}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.6}Penalty Term for Tensor-Product Splines}{33}%
+\contentsline {subsection}{\numberline {2.3.1}Data Term}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}n-d Constraint Function Estimation}{34}%
+\contentsline {subsection}{\numberline {2.3.2}Smoothness Term}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Data Term}{34}%
+\contentsline {subsection}{\numberline {2.3.3}Constraint Term}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Smoothness Term}{35}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.3}Constraint Term}{35}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.4}2-d Example}{37}%
+\contentsline {subsection}{\numberline {2.3.4}2-d Example}{36}

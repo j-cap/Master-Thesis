@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>chapter23.bcf</file>
+      <file>test_tikzplot.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>chapter23.bbl</file>
+      <file>test_tikzplot.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,19 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>chapter23</infile>
+      <infile>test_tikzplot</infile>
     </cmdline>
     <input>
-      <file>chapter23.bcf</file>
+      <file>test_tikzplot.bcf</file>
     </input>
     <output>
-      <file>chapter23.bbl</file>
+      <file>test_tikzplot.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>chapter23.bbl</file>
+      <file>test_tikzplot.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>chapter23.bcf</file>
+      <file>test_tikzplot.bcf</file>
     </requires>
     <requires type="editable">
       <file>../bibliography.bib</file>

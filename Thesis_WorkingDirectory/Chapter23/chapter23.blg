@@ -1,48 +1,15 @@
-This is BibTeX, Version 0.99d (MiKTeX 2.9.7350 64-bit)
-Capacity: max_strings=4000, hash_size=5000, hash_prime=4253
-The top-level auxiliary file: chapter23.aux
-I found no \citation commands---while reading file chapter23.aux
-I found no \bibdata command---while reading file chapter23.aux
-I found no \bibstyle command---while reading file chapter23.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 492 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
-int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
-quote$ -- 0
-skip$ -- 0
-stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'chapter23.blg'
+[31] biber-MSWIN32:313> INFO - === 
+[62] Biber.pm:371> INFO - Reading 'chapter23.bcf'
+[158] Biber.pm:857> INFO - Found 17 citekeys in bib section 0
+[174] Biber.pm:3976> INFO - Processing section 0
+[187] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
+[197] bibtex.pm:1500> INFO - LaTeX decoding ...
+[251] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
+[363] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[363] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[363] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
+[363] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[377] bbl.pm:617> INFO - Writing 'chapter23.bbl' with encoding 'UTF-8'
+[384] bbl.pm:720> INFO - Output to chapter23.bbl

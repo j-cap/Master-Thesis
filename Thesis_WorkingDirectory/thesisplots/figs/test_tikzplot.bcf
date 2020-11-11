@@ -1973,57 +1973,6 @@
     <bcf:datasource type="file" datatype="bibtex">../bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">wood2017generalized</bcf:citekey>
-    <bcf:citekey order="2">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="3">friedman2001elements</bcf:citekey>
-    <bcf:citekey order="4">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="5">bishop2006patternRecognition</bcf:citekey>
-    <bcf:citekey order="6">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="7">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="8">friedman2001elements</bcf:citekey>
-    <bcf:citekey order="9">luenberger1984linear</bcf:citekey>
-    <bcf:citekey order="10">wood2017generalized</bcf:citekey>
-    <bcf:citekey order="11">blobel2013statistische</bcf:citekey>
-    <bcf:citekey order="12">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="13">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="14">bishop2006patternRecognition</bcf:citekey>
-    <bcf:citekey order="15">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="16">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="17">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="18">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="19">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="20">golub1979</bcf:citekey>
-    <bcf:citekey order="21">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="22">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="23">hoerl1970ridge</bcf:citekey>
-    <bcf:citekey order="24">eubank1990regressionsplines</bcf:citekey>
-    <bcf:citekey order="25">deBoor1978practicalGuideToSplines</bcf:citekey>
-    <bcf:citekey order="26">deBoor1978practicalGuideToSplines</bcf:citekey>
-    <bcf:citekey order="27">eilers1996flexible</bcf:citekey>
-    <bcf:citekey order="28">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="29">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="30">eilers1996flexible</bcf:citekey>
-    <bcf:citekey order="31">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="32">deBoor1978practicalGuideToSplines</bcf:citekey>
-    <bcf:citekey order="33">wood2017generalized</bcf:citekey>
-    <bcf:citekey order="34">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="35">fahrmeir2004penalized</bcf:citekey>
-    <bcf:citekey order="36">eilers1996flexible</bcf:citekey>
-    <bcf:citekey order="37">osullivan1986penalties</bcf:citekey>
-    <bcf:citekey order="38">ferziger2008numerische</bcf:citekey>
-    <bcf:citekey order="39">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="40">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="41">eilers1996flexible</bcf:citekey>
-    <bcf:citekey order="42">hofner2011monotonicity</bcf:citekey>
-    <bcf:citekey order="43">sammut2011</bcf:citekey>
-    <bcf:citekey order="44">eilers1996flexible</bcf:citekey>
-    <bcf:citekey order="45">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="46">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="47">hofner2011monotonicity</bcf:citekey>
-    <bcf:citekey order="48">hofner2011monotonicity</bcf:citekey>
-    <bcf:citekey order="49">eilers2005unimodal</bcf:citekey>
-    <bcf:citekey order="50">eilers2005unimodal</bcf:citekey>
-    <bcf:citekey order="51">eilers2005unimodal</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="debug">
@@ -2032,13 +1981,4 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
-  <bcf:datalist section="0"
-                name="debug/global//global/global"
-                type="entry"
-                sortingtemplatename="debug"
-                sortingnamekeytemplatename="global"
-                labelprefix=""
-                uniquenametemplatename="global"
-                labelalphanametemplatename="global">
-  </bcf:datalist>
 </bcf:controlfile>
