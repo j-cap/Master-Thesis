@@ -47,7 +47,7 @@ This chapter summarizes the fundamentals of regression. Excellent overviews can 
 \section{Linear Models} \label{sec:LinModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Given the data set $D = \{ (x^{(i)}_1, \dots, x^{(i)}_q; y^{(i)}), \ i = 1, \dots, n\}$ , we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a function $f(x_1, \dots, x_q)$. Since this relationship is not exact, there will be a random part $\epsilon$. It is typically assumed that this part is additive and thus  
+Given the data set $D = \{ (x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1, 2, \dots, n\}$ , we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a function $f(x_1, \dots, x_q)$. Since this relationship is not exact, there will be a random part $\epsilon$. It is typically assumed that this part is additive and thus  
 \begin{align} \label{eq:model-structure}
 	y = f(x_{1}, \dots, x_{q}) + \epsilon.
 \end{align}
@@ -271,7 +271,7 @@ One way of comparing various models, i.e models using different sets of inputs, 
 
 \subsubsection{Sum of Expected Squared Prediction Error}
 
-given independent observations $y_i, \ i = 1, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, x_q\}$, we want to measure the prediction quality. The specific models are defined by numbers $M \subset \{0, 1, \dots, q\}$ of used inputs with corresponding design matrix $\vec{X}_M$. Moreover, $\vert M \vert$ is the caridnal number of M, i.e. the number of inputs included in the model. The least squares estimator for $\vec{\beta}$, cf. (\ref{eq:LS_estimator}), is then given by
+Given independent observations $y_i, \ i=1, 2, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, x_q\}$, we want to measure the prediction quality. The specific models are defined by numbers $M \subset \{0, 1, \dots, q\}$ of used inputs with corresponding design matrix $\vec{X}_M$. Moreover, $\vert M \vert$ is the caridnal number of M, i.e. the number of inputs included in the model. The least squares estimator for $\vec{\beta}$, cf. (\ref{eq:LS_estimator}), is then given by
 
 \begin{align*}
 	\hat{\vec{\beta}}_{M} = (\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M \vec{y}.
@@ -521,7 +521,7 @@ until $\vert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]} \vert \le \text{Tol}$ with 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Splines} \label{sec:Splines}
 	
-A spline is a piecewise polynomial defined on a sequence of knots. This definition is quite general. Therefore, a large variety of splines exists, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines in Section~\ref{subsec:b-splines}, tensor-product B-splines as the multi-dimensional expansion of B-splines in Section~\ref{subsubsec:tp-splines}, and P-splines in Section~\ref{subsec:p-splines} \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}.
+A spline is a piecewise polynomial defined on a sequence of knots. This definition is quite general. Therefore, a large variety of splines exists, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines in Section~\ref{subsec:b-splines}, tensor-product B-splines as the multi-dimensional expansion of B-splines in Section~\ref{ :tp-splines}, and P-splines in Section~\ref{subsec:p-splines} \cite{deBoor1978practicalGuideToSplines} \cite{eilers1996flexible}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{B-Splines} \label{subsec:b-splines}
 
@@ -601,7 +601,13 @@ The shown locality is a very attractive feature leading to an enhanced numerical
 	\item At every given $x$, only $l+1$ B-splines are non-zero.
 \end{itemize}
 
-The collection of $d = m + l - 1$ B-splines of degree $l$ over a sequence $K$ of $m+2l$ knots is called B-spline basis. The $2l$-knots are the boundary knots while the $m$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence \cite{eilers1996flexible}. For equidistant knots, we split the domain $[a,b]$ into $m-1$ intervals, i.e
+The collection of $d = m + l - 1$ B-splines of degree $l$ over a sequence $K$ of $m+2l$ knots is called B-spline basis. The basis is created such that it covers the domain $[a, b]$, i.e.
+
+\begin{align}
+	\sum_{j=1}^d B_j^l(x) = 1 \ \text{for} \ x \in [a,b].
+\end{align}
+%
+The $2l$-knots are the boundary knots while the $m$ knots are the interior knots. The knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence \cite{eilers1996flexible}. For equidistant knots, we split the domain $[a,b]$ into $m-1$ intervals, i.e
 
 \begin{align} \label{eq:equidistant-knots-interval}
 	h = \frac{b - a} {m - 1}
@@ -622,7 +628,7 @@ A function $f(x)$ can then be represented utilizing the basis function approach 
 	f(x) = \sum_{j=1}^d B_j^l(x) \beta_j = \transpose{\vec{b}} \vec{\beta},
 \end{align}
 %
-using the B-spline basis functions $B_j^l(x)$ of appropriate degree $l$ and the parameter vector $\transpose{\vec{\beta}} = [\beta_1, \dots, \beta_d] \in \mathbb{R}^{d}$. The basis functions can be given in vector notation as $\transpose{\vec{b}} = [B_1^l(x), \dots, B_d^l(x)]$. Using the set of data $D = \{ (x^{(i)}, y^{(i)}), \ i=1, \dots, n \}$, the B-spline basis for $d$ splines of degree $l$ is given by the matrix $\vec{B}$ as
+using the B-spline basis functions $B_j^l(x)$ of appropriate degree $l$ and the parameter vector $\transpose{\vec{\beta}} = [\beta_1, \dots, \beta_d] \in \mathbb{R}^{d}$. The basis functions can be given in vector notation as $\transpose{\vec{b}} = [B_1^l(x), \dots, B_d^l(x)]$. Using the set of data $D = \{ (x^{(i)}, y^{(i)}), \ i=1, 2 \dots, n \}$, the B-spline basis matrix for $d$ splines of degree $l$ is given by the matrix $\vec{B}$ as
 
 \begin{align} \label{eq:bspline-basis-matrix}
 	\vec{B} = \begin{bmatrix}
@@ -643,94 +649,124 @@ B-splines of appropriate order $l > 2$ produce smooths curves, i.e. first and se
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Tensor-Product Splines} \label{subsubsec:tp-splines}
+\subsubsection{Tensor-Product B-Splines} \label{subsubsec:tp-splines}
 
-Tensor-product splines can be seen as the multi-dimensional extension of uni-variate B-splines. We start with a B-spline basis, cf. (\ref{eq:bspline-basis-matrix}), for each dimension and construct the tensor-product spline from these. 
+Tensor-product B-splines can be seen as the multi-dimensional extension of uni-variate B-splines. We start with a B-spline basis, cf. (\ref{eq:bspline-basis-matrix}), for each dimension and construct the tensor-product B-spline basis from these. 
 
-We examine an example for two input dimensions $x_1$ and $x_2$. Tensor-product splines can in general be constructed for arbitrary dimensions using the approach given below. Assume that we have B-spline bases available, i.e. $\vec{A} \in \mathbb{R}^{n \times d}$ and $\vec{B} \in \mathbb{R}^{n \times d}$ using the same number of splines $d$ for both bases and degree $l=3$, for representing the functions $f_1(x_1)$ and $f_2(x_2)$, cf. (\ref{eq:bspline-bf-approach}), given by
+We examine an example for two input dimensions $x_1$ and $x_2$. Note that tensor-product B-splines can in general be constructed for arbitrary dimensions using the approach given below. Assume that we have B-spline bases available using the same number of splines $d$ for both bases and degree $l=3$. Then the functions $f_1(x_1)$ and $f_2(x_2)$, cf. (\ref{eq:bspline-bf-approach}), are given by
 
 \begin{align}
 	f_1(x_1) &= \sum_{i=1}^{d} A_i^l(x_1) \alpha_i  = \transpose{\vec{a}} \vec{\alpha}, \\
 	f_2(x_2) &= \sum_{j=1}^{d} B_j^l(x_2) \beta_j = \transpose{\vec{b}} \vec{\beta}
 \end{align}
-
-where $\vec{\alpha} \in \mathbb{R}^{d}$ and $\vec{\beta} \in \mathbb{R}^{d}$ are the coefficient vectors and $A_i^l(x_1)$ and $B_j^l(x_2)$ are the basis functions for degree $l$ for the respective dimension. To allow the function $f_1(x_1)$ to smoothly vary with $x_2$, its coefficients $\alpha_i$ must vary smoothly with $x_2$. By using the already available basis for representing smooth functions in $x_2$, we can write
+%
+where $\vec{\alpha} \in \mathbb{R}^{d}$ and $\vec{\beta} \in \mathbb{R}^{d}$ are the parameter vectors and $A_i^l(x_1)$ and $B_j^l(x_2)$ are the basis functions for degree $l$ for the respective dimension. To allow the function $f_1(x_1)$ to smoothly vary with $x_2$, its parameter $\alpha_i$ must vary smoothly with $x_2$. By using the already available basis for representing smooth functions in $x_2$, we can write
 
 \begin{align}
 	\alpha_i(x_2) = \sum_{j=1}^{d} B_j^l(x_2) \beta_{ij} 
 \end{align}
-
-which leads to
+%
+which leads to the tensor-product B-splines of the form
 
 \begin{align} \label{eq:tps-basis-function-approach-detailed}
 	f_{1,2}(x_1, x_2) = \sum_{i=1}^{d} \sum_{j=1}^{d} A_i^l(x_1) B_j^l(x_2) \beta_{ij}.
 \end{align}
 
-We can therefore combine the individual basis matrices to generated a new basis matrix for the tensor-product spline. For any set of data $\{x^{(i)}_{1}, x^{(i)}_{2} \}, \ i = 1, \dots, n$, the relationship between the basis matrix $\vec{X}$ of the tensor-product spline and the marginal basis matrices $\vec{A}$ and $\vec{B}$, cf. (\ref{eq:bspline-basis-matrix}), is given by 
+We can therefore combine the individual basis matrices to generated a new basis matrix for the tensor-product B-spline. For any set of data $D = \{ (x^{(i)}_{1}, x^{(i)}_{2}, y^{(i)} ), \ i=1, 2, \dots, n\}$, the relationship between the basis matrix $\vec{X}$ of the tensor-product spline and the matrices $\vec{A}$ and $\vec{B}$ is given as
 
 \begin{align}
-	\vec{X} = \vec{A} \otimes \vec{B}
+	\vec{X} = \vec{A} \odot \vec{B}
 \end{align}
+%
+where $\odot$ indicates the use of the row-wise Kronecker product, see Appendix, $\vec{X} \in \mathbb{R}^{n \times d^2}$ denotes the tensor-product B-spline basis matrix \cite{wood2017generalized}. Let $\vec{A} \in \mathbb{R}^{n \times d}$ denote the B-spline basis matrix for dimension $x_1$ and $\vec{B} \in \mathbb{R}^{n \times d}$ denote the B-spline basis matrix for dimension $x_2$, cf.~(\ref{eq:bspline-bf-approach}). 
 
-where $\otimes$ indicates the use of the row-wise Kronecker product, $\vec{X} \in \mathbb{R}^{n \times d^2}$ denotes the tensor-product spline basis, $\vec{A} \in \mathbb{R}^{n \times d}$ denotes the B-spline basis for dimension $x_1$ and $\vec{B} \in \mathbb{R}^{n \times d}$ denotes the B-spline basis for dimension $x_2$. The basis matrix for the tensor-product spline is therefore given by the row-wise Kronecker product of the marginal basis matrices. \cite{wood2017generalized}  
-
-We can then model a two dimensional function $f(x_1, x_2)$ using data $\{x_1^{(i)}, x_2^{(i)}; y^{(i)} \}, \ i=i, \dots, n$ as in (\ref{eq:bspline-bf-approach}) as
+We can then model a two dimensional function using data $D$ as in~(\ref{eq:bspline-bf-approach}) as
 
 \begin{align} \label{eq:tpspline-bf-approach}
-	f(\vec{x}_1, \vec{x}_2) = \vec{X} \vec{\gamma}
+	\vec{y} = \vec{X} \vec{\gamma},
 \end{align}
+%
+with the tensor-product spline B-basis matrix $\vec{X} \in \mathbb{R}^{n \times d^2}$ and the coefficient vector $\transpose{\vec{\gamma}} = [\gamma_1, \dots, \gamma_{d^2}] \in \mathbb{R}^{d^2}$. 
 
-with the tensor-product spline basis matrix $\vec{X} \in \mathbb{R}^{n \times d^2}$ and the coefficient vector $\vec{\gamma} \in \mathbb{R}^{d^2}$. The coefficient vector is obtained by reordering $\beta_{ij}$ in (\ref{eq:tps-basis-function-approach-detailed}).
-
-This approach can in theory be continued for as much input dimensions as required. In practice, modeling more than two input dimensions using tensor-product splines becomes infeasible because of the exponential increase of basis functions and therefore coefficients to estimate. 
+This approach can in theory be continued for as much input dimensions as required. In practice, modeling more than two input dimensions using tensor-product B-splines becomes infeasible because of the exponential increase of basis functions and therefore parameter to estimate. 
 
 
 \subsubsection{Additive Regression} \label{subsubsec:STAR}
-%
-%We have again some given data  and want to model the generally non-linear relationship between the input data $\{x^{(i)}_{1}, \dots, x^{(i)}_{q}\}$ and the output $y^{(i)}$ by some multi-dimensional function $f(x_1, \dots, x_q)$.  Using, e.g. high-dimensional tensor-product splines, to model the function is computationally expensive, since the number of regression coefficients increases exponentially.
 
-To circumvent this problem, we now assume the restrictive structure of additive models, given by
+To circumvent the latter problem, we now assume the restrictive structure of additive models, see \cite{fahrmeir2007regression}, given by
 
 \begin{align} \label{eq:addRegBaseEquation}
-	f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q) + \epsilon.
+	f_{add} = f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q) + \epsilon.
 \end{align}
-
-for some given data $\{x^{(i)}_{1}, \dots, x^{(i)}_{q}; y^i\}, \ i = 1, \dots, n$.
-
-Hence, we use one function $f_i(x_i)$ per input dimension. \cite{fahrmeir2007regression} Using the concepts introduced above, i.e. using B-splines to estimate the function $f_i(x_i)$, we obtain for each function a linear model
+%
+Hence, we use one function $f_i(x_i)$ per input dimension. For some given data $D = \{ (x^{(i)}_{1}, \dots, x^{(i)}_{q}, y^i ), \ i=1, 2, \dots, n\}$, using B-splines we obtain for each function $f_i(x_i)$ a linear model
 
 \begin{align} \label{eq:addRegBaseEquation-as-linModel}
 	f_i(\vec{x}_i) = \vec{X}_{s_i} \vec{\beta}_{s_i}
 \end{align}
+%
+where $\vec{X}_{s_i} \in \mathbb R^{n \times d_i}$ is the B-spline basis matrix using $d_i$ splines for the smooth function $f_i(x_i)$ of input dimension $i$, $\transpose{\vec{x}}_i = [x_i^{(1)}, \dots, x_i^{(n)}]$ is the data vector of input dimension $i$ and $\vec{\beta}_{s_i} \in \mathbb R^{d_i}$ are the parameter to estimate. This leads to the model structure 
 
-where $\vec{X}_{s_i} \in \mathbb R^{n \times d_i}$ is the B-spline basis using $d_i$ splines for the smooth function $f_i(x_i)$ of input dimension $i$, $\vec{x}_i = \transpose{(x_i^{(1)}, \dots, x_i^{(n)})}$ is the data vector of input dimension $i$ and $\vec{\beta}_{s_i} \in \mathbb R^{d_i}$ are the coefficients to be estimated. 
+\begin{align} 
+	\vec{y} =  \vec{X}_{s_1} \vec{\beta}_{s_1} + \dots + \vec{X}_{s_q} \vec{\beta}_{s_q} + \epsilon,
+\end{align}
+%
+which can be written as linear model by concatenation of the B-spline basis matrices and parameter vectors as 
 
-The model given in (\ref{eq:addRegBaseEquation-as-linModel}) does not contain interaction terms between variables. Nevertheless, these can be easily introduced for 2 dimensions using tensor-product splines without an overflowing increase in the number of coefficients.
+\begin{align} \label{eq:STAR-single-block-diag}
+	\vec{y} = \vec{X} \vec{\beta} = 
+				\begin{bmatrix}
+					X_{s_1} \colon \ \dots \ \colon X_{s_q} 
+				\end{bmatrix}
+			    \begin{bmatrix}
+					\beta_1 \\ 
+					\vdots \\
+					\beta_q 
+				\end{bmatrix},
+\end{align}
+%
+with the matrix $\vec{X} \in \mathbb{R}^{n \times \sum_{i=1}^q d_i}$ and parameter vector $\vec{\beta} \in \mathbb{R}^{\sum_{i=1}^q d_i}$. The model (\ref{eq:STAR-single-block-diag}) does not contain interaction terms between variables. Nevertheless, these can be easily introduced for two dimensions using tensor-product B-splines without an overflowing increase in the number of coefficients. We can then write the additive model with interaction terms as 
 
-We can then write the additive model with interaction terms in matrix notation as 
+\begin{align} \label{eq:addRegBaseEquation-with-interaction}
+	f(x_1, \dots, x_q) = f_{add} + f_{1,2}(x_1, x_2) + \dots + f_{q-1, q}(x_{q-1},x_q) + \epsilon.
+\end{align}
+%
+Hence, we use one function $f_i(x_i)$ per input dimension and per interaction term. Using tensor-product B-splines for each interaction term, we obtain the model
 
 \begin{align} \label{eq:STAR}
 	\vec{y} = \vec{X}_{s_1} \vec{\beta}_{s_1} + \dots + \vec{X}_{s_q} \vec{\beta}_{s_q} + \sum_{j=1}^{q-1} \sum_{r>j}^{q} \vec{X}_{t_{j, r}} \vec{\beta}_{t_{j, r}} + \vec{\epsilon}
 \end{align}
-
-using the error term $\vec{\epsilon} \in \mathbb{R}^n$, the tensor-product spline bases $\vec{X}_{t_{j,r}} \in \mathbb{R}^{n \times d_j d_r}$ and the tensor-product spline basis coefficients $\vec{\beta}_{t_{j, r}}$. This can be solved using ordinary least squares. 
-
-Using the notation in (\ref{eq:STAR}) the theoretical framework of linear models can be applied to the additive regression models, since (\ref{eq:STAR}) can be formulated as large linear model as
+%
+using the tensor-product B-spline basis matrices $\vec{X}_{t_{j,r}} \in \mathbb{R}^{n \times d_j d_r}$ and the parameter $\vec{\beta}_{t_{j, r}}$. Using the notation in (\ref{eq:STAR}) the theoretical framework of linear models can be applied to the additive regression model, since (\ref{eq:STAR}) can be formulated as linear model as
 
 \begin{align} \label{eq:STAR-block-diag}
 	\vec{y} = \vec{X} \vec{\beta} = 
-	\begin{pmatrix}
-		\vec{X}_{s_1} &   \vec{X}_{s_2} & \dots & \vec{X}_{s_q} & \vec{X}_{t_{1,2}} & \dots & \vec{X}_{t_{q-1, q}}    
-	\end{pmatrix} \begin{pmatrix} \vec{\beta}_{s_1} \\ \vec{\beta}_{s_2} \\ \vdots \\ \vec{\beta}_{s_q} \\ \vec{\beta}_{t_{1,2}} \\ \vdots \\ \vec{\beta}_{t_{q-1, q}} \\
-	\end{pmatrix}
+	\begin{bmatrix}
+		\vec{X}_{s_1} \colon \ \dots \ \colon \vec{X}_{s_q} \colon \vec{X}_{t_{1,2}} \colon \ \dots  \ \colon \vec{X}_{t_{q-1, q}}    
+	\end{bmatrix} \begin{bmatrix} \vec{\beta}_{s_1} \\ \vec{\beta}_{s_2} \\ \vdots \\ \vec{\beta}_{s_q} \\ \vec{\beta}_{t_{1,2}} \\ \vdots \\ \vec{\beta}_{t_{q-1, q}} \\
+	\end{bmatrix}
 \end{align}
-
-with $\vec{X}$ as large design matrix and $\vec{\beta}$ as combined coefficient vector. Therefore, the assumptions given in Chapter \ref{sec:LinModel} on the error term, as well as on the model functions are used. \cite{fahrmeir2004penalized}
+%
+with $\vec{X}$ as combined design matrix and $\vec{\beta}$ as combined parameter vector. Therefore, the parameter can be calculated efficiently using the Least Squares algorithm. Further, the assumptions given in Section~\ref{sec:LinModel} on the error term, as well as on the model functions are used \cite{fahrmeir2007regression}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{P-Splines} \label{subsec:p-splines}
 
-P-splines use the concepts of regularization to produce smooth function estimations. In our context, a function is said to be smooth if its $2^{nd}$ derivative is continuous and does not vary much. They where introduced by Eilers and Marx in \cite{eilers1996flexible} to overcome the problem stated above. Eilers and Marx simplified and generalized the idea of Osullivan in \cite{osullivan1986penalties}, who introduced a smoothness penalty based on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knot placement and a penalty based on finite differences of order $D$ of the coefficients of adjacent B-splines as approximation of the derivative.
+P-splines use the concepts of regularization to produce smooth function estimations. In our context, a function is said to be smooth if its second-orders derivative is continuous and does not vary much. A penalty of the from 
+
+\begin{align} \label{eq:wiggliness-penalty}
+	\lambda \int (f''(x))^2 dx
+\end{align}
+%
+is typically introduced to penalize the curvature of a function \cite{osullivan1986penalties}. Inserting the B-spline function approximation~(\ref{eq:bspline-bf-approach}) results in
+
+\begin{align}
+	\int (f''(x))^2 dx = \int \Big(\sum_{j=1}^d B''_j(x) \beta_j \Big)^2 = \int \sum_{r=1}^d \sum_{j=1}^d \beta_r \beta_j B''_j(x) B''_r(x) = \transpose{\vec{\beta}} \vec{K} \vec{\beta}
+\end{align}
+% 
+with $\vec{K}[r,j] = \int B''_r(x) B''_j(x) dx$ is a matrix of dimension $\mathbb{R}^{d \times d}$. 
+
+They where introduced by Eilers and Marx in \cite{eilers1996flexible} to overcome the problem stated above. Eilers and Marx simplified and generalized the idea of Osullivan in \cite{osullivan1986penalties}, who introduced a smoothness penalty based on the integral of the squared second derivative of the estimated spline to penalized wiggly function estimates. They proposed to use equidistant knot placement and a penalty based on finite differences of order $D$ of the coefficients of adjacent B-splines as approximation of the derivative.
 
 The difference operator  $\Delta^D$ of order $D$ for equidistant knot placement of B-splines is defined by
 
@@ -857,7 +893,7 @@ With the penalty term in (\ref{eq:tps-penalty-term}), we can use the penalized l
 
 \chapter{Solution Approach} \label{chap:solution-approach}
 
-We are now going to use the theory discussed in Chapter \ref{chap:fundamentals} to estimate functions using available data and a priori domain knowledge. An overview of the different problems considered in this work is given in Table \ref{tab:problem_overview}. First, we are using B-splines, see Chapter \ref{subsec:b-splines}, as basis functions for the estimation of the unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\} \ i = 1, \dots, n$.  Next, we use the concept of P-splines, see \ref{subsec:p-splines},  introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one and two dimensional functions. \cite{hofner2011monotonicity} 
+We are now going to use the theory discussed in Chapter \ref{chap:fundamentals} to estimate functions using available data and a priori domain knowledge. An overview of the different problems considered in this work is given in Table \ref{tab:problem_overview}. First, we are using B-splines, see Chapter \ref{subsec:b-splines}, as basis functions for the estimation of the unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\} \ i=1, 2, \dots, n$.  Next, we use the concept of P-splines, see \ref{subsec:p-splines},  introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one and two dimensional functions. \cite{hofner2011monotonicity} 
 
 \begin{table}[H]
 	\centering
@@ -915,7 +951,7 @@ Figure \ref{fig:test_func} shows functions evaluated at 200 points. The function
 The goal is to model given data
 
 \begin{align} \label{eq:data}
-	\{\vec{x}, \vec{y}\} = \{x^{(i)}, y^{(i)}\}, \ i = 1, \dots, n 
+	\{\vec{x}, \vec{y}\} = \{x^{(i)}, y^{(i)}\}, \ i=1, 2, \dots, n 
 \end{align}
 
 using B-splines as basis functions. Therefore, we want to estimate the unknown function $\vec{y} = f(\vec{x})$, which can be represented as a linear combination of $k$ B-spline basis functions $B_j^m$ of degree $m=3$, cf. (\ref{eq:bspline-bf-approach}), as
@@ -1239,7 +1275,7 @@ with the respective penalty matrices $\vec{K}_{c_1} = \vec{D}_{c_1}^{\text{T}} \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{n-d Constraint Function Estimation}
 
-The extension from one input to multiple input dimensions uses the concept of additive models given in Chapter \ref{subsubsec:STAR}. Given input data $\{ x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)}\}, \ i = 1, \dots, n$ and $q$ as the number of inputs, the combined model using all available B-splines and tensor-product splines is given, cf. (\ref{eq:STAR}), as
+The extension from one input to multiple input dimensions uses the concept of additive models given in Chapter \ref{subsubsec:STAR}. Given input data $\{ x_1^{(i)}, \dots, x_q^{(i)}, y^{(i)}\}, \ i=1, 2, \dots, n$ and $q$ as the number of inputs, the combined model using all available B-splines and tensor-product splines is given, cf. (\ref{eq:STAR}), as
 
 \begin{align} \label{eq:tps_all}
 	y = f(x_1,..., x_q) = \sum_{j=1}^q s_j(x_j) + \sum_{j=1}^{q-1} \sum_{r>j}^q t_{j, r}(x_j, x_r)
