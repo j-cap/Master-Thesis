@@ -1,15 +1,56 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is 'chapter23.blg'
-[31] biber-MSWIN32:313> INFO - === 
-[62] Biber.pm:371> INFO - Reading 'chapter23.bcf'
-[158] Biber.pm:857> INFO - Found 17 citekeys in bib section 0
-[174] Biber.pm:3976> INFO - Processing section 0
-[187] Biber.pm:4136> INFO - Looking for bibtex format file '../bibliography.bib' for section 0
-[197] bibtex.pm:1500> INFO - LaTeX decoding ...
-[251] bibtex.pm:1316> INFO - Found BibTeX data source '../bibliography.bib'
-[363] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[363] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[363] Biber.pm:3804> INFO - Sorting list 'debug/global//global/global' of type 'entry' with template 'debug' and locale 'en-US'
-[363] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[377] bbl.pm:617> INFO - Writing 'chapter23.bbl' with encoding 'UTF-8'
-[384] bbl.pm:720> INFO - Output to chapter23.bbl
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7350 64-bit)
+Capacity: max_strings=4000, hash_size=5000, hash_prime=4253
+The top-level auxiliary file: chapter23.aux
+The style file: IEEEtran.bst
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: ../bibliography.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 12 entries,
+            4087 wiz_defined-function locations,
+            892 strings with 9017 characters,
+and the built_in function-call counts, 7273 in all, are:
+= -- 566
+> -- 161
+< -- 52
++ -- 85
+- -- 29
+* -- 332
+:= -- 1138
+add.period$ -- 24
+call.type$ -- 12
+change.case$ -- 5
+chr.to.int$ -- 111
+cite$ -- 12
+duplicate$ -- 521
+empty$ -- 649
+format.name$ -- 38
+if$ -- 1688
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 92
+newline$ -- 59
+num.names$ -- 12
+pop$ -- 226
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 580
+stack$ -- 0
+substring$ -- 263
+swap$ -- 399
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 12
+warning$ -- 0
+while$ -- 32
+width$ -- 14
+write$ -- 126
