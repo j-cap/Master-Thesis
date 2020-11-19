@@ -5,5 +5,4 @@
 Code/EQL
 .vscode/settings.json
 Code/TFL
-EQL_TensorFlow
-EQL_Tensorflow
+EQL_TensorFlow/*
