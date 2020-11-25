@@ -1,0 +1,11 @@
+// Arthur Samuels View of A Machine Learning Model
+digraph {
+	rankdir=LR size="8,5"
+	I [label=Inputs color="" style=filled]
+	W [label=Weights color="" style=filled]
+	M [label=Model color="" style=filled]
+	R [label=Results color="" style=filled]
+	I -> M
+	W -> M
+	M -> R
+}
