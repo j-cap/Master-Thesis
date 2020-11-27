@@ -1,0 +1,237 @@
+% Macros zum Setzen von Formeln
+%-------------------------------
+
+\newcommand{\gradient}[1]{\left(\nabla #1 \right)}
+\newcommand{\hesse}[1]{\left(\nabla^2 #1 \right)}
+ 
+% transponiert
+\newcommand{\transpose}[1]{#1^\mathrm{T}}
+% Exponentialfunktion
+\newcommand{\e}{\mathrm{e}}
+% Imaginäre Einheit
+\newcommand{\I}{\mathrm{I}}
+% Einheitsmatrix E
+\newcommand{\II}{\vec{E}} 
+% Ableitungen
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\Diff}[2]{\frac{\dd#1}{\dd#2}}
+\newcommand{\DiffT}[1]{\Diff{#1}{t}}
+\newcommand{\DDiff}[2]{\frac{\dd^2#1}{\dd#2^2}}
+\newcommand{\DDiffT}[1]{\DDiff{#1}{t}}
+\newcommand{\PartDiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\PartDiffT}[1]{\Diff{#1}{t}}
+\newcommand{\PartDDiff}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\PartDDiffT}[1]{\DDiff{#1}{t}}
+
+\newcommand{\lie}[1]{\mathrm{L}_{#1}}
+\newcommand{\ad}[1]{\mathrm{ad}_{#1}}
+
+% Betrag und Norm
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+
+% Macro für die Abstände in Gleichungen mit Nebenbedingungen
+\providecommand{\with}{\,, & \qquad}
+% Satzzeichen nach Formeln
+\providecommand{\FullStop}{\text{~\@.\xspace}}
+\providecommand{\Comma}{\text{~,\xspace}}
+
+% Klammern
+\providecommand{\of}[1]{\left(#1\right)}
+\newcommand{\braces}[1]{\left(#1\right)}
+
+%varphi
+\providecommand{\ph}{\varphi}
+\let\phi\varphi
+
+%prettyref
+\providecommand{\pref}[1]{\prettyref{#1}}
+
+% Zahlenmengen
+% \IfSlidesElse{
+% 	\newcommand{\numset}[1]{\mathbb{#1}}
+% }{
+	\newcommand{\numset}[1]{\mathbbm{#1}}
+% }
+
+\newcommand{\eps}{\varepsilon}
+
+% Operatoren
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\asin}{asin}
+\DeclareMathOperator{\acos}{acos}
+\DeclareMathOperator{\atan}{atan}
+\DeclareMathOperator{\asinh}{asinh}
+\DeclareMathOperator{\acosh}{acosh}
+\DeclareMathOperator{\atanh}{atanh}
+
+\newcommand{\diag}{\operatorname*{diag}}
+\renewcommand{\ker}{\operatorname*{Kern}}
+\newcommand{\bild}{\operatorname*{Bild}}
+\newcommand{\konst}{\operatorname*{konst.}}
+\newcommand{\const}{\operatorname*{const.}}
+
+% Makro für Vektoren (unterscheide griechische Buchstaben)
+\DeclareRobustCommand{\vec}[1]{ 				
+	\ifthenelse{\equal{#1}{\omega} \OR \equal{#1}{\varphi} \OR \equal{#1}{\alpha} \OR \equal{#1}{\beta} \OR \equal{#1}{\chi} \OR \equal{#1}{\delta} \OR \equal{#1}{\varepsilon} \OR \equal{#1}{\phi} \OR \equal{#1}{\epsilon} \OR \equal{#1}{\gamma} \OR \equal{#1}{\eta} \OR \equal{#1}{\iota} \OR \equal{#1}{\kappa} \OR \equal{#1}{\lambda} \OR \equal{#1}{\mu} \OR \equal{#1}{\nu} \OR \equal{#1}{\pi} \OR \equal{#1}{\theta} \OR \equal{#1}{\vartheta} \OR \equal{#1}{\rho} \OR \equal{#1}{\sigma} \OR \equal{#1}{\varsigma} \OR \equal{#1}{\tau} \OR \equal{#1}{\upsilon} \OR \equal{#1}{\xi} \OR \equal{#1}{\psi} \OR \equal{#1}{\zeta}}{
+		% Für griechische Kleinbuchstaben muss boldsymbol verwendet werden (deckt mathbf nicht ab)
+		\boldsymbol{#1}
+	}{
+		% Alle anderen Symbole verwenden mathbf
+		\mathbf{#1}
+	}
+}
+
+
+%------------------------------
+% Macros zur Verwendung im Text
+%------------------------------
+
+% Namen
+%-------
+\providecommand{\Maple}{\textsc{Maple}\xspace}
+\providecommand{\Matlab}{\textsc{Matlab}\xspace}
+\providecommand{\MatlabSimulink}{\textsc{Matlab/Simulink}\xspace}
+\providecommand{\Doxygen}{\textsc{Doxygen}\xspace}
+
+% +++ English
+% .\@ is not treated as a full stop (important for the length of the whitespace
+% afterwards. \@. is always treated as a full stop.)
+\providecommand{\ie}{i.\,e.\@\xspace} 
+\providecommand{\eg}{e.\,g.\@\xspace}
+\providecommand{\cf}{cf.\@\xspace}
+
+% +++ German
+\providecommand{\zB}{z.\,B.\@\xspace}
+\providecommand{\bzw}{bzw.\@\xspace}
+\providecommand{\bspw}{bspw.\@\xspace}
+\AtEndOfClass{\renewcommand{\dh}{d.\,h.\@\xspace}}
+\providecommand{\Dh}{D.\,h.\@\xspace}
+\providecommand{\ua}{u.\,a.\@\xspace}
+\providecommand{\sog}{sog.\@\xspace}
+\providecommand{\usw}{usw.\@\xspace}
+\providecommand{\etc}{etc.\@\xspace}
+\providecommand{\ggf}{ggf.\@\xspace}
+\providecommand{\ca}{ca.\@\xspace}
+\providecommand{\uU}{u.\,U.\@\xspace}
+\providecommand{\vgl}{vgl.\@\xspace}
+
+% für Wörter mit Bindestrich. (Setzt einen Bindestrich, an dem nicht getrennt
+% werden darf, lässt aber die Trennung im folgenden Wort zu.)
+\providecommand{\hypII}[2]{#1\nobreakdash-\hspace{0pt}#2}
+\providecommand{\x}[1]{\hypII{$x$}{#1}}
+\providecommand{\y}[1]{\hypII{$y$}{#1}}
+\providecommand{\z}[1]{\hypII{$z$}{#1}}
+
+% % Kommando um Teile von Formeln hervorzuheben
+% %---------------------------------------------
+% % -> Definition der Styles in ACIN_script_colors.tex
+% 
+% \newcommand{\SpEmphStyle}{}
+% \define@key[ACINreport]{EmphEquation}{style}[]{
+% 	\renewcommand{\SpEmphStyle}{style=#1}
+% }
+% \newcommand{\SpEmphColor}{}
+% \define@key[ACINreport]{EmphEquation}{color}[black]{
+% 	\renewcommand{\SpEmphColor}{\color{#1}}
+% }
+% 
+% \newcommand{\SpEmph}[2][]{%
+% 	\renewcommand{\SpEmphStyle}{}%
+% 	\setkeys[ACINreport]{EmphEquation}{#1}%
+% 	\renewcommand{\SpEmphColor}{\color{black}}%
+% 	\setkeys[ACINreport]{EmphEquation}{#1}%
+% 	\expandafter\psframebox\expandafter[\SpEmphStyle]{\SpEmphColor\displaystyle #2}%
+% }
+
+
+
+
+
+
+
+
+
+
+%--- Zeilenhoehe in Tabellen -------------------------------------------------
+% Mit dem Befehl \TabEqn kann eine Formel in einer Tabelle gesetzt werden
+% (einfach nur die Formel in die Tabelle eingeben bringt die vertikale
+% Ausrichtung irgendwie durcheinander)
+% \ExtraTabEqnSpace ist der Platz, der oben und unter einer Formel eingefügt
+% wird
+\AtEndOfClass{
+\newcommand{\ExtraTabEqnSpace}{1ex}
+\makeatletter
+\newcommand*{\TabEqn}[1]{%
+\begingroup
+	\setbox\@tempboxa=\hbox{%
+	#1%
+	}%
+	% Hinzufuegung von 1ex zu Hoehe (\ht)
+	% und Tiefe (\dp) der Box.
+	% Umweg ueber \dimen@ erforderlich,
+	% da man \ht, und \dp nur etwas zuweisen,
+	% aber nichts hinzufuegen kann.
+	\setlength{\dimen@}{\ht\@tempboxa}%
+	\addtolength{\dimen@}{\ExtraTabEqnSpace}%
+	\setlength{\ht\@tempboxa}{\dimen@}%
+	\setlength{\dimen@}{\dp\@tempboxa}%
+	\addtolength{\dimen@}{\ExtraTabEqnSpace}%
+	\setlength{\dp\@tempboxa}{\dimen@}%
+	\usebox\@tempboxa
+\endgroup
+}
+\makeatother
+}
+
+
+%Macros
+\newcommand{\phim}{\ph_\text{m}}
+\newcommand{\taum}{\tau_\text{m}}
+\newcommand{\G}{G_{\tau_\text{m},\ph_\text{m}}}
+\newcommand{\Gomega}{G_{\tau_\text{m},\omega_\text{m}}}
+\newcommand{\mc}{m_\text{c}}
+\newcommand{\dc}{d_\text{c}}
+\newcommand{\dm}{d_\text{m}}
+\newcommand{\Thetae}{\Theta_\text{e}}
+\newcommand{\itt}{i_\text{t}}
+\newcommand{\ig}{i_\text{g}}
+\newcommand{\xip}{\dot{\xi}}
+\newcommand{\omegam}{\omega_\text{m}}
+\newcommand{\Gc}{G_\text{cc,cl}G_{\taum,\phim}G_\text{dt}}
+\newcommand{\GR}{G_\text{R}}%$\frac{s}{sT_\text{R}+1}$ %Realisierung der differentiation von phim nach omegam
+\newcommand{\omegar}{\omega_\text{r}}
+
+%Kapietel Reglerentwurf
+\newcommand{\Tphidphim}{T_{\ph_\text{d},\ph_\text{m}}}
+\newcommand{\KPPID}{K_\text{P}^\text{PID}}
+\newcommand{\KIPID}{K_\text{I}^\text{PID}}
+\newcommand{\KDPID}{K_\text{D}^\text{PID}}
+\newcommand{\KAPID}{K_\text{a}^\text{PID}}
+\newcommand{\KVPID}{K_\text{v}^\text{PID}}
+
+\newcommand{\PID}{\KPPID+\frac{\KIPID}{s}+s\KDPID}
+\newcommand{\KPPPPI}{K_\text{PP}^\text{PPI}}
+\newcommand{\KPPPI}{K_\text{P}^\text{PPI}}
+\newcommand{\KIPPI}{K_\text{I}^\text{PPI}}
+\newcommand{\KAPPI}{K_\text{a}^\text{PPI}}
+\newcommand{\KVPPI}{K_\text{v}^\text{PPI}}
+\newcommand{\PI}{\KPPPI+\frac{\KIPPI}{s}}
+\newcommand{\Gdt}{G_{\text{dt}}}
+\newcommand{\Ar}{A_\text{r}}
+\newcommand{\phirpi}{\ph^\omega_\text{r}}
+\newcommand{\phirp}{\ph^\ph_\text{r}}
+
+
+
+\newcommand{\smallspace}{\hspace{0.2cm}}
+\newcommand{\bigspace}{\hspace{0.5cm}}
+\newcommand{\opac}{0.85}
+
+

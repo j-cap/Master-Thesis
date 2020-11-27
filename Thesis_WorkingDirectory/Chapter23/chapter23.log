@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.10.6)  18 NOV 2020 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.10.6)  26 NOV 2020 15:38
 entering extended mode
 **./chapter23.tex
 (chapter23.tex
@@ -209,6 +209,14 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 nt.sty"
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
+("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow
+.sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip52
+\multirow@cntb=\count193
+\multirow@dima=\skip53
+\bigstrutjot=\dimen154
+)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes
 .sty"
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
@@ -216,14 +224,14 @@ Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox
 .sty"
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count193
+\etb@tempcnta=\count194
 )
-\csq@reset=\count194
-\csq@gtype=\count195
-\csq@glevel=\count196
-\csq@qlevel=\count197
-\csq@maxlvl=\count198
-\csq@tshold=\count199
+\csq@reset=\count195
+\csq@gtype=\count196
+\csq@glevel=\count197
+\csq@qlevel=\count198
+\csq@maxlvl=\count199
+\csq@tshold=\count266
 \csq@ltx@everypar=\toks26
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes
@@ -246,8 +254,8 @@ rcs.sty"
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
 gfutil-common.tex"
 \pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen154
-\pgfutil@tempdimb=\dimen155
+\pgfutil@tempdima=\dimen155
+\pgfutil@tempdimb=\dimen156
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
 gfutil-common-lists.tex"))
@@ -283,26 +291,26 @@ gfkeys.code.tex"
 gfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks30
 ))
-\pgf@x=\dimen156
-\pgf@y=\dimen157
-\pgf@xa=\dimen158
-\pgf@ya=\dimen159
-\pgf@xb=\dimen160
-\pgf@yb=\dimen161
-\pgf@xc=\dimen162
-\pgf@yc=\dimen163
-\pgf@xd=\dimen164
-\pgf@yd=\dimen165
+\pgf@x=\dimen157
+\pgf@y=\dimen158
+\pgf@xa=\dimen159
+\pgf@ya=\dimen160
+\pgf@xb=\dimen161
+\pgf@yb=\dimen162
+\pgf@xc=\dimen163
+\pgf@yc=\dimen164
+\pgf@xd=\dimen165
+\pgf@yd=\dimen166
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count266
-\c@pgf@countb=\count267
-\c@pgf@countc=\count268
-\c@pgf@countd=\count269
+\c@pgf@counta=\count267
+\c@pgf@countb=\count268
+\c@pgf@countc=\count269
+\c@pgf@countd=\count270
 \t@pgf@toka=\toks31
 \t@pgf@tokb=\toks32
 \t@pgf@tokc=\toks33
-\pgf@sys@id@count=\count270
+\pgf@sys@id@count=\count271
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
 \pgf.cfg"
@@ -321,8 +329,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
 \pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count271
-\pgfsyssoftpath@bigbuffer@items=\count272
+\pgfsyssoftpath@smallbuffer@items=\count272
+\pgfsyssoftpath@bigbuffer@items=\count273
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
 \pgfsysprotocol.code.tex"
@@ -359,8 +367,8 @@ hcalc.code.tex"
 hutil.code.tex")
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
 hparser.code.tex"
-\pgfmath@dimen=\dimen166
-\pgfmath@count=\count273
+\pgfmath@dimen=\dimen167
+\pgfmath@count=\count274
 \pgfmath@box=\box50
 \pgfmath@toks=\toks34
 \pgfmath@stack@operand=\toks35
@@ -386,39 +394,39 @@ hfunctions.misc.code.tex")
 hfunctions.integerarithmetics.code.tex")))
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
 hfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count274
+\c@pgfmathroundto@lastzeros=\count275
 ))
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint
 .code.tex")
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen167
-\pgf@picmaxx=\dimen168
-\pgf@picminy=\dimen169
-\pgf@picmaxy=\dimen170
-\pgf@pathminx=\dimen171
-\pgf@pathmaxx=\dimen172
-\pgf@pathminy=\dimen173
-\pgf@pathmaxy=\dimen174
-\pgf@xx=\dimen175
-\pgf@xy=\dimen176
-\pgf@yx=\dimen177
-\pgf@yy=\dimen178
-\pgf@zx=\dimen179
-\pgf@zy=\dimen180
+\pgf@picminx=\dimen168
+\pgf@picmaxx=\dimen169
+\pgf@picminy=\dimen170
+\pgf@picmaxy=\dimen171
+\pgf@pathminx=\dimen172
+\pgf@pathmaxx=\dimen173
+\pgf@pathminy=\dimen174
+\pgf@pathmaxy=\dimen175
+\pgf@xx=\dimen176
+\pgf@xy=\dimen177
+\pgf@yx=\dimen178
+\pgf@yy=\dimen179
+\pgf@zx=\dimen180
+\pgf@zy=\dimen181
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen181
-\pgf@path@lasty=\dimen182
+\pgf@path@lastx=\dimen182
+\pgf@path@lasty=\dimen183
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen183
-\pgf@shorten@start@additional=\dimen184
+\pgf@shorten@end@additional=\dimen184
+\pgf@shorten@start@additional=\dimen185
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcorescopes.code.tex"
@@ -426,19 +434,19 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box51
 \pgf@hbox=\box52
 \pgf@layerbox@main=\box53
-\pgf@picture@serial@count=\count275
+\pgf@picture@serial@count=\count276
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen185
+\pgflinewidth=\dimen186
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen186
-\pgf@pt@y=\dimen187
-\pgf@pt@temp=\dimen188
+\pgf@pt@x=\dimen187
+\pgf@pt@y=\dimen188
+\pgf@pt@temp=\dimen189
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcorequick.code.tex"
@@ -455,14 +463,14 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen189
+\pgfarrowsep=\dimen190
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen190
-\pgf@sys@shading@range@num=\count276
-\pgf@shadingcount=\count277
+\pgf@max=\dimen191
+\pgf@sys@shading@range@num=\count277
+\pgf@shadingcount=\count278
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
 pgfcoreimage.code.tex"
@@ -501,8 +509,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility
 \pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen191
-\pgf@nodesepend=\dimen192
+\pgf@nodesepstart=\dimen192
+\pgf@nodesepend=\dimen193
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility
 \pgfcomp-version-1-18.sty"
@@ -524,8 +532,8 @@ Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
 h.code.tex")
-\pgffor@iter=\dimen193
-\pgffor@skip=\dimen194
+\pgffor@iter=\dimen194
+\pgffor@skip=\dimen195
 \pgffor@stack=\toks37
 \pgffor@toks=\toks38
 ))
@@ -536,34 +544,34 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\p
 gflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count278
-\pgfplotmarksize=\dimen195
+\pgf@plot@mark@count=\count279
+\pgfplotmarksize=\dimen196
 )
-\tikz@lastx=\dimen196
-\tikz@lasty=\dimen197
-\tikz@lastxsaved=\dimen198
-\tikz@lastysaved=\dimen199
-\tikz@lastmovetox=\dimen256
-\tikz@lastmovetoy=\dimen257
-\tikzleveldistance=\dimen258
-\tikzsiblingdistance=\dimen259
+\tikz@lastx=\dimen197
+\tikz@lasty=\dimen198
+\tikz@lastxsaved=\dimen199
+\tikz@lastysaved=\dimen256
+\tikz@lastmovetox=\dimen257
+\tikz@lastmovetoy=\dimen258
+\tikzleveldistance=\dimen259
+\tikzsiblingdistance=\dimen260
 \tikz@figbox=\box56
 \tikz@figbox@bg=\box57
 \tikz@tempbox=\box58
 \tikz@tempbox@bg=\box59
-\tikztreelevel=\count279
-\tikznumberofchildren=\count280
-\tikznumberofcurrentchild=\count281
-\tikz@fig@count=\count282
+\tikztreelevel=\count280
+\tikznumberofchildren=\count281
+\tikznumberofcurrentchild=\count282
+\tikz@fig@count=\count283
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgf
 modulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count283
-\pgfmatrixcurrentcolumn=\count284
-\pgf@matrix@numberofcolumns=\count285
+\pgfmatrixcurrentrow=\count284
+\pgfmatrixcurrentcolumn=\count285
+\pgf@matrix@numberofcolumns=\count286
 )
-\tikz@expandcount=\count286
+\tikz@expandcount=\count287
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
 er/tikz/libraries\tikzlibrarytopaths.code.tex"
@@ -582,9 +590,9 @@ tscore.code.tex"
 \t@pgfplots@toka=\toks39
 \t@pgfplots@tokb=\toks40
 \t@pgfplots@tokc=\toks41
-\pgfplots@tmpa=\dimen260
-\c@pgfplots@coordindex=\count287
-\c@pgfplots@scanlineindex=\count288
+\pgfplots@tmpa=\dimen261
+\c@pgfplots@coordindex=\count288
+\c@pgfplots@scanlineindex=\count289
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pg
 fplotssysgeneric.code.tex"))
@@ -602,13 +610,13 @@ ructure\pgfplotsliststructure.code.tex")
 ructure\pgfplotsliststructureext.code.tex")
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
 ructure\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count289
+\c@pgfplotsarray@tmp=\count290
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
 ructure\pgfplotsmatrix.code.tex")
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/numtab
 le\pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count290
+\c@pgfplotstable@counta=\count291
 \t@pgfplotstable@a=\toks42
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
@@ -621,7 +629,7 @@ gfplotsbinary.data.code.tex"))
 gfplotsutil.verb.code.tex")
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\p
 gflibrarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count291
+\c@pgfplotslibrarysurf@no=\count292
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pg
 flibrarypgfplots.surfshading.pgfsys-pdftex.def")))
@@ -653,14 +661,14 @@ ts.paths.code.tex")
 er/tikz/libraries\tikzlibrarydecorations.code.tex"
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgf
 moduledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen261
-\pgfdecoratedremainingdistance=\dimen262
-\pgfdecoratedinputsegmentcompleteddistance=\dimen263
-\pgfdecoratedinputsegmentremainingdistance=\dimen264
-\pgf@decorate@distancetomove=\dimen265
-\pgf@decorate@repeatstate=\count292
-\pgfdecorationsegmentamplitude=\dimen266
-\pgfdecorationsegmentlength=\dimen267
+\pgfdecoratedcompleteddistance=\dimen262
+\pgfdecoratedremainingdistance=\dimen263
+\pgfdecoratedinputsegmentcompleteddistance=\dimen264
+\pgfdecoratedinputsegmentremainingdistance=\dimen265
+\pgf@decorate@distancetomove=\dimen266
+\pgf@decorate@repeatstate=\count293
+\pgfdecorationsegmentamplitude=\dimen267
+\pgfdecorationsegmentlength=\dimen268
 )
 \tikz@lib@dec@box=\box60
 )
@@ -672,13 +680,13 @@ ecorations\pgflibrarydecorations.pathmorphing.code.tex"))
 er/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/d
 ecorations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count293
-\pgfplots@xmin@reg=\dimen268
-\pgfplots@xmax@reg=\dimen269
-\pgfplots@ymin@reg=\dimen270
-\pgfplots@ymax@reg=\dimen271
-\pgfplots@zmin@reg=\dimen272
-\pgfplots@zmax@reg=\dimen273
+\pgfplots@numplots=\count294
+\pgfplots@xmin@reg=\dimen269
+\pgfplots@xmax@reg=\dimen270
+\pgfplots@ymin@reg=\dimen271
+\pgfplots@ymax@reg=\dimen272
+\pgfplots@zmin@reg=\dimen273
+\pgfplots@zmax@reg=\dimen274
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
 er/tikz/libraries\tikzlibraryplotmarks.code.tex"
@@ -690,9 +698,9 @@ File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\t
 ikzlibrarypgfplots.groupplots.code.tex"
-\pgfplots@group@current@plot=\count294
-\pgfplots@group@current@row=\count295
-\pgfplots@group@current@column=\count296
+\pgfplots@group@current@plot=\count295
+\pgfplots@group@current@row=\count296
+\pgfplots@group@current@column=\count297
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
 er/tikz/libraries\tikzlibrarycalc.code.tex"
@@ -700,42 +708,42 @@ File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen274
+\col@sep=\dimen275
 \ar@mcellbox=\box61
-\extrarowheight=\dimen275
+\extrarowheight=\dimen276
 \NC@list=\toks43
-\extratabsurround=\skip52
-\backup@length=\skip53
+\extratabsurround=\skip54
+\backup@length=\skip55
 \ar@cellbox=\box62
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs
 .sty"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen276
-\lightrulewidth=\dimen277
-\cmidrulewidth=\dimen278
-\belowrulesep=\dimen279
-\belowbottomsep=\dimen280
-\aboverulesep=\dimen281
-\abovetopsep=\dimen282
-\cmidrulesep=\dimen283
-\cmidrulekern=\dimen284
-\defaultaddspace=\dimen285
-\@cmidla=\count297
-\@cmidlb=\count298
-\@aboverulesep=\dimen286
-\@belowrulesep=\dimen287
-\@thisruleclass=\count299
-\@lastruleclass=\count300
-\@thisrulewidth=\dimen288
+\heavyrulewidth=\dimen277
+\lightrulewidth=\dimen278
+\cmidrulewidth=\dimen279
+\belowrulesep=\dimen280
+\belowbottomsep=\dimen281
+\aboverulesep=\dimen282
+\abovetopsep=\dimen283
+\cmidrulesep=\dimen284
+\cmidrulekern=\dimen285
+\defaultaddspace=\dimen286
+\@cmidla=\count298
+\@cmidlb=\count299
+\@aboverulesep=\dimen287
+\@belowrulesep=\dimen288
+\@thisruleclass=\count300
+\@lastruleclass=\count301
+\@thisrulewidth=\dimen289
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth
 .sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box63
-\sift@deathcycles=\count301
-\@vwid@loff=\dimen289
-\@vwid@roff=\dimen290
+\sift@deathcycles=\count302
+\@vwid@loff=\dimen290
+\@vwid@roff=\dimen291
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csvsimple\csvsimp
 le.sty"
@@ -747,12 +755,12 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.st
 y"
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 )
 \csv@file=\read4
-\c@csvinputline=\count302
-\c@csvrow=\count303
-\c@csvcol=\count304
+\c@csvinputline=\count303
+\c@csvrow=\count304
+\c@csvcol=\count305
 \csv@out=\write4
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/comment\comment.s
@@ -769,7 +777,7 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
 nd-pdfmode.def"
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count305
+\l__kernel_color_stack_int=\count306
 \l__pdf_internal_box=\box64
 ) (chapter23.aux)
 \openout1 = `chapter23.aux'.
@@ -792,16 +800,16 @@ LaTeX Font Info:    ... okay on input line 36.
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
 pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count306
-\scratchdimen=\dimen291
+\scratchcounter=\count307
+\scratchdimen=\dimen292
 \scratchbox=\box65
-\nofMPsegments=\count307
-\nofMParguments=\count308
+\nofMPsegments=\count308
+\nofMParguments=\count309
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count309
-\MPscratchDim=\dimen292
-\MPnumerator=\count310
-\makeMPintoPDFobject=\count311
+\MPscratchCnt=\count310
+\MPscratchDim=\dimen293
+\MPnumerator=\count311
+\makeMPintoPDFobject=\count312
 \everyMPtoPDFconversion=\toks45
 )
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
@@ -834,99 +842,317 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write6
 \openout6 = `chapter23.toc'.
 
- [1
+ Excluding 'comment' comment. [1
 
 ]
 Chapter 1.
+
+LaTeX Warning: Reference `chap:fundamentals' on page 2 undefined on input line 
+1011.
+
+
+LaTeX Warning: Reference `subsec:b-splines' on page 2 undefined on input line 1
+026.
+
+
+LaTeX Warning: Reference `subsec:p-splines' on page 2 undefined on input line 1
+032.
+
+
+LaTeX Warning: Citation `hofner2011monotonicity' on page 2 undefined on input l
+ine 1037.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [2
 
-] [3] [4] [5] [6] [7]
-Overfull \hbox (1.11368pt too wide) detected at line 318
-[]
+]
+! Undefined control sequence.
+l.1082 ...{N}(0, 0.1)$. The data is shown in~\pref
+                                                  {fig:test_func}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1082 ...)$. The data is shown in~\pref{fig:test_
+                                                  func}.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.1082 ...he data is shown in~\pref{fig:test_func}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1083 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+<../thesisplots/test_func.pdf, id=25, 572.2724pt x 348.8831pt>
+File: ../thesisplots/test_func.pdf Graphic file (type pdf)
+<use ../thesisplots/test_func.pdf>
+Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 1090.
+
+(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
+[3]
+
+LaTeX Warning: Reference `eq:bspline-bf-approach' on page 4 undefined on input 
+line 1106.
+
+
+LaTeX Warning: Reference `eq:bspline-basis-matrix' on page 4 undefined on input
+ line 1112.
+
+
+LaTeX Warning: Reference `subsubsec:Method-of-LS' on page 4 undefined on input 
+line 1126.
+
+[4 <../thesisplots/test_func.pdf>]
+<../thesisplots/smooth_bf.pdf, id=51, 572.2724pt x 348.8831pt>
+File: ../thesisplots/smooth_bf.pdf Graphic file (type pdf)
+<use ../thesisplots/smooth_bf.pdf>
+Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 1137.
+
+(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
+
+
+LaTeX Warning: Citation `sammut2011' on page 5 undefined on input line 1143.
+
+<../thesisplots/smooth_wiggly_bf.pdf, id=52, 566.34401pt x 348.8831pt>
+File: ../thesisplots/smooth_wiggly_bf.pdf Graphic file (type pdf)
+<use ../thesisplots/smooth_wiggly_bf.pdf>
+Package pdftex.def Info: ../thesisplots/smooth_wiggly_bf.pdf  used on input lin
+e 1148.
+(pdftex.def)             Requested size: 345.0pt x 212.53622pt.
+[5 <../thesisplots/smooth_bf.pdf>]
+
+LaTeX Warning: Citation `eilers1996flexible' on page 6 undefined on input line 
+1157.
+
+
+LaTeX Warning: Reference `subsec:p-splines' on page 6 undefined on input line 1
+157.
+
+
+Overfull \hbox (5.36104pt too wide) in paragraph at lines 1157--1158
+\OT1/cmr/m/n/10 The sec-ond deriva-tive of the es-ti-mated func-tion $\OML/cmm/
+m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$, i.e. $\OML/cmm/
+m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [][] \OML/cmm
+/m/it/10 B[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/1
+0 []$\OT1/cmr/m/n/10 ,
  []
 
-PGFPlots: reading {../thesisplots/figs/bvd.txt}
-Missing character: There is no , in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-[8] [9] [10] [11] [12]
-PGFPlots: reading {../thesisplots/figs/spline-types-equidistant.txt}
-PGFPlots: reading {../thesisplots/figs/spline-types-quantile.txt}
- [13]
-Overfull \hbox (68.32791pt too wide) detected at line 619
-[]
+
+LaTeX Warning: Reference `subsec:p-splines' on page 6 undefined on input line 1
+163.
+
+
+LaTeX Warning: Reference `subsec:MAC' on page 6 undefined on input line 1177.
+
+
+LaTeX Warning: Reference `subsubsec:Cross-validation' on page 6 undefined on in
+put line 1177.
+
+
+LaTeX Warning: Citation `fahrmeir2007regression' on page 6 undefined on input l
+ine 1177.
+
+
+LaTeX Warning: Citation `fahrmeir2007regression' on page 6 undefined on input l
+ine 1179.
+
+[6 <../thesisplots/smooth_wiggly_bf.pdf>]
+<../thesisplots/p_splines.pdf, id=138, 572.2724pt x 348.8831pt>
+File: ../thesisplots/p_splines.pdf Graphic file (type pdf)
+<use ../thesisplots/p_splines.pdf>
+Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 1185.
+
+(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
+ [7 <../thesisplots/p_splines.pdf>]
+<../thesisplots/algorithm.pdf, id=170, 614.26657pt x 794.94157pt>
+File: ../thesisplots/algorithm.pdf Graphic file (type pdf)
+<use ../thesisplots/algorithm.pdf>
+Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 1225.
+
+(pdftex.def)             Requested size: 207.0021pt x 267.88698pt.
+
+
+LaTeX Warning: Citation `hofner2011monotonicity' on page 8 undefined on input l
+ine 1231.
+
+[8 <../thesisplots/algorithm.pdf>]
+<../thesisplots/inc_spline.pdf, id=191, 572.2724pt x 348.8831pt>
+File: ../thesisplots/inc_spline.pdf Graphic file (type pdf)
+<use ../thesisplots/inc_spline.pdf>
+Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 1238
+.
+(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
+ [9 <../thesisplots/inc_spline.pdf>]
+
+LaTeX Warning: Reference `eq:d1-difference-matrix' on page 10 undefined on inpu
+t line 1256.
+
+
+LaTeX Warning: Citation `hofner2011monotonicity' on page 10 undefined on input 
+line 1281.
+
+
+LaTeX Warning: Citation `eilers2005unimodal' on page 10 undefined on input line
+ 1281.
+
+
+LaTeX Warning: Reference `eq:d2-difference-matrix' on page 10 undefined on inpu
+t line 1286.
+
+[10]
+
+LaTeX Warning: Citation `eilers2005unimodal' on page 11 undefined on input line
+ 1313.
+
+
+LaTeX Warning: Reference `eq:d1-difference-matrix' on page 11 undefined on inpu
+t line 1320.
+
+
+LaTeX Warning: Reference `subsec:b-splines' on page 11 undefined on input line 
+1329.
+
+
+LaTeX Warning: Citation `eilers2005unimodal' on page 11 undefined on input line
+ 1329.
+
+<../thesisplots/peak_spline.pdf, id=248, 580.33377pt x 348.8831pt>
+File: ../thesisplots/peak_spline.pdf Graphic file (type pdf)
+<use ../thesisplots/peak_spline.pdf>
+Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 133
+3.
+(pdftex.def)             Requested size: 345.0pt x 207.40967pt.
+[11] [12 <../thesisplots/peak_spline.pdf>]
+
+LaTeX Warning: Reference `subsubsec:tp-splines' on page 13 undefined on input l
+ine 1413.
+
+
+LaTeX Warning: Reference `subsubsec:tp-splines' on page 13 undefined on input l
+ine 1413.
+
+
+LaTeX Warning: Reference `subsubsec:STAR' on page 13 undefined on input line 14
+27.
+
+
+LaTeX Warning: Reference `eq:STAR' on page 13 undefined on input line 1427.
+
+[13]
+Overfull \hbox (4.24858pt too wide) in paragraph at lines 1433--1434
+[]\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+x[]\OT1/cmr/m/n/10 )$ is the B-spline es-ti-mate given by $\OML/cmm/m/it/10 s[]
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) = \OT1/cmr/bx/n/10 X[][]
+[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+x[]; x[]\OT1/cmr/m/n/10 )$
  []
 
-[14] [15] [16]
-Overfull \hbox (26.83983pt too wide) in paragraph at lines 722--725
-\OT1/cmr/m/n/10 func-tions for the tensor-product B-spline. For any set of data
- $\OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/
-cmm/m/it/10 x[]; x[]; y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  i \OT1/cmr/m/n/10
- =
- []
 
-[17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 879--880
+LaTeX Warning: Reference `subsec:b-splines' on page 14 undefined on input line 
+1458.
 
- []
 
-[20]
-Missing character: There is no ` in font nullfont!
-Missing character: There is no ` in font nullfont!
-Missing character: There is no ` in font nullfont!
-Missing character: There is no ` in font nullfont!
- [21] Excluding 'comment' comment. (chapter23.bbl [22]) [23
+LaTeX Warning: Reference `subsubsec:tp-splines' on page 14 undefined on input l
+ine 1458.
 
-] (chapter23.aux) ) 
+
+LaTeX Warning: Reference `eq:STAR-block-diag' on page 14 undefined on input lin
+e 1458.
+
+
+LaTeX Warning: Reference `eq:STAR-block-diag' on page 14 undefined on input lin
+e 1464.
+
+
+LaTeX Warning: Reference `eq:STAR-block-diag' on page 14 undefined on input lin
+e 1464.
+
+[14]
+
+LaTeX Warning: Reference `subsec:p-splines' on page 15 undefined on input line 
+1485.
+
+
+LaTeX Warning: Reference `subsubsec:tp-splines' on page 15 undefined on input l
+ine 1485.
+
+
+LaTeX Warning: Reference `eq:STAR-block-diag' on page 15 undefined on input lin
+e 1519.
+
+[15] [16] [17]
+<../thesisplots/2d_example.pdf, id=312, 513.51651pt x 450.9648pt>
+File: ../thesisplots/2d_example.pdf Graphic file (type pdf)
+<use ../thesisplots/2d_example.pdf>
+Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 1568
+.
+(pdftex.def)             Requested size: 345.0pt x 302.98433pt.
+ (chapter23.bbl) [18 <../thesisplots/2d_example.pdf>]
+(chapter23.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1082 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 26930 strings out of 480934
- 679658 string characters out of 2899449
- 1883044 words of memory out of 3000000
- 42339 multiletter control sequences out of 15000+200000
- 545164 words of font info for 71 fonts, out of 3000000 for 9000
+ 26389 strings out of 480934
+ 664417 string characters out of 2899449
+ 1036625 words of memory out of 3786298
+ 41794 multiletter control sequences out of 15000+200000
+ 544543 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,19n,127p,932b,2492s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\WeberJ\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/j
-knappen/ec/dpi600\tcrm1000.pk><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/WeberJ/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/WeberJ/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/User
-s/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cmextra/cmex7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/WeberJ/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/WeberJ/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Webe
-rJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
-C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmib10.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cmextra/cmmib7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/WeberJ/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/WeberJ/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Use
-rs/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5
-.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr8.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/WeberJ/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/WeberJ/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/
-WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.
+ 73i,18n,127p,924b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\WeberJ\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\tcrm1000.pk><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/WeberJ/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/WeberJ/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/
+WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
 pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on chapter23.pdf (24 pages, 348986 bytes).
+nts/cm/cmmi5.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/WeberJ/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/Weber
+J/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/WeberJ/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/WeberJ/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/
+Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmti10.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on chapter23.pdf (19 pages, 438527 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
+ 420 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

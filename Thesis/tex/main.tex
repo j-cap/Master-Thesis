@@ -1,0 +1,101 @@
+\documentclass[
+    %thesis=bachelor,
+	thesis=master,
+	%Entwurf,
+	%NoTableOfContents,		% do not create a Table Of Contents
+	%NoListOfFigures,		% do not create a List Of Figures
+	%NoListOfTables,			% do not create a List Of Tables
+	USenglish, 		 		% als Sprachen werden nur USenglish, ngerman und naustrian unterstützt!
+	%ngerman
+]{ACIN_thesis}
+
+ \Title{Hier Titel Einf\"ugen}
+% \Subject{Diplomarbeit}
+ \Author{Vorname Nachname}
+ \Matrikelnummer{Matrikelnummer}
+ \PlaceAndTime{Vienna, \today}
+ \AuthorAddress
+ 	{Address line 1\\
+ 	 Address line 2\\
+ 	 Austria}
+ \Supervisor{
+ 	\AndreasKugi\\
+ 	Dr.\,techn.\@ T.\@ Gl\"uck
+ }
+
+%% PDFTitle nur notwendig, falls von Title abweichend. (Z.Bsp. falls Titel Zeilenumbrüche enthält)
+% \PDFTitle{Title}
+% \PDFAuthor{author}
+% \PDFSubject{Diplomarbeit}
+
+
+% Hinweise:
+% - Beim drucken Seitenanpassung ausschalten!
+
+
+% include necessary packages, add additional packages there!
+\input{packages}
+
+\usepackage[style=ieee]{biblatex}
+
+%Pfad zum File mit den Referenzen:
+\addbibresource{bibliography.bib}
+
+% Alle externalisierten tikz/pgfplot Grafiken neu generieren:
+%\tikzset{external/force remake}
+
+% Abkürzungsverzeichnis einfügen:
+\makenomenclature
+
+% Change parameters for page styling with caution:
+\AtBeginDocument{
+	% Alter some LaTeX defaults for better treatment of figures:
+	% See p.105 of "TeX Unbound" for suggested values.
+	% See pp. 199-200 of Lamport's "LaTeX" book for details.
+	%   General parameters, for ALL pages:
+	\renewcommand{\topfraction}{0.9}    % max fraction of floats at top
+	\renewcommand{\bottomfraction}{0.8}    % max fraction of floats at bottom
+	%   Parameters for TEXT pages (not float pages):
+	\setcounter{topnumber}{4}
+	\setcounter{bottomnumber}{4}
+	\setcounter{totalnumber}{10}     % 2 may work better
+	\setcounter{dbltopnumber}{2}    % for 2-column pages
+	\renewcommand{\dbltopfraction}{0.9}    % fit big float above 2-col. text
+	\renewcommand{\textfraction}{0.07}    % allow minimal text w. figs
+	%   Parameters for FLOAT pages (not text pages):
+	\renewcommand{\floatpagefraction}{0.7}    % require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+	\renewcommand{\dblfloatpagefraction}{0.7}    % require fuller float pages
+	% remember to use [htp] or [htpb] for placement
+	% Additional info: http://tex.stackexchange.com/a/39020
+} 
+
+
+\begin{document}
+
+	% Titelseite generieren, Vorwort (pre1_Preface.tex), Abstract (pre2_Abstract.tex), und Kurzzusammenfassung (pre3_Kurzzusammenfassung.tex) einfügen. Auf korrekte Dateinamen achten!
+	
+    % Datum der Titelseite in Zeile 126 von Acin_diploma_Title.tex anpassen. Datum der Eidesstattlichen Erklärung am Ende von Acin_diploma_Title.tex anpassen!
+    
+    % Falls Abkürzungen verwendet werden, werden diese im File acronym.tex hinterlegt.
+	%\maketitle
+	
+	%\input{nomencl.tex}
+ 
+	% Hier Inhalte einfügen
+	%\include{Introduction}
+	%\include{model}
+	%\include{chapter2}
+	\include{Chapter3}
+	
+	
+	% Literaturverzeichnis...
+	%=========================
+	
+	% falls ein Anhang vorhanden ist, hier einfügen
+	%\include{appendix}
+	
+	%Literaturverzeichnis einfuegen
+	\printbibliography
+
+\end{document}

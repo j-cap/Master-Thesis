@@ -1,0 +1,256 @@
+% ===================
+% ||   maketitle   ||
+% ===================
+
+% \begin{textblock}{breite}(x,y)
+% Objekt
+% \end{textblock}
+%
+%Die Argumente breite und x sind Vielfache des horizontalen Längenparameters \TPHorizModule, y ein Vielfaches von %\TPVertModule. Stellt man die Parameter auf einen Millimeter (mm) ein, dann kann jede Position mittels eines %Lineals abgelesen werden.
+%
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+
+
+\providecommand{\ACINuniversity}{\GerEng
+	{Technischen Universit\"at Wien}
+	{Vienna University of Technology}
+}
+\providecommand{\ACINfaculty}{\GerEng
+	{Fakult\"at f\"ur Elektrotechnik und Informationstechnik}
+	{Faculty of Electrical Engineering and Information Technology}
+}
+\providecommand{\ACINinstitute}{\GerEng
+	{Institut f\"ur Automatisierungs- und Regelungstechnik}
+	{Automation and Control Institute}
+}
+
+\providecommand{\ACINexecuted}{\GerEng
+	{Ausgef\"uhrt zum Zwecke der Erlangung des akademischen Grades eines}
+	{Contucted in partial fulfillment of the requirements for the degree of a}
+}
+
+\providecommand{\ACINdipling}{\GerEng
+	{Bachelor of Science (BSc)}
+	{Bachelor of Science (BSc)}
+}
+
+\providecommand{\ACINsupervision}{\GerEng
+	{unter der Leitung von}
+	{supervised by}
+}
+
+\providecommand{\ACINhandin}{\GerEng
+	{eingereicht an der}
+	{submitted at the}
+}
+
+\providecommand{\ACINby}{\GerEng
+	{von}
+	{by}
+}
+
+\providecommand{\ACINCDS}{\GerEng
+	{Gruppe f\"ur komplexe dynamische Systeme}
+	{Complex Dynamical Systems Group}
+}
+
+\providecommand{\Matrikelnr}{\GerEng
+	{Matrikelnummer}
+	{Matriculation number}
+}
+
+\renewcommand{\maketitle}{
+\pagenumbering{Alph}
+\begin{titlepage}
+	\sffamily
+    \enlargethispage{5cm}
+    \unitlength 1cm
+
+    \newlength{\Top}
+    \setlength{\Top}{2.5cm} % Höhe der Mittellinie durch die Logos und den Schriftzug Bachelorarbeit
+
+	\begin{textblock*}{\textwidth}[0.03, 0.5](\hoffset+\oddsidemargin+1in, \Top+1.3cm)
+		\includegraphics[height=1.75cm]{logos/TULogo_CMYK}
+	\end{textblock*}
+
+	\begin{textblock*}{\textwidth}[0, 0.5](\hoffset+\oddsidemargin+1in, \Top+1.05cm)
+		\flushright
+%pdf%		\vspace{0pt-\parskip-\baselineskip}
+		\includegraphics[width=4cm, keepaspectratio]{logos/AcinLogoText}
+	\end{textblock*}
+	\begin{textblock*}{\textwidth}(\hoffset+\oddsidemargin+1in, \Top+2.7cm)
+		\noindent
+		\centering
+		\rule{\textwidth}{0.02cm}
+	\end{textblock*}
+
+	\begin{textblock*}{15cm}[0.5,0.5](\hoffset+\oddsidemargin+1in +0.5\textwidth, 8cm)
+		\noindent
+		\centering
+		\LARGE
+		\insertTitle
+	\end{textblock*}
+
+	\begin{textblock*}{\textwidth}[0,0](\hoffset+\oddsidemargin+1in,10.5cm) %
+		\centering
+		\Large\textbf{\MakeUppercase{\insertSubject}}
+	\end{textblock*}
+
+ 	\begin{textblock*}{\textwidth}[0,1](\hoffset+\oddsidemargin+1in, 26.5cm)
+ 		\centering
+ 		\normalsize
+ 		\ACINexecuted\\
+ 		\vspace{0.3cm}
+ 		{\large\ACINdipling}\\
+ 		\vspace{1.5cm}
+ 		\ACINsupervision\\
+ 		\vspace{0.3cm}
+ 		{\large \insertSupervisor \\}
+ 		\vspace{1.2cm}
+ 		\ACINhandin\\
+ 		\vspace{0.3cm}
+ 		{\Large\textmd{\ACINuniversity}\\}
+ 		\vspace{0.1cm}
+ 		{\large\ACINfaculty\\}
+ 		{\large\ACINinstitute\\}
+ 		\vspace{1.5cm}
+ 		\ACINby\\
+ 		%\vspace{0.3cm}
+ 		{\large \insertAuthor\\}
+ 		\Matrikelnr
+		\insertMatrikelnummer\\
+		\insertAuthorAddress\\
+ 		\vspace{1.1cm}
+ 		\insertPlaceAndTime
+ 	\end{textblock*}
+
+	\begin{textblock*}{\textwidth}(\hoffset+\oddsidemargin+1in, 27cm)
+		%\rmfamily
+		\centering
+		\noindent
+		\rule{\textwidth}{0.02cm}
+		{\small \bfseries\ACINCDS\\}
+		{\small A-1040 Wien, Gusshausstr. 27, Internet:
+		http://www.acin.tuwien.ac.at\\} \vspace*{-0.2cm}
+		\rule{\textwidth}{0.02cm}
+	\end{textblock*}
+
+	\null\newpage\global\setbox\TP@holdbox\vbox{} % Hack fuer externalize Funktion von pgfplots/tikz
+%pdf%	\hspace{0mm}
+%pdf%	\clearpage
+\end{titlepage}
+
+
+	\setcounter{page}{1}
+
+	% Include all the preface-stuff...
+	%==================================
+	%\ifthenelse{\boolean{LANGaustrian}}{\selectlanguage{naustrian}}{}
+
+ 	\GerEng{
+ 		\ifthenelse{\boolean{LANGaustrian}}{
+ 			\selectlanguage{naustrian}
+ 		}{
+ 			\selectlanguage{ngerman}
+ 		}
+ 	}{
+ 		\selectlanguage{USenglish}
+ 	}
+
+
+	\pagestyle{Preface}
+	\pagenumbering{Roman}
+
+	% \begin{hyphenrules}{ngerman}
+		% \InputIfFileExists{pre1_Preface}{}
+		% {
+			% \ClassError{ACIN_thesis}{File pre1_Preface does not exist!}
+			% {The file pre1_Preface.tex must exist!} 
+		% }
+	% \end{hyphenrules}
+
+	\begin{hyphenrules}{USenglish}
+		\InputIfFileExists{pre2_Abstract}{}
+		{
+			\ClassError{ACIN_thesis}{File pre2_Abstract does not exist!}
+			{The file pre2_Abstract.tex must exist!}
+		}
+	\end{hyphenrules}
+
+	\begin{hyphenrules}{ngerman}
+		\InputIfFileExists{pre3_Kurzzusammenfassung}{}
+		{
+			\ifthenelse{\boolean{LANGaustrian}}{
+	 			\selectlanguage{naustrian}
+	 		}{
+	 			\selectlanguage{ngerman}
+	 		}
+			\ClassError{ACIN_thesis}{File pre3_Kurzzusammenfassung does not exist!}
+			{The file pre3_Kurzzusammenfassung.tex must exist!}
+		}
+	\end{hyphenrules}
+
+ 	\GerEng{
+ 		\ifthenelse{\boolean{LANGaustrian}}{
+ 			\selectlanguage{naustrian}
+ 		}{
+ 			\selectlanguage{ngerman}
+ 		}
+ 	}{
+ 		\selectlanguage{USenglish}
+ 	}
+
+	% Create table of contents, figures...
+	%======================================
+
+	\ifdefined\NoTableOfContents
+	\else
+		\tableofcontents
+	\fi
+	\ifdefined\NoListOfFigures
+	\else
+		\listoffigures
+	\fi
+	\ifdefined\NoListOfTables
+	\else
+		\listoftables
+	\fi
+
+	\clearpage
+	\pagenumbering{arabic}
+	\pagestyle{scrheadings}
+
+}
+
+
+
+\AtEndDocument{
+	% Bibliography...
+	%=================
+%	\GerEng{
+%		\bibliographystyle{IEEEtranS_de}
+%	}{
+%		\bibliographystyle{IEEEtranS}
+%	}
+%	\bibliography{bibliography}
+
+ 	% Eidesstattliche Erklärung
+ 	%===========================
+ 	% Eidesstattliche Erklärung ohne Seitennummer am Ende des Dokumentes.
+ 	\addchap*{Eidesstattliche Erklärung}
+ 	\thispagestyle{empty}
+ 
+		\noindent Hiermit erkläre ich, dass die vorliegende Arbeit ohne unzulässige Hilfe Dritter und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt wurde. Die aus anderen Quellen oder indirekt übernommenen Daten und Konzepte sind unter Angabe der Quelle gekennzeichnet.
+Die Arbeit wurde bisher weder im In– noch im Ausland in gleicher oder in ähnlicher Form in anderen Prüfungsverfahren vorgelegt.\vspace{3cm}
+
+ 	\noindent%
+ 	\insertPlaceAndTime
+ 
+ 	\begin{flushright}
+ 	\rule{5cm}{0.01cm}\\
+	\insertAuthor
+ 	\end{flushright}
+
+}

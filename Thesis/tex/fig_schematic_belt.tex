@@ -1,0 +1,119 @@
+\begin{figure}[h!tbp]
+\begin{center}	
+	\begin{tikzpicture}[thick]
+	%init coord system:
+%	\draw [help lines] (0,-2) grid (16,2);
+%	\draw[-latex] (0,0) -- (1,0) node [midway,below]{x};
+%	\draw[-latex] (0,0) -- (0,1) node [midway,left]{y};
+%	\draw[fill=black] (0,0) circle(0.08);
+	\node (A1) at (6.7,1.2){};
+	
+	%strich am oberen linken paar nach links weg
+	\draw (A1.center) --++ (-2,0) node (A0){};
+%	\draw (9.7,-1.5) --++($2*(1.4,0)$);
+	
+	
+%	\draw (7.1,1.2) --++($(0,0)$) node (A1){};
+	\draw (A1.center) --++($(0,0.6)$) node(D1){};
+	\draw (A1.center) --++($(0,-0.6)$) node(K1){};
+%	\draw (D1.center) --++(0.3,0);
+%	\draw (K1.center) --++(0.3,0);
+	
+	
+	%define commands for spring and damper
+	\newcommand{\damper}[2]{\draw (#1,#2) --++(0.6,0);\draw[very thick] ($(#1,#2)+(0.6,-0.1)$)--++(0,0.2);\draw ($(#1,#2)+(1.4,0)$)--++(-0.5,0)--++(0,0.15)--++(-0.5,0);\draw ($(#1,#2)+(0.9,0)$)--++(0,-0.15)--++(-0.5,0);}
+	\newcommand{\spring}[2]{\draw (#1,#2) --++(0.4,0)--++(0.05,0.1)--++(0.1,-0.2)--++(0.1,0.2)--++(0.1,-0.2)--++(0.1,0.2)--++(0.1,-0.2)--++(0.05,0.1)--++(0.4,0);}
+	
+%	\pgfextractx{2}{(P)}
+	%damper
+
+	\gettikzxy{(D1)}{\ax}{\ay}
+	\damper{\ax}{\ay}
+	\node (D1E) at ($(D1.center)+(1.4,0)$){};
+	
+	
+	\gettikzxy{(K1)}{\ax}{\ay}
+	\spring{\ax}{\ay}
+	\node (K1E) at ($(K1.center)+(1.4,0)$){};
+	\draw (K1E.center)--(D1E.center) node[midway](A2){};
+	\node[above=1mm] (D1L) at ($1/2*(D1E)+1/2*(D1)$){$d_1$};
+	\node[below=1mm] (K1L) at ($1/2*(K1E)+1/2*(K1)$){$c_1(\xi)$};
+
+
+	%abstand zwischen d1 und masse
+	\draw (A2.center)--++(1,0) node(A3){};
+	\draw ($(A3.center)-(0,0.6)$) rectangle ++(1.6,1.2) node[above=1mm,midway](M){$m_\text{c}$};
+	\node[circle,inner sep=0pt,fill=black,below=0mm of M,minimum size=1.5mm](F){};
+	\draw[-latex] (F.center) --++(0.65,0)node[midway,below]{$f$};
+	\draw ($(A3.center)+(1.6,0)$) --++(1,0)--++(0,0.6) node(D2){};
+	\draw ($(D2.center)-(0,0.6)$)--++(0,-0.6) node(K2){};
+	\gettikzxy{(D2)}{\ax}{\ay}
+	\damper{\ax}{\ay}
+	\node (D2E) at ($(D2.center)+(1.4,0)$){};
+	\gettikzxy{(K2)}{\ax}{\ay}
+	\spring{\ax}{\ay}
+	\node (K2E) at ($(K2.center)+(1.4,0)$){};
+	
+	\draw (K2E.center)--(D2E.center) node[midway](A5){};
+	%End spring damper 2
+	\draw (A5.center)--++(2,0) node(A6){};
+	\node[above=1mm] (D2L) at ($1/2*(D2E)+1/2*(D2)$){$d_2$};
+	\node[below=1mm] (K2L) at ($1/2*(K2E)+1/2*(K2)$){$c_2(\xi)$};
+	
+	\gettikzxy{(A6.center)}{\ax}{\ay}
+	\gettikzxy{(A0.center)}{\bx}{\by}
+	
+%	\draw (A6) circle (0.1);
+%	\draw (6.3,-1.6) circle (0.1);
+%	\draw ($$) circle(0.1);
+	\node(A7) at ($1/2*(\ax,0)+1/2*(\bx,0)+(0,-1.2)$){};
+%	\draw ($(A7.center)-(0.5,0)$)--($(A1.center)+(-0.4,-2.8)$);
+	\draw ($(A7.center)+(0.7,0)$)--(\ax,-1.2)node(A9){};
+%	\draw (\ax,-1.6)--(A6.center)node[midway](B1){};
+	\draw ($(A7.center)-(0.7,0)$)--++(0,0.6) node(D3){};
+	\draw ($(A7.center)-(0.7,0)$)--++(0,-0.6)node(K3){};
+	\gettikzxy{($(A0.center)-(A7.center)+(0.7,0)$)}{\cx}{\cy}
+	\draw ($(A7.center)-(0.7,0)$)--++(\cx,0)node(A10){};
+	
+	
+	\gettikzxy{(D3)}{\ax}{\ay}
+	\damper{\ax}{\ay}
+	\node (D3E) at ($(D3.center)+(1.4,0)$){};
+	\node[above=1mm] (D3L) at ($1/2*(D3E)+1/2*(D3)$){$d_3$};
+	\gettikzxy{(K3)}{\ax}{\ay}
+	\spring{\ax}{\ay}
+	\node (K3E) at ($(K3.center)+(1.4,0)$){};
+	\node[below=1mm] (K3L) at ($1/2*(K3E)+1/2*(K3)$){$c_3$};
+	
+	\draw (K3E.center)--(D3E.center) node[midway](A8){};
+
+	\gettikzxy{($(A0.center)-(A10.center)$)}{\ax}{\ay}
+	\draw (A0) arc (90:450:1/2*\ay);
+	\node[circle,inner sep=0pt,fill=black,below=0mm of M,minimum size=1mm] (P1) at ($(A0)-(\ax,1/2*\ay)$){};
+	
+	\gettikzxy{($(A6.center)-(A9.center)$)}{\ax}{\ay}
+	\draw (A9) arc (270:630:1/2*\ay);
+	\node[circle,inner sep=0pt,fill=black,below=0mm of M,minimum size=1mm] (P2) at ($(A6)-(\ax,1/2*\ay)$){};
+	\draw[thin,dashed](P1.center)--++(0,1.5)node(P11){};
+	\draw[thin](P11.center)--++(0,1.5)node(P111){};
+	
+	\gettikzxy{(P111)}{\ax}{\ay}
+	\gettikzxy{(F.center)}{\bx}{\by}
+	\draw[thin,dashed](F.center)--++(0,0.8)node(F1){};
+	\draw[thin](F1.center)--(\bx,\ay)node(FF1){};
+	\draw[thin](FF1.center)--++(0,0.3);
+	\draw[thin](P111.center)--++(0,0.3);
+	\draw[thin,-latex](P111.center)--(FF1.center)node[midway,above](Xi){$\xi$};
+	\draw[fill=white,color=white] ($(A3.center)+(0.1,0.25)$) rectangle ++(1.4,0.25);
+	\draw($(A3.center)-(0,0.6)$) rectangle ++(1.6,1.2) node[above=1mm,midway](M2){$m_\text{c}$};
+	
+	\draw[latex-,thin] ($(P1)+(0:0.5)$) arc(0:270:0.5);
+	\draw[thin] ($(P1)+(-0.4,0.4)$)--++(-0.8,0.8)node[near end,align= center,above left=0mm and 0mm](Z3){$\varphi_\text{1}$, $i_\text{g}\tau_\text{m}$,\\$i_\text{g}\tau_\text{mR}$};
+	\draw[latex-,thin] ($(P2)+(0:0.5)$) arc(0:270:0.5) node[near end,above right=-3mm and 4mm](Z4){$\varphi_\text{2}$, $\tau_2$};
+	\node[below=4mm of P1](Theta1){$i^2_\text{g}\Theta_\text{e}$};
+	\node[below=4mm of P2](Theta2){$\Theta_\text{r}$};
+	\end{tikzpicture}
+\end{center}
+\caption{Schematic equivalent three-mass-spring-damper system of the belt driven system.}
+\label{fig:Schematic_belt}
+\end{figure}

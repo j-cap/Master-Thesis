@@ -1,0 +1,105 @@
+
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}   
+\usepackage{caption}
+\usepackage{float}
+\usepackage{dsfont}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.16} 
+\usepackage{array} 
+\usepackage{booktabs}	% for horizontal lines
+\usepackage{varwidth}% http://ctan.org/pkg/varwidth
+\usepackage{csvsimple} % automatic table generation from csv files
+\usepackage{comment}
+\usepackage[numbers]{natbib}
+
+%\bibliography{../../bibliography}
+
+
+\begin{document}
+
+\section{Introduction}
+
+aasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+asdasdasdasdasdasdasdasdasdasdasdasdasdasd \cite{fahrmeir2007regression}.
+
+\begin{comment}
+	
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel = "x1",
+			ylabel = "x",
+			axis lines = none,
+			ticks = none,
+			scatter/classes={%
+				e={mark=o},
+				f={mark=*, mark options={fill=black, scale=2}},
+				x={mark=x}}]
+			\addplot[scatter,only marks,%
+			scatter src=explicit symbolic]%
+			table[meta=label] {
+				x     y   label
+				0.    0   e 
+				0.2   0   e 
+				0.4   0   e 
+				0.6   0   e 
+				0.8   0   e 
+
+				0.    0.2  e 
+				0.2   0.2  e 
+				0.4   0.2  f 
+				0.6   0.2  e 
+				0.8   0.2  e 
+
+				0.    0.4  e 
+				0.2   0.4  f 
+				0.4   0.4  x 
+				0.6   0.4  f 
+				0.8   0.4  e 
+
+				0.    0.6  e 
+				0.2   0.6  e 
+				0.4   0.6  f 
+				0.6   0.6  e 
+				0.8   0.6  e 
+
+				0.    0.8  e 
+				0.2   0.8  e 
+				0.4   0.8  e  
+				0.6   0.8  e 
+				0.8   0.8  e 
+		};
+	
+	    % absolute in pgfplots coordinates
+		\node[] at (axis cs: .055,.755) {$\beta_{1,1}$};
+		\node[] at (axis cs: .45,.35) {$\beta_{j,r}$};
+		\node[] at (axis cs: .475,.15) {$\beta_{j+1,r}$};
+		\node[] at (axis cs: .475,.55) {$\beta_{j-1,r}$};
+		\node[] at (axis cs: .275,.35) {$\beta_{j,r-1}$};
+		\node[] at (axis cs: .675,.35) {$\beta_{j,r+1}$};	
+		\node[] at (axis cs: .845, -0.05) {$\beta_{5,5}$};
+\end{axis}
+	\end{tikzpicture}
+	\caption{Spatial neighborhood}
+	\label{fig:sph}
+\end{figure}
+\end{comment}
+
+\bibliographystyle{IEEEtranN}
+\bibliography{../../bibliography}
+
+\end{document}
+
