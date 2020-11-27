@@ -11,6 +11,7 @@
 \usepackage{caption}
 \usepackage{float}
 \usepackage{dsfont}
+\usepackage{multirow}
 \usepackage{csquotes}
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -21,8 +22,7 @@
 \usepackage{varwidth}% http://ctan.org/pkg/varwidth
 \usepackage{csvsimple} % automatic table generation from csv files
 \usepackage{comment}
-%\usepackage[numbers]{natbib}
-%https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/library/public/LaTeX-example-IEEE-apr-2019.pdf
+
 \input{../AIT_report_macros}
 
 % new command for another subsection
@@ -39,14 +39,16 @@
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
 \chapter{Fundamentals} \label{chap:fundamentals}
 
-This chapter summarizes the fundamentals of regression. Excellent overviews can be found in the textbooks \cite{wood2017generalized}, \cite{fahrmeir2007regression}, \cite{friedman2001elements}. The shown fundamentals are strongly aligned with the presentation given in \cite{fahrmeir2007regression}. Section~\ref{sec:LinModel} gives an overview of the model assumptions used throughout this work, Furthermore, Section~\ref{sec:ModelSelection} outlines methods to evaluate and compare different models again each other in terms of complexity and accuracy. Section~\ref{sec:Splines} is devoted to the  spline definitions.
+This chapter summarizes the fundamentals of regression. Excellent overviews can be found in the textbooks \cite{wood2017generalized}, \cite{fahrmeir2007regression}, \cite{friedman2001elements}. The shown fundamentals are strongly aligned with the presentation given in \cite{fahrmeir2007regression}. Section~\ref{sec:LinModel} gives an overview of the model assumptions used throughout this work. Furthermore, Section~\ref{sec:ModelSelection} outlines methods to evaluate and compare different models again each other in terms of complexity and accuracy. Section~\ref{sec:Splines} is devoted to the  spline definitions.
 
 \section{Linear Models} \label{sec:LinModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Given the data set $D = \{ (x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1, 2, \dots, n\}$ , we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a function $f(x_1, \dots, x_q)$. Since this relationship is not exact, there will be a random part $\epsilon$. It is typically assumed that this part is additive and thus  
+Given the data set $D = \{ (x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\}$, we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a function $f(x_1, \dots, x_q)$. Since this relationship is not exact, there will be a random part $\epsilon$. It is typically assumed that this part is additive and thus  
 \begin{align} \label{eq:model-structure}
 	y = f(x_{1}, \dots, x_{q}) + \epsilon.
 \end{align}
@@ -64,7 +66,7 @@ We would like to estimate the unknown function $f$. For this, some assumptions o
 	
 	with unknown parameters $\beta_0, \dots, \beta_q$. Note that the model~(\ref{eq:linCombOfInputs}) is linear in its parameters as well as in its inputs. The parameter $\beta_0$ is called intercept or bias in the machine learning community, see \cite{bishop2006patternRecognition}. We introduce the input vectors $\transpose{\vec{x}} = [1, x_1, \dots, x_q] \in \mathbb{R}^{1 \times q+1}$ and the parameter vector $\transpose{\vec{\beta}} = [\beta_0, \beta_1, \dots, \beta_q] \in \mathbb{R}^{1 \times q+1}$ to obtain 
 	\begin{align}
-		y(x_1, \dots, x_q) = y(\transpose{\vec{x}}) = \transpose{\vec{x}} \vec{\beta}.
+		y = f(\transpose{\vec{x}}) = \transpose{\vec{x}} \vec{\beta}.
 	\end{align}
 		
 	\item \emph{Additive errors}
@@ -77,7 +79,7 @@ We would like to estimate the unknown function $f$. For this, some assumptions o
 	This is reasonable for many practical applications, even though it appears quite restrictive. 
 \end{enumerate}
 
-To estimate the unknown parameters or coefficients $\vec{\beta}$, we define the output vector $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}] \in \mathbb{R}^{1 \times n}$ and data error vector $\transpose{\vec{\epsilon}} = [\epsilon^{(i)}, \dots, \epsilon^{(n)}] \in \mathbb{R}^{1 \times n}$ as well as the design matrix  
+To estimate the unknown parameters or coefficients $\vec{\beta}$, we define the output vector $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}] \in \mathbb{R}^{1 \times n}$ and error vector $\transpose{\vec{\epsilon}} = [\epsilon^{(i)}, \dots, \epsilon^{(n)}] \in \mathbb{R}^{1 \times n}$ as well as the design matrix  
 
 \begin{align} \label{eq:design-matrix}
 	\vec{X} = \begin{bmatrix}   1     & x^{(1)}_1 & \dots & x^{(1)}_q \\ 
@@ -96,7 +98,7 @@ We assume that the design matrix $\vec{X}$ has full column rank, i.e. $\mathrm{r
 
 Another necessary requirement is that the number of data points $n$ is larger or equal to the number of regression parameters $p$, which is equivalent to the statement that the linear system in (\ref{eq:LinearModel}) is not underdetermined.
 
-In addition to the assumptions on the unknown function $f$, the necessary assumptions on the error term $\epsilon_i$ are the following \cite{fahrmeir2007regression}:
+In addition to the assumptions on the unknown function $f$, the necessary assumptions on the error vector $\vec{\epsilon}$ are the following \cite{fahrmeir2007regression}:
 
 \begin{enumerate}
 	\item \emph{Expectation of the error} \\
@@ -106,10 +108,10 @@ In addition to the assumptions on the unknown function $f$, the necessary assump
 	We assume constant error variance with $\text{Var} (\epsilon^{(i)}) = \sigma^2$. This property is called homoscedasticity. Additionally, we assume that the errors are uncorrelated, which means $\text{Cov} (\epsilon^{(i)}, \epsilon^{(j)}) = 0$ for $i \ne j$. The combination of these assumptions lead to the covariance matrix $\text{Cov}(\vec{\epsilon}) = \text{E} (\vec{\epsilon} \transpose{\vec{\epsilon}}) = \sigma^2 \vec{I}$.
 	
 	\item \emph{Assumptions on the input and design matrix} \\
-	We have to distinguish two cases where the inputs are deterministic or stochastic. In most cases, the inputs and the output are stochastic and hence all model assumptions are conditioned on the design matrix~(\ref{eq:design-matrix}). This means that the input $\vec{x}^{(i)}$ and the errors $\epsilon_i$ are not stochastically independent. For notational simplicity, we usually suppress the dependence on the design matrix.
+	We have to distinguish two cases where the inputs are deterministic or stochastic. In most cases, the inputs and the output are stochastic and hence all model assumptions are conditioned on the design matrix~(\ref{eq:design-matrix}). This means that the input $\vec{x}^{(i)}$ and the errors $\vec{\epsilon}$ are not stochastically independent. For notational simplicity, we usually suppress the dependence on the design matrix.
 
 	\item \emph{Gaussian errors} \\
-	The errors follow at least approximately a normal distribution. Together with assumptions 1 and 2, we obtain that $\epsilon^{(i)} = \mathcal N(0, \sigma^2)$. 
+	The errors follow at least approximately a normal distribution. Together with Assumptions 1 and 2, we obtain that $\epsilon^{(i)} = \mathcal N(0, \sigma^2)$ holds. 
 \end{enumerate}
 
 Summarizing, we have the following model assumptions:
@@ -142,7 +144,7 @@ The unknown regression parameters $\vec{\beta} \in \mathbb{R}^p$ are estimated b
 	\text{LS}(\vec{y}, \vec{\beta}) &=  \lVert \vec{y} - \vec{X} \vec{\beta} \rVert^2_2 = \sum_{i=1}^n\epsilon_i^2 = \transpose{\vec{\epsilon}} \vec{\epsilon},
 \end{align}
 %
-with respect to $\vec{\beta}$ \cite{friedman2001elements}. Rewriting~(\ref{eq:MethodOfLS}) leads to the least squares criterion
+with respect to $\vec{\beta}$, see, e.g. \cite{friedman2001elements}. Rewriting~(\ref{eq:MethodOfLS}) leads to the least squares criterion
 
 \begin{align} \label{eq:LS_derivation}
 		\begin{split}
@@ -215,13 +217,13 @@ This estimator for $\sigma^2$ is rarely used since it is biased, i.e. $\text{E}(
 
 \subsubsection{Restricted Maximum Likelihood Estimation}
 
-The mean value of the sum of squared residuals is $\text{E}(\transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}) = (n - p)\sigma^2$. Hence, a less biased estimator $\hat \sigma^2$ for $\sigma^2$ is given by
+The mean value of the sum of squared residuals is $\text{E}(\transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}) = (n - p)\sigma^2$. Hence, another estimator for $\sigma^2$ is given by
 
 \begin{align} \label{eq:sigma_REML}
 	\hat \sigma^2_{REML} = \frac{1}{n-q} \transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}.
 \end{align}
 %
-The restricted maximum likelihood estimator for the variance is in general less biased \cite{fahrmeir2007regression}. Therefore, it is the commonly used estimator for the variance $\sigma^2$.
+The restricted maximum likelihood estimator (REML) $\hat \sigma^2_{REML}$ is in general less biased \cite{fahrmeir2007regression}. Therefore, it is the commonly used estimator for the variance $\sigma^2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Hat Matrix}
@@ -229,14 +231,14 @@ The restricted maximum likelihood estimator for the variance is in general less 
 Using the least squares estimator~(\ref{eq:LS_estimator}), we can estimate the mean of $\vec{y}$ by 
 
 \begin{align} \label{eq:mean_of_y}
-	\widehat{\text{E}(\vec{y})} = \vec{\hat{y}} = \vec{X} \hat{\vec{\beta}}_{LS}
+	\widehat{\text{E}(\vec{y})} = \vec{\hat{y}} = \vec{X} \hat{\vec{\beta}}_{LS}.
 \end{align}
 %
 Substituting~(\ref{eq:LS_estimator}) results in 
 
-\begin{equation} \label{HatMatrix}
+\begin{align} \label{eq:hat-matrix}
 	\vec{\hat{y}} = \vec{X}(\transpose{\vec{X}} \vec{X})^{-1} \transpose{\vec{X}} \vec{y} = \vec{H} \vec{y},
-\end{equation}
+\end{align}
 %
 with the matrix $\vec{H} \in \mathbb{R}^{n \times n}$, which is called \emph{hat matrix}. Using the \emph{hat matrix}, we can express the residuals $\hat \epsilon^{(i)} = y^{(i)} - \hat y^{(i)}$ in matrix notation as
 
@@ -254,12 +256,12 @@ The \emph{hat matrix} $\vec{H}$ has the following useful properties:
 	\item The matrix $(\vec{I} - \vec{H})$ is also idempotent and symmetric, with $\mathrm{rank}(\vec{I} - \vec{H}) = n - p$.
 \end{itemize}
 
-The hat matrix is used in model selection techniques like cross-validation as well as in outlier detection and in diagnostic plots for linear models.
+The hat matrix is used in model selection techniques like cross-validation since its trace acts as a measure for the degrees of freedom of the model, as well as in outlier detection and in diagnostic plots for linear models.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model Selection} \label{sec:ModelSelection}
 
-Linear models are widely exploited for regression problems on large data sets $(n \gg 0)$, because the solution of the \emph{normal equations} (\ref{eq:NormalEquations}) can be computed efficiently even for large $n$. If these data sets also contain a large number of input variables $(q \gg 0)$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. This interaction terms limits the, otherwise perfect, interpretability of the linear model. 
+Linear models are widely exploited for regression problems on large data sets $(n \gg 0)$, because the solution of the \emph{normal equations} (\ref{eq:NormalEquations}) can be computed efficiently even for large $n$. If these data sets also contain a large number of input variables $(q \gg 0)$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. These interaction terms limit the, otherwise perfect, interpretability of the linear model. 
 
 Therefore, we need techniques and criteria to select the \emph{best possible model} out of the variety of different models for a given data set. Model assessment criteria, see Section~\ref{subsec:MAC}, are used to compare different models while subset selection techniques, see Section~\ref{subsec:SSM}, give an algorithmic approach to model generation. Further, we can influence the estimated coefficients $\vec{\beta}$ directly via regularization, see Section~\ref{subsec:Regularization}. 
 
@@ -270,13 +272,13 @@ One way of comparing various models, i.e models using different sets of inputs, 
 
 \subsubsection{Sum of Expected Squared Prediction Error} \label{subsubsec:SPSE}
 
-Given independent observations $y_i, \ i=1, 2, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, x_q\}$, we want to measure the prediction quality. The specific models are defined by numbers $M \subset \{0, 1, \dots, q\}$ of used inputs with corresponding design matrix $\vec{X}_M$. Moreover, $\vert M \vert$ is the cardinal number of M, i.e. the number of inputs included in the model. The least squares estimator for $\vec{\beta}$, cf. (\ref{eq:LS_estimator}), is then given by
+Given independent observations $y_i, \ i=1,2, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, x_q\}$, we want to measure the prediction quality. The specific models are defined by numbers $M \subset \{0, 1, \dots, q\}$ of used inputs with corresponding design matrix $\vec{X}_M$. Moreover, $\vert M \vert$ is the cardinal number of M, i.e. the number of inputs included in the model. The least squares estimator for $\vec{\beta}$, cf. (\ref{eq:LS_estimator}), is then given by
 
 \begin{align*}
 	\hat{\vec{\beta}}_{M} = (\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M \vec{y}.
 \end{align*}
 %
-The data $\vec{y}$ can be interpreted as random variable. We can then define an estimator $\hat{\vec{y}}_M$ for the vector $\vec{\mu}$ of expectations $\mu^{(i)} = \text{E}(y^{(i)})$ by
+The data $\vec{y}$ can be interpreted as a random variable. We can then define an estimator $\hat{\vec{y}}_M$ for the vector $\vec{\mu}$ of expectations $\mu^{(i)} = \text{E}(y^{(i)})$ by
 
 \begin{align} \label{eq:SPSE-estimator-y}
 	\vec{\hat{y}}_M = \vec{X}_M  \hat{\vec{\beta}}_M.
@@ -298,13 +300,13 @@ Moreover, it is easy to show that the following properties hold true:
 		\end{equation}
 \end{enumerate}
 
-Note that the estimator~(\ref{eq:SPSE-estimator-y}) can be regarded as a prediction of future observations
+Note that the estimator~(\ref{eq:SPSE-estimator-y}) can be regarded as a prediction of future observations of the form
 
 \begin{align}
 	y^{(n+i)} = \mu^{(i)} + \epsilon^{(n+i)}
 \end{align}
 %
-for new input data $\{x_1^{(i)}, \dots, x_q^{(i)}\}$. Thus, we can derive the SPSE as
+for new input data $\{(x_1^{(i)}, \dots, x_q^{(i)}), i=1,2,\dots,n\}$. Thus, we can derive the SPSE as
 
 \begin{equation}
 \begin{split}
@@ -326,11 +328,11 @@ The SPSE can be split into three parts:
 	\item \emph{Variance Error Term}: $\vert M \vert \sigma^2$ \\
 	The second term contains the number of used variables $\vert M \vert$ as well as the variance $\sigma^2$. It can therefore be reduced by reducing the model complexity, i.e. by using a smaller number of inputs.
 	
-	\item \emph{Squared Bias Error Term}: $\sum_{i=1}^{n} \big( \text{E}(\hat y^{(i)} - \mu^{(i)}_M) \big)^2$\\
+	\item \emph{Squared Bias Error Term}: $\sum_{i=1}^{n} \big( \text{E}(\hat y^{(i)}) - \mu^{(i)}_M \big)^2$\\
 	The last term can be interpreted as bias. It can be reduced by increasing the model complexity, i.e. by using additional inputs.
 \end{enumerate}
 %
-The SPSE acts as an example of the bias-variance trade-off, which is characteristic for all statistical models. It states that by increasing the model complexity, the bias is reduced but instead the variance is increased. On the other hand, by decreasing model complexity, the variance of the model is reduced, but the bias is increased, see Figure~\ref{fig:bv-decomposition} \cite{bishop2006patternRecognition}.
+The SPSE acts as an example of the bias-variance trade-off, which is characteristic for all statistical models. It states that by increasing the model complexity, the bias is reduced but instead the variance is increased. On the other hand, by decreasing model complexity, the variance of the model is reduced, but the bias is increased, see Figure~\ref{fig:bv-trade-off} and \cite{bishop2006patternRecognition}.
 
 \begin{figure}[H]
 	\centering
@@ -354,8 +356,8 @@ The SPSE acts as an example of the bias-variance trade-off, which is characteris
 			\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
 		\end{axis}	
 	\end{tikzpicture}
-	\caption{Bias-variance decomposition}
-	\label{fig:bv-decomposition}
+	\caption{Bias-variance trade-off.}
+	\label{fig:bv-trade-off}
 \end{figure}
 %
 In practice, the true value for the SPSE is not accessible since $\mu^{(i)}$ and $\sigma^2$ are unknown. Therefore, we need to estimate the SPSE. This can be done by using one of the following two strategies:
@@ -387,7 +389,7 @@ The corrected coefficient of determination $R^2_{corr}$ is an improvement over t
 	R^2 = 1 - \frac{\sum_{i=1}^n ( y^{(i)} - \hat y^{(i)}_M )^2}{\sum_{i=1}^n (y^{(i)} - \bar y)^2},
 \end{align}
 %
-where $\bar y$ is defined as the mean value of $\vec{y}$. The major drawback of $R^2$ is that it will never decrease when further inputs are included in the model, e.g. the $R^2$ of a model using $\{x_1, x_2, x_3\}$ is always larger or equal the $R^2$ of a model using $\{x_1, x_2\}$, even if the variable does not enhance the prediction quality. 
+where $\bar y = \text{E}(y^{(i)})$ is the mean value of $\vec{y}$. The major drawback of $R^2$ is that it will never decrease when further inputs are included in the model, e.g. the $R^2$ of a model using $\{x_1, x_2, x_3\}$ is always larger or equal the $R^2$ of a model using $\{x_1, x_2\}$, even if the variable does not enhance the prediction quality. 
 
 The corrected coefficient of determination $R_{corr}^2$ reduces this problem by an correction term depending on the  number of parameters and is given by
 \begin{align}
@@ -396,15 +398,15 @@ The corrected coefficient of determination $R_{corr}^2$ reduces this problem by 
 
 The corrected coefficient of determination is a standard output parameter in many statistical programs and may be used to compare even models with different number of used variables \cite{fahrmeir2007regression}.
 
-\subsubsection{Corrected Coefficient of Determination $R_{McFadden}^2$}
+\subsubsection{Corrected Coefficient of Determination after McFadden $R_{McFadden}^2$}
 
 The corrected coefficient of determination after McFadden is defined as
 
 \begin{align}
-	R_{McFadden}^2 = 1 - \frac{\ln{L_M} - M}{\ln{L_0}}
+	R_{McFadden}^2 = 1 - \frac{\ln{(L_M)} - M}{\ln{(L_0)}}
 \end{align}
 %
-using the likelihood of the model $M$ given by $L_M$ and the likelihood of the zero model $L_0$. A standard zero model is given by the mean value $\text{E}(y^{(i)})$. Higher values of $R_{McFadden}^2$ correspond to better fits.
+using the likelihood of the model $M$ given by $L_M$ and the likelihood of the zero model $L_0$. A standard zero model is given by the mean value $\bar y = \text{E}(y^{(i)})$. Higher values of $R_{McFadden}^2$ correspond to better fits.
 
 \subsubsection{Mallow's Cp}
 
@@ -456,15 +458,15 @@ A lower value of the BIC correspond to a better model fit \cite{fahrmeir2007regr
 
 \subsubsection{Cross-validation} \label{subsubsec:Cross-validation}
 
-The basic idea of cross-validations is to split the given data set into a training set to estimate the parameters and a validation set to assess the prediction quality. A special case of cross-validation is the "leave-one-out" cross-validation, where all but one data point are used for training and the model is then evaluated on this held-out data point. This seems to be quite expensive, since one needs to estimate one model per data point. However, in the context of linear models, it can be shown that the cross-validation score can be computed using one model trained on all data $\vec{y}$ and the \emph{hat matrix} $\vec{H}_M = \vec{X}_M (\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M$. The cross-validation score is then given by
+The basic idea of cross-validation (CV) is to split the given data set into a training set to estimate the parameters and a validation set to assess the prediction quality. A special case of cross-validation is the "leave-one-out" cross-validation, where all but one data point are used for training and the model is then evaluated on this held-out data point. This seems to be quite expensive, since one needs to estimate one model per data point. However, in the context of linear models, it can be shown that the cross-validation score can be computed using one model trained on all data $\vec{y}$ and the \emph{hat matrix} $\vec{H}_M = \vec{X}_M (\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M$. The cross-validation score is then given by
 
 \begin{align} \label{eq:cross-validation}
-	\text{CV} = \frac{1}{n} \sum_{i=1}^n \Big( \frac{y^{(i)} - \hat y^{(i)}_M}{1 - h_{ii,M}} \Big)^2.
+	\text{CV} = \frac{1}{n} \sum_{i=1}^n \Big( \frac{y^{(i)} - \hat y^{(i)}_M}{1 - h_{ii,M}} \Big)^2,
 \end{align}
 %
 where $h_{ii,M}$ denote the diagonal elements of the \emph{hat matrix} and $\hat y^{(i)}_M$ is defined as the prediction of the model for the input $\{x^{(i)}_1, \dots, x^{(i)}_q \}$. A lower cross-validation score corresponds to a better model fit \cite{golub1979}.
 
-An approximation to the cross-validation score is given by the so-called generalized cross-validation score. It is mainly used in the context of non-parametric regression or when the hat matrix $\vec{H}_M$ is numerically expensive to compute. In the GCV score, the diagonal elements of the hat matrix $h_{ii,M}$ are replaced by the mean of the trace of $\vec{H}_M$. The GCV score is then given by
+An approximation to the cross-validation score is given by the so-called generalized cross-validation (GCV) score. It is mainly used in the context of non-parametric regression or when the hat matrix $\vec{H}_M$ is numerically expensive to compute. In the GCV score, the diagonal elements of the hat matrix $h_{ii,M}$ are replaced by the mean of the trace of $\vec{H}_M$. The GCV score is then given by
 
 \begin{align} \label{eq:generalizied-cross-validation}
 	\text{GCV} = \frac{1}{n}\sum_{i=1}^n \Big( \frac{y^{(i)} - \hat y^{(i)}_M}{1 - \text{trace}(\vec{H}_M)/n}\Big)^2.
@@ -476,16 +478,16 @@ The numerical advantage comes from the fact that the trace of a product of matri
 	\text{trace}(\vec{H}_M) = \text{trace}(\vec{X}_M(\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M) =\text{trace}(\transpose{\vec{X}}_M \vec{X}_M (\transpose{\vec{X}}_M \vec{X}_M)^{-1}).
 \end{align} 
 %
-The trace can therefore be computed from the product of two matrices of shape $p\times p$ \cite{fahrmeir2007regression}.
+The trace can therefore be computed from the product of two matrices of shape $p\times p$, see  \cite{fahrmeir2007regression}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Subset Selection Methods} \label{subsec:SSM}
 
 To make use of the various model assessment criteria, some algorithmic approach to model selection needs to be given. The most commonly used approaches are forward, backward and stepwise selction \cite{fahrmeir2007regression}. 
 
-In forward selection, start with a candidate model, which includes a small number of variables. In each iteration of forward selection, an additional variable is added to the candidate model.  The added variable is the one with leads to the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is achieved.
+In forward selection, we start with a candidate model, which includes a small number of variables. In each iteration of forward selection, an additional variable is added to the candidate model.  The added variable is the one with leads to the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is achieved.
 
-In backward selection, start with a candidate model, which includes all variables. In each iteration of backward selection, we eliminate the variable from the model which provides the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is possible. 
+In backward selection, we start with a candidate model, which includes all variables. In each iteration of backward selection, we eliminate the variable from the model which provides the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is possible. 
 
 In step-wise selection, forward and backward selection are combined to enable the inclusion and deletion of a variable in every operation. The algorithm stops, if no further reduction is possible.
 
@@ -503,7 +505,7 @@ where $\lambda$ is the so-called smoothing parameter and $\text{pen}(\vec{\beta}
 In Ridge regression, the penalty term in the penalized least squares criterion in (\ref{eq:PLS_crit}) is given by the squared weighted $L_2$-norm of the parameter vector $\vec{\beta}$, i.e. $\text{pen}(\vec{\beta}) = \lVert \vec{\beta} \rVert^2_{\vec{K}} = \transpose{\vec{\beta}} \vec{K} \vec{\beta}$ with penalty matrix $\vec{K} \in \mathbb{R}^{p \times p}$. The closed form solution reads as
 
 \begin{align}
-	\hat{\vec{\beta}}_{PLS} = \arg \min_{\vec{\beta}} \big(\text{PLS}(\vec{y}, \vec{\beta}; \lambda) \big) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}}\vec{y},
+	\hat{\vec{\beta}}_{PLS} = \arg \min_{\vec{\beta}} \big(\text{PLS}(\vec{y}, \vec{\beta}; \lambda) \big) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}}\vec{y}.
 \end{align}
 %
 The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{PLS}$ compared to the unpenalized estimate $\hat{\vec{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will converge towards, but never reach, zero. 
@@ -517,21 +519,28 @@ Ridge regression is commonly used when the input dimension $q$ is high, i.e. the
 However, the resulting penalized least squares problem  has no closed form solution and must be solved by an iterative approach. We start with an initial guess $\vec{\beta}^{[0]}$ and iterate for $k = 0, 1, 2, \dots$ the iteration
 
 \begin{align} \label{eq:PLS-iterative-approach}
-	\vec{\beta}^{[k+1]} = \big(\transpose{\vec{X}} \vec{X} + \lambda \vec{K}(\vec{\beta}^{[k]}) \big)^{-1} \transpose{\vec{X}} \vec{y}.
+	\vec{\beta}^{[k+1]} = \big(\transpose{\vec{X}} \vec{X} + \lambda \vec{K}(\vec{\beta}^{[k]}) \big)^{-1} \transpose{\vec{X}} \vec{y},
 \end{align}
 %
-until $\vert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]} \vert \le \text{Tol}$ with $\text{Tol}$ being some given tolerance.
+until $\vert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]} \vert \le \text{Tol}$ with $\text{Tol}$ being a given tolerance.
 
+Note that by the introduction of the penalty matrix $\vec{K}$, we reduce the degrees of freedom of the model. This can be seen by comparing the trace of the hat matrix of the regularized model, i.e.
+
+\begin{align} \label{eq:hat-matrix-regularizated-mode}
+	\vec{H}_{pen} = \vec{X} (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}},
+\end{align} 
+%
+with the trace of the hat matrix of the unpenalized model, see~(\ref{eq:hat-matrix}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Splines} \label{sec:Splines}
 	
-A spline is a piecewise polynomial defined on a sequence of knots. This definition is quite general. Therefore, a large variety of splines exists, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines in Section~\ref{subsec:b-splines}, tensor-product B-splines as the multi-dimensional expansion of B-splines in Section~\ref{subsubsec:tp-splines}, and P-splines in Section~\ref{subsec:p-splines} \cite{fahrmeir2007regression} \cite{eilers1996flexible}.
+A spline is a piecewise polynomial defined on a sequence of knots. This definition is quite general. Therefore, a large variety of splines exists, ranging from regression splines \cite{eubank1990regressionsplines}, over B-splines \cite{deBoor1978practicalGuideToSplines} to natural cubic splines and many more. We will focus on the definition of B-splines in Section~\ref{subsec:b-splines}, tensor-product B-splines as the multi-dimensional expansion of B-splines in Section~\ref{subsubsec:tp-splines}, and P-splines in Section~\ref{subsec:p-splines}, see for more information \cite{fahrmeir2007regression} and \cite{eilers1996flexible}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{B-Splines} \label{subsec:b-splines}
 
-We put the focus on the definition and use of B-splines $s(x)$, which are constructed using the $d$ B-spline basis functions $B_j^l(x)$ of order l as
+We put the focus on the definition and use of B-splines $s(x)$, which are constructed using the $d$ B-spline basis functions $B_j^l(x)$ of order $l$ as
 
 \begin{align}
 	s(x) = \sum_{j=1}^d B_j^l(x) \beta_j 
@@ -543,7 +552,7 @@ given the knot sequence
 	K = \{\kappa_{1-l}, \kappa_{1-l+1}, \dots, \kappa_{d+1}\}.
 \end{align}
 %
-The B-spline basis function $B_j^l(x)$ of degree l is defined by means of the Cox-de Boor recursion formula as
+The B-spline basis function $B_j^l(x)$ of order $l$ is defined by means of the Cox-de Boor recursion formula as
 
 \begin{align} \label{eq:Bspline_recDef1}
 	B_j^0(x) = \begin{cases} 1 & \text{for} \quad \kappa_j \le x < \kappa_{j+1} \\ 
@@ -554,7 +563,7 @@ The B-spline basis function $B_j^l(x)$ of degree l is defined by means of the Co
 	B_j^l(x) = \frac{x - \kappa_{j-l}}{\kappa_{j} - \kappa_{j-l}} B_{j-1}^{l-1}(x) + \frac{\kappa_{j+1} - x}{\kappa_{j+1} - \kappa_{j+1-l}} B_{j}^{l-1}(x)
 \end{align}
 %
-using the knot sequence~(\ref{eq:knot-sequence}). Hence it is composed of $(l+1)$-polynomial pieces of degree $l$ \cite{fahrmeir2007regression}. An example of a B-spline basis function of order $l=0, 1, 2, 3$ is given in Figure~\ref{fig:spline-types-both}. 
+using the knot sequence~(\ref{eq:knot-sequence}). Hence it is composed of $(l+1)$-polynomial pieces of degree $l$, see \cite{fahrmeir2007regression}. An example of a B-spline basis function of order $l=0, 1, 2, 3$ is given in Figure~\ref{fig:spline-types-both}. 
 
 \begin{figure}[H]
 	\centering
@@ -597,11 +606,11 @@ using the knot sequence~(\ref{eq:knot-sequence}). Hence it is composed of $(l+1)
 			\addplot [red, densely dashed] table [x=x, y=B3]{\quantile};	  	
 		\end{groupplot}
 	\end{tikzpicture}
-	\caption{B-spline basis function of order $l=0, 1, 2, 3$ for equidistant (left) and non-equidistant (right) knots}
+	\caption{B-spline basis function of order $l=0, 1, 2, 3$ for equidistant (left) and non-equidistant (right) knots.}
 	\label{fig:spline-types-both}
 \end{figure}
 
-The left chart shows the B-spline basis functions based on an equidistant sequence of knots. The B-spline basis function $B_1^0$ is the zero function, except for $x \in [\kappa_1, \kappa_2]$ where it is equal to 1, see~(\ref{eq:Bspline_recDef1}). The B-spline basis function $B_2^1$ is the well known \emph{hat function}, being zero except for $x \in [\kappa_1, \kappa_3]$. It consists of two linear pieces, one defined from $\kappa_1$ to $\kappa_2$, the other from $\kappa_2$ to $\kappa_3$. This can be seen by expanding the recursive definition~(\ref{eq:Bspline_recDef2}) as
+The left plot shows the B-spline basis functions based on an equidistant sequence of knots. The B-spline basis function $B_1^0$ is the zero function, except for $x \in [\kappa_1, \kappa_2]$ where it is equal to 1, see~(\ref{eq:Bspline_recDef1}). The B-spline basis function $B_2^1$ is the well known \emph{hat function}, being zero except for $x \in [\kappa_1, \kappa_3]$. It consists of two linear pieces, one defined from $\kappa_1$ to $\kappa_2$, the other from $\kappa_2$ to $\kappa_3$. This can be seen by expanding the recursive definition~(\ref{eq:Bspline_recDef2}) as
 
 \begin{align} \label{eq:Bspline-BF_21}
 	B_2^1(x) = \frac{x - \kappa_1}{\kappa_2 - \kappa_1} B_1^0(x) + \frac{\kappa_3 - x}{\kappa_3 - \kappa_2} B_2^0(x).
@@ -611,16 +620,17 @@ Everywhere else, $B_2^1$ is equal to zero. At the joining points, the values of 
 
 \begin{align} \label{eq:Bspline-BF_32}
 	\begin{split}
-	B_3^2(x) &= \frac{x - \kappa_1}{\kappa_3 - \kappa_1} B_2^1(x) + \frac{\kappa_4 - x}{\kappa_4 - \kappa_2} B_3^1(x) \\
-			 &= \dots \\
-			 &= \frac{1}{2h^2} \big[ (x-\kappa_1)^2 B_1^0(x) + 
-			 					 	[(x-\kappa_1)(\kappa_3 - x) + (\kappa_4 - x)(x - \kappa_2)] B_2^0(x) + (\kappa_4 - x)^2 B_3^0(x) \big].
+	B_3^2(x) ={}& \frac{x - \kappa_1}{\kappa_3 - \kappa_1} B_2^1(x) + \frac{\kappa_4 - x}{\kappa_4 - \kappa_2} B_3^1(x) \\
+			 ={}& \dots \\
+			 ={}& \frac{1}{2h^2} \left[ (x-\kappa_1)^2 B_1^0(x) \right. \\ 
+			    &+ \left. [(x-\kappa_1)(\kappa_3 - x) + (\kappa_4 - x)(x - \kappa_2)] B_2^0(x) \right. \\ 
+			 	&+ \left. (\kappa_4 - x)^2 B_3^0(x) \right].
 	\end{split}
 \end{align}
 %
 At $\kappa_2$ and $\kappa_3$, the values of the quadratic pieces, as well as their first derivatives are equal. Finally, the B-spline basis function $B_4^3$ consists of 4 cubic pieces with the joining points at $\kappa_2$, $\kappa_3$ and $\kappa_4$ at which respective cubic polynomials possess equal values as well as equal first and second-order derivatives. 
 
-The right part of Figure~\ref{fig:spline-types-both} shows the B-spline basis functions of the same order $l=0,1,2,3$ defined on a non-equidistant knot sequence. The basic properties of these are the same as for B-spline basis function based on equidistant knots. The shown locality, i.e. being nonzero only over a sequence of $l+2$ knots, is a very attractive feature leading to an enhanced numerical stability compared to other types of splines. Some general properties of a B-spline basis function of degree $l$ are summarized in the following list:
+The right plot in Figure~\ref{fig:spline-types-both} shows the B-spline basis functions of the same order $l=0,1,2,3$ defined on a non-equidistant knot sequence. The basic properties of these are the same as for B-spline basis function based on equidistant knots. The shown locality, i.e. being nonzero only over a sequence of $l+2$ knots, is a very attractive feature leading to an enhanced numerical stability compared to other types of splines. Some general properties of a B-spline basis function of order $l$ are summarized in the following list:
 
 \begin{itemize}
 	\item It consists of $l+1$ polynomial pieces of degree $l$, e.g. a cubic B-spline basis function ($l=3$) consists of 4 cubic pieces.
@@ -630,15 +640,15 @@ The right part of Figure~\ref{fig:spline-types-both} shows the B-spline basis fu
 	\item At every given $x$, only $l+1$ B-spline basis functions are nonzero.
 \end{itemize}
 
-Using the definition of B-spline basis functions, see~(\ref{eq:Bspline_recDef1}) and~(\ref{eq:Bspline_recDef2}), the first-order derivative of a B-spline basis function of degree $l$ can be given as
+Using the definition of B-spline basis functions, see~(\ref{eq:Bspline_recDef1}) and~(\ref{eq:Bspline_recDef2}), the first-order derivative of a B-spline basis function of order $l$ can be given as
 
 \begin{align} \label{eq:Bspline-bf-derivative}
 	\frac{\partial}{\partial x} B_j^l(x) = l \big[\frac{1}{\kappa_j - \kappa_{j-l}} B_{j-1}^{l-1}(x) - \frac{1}{\kappa_{j+1} - \kappa_{j+1-l}} B_j^{l-1}(x) \big]
 \end{align}
 %
-using B-spline basis functions of degree $l-1$. Higher order derivatives are obtained by using lower order B-spline basis functions, see \cite{deBoor1978practicalGuideToSplines}.
+using B-spline basis functions of order $l-1$. Higher order derivatives are obtained by using lower order B-spline basis functions, see \cite{deBoor1978practicalGuideToSplines}.
 
-As shown in Figure~\ref{fig:spline-types-both}, the knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence. For equidistant knots, we split the domain $[a,b]$ into $m-1$ intervals, i.e
+As shown in Figure~\ref{fig:spline-types-both}, the knots can either be an equidistant sequence, which facilitates the construction and estimation of the coefficients, or a non-equidistant sequence. For equidistant knots, we split the domain $[a,b]$ into $m-1$ intervals, i.e.
 
 \begin{align} \label{eq:equidistant-knots-interval}
 	h = \frac{b - a} {m - 1},
@@ -652,7 +662,7 @@ where $m$ is given by $m = d - l + 1$ and obtain the sequence
 %
 Non-equidistant knot placement can be obtained using quantile-based knots, i.e. by using the $(j-1)/(m-1)$-quantiles for $j=1, \dots, m$ of the observed inputs $x^{(1)}, \dots, x^{(n)}$ as knots. Using this approach, more knots are placed in the areas where lots of data is present. The boundary knots, i.e. $\{\kappa_{1-l}, \dots, \kappa_0\}$ on the left side and $\{\kappa_{d-l+2}, \dots, \kappa_{d+1}\}$ on the right side, are usually set to be apart from each other by at least the minimal knot distance \cite{fahrmeir2007regression}. 
 
-The collection of $d$ B-spline basis functions of degree $l$ over a sequence $K = \{\kappa_{1-l}, \kappa_{1-l+1}, \dots, \kappa_{d+1}\}$ knots is called B-spline basis. The basis is created such that it covers the domain $[a, b]$, i.e.
+The collection of $d$ B-spline basis functions of order $l$ over a sequence $K = \{\kappa_{1-l}, \kappa_{1-l+1}, \dots, \kappa_{d+1}\}$ knots is called B-spline basis. The basis is created such that it covers the domain $[a, b]$, i.e.
 
 \begin{align}
 	\sum_{j=1}^d B_j^l(x) = 1 \ \text{for} \ x \in [a,b].
@@ -664,7 +674,7 @@ A function $f(x)$ can then be represented by
 	f(x) = \sum_{j=1}^d B_j^l(x) \beta_j = \transpose{\vec{b}} \vec{\beta},
 \end{align}
 %
-using the B-spline basis functions $B_j^l(x)$ of appropriate degree $l$ and the parameter vector $\transpose{\vec{\beta}} = [\beta_1, \dots, \beta_d] \in \mathbb{R}^{1 \times d}$. The basis functions can be given in vector notation as $\transpose{\vec{b}} = [B_1^l(x), \dots, B_d^l(x)] \in \mathbb{R}^{1 \times d}$. Using the set of data $D = \{ (x^{(i)}, y^{(i)}), \ i=1, 2 \dots, n \}$, the B-spline basis matrix for $d$ splines of degree $l$ is given by the matrix $\vec{B}$ as
+using the B-spline basis functions $B_j^l(x)$ of appropriate order $l$ and the parameter vector $\transpose{\vec{\beta}} = [\beta_1, \dots, \beta_d] \in \mathbb{R}^{1 \times d}$. The basis functions can be given in vector notation as $\transpose{\vec{b}} = [B_1^l(x), \dots, B_d^l(x)] \in \mathbb{R}^{1 \times d}$. Using the set of data $D = \{ (x^{(i)}, y^{(i)}), \ i=1,2, \dots, n \}$, the B-spline basis matrix for $d$ splines of order $l$ is given by the matrix $\vec{B}$ as
 
 \begin{align} \label{eq:bspline-basis-matrix}
 	\vec{B} = \begin{bmatrix}
@@ -686,7 +696,7 @@ Once the basis matrix in (\ref{eq:bspline-basis-matrix}) is given, the parameter
 	\text{LS}(\vec{y}) = \lVert \vec{y} - \vec{B} \vec{\beta} \rVert_2^2.	
 \end{align}
 %
-Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to use model selection and regularization approaches as well as to calculate e.g confidence intervals for the regression coefficients and the prediction.
+Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to use model selection and regularization approaches as well as to calculate e.g. confidence intervals for the regression coefficients and the prediction.
 
 The derivative of the function $f(x)$ in~(\ref{eq:bspline-bf-approach}) can be calculated by summing over all $d$ basis functions and including the estimated parameters $\vec{\beta}$ into the B-spline basis function derivative~(\ref{eq:Bspline-bf-derivative}) as
 
@@ -702,14 +712,13 @@ The second-order derivative of $f(x)$ can be given as
 %
 Here, the finite difference operators $\Delta \beta_j = \beta_j - \beta_{j-1}$ and $\Delta^ \beta_j = \Delta(\Delta \beta_j) = \beta_j - 2\beta_{j-1} +\beta_{j-2}$ are used. Therefore, by estimating the B-spline parameters $\vec{\beta}$, we also generate an estimate for the derivatives of the function $f(x)$. 
 
-B-splines of appropriate order $l > 2$ produce smooths curves, i.e. first and second order derivatives are continuous, where the smoothness is mostly determined by the number of splines used. By using a low number $d$, the curve will be quite smooth, but possess a large data error. When using a high number of splines $d$, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and supervised learning, see Section~\ref{subsubsec:SPSE}
-\cite{deBoor1978practicalGuideToSplines}.  
+B-splines of appropriate order $l > 2$ produce smooths curves, i.e. first- and second-order derivatives are continuous, where the smoothness is mostly determined by the number of splines used. By using a low number $d$, the curve will be quite smooth, but possess a large data error. When using a high number of splines $d$, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and supervised learning, see Section~\ref{subsubsec:SPSE} and \cite{deBoor1978practicalGuideToSplines}.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Tensor-Product B-Splines} \label{subsubsec:tp-splines}
 
-Tensor-product B-splines can be seen as the multi-dimensional extension of B-splines. We examine an example for two input dimensions $x_1$ and $x_2$. Note that tensor-product B-splines can be constructed for arbitrary dimensions using the approach given below. Assume that we have B-spline bases $B_1$ and $B_2$ available using $d_1$ and $d_2$ basis functions for the respective dimension and degree $l=3$. For readability, we may omit the degree $l$ in the further description. The tensor-product B-spline basis is then constructed by considering all pairwise products of the two B-spline basis functions, i.e.
+Tensor-product B-splines can be seen as the multi-dimensional extension of B-splines. We examine an example for two input dimensions $x_1$ and $x_2$. Note that tensor-product B-splines can be constructed for arbitrary dimensions using the approach given below. Assume that we have B-spline bases $B_1$ and $B_2$ available using $d_1$ and $d_2$ basis functions for the respective dimension and order $l=3$. For readability, we may omit the order $l$ in the further description. The tensor-product B-spline basis is then constructed by considering all pairwise products of the two B-spline basis functions, i.e.
 
 \begin{align}
 	B_{j,r}(x_1, x_2) = B_j^l(x_1) B_r^l(x_2)
@@ -721,10 +730,16 @@ for $j=1, 2, \dots, d_1$ and $r=1,2,\dots, d_2$. We then obtain the basis functi
 	t(x_1,x_2) = \sum_{j=1}^{d_1} \sum_{r=1}^{d_2} B_{j,r}(x_1, x_2) \beta_{j,r}. 
 \end{align}
 %
-We can therefore combine the individual basis functions to generated new basis functions for the tensor-product B-spline. For any set of data $D = \{ (x^{(i)}_{1}, x^{(i)}_{2}, y^{(i)} ), \ i=1, 2, \dots, n\}$, the relationship between the basis matrix $\vec{X}$ of the tensor-product B-spline and the basis matrices $\vec{B}_1$ and $\vec{B}_2$ is given as
+We can therefore combine the individual basis functions to generated new basis functions for the tensor-product B-spline. For any set of data 
 
 \begin{align}
-	\vec{X} = \vec{B}_1 \odot \vec{B}_2
+	D = \{ (x^{(i)}_{1}, x^{(i)}_{2}, y^{(i)} ), \ i=1,2, \dots, n\}, 
+\end{align}
+%	
+the relationship between the basis matrix $\vec{X}$ of the tensor-product B-spline and the basis matrices $\vec{B}_1$ and $\vec{B}_2$ is given as
+
+\begin{align}
+	\vec{X} = \vec{B}_1 \odot \vec{B}_2,
 \end{align}
 %
 where $\odot$ indicates the use of the row-wise Kronecker product, see Appendix A, $\vec{X} \in \mathbb{R}^{n \times d_1 d_2}$ denotes the tensor-product B-spline basis matrix, $\vec{B}_1 \in \mathbb{R}^{n \times d_1}$ denotes the B-spline basis matrix for dimension $x_1$ and $\vec{B}_2 \in \mathbb{R}^{n \times d_2}$ denotes the B-spline basis matrix for dimension $x_2$ \cite{fahrmeir2007regression}.  
@@ -748,10 +763,10 @@ To circumvent the latter problem, we now assume the restrictive structure of add
 	f_{add} = f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q).
 \end{align}
 %
-Hence, we use one function $f_i(x_i)$ per input dimension. For some given data $D = \{ (x^{(i)}_{1}, \dots, x^{(i)}_{q}, y^{(i)} ), \ i=1, 2, \dots, n\}$, by using a B-spline $s_i(x_i)$ for each function $f_i(x_i)$ we obtain a linear model
+Hence, we use one function $f_i(x_i)$ per input dimension. For some given data $D = \{ (x^{(i)}_{1}, \dots, x^{(i)}_{q}, y^{(i)} ), \ i=1,2, \dots, n\}$, by using a B-spline $s_i(x_i)$ for each function $f_i(x_i)$ we obtain a linear model
 
 \begin{align} \label{eq:addRegBaseEquation-as-linModel}
-	f_i(\vec{x}_i) = \vec{X}_{s_i} \vec{\beta}_{s_i}
+	f_i(\vec{x}_i) = \vec{X}_{s_i} \vec{\beta}_{s_i},
 \end{align}
 %
 where $\vec{X}_{s_i} \in \mathbb R^{n \times d_i}$ is the B-spline basis matrix using $d_i$ B-spline basis functions for $i=1,2,\dots, q$, $\transpose{\vec{x}}_i = [x_i^{(1)}, \dots, x_i^{(n)}] \in \mathbb{R}^{1 \times n}$ is the data vector of input dimension $i$ and $\vec{\beta}_{s_i} \in \mathbb R^{d_i \times 1}$ are the parameters to estimate. This leads to the model structure 
@@ -798,10 +813,10 @@ using the tensor-product B-spline basis matrices $\vec{X}_{t_{j,r}} \in \mathbb{
 								  \vec{\beta}_{t_{1,2}} \\ 
 								  \vdots \\ 
 								  \vec{\beta}_{t_{q-1, q}} \\
-	\end{bmatrix} + \vec{\epsilon}
+	\end{bmatrix} + \vec{\epsilon},
 \end{align}
 %
-with $\vec{X} \in \mathbb{R}^{n \times d_{total}}$ as design matrix, $\vec{\beta} \in \mathbb{R}^{d_{total} \times 1}$ as parameter vector and $d_{total} = \sum_{i=1}^q d_i + \sum_{j=1}^{q-1} \sum_{r>j}^q d_j d_r$ as total number of parameters in the model. Therefore, the parameters can be calculated efficiently using the Least Squares (LS) algorithm, see Section~\ref{subsubsec:Method-of-LS}. Further, the assumptions given in Section~\ref{sec:LinModel} on the error term, as well as on the model function are used \cite{fahrmeir2007regression}.
+with $\vec{X} \in \mathbb{R}^{n \times d_{total}}$ as design matrix, $\vec{\beta} \in \mathbb{R}^{d_{total} \times 1}$ as parameter vector and $d_{total} = \sum_{i=1}^q d_i + \sum_{j=1}^{q-1} \sum_{r>j}^q d_j d_r$ as total number of parameters in the model. Therefore, the parameters can be calculated efficiently using the Least Squares (LS) algorithm, see Section~\ref{subsubsec:Method-of-LS}. Further, the assumptions given in Section~\ref{sec:LinModel} on the error term, as well as on the model function are used.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{P-Splines} \label{subsec:p-splines}
@@ -812,23 +827,23 @@ P-splines combine the concepts of B-spline basis functions and regularization to
 	\lambda \int (f''(x))^2 \,dx
 \end{align}
 %
-is typically introduced to penalize the curvature of a function which is measured by its second-order derivative \cite{osullivan1986penalties}. The penalty is weighted by the so-called \emph{smoothing parameter} $\lambda$. This yields the penalized least squares objective function, cf. Section~(\ref{subsec:Regularization}), as
+is typically introduced to penalize the curvature of a function which is measured by its second-order derivative \cite{osullivan1986penalties}. The penalty is weighted by the so-called \emph{smoothing parameter} $\lambda$. This yields the penalized least squares objective function, cf. Section~\ref{subsec:Regularization}, as
 
 \begin{align} \label{eq:P-splines-OF-base}
-	\text{PLS}(\vec{y}, \vec{\beta}; \lambda) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \int (f''(x))^2 \,dx
+	\text{PLS}(\vec{y}, \vec{\beta}; \lambda) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \int (f''(x))^2 \,dx,
 \end{align}
 %
-using the B-spline basis matrix $\vec{X} \in \mathbb{R}^{n \times d}$ for some data $D=\{(x^{(i)}, y{(i)}), \ i=1,2,\dots,n\}$. Inserting the B-spline basis function formulation~(\ref{eq:bspline-bf-approach}), using order $l$ and $d$ basis functions, into (\ref{eq:wiggliness-penalty}) results in
+using the B-spline basis matrix $\vec{X} \in \mathbb{R}^{n \times d}$ for some data $D=\{(x^{(i)}, y^{(i)}), \ i=1,2,\dots,n\}$. Inserting the B-spline basis function formulation~(\ref{eq:bspline-bf-approach}), using order $l$ and $d$ basis functions, into (\ref{eq:wiggliness-penalty}) results in
 
 \begin{align}
 	\begin{split}
 		\int (f''(x))^2 \,dx &= \int \Big(\sum_{j=1}^d B''_j(x) \beta_j \Big)^2 \,dx \\
 						     &= \int \sum_{j=1}^d \sum_{r=1}^d \beta_j \beta_r B''_j(x) B''_r(x) \,dx \\
-						     &= \transpose{\vec{\beta}} \vec{K} \vec{\beta}
+						     &= \transpose{\vec{\beta}} \vec{K} \vec{\beta},
 	\end{split}
 \end{align}
 % 
-with the penalty matrix $\vec{K}[j,r] = \int B''_j(x) B''_r(x) \,dx$ as a matrix of dimension $\mathbb{R}^{d \times d}$. The entries of $\vec{K}$ are given by the integrated products of the second-order derivatives of the B-spline basis functions $B_j(x)$ and $B_r(x)$. For readability, the order $l$ is omitted. These second-order derivatives can be obtained by using the derivative properties of B-spline basis functions given in~(\ref{eq:Bspline-2nd-derivative}) \cite{fahrmeir2007regression}. 
+with the penalty matrix $\vec{K}[j,r] = \int B''_j(x) B''_r(x) \,dx$ as a matrix of dimension $\mathbb{R}^{d \times d}$. The entries of $\vec{K}$ are given by the integrated products of the second-order derivatives of the B-spline basis functions $B_j(x)$ and $B_r(x)$. For readability, the order $l$ is omitted. These second-order derivatives can be obtained by using the derivative properties of B-spline basis functions given in~(\ref{eq:Bspline-2nd-derivative}), see \cite{fahrmeir2007regression}. 
 
 Eilers and Marx proposed to base the penalty on finite-differences of higher order of the parameters of adjacent B-spline basis functions which circumvents the direct calculation of the derivative and the integral and therefore, reduces the complexity from $n$, the number of data points to evaluate the integral on, to $d$, the number of parameters \cite{eilers1996flexible}. The squared second-order finite difference gives a good discrete approximation of the integral of the squared second-order derivative in~(\ref{eq:wiggliness-penalty}), i.e.
 
@@ -859,7 +874,7 @@ In matrix form,~(\ref{eq:2nd-order-finite-diff}) may be given as
 						\beta_1 \\
 						\vdots \\
 						\beta_d
-				\end{bmatrix}
+				\end{bmatrix},
 \end{align}
 %
 with $\vec{D}_2 \in \mathbb{R}^{(d-2) \times d}$. Inserting the matrix form of the second-order finite difference operator~(\ref{eq:2nd-order-finite-diff-matrix}) into~(\ref{eq:wiggliness-finite-diff-approx})  yields
@@ -871,22 +886,16 @@ with $\vec{D}_2 \in \mathbb{R}^{(d-2) \times d}$. Inserting the matrix form of t
 We then obtain the objective function to minimize as
 
 \begin{align} \label{eq:P-spline-final-OF}
-	\text{PLS}(\vec{y}, \vec{\beta}; \lambda) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \transpose{\vec{\beta}} \vec{K} \vec{\beta}
+	\text{PLS}(\vec{y}, \vec{\beta}; \lambda) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \transpose{\vec{\beta}} \vec{K} \vec{\beta},
 \end{align}
 %
-which is equivalent to the objective function of Ridge regression, cf. Section~\ref{subsec:Regularization}, for the special choice of $\vec{K}$ given by $\vec{K} = \transpose{\vec{D}}_2 \vec{D}_2 \in \mathbb{R}^{d \times d}$. As in Ridge regression, the smoothness parameter $\lambda$ plays a critical role. For $\lambda \rightarrow 0$, the P-spline approaches the underlying B-spline since the penalty term in~(\ref{eq:P-spline-final-OF}) goes to $0$. For $\lambda \rightarrow \infty$, the P-spline approaches a polynomial model. The order of the polynomial is given by the order of the finite difference penalty, e.g for second-order finite difference penalty, we penalize the discrete approximation of the second-order derivative leading to a linear function, because for these, the second-order derivative is equal to zero. Note that higher-order difference penalties are also possible.
+which is equivalent to the objective function of Ridge regression, cf. Section~\ref{subsec:Regularization}, for the special choice of $\vec{K}$ given by $\vec{K} = \transpose{\vec{D}}_2 \vec{D}_2 \in \mathbb{R}^{d \times d}$. As in Ridge regression, the smoothness parameter $\lambda$ plays a critical role. For $\lambda \rightarrow 0$, the P-spline approaches the underlying B-spline since the penalty term in~(\ref{eq:P-spline-final-OF}) goes to $0$. For $\lambda \rightarrow \infty$, the P-spline approaches a polynomial model. The order of the polynomial is given by the order of the finite difference penalty, e.g. for second-order finite difference penalty, we penalize the discrete approximation of the second-order derivative leading to a linear function, because for these, the second-order derivative is equal to zero. Note that higher-order difference penalties are also possible.
 
 The main advantage of P-splines is their easy set up by replacing the integral of the squared second-order derivative of the B-spline basis functions with the squared second-order finite differences of parameters of adjacent B-spline basis functions. This reduces the computational complexity and allows faster training and evaluation. Hence, P-splines are widely used in practice \cite{eilers1996flexible}. \\
 
-A similar penalty term for tensor-product B-splines can be constructed using the Kronecker product.  Recall the definition of a tensor-product B-spline given in~(\ref{eq:tps-basis-function-notation}) and~(\ref{eq:tps-matrix-notation}) as
+A similar penalty term for tensor-product B-splines can be constructed using the Kronecker product.  Recall the definition of a tensor-product B-spline given in~(\ref{eq:tps-basis-function-notation}) and~(\ref{eq:tps-matrix-notation}).
 
-\begin{align} \label{eq:tps-def-dual}
-	\begin{split}
-	t(x_1, x_2) &= \sum_{j=1}^{d_1} \sum_{r=1}^{d_2} \beta_{j,r} B_{j,r}(x_1,x_2) \\
-	t(\vec{x_1}, \vec{x_2})	&= \vec{X} \vec{\gamma}. 
-	\end{split}
-\end{align}
-%
+
 The spatial alignment of the B-spline basis functions and the corresponding parameters of the two-dimensional tensor-product B-spline needs to be incorporated by the definition of the term \emph{adjacent parameters}. An example for these adjacent parameters, also called spatial neighborhood, is taken from \cite{fahrmeir2007regression} and given in Figure \ref{fig:tps-neighborhood}. Here, we choose the parameters left and right, i.e. $\beta_{j, r-1}$ and $\beta_{j, r+1}$, as well as above and below, i.e. $\beta_{j-1,r}$ and $\beta_{j+1, r}$, as spatial neighborhood for $\beta_{j,r}$. 
 
 \begin{figure}[H]
@@ -946,7 +955,7 @@ The spatial alignment of the B-spline basis functions and the corresponding para
 			\node[] at (axis cs: .845, -0.05) {$\beta_{5,5}$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Spatial neighborhood or adjacent parameters for a tensor-product B-spline}
+	\caption{Spatial neighborhood or adjacent parameters for a tensor-product B-spline.}
 	\label{fig:tps-neighborhood}
 \end{figure}
 %
@@ -992,55 +1001,89 @@ with the tensor-product B-spline basis matrix $\vec{X} \in \mathbb{R}^{n \times 
 	\vec{K} = \big[ \transpose{(\vec{I}_{d_2} \otimes \vec{D}_{1,2})} (\vec{I}_{d_2} \otimes \vec{D}_{1,2}) + \transpose{(\vec{D}_{2,2} \otimes \vec{I}_{d_1})} (\vec{D}_{2,2} \otimes \vec{I}_{d_1}) \big] \in \mathbb{R}^{d_1 d_2 \times d_1 d_2}.
 \end{align}
 
-
+\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{comment}
+
 	
 \chapter{Solution Approach} \label{chap:solution-approach}
 
-We are now going to use the theory discussed in Chapter \ref{chap:fundamentals} to estimate functions using available data and a priori domain knowledge. An overview of the different problems considered in this work is given in Table \ref{tab:problem_overview}. First, we are using B-splines, see Chapter \ref{subsec:b-splines}, as basis functions for the estimation of the unknown function $y = f(x)$ for some data $\{x^{(i)}, y^{(i)}\} \ i=1, 2, \dots, n$.  Next, we use the concept of P-splines, see \ref{subsec:p-splines},  introduced by Eilers and Marx in \cite{eilers1996flexible} to estimate smooth, one dimensional functions. Finally, we are going to incorporate a priori knowledge into the fitting process using the approach given by Hofner and apply it to one and two dimensional functions. \cite{hofner2011monotonicity} 
+We are now going to use the theory discussed in Chapter \ref{chap:fundamentals} to estimate uni- and bivariate  functions using data and a priori domain knowledge. An overview of the different problems considered in this work is given in Table \ref{tab:problem_overview}. 
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|lll|}
+	\begin{tabular}{|l|l|l|l|}
 		\hline
-		\textbf{Problem}                   & \textbf{Solution Approach}           & \textbf{Algorithm}  \\ \hline \toprule
-		1d Function Estimation             & B-Splines                            & LS                  \\ \hline
-		1d Smooth Function Estimation      & P-Splines                            & PLS                 \\ \hline
-		1d Constraint Function Estimation  & P-Splines + Constraint Penalty       & PIRLS 			    \\ \hline 
-		n-d Constraint Function Estimation & P+TP-Splines + Constraint Penalty & PIRLS 			    \\ \hline \bottomrule
+		\textbf{Univariate}   & \textbf{Section} & \textbf{Bivariate}         & \textbf{Section} \\ \hline \toprule
+		B-Splines             &                & Tensor-product B-splines   &               \\ \hline
+		P-Splines             &                & Tensor-product P-splines   &              \\ \hline
+		SCP-Splines           & 			   & Tensor-product SCP-splines &     \\ \hline \bottomrule
 	\end{tabular}
-	\caption{Problem overview}
+	\caption{Problem overview.}
 	\label{tab:problem_overview}
 \end{table}
+%
+First, we are using B-splines, see Section~\ref{subsec:b-splines}, for the estimation of the unknown function $y = f(x)$, i.e. we solve the optimization problem
 
-The a priori knowledge can be incorporated using different types of constraints. The considered constraints are listed in Table \ref{tab:constraint_overview}.
+\begin{align}
+	\arg \min_{\vec{\beta}} Q_1(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta \rVert},
+\end{align}
+%
+using the B-spline or tensor-product B-spline basis matrix $\vec{X}$. Next, we use the concept of P-splines, see Section~\ref{subsec:p-splines}, to estimate smooth functions, i.e. we solve the optimization problem
+\begin{align}
+	\arg \min_{\vec{\beta}} Q_2(\vec{y}, \vec{\beta}; \lambda) = \lVert \vec{y} - \vec{X} \vec{\beta \rVert} + \lambda \cdot \text{pen}(\vec{\beta})
+\end{align}
+%
+where $\text{pen}(\vec{\beta})$ specifies a smoothness penalty term. Finally, we are going to incorporate a priori domain knowledge into the fitting process using the approach given by Hofner in~\cite{hofner2011monotonicity} and apply it to uni- and bivariate functions, i.e. we solve the optimization problem
+\begin{align}
+	\arg \min_{\vec{\beta}} Q_3(\vec{y}, \vec{\beta}; \lambda, \lambda_c) = \lVert \vec{y} - \vec{X} \vec{\beta \rVert} + \lambda \cdot \text{pen}(\vec{\beta}) + \lambda_c \cdot \text{con}(\vec{\beta}),
+\end{align}
+%
+where $\text{con}({\vec{\beta}})$ specifies the user-defined constraint to incorporate a priori domain knowledge with. Various types a priori domain knowledge can be incorporated using the constraints listed in Table~\ref{tab:constraint_overview}.
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{|lll|}
+	\begin{tabular}{|l|ll|l|}
 		\hline
-		\textbf{Constraint}& \textbf{Description}                         & \textbf{Math. Description}\\ \hline \toprule
-		Monotonicity       & Functions is either increasing or decreasing.& $\lvert f'(x) \rvert \ge 0$ 	\\ \hline
-		Curvature          & Function is either convex or concave.        & $\lvert f''(x) \rvert \ge 0$ 	\\ \hline
-		Unimodality        & Function has a mode/peak.                    & $m = \arg \max_{x} f(x)$ 				\\ 
-		&	   										  & $f'(x) \ge 0 \quad \text{if} \ x < m$  \\ 
-		&  											  & $f'(x) \le 0 \quad \text{if} \ x > m$  \\ \hline
-		Boundedness        & Function is bounded by the value M.          & $\lvert f(x)\rvert \le M$ 		\\ \hline
-		Jamming            & Function is jammed by the value M.           & $f(x^{(M)}) \approx y^{(M)}$	\\ \hline \bottomrule
+		\textbf{Constraint}& & \textbf{Description}   & \textbf{Section}     \\ \hline \toprule
+		Jamming            & & $f(x^{(M)}) \approx y^{(M)}$ &	12 \\ \hline 
+		\multirow{2}{*}{Boundedness}  & lower & $\lvert f(x)\rvert \ge M$ 	  &	12 \\ \cline{2-4}
+		& upper& $\lvert f(x)\rvert \ge M$    & 12 \\ \hline
+		\multirow{2}{*}{Monotonicity} & increasing & $f'(x) \ge 0$ 	& 23 \\ \cline{2-4}
+		& decreasing & $f'(x) \le 0$  & 23 \\ \hline	
+		\multirow{2}{*}{Curvature}    & convex     & $f''(x)\ge 0$ 	& 33 \\ \cline{2-4}
+		& concave    & $f''(x)\le 0$ 	& 33 \\ \hline
+		\multirow{6}{*}{Unimodality}  & \multirow[t]{3}{*}{peak}  & $m = \arg \max_{x} f(x)$  & 44 \\ 
+		&	                       & $f'(x) \ge 0 \quad \text{if} \ x < m$ & \\ 
+		&  				       & $f'(x) \le 0 \quad \text{if} \ x > m$ & \\ \cline{2-4} 
+		& \multirow[t]{3}{*}{valley}& $m = \arg \min_{x} f(x)$  & 44 \\ 
+		&	                       & $f'(x) \le 0 \quad \text{if} \ x < m$ & \\ 
+		&  				       & $f'(x) \ge 0 \quad \text{if} \ x > m$ &  \\ \hline		\bottomrule
 	\end{tabular}
 	\caption{Overview of the considered constraints}
 	\label{tab:constraint_overview}
 \end{table}
 
-To test the algorithm and the incorporation of a priori knowledge, we use the one dimensional function given by 
+
+\section{Univariate Function Approximation}
+
+To test the methods listed in the column $\textbf{Univariate}$ in Table~\ref{tab:problem_overview} and the incorporation of a priori domain knowledge, we use the data
+
+\begin{align} \label{eq:dataset-univariate}
+	D_{univariate} = \{(x^{(i)}, y^{(i)}), i=1,2,...n\},
+\end{align}
+%
+generated by random sampling of $x \in [0,1]$ of the univariate function $f_1(x)$ given by 
 
 \begin{align}\label{eq:test_func}
-	f(x) = 3\sin(3\pi x) + 17x + 3.
+	y^{(i)} = f_1(x^{(i)}) + \epsilon_i = 3\sin(3\pi x) + 17x + 3 + \epsilon_i.
 \end{align}
+%
+where $\epsilon_i$ is Gaussian noise given by $\mathcal{N}(0, 0.1)$. The data is shown in~\pref{fig:test_func}. 
 
-Figure \ref{fig:test_func} shows functions evaluated at 200 points. The function is partially increasing.  The test function for the two dimensional case is given in Chapter \ref{subsec:2d-example}. 
+
+
+The function is partially increasing.  The test function for the two dimensional case is given in Chapter \ref{subsec:2d-example}. 
 
 \begin{figure}[H]
 	\centering
@@ -1050,7 +1093,7 @@ Figure \ref{fig:test_func} shows functions evaluated at 200 points. The function
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Function Estimation}
+
 
 \subsection{1d Function Estimation} \label{subsec:1d-function-estimation}
 
@@ -1526,7 +1569,7 @@ The fit for this model as well as the individual estimates $s_1(x_1)$ and $s_2(x
 	\caption{2-d test function for n-d constrained function estimation}
 	\label{fig:2d_example}
 \end{figure}
-\end{comment}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
