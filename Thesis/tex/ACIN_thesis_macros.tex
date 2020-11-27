@@ -1,0 +1,88 @@
+% Makros für Dokument-Setup
+% --------------------------------------------------
+
+% PDFTitle nur notwendig, falls von Title abweichend. (Z.Bsp. falls Titel Zeilenumbrüche enthält)
+
+% the defintions for these commands following examples at http://www.tex.ac.uk/cgi-bin/texfaq2html?label=oarglikesect
+% title
+\newcommand{\Title}{\@dblarg\ACIN@title}
+\newcommand{\ACIN@title}[2][\@error]{%
+ \def\insertTitle{#2}%
+  \def\ACIN@shortTitle{#1}%
+  }
+\Title{<Titel>}
+
+% subject
+\newcommand{\Subject}{\@dblarg\ACIN@subject}
+\newcommand{\ACIN@subject}[2][\@error]{%
+ \def\insertSubject{#2}%
+  \def\ACIN@shortSubject{#1}%
+  }
+\ifthenelse{\boolean{Bachelor}}
+{\GerEng{\Subject{Bachelorarbeit}}{\Subject{Bachelor Thesis}}}
+{\GerEng{\Subject{Diplomarbeit}}{\Subject{Diploma Thesis}}}
+
+
+% author
+\newcommand{\Author}{\@dblarg\ACIN@author}
+\newcommand{\ACIN@author}[2][\@error]{%
+  \def\insertAuthor{#2}%
+  \def\ACIN@shortAuthor{#1}%
+  }
+\Author{<Autor>}
+
+% Matrikelnummer
+\newcommand{\Matrikelnummer}{\@dblarg\ACIN@matrikelnummer}
+\newcommand{\ACIN@matrikelnummer}[2][\@error]{%
+  \def\insertMatrikelnummer{#2}%
+  \def\ACIN@shortMatrikelnummer{#1}%
+  }
+\Matrikelnummer{<012345>}
+
+% authors address
+\newcommand{\AuthorAddress}{\@dblarg\ACIN@authoraddress}
+\newcommand{\ACIN@authoraddress}[2][\@error]{%
+  \def\insertAuthorAddress{#2}%
+  \def\ACIN@shortAuthorAddress{#1}%
+  }
+\AuthorAddress{<Strasse>\\<Ort>\\<Land>}
+
+% supervisor
+\newcommand{\Supervisor}{\@dblarg\ACIN@supervisor}
+\newcommand{\ACIN@supervisor}[2][\@error]{%
+  \def\insertSupervisor{#2}%
+  \def\ACIN@shortSupervisor{#1}%
+  }
+\Supervisor{<Supervisor>}
+
+% date
+\newcommand{\Date}{\@dblarg\ACIN@date}
+\newcommand{\ACIN@date}[2][\@error]{%
+  \def\insertDate{#2}%
+  \def\ACIN@shortDate{#1}%
+  }
+\Date{\today}
+
+% date
+\newcommand{\PlaceAndTime}{\@dblarg\ACIN@placeandtime}
+\newcommand{\ACIN@placeandtime}[2][\@error]{%
+  \def\insertPlaceAndTime{#2}%
+  \def\ACIN@shortPlaceandtime{#1}%
+  }
+\PlaceAndTime{<Ort, im Monat Jahr>}
+
+
+% PDFTitle nur notwendig, falls von Title abweichend. (Z.Bsp. falls Titel Zeilenumbrüche enthält)
+% author
+\newcommand\PDFAuthor[1]{\long\def\ACIN@PDFauthor{#1}}
+\PDFAuthor{\insertAuthor}
+
+\newcommand\PDFTitle[1]{\long\def\ACIN@PDFtitle{#1}}
+\PDFTitle{\insertTitle{}}
+
+\newcommand\PDFSubject[1]{\long\def\ACIN@PDFsubject{#1}}
+\PDFSubject{\insertSubject}
+
+\makeatother
+\newcommand{\AndreasKugi}{Univ.-Prof.\@ Dr.\,techn.\@ A.\@ Kugi}
+\makeatletter

@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% added by j.weber 26.11.2020
+\usepackage{multirow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{acronym}
+\usepackage{booktabs}
+\usepackage{tikz}
+%\usepackage{prettyref}
+
+\usepackage{nomencl}
+\usepackage[toc]{appendix}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.units}
+\usetikzlibrary{shapes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,scopes}
+\usetikzlibrary{spy}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{mathrsfs}
+
+% for (i) (ii) as items
+\RequirePackage{enumerate} 
+% for [H] as figure placement
+\RequirePackage{float}  
+
+%\usepackage{showframe}%frames bei subcaption
+
+\usepackage{siunitx}
+\usepackage{nicefrac}
+
+%include todonotes
+\usepackage{todonotes}
+% hack to make todonotes it work with externalize
+\usepackage{letltxmacro}
+\LetLtxMacro{\oldmissingfigure}{\missingfigure}
+\renewcommand{\missingfigure}[2][]{\tikzexternaldisable\oldmissingfigure[{#1}]{#2}\tikzexternalenable}
+\LetLtxMacro{\oldtodo}{\todo}
+\renewcommand{\todo}[2][]{\tikzexternaldisable\oldtodo[#1]{#2}\tikzexternalenable}
+
+
+\usepackage{xcolor}
+
+\usepackage{calc}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+\pgfplotsset{compat=1.16,height=0.3\textheight,legend cell align=left,tick scale binop=\times}
+\pgfplotsset{grid style={loosely dotted,color=darkgray!30!gray,line width=0.6pt},tick style={black,thin}}
+\pgfplotsset{every axis plot/.append style={line width=0.8pt}}
+
+\usepgfplotslibrary{external}
+% Für die Verwendung von 'external' müssen die folgenden Anpassungen in Abhängigkeit der
+% LaTeX Distribution durchgeführt werden:
+
+% fuer Texlive: pdflatex.exe -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+%\tikzexternalize[shell escape=-shell-escape]   % fuer TeXLive
+
+% fuer MikTeX:  pdflatex.exe -enable-write18 -synctex=1 -interaction=nonstopmode %.tex
+\tikzexternalize[shell escape=-enable-write18] % fuer MikTex
+
+%\pgfkeys{/pgf/images/include external/.code=\includegraphics{#1}} 
+%\AtBeginDocument{
+%	\@ifundefined{tikzexternalrealjob}{}{%
+%		\message{*** Overriding the document specification for TikZ externalizer.}%
+%		\ifthenelse{\equal{\jobname}{\tikzexternalrealjob}}{}{%
+%			\gdef\maketitle{}%
+%		}%
+%	}%
+%} 
+
+% ordner zu tikz grafiken
+\tikzsetexternalprefix{graphics/pgfplots/} % Ordner muss ev. zuerst haendisch erstellt werden
+%\tikzset{external/up to date check=simple}
+
+%\tikzset{external/system call={pdflatex \tikzexternalcheckshellescape --extra-mem-top=100000000 -halt-on-error-interaction=batchmode -jobname "\image" "\texsource"}} 
+
+%Define command to get x and y values of a point
+\newcommand{\gettikzxy}[3]{%
+	\tikz@scan@one@point\pgfutil@firstofone#1\relax
+	\edef#2{\the\pgf@x}%
+	\edef#3{\the\pgf@y}%
+}
+
+\tikzset{external/system call= {pdflatex
+		-extra-mem-top=5000000 
+		-main-memory=9000000 
+		\tikzexternalcheckshellescape 
+		-halt-on-error 
+		-interaction=batchmode
+		-jobname "\image" "\texsource"}} 
+	
+
+%Force recompile	
+%\tikzset{external/force remake}
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+
+\setlength{\nomitemsep}{-\parsep}
+
+\makeatletter
+\newenvironment{rrcases}{%
+	\matrix@check\rrcases\env@rrcases
+}{%
+	\endarray\right\rbrace%
+}
+\def\env@rrcases{%
+	\let\@ifnextchar\new@ifnextchar
+	\left.
+	\def\arraystretch{1.7}%
+	\array{@{}l@{~}l@{}}%
+}
+\makeatother
+
+\definecolor{limegreen}{RGB}{167, 229, 145}

@@ -1,0 +1,119 @@
+% Definition eines einheitlichen Farbschemas und Definition von styles.
+%=======================================================================
+
+% Um ein einheitliches Farbschema zu gewährleisten werden hier einige Farben und
+% davon abgeleitete Variationen definiert. Diese Farben werden in der Vorlage
+% bereits für die entsprechenden Befehle (Links, Hervorhebung, usw.) verwendet.
+% Die Farben sollten auch in Grafiken verwendet werden. Die RGB- bzw. CMYK Codes
+% werden hierzu in der Dokumentation angegeben.
+% Es werden außerdem einige styles hier definiert, die von verschiedenen
+% Befehlen verwendet werden.
+
+
+% Definition der Grundfarben
+%============================
+
+% \providecolor{acin_red}{rgb/cmyk}{0.7294,0.0706,0.1686/0.03,1,0.66,0.12}
+% \providecolor{test}{rgb}{0.85,0.0,0.22}
+% \providecolor{test2}{rgb}{0,0.47,0.85}
+% \providecolor{acin_gray}{cmyk}{0.2,0.15,0.11,0.4}
+% \providecolor{acin_yellow}{cmyk}{0.01000,0.20000,0.72000,0.00000}
+% \providecolor{TU_blue}{cmyk}{1,0.38,0,0.15}
+% \definecolor{acin_green}{rgb}{0,0.75,0.25}
+
+\definecolor{acin_red}{RGB}{186, 18, 43}
+\definecolor{acin_gray}{RGB}{176, 176, 176}
+\definecolor{acin_yellow}{RGB}{252, 204, 71}
+\definecolor{acin_green}{RGB}{0, 190, 65}
+\definecolor{TU_blue}{RGB}{0, 102, 153}
+\definecolor{test2}{rgb}{0,0.47,0.85}
+\definecolor{TU_gray}{RGB}{102, 102, 102}
+\providecolor{test}{rgb}{0.85, 0, 0.22}
+
+\definecolor{acin_red_complement}{RGB}{50,255,0}
+\definecolor{TU_blue_complement}{RGB}{255,106,0}
+\definecolor{acin_yellow_variant}{RGB}{255,238,0}
+\definecolor{acin_green_variant}{RGB}{25,150,0}
+\definecolor{acin_blue_variant}{RGB}{19,93,255}
+\definecolor{TU_green_variant}{RGB}{157,217,0}
+\definecolor{TU_pink_variant}{RGB}{202,0,90}
+\definecolor{TU_violet_variant}{RGB}{218,33,255}
+
+% Definition von abgeleiteten Farben
+%====================================
+
+\colorlet{acin_red_lightvar}{acin_red!80}
+\colorlet{acin_red_verylightvar}{acin_red!25!white!97!acin_gray}
+
+% Alternative Namen
+%===================
+\definecolor{red}{named}{acin_red}
+\definecolor{gray}{named}{TU_gray}
+\definecolor{yellow}{named}{acin_yellow}
+\definecolor{green}{named}{acin_green}
+\definecolor{blue}{named}{TU_blue}
+
+\definecolor{light_red}{named}{acin_red_lightvar}
+
+
+% Festlegen der Farben von Gestaltungselementen
+%===============================================
+% \ifthenelse{\boolean{ACINcolored}}{
+	% farbige Version des Skripts
+	\definecolor{emph}{named}{acin_red} % Farbe für Hervorhebungen
+	\definecolor{env}{named}{TU_blue} % Farbe für Umgebungen
+	\definecolor{env_bck}{RGB}{235,235,235} % Hintergrundfarbe für Umgebungen
+	\definecolor{link_color}{named}{TU_blue} % Links
+	\definecolor{url_color}{named}{TU_blue} % urls
+	\definecolor{cite_color}{named}{acin_green} % Zitate
+	
+	\definecolor{HinweisGreen}{named}{acin_green_variant}
+	\colorlet{HinweisGreen_bck}{HinweisGreen!15!white}
+	\definecolor{HinweisYellow}{RGB}{250, 170,	40}
+	\colorlet{HinweisYellow_bck}{HinweisYellow!10!white}
+	\definecolor{HinweisBlue}{named}{TU_blue}
+	\colorlet{HinweisBlue_bck}{HinweisBlue!25!white}
+	\colorlet{HinweisBW}{black!60!white}
+	\colorlet{HinweisBW_bck}{HinweisBW!15!white}
+	
+	\definecolor{EditorNote}{named}{orange}
+	\colorlet{EditorNote_bck}{EditorNote!25!white}
+	
+	\colorlet{eqn}{TU_blue!70!black!15!white}
+	\colorlet{eqn_bck}{TU_blue!70!black!15!white}
+	
+	\colorlet{proof}{TU_blue!70!black!15!white}
+	
+	% Farben zur Hervorhebung in Formeln
+	\definecolor{EqnEmph1}{named}{acin_yellow}
+	\colorlet{EqnEmph2}{TU_blue!70!black!15!white}
+	\definecolor{EqnEmph3}{named}{acin_red_verylightvar}
+% }{
+% 	% schwarz-weiß Version des Skripts
+% 	\definecolor{emph}{named}{black} % Farbe für Hervorhebungen
+% 	\definecolor{env}{named}{black} % Farbe für Umgebungen
+% 	\definecolor{env_bck}{RGB}{235,235,235} % Hintergrundfarbe für Umgebungen
+% 	\definecolor{link_color}{named}{black} % Links
+% 	\definecolor{url_color}{named}{black} % urls
+% 	\definecolor{cite_color}{named}{black} % Zitate
+% 	
+% 	\definecolor{EditorNote}{RGB}{40,40,40}
+% 	\definecolor{EditorNote_bck}{RGB}{175,175,175}
+% 	\definecolor{HinweisGreen}{RGB}{40,40,40}
+% 	\definecolor{HinweisGreen_bck}{RGB}{235,235,235}
+% 	\definecolor{HinweisYellow}{RGB}{40,40,40}
+% 	\definecolor{HinweisYellow_bck}{RGB}{235,235,235}
+% 	
+% 	\definecolor{eqn}{RGB}{215,215,215}
+% 	\definecolor{eqn_bck}{RGB}{215,215,215}
+% 	
+% 	\definecolor{proof}{RGB}{215,215,215}
+% 	
+% 	% Farben zur Hervorhebung in Formeln
+% 	\definecolor{EqnEmph1}{gray}{0.85}
+% 	\definecolor{EqnEmph2}{gray}{0.90}
+% 	\definecolor{EqnEmph3}{gray}{0.95}
+% }
+
+
+

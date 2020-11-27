@@ -1,0 +1,90 @@
+
+
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}   
+\usepackage{caption}
+\usepackage{float}
+\usepackage{dsfont}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.16} 
+\usepackage{array} 
+\usepackage{booktabs}	% for horizontal lines
+\usepackage{varwidth}% http://ctan.org/pkg/varwidth
+\usepackage{csvsimple} % automatic table generation from csv files
+\usepackage{comment}
+
+\begin{document}
+
+\section{Introduction}
+
+aasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd------\\
+asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdas
+
+
+Figure~\ref{fig:spline-types}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\pgfplotstableread{b-spline-basis-equidistant.txt}{\equidistant}
+		\pgfplotstableread{b-spline-basis-quantile.txt}{\quantile}
+		\begin{groupplot}[
+			group style = {group size = 2 by 1},
+			width=0.8\columnwidth,
+			]
+			\nextgroupplot[
+			xmin=-0.65, xmax=1.65, 
+			xticklabels={ {$\kappa_{-2}$}, $\kappa_{-1}$, $\kappa_0$, $\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$, $\kappa_6$, $\kappa_7$, $\kappa_8$, $\kappa_9$},			
+			xtick={-0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6},
+			xtick align=outside,
+			xtick pos = bottom,
+			ytick pos = left,
+			ytick align=outside,
+			ymin=-0.05, ymax=1.05, 
+			] 
+			\addplot [black] table [x=x, y= B1] {\equidistant};		  	
+			\addplot [black] table [x=x, y= B2] {\equidistant};		  			
+			\addplot [black] table [x=x, y= B3] {\equidistant};		  			
+			\addplot [black] table [x=x, y= B4] {\equidistant};		  			
+			\addplot [black] table [x=x, y= B5] {\equidistant};		  			
+			\addplot [black] table [x=x, y= B6] {\equidistant};		  			
+			\addplot [black] table [x=x, y= B7] {\equidistant};		  			
+			\addplot [black] table [x=x, y= B8] {\equidistant};		  			
+			
+			\nextgroupplot[
+			xmin=-0.65, xmax=1.65, 
+			xticklabels={ $\kappa_{-2}$, $\kappa_{-1}$, $\kappa_0$, $\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$, $\kappa_6$, $\kappa_7$, $\kappa_8$, $\kappa_9$},			
+			xtick={-0.6, -0.4, -0.2, 0.042846, 0.12125, 0.2642, 0.52482, 0.6, 0.8, 1, 1.2, 1.4, 1.6},
+			xtick align=outside,
+			xtick pos = bottom,
+			ytick pos = left,
+			ytick align=outside,
+			ymin=-0.05, ymax=1.05, 
+			] 
+			\addplot [black] table [x=x, y= B1] {\quantile};		  		
+			\addplot [black] table [x=x, y= B2] {\quantile};		  		
+			\addplot [black] table [x=x, y= B3] {\quantile};		  		
+			\addplot [black] table [x=x, y= B4] {\quantile};		  		
+			\addplot [black] table [x=x, y= B5] {\quantile};		  		
+			\addplot [black] table [x=x, y= B6] {\quantile};		  		
+			\addplot [black] table [x=x, y= B7] {\quantile};		  		
+			\addplot [black] table [x=x, y= B8] {\quantile};		  		
+			
+		\end{groupplot}
+		
+	\end{tikzpicture}
+	\caption{B-splines of different orders $l=0, 1, 2, 3$}
+	\label{fig:spline-types}
+	
+\end{figure}
+
+\end{document}

@@ -1,0 +1,2 @@
+graphics/pgfplots/main-figure1.pdf: thesisplots/figs/spline-types-equidistant.txt
+graphics/pgfplots/main-figure1.pdf: thesisplots/figs/spline-types-quantile.txt
