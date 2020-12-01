@@ -1,0 +1,39 @@
+\chapter{Results}
+In this chapter we use the theory discussed in Chapter \pref{cha:fundamentals} to estimate uni- and bivariate  functions using data and a priori domain knowledge. An overview of the different problems considered in this chapter is given in Table \pref{tab:problem_overview}. 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{Univariate}   & \textbf{Section} & \textbf{Bivariate}         & \textbf{Section} \\ \hline \toprule
+		B-splines             &                & Tensor-product B-splines   &               \\ \hline
+		P-splines             &                & Tensor-product P-splines   &              \\ \hline
+		SCP-splines           & 			   & Tensor-product SCP-splines &     \\ \hline \bottomrule
+	\end{tabular}
+	\caption{Problem overview.}
+	\label{tab:problem_overview}
+\end{table}
+%
+First, we are using B-splines, see Section~\pref{subsec:b-splines}, for the estimation of the unknown function $y = f(x)$, i.e. we solve the optimization problem
+
+\begin{align} \label{eq:OF-B-splines}
+	\arg \min_{\vec{\beta}} Q_1(\vec{y}, \vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert,
+\end{align}
+%
+using the B-spline or tensor-product B-spline basis matrix $\vec{X}$. Next, we use the concept of P-splines, see Section~\pref{subsec:p-splines}, to estimate smooth functions, i.e. we solve the optimization problem
+
+\begin{align} \label{eq:OF-P-splines}
+	\arg \min_{\vec{\beta}} Q_2(\vec{y}, \vec{\beta}; \lambda) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert + \lambda \cdot \text{pen}(\vec{\beta}),
+\end{align}
+%
+where $\text{pen}(\vec{\beta})$ specifies a smoothness penalty term. Finally, we are going to incorporate a priori domain knowledge into the fitting process using shape-constrained P-splines (SCP-splines), i.e. we solve the optimization problem
+\begin{align} \label{eq:OF-SCP-splines}
+	\arg \min_{\vec{\beta}} Q_3(\vec{y}, \vec{\beta}; \lambda, \lambda_c) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert + \lambda \cdot \text{pen}(\vec{\beta}) + \lambda_c \cdot \text{con}(\vec{\beta}),
+\end{align}
+%
+where $\text{pen}(\vec{\beta})$ is again a smoothness penalty term and $\text{con}({\vec{\beta}})$ specifies the user-defined shape-constraint to incorporate a priori domain knowledge with, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}. Various types a priori domain knowledge can be incorporated using the constraints listed in Table~\pref{tab:constraint_overview}.
+
+
+
+The focus of this chapter is the definition and use of shape-constraint P-splines, which are characterize by their parametes $\vec{\beta}$ given by solving the optimization problem~\pref{eq:OF-SCP-splines}.
+

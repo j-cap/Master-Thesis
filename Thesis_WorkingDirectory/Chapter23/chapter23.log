@@ -1,347 +1,280 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.10.6)  26 NOV 2020 15:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  27 NOV 2020 16:17
 entering extended mode
-**./chapter23.tex
-(chapter23.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06>
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
-Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+ \write18 enabled.
+ %&-line parsing enabled.
+**chapter23.tex
+(./chapter23.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(c:/texlive/2018/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@chapter=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty
-"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty
-"
-Package: babel 2020/02/28 3.41 The Babel package
+(c:/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.de
-f"
-File: switch.def 2020/02/28 3.41 Babel switching mechanism
+(c:/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
 )
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg
-"
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\eng
-lish.ldf"
+(c:/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def
-"
-File: babel.def 2020/02/28 3.41 Babel common definitions
-\babel@savecnt=\count176
-\U@D=\dimen135
+(c:/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen103
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.
-def")
-\bbl@readstream=\read2
-\bbl@dirlevel=\count177
+(c:/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count90
 )
-Package babel Info: \l@canadian = using hyphenrules for english
-(babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language72) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language72) on input line 108.
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
-ty"
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip49
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.st
-y"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen136
+\@emptytoks=\toks16
+\ex@=\dimen104
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.st
-y"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen137
+\pmbraise@=\dimen105
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
-y"
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count178
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count179
-\leftroot@=\count180
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count181
-\DOTSCASE@=\count182
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen138
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count183
-\c@MaxMatrixCols=\count184
-\dotsspace@=\muskip16
-\c@parentequation=\count185
-\dspbrk@lvl=\count186
-\tag@help=\toks18
-\row@=\count187
-\column@=\count188
-\maxfields@=\count189
-\andhelp@=\toks19
-\eqnshift@=\dimen139
-\alignsep@=\dimen140
-\tagshift@=\dimen141
-\tagwidth@=\dimen142
-\totwidth@=\dimen143
-\lineht@=\dimen144
-\@envbody=\toks20
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks17
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts
-.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.
-sty"
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx
-.sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks22
+\KV@toks@=\toks21
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
-.sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
-"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\grap
-hics.cfg"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdft
-ex.def"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen145
-\Gin@req@width=\dimen146
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\enumerate.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks23
+\@enLab=\toks22
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.s
-ty"
-Package: caption 2020/09/12 v3.5b Customizing captions (AR)
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.
-sty"
-Package: caption3 2020/09/17 v2.1b caption3 kernel (AR)
-\captionmargin=\dimen147
-\captionmargin@=\dimen148
-\captionwidth=\dimen149
-\caption@tempdima=\dimen150
-\caption@indent=\dimen151
-\caption@parindent=\dimen152
-\caption@hangindent=\dimen153
-Package caption Info: Standard document class detected.
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen115
+\captionmargin@=\dimen116
+\captionwidth=\dimen117
+\caption@tempdima=\dimen118
+\caption@indent=\dimen119
+\caption@parindent=\dimen120
+\caption@hangindent=\dimen121
 )
-\c@caption@flags=\count190
-\c@continuedfloat=\count191
+\c@ContinuedFloat=\count103
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count192
-\float@exts=\toks24
-\float@box=\box47
-\@float@everytoks=\toks25
-\@floatcapt=\box48
+\c@float@type=\count104
+\float@exts=\toks23
+\float@box=\box28
+\@float@everytoks=\toks24
+\@floatcapt=\box29
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/doublestroke\dsfo
-nt.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow
-.sty"
-Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip52
-\multirow@cntb=\count193
-\multirow@dima=\skip53
-\bigstrutjot=\dimen154
+(c:/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip46
+\multirow@cntb=\count105
+\multirow@dima=\skip47
+\bigstrutjot=\dimen122
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes
-.sty"
-Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
+(c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox
-.sty"
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count194
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count106
 )
-\csq@reset=\count195
-\csq@gtype=\count196
-\csq@glevel=\count197
-\csq@qlevel=\count198
-\csq@maxlvl=\count199
-\csq@tshold=\count266
-\csq@ltx@everypar=\toks26
+\csq@reset=\count107
+\csq@gtype=\count108
+\csq@glevel=\count109
+\csq@qlevel=\count110
+\csq@maxlvl=\count111
+\csq@tshold=\count112
+\csq@ltx@everypar=\toks25
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes
-.def"
-File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
+(c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes
-.cfg"
+(c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer
-\tikz.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pg
-f.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgf
-rcs.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfutil-common.tex"
-\pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen155
-\pgfutil@tempdimb=\dimen156
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen123
+\pgfutil@tempdimb=\dimen124
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfutil-common-lists.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfutil-latex.def"
-\pgfutil@abb=\box49
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
+) (c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box30
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfrcs.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revisio
-n.tex")
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
-Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pg
-fcore.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/systemlayer\p
-gfsys.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
-\pgfsys.code.tex"
-Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfkeys.code.tex"
-\pgfkeys@pathtoks=\toks28
-\pgfkeys@temptoks=\toks29
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfkeysfiltered.code.tex"
-\pgfkeys@tmptoks=\toks30
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks29
 ))
-\pgf@x=\dimen157
-\pgf@y=\dimen158
-\pgf@xa=\dimen159
-\pgf@ya=\dimen160
-\pgf@xb=\dimen161
-\pgf@yb=\dimen162
-\pgf@xc=\dimen163
-\pgf@yc=\dimen164
-\pgf@xd=\dimen165
-\pgf@yd=\dimen166
+\pgf@x=\dimen125
+\pgf@y=\dimen126
+\pgf@xa=\dimen127
+\pgf@ya=\dimen128
+\pgf@xb=\dimen129
+\pgf@yb=\dimen130
+\pgf@xc=\dimen131
+\pgf@yc=\dimen132
 \w@pgf@writea=\write3
-\r@pgf@reada=\read3
-\c@pgf@counta=\count267
-\c@pgf@countb=\count268
-\c@pgf@countc=\count269
-\c@pgf@countd=\count270
-\t@pgf@toka=\toks31
-\t@pgf@tokb=\toks32
-\t@pgf@tokc=\toks33
-\pgf@sys@id@count=\count271
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
-\pgf.cfg"
-File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+\r@pgf@reada=\read1
+\c@pgf@counta=\count113
+\c@pgf@countb=\count114
+\c@pgf@countc=\count115
+\c@pgf@countd=\count116
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+ (c:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
-\pgfsys-pdftex.def"
-File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
-\pgfsys-common-pdf.def"
-File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
-\pgfsyssoftpath.code.tex"
-File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count272
-\pgfsyssoftpath@bigbuffer@items=\count273
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count117
+\pgfsyssoftpath@bigbuffer@items=\count118
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer
-\pgfsysprotocol.code.tex"
-File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty
-"
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\colo
-r.cfg"
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -355,804 +288,658 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcore.code.tex"
-Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-h.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hcalc.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hutil.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hparser.code.tex"
-\pgfmath@dimen=\dimen167
-\pgfmath@count=\count274
-\pgfmath@box=\box50
-\pgfmath@toks=\toks34
-\pgfmath@stack@operand=\toks35
-\pgfmath@stack@operation=\toks36
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen133
+\pgfmath@count=\count119
+\pgfmath@box=\box31
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.basic.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.trigonometric.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.random.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.comparison.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.base.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.round.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.misc.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfunctions.integerarithmetics.code.tex")))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-hfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count275
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+x)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+ex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+de.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+x)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)))
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count120
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint
-.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorepoints.code.tex"
-File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen168
-\pgf@picmaxx=\dimen169
-\pgf@picminy=\dimen170
-\pgf@picmaxy=\dimen171
-\pgf@pathminx=\dimen172
-\pgf@pathmaxx=\dimen173
-\pgf@pathminy=\dimen174
-\pgf@pathmaxy=\dimen175
-\pgf@xx=\dimen176
-\pgf@xy=\dimen177
-\pgf@yx=\dimen178
-\pgf@yy=\dimen179
-\pgf@zx=\dimen180
-\pgf@zy=\dimen181
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen134
+\pgf@picmaxx=\dimen135
+\pgf@picminy=\dimen136
+\pgf@picmaxy=\dimen137
+\pgf@pathminx=\dimen138
+\pgf@pathmaxx=\dimen139
+\pgf@pathminy=\dimen140
+\pgf@pathmaxy=\dimen141
+\pgf@xx=\dimen142
+\pgf@xy=\dimen143
+\pgf@yx=\dimen144
+\pgf@yy=\dimen145
+\pgf@zx=\dimen146
+\pgf@zy=\dimen147
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorepathconstruct.code.tex"
-File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen182
-\pgf@path@lasty=\dimen183
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+e.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen148
+\pgf@path@lasty=\dimen149
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorepathusage.code.tex"
-File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen184
-\pgf@shorten@start@additional=\dimen185
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+x
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen150
+\pgf@shorten@start@additional=\dimen151
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorescopes.code.tex"
-File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box51
-\pgf@hbox=\box52
-\pgf@layerbox@main=\box53
-\pgf@picture@serial@count=\count276
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count121
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoregraphicstate.code.tex"
-File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen186
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen152
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoretransformations.code.tex"
-File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen187
-\pgf@pt@y=\dimen188
-\pgf@pt@temp=\dimen189
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+ode.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen153
+\pgf@pt@y=\dimen154
+\pgf@pt@temp=\dimen155
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorequick.code.tex"
-File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoreobjects.code.tex"
-File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorepathprocessing.code.tex"
-File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+de.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorearrows.code.tex"
-File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen190
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen156
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoreshade.code.tex"
-File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen191
-\pgf@sys@shading@range@num=\count277
-\pgf@shadingcount=\count278
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen157
+\pgf@sys@shading@range@num=\count122
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoreimage.code.tex"
-File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoreexternal.code.tex"
-File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box54
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box35
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorelayers.code.tex"
-File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcoretransparency.code.tex"
-File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorepatterns.code.tex"
-File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\
-pgfcorerdf.code.tex"
-File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgf
-moduleshapes.code.tex"
-File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box55
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box36
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgf
-moduleplot.code.tex"
-File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility
-\pgfcomp-version-0-65.sty"
-Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen192
-\pgf@nodesepend=\dimen193
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+y
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen158
+\pgf@nodesepend=\dimen159
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility
-\pgfcomp-version-1-18.sty"
-Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+y
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (c:/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen160
+\pgffor@skip=\dimen161
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgf
-for.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgf
-keys.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gfkeys.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/math\pgfmath.
-sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-h.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\p
-gffor.code.tex"
-Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmat
-h.code.tex")
-\pgffor@iter=\dimen194
-\pgffor@skip=\dimen195
-\pgffor@stack=\toks37
-\pgffor@toks=\toks38
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz\tikz.code.tex"
-Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\p
-gflibraryplothandlers.code.tex"
-File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count279
-\pgfplotmarksize=\dimen196
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
+de.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count123
+\pgfplotmarksize=\dimen162
 )
-\tikz@lastx=\dimen197
-\tikz@lasty=\dimen198
-\tikz@lastxsaved=\dimen199
-\tikz@lastysaved=\dimen256
-\tikz@lastmovetox=\dimen257
-\tikz@lastmovetoy=\dimen258
-\tikzleveldistance=\dimen259
-\tikzsiblingdistance=\dimen260
-\tikz@figbox=\box56
-\tikz@figbox@bg=\box57
-\tikz@tempbox=\box58
-\tikz@tempbox@bg=\box59
-\tikztreelevel=\count280
-\tikznumberofchildren=\count281
-\tikznumberofcurrentchild=\count282
-\tikz@fig@count=\count283
+\tikz@lastx=\dimen163
+\tikz@lasty=\dimen164
+\tikz@lastxsaved=\dimen165
+\tikz@lastysaved=\dimen166
+\tikzleveldistance=\dimen167
+\tikzsiblingdistance=\dimen168
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count124
+\tikznumberofchildren=\count125
+\tikznumberofcurrentchild=\count126
+\tikz@fig@count=\count127
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgf
-modulematrix.code.tex"
-File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count284
-\pgfmatrixcurrentcolumn=\count285
-\pgf@matrix@numberofcolumns=\count286
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count128
+\pgfmatrixcurrentcolumn=\count129
+\pgf@matrix@numberofcolumns=\count130
 )
-\tikz@expandcount=\count287
+\tikz@expandcount=\count131
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz/libraries\tikzlibrarytopaths.code.tex"
-File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgfplots\pgfplots
-.sty"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-ts.revision.tex")
-Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
+(c:/texlive/2018/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-ts.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tscore.code.tex"
-\t@pgfplots@toka=\toks39
-\t@pgfplots@tokb=\toks40
-\t@pgfplots@tokc=\toks41
-\pgfplots@tmpa=\dimen261
-\c@pgfplots@coordindex=\count288
-\c@pgfplots@scanlineindex=\count289
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
+\pgfplots@tmpa=\dimen169
+\c@pgfplots@coordindex=\count132
+\c@pgfplots@scanlineindex=\count133
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pg
-fplotssysgeneric.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\p
-gfplotslibrary.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/oldpgf
-compatib\pgfplotsoldpgfsupp_loader.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\p
-gflibraryfpu.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\p
-gfplotsutil.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
-ructure\pgfplotsliststructure.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
-ructure\pgfplotsliststructureext.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
-ructure\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count290
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
-ructure\pgfplotsmatrix.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/numtab
-le\pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count291
-\t@pgfplotstable@a=\toks42
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/listst
-ructure\pgfplotsdeque.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\p
-gfplotsbinary.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\p
-gfplotsbinary.data.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\p
-gfplotsutil.verb.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\p
-gflibrarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count292
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
+x))
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pg
-flibrarypgfplots.surfshading.pgfsys-pdftex.def")))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\p
-gfplotscolormap.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\p
-gfplotscolor.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tsstackedplots.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tsplothandlers.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tsmeshplothandler.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tsmeshplotimage.code.tex")))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-ts.scaling.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tscoordprocessing.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-ts.errorbars.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-ts.markers.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-tsticks.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplo
-ts.paths.code.tex")
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz/libraries\tikzlibrarydecorations.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgf
-moduledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen262
-\pgfdecoratedremainingdistance=\dimen263
-\pgfdecoratedinputsegmentcompleteddistance=\dimen264
-\pgfdecoratedinputsegmentremainingdistance=\dimen265
-\pgf@decorate@distancetomove=\dimen266
-\pgf@decorate@repeatstate=\count293
-\pgfdecorationsegmentamplitude=\dimen267
-\pgfdecorationsegmentlength=\dimen268
-)
-\tikz@lib@dec@box=\box60
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/d
-ecorations\pgflibrarydecorations.pathmorphing.code.tex"))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex"
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/d
-ecorations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count294
-\pgfplots@xmin@reg=\dimen269
-\pgfplots@xmax@reg=\dimen270
-\pgfplots@ymin@reg=\dimen271
-\pgfplots@ymax@reg=\dimen272
-\pgfplots@zmin@reg=\dimen273
-\pgfplots@zmax@reg=\dimen274
-)
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz/libraries\tikzlibraryplotmarks.code.tex"
-File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_loader.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary arithmetics for your pgf version...
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\p
-gflibraryplotmarks.code.tex"
-File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_pgflibraryfpu.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count134
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_leq.code.tex))
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+cture.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+ctureext.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
+de.tex
+\c@pgfplotsarray@tmp=\count135
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
+ode.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
+ode.tex
+\c@pgfplotstable@counta=\count136
+\t@pgfplotstable@a=\toks41
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
+de.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.
+tex))
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.te
+x)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
+ading.code.tex
+\c@pgfplotslibrarysurf@no=\count137
+
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
+ding.pgfsys-pdftex.def)))
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.t
+ex
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex
+))) (c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.t
+ex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
+ex
+\pgfdecoratedcompleteddistance=\dimen170
+\pgfdecoratedremainingdistance=\dimen171
+\pgfdecoratedinputsegmentcompleteddistance=\dimen172
+\pgfdecoratedinputsegmentremainingdistance=\dimen173
+\pgf@decorate@distancetomove=\dimen174
+\pgf@decorate@repeatstate=\count138
+\pgfdecorationsegmentamplitude=\dimen175
+\pgfdecorationsegmentlength=\dimen176
+)
+\tikz@lib@dec@box=\box41
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathmorphing.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathmorphing.code.tex))
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathreplacing.code.tex
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathreplacing.code.tex))
+\pgfplots@numplots=\count139
+\pgfplots@xmin@reg=\dimen177
+\pgfplots@xmax@reg=\dimen178
+\pgfplots@ymin@reg=\dimen179
+\pgfplots@ymax@reg=\dimen180
+\pgfplots@zmin@reg=\dimen181
+\pgfplots@zmax@reg=\dimen182
+)
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.
+tex
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\t
-ikzlibrarypgfplots.groupplots.code.tex"
-\pgfplots@group@current@plot=\count295
-\pgfplots@group@current@row=\count296
-\pgfplots@group@current@column=\count297
+(c:/texlive/2018/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.group
+plots.code.tex
+\pgfplots@group@current@plot=\count140
+\pgfplots@group@current@row=\count141
+\pgfplots@group@current@column=\count142
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlay
-er/tikz/libraries\tikzlibrarycalc.code.tex"
-File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen275
-\ar@mcellbox=\box61
-\extrarowheight=\dimen276
-\NC@list=\toks43
-\extratabsurround=\skip54
-\backup@length=\skip55
-\ar@cellbox=\box62
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)) (c:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen183
+\ar@mcellbox=\box42
+\extrarowheight=\dimen184
+\NC@list=\toks42
+\extratabsurround=\skip48
+\backup@length=\skip49
+\ar@cellbox=\box43
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs
-.sty"
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen277
-\lightrulewidth=\dimen278
-\cmidrulewidth=\dimen279
-\belowrulesep=\dimen280
-\belowbottomsep=\dimen281
-\aboverulesep=\dimen282
-\abovetopsep=\dimen283
-\cmidrulesep=\dimen284
-\cmidrulekern=\dimen285
-\defaultaddspace=\dimen286
-\@cmidla=\count298
-\@cmidlb=\count299
-\@aboverulesep=\dimen287
-\@belowrulesep=\dimen288
-\@thisruleclass=\count300
-\@lastruleclass=\count301
-\@thisrulewidth=\dimen289
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen185
+\lightrulewidth=\dimen186
+\cmidrulewidth=\dimen187
+\belowrulesep=\dimen188
+\belowbottomsep=\dimen189
+\aboverulesep=\dimen190
+\abovetopsep=\dimen191
+\cmidrulesep=\dimen192
+\cmidrulekern=\dimen193
+\defaultaddspace=\dimen194
+\@cmidla=\count143
+\@cmidlb=\count144
+\@aboverulesep=\dimen195
+\@belowrulesep=\dimen196
+\@thisruleclass=\count145
+\@lastruleclass=\count146
+\@thisrulewidth=\dimen197
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth
-.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box63
-\sift@deathcycles=\count302
-\@vwid@loff=\dimen290
-\@vwid@roff=\dimen291
+\@vwid@box=\box44
+\sift@deathcycles=\count147
+\@vwid@loff=\dimen198
+\@vwid@roff=\dimen199
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csvsimple\csvsimp
-le.sty"
-Package: csvsimple 2019/04/09 version 1.21 LaTeX CSV file processing
+(c:/texlive/2018/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2016/07/01 version 1.20 LaTeX CSV file processing
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.st
-y"
-Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+(c:/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 67.
 )
-\csv@file=\read4
-\c@csvinputline=\count303
-\c@csvrow=\count304
-\c@csvcol=\count305
+\csv@file=\read2
+\c@csvinputline=\count148
+\c@csvrow=\count149
+\c@csvcol=\count150
 \csv@out=\write4
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/comment\comment.s
-ty"
+(c:/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write5
- Excluding comment 'comment') (../AIT_report_macros.tex
+
+Excluding comment 'comment')
+(c:/texlive/2018/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+
+(c:/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count151
+\calc@Bcount=\count152
+\calc@Adimen=\dimen256
+\calc@Bdimen=\dimen257
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count153
+\calc@Cskip=\skip52
+)
+(c:/texlive/2018/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count154
+\l_MT_multwidth_dim=\dimen258
+\origjot=\skip53
+\l_MT_shortvdotswithinadjustabove_dim=\dimen259
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen260
+\l_MT_above_intertext_sep=\dimen261
+\l_MT_below_intertext_sep=\dimen262
+\l_MT_above_shortintertext_sep=\dimen263
+\l_MT_below_shortintertext_sep=\dimen264
+)
+(c:/texlive/2018/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count155
+\algocf@hangindent=\skip54
+
+(c:/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count156
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip55
+\skiplinenumber=\skip56
+\skiprule=\skip57
+\skiphlne=\skip58
+\skiptext=\skip59
+\skiplength=\skip60
+\algomargin=\skip61
+\skipalgocfslide=\skip62
+\algowidth=\dimen265
+\inoutsize=\dimen266
+\inoutindent=\dimen267
+\interspacetitleruled=\dimen268
+\interspacealgoruled=\dimen269
+\interspacetitleboxruled=\dimen270
+\algocf@ruledwidth=\skip63
+\algocf@inoutbox=\box45
+\algocf@inputbox=\box46
+\AlCapSkip=\skip64
+\AlCapHSkip=\skip65
+\algoskipindent=\skip66
+\algocf@nlbox=\box47
+\algocf@hangingbox=\box48
+\algocf@untilbox=\box49
+\algocf@skipuntil=\skip67
+\algocf@capbox=\box50
+\algocf@lcaptionbox=\skip68
+\algoheightruledefault=\skip69
+\algoheightrule=\skip70
+\algotitleheightruledefault=\skip71
+\algotitleheightrule=\skip72
+\c@algocfline=\count157
+\c@algocfproc=\count158
+\c@algocf=\count159
+\algocf@algoframe=\box51
+\algocf@algobox=\box52
+)
+(../AIT_report_macros.tex
 LaTeX Info: Redefining \vec on input line 30.
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
-nd-pdfmode.def"
-File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count306
-\l__pdf_internal_box=\box64
-) (chapter23.aux)
+ (./chapter23.aux)
 \openout1 = `chapter23.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
-pdf.mkii"
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count307
-\scratchdimen=\dimen292
-\scratchbox=\box65
-\nofMPsegments=\count308
-\nofMParguments=\count309
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count310
-\MPscratchDim=\dimen293
-\MPnumerator=\count311
-\makeMPintoPDFobject=\count312
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count160
+\scratchdimen=\dimen271
+\scratchbox=\box53
+\nofMPsegments=\count161
+\nofMParguments=\count162
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count163
+\MPscratchDim=\dimen272
+\MPnumerator=\count164
+\makeMPintoPDFobject=\count165
+\everyMPtoPDFconversion=\toks44
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
-opdf-base.sty"
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-)
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
-Package pgfplots notification 'compat/show suggested version=true': you might b
-enefit from \pgfplotsset{compat=1.17} (current compat level: 1.16).
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
-("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
- ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
-"
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/WeberJ/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(chapter23.toc)
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./chapter23.to
+c)
 \tf@toc=\write6
 \openout6 = `chapter23.toc'.
 
- Excluding 'comment' comment. [1
+
+Excluding 'comment' comment. [1
 
 ]
 Chapter 1.
 
-LaTeX Warning: Reference `chap:fundamentals' on page 2 undefined on input line 
-1011.
+LaTeX Warning: Reference `cha:fundamentals' on page 2 undefined on input line 1
+013.
 
 
 LaTeX Warning: Reference `subsec:b-splines' on page 2 undefined on input line 1
-026.
+028.
 
 
 LaTeX Warning: Reference `subsec:p-splines' on page 2 undefined on input line 1
-032.
+034.
 
 
 LaTeX Warning: Citation `hofner2011monotonicity' on page 2 undefined on input l
-ine 1037.
+ine 1045.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Citation `bollaerts2006simple' on page 2 undefined on input line
+ 1045.
 
 [2
 
 ]
-! Undefined control sequence.
-l.1082 ...{N}(0, 0.1)$. The data is shown in~\pref
-                                                  {fig:test_func}.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1082 ...)$. The data is shown in~\pref{fig:test_
-                                                  func}.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+LaTeX Warning: Reference `subsec:p-splines' on page 3 undefined on input line 1
+074.
 
-! Extra }, or forgotten $.
-l.1082 ...he data is shown in~\pref{fig:test_func}
-                                                  .
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1083 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+LaTeX Warning: Reference `subsec:p-splines' on page 3 undefined on input line 1
+085.
 
-<../thesisplots/test_func.pdf, id=25, 572.2724pt x 348.8831pt>
-File: ../thesisplots/test_func.pdf Graphic file (type pdf)
-<use ../thesisplots/test_func.pdf>
-Package pdftex.def Info: ../thesisplots/test_func.pdf  used on input line 1090.
 
-(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
+Overfull \hbox (1.8525pt too wide) in paragraph at lines 1083--1086
+\OT1/cmr/m/n/10 to pe-nal-ize neg-a-tive first-order deriva-tives of the es-ti-
+mated func-tion. The penalty
+ []
+
 [3]
-
-LaTeX Warning: Reference `eq:bspline-bf-approach' on page 4 undefined on input 
-line 1106.
-
-
-LaTeX Warning: Reference `eq:bspline-basis-matrix' on page 4 undefined on input
- line 1112.
-
-
-LaTeX Warning: Reference `subsubsec:Method-of-LS' on page 4 undefined on input 
-line 1126.
-
-[4 <../thesisplots/test_func.pdf>]
-<../thesisplots/smooth_bf.pdf, id=51, 572.2724pt x 348.8831pt>
-File: ../thesisplots/smooth_bf.pdf Graphic file (type pdf)
-<use ../thesisplots/smooth_bf.pdf>
-Package pdftex.def Info: ../thesisplots/smooth_bf.pdf  used on input line 1137.
-
-(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
-
-
-LaTeX Warning: Citation `sammut2011' on page 5 undefined on input line 1143.
-
-<../thesisplots/smooth_wiggly_bf.pdf, id=52, 566.34401pt x 348.8831pt>
-File: ../thesisplots/smooth_wiggly_bf.pdf Graphic file (type pdf)
-<use ../thesisplots/smooth_wiggly_bf.pdf>
-Package pdftex.def Info: ../thesisplots/smooth_wiggly_bf.pdf  used on input lin
-e 1148.
-(pdftex.def)             Requested size: 345.0pt x 212.53622pt.
-[5 <../thesisplots/smooth_bf.pdf>]
-
-LaTeX Warning: Citation `eilers1996flexible' on page 6 undefined on input line 
-1157.
-
-
-LaTeX Warning: Reference `subsec:p-splines' on page 6 undefined on input line 1
-157.
-
-
-Overfull \hbox (5.36104pt too wide) in paragraph at lines 1157--1158
-\OT1/cmr/m/n/10 The sec-ond deriva-tive of the es-ti-mated func-tion $\OML/cmm/
-m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$, i.e. $\OML/cmm/
-m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [][] \OML/cmm
-/m/it/10 B[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/1
-0 []$\OT1/cmr/m/n/10 ,
+Overfull \hbox (10.36911pt too wide) in paragraph at lines 1106--1109
+\OT1/cmr/m/n/10 with the map-ping ma-trix $\OT1/cmr/bx/n/10 D[] \OMS/cmsy/m/n/1
+0 2 \U/msb/m/n/10 R[]$\OT1/cmr/m/n/10 . The weight-ing ma-trix $\OT1/cmr/bx/n/1
+0 V[] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]$
  []
 
 
-LaTeX Warning: Reference `subsec:p-splines' on page 6 undefined on input line 1
-163.
+LaTeX Warning: Reference `subsec:Regularization' on page 4 undefined on input l
+ine 1117.
 
 
-LaTeX Warning: Reference `subsec:MAC' on page 6 undefined on input line 1177.
+LaTeX Warning: Citation `bollaerts2006simple' on page 4 undefined on input line
+ 1142.
 
-
-LaTeX Warning: Reference `subsubsec:Cross-validation' on page 6 undefined on in
-put line 1177.
-
-
-LaTeX Warning: Citation `fahrmeir2007regression' on page 6 undefined on input l
-ine 1177.
-
-
-LaTeX Warning: Citation `fahrmeir2007regression' on page 6 undefined on input l
-ine 1179.
-
-[6 <../thesisplots/smooth_wiggly_bf.pdf>]
-<../thesisplots/p_splines.pdf, id=138, 572.2724pt x 348.8831pt>
-File: ../thesisplots/p_splines.pdf Graphic file (type pdf)
-<use ../thesisplots/p_splines.pdf>
-Package pdftex.def Info: ../thesisplots/p_splines.pdf  used on input line 1185.
-
-(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [7 <../thesisplots/p_splines.pdf>]
-<../thesisplots/algorithm.pdf, id=170, 614.26657pt x 794.94157pt>
-File: ../thesisplots/algorithm.pdf Graphic file (type pdf)
-<use ../thesisplots/algorithm.pdf>
-Package pdftex.def Info: ../thesisplots/algorithm.pdf  used on input line 1225.
-
-(pdftex.def)             Requested size: 207.0021pt x 267.88698pt.
-
-
-LaTeX Warning: Citation `hofner2011monotonicity' on page 8 undefined on input l
-ine 1231.
-
-[8 <../thesisplots/algorithm.pdf>]
-<../thesisplots/inc_spline.pdf, id=191, 572.2724pt x 348.8831pt>
-File: ../thesisplots/inc_spline.pdf Graphic file (type pdf)
-<use ../thesisplots/inc_spline.pdf>
-Package pdftex.def Info: ../thesisplots/inc_spline.pdf  used on input line 1238
-.
-(pdftex.def)             Requested size: 345.0pt x 210.33229pt.
- [9 <../thesisplots/inc_spline.pdf>]
-
-LaTeX Warning: Reference `eq:d1-difference-matrix' on page 10 undefined on inpu
-t line 1256.
-
-
-LaTeX Warning: Citation `hofner2011monotonicity' on page 10 undefined on input 
-line 1281.
-
-
-LaTeX Warning: Citation `eilers2005unimodal' on page 10 undefined on input line
- 1281.
-
-
-LaTeX Warning: Reference `eq:d2-difference-matrix' on page 10 undefined on inpu
-t line 1286.
-
-[10]
-
-LaTeX Warning: Citation `eilers2005unimodal' on page 11 undefined on input line
- 1313.
-
-
-LaTeX Warning: Reference `eq:d1-difference-matrix' on page 11 undefined on inpu
-t line 1320.
-
-
-LaTeX Warning: Reference `subsec:b-splines' on page 11 undefined on input line 
-1329.
-
-
-LaTeX Warning: Citation `eilers2005unimodal' on page 11 undefined on input line
- 1329.
-
-<../thesisplots/peak_spline.pdf, id=248, 580.33377pt x 348.8831pt>
-File: ../thesisplots/peak_spline.pdf Graphic file (type pdf)
-<use ../thesisplots/peak_spline.pdf>
-Package pdftex.def Info: ../thesisplots/peak_spline.pdf  used on input line 133
-3.
-(pdftex.def)             Requested size: 345.0pt x 207.40967pt.
-[11] [12 <../thesisplots/peak_spline.pdf>]
-
-LaTeX Warning: Reference `subsubsec:tp-splines' on page 13 undefined on input l
-ine 1413.
-
-
-LaTeX Warning: Reference `subsubsec:tp-splines' on page 13 undefined on input l
-ine 1413.
-
-
-LaTeX Warning: Reference `subsubsec:STAR' on page 13 undefined on input line 14
-27.
-
-
-LaTeX Warning: Reference `eq:STAR' on page 13 undefined on input line 1427.
-
-[13]
-Overfull \hbox (4.24858pt too wide) in paragraph at lines 1433--1434
-[]\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
-x[]\OT1/cmr/m/n/10 )$ is the B-spline es-ti-mate given by $\OML/cmm/m/it/10 s[]
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) = \OT1/cmr/bx/n/10 X[][]
-[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
-x[]; x[]\OT1/cmr/m/n/10 )$
- []
-
-
-LaTeX Warning: Reference `subsec:b-splines' on page 14 undefined on input line 
-1458.
-
-
-LaTeX Warning: Reference `subsubsec:tp-splines' on page 14 undefined on input l
-ine 1458.
-
-
-LaTeX Warning: Reference `eq:STAR-block-diag' on page 14 undefined on input lin
-e 1458.
-
-
-LaTeX Warning: Reference `eq:STAR-block-diag' on page 14 undefined on input lin
-e 1464.
-
-
-LaTeX Warning: Reference `eq:STAR-block-diag' on page 14 undefined on input lin
-e 1464.
-
-[14]
-
-LaTeX Warning: Reference `subsec:p-splines' on page 15 undefined on input line 
-1485.
-
-
-LaTeX Warning: Reference `subsubsec:tp-splines' on page 15 undefined on input l
-ine 1485.
-
-
-LaTeX Warning: Reference `eq:STAR-block-diag' on page 15 undefined on input lin
-e 1519.
-
-[15] [16] [17]
-<../thesisplots/2d_example.pdf, id=312, 513.51651pt x 450.9648pt>
-File: ../thesisplots/2d_example.pdf Graphic file (type pdf)
-<use ../thesisplots/2d_example.pdf>
-Package pdftex.def Info: ../thesisplots/2d_example.pdf  used on input line 1568
-.
-(pdftex.def)             Requested size: 345.0pt x 302.98433pt.
- (chapter23.bbl) [18 <../thesisplots/2d_example.pdf>]
-(chapter23.aux)
+[4] [5] [6] Excluding 'comment' comment. (./chapter23.bbl) [7] (./chapter23.aux
+)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 1082 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 26389 strings out of 480934
- 664417 string characters out of 2899449
- 1036625 words of memory out of 3786298
- 41794 multiletter control sequences out of 15000+200000
- 544543 words of font info for 69 fonts, out of 3000000 for 9000
+ 27056 strings out of 492649
+ 662262 string characters out of 6133383
+ 839454 words of memory out of 5000000
+ 30437 multiletter control sequences out of 15000+600000
+ 15510 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,18n,127p,924b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\WeberJ\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\tcrm1000.pk><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/WeberJ/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/WeberJ/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/
-WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi5.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/WeberJ/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/Weber
-J/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/WeberJ/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/WeberJ/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/
-Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy7.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmti10.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chapter23.pdf (19 pages, 438527 bytes).
+ 73i,16n,127p,922b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextr
+a/cmmib7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb>
+Output written on chapter23.pdf (8 pages, 178516 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

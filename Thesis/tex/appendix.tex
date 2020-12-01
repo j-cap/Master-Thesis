@@ -1,30 +1,168 @@
 \begin{appendices}
 	
-\chapter{Parameters}
-\label{apx:AppendixA}
-\section{Data sheet parameters}
-Das ist der Anhang!
-\begin{table}[htbp!]
-	\caption[Data sheet parameters of the toothed belt axis EMMS-AS-$70$-S-LS-RMB from Festo used in the test rig.]{Data sheet parameters of the toothed belt axis EMMS-AS-$70$-S-LS-RMB \cite{EMMS_manual} from Festo used in the test rig.}
-	\label{tab:Motor}
-	\begin{center}
-		\begin{tabular}{lS[table-format=4.3]s[table-unit-alignment=left]}
-			\toprule
-			Parameter & {Value} & {Unit}\\
-			\midrule
-			Nominal voltage &360.00&\volt\\
-			Nominal current & 2.20 & \ampere\\
-			Max. current & 5.00 & \ampere\\
-			Nominal velocity & 5300.00 & {rev}\per\minute\\
-			Max. velocity & 6300.00 & {rev}\per\minute\\
-			Motor constant $k_\text{m}$&0.65&\newton\meter\per\ampere\\
-			Nominal torque &1.43&\newton\meter \\
-			Max. torque &3.10&\newton\meter \\
-			Winding resistance $R_\text{m}$&7.66&\ohm\\
-			Winding inductance $L_\text{m}$&14.50&\milli\henry\\
-			Total drive mass moment of inertia $\Theta_\text{m}$&0.45&\kilogram\per\centi\meter\squared\\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-\end{table}
+\chapter{Appendix A} \label{apx:AppendixA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kronecker product}
+
+The Kronecker product $\vec{A} \otimes \vec{B}$ of the $n \times p$-matrix $\vec{A}$ and the $r \times q$-matrix $\vec{B}$ is defined as $nr \times pq$-matrix 
+
+\begin{align}
+	\vec{C} = \vec{A} \otimes \vec{B} = 
+		\begin{bmatrix}
+			a_{11} \vec{B} & \dots & a_{1p} \vec{B} \\
+			\vdots 	       &       &  \vdots \\
+			a_{n1} \vec{B} & \dots & a_{np} \vec{B}     
+		\end{bmatrix}. 
+\end{align}
+%
+As example, we define $\vec{A} \in \mathbb{R}^{3 \times 2}$ and $\vec{B} \in \mathbb{R}^{2 \times 2}$ as
+
+\begin{align}
+	\vec{A} = \begin{bmatrix}
+			1 & 2  \\
+			3 & 4 \\
+			5 & 6		
+		\end{bmatrix}, \quad 
+	\vec{B} = 
+		\begin{bmatrix}
+			1 & 2  \\
+			1 & 2   
+		\end{bmatrix},
+\end{align}
+%
+resulting in the matrix $\vec{C} \in \mathbb{R}^{6 \times 4}$ given by
+
+\begin{align}
+	\vec{C} = 
+	\begin{bmatrix}
+		a_{11} \vec{B} &  a_{12} \vec{B} \\
+		a_{21} \vec{B} &  a_{22} \vec{B}
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		1 & 2 & 2 & 4  \\
+		1 & 2 & 2 & 4 \\
+		3 & 6 & 4 & 8 \\
+		3 & 6 & 4 & 8 \\
+		5 & 10& 6 &12 \\
+		5 & 10& 6 &12
+	\end{bmatrix}.
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Row-wise Kronecker product}
+
+Given the $n \times p$-matrix$\vec{A}$ and the $n \times q$-matrix $\vec{B}$, the row-wise Kronecker product is defined as $n \times pq$-matrix $\vec{C}$ given by
+
+\begin{align}
+	\vec{C} = \vec{A} \odot \vec{B} = 
+			\begin{bmatrix}
+				a_{11} \vec{B}_1 & \dots & a_{1p} \vec{B}_1 \\
+				\vdots 	   &         &  \vdots \\
+				a_{n1} \vec{B}_n & \dots  & a_{np} \vec{B}_n     
+			\end{bmatrix}. 
+\end{align}
+%
+As example, we define $\vec{A} \in \mathbb{R}^{3 \times 3}$ and $\vec{B} \in \mathbb{R}^{3 \times 2}$ as
+
+\begin{align}
+	\vec{A} = 
+		\begin{bmatrix}
+			\vec{A}_1 \\
+			\vec{A}_2 \\
+			\vec{A}_3 
+		\end{bmatrix} &= 
+		\begin{bmatrix}
+			1 & 2 & 3 \\
+			4 & 5 & 6 \\
+			7 & 8 & 9 
+		\end{bmatrix}, \quad 
+	\vec{B} = 
+		\begin{bmatrix}
+			\vec{B}_1 \\
+			\vec{B}_2 \\
+			\vec{B}_3 
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 2  \\
+			1 & 2  \\
+			1 & 2  
+		\end{bmatrix},
+\end{align}
+%
+resulting in the matrix $\vec{C} \in \mathbb{R}^{3 \times 6}$ given by
+
+\begin{align}
+		\vec{C} = 
+	\begin{bmatrix}
+		\vec{A_1} \otimes \vec{B_1} \\
+		\vec{A_2} \otimes \vec{B_2} \\
+		\vec{A_3} \otimes \vec{B_3} 
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		1 & 2 & 2 & 4 & 3 & 6 \\
+		4 & 8 & 5 &10 & 6 & 12\\
+		7 & 14& 8 & 16& 9 & 19 
+	\end{bmatrix}.
+\end{align}
+%
+The row-wise Kronecker product is also known as \emph{face-splitting product} or as \emph{transposed Khatri-Rao product} \cite{slyusar1997analytical}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Appendix B} \label{apx:AppendixB}
+
+The following proof is take from~\cite{bollaerts2006simple}. To find an optimal solution for the penalized least squares objective function for shape-constraint P-splines given by
+
+\begin{align} \label{eq:L}
+	\text{L}(\vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \transpose{\vec{\beta}} \vec{K} \vec{\beta} + \lambda_c \transpose{\vec{\beta}} \vec{K}_c \vec{\beta},
+\end{align}
+%
+we use a Newton-Raphson scheme. At each iteration $i$, the new estimate $\hat{\vec{\beta}}_{i+1}$ is computed such that
+
+\begin{align} \label{eq:NR-scheme}
+	\vec{g}(\vec{\beta}_{i}) + \vec{H}(\vec{\beta}_{i}) \big( \vec{\beta}_{i+1} - \vec{\beta}_{i}\big) = 0,
+\end{align}
+%
+with $\vec{g}$ being the gradient of and $\vec{H}$ being the Hessian of $\text{L}(\vec{\beta})$. The gradient of $\text{L}(\vec{\beta})$ equals to
+
+\begin{align}
+	\vec{g}(\vec{\beta}) = -2\transpose{\vec{X}} \vec{y} + 2\Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}) \vec{D}_c\Big] \vec{\beta} + \lambda_c \transpose{\vec{\beta}} \transpose{\vec{D}}_c \frac{\partial \vec{V}_c(\vec{\beta})}{\partial \vec{\beta}} \vec{D}_c \vec{\beta},
+\end{align}
+%
+which can be simplified, see~\cite{bollaerts2006simple}, to
+
+\begin{align} \label{eq:gradient-of-L}
+	\vec{g}(\vec{\beta}) = -2\transpose{\vec{X}} \vec{y} + 2\Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}) \vec{D}_c\Big] \vec{\beta}. 
+\end{align}
+%
+The gradient is therefore a piecewise linear function of $\vec{\beta}$ since $\vec{V}(\vec{\beta})$ is a diagonal matrix with 0s and 1s as diagonal elements, see~\pref{eq:gradient-of-L}. This implies that the Hessian is a step function of $\vec{\beta}$ and equal to
+
+\begin{align} \label{eq:hessian-of-L}
+	\vec{H}(\vec{\beta}) = 2\transpose{\vec{X}} \vec{X} + 2\lambda \transpose{\vec{D}}_2 \vec{D}_2 + 2\lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}) \vec{D}_c + 2\lambda_c \transpose{\vec{D}}_c \frac{\partial \vec{V}_c(\vec{\beta})}{\partial \vec{\beta}} \vec{D}_c. 
+\end{align}
+%
+The last part can be neglected again, see \cite{bollaerts2006simple}. Substituting~\pref{eq:gradient-of-L} and~\pref{eq:hessian-of-L} into~\pref{eq:NR-scheme} leads to
+
+\begin{align}
+	\begin{split}
+	0 &= -2\transpose{\vec{X}} \vec{y}  \right. \\ 
+	  &+ \left. 2\Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c\Big] \vec{\beta}_i \right. \\ 
+	  &+ \left. 2\Big[\transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c \Big] \big( \vec{\beta}_{i+1} - \vec{\beta}_i \big),
+	\end{split}
+\end{align}
+%
+which can be reformulated as
+
+\begin{align}
+	-\transpose{\vec{X}} \vec{y} + \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c \Big] \vec{\beta}_{i+1} = 0,
+\end{align}
+%
+and, hence, we obtain
+
+\begin{align}
+	\vec{\beta}_{i+1} = \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c \Big]^{-1} \transpose{\vec{X}} \vec{y}.
+\end{align}
+
+
+
+
 \end{appendices}

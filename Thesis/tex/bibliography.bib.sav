@@ -329,4 +329,12 @@
   publisher = {Wiley Online Library},
 }
 
+@InProceedings{slyusar1997analytical,
+  author    = {Slyusar, Vadym I},
+  booktitle = {Proceedings of International Conference on Antenna Theory and Techniques},
+  title     = {Analytical model of the digital antenna array on a basis of face-splitting matrixs product},
+  year      = {1997},
+  pages     = {108--109},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

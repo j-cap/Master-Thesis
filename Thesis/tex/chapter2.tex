@@ -1,5 +1,5 @@
 
-\chapter{Fundamentals} \label{chap:fundamentals}
+\chapter{Fundamentals} \label{cha:fundamentals}
 
 This chapter summarizes the fundamentals of regression. Excellent overviews can be found in the textbooks \cite{wood2017generalized}, \cite{fahrmeir2007regression}, \cite{friedman2001elements}. The shown fundamentals are strongly aligned with the presentation given in \cite{fahrmeir2007regression}. Section~\pref{sec:LinModel} gives an overview of the model assumptions used throughout this work. Furthermore, Section~\pref{sec:ModelSelection} outlines methods to evaluate and compare different models again each other in terms of complexity and accuracy. Section~\pref{sec:Splines} is devoted to the  spline definitions.
 
@@ -697,7 +697,7 @@ We can therefore combine the individual basis functions to generated new basis f
 the relationship between the basis matrix $\vec{X}$ of the tensor-product B-spline and the basis matrices $\vec{B}_1$ and $\vec{B}_2$ is given as
 
 \begin{align}
-	\vec{X} = \vec{B}_1 \odot \vec{B}_2,
+	\vec{X} = \vec{B}_2 \odot \vec{B}_1,
 \end{align}
 %
 where $\odot$ indicates the use of the row-wise Kronecker product, see Appendix A, $\vec{X} \in \mathbb{R}^{n \times d_1 d_2}$ denotes the tensor-product B-spline basis matrix, $\vec{B}_1 \in \mathbb{R}^{n \times d_1}$ denotes the B-spline basis matrix for dimension $x_1$ and $\vec{B}_2 \in \mathbb{R}^{n \times d_2}$ denotes the B-spline basis matrix for dimension $x_2$ \cite{fahrmeir2007regression}.  
@@ -937,13 +937,13 @@ and the second term on the left side calculates the "column-wise" squared second
 %
 The subscript for $\Delta$ in~\pref{eq:row-wise-diff-operator} and~\pref{eq:col-wise-diff-operator} indicates the direction of the finite differences. Using the matrix form of the second-order finite difference operator and the Kronecker product, see Appendix A, as well as the parameter vector $\vec{\gamma} \in \mathbb{R}^{d_1 d_2 \times 1}$, we can then write the "row-wise" penalty as
 
-\begin{align}
+\begin{align} \label{eq:row-wise-penalty}
 	\transpose{\vec{\gamma}} \transpose{(\vec{I}_{d_2} \otimes \vec{D}_{1,2})} (\vec{I}_{d_2} \otimes \vec{D}_{1,2}) \vec{\gamma} = \sum_{j=3}^{d_1} \sum_{r=1}^{d_2} (\Delta_1^2 \beta_{j,r})^2
 \end{align}
 %
 and the "column-wise" penalty as
 
-\begin{align}
+\begin{align} \label{eq:col-wise-penalty}
 	\transpose{\vec{\gamma}} \transpose{(\vec{D}_{2,2} \otimes \vec{I}_{d_1})} (\vec{D}_{2,2} \otimes \vec{I}_{d_1}) \vec{\gamma} = \sum_{j=1}^{d_1} \sum_{r=3}^{d_2} (\Delta_2^2 \beta_{j,r})^2
 \end{align}
 %
