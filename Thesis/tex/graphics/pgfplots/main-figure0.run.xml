@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>main.bcf</file>
+      <file>graphics/pgfplots/main-figure0.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>main.bbl</file>
+      <file>graphics/pgfplots/main-figure0.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -66,23 +66,23 @@
       <file>ngerman.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>main</infile>
+      <infile>graphics/pgfplots/main-figure0</infile>
     </cmdline>
     <input>
-      <file>main.bcf</file>
+      <file>graphics/pgfplots/main-figure0.bcf</file>
     </input>
     <output>
-      <file>main.bbl</file>
+      <file>graphics/pgfplots/main-figure0.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>main.bbl</file>
+      <file>graphics/pgfplots/main-figure0.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>main.bcf</file>
+      <file>graphics/pgfplots/main-figure0.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliography.bib</file>

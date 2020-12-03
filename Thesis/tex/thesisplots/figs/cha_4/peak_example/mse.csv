@@ -1,0 +1,4 @@
+Model,MSEVal,MSEValTrueFunction
+B-spline,0.019039,0.007039
+P-spline,0.012225,0.001521
+SCP-spline,0.012191,0.001481

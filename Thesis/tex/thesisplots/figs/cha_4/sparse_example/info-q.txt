@@ -1,0 +1,6 @@
+Info Value
+Nr_splines 25
+Knot_type q
+Spline_Order 3
+Opt_Lambda 0.002154434690031887
+Lambda_c 6000

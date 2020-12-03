@@ -85,7 +85,7 @@ with the mapping matrix $\vec{D}_1 \in \mathbb{R}^{(d-1) \times d}$. The weighti
 % 
 Therefore, the weighting matrix $\vec{V}_c \coloneqq \vec{V}_c(\vec{\beta})$ depends on the parameters $\vec{\beta}$ and we arrive at a formulation similar to Ridge regression with a parameter dependent, non-linear penalty matrix $\vec{K} \coloneqq \vec{K}(\vec{\beta})$, see Section~\ref{subsec:Regularization}. The objective function is then of the form
 
-\begin{align}
+\begin{align} \label{eq:OF-SCP-Final}
 	\text{PLS}_{\text{SCP}} (\vec{y}, \vec{\beta}; \lambda, \lambda_c) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \transpose{\vec{\beta}} \vec{K} \vec{\beta} + \lambda_c \transpose{\vec{\beta}} \vec{K}_c \vec{\beta}.
 \end{align}
 %
