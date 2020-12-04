@@ -1,0 +1,14 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Related Work}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Parametric Models}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Non-parametric Models}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3}Artificial Neural Networks}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4}Look-up Tables}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Outline}{7}

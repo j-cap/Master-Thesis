@@ -58,6 +58,24 @@ We will now examine the behavior of B-, P- and SCP-splines for sparse data, i.e.
 	\label{fig:sparse-example-equidistant}
 \end{figure}
 
+The equidistant B-spline in~\pref{fig:sparse-example-equidistant} shows the problem of B-splines in sparse data situations. The estimate (black) becomes very wiggly, similar to polynomial fits using a high degree. Nevertheless, using the regularization through the additional smoothness penalty in P-splines, the estimate (green) becomes quite smooth and reflects the true function quite well. The shape-constrataint P-spline (red) further improves the quality of the fit, as seen in~\pref{tab:sparse-example-equidistant}. 
+
+\begin{table}[H]
+	\begin{center}
+		\pgfplotstabletypeset[
+		col sep=comma,
+		columns/Model/.style={string type},
+		columns/MSEVal/.style={column name={$\text{MSE}_{D_v}$}},
+		columns/MSEValTrueFunction/.style={column name={$\text{MSE}_{D_{v,true}}$}},
+		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
+		every last row/.style={after row=\bottomrule \bottomrule},
+		every nth row={1}{before row=\midrule},
+		]{graphics/data/cha4/sparse_example/mse-e.csv}
+	\end{center}
+	\caption{Mean squared errors on the validation set for equidistant knot placement.}
+	\label{tab:sparse-example-equidistant}
+\end{table}
+
 
 \begin{figure}[H]
 	\centering
@@ -65,6 +83,25 @@ We will now examine the behavior of B-, P- and SCP-splines for sparse data, i.e.
 	\caption{Quantile-based B-spline, P-spline and SCP-spline fit for sparse data $D$.}
 	\label{fig:sparse-example-quantile}
 \end{figure}
+
+The quantile-based B-spline (green) in~\pref{fig:sparse-example-quantile} shows some interesting features. At first, it fits the peak surprisingly well despite the small sample size in this area. This is due to the inherent smoothing aspect of quantile-based knot placement in regions of small sample size. Further, we see the flexibility of the B-spline in the regions with more data, i.e. $x\in[0.1,0.2]$ and $x \in [0.5,0.8]$, where it clearly fits the noisy part instead of the true function. Hence, quantile-based knot placement may lead to partial overfitting. (further descriptions are needed here) Using a P-spline (green) does not relax this problem. This may be caused by the 
+
+
+\begin{table}[H]
+	\begin{center}
+		\pgfplotstabletypeset[
+		col sep=comma,
+		columns/Model/.style={string type},
+		columns/MSEVal/.style={column name={$\text{MSE}_{D_v}$}},
+		columns/MSEValTrueFunction/.style={column name={$\text{MSE}_{D_{v,true}}$}},
+		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
+		every last row/.style={after row=\bottomrule \bottomrule},
+		every nth row={1}{before row=\midrule},
+		]{graphics/data/cha4/sparse_example/mse-q.csv}
+	\end{center}
+	\caption{Mean squared errors on the validation set for quantile-based knot placement.}
+	\label{tab:sparse-example-quantile}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

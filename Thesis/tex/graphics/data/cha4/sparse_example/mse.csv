@@ -1,0 +1,7 @@
+Model,MSEVal,MSEValTrueFunction
+B-spline equidistant,0.320501,0.27471
+B-spline quantile-based,0.025052,0.011821
+P-spline equidistant,0.014423,0.003937
+P-spline quantile-based,0.023075,0.009321
+SCP-spline equidistant,0.013557,0.002318
+SCP-spline quantile-based,0.014844,0.002515

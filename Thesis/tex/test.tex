@@ -40,35 +40,20 @@
 
 \begin{document}
 
-\begin{figure}
-	\centering
-	\includegraphics{graphics/pgfplots/cha4/exp-peak.pdf}
-	\caption{external image}
-\end{figure}
+\begin{table}[H]
+	\begin{center}
+		\pgfplotstabletypeset[
+		col sep=comma,
+		columns/Model/.style={string type},
+		columns/MSEVal/.style={column name={$\text{MSE}_{D_v}$}},
+		columns/MSEValTrueFunction/.style={column name={$\text{MSE}_{D_{v,true}}$}},
+		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
+		every last row/.style={after row=\bottomrule \bottomrule},
+		every nth row={1}{before row=\midrule},
+		]{graphics/data/cha4/sparse_example/mse-e.csv}
+	\end{center}
+	\caption{Mean squared errors on the validation set.}
+	\label{tab:test-func-peak-mses}
+\end{table}
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}
-		\pgfplotstableread{thesisplots/figs/bvd.txt}{\data}
-		\begin{axis}[
-			xlabel=Model Complexity,
-			xmin=0, xmax=2.1, 
-			x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
-			ylabel=SPSE,
-			y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
-			ymin=0, ymax=40, 
-			axis lines = left,
-			ticks = none,
-			legend entries={$\text{Bias Error}^2$, Variance Error, Total Error, Optimal Model},
-			] 
-			\addplot [red, densely dashed] table [x=x, y=bias] {\data};		  		
-			\addplot [blue, dotted] table [x=x, y=variance] {\data};	
-			\addplot [black] table [x=x, y=both] {\data};	  
-			\draw (0.672, 8.9341) circle [gray, radius=2pt];
-			\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
-		\end{axis}	
-	\end{tikzpicture}
-	\caption{Bias-variance trade-off.}
-	\label{fig:bv-trade-off}
-\end{figure}
 \end{document}

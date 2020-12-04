@@ -1,0 +1,1021 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.12)  4 DEC 2020 15:00
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**chapter1.tex
+(./chapter1.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(c:/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
+
+(c:/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+(c:/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(c:/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(c:/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen104
+))
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks17
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen115
+\captionmargin@=\dimen116
+\captionwidth=\dimen117
+\caption@tempdima=\dimen118
+\caption@indent=\dimen119
+\caption@parindent=\dimen120
+\caption@hangindent=\dimen121
+)
+\c@ContinuedFloat=\count102
+)
+(c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count103
+\float@exts=\toks22
+\float@box=\box28
+\@float@everytoks=\toks23
+\@floatcapt=\box29
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen122
+\ar@mcellbox=\box30
+\extrarowheight=\dimen123
+\NC@list=\toks24
+\extratabsurround=\skip46
+\backup@length=\skip47
+\ar@cellbox=\box31
+)
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count104
+\@cmidlb=\count105
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count106
+\@lastruleclass=\count107
+\@thisrulewidth=\dimen136
+)
+(c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box32
+\sift@deathcycles=\count108
+\@vwid@loff=\dimen137
+\@vwid@roff=\dimen138
+)
+(c:/texlive/2018/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2016/07/01 version 1.20 LaTeX CSV file processing
+
+(c:/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+(c:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks27
+))) (c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count109
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 67.
+)
+\csv@file=\read1
+\c@csvinputline=\count110
+\c@csvrow=\count111
+\c@csvcol=\count112
+\csv@out=\write3
+)
+(c:/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write4
+
+Excluding comment 'comment')
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count113
+
+(c:/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write5
+\integerpart=\count114
+\decimalpart=\count115
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count116
+\c@listtotal=\count117
+\c@listcount=\count118
+\c@liststart=\count119
+\c@liststop=\count120
+\c@citecount=\count121
+\c@citetotal=\count122
+\c@multicitecount=\count123
+\c@multicitetotal=\count124
+\c@instcount=\count125
+\c@maxnames=\count126
+\c@minnames=\count127
+\c@maxitems=\count128
+\c@minitems=\count129
+\c@citecounter=\count130
+\c@savedcitecounter=\count131
+\c@uniquelist=\count132
+\c@uniquename=\count133
+\c@refsection=\count134
+\c@refsegment=\count135
+\c@maxextratitle=\count136
+\c@maxextratitleyear=\count137
+\c@maxextradate=\count138
+\c@maxextraalpha=\count139
+\c@abbrvpenalty=\count140
+\c@highnamepenalty=\count141
+\c@lownamepenalty=\count142
+\c@maxparens=\count143
+\c@parenlevel=\count144
+\blx@tempcnta=\count145
+\blx@tempcntb=\count146
+\blx@tempcntc=\count147
+\blx@maxsection=\count148
+\blx@maxsegment@0=\count149
+\blx@notetype=\count150
+\blx@parenlevel@text=\count151
+\blx@parenlevel@foot=\count152
+\blx@sectionciteorder@0=\count153
+\labelnumberwidth=\skip48
+\labelalphawidth=\skip49
+\biblabelsep=\skip50
+\bibitemsep=\skip51
+\bibnamesep=\skip52
+\bibinitsep=\skip53
+\bibparsep=\skip54
+\bibhang=\skip55
+\blx@bcfin=\read2
+\blx@bcfout=\write6
+\c@mincomprange=\count154
+\c@maxcomprange=\count155
+\c@mincompwidth=\count156
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'draft.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count157
+\c@savedafterword=\count158
+\c@annotator=\count159
+\c@savedannotator=\count160
+\c@author=\count161
+\c@savedauthor=\count162
+\c@bookauthor=\count163
+\c@savedbookauthor=\count164
+\c@commentator=\count165
+\c@savedcommentator=\count166
+\c@editor=\count167
+\c@savededitor=\count168
+\c@editora=\count169
+\c@savededitora=\count170
+\c@editorb=\count171
+\c@savededitorb=\count172
+\c@editorc=\count173
+\c@savededitorc=\count174
+\c@foreword=\count175
+\c@savedforeword=\count176
+\c@holder=\count177
+\c@savedholder=\count178
+\c@introduction=\count179
+\c@savedintroduction=\count180
+\c@namea=\count181
+\c@savednamea=\count182
+\c@nameb=\count183
+\c@savednameb=\count184
+\c@namec=\count185
+\c@savednamec=\count186
+\c@translator=\count187
+\c@savedtranslator=\count188
+\c@shortauthor=\count189
+\c@savedshortauthor=\count190
+\c@shorteditor=\count191
+\c@savedshorteditor=\count192
+\c@labelname=\count193
+\c@savedlabelname=\count194
+\c@institution=\count195
+\c@savedinstitution=\count196
+\c@lista=\count197
+\c@savedlista=\count198
+\c@listb=\count199
+\c@savedlistb=\count266
+\c@listc=\count267
+\c@savedlistc=\count268
+\c@listd=\count269
+\c@savedlistd=\count270
+\c@liste=\count271
+\c@savedliste=\count272
+\c@listf=\count273
+\c@savedlistf=\count274
+\c@location=\count275
+\c@savedlocation=\count276
+\c@organization=\count277
+\c@savedorganization=\count278
+\c@origlocation=\count279
+\c@savedoriglocation=\count280
+\c@origpublisher=\count281
+\c@savedorigpublisher=\count282
+\c@publisher=\count283
+\c@savedpublisher=\count284
+\c@language=\count285
+\c@savedlanguage=\count286
+\c@origlanguage=\count287
+\c@savedoriglanguage=\count288
+\c@pageref=\count289
+\c@savedpageref=\count290
+\shorthandwidth=\skip56
+\shortjournalwidth=\skip57
+\shortserieswidth=\skip58
+\shorttitlewidth=\skip59
+\shortauthorwidth=\skip60
+\shorteditorwidth=\skip61
+\locallabelnumberwidth=\skip62
+\locallabelalphawidth=\skip63
+\localshorthandwidth=\skip64
+\localshortjournalwidth=\skip65
+\localshortserieswidth=\skip66
+\localshorttitlewidth=\skip67
+\localshortauthorwidth=\skip68
+\localshorteditorwidth=\skip69
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+File: blx-bibtex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+\c@textcitecount=\count291
+\c@textcitetotal=\count292
+\c@textcitemaxnames=\count293
+\c@biburlnumpenalty=\count294
+\c@biburlucpenalty=\count295
+\c@biburllcpenalty=\count296
+\c@smartand=\count297
+)
+Package biblatex Info: Trying to load bibliography style 'draft'...
+Package biblatex Info: ... file 'draft.bbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/draft.bbx
+File: draft.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count298
+\c@bbx:relatedtotal=\count299
+))
+Package biblatex Info: Trying to load citation style 'draft'...
+Package biblatex Info: ... file 'draft.cbx' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/draft.cbx
+File: draft.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+(./ACIN_thesis_macros.tex
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\Title ->\@dblarg\ACIN 
+                       @title
+l.13 \Title
+           {<Titel>}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@gtempa ...rue \ifnum \@ne =\@ne \fi \ifBachelor 
+                                                  \relax \TE@setvaltrue \els...
+l.21 \ifthenelse{\boolean{Bachelor}}
+                                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \fi.
+\@gtempa ...E@setvalfalse \fi \TE@negatefalse \fi 
+                                                  
+l.21 \ifthenelse{\boolean{Bachelor}}
+                                    
+I'm ignoring this; it doesn't match any \if.
+
+! Undefined control sequence.
+<argument> \GerEng 
+                   {\Subject {Bachelorarbeit}}{\Subject {Bachelor Thesis}}
+l.23 ...{Diplomarbeit}}{\Subject{Diploma Thesis}}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\Subject ->\@dblarg\ACIN 
+                         @subject
+l.23 ...{Diplomarbeit}}{\Subject{Diploma Thesis}}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\Subject ->\@dblarg\ACIN 
+                         @subject
+l.23 ...{Diplomarbeit}}{\Subject{Diploma Thesis}}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\Author ->\@dblarg\ACIN 
+                        @author
+l.32 \Author
+            {<Autor>}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\Matrikelnummer ->\@dblarg\ACIN 
+                                @matrikelnummer
+l.40 \Matrikelnummer
+                    {<012345>}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.47   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\AuthorAddress ->\@dblarg\ACIN 
+                               @authoraddress
+l.48 \AuthorAddress
+                   {<Strasse>\\<Ort>\\<Land>}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\Supervisor ->\@dblarg\ACIN 
+                            @supervisor
+l.56 \Supervisor
+                {<Supervisor>}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\Date ->\@dblarg\ACIN 
+                      @date
+l.64 \Date
+          {\today}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71   }
+        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\PlaceAndTime ->\@dblarg\ACIN 
+                              @placeandtime
+l.72 \PlaceAndTime
+                  {<Ort, im Monat Jahr>}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (c:/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count300
+\@quotereset=\count301
+(./chapter1.aux)
+\openout1 = `chapter1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count302
+\scratchdimen=\dimen139
+\scratchbox=\box33
+\nofMPsegments=\count303
+\nofMParguments=\count304
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen140
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
+\everyMPtoPDFconversion=\toks29
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout6 = `chapter1-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'chapter1.bbl' not found.
+
+No file chapter1.bbl.
+Package biblatex Info: Reference section=0 on input line 28.
+Package biblatex Info: Reference segment=0 on input line 28.
+[1
+
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+(./chapter1.toc)
+\tf@toc=\write7
+\openout7 = `chapter1.toc'.
+
+
+
+LaTeX Warning: Citation 'ashby1961introduction' on page 2 undefined on input li
+ne 37.
+
+
+LaTeX Warning: Citation 'dovsilovic2018explainable' on page 2 undefined on inpu
+t line 37.
+
+
+Overfull \hbox (68.49428pt too wide) in paragraph at lines 37--38
+\OT1/cmr/m/n/10 main goal is that the re-sult-ing model is un-der-stand-able by
+ humans[]. 
+ []
+
+
+LaTeX Warning: Citation 'fahrmeir2007regression' on page 2 undefined on input l
+ine 39.
+
+
+LaTeX Warning: Citation 'hofner2011monotonicity' on page 2 undefined on input l
+ine 39.
+
+
+Overfull \hbox (32.87761pt too wide) in paragraph at lines 39--42
+\OT1/cmr/m/n/10 rithm is based on struc-tured ad-di-tive re-gres-sion us-ing sp
+lines[].
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
+ (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
+
+Overfull \hbox (0.52843pt too wide) in paragraph at lines 55--56
+[]\OT1/cmr/m/n/10 The com-mon start-ing point for the dif-fer-ent data-driven m
+od-el-ing ap-proaches
+ []
+
+
+LaTeX Warning: Citation 'nelles2013nonlinear' on page 3 undefined on input line
+ 66.
+
+
+Overfull \hbox (15.92493pt too wide) in paragraph at lines 66--67
+\OT1/cmr/m/n/10 the true pro-cess be-hav-ior us-ing a fi-nite num-ber of parame
+ters[].
+ []
+
+[3]
+
+LaTeX Warning: Citation 'nelles2013nonlinear' on page 4 undefined on input line
+ 89.
+
+
+LaTeX Warning: Citation 'friedman1991multivariate' on page 4 undefined on input
+ line 97.
+
+
+Overfull \hbox (5.35277pt too wide) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 Mul-ti-vari-ate Adap-tive Re-gres-sion Splines (MARS) [].
+ []
+
+[4]
+
+LaTeX Warning: Citation 'friedman1991multivariate' on page 5 undefined on input
+ line 111.
+
+
+LaTeX Warning: Citation 'friedman2001elements' on page 5 undefined on input lin
+e 111.
+
+
+LaTeX Warning: Reference `sec:Splines' on page 5 undefined on input line 113.
+
+
+LaTeX Warning: Citation 'deBoor1978practicalGuideToSplines' on page 5 undefined
+ on input line 113.
+
+
+Overfull \hbox (16.27847pt too wide) in paragraph at lines 113--114
+\OT1/cmr/m/n/10 for-ma-tion can be found in Sec-tion [] and [].
+ []
+
+
+LaTeX Warning: Reference `cha:solution-approach' on page 5 undefined on input l
+ine 119.
+
+
+LaTeX Warning: Citation 'hofner2011monotonicity' on page 5 undefined on input l
+ine 119.
+
+
+LaTeX Warning: Citation 'bollaerts2006simple' on page 5 undefined on input line
+ 119.
+
+
+LaTeX Warning: Citation 'nelles2013nonlinear' on page 5 undefined on input line
+ 121.
+
+
+LaTeX Warning: Citation 'nelles2013nonlinear' on page 5 undefined on input line
+ 139.
+
+[5]
+
+LaTeX Warning: Citation 'bishop2006patternRecognition' on page 6 undefined on i
+nput line 146.
+
+
+LaTeX Warning: Citation 'goodfellow2016deep' on page 6 undefined on input line 
+146.
+
+
+LaTeX Warning: Citation 'cybenko1989approximation' on page 6 undefined on input
+ line 148.
+
+
+LaTeX Warning: Citation 'hornik1991approximation' on page 6 undefined on input 
+line 148.
+
+
+LaTeX Warning: Citation 'abu1990learning' on page 6 undefined on input line 148
+.
+
+
+LaTeX Warning: Citation 'sill1997monotonicity' on page 6 undefined on input lin
+e 148.
+
+
+Overfull \hbox (68.14934pt too wide) in paragraph at lines 148--149
+\OT1/cmr/m/n/10 ap-prox-i-ma-tion the-o-rems, cf. [] and [].
+ []
+
+
+LaTeX Warning: Citation 'garcia2009lattice' on page 6 undefined on input line 1
+57.
+
+
+LaTeX Warning: Citation 'fard2016fast' on page 6 undefined on input line 157.
+
+
+LaTeX Warning: Citation 'gupta2016monotonic' on page 6 undefined on input line 
+157.
+
+
+LaTeX Warning: Citation 'you2017deep' on page 6 undefined on input line 157.
+
+[6]
+
+LaTeX Warning: Citation 'fahrmeir2007regression' on page 7 undefined on input l
+ine 163.
+
+
+LaTeX Warning: Citation 'hofner2011monotonicity' on page 7 undefined on input l
+ine 163.
+
+
+LaTeX Warning: Citation 'bollaerts2006simple' on page 7 undefined on input line
+ 163.
+
+[7] (./chapter1.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                chapter1
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'chapter1.run.xml'.
+\openout1 = `chapter1.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 11796 strings out of 492649
+ 208244 string characters out of 6133383
+ 477265 words of memory out of 5000000
+ 15516 multiletter control sequences out of 15000+600000
+ 11849 words of font info for 46 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 40i,12n,46p,1031b,1652s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on chapter1.pdf (7 pages, 154858 bytes).
+PDF statistics:
+ 76 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
