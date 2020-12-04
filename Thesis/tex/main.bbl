@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -26,7 +26,7 @@
            familyi={H\bibinitperiod},
            given={Benjamin},
            giveni={B\bibinitperiod}}}%
-        {{hash=7a14b793f9c8206819859db7ee3c9fc9}{%
+        {{hash=933f68cca3978c4020d34cf1b379b7c7}{%
            family={M{\"{u}}ller},
            familyi={M\bibinitperiod},
            given={J{\"{o}}rg},
@@ -40,14 +40,14 @@
       \list{publisher}{1}{%
         {Wiley Online Library}%
       }
-      \strng{namehash}{a373cdcf9e92e99e5bd776354da8eb5b}
-      \strng{fullhash}{a373cdcf9e92e99e5bd776354da8eb5b}
-      \strng{bibnamehash}{a373cdcf9e92e99e5bd776354da8eb5b}
-      \strng{authorbibnamehash}{a373cdcf9e92e99e5bd776354da8eb5b}
-      \strng{authornamehash}{a373cdcf9e92e99e5bd776354da8eb5b}
-      \strng{authorfullhash}{a373cdcf9e92e99e5bd776354da8eb5b}
+      \strng{namehash}{f6692fd64d6bef24c97fb21dc9136048}
+      \strng{fullhash}{f6692fd64d6bef24c97fb21dc9136048}
+      \strng{bibnamehash}{f6692fd64d6bef24c97fb21dc9136048}
+      \strng{authorbibnamehash}{f6692fd64d6bef24c97fb21dc9136048}
+      \strng{authornamehash}{f6692fd64d6bef24c97fb21dc9136048}
+      \strng{authorfullhash}{f6692fd64d6bef24c97fb21dc9136048}
       \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Ecology}
@@ -65,12 +65,12 @@
            familyi={B\bibinitperiod},
            given={Kaatje},
            giveni={K\bibinitperiod}}}%
-        {{hash=b60300e17d89fff6fa0208f670d67a5a}{%
+        {{hash=285bdbeade790f6d12f50488aa78be63}{%
            family={Eilers},
            familyi={E\bibinitperiod},
            given={Paul\bibnamedelimb H\bibnamedelima C},
            giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=c9a6a8779c6d8f3de1fabf8319861ec0}{%
+        {{hash=9c813ccefe281df0a0806f6d623ec828}{%
            family={Van\bibnamedelima Mechelen},
            familyi={V\bibinitperiod\bibinitdelim M\bibinitperiod},
            given={Iven},
@@ -79,14 +79,14 @@
       \list{publisher}{1}{%
         {Wiley Online Library}%
       }
-      \strng{namehash}{65646314fcb77ad443478a8a347e228c}
-      \strng{fullhash}{65646314fcb77ad443478a8a347e228c}
-      \strng{bibnamehash}{65646314fcb77ad443478a8a347e228c}
-      \strng{authorbibnamehash}{65646314fcb77ad443478a8a347e228c}
-      \strng{authornamehash}{65646314fcb77ad443478a8a347e228c}
-      \strng{authorfullhash}{65646314fcb77ad443478a8a347e228c}
+      \strng{namehash}{1aad1920e0fab5abf43e03f891c65a92}
+      \strng{fullhash}{1aad1920e0fab5abf43e03f891c65a92}
+      \strng{bibnamehash}{1aad1920e0fab5abf43e03f891c65a92}
+      \strng{authorbibnamehash}{1aad1920e0fab5abf43e03f891c65a92}
+      \strng{authornamehash}{1aad1920e0fab5abf43e03f891c65a92}
+      \strng{authorfullhash}{1aad1920e0fab5abf43e03f891c65a92}
       \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{British Journal of Mathematical and Statistical Psychology}

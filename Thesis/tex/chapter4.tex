@@ -77,7 +77,82 @@ The mean square errors on the noisy validation data $D_v$ in~\pref{tab:test-func
 
 \section{Sparse Data and the Peak Constraint}
 
-We will now examine the behavior of B-, P- and SCP-splines for sparse data sampled from the function in~\pref{eq:test-func-peak}. The data set $D$ now contains 70 data points distributed in a way that there is little data in the peak region, i.e for $x \in [0.2, 0.5]$ we have only 10 data points. We follow the same approach as above, i.e. fit a B-spline, perform generalized cross-validation to fit the optimal P-spline and finally apply the shape-constraint to enforce peak behavior. Due the small amount of data, we chose to use $d=25$ B-spline basis functions of order $l=3$ and quantile-based knot placement. The optimal smoothness parameter was given as $\lambda_c = 0.00657$. 
+We will now examine the behavior of B-, P- and SCP-splines for sparse data, i.e. little data and uneven distributed, sampled from the function in~\pref{eq:test-func-peak}. The data set $D$ now contains 70 data points distributed in a way that there is little data in the peak region, i.e for $x \in [0.2, 0.5]$ we have only 10 data points. We perform an random train-validation split of the data in $D$, i.e. the training data $D_t$ consists of 52 points and the validation data $D_v$ consists of 18 points. We follow the same approach as above, i.e. fit a B-spline, perform generalized cross-validation to fit the optimal P-spline and finally apply the shape-constraint to enforce peak behavior. The small data set indicates that a different, not equidistant knot placement may be helpful. Hence, we carry out 2 experiments, one with equidistant knot placement and the other with quantile-based knot placement, see Section~\ref{subsec:b-splines}. We chose to use $d=25$ B-spline basis functions of order $l=3$. The optimal smoothness parameter was given as $\lambda_c = 0.00657$ for the equidistant fit and $\lambda_{opt} = 0.00215$ for the quantile-based fit. The constraint parameter $\lambda_c$ was set to $\lambda_c=1000$ for both fits, reflecting high trust in the a priori domain knowledge. The resulting fits are shown in~\pref{fig:sparse-example-equidistant} and~\pref{fig:sparse-example-quantile}.
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\pgfplotstableread{thesisplots/figs/cha_4/sparse_example/data-e.txt}{\data};		
+		\pgfplotstableread{thesisplots/figs/cha_4/sparse_example/fit-e.txt}{\fit}		
+		\begin{axis}[
+			width=0.8\textwidth,
+			height=0.6\textwidth,
+			xlabel=x,
+			xmin=0.1, xmax=0.8, 
+			%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
+			ylabel=y,
+			y label style={rotate=-90,anchor=south},
+			restrict y to domain=-60:100,
+			ymin=-0.2, ymax=2.5,
+			grid=both,
+			grid style={line width=.1pt, draw=gray!10},
+			major grid style={line width=.2pt,draw=gray!50}, 
+			axis lines = left,
+			legend entries={B-spline, P-spline, SCP-spline, True function, $D_v$},
+			] 			
+			\addplot[black, line width=0.5pt] table [x=xplot, y=Bspline_fit] {\fit};		  		
+			\addplot[green, line width=1.4pt] table [x=xplot, y=Pspline_fit] {\fit};		  		
+			\addplot[red, line width=1pt] table [x=xplot, y=SCP_spline_fit] {\fit};
+			\addplot[blue, line width=1pt] table [x=xplot, y=yplot] {\fit};
+			\addplot[only marks, mark=x, draw opacity=0.9] table [x=x, y=y] {\data};
+			
+		\end{axis}
+		
+	\end{tikzpicture}
+	\caption{Equidistant B-spline, P-spline and SCP-spline fit for sparse data $D$.}
+	\label{fig:sparse-example-equidistant}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\pgfplotstableread{thesisplots/figs/cha_4/sparse_example/data-q.txt}{\data};		
+		\pgfplotstableread{thesisplots/figs/cha_4/sparse_example/fit-q.txt}{\fit}		
+		\begin{axis}[
+			width=0.8\textwidth,
+			height=0.6\textwidth,
+			xlabel=x,
+			xmin=0.1, xmax=0.8, 
+			%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
+			ylabel=y,
+			y label style={rotate=-90,anchor=south},
+			restrict y to domain=-60:100,
+			ymin=-0.2, ymax=2.5,
+			grid=both,
+			grid style={line width=.1pt, draw=gray!10},
+			major grid style={line width=.2pt,draw=gray!50}, 
+			axis lines = left,
+			legend entries={B-spline, P-spline, SCP-spline, True function, $D_v$},
+			] 			
+			\addplot[black, line width=0.5pt] table [x=xplot, y=Bspline_fit] {\fit};		  		
+			\addplot[green, line width=1.4pt] table [x=xplot, y=Pspline_fit] {\fit};		  		
+			\addplot[red, line width=1pt] table [x=xplot, y=SCP_spline_fit] {\fit};
+			\addplot[blue, line width=1pt] table [x=xplot, y=yplot] {\fit};
+			\addplot[only marks, mark=x, draw opacity=0.9] table [x=x, y=y] {\data};
+			
+		\end{axis}
+		
+	\end{tikzpicture}
+	\caption{Quantile-based B-spline, P-spline and SCP-spline fit for sparse data $D$.}
+	\label{fig:sparse-example-quantile}
+\end{figure}
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Lambda c} \label{sec:lambda_c_sec}

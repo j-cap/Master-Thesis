@@ -403,7 +403,7 @@
 			{\input{hyphen_german.tex}}
 		\end{otherlanguage*}
 		\begin{otherlanguage*}{naustrian}
-			{\input{hyphen_german.tex}}
+	    		{\input{hyphen_german.tex}}
 		\end{otherlanguage*}
 	}{
 		\ClassWarningNoLine{ACIN_thesis}{File hyphen_german.tex does not exist!}
