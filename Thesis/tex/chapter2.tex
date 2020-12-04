@@ -294,26 +294,7 @@ The SPSE acts as an example of the bias-variance trade-off, which is characteris
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\pgfplotstableread{thesisplots/figs/bvd.txt}{\data}
-		\begin{axis}[
-			xlabel=Model Complexity,
-			xmin=0, xmax=2.1, 
-			x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
-			ylabel=SPSE,
-			y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
-			ymin=0, ymax=40, 
-			axis lines = left,
-			ticks = none,
-			legend entries={$\text{Bias Error}^2$, Variance Error, Total Error, Optimal Model},
-			] 
-			\addplot [red, densely dashed] table [x=x, y=bias] {\data};		  		
-			\addplot [blue, dotted] table [x=x, y=variance] {\data};	
-			\addplot [black] table [x=x, y=both] {\data};	  
-			\draw (0.672, 8.9341) circle [gray, radius=2pt];
-			\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
-		\end{axis}	
-	\end{tikzpicture}
+	\includegraphics{graphics/pgfplots/cha2/bvd.pdf}
 	\caption{Bias-variance trade-off.}
 	\label{fig:bv-trade-off}
 \end{figure}
@@ -525,45 +506,7 @@ using the knot sequence~\pref{eq:knot-sequence}. Hence it is composed of $(l+1)$
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\pgfplotstableread{thesisplots/figs/spline-types-equidistant.txt}{\equidistant}
-		\pgfplotstableread{thesisplots/figs/spline-types-quantile.txt}{\quantile}
-		\begin{groupplot}[
-			group style = {group size = 2 by 1},
-			width=0.5\columnwidth,
-			]
-			\nextgroupplot[
-			xmin=0.05, xmax=0.55, 
-			xticklabels={$\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$},			
-			xtick={0.1, 0.2, 0.3, 0.4, 0.5},
-			xtick align=outside,
-			xtick pos = bottom,
-			ytick pos = left,
-			ytick align=outside,
-			ymin=-0.05, ymax=1.05, 
-			legend entries={{$B_1^0$}, {$B_2^1$}, {$B_3^2$}, {$B_4^3$}},
-			] 
-			\addplot [black, dashed] table [x=x, y= B0] {\equidistant};		  		
-			\addplot [violet, densely dotted] table [x=x, y=B1]{\equidistant};	
-			\addplot [blue, dotted] table [x=x, y=B2]{\equidistant};
-			\addplot [red, densely dashed] table [x=x, y=B3]{\equidistant};	  			
-			\nextgroupplot[
-			xmin=0.05, xmax=0.55, 
-			xticklabels={$\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$},			
-			xtick={0.1, 0.2, 0.38, 0.46, 0.52 },
-			xtick align=outside,
-			xtick pos = bottom,
-			ytick pos = left,
-			ytick align=outside,
-			ymin=-0.05, ymax=1.05, 
-			legend entries={{$B_1^0$}, {$B_2^1$}, {$B_3^2$}, {$B_4^3$}},
-			] 
-			\addplot [black, dashed] table [x=x, y= B0] {\quantile};		  		
-			\addplot [violet, densely dotted] table [x=x, y=B1]{\quantile};	
-			\addplot [blue, dotted] table [x=x, y=B2]{\quantile};
-			\addplot [red, densely dashed] table [x=x, y=B3]{\quantile};	  	
-		\end{groupplot}
-	\end{tikzpicture}
+	\includegraphics{graphics/pgfplots/cha2/spline-types.pdf}
 	\caption{B-spline basis function of order $l=0, 1, 2, 3$ for equidistant (left) and non-equidistant (right) knots.}
 	\label{fig:spline-types-both}
 \end{figure}
@@ -857,62 +800,8 @@ A similar penalty term for tensor-product B-splines can be constructed using the
 The spatial alignment of the B-spline basis functions and the corresponding parameters of the two-dimensional tensor-product B-spline needs to be incorporated by the definition of the term \emph{adjacent parameters}. An example for these adjacent parameters, also called spatial neighborhood, is taken from \cite{fahrmeir2007regression} and given in~\pref{fig:tps-neighborhood}. Here, we choose the parameters left and right, i.e. $\beta_{j, r-1}$ and $\beta_{j, r+1}$, as well as above and below, i.e. $\beta_{j-1,r}$ and $\beta_{j+1, r}$, as spatial neighborhood for $\beta_{j,r}$. 
 
 \begin{figure}[H]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-			xlabel = "x1",
-			ylabel = "x",
-			axis lines = none,
-			ticks = none,
-			scatter/classes={%
-				e={mark=o},
-				f={mark=*, mark options={fill=black, scale=2}},
-				x={mark=x}}]
-			\addplot[scatter,only marks,%
-			scatter src=explicit symbolic]%
-			table[meta=label] {
-				x     y   label
-				0.    0   e 
-				0.2   0   e 
-				0.4   0   e 
-				0.6   0   e 
-				0.8   0   e 
-				
-				0.    0.2  e 
-				0.2   0.2  e 
-				0.4   0.2  f 
-				0.6   0.2  e 
-				0.8   0.2  e 
-				
-				0.    0.4  e 
-				0.2   0.4  f 
-				0.4   0.4  x 
-				0.6   0.4  f 
-				0.8   0.4  e 
-				
-				0.    0.6  e 
-				0.2   0.6  e 
-				0.4   0.6  f 
-				0.6   0.6  e 
-				0.8   0.6  e 
-				
-				0.    0.8  e 
-				0.2   0.8  e 
-				0.4   0.8  e  
-				0.6   0.8  e 
-				0.8   0.8  e 
-			};
-			
-			% absolute in pgfplots coordinates
-			\node[] at (axis cs: .055,.755) {$\beta_{1,1}$};
-			\node[] at (axis cs: .45,.35) {$\beta_{j,r}$};
-			\node[] at (axis cs: .475,.15) {$\beta_{j+1,r}$};
-			\node[] at (axis cs: .475,.55) {$\beta_{j-1,r}$};
-			\node[] at (axis cs: .275,.35) {$\beta_{j,r-1}$};
-			\node[] at (axis cs: .675,.35) {$\beta_{j,r+1}$};	
-			\node[] at (axis cs: .845, -0.05) {$\beta_{5,5}$};
-		\end{axis}
-	\end{tikzpicture}
+	\centering	
+	\includegraphics{graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf}
 	\caption{Spatial neighborhood or adjacent parameters for a tensor-product B-spline.}
 	\label{fig:tps-neighborhood}
 \end{figure}

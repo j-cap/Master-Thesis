@@ -1,0 +1,38 @@
+
+
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16} 
+\usetikzlibrary{spy}
+\usepgfplotslibrary{groupplots}
+\usepackage{pgfplotstable}
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+
+\begin{document}
+%
+\begin{tikzpicture}
+	\pgfplotstableread{../../data/cha2/bvd.txt}{\data}
+	\begin{axis}[
+		xlabel=Model Complexity,
+		xmin=0, xmax=2.1, 
+		x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
+		ylabel=SPSE,
+		y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
+		ymin=0, ymax=40, 
+		axis lines = left,
+		ticks = none,
+		legend entries={$\text{Bias Error}^2$, Variance Error, Total Error, Optimal Model},
+		] 
+		\addplot [red, densely dashed] table [x=x, y=bias] {\data};		  		
+		\addplot [blue, dotted] table [x=x, y=variance] {\data};	
+		\addplot [black] table [x=x, y=both] {\data};	  
+		\draw (0.672, 8.9341) circle [gray, radius=2pt];
+		\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
+	\end{axis}
+\end{tikzpicture}
+%
+\end{document}

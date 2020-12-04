@@ -1,0 +1,57 @@
+
+
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{spy}
+\pgfplotsset{compat=1.16} 
+\usepgfplotslibrary{groupplots}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+
+%\usepackage{graphicx}
+
+\begin{document}
+%
+	\begin{tikzpicture}
+	\pgfplotstableread{../../data/cha2/spline-types-equidistant.txt}{\equidistant}
+	\pgfplotstableread{../../data/cha2/spline-types-quantile.txt}{\quantile}
+	\begin{groupplot}[
+		group style = {group size = 2 by 1},
+		width=0.5\columnwidth,
+		]
+		\nextgroupplot[
+		xmin=0.05, xmax=0.55, 
+		xticklabels={$\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$},			
+		xtick={0.1, 0.2, 0.3, 0.4, 0.5},
+		xtick align=outside,
+		xtick pos = bottom,
+		ytick pos = left,
+		ytick align=outside,
+		ymin=-0.05, ymax=1.05, 
+		legend entries={{$B_1^0$}, {$B_2^1$}, {$B_3^2$}, {$B_4^3$}},
+		] 
+		\addplot [black, dashed] table [x=x, y= B0] {\equidistant};		  		
+		\addplot [violet, densely dotted] table [x=x, y=B1]{\equidistant};	
+		\addplot [blue, dotted] table [x=x, y=B2]{\equidistant};
+		\addplot [red, densely dashed] table [x=x, y=B3]{\equidistant};	  			
+		\nextgroupplot[
+		xmin=0.05, xmax=0.55, 
+		xticklabels={$\kappa_1$, $\kappa_2$, $\kappa_3$, $\kappa_4$, $\kappa_5$},			
+		xtick={0.1, 0.2, 0.38, 0.46, 0.52 },
+		xtick align=outside,
+		xtick pos = bottom,
+		ytick pos = left,
+		ytick align=outside,
+		ymin=-0.05, ymax=1.05, 
+		legend entries={{$B_1^0$}, {$B_2^1$}, {$B_3^2$}, {$B_4^3$}},
+		] 
+		\addplot [black, dashed] table [x=x, y= B0] {\quantile};		  		
+		\addplot [violet, densely dotted] table [x=x, y=B1]{\quantile};	
+		\addplot [blue, dotted] table [x=x, y=B2]{\quantile};
+		\addplot [red, densely dashed] table [x=x, y=B3]{\quantile};	  	
+	\end{groupplot}
+\end{tikzpicture}
+%
+\end{document}

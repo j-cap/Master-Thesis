@@ -1,10 +1,20 @@
+
+
+
+
+
+
+
+
+
+
 \documentclass[10pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-%\usepackage{graphicx}
+\usepackage{graphicx}
 \usepackage{enumerate}   
 \usepackage{caption}
 \usepackage{float}
@@ -14,7 +24,6 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=1.16} 
-\usepackage{pgfplotstable}
 \usepackage{array} 
 \usepackage{booktabs}	% for horizontal lines
 \usepackage{varwidth}% http://ctan.org/pkg/varwidth
@@ -28,6 +37,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\input{../AIT_report_macros}
+
 % new command for another subsection
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 \setcounter{secnumdepth}{4}
@@ -36,39 +47,39 @@
 \title{Chapter 2}
 \author{Weber Jakob}
 
-\usetikzlibrary{spy}
-
 \begin{document}
 
-\begin{figure}
-	\centering
-	\includegraphics{graphics/pgfplots/cha4/exp-peak.pdf}
-	\caption{external image}
-\end{figure}
+asdasd 
+
 
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
-		\pgfplotstableread{thesisplots/figs/bvd.txt}{\data}
+		\pgfplotstableread{thesisplots/figs/cha_3/f1_test_set.txt}{\f1_test}
+		\pgfplotstableread{thesisplots/figs/cha_3/f1_train_set.txt}{\f1_train}
+		\pgfplotstableread{thesisplots/figs/cha_3/f1_true.txt}{\f1_true}
 		\begin{axis}[
-			xlabel=Model Complexity,
-			xmin=0, xmax=2.1, 
-			x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
-			ylabel=SPSE,
-			y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
-			ymin=0, ymax=40, 
+			xlabel=x,
+			xmin=0, xmax=1, 
+			%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
+			ylabel=y,
+			%y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
+			ymin=0, ymax=12, 
 			axis lines = left,
 			ticks = none,
-			legend entries={$\text{Bias Error}^2$, Variance Error, Total Error, Optimal Model},
+			legend entries={Training data, Test data, True function},
 			] 
-			\addplot [red, densely dashed] table [x=x, y=bias] {\data};		  		
-			\addplot [blue, dotted] table [x=x, y=variance] {\data};	
-			\addplot [black] table [x=x, y=both] {\data};	  
-			\draw (0.672, 8.9341) circle [gray, radius=2pt];
-			\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
+			\addplot [only marks, red] table [x=x, y=y] {\f1_test};		  		
+			\addplot [only marks, bluetable [x=x, y=y{\f1_train};	
+			\addplot [black] table [x=x, y=y] {\f1_true};	  
 		\end{axis}	
 	\end{tikzpicture}
 	\caption{Bias-variance trade-off.}
 	\label{fig:bv-trade-off}
 \end{figure}
+
+To test the algorithm and the incorporation of a priori knowledge, we use the one dimensional function given by 
+
+
+
 \end{document}
