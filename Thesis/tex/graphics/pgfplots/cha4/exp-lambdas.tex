@@ -1,0 +1,49 @@
+
+
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{spy}
+\pgfplotsset{compat=1.16} 
+
+\begin{document}
+%
+\begin{tikzpicture}[spy using outlines=
+	{rectangle, magnification=3, connect spies}]
+	\pgfplotstableread{../../data/cha4/lambdas/data.txt}{\exp}	
+	\begin{axis}[
+		width=0.8\textwidth,
+		height=0.6\textwidth,
+		xlabel=x,
+		xmin=0.1, xmax=0.8, 
+		%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
+		ylabel=y,
+		y label style={at={(axis description cs:-0.15, 0.5)}, rotate=-90}, 
+		ymin=0, ymax=.1,
+		grid=both,
+		grid style={line width=.1pt, draw=gray!10},
+		major grid style={line width=.2pt,draw=gray!50}, 
+		axis lines = left,
+		legend entries={$\lambda_c=0$, $\lambda_c=1$, $\lambda_c=10$, 
+						$\lambda_c=100$, $\lambda_c=1000$, $\lambda_c=10000$, $D_v$},
+		] 			
+		\addplot[blue, line width=0.8pt] table [x=xplot, y=c0] {\exp};
+		\addplot[red, line width=0.4pt] table [x=xplot, y=c1] {\exp};
+		\addplot[gray, line width=0.8pt] table [x=xplot, y=c10] {\exp};
+		\addplot[yellow, line width=0.8pt] table [x=xplot, y=c100] {\exp};
+		\addplot[orange, line width=1pt] table [x=xplot, y=c1000] {\exp};
+		\addplot[green, line width=0.5pt] table [x=xplot, y=c10000] {\exp};
+		
+		\addplot[only marks, mark=x, 
+		draw opacity=0.3] table [x=xplot, y=yplot] {\exp};
+		
+		%\coordinate (spypoint) at (axis cs:0.6,0.05);
+		%\coordinate (magnifyglass) at (axis cs:0.65,0.05);
+	\end{axis}
+	
+	%\spy [black, width=4cm, height=1.4cm] on (spypoint) in node[fill=white] at (magnifyglass);		
+\end{tikzpicture}
+
+%
+\end{document}

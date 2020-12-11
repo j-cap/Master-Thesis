@@ -110,7 +110,7 @@ The row-wise Kronecker product is also known as \emph{face-splitting product} or
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Appendix B} \label{apx:AppendixB}
 
-The following proof is take from~\cite{bollaerts2006simple}. To find an optimal solution for the penalized least squares objective function for shape-constraint P-splines given by
+The following derivation is take from~\cite{bollaerts2006simple}. To find an optimal solution for the penalized least squares objective function for shape-constraint P-splines given by
 
 \begin{align} \label{eq:L}
 	\text{L}(\vec{\beta}) = \lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2 + \lambda \transpose{\vec{\beta}} \vec{K} \vec{\beta} + \lambda_c \transpose{\vec{\beta}} \vec{K}_c \vec{\beta},
@@ -144,22 +144,22 @@ The last part can be neglected again, see \cite{bollaerts2006simple}. Substituti
 
 \begin{align}
 	\begin{split}
-	0 &= -2\transpose{\vec{X}} \vec{y}  \right. \\ 
-	  &+ \left. 2\Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c\Big] \vec{\beta}_i \right. \\ 
-	  &+ \left. 2\Big[\transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c \Big] \big( \vec{\beta}_{i+1} - \vec{\beta}_i \big),
+	0 ={}& -2\transpose{\vec{X}} \vec{y} \\ 
+	   {}&+ 2\Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}_i) \vec{D}_c\Big] \vec{\beta}_i \\ 
+	   {}&+ 2\Big[\transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}_i) \vec{D}_c \Big] \big( \vec{\beta}_{i+1} - \vec{\beta}_i \big),
 	\end{split}
 \end{align}
 %
 which can be reformulated as
 
 \begin{align}
-	-\transpose{\vec{X}} \vec{y} + \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c \Big] \vec{\beta}_{i+1} = 0,
+	-\transpose{\vec{X}} \vec{y} + \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}_i) \vec{D}_c \Big] \vec{\beta}_{i+1} = 0,
 \end{align}
 %
 and, hence, we obtain
 
 \begin{align}
-	\vec{\beta}_{i+1} = \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}^i_c(\vec{\beta}) \vec{D}_c \Big]^{-1} \transpose{\vec{X}} \vec{y}.
+	\vec{\beta}_{i+1} = \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}_i) \vec{D}_c \Big]^{-1} \transpose{\vec{X}} \vec{y}.
 \end{align}
 
 

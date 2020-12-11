@@ -13,8 +13,8 @@
 	{rectangle, magnification=3, connect spies}]
 	\pgfplotstableread{../../data/cha4/peak_example/data.txt}{\exp}	
 	\begin{axis}[
-		width=0.8\textwidth,
-		height=0.6\textwidth,
+		width=1\textwidth,
+		height=0.8\textwidth,
 		xlabel=x,
 		xmin=0.1, xmax=0.8, 
 		%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
@@ -25,19 +25,20 @@
 		grid style={line width=.1pt, draw=gray!10},
 		major grid style={line width=.2pt,draw=gray!50}, 
 		axis lines = left,
-		legend entries={B-spline, P-spline, SCP-spline, $D_v$},
+		legend entries={B-spline, P-spline, SCP-spline, $D$},
 		] 			
-		\addplot[black, line width=0.5pt] table [x=xplot, y=Bspline_fit] {\exp};		  		
-		\addplot[green, line width=1.0pt] table [x=xplot, y=Pspline_fit] {\exp};		  		
-		\addplot[orange, line width=0.8pt] table [x=xplot, y=SCP_spline_fit] {\exp};
+		\addplot[black, line width=0.4pt] table [x=xplot, y=Bspline_fit] {\exp};		  		
+		\addplot[green, line width=0.8pt] table [x=xplot, y=Pspline_fit] {\exp};		  		
+		\addplot[red, line width=0.8pt] table [x=xplot, y=SCP_spline_fit] {\exp};
+		%\addplot[blue, line width=0.8pt] table [x=xplot, y=ytrue] {\exp};
 		\addplot[only marks, mark=x, 
-		draw opacity=0.3] table [x=xplot, y=yplot] {\exp};
+		draw opacity=0.9] table [x=xplot, y=yplot] {\exp};
 		
 		\coordinate (spypoint) at (axis cs:0.6,0.05);
 		\coordinate (magnifyglass) at (axis cs:0.65,0.795);
 	\end{axis}
 	
-	\spy [black, width=4cm, height=1.4cm] on (spypoint) in node[fill=white] at (magnifyglass);		
+	\spy [black, width=5cm, height=1.6cm] on (spypoint) in node[fill=white] at (magnifyglass);		
 \end{tikzpicture}
 
 %
