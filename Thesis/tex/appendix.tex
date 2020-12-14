@@ -59,10 +59,10 @@ Given the $n \times p$-matrix$\vec{A}$ and the $n \times q$-matrix $\vec{B}$, th
 				a_{11} \vec{B}_1 & \dots & a_{1p} \vec{B}_1 \\
 				\vdots 	   &         &  \vdots \\
 				a_{n1} \vec{B}_n & \dots  & a_{np} \vec{B}_n     
-			\end{bmatrix}. 
+			\end{bmatrix},
 \end{align}
 %
-As example, we define $\vec{A} \in \mathbb{R}^{3 \times 3}$ and $\vec{B} \in \mathbb{R}^{3 \times 2}$ as
+where $\vec{B_i}$ denotes the $i$-th row of the matrix $\vec{B}$. As example, we define $\vec{A} \in \mathbb{R}^{3 \times 3}$ and $\vec{B} \in \mathbb{R}^{3 \times 2}$ as
 
 \begin{align}
 	\vec{A} = 
@@ -94,9 +94,9 @@ resulting in the matrix $\vec{C} \in \mathbb{R}^{3 \times 6}$ given by
 \begin{align}
 		\vec{C} = 
 	\begin{bmatrix}
-		\vec{A_1} \otimes \vec{B_1} \\
-		\vec{A_2} \otimes \vec{B_2} \\
-		\vec{A_3} \otimes \vec{B_3} 
+		\vec{A}_1 \otimes \vec{B}_1 \\
+		\vec{A}_2 \otimes \vec{B}_2 \\
+		\vec{A}_3 \otimes \vec{B}_3 
 	\end{bmatrix} = 
 	\begin{bmatrix}
 		1 & 2 & 2 & 4 & 3 & 6 \\

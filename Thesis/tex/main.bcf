@@ -2193,8 +2193,8 @@
     <bcf:citekey order="7">nelles2013nonlinear</bcf:citekey>
     <bcf:citekey order="8">friedman2001elements</bcf:citekey>
     <bcf:citekey order="9">friedman1991multivariate</bcf:citekey>
-    <bcf:citekey order="10">friedman1991multivariate</bcf:citekey>
-    <bcf:citekey order="11">friedman2001elements</bcf:citekey>
+    <bcf:citekey order="10">friedman2001elements</bcf:citekey>
+    <bcf:citekey order="11">friedman1991multivariate</bcf:citekey>
     <bcf:citekey order="12">deBoor1978practicalGuideToSplines</bcf:citekey>
     <bcf:citekey order="13">hofner2011monotonicity</bcf:citekey>
     <bcf:citekey order="14">bollaerts2006simple</bcf:citekey>
@@ -2245,22 +2245,23 @@
     <bcf:citekey order="59">fahrmeir2007regression</bcf:citekey>
     <bcf:citekey order="60">deBoor1978practicalGuideToSplines</bcf:citekey>
     <bcf:citekey order="61">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="62">deBoor1978practicalGuideToSplines</bcf:citekey>
-    <bcf:citekey order="63">fahrmeir2007regression</bcf:citekey>
+    <bcf:citekey order="62">fahrmeir2007regression</bcf:citekey>
+    <bcf:citekey order="63">deBoor1978practicalGuideToSplines</bcf:citekey>
     <bcf:citekey order="64">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="65">osullivan1986penalties</bcf:citekey>
-    <bcf:citekey order="66">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="67">eilers1996flexible</bcf:citekey>
+    <bcf:citekey order="65">fahrmeir2007regression</bcf:citekey>
+    <bcf:citekey order="66">osullivan1986penalties</bcf:citekey>
+    <bcf:citekey order="67">fahrmeir2007regression</bcf:citekey>
     <bcf:citekey order="68">eilers1996flexible</bcf:citekey>
     <bcf:citekey order="69">eilers1996flexible</bcf:citekey>
-    <bcf:citekey order="70">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="71">hofner2011monotonicity</bcf:citekey>
-    <bcf:citekey order="72">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="70">eilers1996flexible</bcf:citekey>
+    <bcf:citekey order="71">fahrmeir2007regression</bcf:citekey>
+    <bcf:citekey order="72">hofner2011monotonicity</bcf:citekey>
     <bcf:citekey order="73">bollaerts2006simple</bcf:citekey>
-    <bcf:citekey order="74">slyusar1997analytical</bcf:citekey>
-    <bcf:citekey order="75">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="74">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="75">slyusar1997analytical</bcf:citekey>
     <bcf:citekey order="76">bollaerts2006simple</bcf:citekey>
     <bcf:citekey order="77">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="78">bollaerts2006simple</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

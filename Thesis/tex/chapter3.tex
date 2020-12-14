@@ -37,11 +37,11 @@ The focus of this chapter is the definition of shape-constraint P-splines, see S
 	\text{PLS}_{\text{SC}} (\vec{y}, \vec{\beta}_b; \lambda, \lambda_c) = \lVert \vec{y} - \vec{B} \vec{\beta}_b \rVert_2^2 + \lambda \cdot \text{pen}(\vec{\beta}_b) + \lambda_c \cdot \text{con}(\vec{\beta}_b),
 \end{align}
 %
-where $\text{pen}(\vec{\beta}_b)$ is the smoothness penalty term for P-splines, see Section~\ref{subsec:p-splines}, and $\text{con}(\vec{\beta}_b)$ specifies the user-defined shape-constraint penalty term to incorporate a priori domain knowledge, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}. We extend the concept proposed in literature of shape-constraint P-splines to two dimensions and discuss shape-constraint tensor-product P-splines, see Section~\ref{sec:SCP-tp-splines}.
+where $\text{pen}(\vec{\beta}_b)$ is the smoothness penalty term for P-splines, see Section~\ref{subsec:p-splines}, and $\text{con}(\vec{\beta}_b)$ specifies the user-defined shape-constraint penalty term to incorporate a priori domain knowledge, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}. We further extend the concept proposed in literature of shape-constraint P-splines to two dimensions and discuss shape-constraint tensor-product P-splines, see Section~\ref{sec:SCP-tp-splines}.
 
 \section{Shape-constraint P-splines} \label{sec:SCP-splines}
 
-In Section~\ref{subsec:p-splines}, we enforce smoothness by penalizing the second-order derivative of the underlying B-spline using finite differences of adjacent parameters $\vec{\beta}$ over the whole input space to create the so-called P-splines. We will now utilize the same idea to create the shape-constrained penalty term $\text{con}(\vec{\beta})$ in~\pref{eq:OF-SCP-splines}. We motivate the approach using the example of monotonic increasing behavior. The descriptions for the other constraints listed in~\pref{tab:constraint_overview} follow afterwards. In the following discussion, we use $d$ B-spline basis functions of order $l$ and the data set $\mathcal{D} = \{(x^{(i)}, y^{(i)}), \ i=1,2,\dots,n\}$ resulting in the B-spline basis matrix $\vec{X} \in \mathbb{R}^{n \times d}$. 
+In Section~\ref{subsec:p-splines}, we enforce smoothness by penalizing the second-order derivative of the underlying B-spline using finite differences of adjacent parameters over the whole input space to create the so-called P-splines. We will now utilize the same idea to create the shape-constrained penalty term $\text{con}(\vec{\beta}_b)$ in~\pref{eq:OF-SCP-splines}. We motivate the approach using the example of monotonic increasing behavior. The descriptions for the other constraints listed in~\pref{tab:constraint_overview} follow afterwards. In the following discussion, we use $d$ B-spline basis functions of order $l$ and the data set $\mathcal{D} = \{(x^{(i)}, y^{(i)}), \ i=1,2,\dots,n\}$ resulting in the B-spline basis matrix $\vec{X} \in \mathbb{R}^{n \times d}$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Monotonic increasing constraint} \label{subsec:MIC}
@@ -279,7 +279,7 @@ to penalize negative first-order partial derivatives of the estimated function. 
 	\lambda_c \cdot \text{con}(\vec{\beta}_t) = \lambda_c \transpose{\vec{\beta}}_t \vec{K}_c \vec{\beta}_t,
 \end{align}
 %
-with the shape-constraint penalty matrix $\vec{K}_c = \transpose{\vec{D}}_c \vec{V}_c \vec{D}_c \in \mathbb{R}^{d_1d_2 \times d_1d_2}$. The first-order derivative is approximated by the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, and by using the Kronecker product as
+with the shape-constraint penalty matrix $\vec{K}_c = \transpose{\vec{D}}_c \vec{V}_c \vec{D}_c \in \mathbb{R}^{d_1d_2 \times d_1d_2}$. The first-order derivative is approximated by the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, and by using the Kronecker product, cf.~\pref{apx:AppendixA}, as
 
 \begin{align} \label{eq:mapping-matrix-sc-tp-increasing}
 	\vec{D}_c \vec{\beta}_t = \big( \vec{I}_{d_2} \otimes \vec{D}_{1}\big) \vec{\beta}_t,

@@ -6,7 +6,7 @@ This chapter summarizes the fundamentals of regression. Excellent overviews can 
 \section{Linear Models} \label{sec:LinModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Given the data set $\mathcal{D} = \left\{ (x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\right\}$ comprising of $n$ data points, we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a deterministic function $f(x_1, \dots, x_q)$. Since we cannot assume that the relationship between the inputs and the output is exact, we will include a random part $\epsilon$, which is used to model e.g. measurement errors. It is typically assumed that this part is additive and thus  
+Given the data set $\mathcal{D} = \{(x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\}$ comprising of $n$ data points, we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a deterministic function $f(x_1, \dots, x_q)$. Since we cannot assume that the relationship between the inputs and the output is exact, we will include a random part $\epsilon$, which is used to model e.g. measurement errors. It is typically assumed that this part is additive and thus  
 
 \begin{align} \label{eq:model-structure}
 	y = f(x_{1}, \dots, x_{q}) + \epsilon.
@@ -121,7 +121,7 @@ The first-order necessary condition for optimality, cf. \cite{luenberger1984line
 The second-order condition for optimality requires the Hessian, i.e. 
 
 \begin{align} \label{eq:LS_2nd_derivative}
-	\frac{\partial^2 \text{LS}(\vec{y}, \vec{\beta})}{\partial \vec{\beta} \partial \transpose{\vec{\beta}}} = 2\transpose{\vec{X}}\vec{X} > 0,
+	\frac{\partial^2 \text{LS}(\vec{y}, \vec{\beta})}{\partial \vec{\beta} \partial \transpose{\vec{\beta}}} = 2\transpose{\vec{X}}\vec{X},
 \end{align}
 to be positive-definite. Since the design matrix $\vec{X} \in \mathbb{R}^{n \times p}$ is assumed to have full rank, the matrix $ \transpose{\vec{X}}\vec{X}$ is positive-definite. The least squares estimate $\hat{\vec{\beta}}_{LS}$ is hence obtained, see~\pref{eq:LS_1st_derivative}, by solving the so-called \emph{normal equations}
 
@@ -225,7 +225,7 @@ The hat matrix $\vec{H}$ is used in model selection techniques like cross-valida
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model Selection} \label{sec:ModelSelection}
 
-Linear models are widely exploit for regression problems on large data sets $(n \gg 0)$, because the solution of the \emph{normal equations}~\pref{eq:NormalEquations} can be computed efficiently even for large $n$. If these data sets also contain a large number of input variables $(q \gg 0)$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. These interaction terms limit the, otherwise perfect, interpretability of the linear model. 
+Linear models are widely exploit for regression problems on large data sets $(n \gg 0)$, because the solution of the \emph{normal equations}~\pref{eq:NormalEquations} can be computed efficiently even for large $n$. If these data sets also contain a large number of inputs $(q \gg 0)$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. These interaction terms limit the, otherwise perfect, interpretability of the linear model. 
 
 Therefore, we need techniques and criteria to select the \emph{best possible model} out of the variety of different models for a given data set. Model assessment criteria, see Section~\pref{subsec:MAC}, are used to compare different models while subset selection techniques, see Section~\pref{subsec:SSM}, give an algorithmic approach to model generation. Further, we can influence the estimated coefficients $\vec{\beta}$ directly via regularization, see Section~\pref{subsec:Regularization}. 
 
@@ -236,7 +236,7 @@ One way of comparing various models, i.e. models using different sets of inputs,
 
 \subsubsection{Sum of Expected Squared Prediction Error} \label{subsubsec:SPSE}
 
-Given independent observations $y_i, \ i=1,2, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, \\ x_q\}$, we want to measure the prediction quality. The specific models are defined
+Given independent observations $y^{(i)}, \ i=1,2, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, \\ x_q\}$, we want to measure the prediction quality. The specific models are defined
 by numbers $M \subset \{1, \dots, p\}$ of used inputs with corresponding design matrix $\vec{X}_M$. Moreover, $\vert M \vert$ is the cardinal number of $M$, i.e. the number of inputs included in the model. The least squares estimator for $\vec{\beta}$, cf.~\pref{eq:LS_estimator}, is then given by
 
 \begin{align*}
@@ -265,7 +265,7 @@ Moreover, it is easy to show that the following properties hold true using the h
 		\end{equation}
 \end{enumerate}
 
-Note that the estimator~\pref{eq:SPSE-estimator-y} can be regarded as a prediction of future observations of the form
+Note that the estimator~\pref{eq:SPSE-estimator-y} can be regarded as a prediction for future observations of the form
 
 \begin{align}
 	y^{(n+i)} = \mu^{(i)} + \epsilon^{(n+i)}
@@ -425,7 +425,6 @@ The numerical advantage comes from the fact that the trace of a product of matri
 	\text{trace}(\vec{H}_M) {}&= \text{trace}\left(\vec{X}_M(\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M\right) \\ {}&=\text{trace}\left(\transpose{\vec{X}}_M \vec{X}_M (\transpose{\vec{X}}_M \vec{X}_M)^{-1}\right) = \vert M \vert.
 \end{split}
 \end{align} 
-
 %
 The trace can therefore be computed from the product of two matrices of shape $\vert M \vert\times \vert M \vert$, see  \cite{fahrmeir2007regression}. Note that for a linear model as in~\pref{eq:LinearModel}, the trace of the hat matrix $\vec{H}$ is equal to the number of parameters $p$ of the linear model. For regularized or non-parametric models, the trace of the hat matrix $\vec{H}$ is smaller than $p$, where $p$ is the number of parameters of the regularized or non-parametric model. Therefore, the trace of the hat matrix $\vec{H}$ is also known as \emph{effective degree of freedom} $p_{eff}$ of the model, see Section~\ref{subsec:Regularization}. 
 
@@ -635,7 +634,7 @@ using the B-spline basis functions $B_j^l(x)$ of appropriate order $l$ and the p
 	\end{bmatrix} \in \mathbb{R}^{n \times d}.
 \end{align}
 %
-The $n$ equations~\pref{eq:bspline-bf-approach} can then be arranged as a linear model in the form, cf.~\ref{eq:LinearModel},
+The $n$ equations~\pref{eq:bspline-bf-approach} can then be arranged as a linear model in the form, cf.~\pref{eq:LinearModel},
 
 \begin{align} \label{eq:Bspline-linModel}
 	\vec{y} = \vec{B} \vec{\beta}_b + \vec{\epsilon}.
@@ -644,7 +643,7 @@ The $n$ equations~\pref{eq:bspline-bf-approach} can then be arranged as a linear
 Once the basis matrix in~\pref{eq:bspline-basis-matrix} is given, the parameters $\vec{\beta}_b$ can be estimated using the Least Squares algorithm given in Section~\pref{subsubsec:Method-of-LS} by minimizing the objective function
 
 \begin{align} \label{eq:Bspline-OF}
-	\text{LS}(\vec{y}) = \lVert \vec{y} - \vec{B} \vec{\beta}_b \rVert_2^2.	
+	\text{LS}(\vec{y}, \vec{\beta}_b) = \lVert \vec{y} - \vec{B} \vec{\beta}_b \rVert_2^2.	
 \end{align}
 %
 Therefore, the estimation is computationally efficient and easy to implement since closed-form solutions exists. Further, the advanced theoretical framework of linear models can be applied to use model selection and regularization approaches as well as to calculate e.g. confidence intervals for the parameters and the prediction.
@@ -652,9 +651,10 @@ Therefore, the estimation is computationally efficient and easy to implement sin
 The derivative of the function $f(x)$ in~\pref{eq:bspline-bf-approach} can be calculated by summing over all $d$ B-spline basis functions and including the estimated parameters $\vec{\beta}_b$ into the B-spline basis function derivative~\pref{eq:Bspline-bf-derivative} as
 
 \begin{align} \label{eq:Bspline-derivative}
-	\frac{\partial{f(x)}}{\partial x}= \frac{\partial}{\partial x} \sum_{j=1}^d B_j^l(x) \beta_j = l \sum_{j=2}^d \frac{\Delta \beta_j}{\kappa_j - \kappa_{j-l}} B_{j-1}^{l-1}(x).
+	\frac{\partial{f(x)}}{\partial x}= \frac{\partial}{\partial x} \sum_{j}^d B_j^l(x) \beta_j = l \sum_{j}^d \frac{\beta_j - \beta_{j-1}}{\kappa_j - \kappa_{j-l}} B_{j-1}^{l-1}(x).
 \end{align}
 %
+\begin{comment}
 The second-order derivative of $f(x)$ can be given as
 
 \begin{align} \label{eq:Bspline-2nd-derivative}
@@ -665,7 +665,10 @@ The second-order derivative of $f(x)$ can be given as
 	\frac{\partial^2 {f(x)}}{\partial{x^2}}= \frac{\partial^2}{\partial{x^2}} \sum_{j=1}^d B_j^l(x) \beta_j = l^2 \sum_{j=3}^d \left[\frac{\Delta \beta_j}{(\kappa_j-\kappa_{j-l})} - \frac{\Delta \beta_{j-1}}{(\kappa_{j+1} - \kappa_{j+1-l})} \right] B_{j-2}^{l-2}(x).
 \end{align}
 %
-Here, the finite difference operators $\Delta \beta_j = \beta_j - \beta_{j-1}$ and $\Delta^2  \beta_j = \Delta(\Delta \beta_j) = \beta_j - 2\beta_{j-1} +\beta_{j-2}$ are used. Therefore, by estimating the B-spline parameters $\vec{\beta}_b$, we also generate an estimate for the derivatives of the function $f(x)$. 
+
+Here, the finite difference operators $\Delta \beta_j = \beta_j - \beta_{j-1}$ and $\Delta^2  \beta_j = \Delta(\Delta \beta_j) = \beta_j - 2\beta_{j-1} +\beta_{j-2}$ are used. 
+\end{comment}
+Therefore, by estimating the B-spline parameters $\vec{\beta}_b$, we also generate an estimate for the derivative of the function $f(x)$, see \cite{fahrmeir2007regression}.
 
 B-splines of appropriate order $l > 2$ produce smooths curves, i.e. first- and second-order derivatives are continuous, where the smoothness is mostly determined by the number of basis functions $d$ used. By using a low number $d$, the curve will be quite smooth, but possess a large data error. When using a high number of basis functions $d$, the data error will be small but the variance of the curve will be large. This is an example of the bias-variance trade-off, a classical problem of regression and supervised learning, see Section~\pref{subsubsec:SPSE} and \cite{deBoor1978practicalGuideToSplines}.  
 
@@ -724,7 +727,7 @@ We can now model a two dimensional function using the data set $\mathcal{D}$ in~
 with the tensor-product B-spline basis matrix $\vec{T} \in \mathbb{R}^{n \times d_1 d_2}$ according to~\pref{eq:tp-bspline-basis-matrix} and the parameter vector $\transpose{\vec{\beta}}_t \in \mathbb{R}^{1 \times d_1 d_2}$. Once the basis matrix in~\pref{eq:tp-bspline-basis-matrix} is given, the parameters $\vec{\beta}_t$ can be estimated using the Least Squares algorithm given in Section~\pref{subsubsec:Method-of-LS} by minimizing the objective function 
 
 \begin{align}
-	\text{LS}(\vec{y}) = \lVert \vec{y} - \vec{T} \vec{\beta}_t \rVert_2^2.
+	\text{LS}(\vec{y}, \vec{\beta}_t) = \lVert \vec{y} - \vec{T} \vec{\beta}_t \rVert_2^2.
 \end{align}
 %
 This approach can in theory be repeated for as many input dimensions as required. In practice, modeling more than two input dimensions using tensor-product B-splines becomes infeasible because of the exponential increase of basis functions and therefore parameters to estimate. 
@@ -738,7 +741,7 @@ To circumvent the latter problem, we now assume the restrictive structure of add
 	f(x_1, \dots, x_q) = f_1(x_1) + \dots + f_q(x_q).
 \end{align}
 %
-Hence, we use one function $f_i(x_i)$ per input dimension $x_i$. For some given data set $\mathcal{D} = \{ (x^{(ii)}_{1}, \dots, x^{(ii)}_{q}, y^{(ii)} ), \ ii=1,2, \dots, n\}$, by using a B-spline $s_i(x_i)$ for each function $f_i(x_i)$ we obtain a linear model
+Hence, we use one function $f_i(x_i)$ per input dimension $x_i$. For some given data set $\mathcal{D} = \{ (x^{(ii)}_{1}, \dots, x^{(ii)}_{q}, y^{(ii)} ), \ ii=1,2, \dots, n\}$, by using a B-spline for each function $f_i(x_i)$ we obtain a linear model
 
 \begin{align} \label{eq:addRegBaseEquation-as-linModel}
 	f_i(\vec{x}_i) = \vec{B}_i \vec{\beta}_{b_i},
@@ -826,7 +829,7 @@ using the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times d}$ for some d
 	\end{split}
 \end{align}
 % 
-with the penalty matrix $\vec{K}[j,r] = \int B''_j(x) B''_r(x) \,\mathrm{d}x$ as a matrix of dimension $\mathbb{R}^{d \times d}$. The entries of $\vec{K}$ are given by the integrated products of the second-order derivatives of the B-spline basis functions $B_j(x)$ and $B_r(x)$. For readability, the order $l$ is omitted. These second-order derivatives can be obtained by using the derivative properties of B-spline basis functions given in~\pref{eq:Bspline-2nd-derivative}, see \cite{fahrmeir2007regression}. 
+with the penalty matrix $\vec{K}[j,r] = \int B''_j(x) B''_r(x) \,\mathrm{d}x$ as a matrix of dimension $\mathbb{R}^{d \times d}$. The entries of $\vec{K}$ are given by the integrated products of the second-order derivatives of the B-spline basis functions $B_j(x)$ and $B_r(x)$. For readability, the order $l$ is omitted. These second-order derivatives can be obtained by using the derivative properties of B-spline basis functions, see \cite{fahrmeir2007regression}. 
 
 Eilers and Marx proposed in \cite{eilers1996flexible} to base the penalty on finite differences of higher order of the parameters of adjacent B-spline basis functions which circumvents the direct calculation of the second-order derivative and the integral. Hence, the complexity is reduced from $n$, the number of data points to evaluate the integral on, to $d$, the number of parameters \cite{eilers1996flexible}. The squared second-order finite difference gives a good discrete approximation of the integral of the squared second-order derivative in~\pref{eq:wiggliness-penalty}, i.e.
 
