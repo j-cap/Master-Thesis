@@ -36,7 +36,7 @@
 \title{Chapter 2}
 \author{Weber Jakob}
 
-\usetikzlibrary{spy}
+
 
 \begin{document}
 
@@ -45,15 +45,31 @@
 		\pgfplotstabletypeset[
 		col sep=comma,
 		columns/Model/.style={string type},
-		columns/MSEVal/.style={column name={$\text{MSE}_{D_v}$}},
-		columns/MSEValTrueFunction/.style={column name={$\text{MSE}_{D_{v,true}}$}},
+		columns/MSEVal/.style={column name={$\text{MSE}_{\mathcal{D}_v}$}},
+		columns/MSEValTrueFunction/.style={column name={$\text{MSE}_{\mathcal{D}_{v,true}}$}},
 		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
 		every last row/.style={after row=\bottomrule \bottomrule},
 		every nth row={1}{before row=\midrule},
 		]{graphics/data/cha4/sparse_example/mse-e.csv}
 	\end{center}
-	\caption{Mean squared errors on the validation set.}
-	\label{tab:test-func-peak-mses}
+	\caption{Mean squared errors on the validation set $\mathcal{D}_v$ for equidistant knot placement.}
+	\label{tab:sparse-example-equidistant}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+		\pgfplotstabletypeset[
+		col sep=comma,
+		columns/model/.style={string type},
+		columns/MSE_val/.style={column name={$\text{MSE}_{\text{val}}$}},
+		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
+		every last row/.style={after row=\bottomrule \bottomrule},
+		every nth row={1}{before row=\midrule},
+		]{graphics/data/cha5/mses.csv}
+	\end{center}
+	\caption{Mean squared errors on the validation set $\mathcal{D}_v$ for equidistant knot placement.}
+	\label{tab:sparse-example-equidistantas}
 \end{table}
 
 \end{document}
