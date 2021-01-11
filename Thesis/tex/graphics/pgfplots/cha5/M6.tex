@@ -24,17 +24,14 @@
 		xtick={-1,1,...,11},
 		ytick={-100,100,...,900},
 		ztick={-1000,1000,...,7000},
-		xlabel={$l_1$},
-		ylabel={$l_2$},
-		zlabel={$l_3$},
-		xlabel={$\dot m$},
-		ylabel={$T$},
-		zlabel={$\alpha$},
-		z label style={rotate=-90},
+		xlabel={$\dot m[kg/s]$},
+		ylabel={$T[K]$},
+		zlabel={$\alpha[W/m^2K]$},
+		z label style={rotate=-90, at={(axis description cs:-0.05,0.55)}},
 		]
 		\addplot3+[opacity=0.5, mark=*, only marks] table [x=x1train, y=x2train, z=ytrain] {\data};
 		\addlegendentry{$\mathcal{D}_{\text{val}}$};
-		\addplot3+[opacity=0.5, mark=x, only marks] table [x=x1, y=x2, z=M6] {\fit};
+		\addplot3+[mark=x, only marks] table [x=x1, y=x2, z=M6] {\fit};
 		\addlegendentry{Predictions by M6};
 
 	\end{axis}

@@ -919,6 +919,60 @@
       \field{pages}{502\bibrangedash 518}
       \range{pages}{17}
     \endentry
+    \entry{mayinger2013stromung}{book}{}
+      \name{author}{1}{}{%
+        {{hash=befef6de89d0d174cb9e6840891226b1}{%
+           family={Mayinger},
+           familyi={M\bibinitperiod},
+           given={Franz},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{befef6de89d0d174cb9e6840891226b1}
+      \strng{fullhash}{befef6de89d0d174cb9e6840891226b1}
+      \strng{bibnamehash}{befef6de89d0d174cb9e6840891226b1}
+      \strng{authorbibnamehash}{befef6de89d0d174cb9e6840891226b1}
+      \strng{authornamehash}{befef6de89d0d174cb9e6840891226b1}
+      \strng{authorfullhash}{befef6de89d0d174cb9e6840891226b1}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Str{\"{o}}mung und W{\"{a}}rme{\"{u}}bergang in Gas-Fl{\"{u}}ssigkeits-Gemischen}
+      \field{year}{2013}
+    \endentry
+    \entry{baehr2006heatandmasstransfer}{book}{}
+      \name{author}{2}{}{%
+        {{hash=eaf204711c99ca9ab54641a727ae7200}{%
+           family={H.},
+           familyi={H\bibinitperiod},
+           given={Baehr},
+           giveni={B\bibinitperiod}}}%
+        {{hash=faafd1811aa9b270f70909a6b292125e}{%
+           family={K.},
+           familyi={K\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{302773dd83106f0675e121c4fe726ccb}
+      \strng{fullhash}{302773dd83106f0675e121c4fe726ccb}
+      \strng{bibnamehash}{302773dd83106f0675e121c4fe726ccb}
+      \strng{authorbibnamehash}{302773dd83106f0675e121c4fe726ccb}
+      \strng{authornamehash}{302773dd83106f0675e121c4fe726ccb}
+      \strng{authorfullhash}{302773dd83106f0675e121c4fe726ccb}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Heat and Mass Transfer}
+      \field{volume}{2.Auflage}
+      \field{year}{2006}
+    \endentry
     \entry{slyusar1997analytical}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=70b248f43fee869e274bd69d3ac03573}{%

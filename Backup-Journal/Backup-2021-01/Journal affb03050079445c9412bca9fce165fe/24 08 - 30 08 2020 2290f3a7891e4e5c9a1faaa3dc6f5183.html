@@ -1,0 +1,630 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>24.08. - 30.08.2020</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2290f3a7-891e-4e5c-9a1f-aaa3dc6f5183" class="page sans"><header><h1 class="page-title">24.08. - 30.08.2020</h1></header><div class="page-body"><p id="554b00c7-4557-440d-9d33-a71d6dd2e5bf" class=""><em>Week 4 of interstitial journaling.</em></p><h3 id="3fb2c406-9e7a-4890-aad2-d78af74927e6" class="">Mo, 24.08.2020</h3><p id="2ebe2b0b-0def-4e43-9353-20e5308d180a" class=""><strong>09:25: </strong>Since I finished the creation of the plot_diagnosticPlots() function, this day is fully dedicated to making the model 2D possible again. There are several things that need to be changed in order to do that.  So my first step is to look through the model and find places where I need to change code in order to get 2D-able again.</p><p id="1eacebcc-9766-4fd6-8eba-8c209799f96d" class="">Code needs to be changed at:<div class="indented"><ul id="3eda15ef-2cf3-4cb1-8c75-80d15abe30b9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">.create_basis(): smoothness penalty needs to be adapted in TPS</span></li></ul><ul id="62f91c6b-bb40-4bab-ac9d-c97068dd16a8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">.create_constraint_penalty_matrix(): </span><ul id="24a44c6a-6f8a-4b4f-b170-e37476a983fe" class="bulleted-list"><li>create the different penalty_matix instances in TPS<ul id="801db1a1-0392-4a2b-8683-b3b770de5b9f" class="bulleted-list"><li>⇒ AT FIRST, ONLY SMOOTHNESS AVAILABLE</li></ul></li></ul><ul id="50bd46b4-0a7c-4840-8dbf-ea74197445cb" class="bulleted-list"><li>adapt check_constraint() for TPS<ul id="d84c6554-9d75-495f-8468-a3bd9526854c" class="bulleted-list"><li>⇒ AT FIRST, ONLY SMOOTHNESS AVAILABLE</li></ul></li></ul></li></ul></div></p><p id="f592cf1e-b17e-46bd-b2db-509971c4bbf8" class=""><strong>11:31: </strong>Lunchtime. After lunch, I continue to work on the specified points above.</p><p id="ca8f542a-6189-4c60-a5a9-5a8241991c2a" class=""><strong>13:36: </strong>Further code needs to be changed at:<div class="indented"><ul id="bb4d6573-f18f-445d-88ef-f370baef96e8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">fit() and weighted_fit(): </span><ul id="d1e661e2-7297-4c3e-b333-8a2d8938981a" class="bulleted-list"><li>Check dimension</li></ul><ul id="cd52f1ea-a7c2-4f50-bdf5-f7e0dab0ae9d" class="bulleted-list"><li>Append weighted points to the dataset and create weight matrix</li></ul></li></ul><ul id="5ab9a2e1-64cf-4a53-b48e-15dbc155627d" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">.predict()</span></li></ul><ul id="ea16188d-1824-49e6-89e8-7ab3ef4acbe3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">.predict_single_point()</span></li></ul></div></p><p id="69975367-6ebb-4d15-b97b-08af1712c2a7" class=""><strong>17:09: </strong>predict and predict_single_point are now available for multi-dimensions. It is important that the X data is normalized. Otherwise, everything should work quite fine. I should think about <mark class="highlight-yellow">changing the structure of StarModel.smooths from a list to a dictionary</mark>, this could improve further work and probably increase readability.</p><p id="554f2d57-4dea-4456-8e1b-7e32943ae8d9" class="">Next in waiting is the extrapolation function, Here I dont think that much change is needed, but I should stay careful. </p><p id="3e9aa915-8c40-46fb-aafa-411e933d292e" class=""><strong>17:43: </strong>Extrapolation is more complicated that thought. We need to check for each dimension if it&#x27;s in the extrapolation area !!!</p><p id="4fd84b16-3c64-4fbe-860f-244b34a14e98" class="">Further code needs to be changed at:<div class="indented"><ul id="5ac07b00-192d-4e2f-92cb-4fefb2e99e01" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">.confidence_intervals():</span></li></ul><ul id="d4009b12-a2bd-498b-9c0c-01d19ee5cc36" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">.cross validation</span></li></ul></div></p><h3 id="43cf1f7d-bd07-4b42-bfb7-5fdd2e2e34ec" class="">Di, 25.08.2020</h3><p id="9f38bd0e-7780-4afb-9fde-0c477304802f" class=""><strong>11:20:</strong> I will now tackle the problem to constrain the tensorproductsplines. I will start with the increasing and decreasing constraint, which should in principle be stated in Fahrmeir, p. 508 and use the same technique as smoothness parameter. </p><p id="58256773-86d9-430c-81ee-63cc14f6af7a" class="">The steps to do include: <div class="indented"><ul id="dbbd4172-6f8d-4c5f-8a97-3538f7b7c6ff" class="bulleted-list"><li>include constraint in smooth.py</li></ul><ul id="920c35b1-cf2c-4ad0-8223-d79ec94b2522" class="bulleted-list"><li>use the kronecker product on the 2 penalty matrices to get the penalty matrix for the constraint TPS</li></ul></div></p><p id="f59868ae-ba3d-495a-8440-68cca8aca6dd" class=""><strong>13:59: </strong>Inc. constraint should now be possible. The constraint is easy using the method in Fahrmeir, but calculating the weight matrix is more difficult. I now used the following approach:<div class="indented"><ul id="7a90b820-931c-40df-ab55-d6d71d6ca397" class="bulleted-list"><li>reshape test_beta into the dimension of the tps</li></ul><ul id="ae20649d-ee5b-43d9-8d6e-e0da083265ca" class="bulleted-list"><li>check each row and column for increasing constraint, respectively and generate 2 matrices V1 and V2 with 0 where constraint is hold and 1 where it is violated.</li></ul><ul id="7a9ea15d-25a6-47da-80e6-a653388163ed" class="bulleted-list"><li>use a logical or on both matrices to generate the resulting weight matrix diagonal. </li></ul></div></p><p id="ec29fe87-7e67-41b6-9046-6075015ab3b9" class=""><strong>18:30: </strong>After the talk with Stephan and Tobias, the next points to do are to produce &quot;production ready&quot; plots for further discussion of the 2D options for the algorithm using real data.</p><h3 id="91f18170-abbb-4e82-8464-6dd4602ab315" class="">Mi,</h3><p id="c65b9cca-5020-4728-b6ab-372e3e3914f9" class=""><em>Nothing</em></p><h3 id="754ec3bf-1850-4ddc-9e96-ef8292f144aa" class="">Do,</h3><p id="359e1735-2dab-49fc-8d8e-253df18b7879" class=""><strong>09:05: </strong>Stared doing something again. I will now try to clean the code and make it run again. Therefore, I need to fix all the little errors. First, I will repair the .predict function, to be able to switch between single dimension and multi-dimension inputs. </p><p id="e12fa8ba-b28a-4b49-90d2-ecb5f7f161b5" class=""><strong>10:00: </strong>The problem in the .predict functions was that the check if the point x is outside of [0,1] was incorrect. This is now fixed for 1D. Lets try it for 2D.</p><p id="aed16b94-e97f-4b6c-a703-56c0db211031" class=""><strong>10:10: </strong> Extrapolation to zero is now available, for 1D, 2D and 2D with tps. </p><p id="8b5f4a3b-e206-42d6-a236-ff118a9e0435" class=""><strong>11:13: </strong>Next, I will change the use of a list as basic data type for the starmodel to a dict. Then, all multi-dim things should work a lot easier since I can specify the smooth type as key. </p><p id="dde8a9bb-662f-4aa8-b527-4d29ae272a5b" class=""><strong>14:53: </strong>Everything in starmodel is now changed to dict. It should run. </p><p id="8bc2b306-4624-4ef6-b4b5-3ea8eb8f6b85" class="">There is a problem with multiple dimensions and the metric: <div class="indented"><p id="b0ddde9b-a54e-4a46-9c55-9111de3547eb" class="">Should I test the constraint against the complete model or against sub-models???<div class="indented"><p id="e34eeea9-f9bf-4582-91dc-df3e45bd55aa" class="">I&#x27;d say, against sub-models, because I do constrain the sub-models and not the whole. ⇒ need to <mark class="highlight-yellow">rewrite the test_model_against_constraint function </mark>!!!</p><p id="be8920b0-8e9a-4ae8-9936-45dd90b13c4f" class="">The new function test_model_against_constraints returns an ICP value for the sub-models, but on the input data and not on a finer grid !!! </p></div></p></div></p><p id="5cd171bc-1632-4ab9-8c59-06f83284e804" class=""><strong>15:26: </strong>Nevertheless, I will now start with the Ebner data and try to produce some nice plots for the fits. </p><h3 id="0a6b7e26-9414-4187-a3a8-b71e5c17b8bf" class="">Fr, 28.08.2020</h3><p id="95c207c2-0f43-409c-908d-3eb78b03fa9f" class=""><strong>15:41: </strong>In the meeting with Stephan and Tobias, we agreed on the following new tasks:<div class="indented"><ul id="d5d1e178-1a41-4708-9c9e-202d7f784dd7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">TPS monotonie in spezifische raumrichtung</span></li></ul><ul id="efa981b4-9d50-4485-82cf-daa2d2064fd3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">TPS peak in spezifische raumrichtung (keine priorität)</span></li></ul><ul id="f2982e25-141a-4e29-a040-62f02dbe6c0c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">positivity constraint</span></li></ul><ul id="1bd4b2ce-8c50-47fa-9dc2-89a23ce8d2b2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">griddata()-daten, daten von markus verwenden</span></li></ul></div></p><p id="b97050d7-4d47-4f47-95c7-591e89a684e5" class="">The overall mood was good, we also talk about the next weeks. I should thinka bout starting to write, →  think about a structure. !!!</p><p id="78074e93-6eb4-4940-b44c-df0b007eaf0e" class="">
+</p><p id="7333a69f-13ec-485b-a5cd-21f324f5466d" class="">
+</p><p id="6d3c4b14-a4bf-4576-8082-709732d09692" class="">
+</p></div></article></body></html>

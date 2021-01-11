@@ -2050,10 +2050,12 @@
     <bcf:citekey order="72">hofner2011monotonicity</bcf:citekey>
     <bcf:citekey order="73">bollaerts2006simple</bcf:citekey>
     <bcf:citekey order="74">bollaerts2006simple</bcf:citekey>
-    <bcf:citekey order="75">slyusar1997analytical</bcf:citekey>
-    <bcf:citekey order="76">bollaerts2006simple</bcf:citekey>
-    <bcf:citekey order="77">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="75">mayinger2013stromung</bcf:citekey>
+    <bcf:citekey order="76">baehr2006heatandmasstransfer</bcf:citekey>
+    <bcf:citekey order="77">slyusar1997analytical</bcf:citekey>
     <bcf:citekey order="78">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="79">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="80">bollaerts2006simple</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

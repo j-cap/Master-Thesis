@@ -2,15 +2,18 @@
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
 [33] biber-MSWIN32:313> INFO - === 
 [65] Biber.pm:371> INFO - Reading 'main.bcf'
-[162] Biber.pm:857> INFO - Found 28 citekeys in bib section 0
-[177] Biber.pm:3976> INFO - Processing section 0
-[190] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[200] bibtex.pm:1500> INFO - LaTeX decoding ...
-[253] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
-[418] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[418] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[418] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[419] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[438] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'ascii'
-[438] bbl.pm:618> INFO - Converting UTF-8 to TeX macros on output to .bbl
-[462] bbl.pm:720> INFO - Output to main.bbl
+[162] Biber.pm:857> INFO - Found 30 citekeys in bib section 0
+[178] Biber.pm:3976> INFO - Processing section 0
+[191] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[202] bibtex.pm:1500> INFO - LaTeX decoding ...
+[257] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[408] Utils.pm:193> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[408] Utils.pm:193> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[435] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[435] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[435] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[435] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[456] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'ascii'
+[456] bbl.pm:618> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[482] bbl.pm:720> INFO - Output to main.bbl
+[488] Biber.pm:110> INFO - WARNINGS: 2
