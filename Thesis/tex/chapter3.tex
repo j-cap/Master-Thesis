@@ -245,7 +245,7 @@ Using different values of $M$ allows us to bound from below from any number $M$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Shape-constraint tensor-product P-splines}\label{sec:SCP-tp-splines}
 
-In  Section~\ref{subsubsec:tp-splines}, we extended the univariate approach of B-splines to bivariate tensor-product B-splines by using the row-wise Kronecker product, see~\pref{apx:AppendixA}. We will now extend the tensor-product P-splines, see Section~\ref{subsec:p-splines}, to incorporate a priori domain knowledge as in~\pref{sec:SCP-splines} into the fitting process. We start by showing how to include a priori domain knowledge in one dimension, see Section~\pref{subsec:MIC-TP-one-dim}, and describe the various constraints listed in~\pref{tab:constraint_overview_2d}. Afterwards, we show how to include a constraint based on both dimensions, see Section~\pref{subsec:MULTICON-TP-one-dim}. In the following discussion, we use $d_1$ and $d_2$ B-spline basis functions of order $l$ for the dimensions 1 and 2 respectively and the data set $D = \{(x_1^{(i)}, x_2^{(i)}, y^{(i)}), \ i=1,2,\dots,n\}$ resulting in the tensor-product B-spline basis matrix $\vec{T} \in \mathbb{R}^{d_1d_2 \times n}$.
+In  Section~\ref{subsubsec:tp-splines}, we extended the univariate approach of B-splines to bivariate tensor-product B-splines by using the row-wise Kronecker product, see~\pref{apx:AppendixKroneckerRowWise}. We will now extend the tensor-product P-splines, see Section~\ref{subsec:p-splines}, to incorporate a priori domain knowledge as in~\pref{sec:SCP-splines} into the fitting process. We start by showing how to include a priori domain knowledge in one dimension, see Section~\pref{subsec:MIC-TP-one-dim}, and describe the various constraints listed in~\pref{tab:constraint_overview_2d}. Afterwards, we show how to include a constraint based on both dimensions, see Section~\pref{subsec:MULTICON-TP-one-dim}. In the following discussion, we use $d_1$ and $d_2$ B-spline basis functions of order $l$ for the dimensions 1 and 2 respectively and the data set $D = \{(x_1^{(i)}, x_2^{(i)}, y^{(i)}), \ i=1,2,\dots,n\}$ resulting in the tensor-product B-spline basis matrix $\vec{T} \in \mathbb{R}^{d_1d_2 \times n}$.
 
 \begin{table}[H]
 	\centering
@@ -279,7 +279,7 @@ to penalize negative first-order partial derivatives of the estimated function. 
 	\lambda_c \cdot \text{con}(\vec{\beta}_t) = \lambda_c \transpose{\vec{\beta}}_t \vec{K}_c \vec{\beta}_t,
 \end{align}
 %
-with the shape-constraint penalty matrix $\vec{K}_c = \transpose{\vec{D}}_c \vec{V}_c \vec{D}_c \in \mathbb{R}^{d_1d_2 \times d_1d_2}$. The first-order derivative is approximated by the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, and by using the Kronecker product, cf.~\pref{apx:AppendixA}, as
+with the shape-constraint penalty matrix $\vec{K}_c = \transpose{\vec{D}}_c \vec{V}_c \vec{D}_c \in \mathbb{R}^{d_1d_2 \times d_1d_2}$. The first-order derivative is approximated by the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, and by using the Kronecker product, cf.~\pref{apx:AppendixKronecker}, as
 
 \begin{align} \label{eq:mapping-matrix-sc-tp-increasing}
 	\vec{D}_c \vec{\beta}_t = \big( \vec{I}_{d_2} \otimes \vec{D}_{1}\big) \vec{\beta}_t,

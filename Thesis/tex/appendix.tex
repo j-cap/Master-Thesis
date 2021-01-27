@@ -1,8 +1,8 @@
 \begin{appendices}
 	
-\chapter{Appendix A} \label{apx:AppendixA}
+\chapter{Appendix} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kronecker product}
+\section{Kronecker product} \label{apx:AppendixKronecker}
 
 The Kronecker product $\vec{A} \otimes \vec{B}$ of the $n \times p$-matrix $\vec{A}$ and the $r \times q$-matrix $\vec{B}$ is defined as $nr \times pq$-matrix 
 
@@ -49,7 +49,7 @@ resulting in the matrix $\vec{C} \in \mathbb{R}^{6 \times 4}$ given by
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Row-wise Kronecker product}
+\section{Row-wise Kronecker product} \label{apx:AppendixKroneckerRowWise}
 
 Given the $n \times p$-matrix$\vec{A}$ and the $n \times q$-matrix $\vec{B}$, the row-wise Kronecker product is defined as $n \times pq$-matrix $\vec{C}$ given by
 
@@ -108,7 +108,7 @@ resulting in the matrix $\vec{C} \in \mathbb{R}^{3 \times 6}$ given by
 The row-wise Kronecker product is also known as \emph{face-splitting product} or as \emph{transposed Khatri-Rao product} \cite{slyusar1997analytical}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Appendix B} \label{apx:AppendixB}
+\section{Derivation of the iterative scheme} \label{apx:AppendixB}
 
 The following derivation is take from~\cite{bollaerts2006simple}. To find an optimal solution for the penalized least squares objective function for shape-constraint P-splines given by
 
@@ -161,8 +161,5 @@ and, hence, we obtain
 \begin{align}
 	\vec{\beta}_{i+1} = \Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}_i) \vec{D}_c \Big]^{-1} \transpose{\vec{X}} \vec{y}.
 \end{align}
-
-
-
 
 \end{appendices}
