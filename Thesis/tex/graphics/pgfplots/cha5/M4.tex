@@ -30,7 +30,7 @@
 		z label style={rotate=-90, at={(axis description cs:-0.05,0.55)}},
 		]
 		\addplot3+[opacity=0.5, mark=*, only marks] table [x=x1train, y=x2train, z=ytrain] {\data};
-		\addlegendentry{$\mathcal{D}_{\text{val}}$};
+		\addlegendentry{$\mathcal{D}_{\mathrm{val}}$};
 		\addplot3+[mark=x, only marks] table [x=x1, y=x2, z=M4] {\fit};
 		\addlegendentry{Predictions by M4};
 

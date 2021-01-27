@@ -2,6 +2,9 @@
 
 \documentclass[tikz]{standalone}
 
+\usepackage{graphicx}
+
+
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{spy}
@@ -11,28 +14,40 @@
 \usepackage{amsmath}
 
 %\usepackage{graphicx}
-
 \begin{document}
-%
-	\begin{tikzpicture}
-	\pgfplotstableread{../data/cha2/bvd.txt}{\data}
+
+\begin{tikzpicture}
+	\pgfplotstableread{../data/chaBosch/data.txt}{\data}	
+	\pgfplotstableread{../data/chaBosch/fits.txt}{\fit}	
 	\begin{axis}[
-		xlabel=Model Complexity,
-		xmin=0, xmax=2.1, 
-		x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
-		ylabel=SPSE,
-		y label style={at={(axis description cs:-0.1,.5)},rotate=-90,anchor=south},
-		ymin=0, ymax=40, 
-		axis lines = left,
-		ticks = none,
-		legend entries={$\text{Bias Error}^2$, Variance Error, Total Error, Optimal Model},
-		] 
-		\addplot [red, densely dashed] table [x=x, y=bias] {\data};		  		
-		\addplot [blue, dotted] table [x=x, y=variance] {\data};	
-		\addplot [black] table [x=x, y=both] {\data};	  
-		\draw (0.672, 8.9341) circle [gray, radius=2pt];
-		\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
-	\end{axis}	
+		view={-60}{5},
+		width=1\textwidth,
+		height=0.8\textwidth,
+		grid=major,
+		xmin=-0.003,xmax=0.003,
+		ymin=-0.0003,ymax=0.0003,
+		zmin=-1,zmax=1,
+		%xtick={-1,1,...,11},
+		%ytick={-100,100,...,900},
+		%ztick={-1000,1000,...,7000},
+		xlabel={$s_h$},
+		ylabel={$q_p$},
+		zlabel={$i_m$},
+		%z label style={rotate=-90, at={(axis description cs:-0.05,0.55)}},
+		]
+		\addplot3+[opacity=0.5, mark=*, only marks] table [x=x1, y=x2, z=y]{\data};
+		\addlegendentry{$\mathcal{D}_{\text{val}}$};
+		\addplot3+[mark=x, only marks] table [x=x1, y=x2, z=M6] {\fit};
+		\addlegendentry{Predictions by M6};
+		
+	\end{axis}
+	
 \end{tikzpicture}
-%
+
+
+
+
+	
+
+
 \end{document}

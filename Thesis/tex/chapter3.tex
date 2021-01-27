@@ -86,14 +86,14 @@ with the difference matrix $\vec{D}_1 \in \mathbb{R}^{(d-1) \times d}$. A weight
 Therefore, the weighting matrix $\vec{V}_c \coloneqq \vec{V}_c(\vec{\beta}_b)$ depends on the parameters $\vec{\beta}_b$ and we arrive at a formulation similar to Ridge regression with a parameter-dependent, non-linear penalty matrix $\vec{K} \coloneqq \vec{K}(\vec{\beta}_b)$, see Section~\ref{subsec:Regularization}. The objective function is finally of the form
 
 \begin{align} \label{eq:OF-SCP-Final}
-	\text{PLS}_{\text{SCP}} (\vec{y}, \vec{\beta}_b; \lambda, \lambda_c) = \lVert \vec{y} - \vec{B} \vec{\beta}_b \rVert_2^2 + \lambda \transpose{\vec{\beta}}_b \vec{K} \vec{\beta}_b + \lambda_c \transpose{\vec{\beta}}_b \vec{K}_c \vec{\beta}_b.
+	\text{PLS}_{\mathrm{SCP}} (\vec{y}, \vec{\beta}_b; \lambda, \lambda_c) = \lVert \vec{y} - \vec{B} \vec{\beta}_b \rVert_2^2 + \lambda \transpose{\vec{\beta}}_b \vec{K} \vec{\beta}_b + \lambda_c \transpose{\vec{\beta}}_b \vec{K}_c \vec{\beta}_b.
 \end{align}
 %
 We use the iterative approach given in Algorithm~\pref{alg:scp} to estimate the optimal parameters $\hat{\vec{\beta}}_{SC}$ under the user-defined shape constraint of monotonic increasing behavior.
 
 \begin{algorithm}[H]
 	\SetAlgoLined
-	\KwResult{$\hat{\vec{\beta}}_{SC}$}
+	\KwResult{$\hat{\vec{\beta}}_{\mathrm{SC}}$}
 	$ i \gets 1$\;
 	$\hat{\vec{\beta}}_{i} \gets$ Solution from~\pref{eq:OF-SCP-splines} for $\lambda = \lambda_c = 0$\;
 	$\vec{V}^0_c \gets \vec{0}$\;
@@ -104,7 +104,7 @@ We use the iterative approach given in Algorithm~\pref{alg:scp} to estimate the 
 		$\vec{V}^{i+1}_c \gets \vec{V}_c(\hat{\vec{\beta}}_{i+1})$\;	
 		$i \gets i+1$\;
 	}
-	$\hat{\vec{\beta}}_{SC} \gets \hat{\vec{\beta}}_{i}$\;
+	$\hat{\vec{\beta}}_{\mathrm{SC}} \gets \hat{\vec{\beta}}_{i}$\;
 	\caption{Estimation of the shape-constraint P-spline coefficients.}
 	\label{alg:scp}
 \end{algorithm}
@@ -120,7 +120,7 @@ Monotonic decreasing behavior can be introduced by penalizing positive first-ord
 	v_{j-1}(\vec{\beta}_b) = \begin{cases}
 		0, \quad \text{if} \ \Delta^1\beta_j \le 0 \\ 
 		1, \quad \text{if} \ \Delta^1\beta_j > 0
-	\end{cases}	\ \text{for} \ j=2,3, \dots, d.
+	\end{cases},	\ \text{for} \ j=2,3, \dots, d.
 \end{align}
 
 
@@ -148,7 +148,7 @@ with the mapping matrix $\vec{D}_2 \in \mathbb{R}^{(d-2)\times d}$ and define th
 	v_{j-2}(\vec{\beta}_b) = \begin{cases}
 		0, \quad \text{if} \ \Delta^2\beta_j \ge 0 \\ 
 		1, \quad \text{if} \ \Delta^2\beta_j < 0
-	\end{cases}	\ \text{for} \ j=3,4, \dots, d.
+	\end{cases}, \ \text{for} \ j=3,4, \dots, d.
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,7 +160,7 @@ Concave behavior can be introduced by penalizing positive second-order derivativ
 	v_{j-2}(\vec{\beta}_b) = \begin{cases}
 		0, \quad \text{if} \ \Delta^2\beta_j \le 0 \\ 
 		1, \quad \text{if} \ \Delta^2\beta_j > 0
-	\end{cases}	\ \text{for} \ j=3,4, \dots, d.
+	\end{cases}, \ \text{for} \ j=3,4, \dots, d.
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,7 +169,7 @@ Concave behavior can be introduced by penalizing positive second-order derivativ
 Peak behavior can be introduced by penalizing negative first-order derivatives for the increasing part and positive first-order derivatives for the decreasing part of the function. Therefore, we use the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, as mapping matrix $\vec{D}_1 \in \mathbb{R}^{(d-1)\times d}$. The weighting matrix $\vec{V}_c \in \mathbb{R}^{(d-1) \times (d-1)}$ now has a special structure. First, we find the data point $x^{(\text{max})}$ corresponding to the peak value in the data, i.e. $\text{max} = \max_i y^{(i)} \ \text{for} \ i=1,2,\dots, n$. Next, we identify the dominant B-spline basis function $B_p^l(x)$ around $x^{(\text{max})}$, i.e. the B-spline basis function with the maximal value at $x^{(\text{max})}$, such that
 
 \begin{align}
-	B_p^l(x^{(\text{max})}) > B_j^l(x^{(\text{max})}), \quad \text{for} \ j=1,2,\dots,p-1,p+1,\dots,d.
+	B_p^l(x^{(\text{max})}) \ge B_j^l(x^{(\text{max})}), \quad \text{for} \ j=1,2,\dots,d.
 \end{align} 
 %
 We now use the index $p$ of the dominant B-spline basis function in the definition of the diagonal elements of the weighting matrix $\vec{V}_c \in \mathbb{R}^{(d-1) \times (d-1)}$ as 
@@ -207,7 +207,7 @@ and
 \begin{align}\label{eq:v_valley_2}
 	v_{j-1}(\vec{\beta}_b) &= \begin{cases} 
 		0, \quad \text{if} \ \Delta^1\beta_j \ge 0 \\ 
-		1, \quad \text{if} \ \Delta^1\beta_j < 0.
+		1, \quad \text{if} \ \Delta^1\beta_j < 0
 	\end{cases}, \quad \text{for} \  j=p+1,p+2,\dots,d,
 \end{align}
 %
@@ -216,26 +216,26 @@ for $p$ being the index of the B-spline basis function $B_p^l(x)$ with the maxim
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Jamming constraint} \label{subsec:JammC}
 
-Jamming the function $f(x)$ by some point $p = \{x^{(p)}, y^{(p)}\}$ means that the estimated function $f(x^{(p)}) \approx y^{(p)}$. This can be incorporated using the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times d}$ as mapping matrix $\vec{D}_c \in \mathbb{R}^{n \times d}$ and a weighting matrix $\vec{V}_c \in \mathbb{R}^{n \times n}$ with diagonal elements $v_j$ given by
+Jamming the function $f(x)$ by some point $p = (x^{(p)}, y^{(p)})$ means that the estimated function $f(x^{(p)}) \approx y^{(p)}$. This can be incorporated using the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times d}$ as mapping matrix $\vec{D}_c \in \mathbb{R}^{n \times d}$ and a weighting matrix $\vec{V}_c \in \mathbb{R}^{n \times n}$ with diagonal elements $v_j$ given by
 
 \begin{align} \label{eq:v_jamming}
 	v_j(\vec{\beta}_b) = 
 	\begin{cases}
 		0, \quad \text{if} \ x^{(j)} \ne x^{(p)} \\
 		1, \quad \text{if} \ x^{(j)} = x^{(p)} 
-	\end{cases} \text{for} \ j = 1,2,\dots,n.
+	\end{cases}, \text{for} \ j = 1,2,\dots,n.
 \end{align} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Boundedness constraint} \label{subsec:BoudC}
 
-The user-defined constraint for boundedness from below by e.g. $M=0$ uses as mapping matrix $\vec{D}_c \in \mathbb{R}^{n \times d}$ the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times k}$. For the weighting matrix $\vec{V}_c \in \mathbb{R}^{n\times n}$, the diagonal weights $v_j$ are defined as
+The user-defined constraint for boundedness from below by, e.g. $M=0$ uses as mapping matrix $\vec{D}_c \in \mathbb{R}^{n \times d}$ the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times k}$. For the weighting matrix $\vec{V}_c \in \mathbb{R}^{n\times n}$, the diagonal weights $v_j$ are defined as
 
 \begin{align} \label{eq:v_boundedness}
 	v_j(\vec{\beta}_b) = \begin{cases} 
 		0, \quad \text{if} \ f(x^{(j)}) \ge M\\ 
 		1, \quad \text{if} \ f(x^{(j)})  < M 		
-	\end{cases} \text{for} \ j=1,2,\dots,n.
+	\end{cases}, \text{for} \ j=1,2,\dots,n.
 \end{align}
 %
 Using different values of $M$ allows us to bound from below from any number $M$. Switching the comparison operators in~\pref{eq:v_boundedness} enables us to bound functions from above. 
@@ -262,7 +262,7 @@ In  Section~\ref{subsubsec:tp-splines}, we extended the univariate approach of B
 	\label{tab:constraint_overview_2d}
 \end{table}
 
-Note that the constraints \emph{Jamming} and \emph{Boundedness} in~\pref{tab:constraint_overview} are dimension-independent and therefore not listed in~\pref{tab:constraint_overview_2d}. Nevertheless, the can also be applied to tensor-product B-splines using the descriptions in Section~\ref{subsec:JammC} and~\ref{subsec:BoudC}.
+Note that the constraints \emph{Jamming} and \emph{Boundedness} in~\pref{tab:constraint_overview} are dimension-independent and therefore not listed in~\pref{tab:constraint_overview_2d}. Nevertheless, the can also be applied to tensor-product B-splines using the descriptions in Section~\ref{subsec:JammC} and~\ref{subsec:BoudC}. We will present the scheme for input dimension 1. For dimension 2, minor changes need to be done, e.g. some reordering in the weighting matrix $\vec{V}_c$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Monotonic increasing constraint in dimension 1} \label{subsec:MIC-TP-one-dim}
@@ -292,7 +292,7 @@ with the mapping matrix $\vec{D}_c \in \mathbb{R}^{(d_1-1)d_2 \times d_1d_2}$ us
 	v_{j+(i-1)(d_1-1)}(\vec{\beta}_t) ={}& \begin{cases}
 		0, \quad \text{if} \ \Delta^1_{d_1} \beta_{j+(i-1)d_1 + 1} \ge 0 \\ 
 		1, \quad \text{if} \ \Delta^1_{d_1} \beta_{j+(i-1)d_1 + 1} < 0 
-	\end{cases} \\ {}& \text{for} \ j=1,2,\dots,d_1-1 \ \text{and} \ i=1,2,\dots,d_2,
+	\end{cases}, \\ {}& \text{for} \ j=1,2,\dots,d_1-1 \ \text{and} \ i=1,2,\dots,d_2,
 	\end{split}
 \end{align}
 %
@@ -320,7 +320,7 @@ Monotonic decreasing behavior in dimension 1 can be introduced by penalizing pos
 	v_{j+(i-1)(d_1-1)} (\vec{\beta}_t) ={}& \begin{cases}
 		0, \quad \text{if} \ \Delta^1_{d_1} \beta_{j+(i-1)d_1 + 1} \le 0 \\ 
 		1, \quad \text{if} \ \Delta^1_{d_1} \beta_{j+(i-1)d_1 + 1} > 0
-	\end{cases}	\\ {}& \text{for} \ j=1,2,\dots,d_1-1 \ \text{and} \ i=1,2,\dots,d_2,
+	\end{cases},	\\ {}& \text{for} \ j=1,2,\dots,d_1-1 \ \text{and} \ i=1,2,\dots,d_2,
 	\end{split}
 \end{align}
 %
@@ -343,7 +343,7 @@ Convex behavior in dimension 1 can be introduced by penalizing negative second-o
 using the second-order finite difference operator for dimension 1 defined as
 
 \begin{align} \label{eq:FD-operator2-dim1}
-	\Delta^2_{d_1} \gamma_j = \gamma_j - 2\gamma_{j-1} + \gamma_{j-2}.
+	\Delta^2_{d_1} \beta_j = \beta_j - 2\beta_{j-1} + \beta_{j-2}.
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,10 +369,10 @@ using the second-order finite difference operator for dimension 1 defined in~\pr
 To enforce shape constraints in two dimensions, e.g monotonic increasing behavior in dimension 1 ($c_1$) and monotonic decreasing behavior in dimension 2 ($c_2$), we use the same idea as given in~\pref{subsec:MIC-TP-one-dim} for both dimensions. Hence, we obtain an objective function similar to~\pref{eq:OF-SCP-splines} as
 
 \begin{align} \label{eq:OF-SCP-tp-splines_2constraints}
-	\text{PLS}_{\text{SC-TP}} (\vec{y}, \vec{\beta}_t; \lambda, \lambda_{c_1}, \lambda_{c_2}) = \lVert \vec{y} - \vec{T} \vec{\beta}_t \rVert_2^2 + \lambda \transpose{\vec{\beta}}_t \vec{K} \vec{\beta}_t + \lambda_{c_1} \transpose{\vec{\beta}}_t \vec{K}_{c_1} \vec{\beta}_t + \lambda_{c_2} \transpose{\vec{\beta}}_t \vec{K}_{c_2} \vec{\beta}_t,
+	\text{PLS}_{\mathrm{SC-TP}} (\vec{y}, \vec{\beta}_t; \lambda, \lambda_{c_1}, \lambda_{c_2}) = \lVert \vec{y} - \vec{T} \vec{\beta}_t \rVert_2^2 + \lambda \transpose{\vec{\beta}}_t \vec{K} \vec{\beta}_t + \lambda_{c_1} \transpose{\vec{\beta}}_t \vec{K}_{c_1} \vec{\beta}_t + \lambda_{c_2} \transpose{\vec{\beta}}_t \vec{K}_{c_2} \vec{\beta}_t,
 \end{align}
 %
-with the smoothness penalty matrix $\vec{K} \in \mathbb{R}^{d_1d_2 \times d_1d_2}$, see Section~\ref{subsec:p-splines}, and two \emph{constraint parameter} $\lambda_{c_1}$ and $\lambda_{c_2}$ reflecting the users trust in the a priori domain knowledge. The optimal parameters under the shape constraint $\hat{\vec{\beta}}_{\text{SC-TP}}$ can then be estimated again using the iterative scheme given in Algorithm~\pref{alg:scp}.
+with the smoothness penalty matrix $\vec{K} \in \mathbb{R}^{d_1d_2 \times d_1d_2}$, see Section~\ref{subsec:p-splines}, and two \emph{constraint parameter} $\lambda_{c_1}$ and $\lambda_{c_2}$ reflecting the users trust in the a priori domain knowledge. The optimal parameters under the shape constraint $\hat{\vec{\beta}}_{\mathrm{SC-TP}}$ can then be estimated again using the iterative scheme given in Algorithm~\pref{alg:scp}.
 
 \begin{comment}
 

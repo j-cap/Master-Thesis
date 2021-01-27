@@ -16,13 +16,20 @@ We will now discuss commonly used data-driven algorithms. The discussion include
 \begin{itemize}
 	\item Parametric models: Linear and polynomial regression
 	\item Non-parametric models: Basis function models
+	\item Gaussian process regression
 	\item Artificial neural networks
 	\item Look-up tables
 \end{itemize}
-
+%
 and focus on the interpretability, computational efficiency and the ability to include domain knowledge of the individual modeling approaches. The list given above is not intended to give a complete overview of the field of data-driven modelling but rather to be an introduction.
 
-The common starting point for the different data-driven modeling approaches is that we have some data $\mathcal{D} = \{x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)} \}, \ i = 1, \dots, n$. For ease of presentation, we restrict the following discussion to the single-input setting, i.e. $\{x^{(i)}, y^{(i)}\}, \ i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. We then use the given data to estimate a model function $f(x)$  which is then used to predict the response or output variable $y$, i.e.
+The common starting point for the different data-driven modeling approaches is that we have some data $\mathcal{D}$, i.e.
+
+\begin{align}
+	\mathcal{D} = \left\{ (x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)} ), \ i = 1, \dots, n\right\}.
+\end{align} 
+%
+For ease of presentation, we restrict the following discussion to the single-input setting, i.e. $(x^{(i)}, y^{(i)}), \ i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. We then use the given data to estimate a model function $f(x)$  which is then used to predict the response or output variable $y$, i.e.
 
 \begin{align} \label{eq:basic-model-structure}
 	y = f(x).
@@ -62,7 +69,7 @@ In \cite{nelles2013nonlinear}, non-parametric models are defined as models which
 	y = f(x) = \sum_{i=1}^M \beta_i \Phi_i(x, \theta_i),
 \end{align} 
 %
-with the parameters $\beta_i$, the basis functions $\Phi_i(\cdot)$, the input variable $x$ and the basis function parameters $\theta_i$. The output $y$ is therefore given by a linear combination of $M$ basis functions $\Phi_i(\cdot)$. To model a non-linear relationship between $y$ and $x$, the basis functions $\Phi(\cdot)$ need to be non-linear. Commonly used basis functions are, e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function} \cite{friedman2001elements}. 
+with the parameters $\beta_i$, the basis functions $\Phi_i(\cdot)$, the input variable $x$ and the basis function parameters $\theta_i$. The output $y$ is therefore given by a linear combination of $M$ basis functions $\Phi_i(\cdot)$. To model a nonlinear relationship between $y$ and $x$, the basis functions $\Phi(\cdot)$ need to be nonlinear. Commonly used basis functions are, e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function} \cite{friedman2001elements}. 
 
 A commonly used algorithm utilizing the basis function approach is called Multivariate Adaptive Regression Splines (MARS) \cite{friedman1991multivariate}. MARS approximates data, as example again for a single input dimension, using the following model
 
@@ -91,7 +98,7 @@ with the B-spline basis functions $B_j^l$ and the parameters $\beta_j$. The para
 The basis function approach in (\ref{eq:basis-function-approach}) may be extended by changing the parameters $\beta_i$ to more complex forms. An example for this is the so-called local linear neuro-fuzzy model, for which each parameter $\beta_i$ is changed to be a \emph{local linear model} and each basis function $\Phi_i(\cdot)$ is then called \emph{validity function} determining the region of validity of the local linear model \cite{nelles2013nonlinear}. The validity functions are normalized for any model input $x$, i.e.
 
 \begin{align} \label{eq:LILOMOT-normalized-basis-fucntions}
-	\sum_{i=1}^M \Phi_i(x) = 1,
+	\sum_{i=1}^M \Phi_i(x) = 1
 \end{align}
 %
 and typically chosen to be \emph{Gaussian} functions, i.e. 
@@ -108,7 +115,39 @@ with the normalization constant $a_i$ and the parameters $\mu_i$ and $\sigma_i$ 
 %
 The first term in the summation are the \emph{local linear models}. The parameters $\beta_{ij}$ for $i=1, \dots, M$ and $j=0, 1$ as well as the parameters $\mu_i$ and $\sigma_i$ from the validity functions $\Phi_i$ need to be optimized. This is done using the LOLIMOT algorithm. Further information is given in \cite{nelles2013nonlinear}. 
 
-Local linear models as extension of linear models possess more flexibility with regards to non-linear relationships in the data. They can also be efficiently evaluated after the iterative training process. The interpretability is high since each local linear model contributes to the prediction according to its validity function. The ability to include a priori domain knowledge in the fitting process is currently not available.   
+Local linear models as extension of linear models possess more flexibility with regards to nonlinear relationships in the data. They can also be efficiently evaluated after the iterative training process. The interpretability is high since each local linear model contributes to the prediction according to its validity function. The ability to include a priori domain knowledge in the fitting process is currently not available.   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gaussian Process Regression}
+
+A Gaussian process is formally defined as a collection of random variables, any finite number of which have a joint Gaussian distribution, see \cite{rasmussen2005GPforML}. To specify a Gaussian process, we need a mean function $m(x)$ and a covariance function $k(x, x')$, defined as
+
+\begin{align}
+	m(x) = \text{E}[f(x)], \\
+	k(x,x') = \text{E}\left[ (f(x) - m(x))(f(x') - m(x')) \right],
+\end{align}
+% 
+and obtain the Gaussian process as
+
+\begin{align}
+	f(x) ~ \matcal{GP}(m(x), k(x,x')).
+\end{align}
+$
+
+
+A Gaussian process is defined as generalization of the Gaussian distribution to multiple dimensions. The mean 
+There are two ways of interpreting Gaussian process regression models: the \emph{weight-space} and the \emph{function space} view. We will not go into detail here, since there are various textbooks related to this topic, see for example \cite{rasmussen2005GPforML}.
+
+
+
+
+
+Gaussian process regression tries to reconstruct the underlying true function $f$ by removing the noise $\epsilon$ by computing an weighted average of the noisy observations $y = f(x) + \epsilon$ as
+
+\begin{align}
+	f(x) = \transpose(k(x)) (\vec{K} + \sigma_n^2 \vec{I})^{-1} y,
+\end{align}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Artificial Neural Networks}
@@ -140,7 +179,6 @@ We are able to incorporate the following a priori domain knowledge:
 	\item Monotonicity, i.e. $f'(x) \ge 0$ or $f'(x) \le 0$
 	\item Curvature, i.e. $f''(x) \ge 0$ or $f''(x) \le 0$
 	\item Unimodality, i.e. \\ $f'(x) > 0, \ x < m$ and $f'(x) < 0, \ x > m$ for $m = \arg \max_{x} f(x)$ or \\ $f'(x) < 0, \ x < m$ and $f'(x) > 0, \ x > m$ for $m = \arg \min_{x} f(x)$
-
 \end{itemize}
-
-The thesis is divided into 5 chapters: Chapter 2 provides an overview of the fundamental mathematical concepts used. We focus on the description of linear models, model selection and B-splines as well as on the topic of structured additive regression. In chapter 3, we present the algorithm to incorporate a priori domain knowledge using the concepts given in chapter 2. In chapter 4, we show some aspects of the practical application of the algorithm on noisy and sparse data. Chapter 5 provides an example using real-word data. In Chapter 6, we give a summary and outline future, possible work. 
+%
+The thesis is divided into 5 chapters: Chapter 2 provides an overview of the fundamental mathematical concepts used. We focus on the description of linear models, model selection and B-splines as well as on the topic of structured additive regression. In chapter 3, we present the algorithm to incorporate a priori domain knowledge using the concepts given in chapter 2. In chapter 4, we show some aspects of the practical application of the algorithm on noisy and sparse data. Chapters 5 and 6 provide examples using real-word data. In Chapter 7, we give a summary and outline future, possible work. 

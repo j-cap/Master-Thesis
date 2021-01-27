@@ -1,0 +1,33 @@
+
+
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16} 
+\usepgfplotslibrary{groupplots}
+%\usepackage{pgfplotstable}
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+
+\begin{document}
+%
+\begin{tikzpicture}
+	\pgfplotstableread{../../data/cha6/data.txt}{\data}	
+	\pgfplotstableread{../../data/cha6/fits.txt}{\fit}	
+	\begin{axis}[
+			width=1\textwidth,
+			height=0.8\textwidth,
+			grid=major,
+			xmin=-0.0002,xmax=0.0002,
+			ymin=-1.2,ymax=1.2,
+			xlabel={$s_h$},
+			ylabel={$i_m$},
+		] 
+		\addplot [blue, opacity=0.5, mark=*, only marks] table [x=x2, y=y]{\data};		  		
+		\addplot [red, mark=x, only marks] table [x=x2, y=M1]{\fit};		  		
+	\end{axis}
+\end{tikzpicture}
+%
+\end{document}

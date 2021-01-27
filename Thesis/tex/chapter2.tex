@@ -132,7 +132,7 @@ to be positive-definite. Since the design matrix $\vec{X} \in \mathbb{R}^{n \tim
 Since $\transpose{\vec{X}}\vec{X}$ is positive-definite, the \emph{normal equations}~\pref{eq:NormalEquations} feature a unique solution given by the least squares estimator
 
 \begin{align} \label{eq:LS_estimator}
-	\hat{\vec{\beta}}_{LS} = (\transpose{\vec{X}}\vec{X})^{-1} \transpose{\vec{X}}\vec{y}.
+	\hat{\vec{\beta}}_{\mathrm{LS}} = (\transpose{\vec{X}}\vec{X})^{-1} \transpose{\vec{X}}\vec{y}.
 \end{align}
 
 \subsubsection{Maximum Likelihood Estimation}
@@ -149,7 +149,7 @@ The log-likelihood is then given by taking the logarithm of~\pref{eq:likelihood}
 	l(\vec{\beta}, \sigma^2) = -\frac{n}{2}\log(2\pi) - \frac{n}{2}\log(\sigma^2) - \frac{1}{2\sigma^2}\transpose{(\vec{y} - \vec{X} \vec{\beta})}(\vec{y} - \vec{X} \vec{\beta}).
 \end{align}
 %
-Thus, maximizing the log-likelihood $l(\vec{\beta}, \sigma^2)$ with respect to $\vec{\beta}$ is equivalent to minimizing the least squares criterion given in~\pref{eq:MethodOfLS}. The maximum likelihood estimator $\hat{\vec{\beta}}_{ML}$ is therefore equivalent to the least squares estimator $\hat{\vec{\beta}}_{LS}$ in~\pref{eq:LS_estimator}.
+Thus, maximizing the log-likelihood $l(\vec{\beta}, \sigma^2)$ with respect to $\vec{\beta}$ is equivalent to minimizing the least squares criterion given in~\pref{eq:MethodOfLS}. The maximum likelihood estimator $\hat{\vec{\beta}}_{\mathrm{ML}}$ is therefore equivalent to the least squares estimator $\hat{\vec{\beta}}_{\mathrm{LS}}$ in~\pref{eq:LS_estimator}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Estimation of the Variance $\sigma^2$}
@@ -164,24 +164,24 @@ The first-order necessary condition for optimality yields in this case in
 	\frac{\partial l(\vec{\beta}, \sigma^2)}{\partial \sigma^2} = -\frac{n}{2\sigma^2} + \frac{1}{2\sigma^4}\transpose{(\vec{y} - \vec{X} \vec{\beta})}(\vec{y} - \vec{X}\vec{\beta}) = 0. 
 \end{align}
 %
-Substituting the maximum likelihood estimator $\hat{\vec{\beta}}_{ML}$, note the equivalence with the least squares estimator $\hat{\vec{\beta}}_{LS}$ given in~\pref{eq:LS_estimator}, for $\vec{\beta}$ results in the maximum likelihood estimator 
+Substituting the maximum likelihood estimator $\hat{\vec{\beta}}_{\mathrm{ML}}$, note the equivalence with the least squares estimator $\hat{\vec{\beta}}_{\mathrm{LS}}$ given in~\pref{eq:LS_estimator}, for $\vec{\beta}$ results in the maximum likelihood estimator 
 
 \begin{align} \label{eq:sigma_ML}
 	\hat \sigma^2_{ML} = 
-		\frac{(\vec{y} - \vec{X} \transpose{\hat{\vec{\beta}}_{LS})}(\vec{y} - \vec{X} \hat{\vec{\beta}}_{LS})}{n} = \frac{1}{n} \transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}
+		\frac{(\vec{y} - \vec{X} \transpose{\hat{\vec{\beta}}_{\mathrm{LS}})}(\vec{y} - \vec{X} \hat{\vec{\beta}}_{\mathrm{LS}})}{n} = \frac{1}{n} \transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}
 \end{align}
 %
-where $\hat{\vec{\epsilon}}$ is the estimate of the error $\vec{\epsilon}$. This estimator for $\sigma^2$ is rarely used since it is biased, i.e. $\text{E}(\hat \sigma^2_{ML}) \ne \sigma^2$, see \cite{fahrmeir2007regression}. 
+where $\hat{\vec{\epsilon}}$ is the estimate of the error $\vec{\epsilon}$. This estimator for $\sigma^2$ is rarely used since it is biased, i.e. $\text{E}(\hat \sigma^2_{\mathrm{ML}}) \ne \sigma^2$, see \cite{fahrmeir2007regression}. 
 
 \subsubsection{Restricted Maximum Likelihood Estimation}
 
 The mean value of the sum of squared residuals is $\text{E}(\transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}) = (n - p)\sigma^2$. Hence, another estimator for $\sigma^2$ is given by
 
 \begin{align} \label{eq:sigma_REML}
-	\hat \sigma^2_{REML} = \frac{1}{n-p} \transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}.
+	\hat \sigma^2_{\mathrm{REML}} = \frac{1}{n-p} \transpose{\hat{\vec{\epsilon}}} \hat{\vec{\epsilon}}.
 \end{align}
 %
-The restricted maximum likelihood estimator (REML) $\hat \sigma^2_{REML}$ is in general less biased \cite{fahrmeir2007regression}. Therefore, it is the commonly used estimator for the variance $\sigma^2$.
+The restricted maximum likelihood estimator (REML) $\hat \sigma^2_{\mathrm{REML}}$ is in general less biased \cite{fahrmeir2007regression}. Therefore, it is the commonly used estimator for the variance $\sigma^2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Hat Matrix} \label{subsec:Hat-Matrix}
@@ -189,10 +189,10 @@ The restricted maximum likelihood estimator (REML) $\hat \sigma^2_{REML}$ is in 
 Using the least squares estimator~\pref{eq:LS_estimator}, we can estimate the mean of $\vec{y}$ by 
 
 \begin{align} \label{eq:mean_of_y}
-	\widehat{\text{E}(\vec{y})} = \vec{\hat{y}} = \vec{X} \hat{\vec{\beta}}_{LS}.
+	\widehat{\text{E}(\vec{y})} = \vec{\hat{y}} = \vec{X} \hat{\vec{\beta}}_{\mathrm{LS}}.
 \end{align}
 %
-Substituting $\hat{\vec{\beta}}_{LS}$ in~\pref{eq:mean_of_y} by~\pref{eq:LS_estimator} results in 
+Substituting $\hat{\vec{\beta}}_{\mathrm{LS}}$ in~\pref{eq:mean_of_y} by~\pref{eq:LS_estimator} results in 
 %
 \begin{align} \label{eq:hat-matrix}
 	\vec{\hat{y}} =  \vec{H} \vec{y},
@@ -327,9 +327,9 @@ In practice, the true value for the SPSE is not accessible since $\mu^{(i)}$ and
 
 Typically used model assessment criteria follow the basic idea of the SPSE, see \cite{fahrmeir2007regression}.
 
-\subsubsection{Corrected Coefficient of Determination $R_{corr}^2$}
+\subsubsection{Corrected Coefficient of Determination $R_{\mathrm{corr}}^2$}
 
-The corrected coefficient of determination $R^2_{corr}$ is an improvement over the coefficient of determination $R^2$, which is defined as 
+The corrected coefficient of determination $R^2_{\mathrm{corr}}$ is an improvement over the coefficient of determination $R^2$, which is defined as 
 
 \begin{align}
 	R^2 = 1 - \frac{\sum_{i=1}^n \left( y^{(i)} - \hat y^{(i)}_M \right)^2}{\sum_{i=1}^n \left(y^{(i)} - \bar y\right)^2},
@@ -337,51 +337,51 @@ The corrected coefficient of determination $R^2_{corr}$ is an improvement over t
 %
 where $\bar y$ is the mean value of $\vec{y}$. The major drawback of $R^2$ is that it will never decrease when further inputs are included in the model, e.g. the $R^2$ of a model using $\{x_1, x_2, x_3\}$ is always larger or equal the $R^2$ of a model using $\{x_1, x_2\}$, even if the variable does not enhance the prediction quality. 
 
-The corrected coefficient of determination $R_{corr}^2$ reduces this problem by an correction term depending on the  number of parameters and is given by
+The corrected coefficient of determination $R_{\mathrm{corr}}^2$ reduces this problem by an correction term depending on the  number of parameters and is given by
 \begin{align}
-	R_{corr}^2 = 1 - \frac{n-1}{n-p}(1-R^2).
+	R_{\mathrm{corr}}^2 = 1 - \frac{n-1}{n-p}(1-R^2).
 \end{align}
 
 The corrected coefficient of determination is a standard output parameter in many statistical programs and may be used to compare even models with different number of used variables \cite{fahrmeir2007regression}.
 
-\subsubsection{Corrected Coefficient of Determination after McFadden $R_{McFadden}^2$}
+\subsubsection{Corrected Coefficient of Determination after McFadden $R_{\mathrm{McFadden}}^2$}
 
 The corrected coefficient of determination after McFadden is defined as
 
 \begin{align}
-	R_{McFadden}^2 = 1 - \frac{\ln{(\mathcal{L}_M)} - \vert M \vert }{\ln{(\mathcal{L}_0)}}
+	R_{\mathrm{McFadden}}^2 = 1 - \frac{\ln{(\mathcal{L}_M)} - \vert M \vert }{\ln{(\mathcal{L}_0)}}
 \end{align}
 %
-using the likelihood of the model $M$ given by $\mathcal{L}_M$ and the likelihood of the zero model $\mathcal{L}_0$. A standard zero model is given by the mean value $\bar y$. Higher values of $R_{McFadden}^2$ correspond to better fits.
+using the likelihood of the model $M$ given by $\mathcal{L}_M$ and the likelihood of the zero model $\mathcal{L}_0$. A standard zero model is given by the mean value $\bar y$. Higher values of $R_{\mathrm{McFadden}}^2$ correspond to better fits.
 
 \subsubsection{Mallow's $\mathbf{C_p}$}
 
 Mallow's complexity parameter is based directly on the ideas specified for the estimation of the SPSE and is given by
 
 \begin{align}
-	\text C_p = \frac{\sum_{i=1}^n \left(y^{(i)} - \hat y^{(i)}_M\right)^2}{\hat \sigma^2} - n + 2 \vert M \vert.
+	\text C_\mathrm{p} = \frac{\sum_{i=1}^n \left(y^{(i)} - \hat y^{(i)}_M\right)^2}{\hat \sigma^2} - n + 2 \vert M \vert.
 \end{align}
 %
-A lower value of Mallow's $\text C_p$ corresponds to a better model fit \cite{fahrmeir2007regression}.
+A lower value of Mallow's $\text C_\mathrm{p}$ corresponds to a better model fit \cite{fahrmeir2007regression}.
 
 \subsubsection{Akaike Information Criterion}
 
 The AIC is among the most used model assessment criteria and defined by
 
 \begin{align}
-	\text{AIC} = -2 l(\hat{\vec{\beta}}_{ML}, \hat \sigma^2_{ML}) + 2(\vert M \vert +1),
+	\text{AIC} = -2 l(\hat{\vec{\beta}}_{\mathrm{ML}}, \hat \sigma^2_{\mathrm{ML}}) + 2(\vert M \vert +1),
 \end{align}
 %
-where $l(\hat{\vec{\beta}}_{ML}, \hat \sigma^2_{ML})$ is the value of the log-likelihood~\pref{eq:log_liklihood} at its maximum, i.e. at $\hat{\vec{\beta}}_{ML}$ and $\hat{\sigma}_{ML}$. It is worth noting that the total number of parameters is $\vert M \vert + 1$ because the variance is also counted as parameter. The log-likelihood for a linear model assuming Gaussian errors is given by, cf.~\pref{eq:log_liklihood},
+where $l(\hat{\vec{\beta}}_{\mathrm{ML}}, \hat \sigma^2_{\mathrm{ML}})$ is the value of the log-likelihood~\pref{eq:log_liklihood} at its maximum, i.e. at $\hat{\vec{\beta}}_{\mathrm{ML}}$ and $\hat{\sigma}_{\mathrm{ML}}$. It is worth noting that the total number of parameters is $\vert M \vert + 1$ because the variance is also counted as parameter. The log-likelihood for a linear model assuming Gaussian errors is given by, cf.~\pref{eq:log_liklihood},
 
 \begin{align}
-	-2l(\hat{\vec{\beta}}_{ML}, \hat \sigma_{ML}^2) = n \log(\hat \sigma_{ML}^2) + n.
+	-2l(\hat{\vec{\beta}}_{\mathrm{ML}}, \hat \sigma_{\mathrm{ML}}^2) = n \log(\hat \sigma_{\mathrm{ML}}^2) + n.
 \end{align}
 %
 Therefore, neglecting the constant $n$, the AIC evaluates to
 
 \begin{align}
-	\text{AIC} = n \log(\hat \sigma^2_{ML}) + 2(\vert M \vert + 1).
+	\text{AIC} = n \log(\hat \sigma^2_{\mathrm{ML}}) + 2(\vert M \vert + 1).
 \end{align}
 %
 A lower value of the AIC means a to a better model fit \cite{fahrmeir2007regression}.
@@ -391,13 +391,13 @@ A lower value of the AIC means a to a better model fit \cite{fahrmeir2007regress
 The BIC is similar to the AIC, but it penalizes more complex models much harder than the AIC. In its general form, it is given as 
 
 \begin{align}
-	\text{BIC} = -2l(\hat{\vec{\beta}}_{ML}, \hat \sigma^2_{ML}) + \log(n) (\vert M \vert + 1).
+	\text{BIC} = -2l(\hat{\vec{\beta}}_{\mathrm{ML}}, \hat \sigma^2_{\mathrm{ML}}) + \log(n) (\vert M \vert + 1).
 \end{align}
 %
 Again, assuming Gaussian errors for a linear model and neglecting the constant term $n$, the BIC evaluates to
 
 \begin{align}
-	\text{BIC} = n\log(\hat \sigma_{ML}^2) + \log(n)(\vert M\vert + 1).
+	\text{BIC} = n\log(\hat \sigma_{\mathrm{ML}}^2) + \log(n)(\vert M\vert + 1).
 \end{align}
 %
 A lower value of the BIC correspond to a better model fit \cite{fahrmeir2007regression}.
@@ -426,7 +426,7 @@ The numerical advantage comes from the fact that the trace of a product of matri
 \end{split}
 \end{align} 
 %
-The trace can therefore be computed from the product of two matrices of shape $\vert M \vert\times \vert M \vert$, see  \cite{fahrmeir2007regression}. Note that for a linear model as in~\pref{eq:LinearModel}, the trace of the hat matrix $\vec{H}$ is equal to the number of parameters $p$ of the linear model. For regularized or non-parametric models, the trace of the hat matrix $\vec{H}$ is smaller than $p$, where $p$ is the number of parameters of the regularized or non-parametric model. Therefore, the trace of the hat matrix $\vec{H}$ is also known as \emph{effective degree of freedom} $p_{eff}$ of the model, see Section~\ref{subsec:Regularization}. 
+The trace can therefore be computed from the product of two matrices of shape $\vert M \vert\times \vert M \vert$, see  \cite{fahrmeir2007regression}. Note that for a linear model as in~\pref{eq:LinearModel}, the trace of the hat matrix $\vec{H}$ is equal to the number of parameters $p$ of the linear model. For regularized or non-parametric models, the trace of the hat matrix $\vec{H}$ is smaller than $p$, where $p$ is the number of parameters of the regularized or non-parametric model. Therefore, the trace of the hat matrix $\vec{H}$ is also known as \emph{effective degree of freedom} EDoF of the model, see Section~\ref{subsec:Regularization}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Subset Selection Methods} \label{subsec:SSM}
@@ -453,10 +453,10 @@ where $\lambda$ is the so-called \emph{smoothing parameter} and $\text{pen}(\vec
 In Ridge regression, the penalty term in the penalized least squares criterion in~\pref{eq:PLS_crit} is given by the squared weighted $L_2$-norm of the parameter vector $\vec{\beta}$, i.e. $\text{pen}(\vec{\beta}) = \lVert \vec{\beta} \rVert^2_{\vec{K}} = \transpose{\vec{\beta}} \vec{K} \vec{\beta}$ with a positive definite penalty matrix $\vec{K} \in \mathbb{R}^{p \times p}$. The closed-form solution reads as
 
 \begin{align}
-	\hat{\vec{\beta}}_{PLS} = \arg \min_{\vec{\beta}} \left(\text{PLS}(\vec{y}, \vec{\beta}; \lambda) \right) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}}\vec{y}.
+	\hat{\vec{\beta}}_{\mathrm{PLS}} = \arg \min_{\vec{\beta}} \left(\text{PLS}(\vec{y}, \vec{\beta}; \lambda) \right) = (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}}\vec{y}.
 \end{align}
 %
-The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{PLS}$ compared to the unpenalized estimate $\hat{\vec{\beta}}_{LS}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will converge towards, but never reach, zero. 
+The additional penalty term in Ridge regression leads to smaller parameter estimates $\hat{\vec{\beta}}_{\mathrm{PLS}}$ compared to the unpenalized estimate $\hat{\vec{\beta}}_{\mathrm{LS}}$. For large values of the smoothing parameter $\lambda$, the parameter estimates will converge towards, but never reach, zero. 
 
 Ridge regression is commonly used when the input dimension $q$ is high, i.e. the number of parameters $\vec{\beta}$ is large, and also known as Tikhonov regularization \cite{hoerl1970ridge}. Note that it is also possible to use a penalty matrix $\vec{K}(\vec{\beta})$ resulting in
 
@@ -475,16 +475,16 @@ until $\lVert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]} \rVert \le \text{Tol}$ wit
 Note that by the introduction of the penalty matrix $\vec{K} \ne \vec{0}$, we reduce the degrees of freedom of the model. This can be seen by comparing the trace of the hat matrix $\vec{H}$ of the regularized model, i.e.
 
 \begin{align} \label{eq:hat-matrix-regularizated-mode}
-	\vec{H}_{pen} = \vec{X} (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}},
+	\vec{H}_{\mathrm{pen}} = \vec{X} (\transpose{\vec{X}} \vec{X} + \lambda \vec{K})^{-1} \transpose{\vec{X}},
 \end{align} 
 %
 with the trace of the hat matrix of the unpenalized model, see~\pref{eq:hat-matrix}. The trace of the hat matrix $\vec{H}$ is also called \emph{effective degree of freedom}, i.e.
 
 \begin{align}
-	p_{eff} = \text{trace}(\vec{H}_{pen}).
+	\text{EDoF} = \text{trace}(\vec{H}_{\mathrm{pen}}).
 \end{align}
 %
-When we use regularization to reduce the degree of freedom of a model, we need to make use of the effective degree of freedom $p_{eff}$ instead of the number of parameters $p$ in model assessment criteria, see Section~\pref{subsec:MAC}. 
+When we use regularization to reduce the degree of freedom of a model, we need to make use of the effective degree of freedom EDoF instead of the number of parameters $p$ in model assessment criteria, see Section~\pref{subsec:MAC}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -810,7 +810,7 @@ where $\vec{X} \in \mathbb{R}^{n \times 2}$ is the design matrix of the linear m
 P-splines combine the concepts of B-spline basis functions and regularization to produce sufficiently smooth function estimations. A function is said to be smooth if its second-order derivative is continuous. Therefore, a penalty of the form 
 
 \begin{align} \label{eq:wiggliness-penalty}
-	\lambda \int \left(f''(x)\right)^2 \,\mathrm{d}x
+	\lambda \cdot \int \left(f''(x)\right)^2 \,\mathrm{d}x
 \end{align}
 %
 is typically introduced to penalize the curvature of a function which is measured by its second-order derivative \cite{osullivan1986penalties}. The penalty is weighted by the so-called \emph{smoothing parameter} $\lambda$. This yields the penalized least squares objective function, cf. Section~\pref{subsec:Regularization}, as
@@ -893,7 +893,7 @@ The spatial alignment of the B-spline basis functions and the corresponding para
 We now use the concepts of P-splines in both dimensions and penalize the integral of the squared Hessian of the tensor-product B-spline, see~\pref{eq:wiggliness-penalty}, by a higher-order finite difference approximation in both dimensions. Using second-order finite differences as in~\pref{eq:wiggliness-finite-diff-approx} leads to the following definition of the penalty term
 
 \begin{align}
-	\left[ \sum_{j=3}^{d_1} \sum_{r=1}^{d_2} (\Delta_1^2 \beta_{j,r})^2 + \sum_{j=1}^{d_1} \sum_{r=3}^{d_2} (\Delta_2^2 \beta_{j,r})^2 \right] \approx \iint \left(f''(x_1, x_2) \right)^2 \,\mathrm{d}x_1 \,\mathrm{d}x_2
+	\left[ \sum_{j=3}^{d_1} \sum_{r=1}^{d_2} (\Delta_1^2 \beta_{j,r})^2 + \sum_{j=1}^{d_1} \sum_{r=3}^{d_2} (\Delta_2^2 \beta_{j,r})^2 \right] \propto \iint \left(f''(x_1, x_2) \right)^2 \,\mathrm{d}x_1 \,\mathrm{d}x_2
 \end{align}
 %
 as discrete approximation of the integral of the squared Hessian of the tensor-product B-spline. The first term on the left side calculates the "row-wise" squared second-order differences, i.e. in direction $x_1$, using
@@ -902,7 +902,7 @@ as discrete approximation of the integral of the squared Hessian of the tensor-p
 	\Delta_1^2 \beta_{j,r} = \beta_{j,r} - 2\beta_{j-1,r} + \beta_{j-2,r} 
 \end{align}
 %
-and the second term on the left side calculates the "column-wise" squared second-order differences. i.e. in direction $x_2$, using
+and the second term on the left side calculates the "column-wise" squared second-order differences, i.e. in direction $x_2$, using
 
 \begin{align} \label{eq:col-wise-diff-operator}
 	\Delta_2^2 \beta_{j,r} = \beta_{j,r} -2\beta_{j,r-1} + \beta_{j,r-2}.

@@ -40,36 +40,48 @@
 
 \begin{document}
 
+\begin{tikzpicture}
+	\pgfplotstableread{../../data/chaBosch/data.txt}{\data}	
+	\pgfplotstableread{../../data/chaBosch/fits.txt}{\fit}	
+	\begin{axis}[
+		view={-120}{15},
+		width=1\textwidth,
+		height=0.8\textwidth,
+		grid=major,
+		z buffer=sort,
+		xmin=0,xmax=11,
+		ymin=200,ymax=900,
+		zmin=0,zmax=7000,
+		xtick={-1,1,...,11},
+		ytick={-100,100,...,900},
+		ztick={-1000,1000,...,7000},
+		xlabel={$\dot m[kg/s]$},
+		ylabel={$T[K]$},
+		zlabel={$\alpha[W/m^2K]$},
+		z label style={rotate=-90, at={(axis description cs:-0.05,0.55)}},
+		]
+		\addplot3+[opacity=0.5, mark=*, only marks] table [x=x1train, y=x2train, z=ytrain] {\data};
+		\addlegendentry{$\mathcal{D}_{\text{val}}$};
+		\addplot3+[mark=x, only marks] table [x=x1, y=x2, z=M6] {\fit};
+		\addlegendentry{Predictions by M6};
+		
+	\end{axis}
+	
+\end{tikzpicture}
+
 \begin{table}[H]
 	\begin{center}
 		\pgfplotstabletypeset[
 		col sep=comma,
 		columns/Model/.style={string type},
-		columns/MSEVal/.style={column name={$\text{MSE}_{\mathcal{D}_v}$}},
-		columns/MSEValTrueFunction/.style={column name={$\text{MSE}_{\mathcal{D}_{v,true}}$}},
-		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
-		every last row/.style={after row=\bottomrule \bottomrule},
-		every nth row={1}{before row=\midrule},
-		]{graphics/data/cha4/sparse_example/mse-e.csv}
-	\end{center}
-	\caption{Mean squared errors on the validation set $\mathcal{D}_v$ for equidistant knot placement.}
-	\label{tab:sparse-example-equidistant}
-\end{table}
-
-
-\begin{table}[H]
-	\begin{center}
-		\pgfplotstabletypeset[
-		col sep=comma,
-		columns/model/.style={string type},
 		columns/MSE_val/.style={column name={$\text{MSE}_{\text{val}}$}},
 		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
 		every last row/.style={after row=\bottomrule \bottomrule},
 		every nth row={1}{before row=\midrule},
-		]{graphics/data/cha5/mses.csv}
+		]{graphics/data/chaBosch/mses.csv}
 	\end{center}
-	\caption{Mean squared errors on the validation set $\mathcal{D}_v$ for equidistant knot placement.}
-	\label{tab:sparse-example-equidistantas}
+	\caption{Mean squared errors on the validation set $\mathcal{D}_{\text{val}}$.}
+	\label{tab:bosch-mse-val}
 \end{table}
 
 \end{document}

@@ -352,4 +352,7 @@
   year      = {2013},
 }
 
+@Book{,
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
