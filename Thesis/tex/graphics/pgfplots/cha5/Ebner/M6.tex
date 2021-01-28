@@ -1,0 +1,42 @@
+
+
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{spy}
+\pgfplotsset{compat=1.16} 
+\usepackage{siunitx}
+\begin{document}
+%
+\begin{tikzpicture}
+	\pgfplotstableread{../../../data/cha5/Ebner/data.txt}{\data}	
+	\pgfplotstableread{../../../data/cha5/Ebner/fits.txt}{\fit}	
+	\begin{axis}[
+		view={-120}{15},
+		width=1\textwidth,
+		height=0.8\textwidth,
+		grid=major,
+		z buffer=sort,
+		xmin=0,xmax=11,
+		ymin=200,ymax=900,
+		zmin=0,zmax=7000,
+		xtick={-1,1,...,11},
+		ytick={-100,100,...,900},
+		ztick={-1000,1000,...,7000},
+		xlabel={$\dot m$[\si{\kg\per\s}]},
+		ylabel={$T$ [\si{\K}]},
+		zlabel={$\alpha$ [\si{\W\per\m\squared\per\K}]},
+		z label style={rotate=-90, at={(axis description cs:-0.05,0.55)}},
+		]
+		\addplot3+[opacity=0.5, mark=*, only marks] table [x=x1train, y=x2train, z=ytrain] {\data};
+		\addlegendentry{$\mathcal{D}_{\mathrm{val}}$};
+		\addplot3+[mark=x, only marks] table [x=x1, y=x2, z=M6] {\fit};
+		\addlegendentry{Predictions by M6};
+
+	\end{axis}
+	
+\end{tikzpicture}
+
+%
+\end{document}
