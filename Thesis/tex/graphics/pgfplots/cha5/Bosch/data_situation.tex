@@ -25,9 +25,9 @@
 		zmin=-1,zmax=1,
 		xtick scale label code/.code={\pgfmathparse{int(-#1)}$s_h \cdot 10^{-\pgfmathresult}$ [\si{\m}]},
 		every x tick scale label/.style={at={(xticklabel cs:0.5)}, anchor = north},		
-		ytick scale label code/.code={\pgfmathparse{int(-#1)}$q_p \cdot 10^{-\pgfmathresult}$ [\si{\m\cubed\per\s}]},
+		ytick scale label code/.code={\pgfmathparse{int(-#1)}$q_p^d \cdot 10^{-\pgfmathresult}$ [\si{\m\cubed\per\s}]},
 		every y tick scale label/.style={at={(yticklabel cs:0.5)}, anchor = north},
-		zlabel={$i_m$ [\si{\A}]},
+		zlabel={$i_m^d$ [\si{\A}]},
 		z label style={rotate=-90, at={(axis description cs:-0.05,0.55)}}
 		]
 		\addplot3+[opacity=0.5, mark=*, only marks] table [x=x1, y=x2, z=y]{\data};

@@ -1,4 +1,4 @@
-\chapter{Practical Applications}
+\chapter{Practical Applications} \label{cha:practical-appl}
 
 \section{Parameter Estimation} \label{sec:real-world-application}
 
@@ -23,7 +23,7 @@ The data situation is visualized in Figure \ref{fig:ebner_data_situation}. Here 
 
 The data distribution may lead to some difficulties when using B-splines and tensor-product B-splines, as they do not handle sparse data situations well, cf.~\pref{cha:practical-considerations}. Nevertheless, using regularization via smoothness and constraint penalties should help to cope the data situation. 
 
-We will now use various models based on B-spline bases, tensor-product B-spline bases and their shape-constraint alternatives to recover a model for the heat transfer coefficient given the data. The following list, in which $s(i)$ denotes the use of a B-spline basis for input $i$ and $t(i,i)$ denotes the use of a tensor-product B-spline basis for inputs $i$ and $j$, describes the models. We use the mass flow $\dot{m}$ as input dimension 1 and the temperature $T$ as input dimension 2. 
+We will now use various models based on B-spline bases, tensor-product B-spline bases and their shape-constraint alternatives to recover a model for the heat transfer coefficient given the data. The following list, in which $s(i)$ denotes the use of a B-spline basis for input $i$ and $t(i,j)$ denotes the use of a tensor-product B-spline basis for inputs $i$ and $j$, describes the models. We use the mass flow $\dot{m}$ as input dimension 1 and the temperature $T$ as input dimension 2. 
 
 \begin{enumerate}[(i)]
 	\item M1 $= s(1) + s(2)$
@@ -34,18 +34,18 @@ We will now use various models based on B-spline bases, tensor-product B-spline 
 	\item M6 $= s(1) +s(2) + t(1,2)$, as additive model using M2 and M4
 \end{enumerate}
 %
-To fit the models listed above, we perform a randomized train-validation split on the data, i.e. we split the data into a training set $\mathcal{D}_{\text{train}}$ and a validation set $\mathcal{D}_{\text{val}}$, fit the models to the resulting training set and evaluate its performance by calculating the mean squared error on the validation set $\mathcal{D}_{\text{val}}$ as well as by visual inspection. We choose to split the data into sets of the same size to generate a more stable estimation of the prediction error for previously unseen data. A visual inspection of the of the data distribution given by the train-validation split is given in~\pref{fig:ebner-train-val-split}.
+To fit the models listed above, we perform a randomized train-validation split on the data, i.e. we split the data into a training set $\mathcal{D}_{\text{train}}$ and a validation set $\mathcal{D}_{\text{val}}$, fit the models to the resulting training set and evaluate its performance by calculating the mean squared error on the validation set $\mathcal{D}_{\text{val}}$ and the effective degree of freedom EDoF of the model, cf. Section~\pref{subsec:Regularization}, as well as by visual inspection. We choose to split the data into sets of the same size to generate a more stable estimation of the prediction error for previously unseen data. A visual inspection of the of the data distribution given by the train-validation split is given in~\pref{fig:ebner-train-val-split}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{graphics/pgfplots/cha5/Ebner/train-val-split.pdf}
-	\caption{Training set $\mathcal{D}_{\text{train}}$ and validation set $\mathcal{D}_{\text{val}}$.}
+	\caption{Validation set $\mathcal{D}_{\text{val}}$ and training set $\mathcal{D}_{\text{train}}$.}
 	\label{fig:ebner-train-val-split}
 \end{figure}
 %
 Note that we use a smoothness penalty optimized via generalized cross-validation for each individual basis. The unconstraint models M1, M3 and M5 are therefore P-spline models rather than B-spline models. The shape-constraint models M2, M4 and M6 are SCP-spline models. 
 
-The mean squared errors evaluated on the validations set $\mathcal{D}_{\text{val}}$ are given in~\pref{tab:ebner-mse-val}. According to these, the best model is M4, i.e. the shape-constraint tensor-product B-spline with a monotonicity constraint in the mass flow dimension. The models M3, i.e. the tensor-product B-spline, and M6, i.e. the additive model using shape-constraints, perform nearly as well as M4 according to the mean squared error on the validation set. 
+The mean squared errors evaluated on the validations set $\mathcal{D}_{\text{val}}$ as well as the effective degree of freedom EDoF of the models, cf. Section~\pref{subsec:Regularization}, are given in~\pref{tab:ebner-mse-val}. According to these, the best model is M4, i.e. the shape-constraint tensor-product B-spline with a monotonicity constraint in the mass flow dimension. The models M3, i.e. the tensor-product B-spline, and M6, i.e. the additive model using shape-constraints, perform nearly as well as M4 according to the mean squared error on the validation set but both posses a significantly higher EDoF which allows for some overfitting. 
 
 \begin{table}[H]
 	\begin{center}
@@ -58,7 +58,7 @@ The mean squared errors evaluated on the validations set $\mathcal{D}_{\text{val
 		every nth row={1}{before row=\midrule},
 		]{graphics/data/cha5/Ebner/mses.csv}
 	\end{center}
-	\caption{Mean squared errors on the validation set $\mathcal{D}_{\text{val}}$.}
+	\caption{Mean squared errors on the validation set $\mathcal{D}_{\text{val}}$ and effective degree of freedom EDoF of the models.}
 	\label{tab:ebner-mse-val}
 \end{table}
 
@@ -89,7 +89,7 @@ The visual inspection of the predictions of model M3 in~\pref{fig:ebner-M3} indi
 	\label{fig:ebner-M3}
 \end{figure}
 
-We omit the visual presentation of the predictions by the models M1, M2 and M5, since for all of these the mean squared errors on the validation set $\mathcal{D}_{\text{val}}$ is at least a magnitude higher, indicating even worse models.
+We omit the visual presentation of the predictions by the models M1, M2 and M5, since for all of these the metrics, mean squared errors on the validation set $\mathcal{D}_{\text{val}}$ and the effective degree of freedom EDoF, indicate even worse models.
 
 To summarized, we see that the incorporation of a priori domain knowledge improves the quality of the fit in all of the above models, e.g. M2 is the better model according to the mean squared error on the validation set $\mathcal{D}_{\text{val}}$ than M1, M4 is better than M3 and M6 is better than M5. Therefore, we conclude that the use of a priori domain knowledge through shape-constraints improves the model quality for our real-world data example. 
 
@@ -106,7 +106,7 @@ As second example, we will now investigate the behavior of a servo-compensation,
 	\label{fig:blockschaltbild}
 \end{figure}
 
-The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at $s_h = 0$. The main challenge of here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the differential flow $q_p^d$. We further constrain the models to be monotonic increasing with the differential flow $q_p^d$ to enforce a smooth transition at the discontinuity at $s_h = 0$.
+The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at $s_h = 0$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the differential flow $q_p^d$. We further constrain the models to be monotonic increasing with the differential flow $q_p^d$ to enforce a smooth transition at the discontinuity at $s_h = 0$.
 
 \begin{figure}[H]
 	\centering
@@ -126,7 +126,7 @@ We will now use various models based on B-spline bases, tensor-product B-spline 
 	\item M6 $= s(2) + t(1,2)$, as additive model using the constraints in M2 and M4
 \end{enumerate}
 %
-To fit the models listed above, we perform a randomized train-validation split on the data, i.e. we split the data into a training set $\mathcal{D}_{\text{train}}$ with 750 data points and a validation set $\mathcal{D}_{\text{val}}$ with 250 data points, fit the models to the resulting training set and evaluate its performance by calculating the mean squared error on the validation set $\mathcal{D}_{\text{val}}$ and the effective degree of freedom of the models EDoF, see Section~\pref{subsec:Regularization}, as well as by visual inspection.
+To fit the models listed above, we perform a randomized train-validation split on the data, i.e. we split the data into a training set $\mathcal{D}_{\text{train}}$ with 750 data points and a validation set $\mathcal{D}_{\text{val}}$ with 250 data points, fit the models to the resulting training set and evaluate its performance by calculating the mean squared error on the validation set $\mathcal{D}_{\text{val}}$ and the effective degree of freedom of the models EDoF, cf. Section~\pref{subsec:Regularization}, as well as by visual inspection.
 
 Note that we use a smoothness penalty optimized via generalized cross-validation for each individual basis. The unconstraint models M1, M3 and M5 are therefore P-spline models rather than B-spline models. The shape-constraint models M2, M4 and M6 are SCP-spline models. The mean squared errors evaluated on the validations set $\mathcal{D}_{\text{val}}$ are given in~\pref{tab:bosch-mse-val} as well as the effective degree of freedom of the models as measure of the model complexity. 
 
@@ -150,42 +150,42 @@ The purely B-spline based models M1 and M2 show low degrees of freedom but highe
 \begin{figure}[H]
 	\centering 
 	\includegraphics{graphics/pgfplots/cha5/Bosch/M1.pdf}
-	\caption{Data and predictions by model M1.}
+	\caption{Data $\mathcal{D}$ and predictions by model M1.}
 	\label{fig:bosch-M1}
 \end{figure}
 
 \begin{figure}[H]
 	\centering 
 	\includegraphics{graphics/pgfplots/cha5/Bosch/M2.pdf}
-	\caption{Data and predictions by model M2.}
+	\caption{Data $\mathcal{D}$ and predictions by model M2.}
 	\label{fig:bosch-M2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering 
 	\includegraphics{graphics/pgfplots/cha5/Bosch/M3.pdf}
-	\caption{Data and predictions by model M3.}
+	\caption{Data $\mathcal{D}$ and predictions by model M3.}
 	\label{fig:bosch-M3}
 \end{figure}
 
 \begin{figure}[H]
 	\centering 
 	\includegraphics{graphics/pgfplots/cha5/Bosch/M4.pdf}
-	\caption{Data and predictions by model M4.}
+	\caption{Data $\mathcal{D}$ and predictions by model M4.}
 	\label{fig:bosch-M4}
 \end{figure}
 
 \begin{figure}[H]
 	\centering 
 	\includegraphics{graphics/pgfplots/cha5/Bosch/M5.pdf}
-	\caption{Data and predictions by model M5.}
+	\caption{Data $\mathcal{D}$ and predictions by model M5.}
 	\label{fig:bosch-M5}
 \end{figure}
 
 \begin{figure}[H]
 	\centering 
 	\includegraphics{graphics/pgfplots/cha5/Bosch/M6.pdf}
-	\caption{Data and predictions by model M6.}
+	\caption{Data $\mathcal{D}$ and predictions by model M6.}
 	\label{fig:bosch-M6}
 \end{figure}
 

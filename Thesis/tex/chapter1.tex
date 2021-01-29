@@ -1,12 +1,12 @@
 \chapter{Introduction} \label{cha:introduction}
 
-The digitalization of complex, large-scale industrial plants is leading to a massive increase of process data. This data can be used to enhance the overall understanding of the characterizing physical process inside the plant. Modern observer and control concepts are used to enhance the efficiency and quality  of the plant. They use mathematical models of the ongoing process. The exact physical description of the relevant quantities as mathematical model is nevertheless often not feasible because of the complexity of the process as well as computational and measurement limitations.
+The digitalization of complex, large-scale industrial plants is leading to a massive increase of process data. This data can be used to enhance the overall understanding of the characterizing physical process inside the plant. Modern observer and control concepts are used to enhance the efficiency and quality  of the plant. These use mathematical models of the ongoing process. The exact physical description of the relevant quantities as mathematical model is nevertheless often not feasible because of the complexity of the process as well as computational and measurement limitations.
 
 Data driven approaches are state-of-the-art in many fields, including e.g. image and speech recognition. The usage of data driven methods, e.g. artificial neural networks, parametric models, etc., to model process quantities for which measurements are expensive or not practical, gains more and more influence and acceptance in the field of process control and optimization. The application of any specific algorithm depends on issues like data quality, interpretability of the model and computational efficiency. 
 
 In most process optimization tasks massive amounts of domain specific knowledge in form of physical theories and a priori knowledge is available. The combination of the use of domain knowledge and data driven modeling techniques is called hybrid modeling or grey-box modeling. It lies between the two modeling extrema of white-box models, which are derived from first principles and physical models and black-box models, which are derived from data only \cite{ashby1961introduction}. The incorporation of this knowledge in state-of-the-art data driven approaches is not trivial and not solved for some algorithms. Nevertheless, its inclusion should improve the interpretability, which itself is of importance in the context of the emerging field of explainable artificial intelligence (XAI). XAI refers to modeling approaches and techniques in which the main goal is that the resulting model is understandable by humans \cite{dovsilovic2018explainable}.
 
-In this thesis, we present an algorithm for efficient, static, multi-dimensional function approximation using a priori domain knowledge. The algorithm is based on structured additive regression using B-splines \cite{fahrmeir2007regression}. We use user-defined constraints to include the a priori domain knowledge in the fitting process, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}. We produce interpretable and efficient models based on the given domain knowledge. The incorporation of domain specific knowledge improves the model quality and robustness as well as the interpolation behavior in situations where the measured data is sparse and/or noisy. Further, we evaluate the algorithm using noisy samples from artificial test functions with known behavior as well as real world data collected in a heat treatment process. 
+In this thesis, we present an algorithm for efficient, static, multi-dimensional function approximation using a priori domain knowledge. The algorithm is based on structured additive regression using B-splines \cite{fahrmeir2007regression}. We use user-defined constraints to include a priori domain knowledge in the fitting process, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}. We produce interpretable and efficient models based on the given domain knowledge. The incorporation of domain specific knowledge improves the model quality and robustness as well as the interpolation behavior in situations where the measured data is sparse and/or noisy. Further, we evaluate the algorithm using noisy samples from artificial test functions with known behavior as well as real world data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}
@@ -29,7 +29,7 @@ The common starting point for the different data-driven modeling approaches is t
 	\mathcal{D} = \left\{ (x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)} ), \ i = 1, \dots, n\right\}.
 \end{align} 
 %
-For ease of presentation, we restrict the following discussion to the single-input setting, i.e. $(x^{(i)}, y^{(i)}), \ i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. We then use the given data to estimate a model function $f(x)$  which is then used to predict the response or output variable $y$, i.e.
+For ease of presentation, we restrict the following discussion to the single-input setting, i.e. $(x^{(i)}, y^{(i)}), \ i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. We then use the given data to estimate a model function $f(x)$  which is used to predict the response or output variable $y$, i.e.
 
 \begin{align} \label{eq:basic-model-structure}
 	y = f(x).
@@ -119,33 +119,37 @@ Local linear models as extension of linear models possess more flexibility with 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Gaussian Process Regression}
+Gaussian process regression is a non-parametric method using a mean function $m(x)$ and a covariance function $k(x, x')$. The covariance function describes the distance between the two inputs $x$ and $x'$. The commonly used covariance function is the so-called \emph{Squared-Exponential} function, i.e.
+ 
+\begin{align}
+ 	k_{\mathrm{SE}}(x_m, x_n) = \sigma_f^2 \exp \left(-\frac{\lVert x_m - x_n \rVert^2 }{2l^2}\right) + \sigma_m^2 \delta_{m,n},
+\end{align}
+%
+where $\sigma_f^2$ is the variance of the true function, $\sigma_m^2$ is the variance of the measurement noise and $\delta_{m,n}$ is the Kronecker-Delta. The parameter $l$ tunes the smoothness of the \emph{Squared-Exponential}. 
 
-A Gaussian process is formally defined as a collection of random variables, any finite number of which have a joint Gaussian distribution, see \cite{rasmussen2005GPforML}. To specify a Gaussian process, we need a mean function $m(x)$ and a covariance function $k(x, x')$, defined as
+Since we are in the non-parametric setting, we use the complete training data $(\vec{X}, \vec{y})$, with the input $\vec{X} = [x_1^{(i)}, \dots, x_q^{(i)}]$ and the output $\vec{y} = [y^{(i)}]$ for $i=1, \dots, n$,  to evaluate the Gaussian Process at a new data point $\vec{x} = [x_1, \dots, x_q]$, see \cite{bergmann2019gaussprozessregression} and \cite{rasmussen2005GPforML}. To do this, we use the joint distribution between the training data and the new data point, i.e.
 
 \begin{align}
-	m(x) = \text{E}[f(x)], \\
-	k(x,x') = \text{E}\left[ (f(x) - m(x))(f(x') - m(x')) \right],
+	\begin{bmatrix}
+		\vec{y} \\ y 
+	\end{bmatrix} \sim \mathcal{N} \left( m(\vec{x}), \begin{bmatrix} k(\vec{X}, \vec{X}) & k(\vec{X}, \vec{x}) \\
+																		 k(\vec{x}, \vec{X}) & k(\vec{x}, \vec{x}) 
+														\end{bmatrix} \right),
+\end{align} 
+%
+to calculate the mean value and the variance of the data point $\vec{x}$ as
+
+\begin{align} \label{eq:GP-mean}
+	\text{E}(\vec{x}) = m(\vec{x}) + k(\vec{x}, \vec{X}) (k(\vec{X}, \vec{X}))^{-1} (\vec{y} - m(\vec{X}))
 \end{align}
-% 
-and obtain the Gaussian process as
+%
+and
 
-\begin{align}
-	f(x) \approx \mathcal{GP}(m(x), k(x,x')).
+\begin{align} \label{eq:GP-var}
+	\text{Var}(\vec{x})  = k(\vec{x}, \vec{x}) - k(\vec{x}, \vec{X}) (k(\vec{X}, \vec{X}))^{-1}k(\vec{X}, \vec{x}).
 \end{align}
-
-
-A Gaussian process is defined as generalization of the Gaussian distribution to multiple dimensions. The mean 
-There are two ways of interpreting Gaussian process regression models: the \emph{weight-space} and the \emph{function space} view. We will not go into detail here, since there are various textbooks related to this topic, see for example \cite{rasmussen2005GPforML}.
-
-
-
-
-
-Gaussian process regression tries to reconstruct the underlying true function $f$ by removing the noise $\epsilon$ by computing an weighted average of the noisy observations $y = f(x) + \epsilon$ as
-
-\begin{align}
-	f(x) = \transpose(k(x)) (\vec{K} + \sigma_n^2 \vec{I})^{-1} y,
-\end{align}
+%
+The main issue with Gaussian Process regression is that it allows for the incorporation of a priori knowledge through the definition of the covariance function $k(x,x')$. An example can be found in the standard textbook on Gaussian Process regression in \cite{rasmussen2005GPforML}, in which they fit the Mauna Loa Atmospheric Carbon Dioxide data set using a complex covariance function derived by combining simple, interpretable covariance functions.  Nevertheless, as seen~\pref{eq:GP-mean} and~\pref{eq:GP-var}, we need the information of the whole training data set to evaluate the mean value and the covariance which may lead to numerical issues for large data sets. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,4 +184,4 @@ We are able to incorporate the following a priori domain knowledge:
 	\item Unimodality, i.e. \\ $f'(x) > 0, \ x < m$ and $f'(x) < 0, \ x > m$ for $m = \arg \max_{x} f(x)$ or \\ $f'(x) < 0, \ x < m$ and $f'(x) > 0, \ x > m$ for $m = \arg \min_{x} f(x)$
 \end{itemize}
 %
-The thesis is divided into 5 chapters: Chapter 2 provides an overview of the fundamental mathematical concepts used. We focus on the description of linear models, model selection and B-splines as well as on the topic of structured additive regression. In chapter 3, we present the algorithm to incorporate a priori domain knowledge using the concepts given in chapter 2. In chapter 4, we show some aspects of the practical application of the algorithm on noisy and sparse data. Chapters 5 and 6 provide examples using real-word data. In Chapter 7, we give a summary and outline future, possible work. 
+The thesis is divided into 6 chapters: Chapter 2 provides an overview of the fundamental mathematical concepts used. We focus on the description of linear models, model selection and B-splines as well as on the topic of structured additive regression. In chapter 3, we present the algorithm to incorporate a priori domain knowledge using the concepts given in chapter 2. In chapter 4, we show some aspects of the practical application of the algorithm on noisy and sparse data. Chapter 5 provides examples using real-word data. In Chapter 6, we give a summary and outline future, possible work. 
