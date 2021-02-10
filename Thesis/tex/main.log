@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.10.6)  29 JAN 2021 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.10.6)  10 FEB 2021 12:29
 entering extended mode
 **./main.tex
 (main.tex
@@ -1970,13 +1970,8 @@ Package biblatex Info: Input encoding 'ascii' forced by
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-
-
-Package biblatex Warning: File 'main.bbl' is wrong format version - expected 3.
-1.
-
 Package biblatex Info: ... file 'main.bbl' found.
-(main.bbl)
+ (main.bbl)
 Package biblatex Info: Reference section=0 on input line 74.
 Package biblatex Info: Reference segment=0 on input line 74.
 \AtBeginShipoutBox=\box108
@@ -2137,18 +2132,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+
+[1
+
+
+
+{C:/Users/WeberJ/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 7.
 
 ("C:\Users\WeberJ\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-[1
-
-
-
-{C:/Users/WeberJ/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-[3] [4] [5] [6]) [7]
+[2] [3] [4] [5] [6]) [7]
 \openout2 = `chapter2.aux'.
 
  (chapter2.tex
@@ -2157,10 +2153,10 @@ chapter 2.
 
 
 
-] [9] [10]
+] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 155.
-
+(Font)              <12> on input line 94.
+ [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 155.
@@ -2191,7 +2187,7 @@ Package prettyref Warning: Reference format subsec undefined on input line 230.
 
 
 [13] [14]
-<graphics/pgfplots/cha2/bvd.pdf, id=293, 230.39275pt x 186.0551pt>
+<graphics/pgfplots/cha2/bvd.pdf, id=295, 230.39275pt x 186.0551pt>
 File: graphics/pgfplots/cha2/bvd.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha2/bvd.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha2/bvd.pdf  used on input line 304
@@ -2200,35 +2196,19 @@ Package pdftex.def Info: graphics/pgfplots/cha2/bvd.pdf  used on input line 304
  [15 <./graphics/pgfplots/cha2/bvd.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 330.
+(hyperref)                removing `math shift' on input line 340.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 330.
+(hyperref)                removing `subscript' on input line 340.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 330.
+(hyperref)                removing `superscript' on input line 340.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 330.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 347.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 347.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 347.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 347.
+(hyperref)                removing `math shift' on input line 340.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -2240,94 +2220,110 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 357.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 357.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 367.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 367.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 367.
 
 [16]
 
-Package prettyref Warning: Reference format subsec undefined on input line 407.
+Package prettyref Warning: Reference format subsec undefined on input line 417.
 
 
 [17]
 
-Package prettyref Warning: Reference format subsec undefined on input line 415.
+Package prettyref Warning: Reference format subsec undefined on input line 425.
 
 
 [18] [19]
 
-Package prettyref Warning: Reference format subsec undefined on input line 487.
+Package prettyref Warning: Reference format subsec undefined on input line 497.
 
 
 
-Package prettyref Warning: Reference format subsec undefined on input line 493.
+Package prettyref Warning: Reference format subsec undefined on input line 503.
 
 
 
-Package prettyref Warning: Reference format subsubsec undefined on input line 4
-93.
+Package prettyref Warning: Reference format subsubsec undefined on input line 5
+03.
 
 
-Package prettyref Warning: Reference format subsec undefined on input line 493.
+Package prettyref Warning: Reference format subsec undefined on input line 503.
 
 
 [20]
-<graphics/pgfplots/cha2/spline-types.pdf, id=410, 308.1613pt x 122.55788pt>
+<graphics/pgfplots/cha2/spline-types.pdf, id=415, 308.1613pt x 122.55788pt>
 File: graphics/pgfplots/cha2/spline-types.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha2/spline-types.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha2/spline-types.pdf  used on input
- line 524.
+ line 534.
 (pdftex.def)             Requested size: 308.16054pt x 122.55757pt.
  [21 <./graphics/pgfplots/cha2/spline-types.pdf>] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 597--600
+Underfull \hbox (badness 10000) in paragraph at lines 607--610
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--614
+Underfull \hbox (badness 10000) in paragraph at lines 621--624
 
  []
 
 [23]
 
 Package prettyref Warning: Reference format subsubsec undefined on input line 6
-43.
+53.
 
 Excluding 'comment' comment.
 
 Package prettyref Warning: Reference format subsubsec undefined on input line 6
-73.
+83.
 
 [24]
 
 Package prettyref Warning: Reference format subsubsec undefined on input line 7
-27.
+37.
 
 [25] [26]
 
-Package prettyref Warning: Reference format subsubsec undefined on input line 7
-97.
+Package prettyref Warning: Reference format subsubsec undefined on input line 8
+07.
 
 [27]
 
-Package prettyref Warning: Reference format subsec undefined on input line 816.
+Package prettyref Warning: Reference format subsec undefined on input line 826.
 
 
 [28]
 
-Package prettyref Warning: Reference format subsec undefined on input line 877.
+Package prettyref Warning: Reference format subsec undefined on input line 887.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 879--880
+Underfull \hbox (badness 10000) in paragraph at lines 889--890
 
  []
 
-<graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf, id=566, 180.75128pt x 150
+<graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf, id=571, 180.75128pt x 150
 .49826pt>
 File: graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf Graphic file (type pd
 f)
 <use graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf  u
-sed on input line 888.
+sed on input line 898.
 (pdftex.def)             Requested size: 180.75082pt x 150.49788pt.
 [29] [30 <./graphics/pgfplots/cha2/tps-spatial-neighborhood.pdf>]) [31]
 \openout2 = `chapter3.aux'.
@@ -2415,7 +2411,7 @@ Package prettyref Warning: Reference format subsec undefined on input line 369.
 
 Package prettyref Warning: Reference format alg undefined on input line 375.
 
-Excluding 'comment' comment.) [39]
+) [39]
 \openout2 = `chapter4.aux'.
 
  (chapter4.tex
@@ -2425,208 +2421,196 @@ chapter 4.
 
 
 ]
-<graphics/pgfplots/cha4/exp-peak.pdf, id=790, 337.46175pt x 264.16792pt>
+<graphics/pgfplots/cha4/exp-peak.pdf, id=799, 337.46175pt x 264.16792pt>
 File: graphics/pgfplots/cha4/exp-peak.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha4/exp-peak.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha4/exp-peak.pdf  used on input lin
-e 23.
+e 33.
 (pdftex.def)             Requested size: 337.4609pt x 264.16727pt.
-PGFPlots: reading {graphics/data/cha4/peak_example/mse.csv}
  [41 <./graphics/pgfplots/cha4/exp-peak.pdf>]
-<graphics/pgfplots/cha4/exp-sparse-equidistant.pdf, id=819, 350.68414pt x 263.7
+PGFPlots: reading {graphics/data/cha4/peak_example/mse.csv}
+ [42]
+<graphics/pgfplots/cha4/exp-sparse-equidistant.pdf, id=831, 350.68414pt x 263.7
 2429pt>
 File: graphics/pgfplots/cha4/exp-sparse-equidistant.pdf Graphic file (type pdf)
 
 <use graphics/pgfplots/cha4/exp-sparse-equidistant.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha4/exp-sparse-equidistant.pdf  use
-d on input line 56.
+d on input line 69.
 (pdftex.def)             Requested size: 350.68327pt x 263.72363pt.
- [42]
 PGFPlots: reading {graphics/data/cha4/sparse_example/mse-e.csv}
-<graphics/pgfplots/cha4/exp-sparse-quantile.pdf, id=828, 350.68414pt x 263.7242
+<graphics/pgfplots/cha4/exp-sparse-quantile.pdf, id=835, 350.68414pt x 263.7242
 9pt>
 File: graphics/pgfplots/cha4/exp-sparse-quantile.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha4/exp-sparse-quantile.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha4/exp-sparse-quantile.pdf  used o
-n input line 82.
+n input line 95.
 (pdftex.def)             Requested size: 350.68327pt x 263.72363pt.
  [43 <./graphics/pgfplots/cha4/exp-sparse-equidistant.pdf>]
 PGFPlots: reading {graphics/data/cha4/sparse_example/mse-q.csv}
  [44 <./graphics/pgfplots/cha4/exp-sparse-quantile.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 109.
+(Font)              <14.4> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 109.
+(Font)              <10> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 109.
+(Font)              <7> on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 109.
+(hyperref)                removing `\lambda' on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 109.
+(hyperref)                removing `subscript' on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 122.
 
-<graphics/pgfplots/cha4/exp-lambdas.pdf, id=865, 287.5031pt x 195.17215pt>
+<graphics/pgfplots/cha4/exp-lambdas.pdf, id=874, 287.5031pt x 195.17215pt>
 File: graphics/pgfplots/cha4/exp-lambdas.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha4/exp-lambdas.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha4/exp-lambdas.pdf  used on input 
-line 115.
+line 128.
 (pdftex.def)             Requested size: 287.50238pt x 195.17166pt.
 ) [45 <./graphics/pgfplots/cha4/exp-lambdas.pdf>] [46]
 \openout2 = `chapter5.aux'.
 
  (chapter5.tex
 chapter 5.
-<graphics/pgfplots/cha5/Ebner/data_distribution.png, id=898, 657.45625pt x 447.
+<graphics/pgfplots/cha5/Ebner/data_distribution.png, id=910, 657.45625pt x 447.
 6725pt>
 File: graphics/pgfplots/cha5/Ebner/data_distribution.png Graphic file (type png
 )
 <use graphics/pgfplots/cha5/Ebner/data_distribution.png>
 Package pdftex.def Info: graphics/pgfplots/cha5/Ebner/data_distribution.png  us
-ed on input line 19.
+ed on input line 21.
 (pdftex.def)             Requested size: 338.02007pt x 230.16795pt.
 [47
 
 
 
-]
-
-Package prettyref Warning: Reference format subsec undefined on input line 37.
-
-[48 <./graphics/pgfplots/cha5/Ebner/data_distribution.png>]
-<graphics/pgfplots/cha5/Ebner/train-val-split.pdf, id=924, 393.26122pt x 254.69
+] [48 <./graphics/pgfplots/cha5/Ebner/data_distribution.png>]
+<graphics/pgfplots/cha5/Ebner/train-val-split.pdf, id=938, 393.26122pt x 254.69
 153pt>
 File: graphics/pgfplots/cha5/Ebner/train-val-split.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Ebner/train-val-split.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Ebner/train-val-split.pdf  used
- on input line 41.
+ on input line 46.
 (pdftex.def)             Requested size: 422.52348pt x 273.64813pt.
-
-
-Package prettyref Warning: Reference format subsec undefined on input line 48.
-
 PGFPlots: reading {graphics/data/cha5/Ebner/mses.csv}
-[49 <./graphics/pgfplots/cha5/Ebner/train-val-split.pdf>]
-<graphics/pgfplots/cha5/Ebner/M4.pdf, id=951, 388.70421pt x 254.69153pt>
+ [49 <./graphics/pgfplots/cha5/Ebner/train-val-split.pdf>]
+<graphics/pgfplots/cha5/Ebner/M4.pdf, id=964, 388.70421pt x 254.69153pt>
 File: graphics/pgfplots/cha5/Ebner/M4.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Ebner/M4.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Ebner/M4.pdf  used on input lin
-e 69.
+e 73.
 (pdftex.def)             Requested size: 422.52348pt x 276.86208pt.
-<graphics/pgfplots/cha5/Ebner/M6.pdf, id=954, 377.96808pt x 254.69153pt>
+<graphics/pgfplots/cha5/Ebner/M6.pdf, id=967, 377.96808pt x 254.69153pt>
 File: graphics/pgfplots/cha5/Ebner/M6.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Ebner/M6.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Ebner/M6.pdf  used on input lin
-e 78.
+e 82.
 (pdftex.def)             Requested size: 422.52348pt x 284.73567pt.
  [50 <./graphics/pgfplots/cha5/Ebner/M4.pdf>]
-<graphics/pgfplots/cha5/Ebner/M3.pdf, id=978, 388.70421pt x 254.69153pt>
+<graphics/pgfplots/cha5/Ebner/M3.pdf, id=991, 388.70421pt x 254.69153pt>
 File: graphics/pgfplots/cha5/Ebner/M3.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Ebner/M3.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Ebner/M3.pdf  used on input lin
-e 87.
+e 91.
 (pdftex.def)             Requested size: 422.52348pt x 276.86208pt.
  [51 <./graphics/pgfplots/cha5/Ebner/M6.pdf>]
-<graphics/pgfplots/cha5/Bosch/blockschaltbild.png, id=1001, 575.14874pt x 140.7
+<graphics/pgfplots/cha5/Bosch/blockschaltbild.png, id=1014, 575.14874pt x 140.7
 7594pt>
 File: graphics/pgfplots/cha5/Bosch/blockschaltbild.png Graphic file (type png)
 <use graphics/pgfplots/cha5/Bosch/blockschaltbild.png>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/blockschaltbild.png  used
- on input line 104.
+ on input line 108.
 (pdftex.def)             Requested size: 338.02007pt x 82.737pt.
  [52 <./graphics/pgfplots/cha5/Ebner/M3.pdf>]
-<graphics/pgfplots/cha5/Bosch/data_situation.pdf, id=1025, 280.87737pt x 194.43
+<graphics/pgfplots/cha5/Bosch/data_situation.pdf, id=1037, 280.87737pt x 194.43
 741pt>
 File: graphics/pgfplots/cha5/Bosch/data_situation.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/data_situation.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/data_situation.pdf  used 
-on input line 113.
+on input line 117.
 (pdftex.def)             Requested size: 280.87668pt x 194.43692pt.
  [53 <./graphics/pgfplots/cha5/Bosch/blockschaltbild.png> <./graphics/pgfplots/
 cha5/Bosch/data_situation.pdf>]
-
-Package prettyref Warning: Reference format subsec undefined on input line 129.
-
-
 PGFPlots: reading {graphics/data/cha5/Bosch/mses.csv}
-<graphics/pgfplots/cha5/Bosch/M1.pdf, id=1064, 441.20734pt x 181.56633pt>
+ [54]
+<graphics/pgfplots/cha5/Bosch/M1.pdf, id=1086, 441.20734pt x 181.56633pt>
 File: graphics/pgfplots/cha5/Bosch/M1.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/M1.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/M1.pdf  used on input lin
-e 152.
+e 156.
 (pdftex.def)             Requested size: 441.20625pt x 181.56587pt.
 
-Overfull \hbox (18.68277pt too wide) in paragraph at lines 152--153
+Overfull \hbox (18.68277pt too wide) in paragraph at lines 156--157
  [][] 
  []
 
-[54]
-<graphics/pgfplots/cha5/Bosch/M2.pdf, id=1076, 441.20734pt x 181.56633pt>
+<graphics/pgfplots/cha5/Bosch/M2.pdf, id=1087, 441.20734pt x 181.56633pt>
 File: graphics/pgfplots/cha5/Bosch/M2.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/M2.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/M2.pdf  used on input lin
-e 159.
+e 163.
 (pdftex.def)             Requested size: 441.20625pt x 181.56587pt.
 
-Overfull \hbox (18.68277pt too wide) in paragraph at lines 159--160
+Overfull \hbox (18.68277pt too wide) in paragraph at lines 163--164
  [][] 
  []
 
-<graphics/pgfplots/cha5/Bosch/M3.pdf, id=1077, 441.20734pt x 181.56633pt>
+<graphics/pgfplots/cha5/Bosch/M3.pdf, id=1088, 441.20734pt x 181.56633pt>
 File: graphics/pgfplots/cha5/Bosch/M3.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/M3.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/M3.pdf  used on input lin
-e 166.
+e 170.
 (pdftex.def)             Requested size: 441.20625pt x 181.56587pt.
 
-Overfull \hbox (18.68277pt too wide) in paragraph at lines 166--167
+Overfull \hbox (18.68277pt too wide) in paragraph at lines 170--171
  [][] 
  []
 
 [55 <./graphics/pgfplots/cha5/Bosch/M1.pdf> <./graphics/pgfplots/cha5/Bosch/M2.
 pdf>]
-<graphics/pgfplots/cha5/Bosch/M4.pdf, id=1123, 441.20734pt x 181.56633pt>
+<graphics/pgfplots/cha5/Bosch/M4.pdf, id=1134, 441.20734pt x 181.56633pt>
 File: graphics/pgfplots/cha5/Bosch/M4.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/M4.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/M4.pdf  used on input lin
-e 173.
+e 177.
 (pdftex.def)             Requested size: 441.20625pt x 181.56587pt.
 
-Overfull \hbox (18.68277pt too wide) in paragraph at lines 173--174
+Overfull \hbox (18.68277pt too wide) in paragraph at lines 177--178
  [][] 
  []
 
-<graphics/pgfplots/cha5/Bosch/M5.pdf, id=1124, 441.20734pt x 181.56633pt>
+<graphics/pgfplots/cha5/Bosch/M5.pdf, id=1135, 441.20734pt x 181.56633pt>
 File: graphics/pgfplots/cha5/Bosch/M5.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/M5.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/M5.pdf  used on input lin
-e 180.
+e 184.
 (pdftex.def)             Requested size: 441.20625pt x 181.56587pt.
 
-Overfull \hbox (18.68277pt too wide) in paragraph at lines 180--181
+Overfull \hbox (18.68277pt too wide) in paragraph at lines 184--185
  [][] 
  []
 
 [56 <./graphics/pgfplots/cha5/Bosch/M3.pdf> <./graphics/pgfplots/cha5/Bosch/M4.
 pdf>]
-<graphics/pgfplots/cha5/Bosch/M6.pdf, id=1167, 441.20734pt x 181.56633pt>
+<graphics/pgfplots/cha5/Bosch/M6.pdf, id=1178, 441.20734pt x 181.56633pt>
 File: graphics/pgfplots/cha5/Bosch/M6.pdf Graphic file (type pdf)
 <use graphics/pgfplots/cha5/Bosch/M6.pdf>
 Package pdftex.def Info: graphics/pgfplots/cha5/Bosch/M6.pdf  used on input lin
-e 187.
+e 191.
 (pdftex.def)             Requested size: 441.20625pt x 181.56587pt.
 
-Overfull \hbox (18.68277pt too wide) in paragraph at lines 187--188
+Overfull \hbox (18.68277pt too wide) in paragraph at lines 191--192
  [][] 
  []
 
@@ -2690,11 +2674,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54949 strings out of 480934
- 1316974 string characters out of 2899449
- 2267128 words of memory out of 5008801
- 69098 multiletter control sequences out of 15000+200000
- 669086 words of font info for 224 fonts, out of 3000000 for 9000
+ 54968 strings out of 480934
+ 1317241 string characters out of 2899449
+ 2268502 words of memory out of 5009175
+ 69107 multiletter control sequences out of 15000+200000
+ 670041 words of font info for 229 fonts, out of 3000000 for 9000
  1174 hyphenation exceptions out of 8191
  85i,22n,130p,10602b,2291s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.e
@@ -2733,9 +2717,9 @@ s/type1/public/lm/lmsy6.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/lm/lmsy8.pfb><C:/Users/WeberJ/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/WeberJ/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (64 pages, 2454196 bytes).
+Output written on main.pdf (64 pages, 2459745 bytes).
 PDF statistics:
- 1628 PDF objects out of 1728 (max. 8388607)
- 404 named destinations out of 1000 (max. 500000)
- 42177 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1642 PDF objects out of 1728 (max. 8388607)
+ 408 named destinations out of 1000 (max. 500000)
+ 42185 words of extra memory for PDF output out of 42996 (max. 10000000)
 

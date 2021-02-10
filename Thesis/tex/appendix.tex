@@ -56,20 +56,20 @@ Given the $n \times p$-matrix$\vec{A}$ and the $n \times q$-matrix $\vec{B}$, th
 \begin{align}
 	\vec{C} = \vec{A} \odot \vec{B} = 
 			\begin{bmatrix}
-				a_{11} \vec{B}_1 & \dots & a_{1p} \vec{B}_1 \\
+				a_{11} \vec{b}_1 & \dots & a_{1p} \vec{b}_1 \\
 				\vdots 	   &         &  \vdots \\
-				a_{n1} \vec{B}_n & \dots  & a_{np} \vec{B}_n     
+				a_{n1} \vec{b}_n & \dots  & a_{np} \vec{b}_n     
 			\end{bmatrix},
 \end{align}
 %
-where $\vec{B}_i$ denotes the $i$-th row of the matrix $\vec{B}$. As example, we define $\vec{A} \in \mathbb{R}^{3 \times 3}$ and $\vec{B} \in \mathbb{R}^{3 \times 2}$ as
+where $\vec{b}_i$ denotes the $i$-th row of the matrix $\vec{B}$. As example, we define $\vec{A} \in \mathbb{R}^{3 \times 3}$ and $\vec{B} \in \mathbb{R}^{3 \times 2}$ as
 
 \begin{align}
 	\vec{A} = 
 		\begin{bmatrix}
-			\vec{A}_1 \\
-			\vec{A}_2 \\
-			\vec{A}_3 
+			\vec{a}_1 \\
+			\vec{a}_2 \\
+			\vec{a}_3 
 		\end{bmatrix} &= 
 		\begin{bmatrix}
 			1 & 2 & 3 \\
@@ -78,9 +78,9 @@ where $\vec{B}_i$ denotes the $i$-th row of the matrix $\vec{B}$. As example, we
 		\end{bmatrix}, \quad 
 	\vec{B} = 
 		\begin{bmatrix}
-			\vec{B}_1 \\
-			\vec{B}_2 \\
-			\vec{B}_3 
+			\vec{b}_1 \\
+			\vec{b}_2 \\
+			\vec{b}_3 
 		\end{bmatrix} = 
 		\begin{bmatrix}
 			1 & 2  \\
@@ -89,14 +89,14 @@ where $\vec{B}_i$ denotes the $i$-th row of the matrix $\vec{B}$. As example, we
 		\end{bmatrix},
 \end{align}
 %
-resulting in the matrix $\vec{C} \in \mathbb{R}^{3 \times 6}$ given by
+where $\vec{a}_i$ denotes the $i$-th row of the matrix $\vec{A}$ resulting in the matrix $\vec{C} \in \mathbb{R}^{3 \times 6}$ given by
 
 \begin{align}
 		\vec{C} = 
 	\begin{bmatrix}
-		\vec{A}_1 \otimes \vec{B}_1 \\
-		\vec{A}_2 \otimes \vec{B}_2 \\
-		\vec{A}_3 \otimes \vec{B}_3 
+		\vec{a}_1 \otimes \vec{b}_1 \\
+		\vec{a}_2 \otimes \vec{b}_2 \\
+		\vec{a}_3 \otimes \vec{b}_3 
 	\end{bmatrix} = 
 	\begin{bmatrix}
 		1 & 2 & 2 & 4 & 3 & 6 \\
@@ -122,7 +122,7 @@ we use a Newton-Raphson scheme. At each iteration $i$, the new estimate $\hat{\v
 	\vec{g}(\vec{\beta}_{i}) + \vec{H}(\vec{\beta}_{i}) \big( \vec{\beta}_{i+1} - \vec{\beta}_{i}\big) = 0,
 \end{align}
 %
-with $\vec{g}$ being the gradient of and $\vec{H}$ being the Hessian of $\text{L}(\vec{\beta})$. The gradient of $\text{L}(\vec{\beta})$ equals to
+with $\vec{g}$ being the gradient and $\vec{H}$ being the Hessian of the objective function $\text{L}(\vec{\beta})$. The gradient of $\text{L}(\vec{\beta})$ equals to
 
 \begin{align}
 	\vec{g}(\vec{\beta}) = -2\transpose{\vec{X}} \vec{y} + 2\Big[ \transpose{\vec{X}} \vec{X} + \lambda \transpose{\vec{D}}_2 \vec{D}_2 + \lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}) \vec{D}_c\Big] \vec{\beta} + \lambda_c \transpose{\vec{\beta}} \transpose{\vec{D}}_c \frac{\partial \vec{V}_c(\vec{\beta})}{\partial \vec{\beta}} \vec{D}_c \vec{\beta},

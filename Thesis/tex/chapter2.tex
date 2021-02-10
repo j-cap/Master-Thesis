@@ -6,7 +6,7 @@ This chapter summarizes the fundamentals of regression. Excellent overviews can 
 \section{Linear Models} \label{sec:LinModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Given the data set $\mathcal{D} = \{(x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\}$ comprising of $n$ data points, we aim to model the relation between the inputs $x_1, \dots, x_q$ and the output $y$ with a deterministic function $f(x_1, \dots, x_q)$. Since we cannot assume that the relationship between the inputs and the output is exact, we will include a random part $\epsilon$, which is used to model e.g. measurement errors. It is typically assumed that this part is additive and thus  
+Given the data set $\mathcal{D} = \{(x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\}$ comprising of $n$ data points, we aim to model the relation between the $q$ inputs $x_1, \dots, x_q$ and the output $y$ with a deterministic function $f(x_1, \dots, x_q)$. Since we cannot assume that the relationship between the inputs and the output is exact, we will include a random part $\epsilon$, which is used to model e.g. measurement errors. It is typically assumed that this part is additive and thus  
 
 \begin{align} \label{eq:model-structure}
 	y = f(x_{1}, \dots, x_{q}) + \epsilon.
@@ -37,12 +37,12 @@ We would like to estimate the unknown function $f(x_1, \dots, x_q)$. For this, s
 	%
 	This is reasonable for many practical applications, even though it appears quite restrictive. 
 \end{enumerate}
-
-To estimate the unknown parameters or coefficients $\vec{\beta}$, we define the output vector $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}] \in \mathbb{R}^{1 \times n}$ and error vector $\transpose{\vec{\epsilon}} = [\epsilon^{(i)}, \dots, \epsilon^{(n)}] \in \mathbb{R}^{1 \times n}$ as well as the design matrix  
+%
+To estimate the unknown parameters or coefficients $\vec{\beta}$, we define the output vector $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}] \in \mathbb{R}^{1 \times n}$ and error vector $\transpose{\vec{\epsilon}} = [\epsilon^{(1)}, \dots, \epsilon^{(n)}] \in \mathbb{R}^{1 \times n}$ as well as the design matrix  
 
 \begin{align} \label{eq:design-matrix}
 	\vec{X} = \begin{bmatrix}   1     & x^{(1)}_1 & \dots & x^{(1)}_q \\ 
-								  	  \vdots &        &       & \vdots \\ 
+								  	  \vdots & \vdots       &       & \vdots \\ 
 				  		  		1     & x^{(n)}_1 & \dots & x^{(n)}_q  
 		\end{bmatrix} \in \mathbb{R}^{n \times q+1}		
 \end{align}
@@ -57,7 +57,7 @@ We assume that the design matrix $\vec{X}$ has full column rank, i.e. $\mathrm{r
 
 Another necessary requirement is that the number of data points $n$ is larger or equal to the number of regression parameters $p=q+1$, which is equivalent to the statement that the linear system in~\pref{eq:LinearModel} is not underdetermined.
 
-In addition to the assumptions on the unknown function $f$, the necessary assumptions on the error vector $\vec{\epsilon}$ are the following \cite{fahrmeir2007regression}:
+In addition to the assumptions on the unknown function $f$, the necessary assumptions on the error vector $\vec{\epsilon}$ are \cite{fahrmeir2007regression}:
 
 \begin{enumerate}
 	\item \emph{Expectation of the error} \\
@@ -72,13 +72,13 @@ In addition to the assumptions on the unknown function $f$, the necessary assump
 	\item \emph{Gaussian errors} \\
 	The errors follow at least approximately a normal distribution. Together with Assumption 1 and 2, we obtain that $\epsilon^{(i)} = \mathcal N(0, \sigma^2)$ holds. 
 \end{enumerate}
-
+%
 Summarizing, we have the following model assumptions:
 
-\begin{equation}
+\begin{equation} \label{eq:lin-model-mean}
 	\vec{\mu} = \text{E}(\vec{y}) = \vec{X} \vec{\beta} \\
 \end{equation}
-\begin{equation}
+\begin{equation} \label{eq:lin-model-var}
 	\text{Cov} (\vec{y}) = \sigma^2 \vec{I}, \\
 \end{equation}
 %	
@@ -88,12 +88,12 @@ yielding
 	\vec{y} \sim \mathcal N(\vec{X} \vec{\beta}, \sigma^2 \vec{I}).
 \end{equation}
 %
-A linear model with multiple inputs can therefore be interpreted as a multi-variate normal distribution with its mean vector given by $\vec{\mu} = \vec{X} \vec{\beta}$ and its covariance matrix given by $\sigma^2 \vec{I}$. To specify the linear model given in~\pref{eq:linModelAsDistribution}, we need to estimate the regression coefficients $\vec{\beta}$ and the variance $\sigma^2$.
+A linear model with multiple inputs can therefore be interpreted as a multi-variate normal distribution with its mean vector given by~\pref{eq:lin-model-mean} and its covariance matrix given by~\pref{eq:lin-model-var}. To specify the linear model given in~\pref{eq:linModelAsDistribution}, we need to estimate the regression coefficients $\vec{\beta}$ and the variance $\sigma^2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Parameter Estimation}
+\subsection{Estimation of the Regression Parameters \texorpdfstring{$\vec{\beta}$}{TEXT}}
 
-The linear model given in~\pref{eq:linModelAsDistribution} features the unknown parameters $\vec{\beta}$ and $\sigma$, which need to be estimated using the given data $\mathcal{D}$. In the following, the estimators $\hat{\vec{\beta}}$ and $\hat \sigma$ are introduced, and their statistical properties are derived. The two methods to estimate the regression parameters in the context of linear models are the method of Least Squares (LS) and the method of Maximum Likelihood (ML).  
+The linear model given in~\pref{eq:linModelAsDistribution} features the unknown parameters $\vec{\beta}$ and $\sigma^2$, which need to be estimated using the given data $\mathcal{D}$. In the following, the estimator $\hat{\vec{\beta}}$ is introduced. The two methods to estimate the regression parameters in the context of linear models are the method of Least Squares (LS) and the method of Maximum Likelihood (ML).  
 
 \subsubsection{The Method of Least Squares} \label{subsubsec:Method-of-LS}
 
@@ -137,7 +137,7 @@ Since $\transpose{\vec{X}}\vec{X}$ is positive-definite, the \emph{normal equati
 
 \subsubsection{Maximum Likelihood Estimation}
 
-Under the normality assumption, the likelihood is defined, see \cite{wood2017generalized}, as
+Under the normality assumption and given the data $\mathcal{D}$, the likelihood is defined, see \cite{wood2017generalized}, as
 
 \begin{align} \label{eq:likelihood}
 	\mathcal{L}(\vec{\beta}, \sigma^2) = \frac{1}{(2\pi\sigma^2)^{n/2}} \exp \left( -\frac{1}{2\sigma^2}\transpose{(\vec{y} - \vec{X} \vec{\beta})}(\vec{y} - \vec{X} \vec{\beta}) \right).
@@ -158,7 +158,7 @@ The estimation of the variance $\sigma^2$ is necessary for the construction of c
 
 \subsubsection{Maximum Likelihood Estimation}
 
-The first-order necessary condition for optimality yields in this case in 
+The first-order necessary condition for optimality in this case yields 
 
 \begin{align} \label{eq:log_likelihood_derivative_sigma}
 	\frac{\partial l(\vec{\beta}, \sigma^2)}{\partial \sigma^2} = -\frac{n}{2\sigma^2} + \frac{1}{2\sigma^4}\transpose{(\vec{y} - \vec{X} \vec{\beta})}(\vec{y} - \vec{X}\vec{\beta}) = 0. 
@@ -225,9 +225,9 @@ The hat matrix $\vec{H}$ is used in model selection techniques like cross-valida
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model Selection} \label{sec:ModelSelection}
 
-Linear models are widely exploit for regression problems on large data sets $(n \gg 0)$, because the solution of the \emph{normal equations}~\pref{eq:NormalEquations} can be computed efficiently even for large $n$. If these data sets also contain a large number of inputs $(q \gg 0)$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. These interaction terms limit the, otherwise perfect, interpretability of the linear model. 
+Linear models are widely exploit for regression problems on large data sets $(n \gg 1)$, because the solution of the \emph{normal equations}~\pref{eq:NormalEquations} can be computed efficiently even for large $n$. If these data sets also contain a large number of inputs $(q \gg 1)$, the situation becomes more complicated since possible interaction effects or correlation of input variables may occur. These interaction terms limit the, otherwise perfect, interpretability of the linear model. 
 
-Therefore, we need techniques and criteria to select the \emph{best possible model} out of the variety of different models for a given data set. Model assessment criteria, see Section~\pref{subsec:MAC}, are used to compare different models while subset selection techniques, see Section~\pref{subsec:SSM}, give an algorithmic approach to model generation. Further, we can influence the estimated coefficients $\vec{\beta}$ directly via regularization, see Section~\pref{subsec:Regularization}. 
+Therefore, we need techniques and criteria to select the \emph{best possible model} out of the variety of different models for a given data set. Model assessment criteria, see Section~\pref{subsec:MAC}, are used to compare different models while subset selection techniques, see Section~\pref{subsec:SSM}, give an algorithmic approach to model generation. Furthermore, we can influence the estimated coefficients $\vec{\beta}$ directly via regularization, see Section~\pref{subsec:Regularization}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Model Assessment Criteria} \label{subsec:MAC}
@@ -243,7 +243,7 @@ by numbers $M \subset \{1, \dots, p\}$ of used inputs with corresponding design 
 	\hat{\vec{\beta}}_{M} = (\transpose{\vec{X}}_M \vec{X}_M)^{-1} \transpose{\vec{X}}_M \vec{y}.
 \end{align*}
 %
-The data $\vec{y}$ can be interpreted as a random variable. We can then define an estimator $\hat{\vec{y}}_M$ for the vector $\vec{\mu}$ of expectations $\mu^{(i)} = \text{E}(y^{(i)})$ by
+The data $\vec{y}$ can be interpreted as a random variable. We can then define an estimator $\hat{\vec{y}}_M$ for the vector $\vec{\mu}$ of expectations $\mu^{(i)} = \text{E}(y^{(i)})$ as
 
 \begin{align} \label{eq:SPSE-estimator-y}
 	\vec{\hat{y}}_M = \vec{X}_M  \hat{\vec{\beta}}_M.
@@ -256,7 +256,7 @@ Moreover, it is easy to show that the following properties hold true using the h
 	\item $\text{Cov} (\vec{\hat{y}}_M) = \sigma^2 \vec{H}_M$
 	\item $\sum_{i=1}^n \text{Var}(\hat y^{(i)}_M) =  \text{trace}(\vec{H}_M) \sigma^2 = \vert M \vert \sigma^2 $
 	\item Sum of Mean Squared Error
-		\begin{equation}  
+		\begin{equation} 
 		\begin{split} 
 		\text{SMSE} &= \sum_{i=1}^n \text{E}\left(\hat y^{(i)}_M - \mu^{(i)}\right)^2 \\
 				    &= \sum_{i=1}^n \text{E}\left( \big( \hat y^{(i)}_M - \text{E}(\hat y^{(i)}_M) \big) + \big(\text{E}(\hat y^{(i)}_M) - \mu^{(i)} \big) \right)^2 \\
@@ -327,6 +327,16 @@ In practice, the true value for the SPSE is not accessible since $\mu^{(i)}$ and
 
 Typically used model assessment criteria follow the basic idea of the SPSE, see \cite{fahrmeir2007regression}.
 
+\subsubsection{Mean Squared Error} 
+
+The mean squared error MSE is one of the standard metrics for regression and defined as
+
+\begin{align} \label{eq:MSE-DEF}
+	\mathrm{MSE} = \frac{1}{n} \sum_{i=1}^n \left(y^{(i)} - \hat y^{(i)}_M \right),	
+\end{align}
+%
+where $y^{(i)}$ is the given data and $\hat y^{(i)}_M$ is the model prediction for that point. 
+
 \subsubsection{Corrected Coefficient of Determination $R_{\mathrm{corr}}^2$}
 
 The corrected coefficient of determination $R^2_{\mathrm{corr}}$ is an improvement over the coefficient of determination $R^2$, which is defined as 
@@ -384,7 +394,7 @@ Therefore, neglecting the constant $n$, the AIC evaluates to
 	\text{AIC} = n \log(\hat \sigma^2_{\mathrm{ML}}) + 2(\vert M \vert + 1).
 \end{align}
 %
-A lower value of the AIC means a to a better model fit \cite{fahrmeir2007regression}.
+A lower value of the AIC corresponds a to a better model fit \cite{fahrmeir2007regression}.
 
 \subsubsection{Bayesian Information Criteria}
 
@@ -480,7 +490,7 @@ Note that by the introduction of the penalty matrix $\vec{K} \ne \vec{0}$, we re
 %
 with the trace of the hat matrix of the unpenalized model, see~\pref{eq:hat-matrix}. The trace of the hat matrix $\vec{H}$ is also called \emph{effective degree of freedom}, i.e.
 
-\begin{align}
+\begin{align} \label{eq:EDoF}
 	\text{EDoF} = \text{trace}(\vec{H}_{\mathrm{pen}}).
 \end{align}
 %
@@ -522,7 +532,7 @@ using the knot sequence~\pref{eq:knot-sequence}. Hence it is composed of $(l+1)$
 \begin{figure}[H]
 	\centering
 	\includegraphics{graphics/pgfplots/cha2/spline-types.pdf}
-	\caption{B-spline basis function of order $l=0, 1, 2, 3$ for equidistant (left) and non-equidistant (right) knots.}
+	\caption{B-spline basis function of order $l=0, 1, 2, 3$ given by the superscript $l$ in $B_j^l$ for equidistant (left) and non-equidistant (right) knots.}
 	\label{fig:spline-types-both}
 \end{figure}
 
