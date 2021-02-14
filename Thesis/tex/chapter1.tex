@@ -11,7 +11,7 @@ In this thesis, we present an algorithm for efficient, static, multi-dimensional
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}
 
-We will now discuss commonly used data-driven algorithms. The discussion includes the following model approaches
+We will now discuss commonly used data-driven algorithms. The discussion includes the following model approaches:
 
 \begin{itemize}
 	\item Parametric models: Linear and polynomial regression
@@ -29,7 +29,7 @@ The common starting point for the different data-driven modeling approaches is t
 	\mathcal{D} = \left\{ (x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)} ), \ i = 1, \dots, n\right\},
 \end{align} 
 %
-where $x_1, \dots, x_q$ are the inputs and $n$ is the number of measurement samples. For ease of presentation, we restrict the following discussion to the single-input setting, i.e. $(x^{(i)}, y^{(i)}), \ i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. We then use the given data to estimate a model function $f(x)$  which is used to predict the response or output variable $y$, i.e.
+where $x_1, \dots, x_q$ are the inputs, $y^{(i)}$ is the measured output and $n$ is the number of measurement samples. For ease of presentation, we restrict the following discussion to the single-input setting, i.e. $(x^{(i)}, y^{(i)}), \ i=1, \dots, n$. The generalization to multiple input dimensions is given in the respective literature. We then use the given data to estimate a model function $f(x)$  which is used to predict the response or output variable $y$, i.e.
 
 \begin{align} \label{eq:basic-model-structure}
 	y = f(x).
@@ -66,15 +66,15 @@ Linear and polynomial regression models are so-called global models. Their param
 In \cite{nelles2013nonlinear}, non-parametric models are defined as models which require an infinite number of parameters to describe a process exactly. In almost all practical applications this infinite series is approximated by a finite number of parameters using the basis function approach given by
 
 \begin{align} \label{eq:basis-function-approach}
-	y = f(x) = \sum_{i=1}^M \beta_i \Phi_i(x, \theta_i),
+	y = f(x) = \sum_{i=1}^d \Phi_i(x, \theta_i) \beta_i,
 \end{align} 
 %
-with the parameters $\beta_i$, the basis functions $\Phi_i(\cdot)$, the input variable $x$ and the basis function parameters $\theta_i$. The output $y$ is therefore given by a linear combination of $M$ basis functions $\Phi_i(\cdot)$. To model a nonlinear relationship between $y$ and $x$, the basis functions $\Phi_i(\cdot)$ need to be nonlinear. Commonly used basis functions are, e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function} \cite{friedman2001elements}. 
+with the basis functions $\Phi_i(\cdot)$, the parameters $\beta_i$, the input variable $x$ and the basis function parameters $\theta_i$. The output $y$ is therefore given by a linear combination of $d$ basis functions $\Phi_i(\cdot)$. To model a nonlinear relationship between $y$ and $x$, the basis functions $\Phi_i(\cdot)$ need to be nonlinear. Commonly used basis functions are, e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function} \cite{friedman2001elements}. 
 
 A widely used algorithm utilizing the basis function approach is called Multivariate Adaptive Regression Splines (MARS) \cite{friedman1991multivariate}. MARS approximates data, as example again for a single input dimension, using the following model
 
 \begin{align} \label{eq:MARS}
-	y = \sum_{i=1}^M \theta_i \Phi_i(x)
+	y = \sum_{i=1}^d \Phi_i(x) \theta_i
 \end{align}
 %
 with the constant parameters $\theta_i$. The basis functions $\Phi_i(\cdot)$ are one of the following three alternatives:
@@ -87,7 +87,7 @@ with the constant parameters $\theta_i$. The basis functions $\Phi_i(\cdot)$ are
 %
 MARS fits the model by a recursive splitting approach. More information can be found in \cite{friedman2001elements} and \cite{friedman1991multivariate}. MARS models are more flexible compared to the parametric linear and polynomial regression models. As only hinge functions and products of hinge functions are used, MARS models are efficient and in general simple to understand and interpret. To our knowledge, there is currently no possibility to include a priori domain knowledge in the fitting process when using MARS. 
 
-Another widely used method using basis functions is the use of \emph{splines}. Splines are defined as piece-wise polynomials on a sequence of knots. Further information can be found in Section~\ref{sec:Splines} and \cite{deBoor1978practicalGuideToSplines}. We focus on the so-called B-splines or basis-splines. Using a B-spline consisting of $d$ B-spline basis functions of order $l$ to model some data, we obtain the model formulation as
+Another popular method utilizing basis functions is the use of \emph{splines}. Splines are defined as piece-wise polynomials on a sequence of knots. Further information can be found in Section~\ref{sec:Splines} and \cite{deBoor1978practicalGuideToSplines}. We focus on the so-called B-splines or basis-splines. Using a B-spline consisting of $d$ B-spline basis functions of order $l$ to model some data, we obtain the model formulation as
 
 \begin{align} \label{eq:Spline-basis-formulation}
 	y = f(x) = \sum_{j=1}^d B_j^l(x) \beta_j, 
@@ -98,7 +98,7 @@ with the B-spline basis functions $B_j^l$ and the parameters $\beta_j$. The para
 The basis function approach in (\ref{eq:basis-function-approach}) may be extended by changing the parameters $\beta_i$ to more complex forms. An example for this is the so-called local linear neuro-fuzzy model, for which each parameter $\beta_i$ is changed to be a \emph{local linear model} and each basis function $\Phi_i(\cdot)$ is then called \emph{validity function} determining the region of validity of the local linear model \cite{nelles2013nonlinear}. The validity functions are normalized for any model input $x$, i.e.
 
 \begin{align} \label{eq:LILOMOT-normalized-basis-fucntions}
-	\sum_{i=1}^M \Phi_i(x) = 1
+	\sum_{i=1}^d \Phi_i(x) = 1
 \end{align}
 %
 and typically chosen to be \emph{Gaussian} functions, i.e. 
@@ -107,13 +107,13 @@ and typically chosen to be \emph{Gaussian} functions, i.e.
 	\Phi_i(x) = a_i \exp \left(\frac{(x - \mu_i)^2}{\sigma_i^2} \right),	
 \end{align}
 %
-with the normalization constant $a_i$ and the parameters $\mu_i$ and $\sigma_i$ determining the location and scale of the Gaussian function. The output of the local linear neuro-fuzzy model using $M$ local linear models is then given by
+with the normalization constant $a_i$ and the parameters $\mu_i$ and $\sigma_i$ determining the location and scale of the Gaussian function. The output of the local linear neuro-fuzzy model using $d$ local linear models is then given by
 
 \begin{align} \label{eq:LOLIMOT}
-	y = \sum_{i=1}^M \left(\beta_{i0} + \beta_{i1} x_1\right) \Phi_i(x).
+	y = \sum_{i=1}^d  \Phi_i(x) \left(\beta_{i0} + \beta_{i1} x_1\right).
 \end{align}
 %
-The first term in the summation are the \emph{local linear models}. The parameters $\beta_{ij}$ for $i=1, \dots, M$ and $j=0, 1$ as well as the parameters $\mu_i$ and $\sigma_i$ from the validity functions $\Phi_i$ need to be optimized. This is done in the LOLIMOT algorithm, see \cite{nelles2013nonlinear}. 
+The second term in the summation are the \emph{local linear models}. The parameters $\beta_{ij}$ for $i=1, \dots, d$ and $j=0, 1$ as well as the parameters $\mu_i$ and $\sigma_i$ from the validity functions $\Phi_i$ need to be optimized. This is done in the LOLIMOT algorithm, see \cite{nelles2013nonlinear}. 
 
 Local linear models as extension of linear models possess more flexibility with regards to nonlinear relationships in the data. They can also be efficiently evaluated after the iterative training process. The interpretability is high since each local linear model contributes to the prediction according to its validity function. The ability to include a priori domain knowledge in the fitting process is currently not available.   
 
@@ -172,13 +172,13 @@ Lattice regression tackles this problems by jointly estimating all look-up table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Outline}
 
-The base of this thesis is a literature study about function fitting using a priori domain knowledge focusing on non-parametric techniques and neural networks. We decided to use structured additive regression \cite{fahrmeir2007regression} utilizing B-splines and tensor-product B-splines as non-linear basis functions. This approach enables flexible, multi-dimensional function fitting. We further expanded this method by applying a priori domain knowledge through the use of user-defined constraints. These constraints consist of mapping matrices determined by the type of constraint, and weighting matrices, determining whether the constraint is active, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}.
+The base of this thesis is a literature study about function fitting using a priori domain knowledge focusing on non-parametric techniques and neural networks. We decided to use structured additive regression \cite{fahrmeir2007regression} utilizing B-splines and tensor-product B-splines as non-linear basis functions since these offer a computational efficient implementation due to their locality feature. This approach enables flexible, multi-dimensional function fitting. We further expanded this method by applying a priori domain knowledge through the use of user-defined constraints. These constraints consist of mapping matrices determined by the type of constraint, and weighting matrices, determining whether the constraint is active, see \cite{hofner2011monotonicity} and \cite{bollaerts2006simple}.
 
 We are able to incorporate the following a priori domain knowledge: 
 
 \begin{itemize} \label{list:possible-constraints}
 	\item Jamming, i.e. $f(x^{(p)}) \approx y^{(p)}$ for some point $p$ with high fidelity
-	\item Boundedness, i.e. $f(x) \ge \mathrm{M}$ or $f(x) \le \mathrm{M}$ for some bound M
+	\item Boundedness, i.e. $f(x) \ge \mathrm{B}$ or $f(x) \le \mathrm{B}$ for some bound B
 	\item Monotonicity, i.e. $f'(x) \ge 0$ or $f'(x) \le 0$
 	\item Curvature, i.e. $f''(x) \ge 0$ or $f''(x) \le 0$
 	\item Unimodality, i.e. \\ $f'(x) > 0, \ x < m$ and $f'(x) < 0, \ x > m$ for $m = \arg \max_{x} f(x)$ or \\ $f'(x) < 0, \ x < m$ and $f'(x) > 0, \ x > m$ for $m = \arg \min_{x} f(x)$

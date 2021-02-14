@@ -13,10 +13,10 @@
 	\begin{axis}[
 		width=1\textwidth,
 		height=0.8\textwidth,
-		xlabel=x,
+		xlabel=$x$,
 		xmin=0.1, xmax=0.8, 
 		%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
-		ylabel=y,
+		ylabel=$y$,
 		y label style={rotate=-90,anchor=south},
 		restrict y to domain=-60:100,
 		ymin=-0.2, ymax=2.5,
@@ -30,7 +30,7 @@
 		\addplot[green, line width=0.8pt] table [x=xplot, y=Pspline_fit] {\fit};		  		
 		\addplot[red, line width=0.8pt] table [x=xplot, y=SCP_spline_fit] {\fit};
 		%\addplot[blue, line width=1pt] table [x=xplot, y=yplot] {\fit};
-		\addplot[only marks, mark=x, draw opacity=0.9] table [x=x, y=y] {\data};
+		\addplot[gray, only marks, mark=x, draw opacity=0.9] table [x=x, y=y] {\data};
 		
 	\end{axis}
 	

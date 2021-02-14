@@ -15,10 +15,10 @@
 	\begin{axis}[
 		width=0.8\textwidth,
 		height=0.6\textwidth,
-		xlabel=x,
+		xlabel=$x$,
 		xmin=0.1, xmax=0.8, 
 		%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
-		ylabel=y,
+		ylabel=$y$,
 		y label style={at={(axis description cs:-0.15, 0.5)}, rotate=-90}, 
 		ymin=0, ymax=.1,
 		grid=both,
@@ -35,8 +35,8 @@
 		\addplot[orange, line width=1pt] table [x=xplot, y=c1000] {\exp};
 		\addplot[green, line width=0.5pt] table [x=xplot, y=c10000] {\exp};
 		
-		\addplot[only marks, mark=x, 
-		draw opacity=0.3] table [x=xplot, y=yplot] {\exp};
+		\addplot[gray, only marks, mark=x, 
+		draw opacity=0.9] table [x=xplot, y=yplot] {\exp};
 		
 		%\coordinate (spypoint) at (axis cs:0.6,0.05);
 		%\coordinate (magnifyglass) at (axis cs:0.65,0.05);

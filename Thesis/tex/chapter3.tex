@@ -14,8 +14,8 @@ depending on the user-defined a priori domain knowledge leading to the so-called
 		\hline
 		\textbf{Constraint}& & \textbf{Description}   & \textbf{Section}     \\ \hline \toprule
 		Jamming            & & $f(x^{(p)}) \approx y^{(p)}$ & \pref{subsec:JammC} \\ \hline 
-		\multirow{2}{*}{Boundedness}  & lower & $f(x)\ge M$ 	  &	\pref{subsec:BoudC} \\ \cline{2-4}
-		& upper & $f(x)\le M$    & \pref{subsec:BoudC} \\ \hline
+		\multirow{2}{*}{Boundedness}  & lower & $f(x)\ge B$ 	  &	\pref{subsec:BoudC} \\ \cline{2-4}
+		& upper & $f(x)\le B$    & \pref{subsec:BoudC} \\ \hline
 		\multirow{2}{*}{Monotonicity} & increasing & $f'(x) \ge 0$ 	& \pref{subsec:MIC} \\ \cline{2-4}
 		& decreasing & $f'(x) \le 0$  & \pref{subsec:MDC} \\ \hline	
 		\multirow{2}{*}{Curvature}    & convex     & $f''(x)\ge 0$ 	& \pref{subsec:ConvC} \\ \cline{2-4}
@@ -95,7 +95,7 @@ We use the iterative approach given in Algorithm~\pref{alg:scp} to estimate the 
 	\SetAlgoLined
 	\KwResult{$\hat{\vec{\beta}}_{\mathrm{SC}}$}
 	$ i \gets 1$\;
-	$\hat{\vec{\beta}}_{i} \gets$ Solution from~\pref{eq:OF-SCP-splines} for $\lambda = \lambda_c = 0$\;
+	$\hat{\vec{\beta}}_{i} \gets$ Solution from~\pref{eq:OF-SCP-Final} for $\lambda = \lambda_c = 0$\;
 	$\vec{V}^0_c \gets \vec{0}$\;
 	$\vec{V}^1_c \gets \vec{V}_c(\hat{\vec{\beta}}_{i})$\;
 
@@ -229,16 +229,16 @@ Jamming the function $f(x)$ by some point $p = (x^{(p)}, y^{(p)})$ means that th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Boundedness constraint} \label{subsec:BoudC}
 
-The user-defined constraint for boundedness from below by, e.g. $M=0$ uses as mapping matrix $\vec{D}_c \in \mathbb{R}^{n \times d}$ the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times k}$. For the weighting matrix $\vec{V}_c \in \mathbb{R}^{n\times n}$, the diagonal weights $v_j$ are defined as
+The user-defined constraint for boundedness from below by, e.g. $B=0$ uses as mapping matrix $\vec{D}_c \in \mathbb{R}^{n \times d}$ the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times k}$. For the weighting matrix $\vec{V}_c \in \mathbb{R}^{n\times n}$, the diagonal weights $v_j$ are defined as
 
 \begin{align} \label{eq:v_boundedness}
 	v_j(\vec{\beta}_b) = \begin{cases} 
-		0, \quad \text{if} \ f(x^{(j)}) \ge M\\ 
-		1, \quad \text{if} \ f(x^{(j)})  < M 		
+		0, \quad \text{if} \ f(x^{(j)}) \ge B\\ 
+		1, \quad \text{if} \ f(x^{(j)})  < B		
 	\end{cases}, \text{for} \ j=1,2,\dots,n.
 \end{align}
 %
-Using different values of $M$ allows us to bound from below from any number $M$. Switching the comparison operators in~\pref{eq:v_boundedness} enables us to bound functions from above. 
+Using different values of $B$ allows us to bound from below from any number $B$. Switching the comparison operators in~\pref{eq:v_boundedness} enables us to bound functions from above. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -262,7 +262,7 @@ In  Section~\ref{subsubsec:tp-splines}, we extended the univariate approach of B
 	\label{tab:constraint_overview_2d}
 \end{table}
 
-Note that the constraints \emph{Jamming} and \emph{Boundedness} in~\pref{tab:constraint_overview} are dimension-independent and therefore not listed in~\pref{tab:constraint_overview_2d}. Nevertheless, the can also be applied to tensor-product B-splines using the descriptions in Section~\ref{subsec:JammC} and~\ref{subsec:BoudC}. We will present the scheme for input dimension 1. For dimension 2, minor changes need to be done, e.g. some reordering in the weighting matrix $\vec{V}_c$. 
+Note that the constraints \emph{Jamming} and \emph{Boundedness} in~\pref{tab:constraint_overview} are dimension-independent and therefore not listed in~\pref{tab:constraint_overview_2d}. Nevertheless, they can also be applied to tensor-product B-splines using the descriptions in Section~\ref{subsec:JammC} and~\ref{subsec:BoudC}. We will present the scheme for input dimension 1. For dimension 2, minor changes need to be done, e.g. some reordering in the weighting matrix $\vec{V}_c$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Monotonic increasing constraint in dimension 1} \label{subsec:MIC-TP-one-dim}
@@ -313,7 +313,7 @@ with the smoothness penalty matrix $\vec{K} \in \mathbb{R}^{d_1d_2 \times d_1d_2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Monotonic decreasing constraint for dimension 1} \label{subsec:MDC-TP-one-dim}
 
-Monotonic decreasing behavior in dimension 1 can be introduced by penalizing positive first-order partial derivatives. Therefore, we use the matrix form of the first-order finite difference operator given in~\pref{eq:FD-operator-order-1}, i.e. $\vec{D}_1 \in \mathbb{R}^{(d_1-1) \times d_1}$, in the set up of the mapping matrix $\vec{D}_c \in \mathbb{R}^{(d_1-1)d_2 \times d_1d_2}$, see~\pref{eq:mapping-matrix-sc-tp-increasing}, and define the diagonal elements of the weighting matrix $\vec{V} \in \mathbb{R}^{(d_1-1)d_2 \times (d_1-1)d_2}$ as
+Monotonic decreasing behavior in dimension 1 can be introduced by penalizing positive first-order partial derivatives. Therefore, we use the matrix form of the first-order finite difference operator given in~\pref{eq:FD-operator-order-1}, i.e. $\vec{D}_1 \in \mathbb{R}^{(d_1-1) \times d_1}$, in the set up of the mapping matrix $\vec{D}_c \in \mathbb{R}^{(d_1-1)d_2 \times d_1d_2}$, see~\pref{eq:mapping-matrix-sc-tp-increasing}, and define the diagonal elements of the weighting matrix $\vec{V}_c \in \mathbb{R}^{(d_1-1)d_2 \times (d_1-1)d_2}$ as
 
 \begin{align} 
 	\begin{split}

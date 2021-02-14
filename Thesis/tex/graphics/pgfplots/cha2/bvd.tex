@@ -25,14 +25,16 @@
 		ymin=0, ymax=40, 
 		axis lines = left,
 		ticks = none,
-		legend entries={$\text{Bias Error}^2$, Variance Error, Total Error, Optimal Model},
+		legend entries={Squared Bias Error, Variance Error, Total Error, Optimal Model},
 		] 
 		\addplot [red, densely dashed] table [x=x, y=bias] {\data};		  		
 		\addplot [blue, dotted] table [x=x, y=variance] {\data};	
 		\addplot [black] table [x=x, y=both] {\data};	  
-		\draw (0.672, 8.9341) circle [gray, radius=2pt];
+		% \draw (0.672, 8.9341) circle [gray, radius=2pt];
+		\addplot[gray, only marks, mark=o] coordinates{(0.672,8.934) (0.672, 8.9341)};
 		\addplot[dashed, gray] coordinates{(0.672,0) (0.672, 8.9341)};
 	\end{axis}
 \end{tikzpicture}
 %
+
 \end{document}

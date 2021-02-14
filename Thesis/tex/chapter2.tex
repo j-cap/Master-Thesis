@@ -1,7 +1,7 @@
 
 \chapter{Fundamentals} \label{cha:fundamentals}
 
-This chapter summarizes the fundamentals of regression. Excellent overviews can be found in the textbooks \cite{fahrmeir2007regression}, \cite{friedman2001elements} and \cite{wood2017generalized}. The shown fundamentals are strongly aligned with the presentation given in \cite{fahrmeir2007regression}.~\pref{sec:LinModel} gives an overview of the model assumptions used throughout this work. Furthermore,~\pref{sec:ModelSelection} outlines methods to evaluate and compare different models again each other in terms of complexity and accuracy.~\pref{sec:Splines} is devoted to the  spline definitions.
+This chapter summarizes the fundamentals of regression. Excellent overviews can be found in the textbooks \cite{fahrmeir2007regression}, \cite{friedman2001elements} and \cite{wood2017generalized}. The shown fundamentals are strongly aligned with the presentation given in \cite{fahrmeir2007regression}.~\pref{sec:LinModel} gives an overview of the model assumptions used throughout this work. Furthermore,~\pref{sec:ModelSelection} outlines methods to evaluate and compare different models against each other in terms of complexity and accuracy.~\pref{sec:Splines} is devoted to the  spline definitions.
 
 \section{Linear Models} \label{sec:LinModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,7 +38,7 @@ We would like to estimate the unknown function $f(x_1, \dots, x_q)$. For this, s
 	This is reasonable for many practical applications, even though it appears quite restrictive. 
 \end{enumerate}
 %
-To estimate the unknown parameters or coefficients $\vec{\beta}$, we define the output vector $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}] \in \mathbb{R}^{1 \times n}$ and error vector $\transpose{\vec{\epsilon}} = [\epsilon^{(1)}, \dots, \epsilon^{(n)}] \in \mathbb{R}^{1 \times n}$ as well as the design matrix  
+To estimate the unknown parameters or coefficients $\vec{\beta}$, we define the output vector $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}] \in \mathbb{R}^{1 \times n}$ and the error vector $\transpose{\vec{\epsilon}} = [\epsilon^{(1)}, \dots, \epsilon^{(n)}] \in \mathbb{R}^{1 \times n}$ as well as the design matrix  
 
 \begin{align} \label{eq:design-matrix}
 	\vec{X} = \begin{bmatrix}   1     & x^{(1)}_1 & \dots & x^{(1)}_q \\ 
@@ -445,7 +445,7 @@ To make use of the various model assessment criteria, some algorithmic approach 
 
 In forward selection, we start with a candidate model, which includes a small number of variables. In each iteration of forward selection, an additional variable is added to the candidate model.  The added variable is the one with leads to the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is achieved.
 
-In backward selection, we start with a candidate model, which includes all variables. In each iteration of backward selection, we eliminate the variable from the model which provides the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is possible. 
+In backward selection, we start with a candidate model, which includes all variables. In each iteration of backward selection, we eliminate the variable from the model which elimination provides the largest improvement of a predefined model assessment criteria. The algorithm stops, if no further improvement is possible. 
 
 In step-wise selection, forward and backward selection are combined to enable the inclusion and deletion of a variable in every operation. The algorithm stops, if no further reduction is possible.
 
@@ -590,7 +590,7 @@ At $\kappa_2$ and $\kappa_3$, the values of the quadratic pieces, as well as the
 	\end{equation}
 \end{subequations}
 %
-The right plot in~\pref{fig:spline-types-both} shows the B-spline basis functions of the same order $l=0,1,2,3$ defined on a non-equidistant knot sequence. The shown locality, i.e. being nonzero only over a sequence of $l+2$ knots, is a very attractive feature leading to an enhanced numerical properties compared to other types of splines. Some general properties of a B-spline basis function of order $l$ are summarized in the following list. Note that these properties are valid independent of the type of the knot placement.
+The right plot in~\pref{fig:spline-types-both} shows the B-spline basis functions of the same order $l=0,1,2,3$ defined on a non-equidistant knot sequence. The shown locality, i.e. being nonzero only over a sequence of $l+2$ knots, is a very attractive feature leading to enhanced numerical properties compared to other types of splines. Some general properties of a B-spline basis function of order $l$ are summarized in the following list. Note that these properties are valid independent of the type of the knot placement.
 
 \begin{enumerate}[(i)]
 	\item A B-spline basis function consists of $l+1$ polynomial pieces of degree $l$, e.g. a cubic B-spline basis function ($l=3$) consists of 4 cubic pieces.
@@ -622,7 +622,7 @@ where $m$ is given by $m = d - l + 1$ and obtain the sequence
 %
 Non-equidistant knot placement can be obtained using e.g. quantile-based knots, i.e. by using the $(j-1)/(m-1)$-quantiles for $j=1, \dots, m$ of the observed inputs $x^{(1)}, \dots, x^{(n)}$ as knots. Using this approach, more knots are placed in the areas where lots of data are present. The boundary knots, i.e. $\{\kappa_{1-l}, \dots, \kappa_0\}$ on the left side and $\{\kappa_{d-l+2}, \dots, \kappa_{d+1}\}$ on the right side, are usually set to be apart from each other by at least the minimal knot distance \cite{fahrmeir2007regression}. \\
 
-The collection of $d$ B-spline basis functions of order $l$ over a sequence $K = \{\kappa_{1-l}, \kappa_{1-l+1}, \\ \dots, \kappa_{d+1}\}$ knots is called B-spline basis. The basis is created such that it covers the domain $[a, b]$, i.e.
+The collection of $d$ B-spline basis functions of order $l$ over a sequence of knots $K = \{\kappa_{1-l}, \kappa_{1-l+1}, \\ \dots, \kappa_{d+1}\}$ is called B-spline basis. The basis is created such that it covers the domain $[a, b]$, i.e.
 
 \begin{align}
 	\sum_{j=1}^d B_j^l(x) = 1 \ \text{for} \ x \in [a,b].
