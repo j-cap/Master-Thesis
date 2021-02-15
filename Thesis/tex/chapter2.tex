@@ -831,7 +831,7 @@ is typically introduced to penalize the curvature of a function which is measure
 %
 using the B-spline basis matrix $\vec{B} \in \mathbb{R}^{n \times d}$ for some data $\mathcal{D}=\{(x^{(i)}, y^{(i)}), \ i=1,2,\dots,n\}$. Inserting the B-spline basis function formulation~\pref{eq:bspline-bf-approach}, using order $l$ and $d$ basis functions, into~\pref{eq:wiggliness-penalty} results in
 
-\begin{align}
+\begin{align} \label{eq:p-spline-approx-deriv}
 	\begin{split}
 		\int \left(f''(x)\right)^2 \,\mathrm{d}x &= \int \left(\sum_{j=1}^d B''_j(x) \beta_j \right)^2 \,\mathrm{d}x \\
 						     &= \int \sum_{j=1}^d \sum_{r=1}^d \beta_j \beta_r B''_j(x) B''_r(x) \,\mathrm{d}x \\

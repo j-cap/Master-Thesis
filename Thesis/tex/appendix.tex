@@ -137,7 +137,7 @@ which can be simplified, see~\cite{bollaerts2006simple}, to
 The gradient is therefore a piecewise linear function of $\vec{\beta}$ since $\vec{V}(\vec{\beta})$ is a diagonal matrix with 0s and 1s as diagonal elements, see~\pref{eq:gradient-of-L}. This implies that the Hessian is a step function of $\vec{\beta}$ and equal to
 
 \begin{align} \label{eq:hessian-of-L}
-	\vec{H}(\vec{\beta}) = 2\transpose{\vec{X}} \vec{X} + 2\lambda \transpose{\vec{D}}_2 \vec{D}_2 + 2\lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}) \vec{D}_c + 2\lambda_c \transpose{\vec{D}}_c \frac{\partial \vec{V}_c(\vec{\beta})}{\partial \vec{\beta}} \vec{D}_c. 
+	\vec{H}(\vec{\beta}) = 2\transpose{\vec{X}} \vec{X} + 2\lambda \transpose{\vec{D}}_2 \vec{D}_2 + 2\lambda_c \transpose{\vec{D}}_c \vec{V}_c(\vec{\beta}) \vec{D}_c + 2\lambda_c \transpose{\vec{D}}_c \frac{\partial \vec{V}_c(\vec{\beta})}{\partial \vec{\beta}} \vec{D}_c \vec{\beta}. 
 \end{align}
 %
 The last part can be neglected again, see \cite{bollaerts2006simple}. Substituting~\pref{eq:gradient-of-L} and~\pref{eq:hessian-of-L} into~\pref{eq:NR-scheme} leads to

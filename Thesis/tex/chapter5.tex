@@ -1,18 +1,32 @@
 \chapter{Practical Applications} \label{cha:practical-appl}
 
-We will now apply the concept of shape-constraint P-splines onto real-world data to incorporated a priori domain knowledge into the modeling process. In the first example, see~\pref{sec:real-world-application}, we use the domain knowledge to enhance the estimation of the heat transfer coefficient in a heat-treatment process. The main challenge here is the sparse and noisy data situation combined with a highly non-linear process. In the second example, see~\pref{sec:real-world-application2}, we investigate the behavior of a servo-compensation which possesses a discontinuity as main challenge.  
+We will now apply the concept of shape-constraint P-splines onto real-world data to incorporated a priori domain knowledge into the modeling process. In the first example, see~\pref{sec:real-world-application}, we use the domain knowledge to enhance the estimation of the heat transfer coefficient in a heat-treatment process. The main challenge here is the sparse and noisy data situation combined with a highly non-linear process. In the second example, see~\pref{sec:real-world-application2}, we investigate the behavior of a servo compensation which possesses a discontinuity as main challenge.  
 
 \section{Parameter Estimation} \label{sec:real-world-application}
 
-The data is generated from a heat-treatment process of aluminum strips. The aluminum strip is heated up to a specific temperature, hold at this temperature for some predefined time and then rapidly cooled down to room temperature by means of water jets. The controlled heating and cooling enhances structural properties of the aluminum strip.
+The data is generated from a heat-treatment process of aluminum strips. The aluminum strip is heated up to a specific temperature, hold at this temperature for some predefined time and then rapidly cooled down to room temperature by means of water jets. The controlled heating and cooling enhances the temperature evolution  and thus the specific mechanical properties of the aluminum strip. 
 
-The area of interest is the cooling phase of the strip, in which some highly non-linear processes take place due to phase transitions of the cooling medium water. The temperature evolution T of the strip mainly depends on the heat transfer coefficient $\alpha$ characterizing the interaction between the aluminum strip and water. A complete description of the physical effects during water cooling is still research. Therefore, modeling of the heat transfer coefficient using first-principle methods is not expedient. Nevertheless, we can use the first-principle ideas in the form of a priori domain knowledge. To describe the temperature evolution during the cooling phase, we try to estimate the heat transfer coefficient, i.e.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphics/pgfplots/cha5/Ebner/Water_Beam.png}
+	\caption{Schematic representation of the aluminum strip and the water beam.}
+	\label{fig:ebner_water_beam}
+\end{figure}
+
+The area of interest is the cooling phase of the strip, in which some highly non-linear processes take place due to phase transitions of the cooling medium water, see~\pref{fig:ebner_water_beam}. The temperature evolution T of the strip mainly depends on the heat transfer coefficient $\alpha$ characterizing the interaction between the aluminum strip and water. A complete description of the physical effects during water cooling is still research. Therefore, modeling of the heat transfer coefficient using first-principle methods is not expedient. Nevertheless, we can use the first-principle ideas in the form of a priori domain knowledge. To describe the temperature evolution during the cooling phase, we try to estimate the heat transfer coefficient, i.e.
 
 \begin{align}
 	\alpha := \alpha(T, \dot m),
 \end{align}
 %
-as a function of the temperature $T$ of the aluminum strip and the mass flow $\dot m$ of the cooling medium. We know beforehand, that the heat transfer coefficient $\alpha$ may only increase with increasing mass flow $\dot m$ and that it shows unimodal peak behavior for increasing temperature $T$, motivated by the so-called Leidenfrost effect, see \cite{mayinger2013stromung} and \cite{baehr2006heatandmasstransfer}.
+as a function of the temperature $T$ of the aluminum strip and the mass flow $\dot m$ of the cooling medium. We know beforehand, that the heat transfer coefficient $\alpha$ may only increase with increasing mass flow $\dot m$ and that it shows unimodal peak behavior for increasing temperature $T$, motivated by the so-called Nukiyama curve given in~\pref{fig:ebner_nukiyama}, see \cite{mayinger2013stromung} and \cite{baehr2006heatandmasstransfer}.
+	  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphics/pgfplots/cha5/Ebner/Nukiyama_Curve.png}
+	\caption{Nukiyama curve.}
+	\label{fig:ebner_nukiyama}
+\end{figure}
 
 The data is determined by elaborate experiments performed on a prototype of Ebner Industrieofenbau. The distribution of data is visualized in~\pref{fig:ebner_data_situation}. Here we show how many data points are given in a square area of approximately 50 $\si{K}$ and 0.9 $\si{kg}/\si{s}$, which represent approximately 1\% of the whole input space. We have some regions, where no data is available, while the majority of data points is located in small areas, see~\pref{sec:peak-behav-sparse}. This problem, i.e. of irregular data distribution, is often encountered in real-world situations. 
 
@@ -99,7 +113,7 @@ To summarized, we see that the incorporation of a priori domain knowledge improv
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Surrogate Servo-Compensation} \label{sec:real-world-application2}
+\section{Surrogate Servo Compensation} \label{sec:real-world-application2}
 
 As a second example, we will investigate on a hybrid modeling approach of a hydraulic 4/3 two-stage directional control valve for which a mathematical model and a model-based control strategy was derived and validated by means of measurements on a test bench in a former project at the Austrian Institute of Technology. Since the pilot valve is of overlapping design, the system has a large dead zone. This system characteristic makes good positioning accuracy difficult and places high demands on the controller design. For the design of the control system, a reduced order model was derived using singular perturbation techniques. The reduced order model can then be formulated as a Hammerstein system which consists of a linear system and a static input nonlinearity.
 
@@ -107,7 +121,7 @@ As a second example, we will investigate on a hybrid modeling approach of a hydr
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\columnwidth]{graphics/pgfplots/cha5/Bosch/blockschaltbild.png}
-	\caption{Block diagram of the servo-compensation.}
+	\caption{Block diagram of the servo compensation.}
 	\label{fig:blockschaltbild}
 \end{figure}
 
@@ -121,10 +135,10 @@ The proposed cascaded control concept, which is depicted in~\pref{fig:blockschal
 with the inputs $s_h^d$ as the main valve piston position and $q_p^d$ as the desired differential volume flow, calculated by the superordinate PID position controller. The output $i_m^d$ describes the differential current. 
 
 
-As this static nonlinearity represents the most complex part (in terms of the amount of operations and the number of parameters) of the designed control strategy, we aim to replace it with the help of the proposed static function approximator and thus simplifying commissioning. This further lays the foundation for adaptive or learning operation of the control strategy. The region of interest is marked by a red square in the depicted block diagram.
+As this static nonlinearity represents the most complex part (in terms of the amount of operations and the number of parameters) of the designed control strategy, we aim to replace it with the help of the proposed static function approximator and thus simplifying commissioning. The region of interest is marked by a red square in the depicted block diagram.
 
 
-The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the main valve piston position $s_h = 0$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential flow $q_p^d$. We further constrain the models to be monotonic increasing with the desired differential flow $q_p^d$ to enforce a smooth transition at the discontinuity at $s_h = 0$.
+The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the main valve piston position $s_h = 0 \ \si{m}$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential volume flow $q_p^d$. We further constrain the models to be monotonic increasing with the main valve piston position $s_h$ to enforce a smooth transition at the discontinuity at $s_h = 0 \ \si{m}$.
 
 \begin{figure}[H]
 	\centering
@@ -167,7 +181,7 @@ The mean squared errors $\mathrm{MSE}_{\mathrm{val}}$ evaluated on the validatio
 	\label{tab:bosch-mse-val}
 \end{table}
 
-The purely B-spline based models M1 and M2 show low degrees of freedom but higher values of the mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Therefore, they lack some flexibility to model the data accurately. The predictions of these models are visualized in~\pref{fig:bosch-M1} and~\pref{fig:bosch-M2}. Note the left plot is the projection of the three dimensional data onto the $s_h$ axis for better visualization of the model predictions. The purely tensor-product B-spline models M3 and M4 have a significantly lower mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Both models are visualized in~\pref{fig:bosch-M3} and~\pref{fig:bosch-M4}. With regards to the effective degree of freedom, we see that the regularization through the shape-constraints clearly decreases the model flexibility which leads to a better generalization behavior seen by the lower $\text{MSE}_{\text{val}}$ of M4 compared to M3. This can also be seen in the left plot of~\pref{fig:bosch-M3}. Note, for example, the prediction point (red) at $s_h \approx 0.7 \cdot 10^{-4}$. Such a prediction is only possible for a very wiggly and non-smooth function. The additive models using B-splines and tensor-product B-splines, i.e. M5 and M6, both show low mean squared errors on the validation set $\text{MSE}_{\text{val}}$. We again see the effect of the shape-constraint in the effective degree of freedom as well as in the visualizations in~\pref{fig:bosch-M5} and~\pref{fig:bosch-M6}. 
+The purely B-spline based models M1 and M2 show low degrees of freedom but higher values of the mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Therefore, they lack some flexibility to model the data accurately. The predictions of these models are visualized in~\pref{fig:bosch-M1} and~\pref{fig:bosch-M2}. Note the left plot is the projection of the three dimensional data onto the $s_h$ axis for better visualization of the model predictions. The purely tensor-product B-spline models M3 and M4 have a significantly lower mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Both models are visualized in~\pref{fig:bosch-M3} and~\pref{fig:bosch-M4}. With regards to the effective degree of freedom, we see that the regularization through the shape-constraints clearly decreases the model flexibility which leads to a better generalization behavior seen by the lower $\text{MSE}_{\text{val}}$ of M4 compared to M3. This can also be seen in the left plot of~\pref{fig:bosch-M3}. Note, for example, the prediction point (red) at $q_p^d \approx 0.7 \cdot 10^{-4} \ \si{\cubic m s^{-1}}$. Such a prediction is only possible for a very wiggly and non-smooth function. The additive models using B-splines and tensor-product B-splines, i.e. M5 and M6, both show low mean squared errors on the validation set $\text{MSE}_{\text{val}}$. We again see the effect of the shape-constraint in the effective degree of freedom as well as in the visualizations in~\pref{fig:bosch-M5} and~\pref{fig:bosch-M6}. 
 
 \begin{figure}[H]
 	\centering 

@@ -127,29 +127,29 @@ Gaussian process regression is a non-parametric method using a mean function $m(
 %
 where $\sigma_f^2$ is the variance of the true function, $\sigma_m^2$ is the variance of the measurement noise and $\delta_{m,n}$ is the Kronecker-Delta. The parameter $l$ tunes the smoothness of the \emph{Squared-Exponential}. 
 
-Since we are in the non-parametric setting, we use the complete training data $(\vec{X}, \vec{y})$, with the input $\vec{X} = [x_1^{(i)}, \dots, x_q^{(i)}]$ and the output $\vec{y} = [y^{(i)}]$ for $i=1, \dots, n$,  to evaluate the Gaussian Process at a new data point $\vec{x} = [x_1, \dots, x_q]$, see \cite{bergmann2019gaussprozessregression} and \cite{rasmussen2005GPforML}. To do this, we use the joint distribution between the training data and the new data point, i.e.
+We will use the complete data $\mathcal{D}$ with the input $\transpose{\vec{X}} = [x^{(1)}, \dots, x^{(n)}]$ and the output $\transpose{\vec{y}} = [y^{(1)}, \dots, y^{(n)}]$ to evaluate the Gaussian Process at a new data point $x$, see \cite{bergmann2019gaussprozessregression} and \cite{rasmussen2005GPforML}. To do this, with a little abuse of notation, we use the joint distribution between the input data $\vec{X}$ and the new data point $x$, i.e.
 
 \begin{align}
 	\begin{bmatrix}
 		\vec{y} \\ y 
-	\end{bmatrix} \sim \mathcal{N} \left( m(\vec{x}), \begin{bmatrix} k(\vec{X}, \vec{X}) & k(\vec{X}, \vec{x}) \\
-																		 k(\vec{x}, \vec{X}) & k(\vec{x}, \vec{x}) 
+	\end{bmatrix} \sim \mathcal{N} \left( m(x), \begin{bmatrix} k(\vec{X}, \vec{X}) & k(\vec{X}, x) \\
+																		 k(x, \vec{X}) & k(x, x) 
 														\end{bmatrix} \right),
 \end{align} 
 %
-to calculate the mean value and the variance of the data point $\vec{x}$ as
+using the mean function $m$ and the covariance function $k$ to calculate the mean value and the variance of the data point $x$ as
 
 \begin{align} \label{eq:GP-mean}
-	\text{E}(\vec{x}) = m(\vec{x}) + k(\vec{x}, \vec{X}) (k(\vec{X}, \vec{X}))^{-1} (\vec{y} - m(\vec{X}))
+	\text{E}(x) = m(x) + k(x, \vec{X}) (k(\vec{X}, \vec{X}))^{-1} (\vec{y} - m(\vec{X}))
 \end{align}
 %
 and
 
 \begin{align} \label{eq:GP-var}
-	\text{Var}(\vec{x})  = k(\vec{x}, \vec{x}) - k(\vec{x}, \vec{X}) (k(\vec{X}, \vec{X}))^{-1}k(\vec{X}, \vec{x}).
+	\text{Var}(x)  = k(x, x) - k(x, \vec{X}) (k(\vec{X}, \vec{X}))^{-1}k(\vec{X}, x).
 \end{align}
 %
-The main issue with Gaussian Process regression is that it allows for the incorporation of a priori knowledge through the definition of the covariance function $k(x,x')$. An example can be found in the standard textbook on Gaussian Process regression in \cite{rasmussen2005GPforML}, in which they fit the Mauna Loa Atmospheric Carbon Dioxide data set using a complex covariance function derived by combining simple, interpretable covariance functions.  Nevertheless, as seen~\pref{eq:GP-mean} and~\pref{eq:GP-var}, we need the information of the whole training data set to evaluate the mean value and the covariance which may lead to numerical issues for large data sets. 
+The usage of Gaussian Process regression allows for the incorporation of a priori knowledge through the definition of the covariance function $k(x,x')$. An example can be found in the standard textbook on Gaussian Process regression in \cite{rasmussen2005GPforML}, in which they fit the Mauna Loa Atmospheric Carbon Dioxide data set using a complex covariance function derived by combining simple, interpretable covariance functions.  Nevertheless, as seen~\pref{eq:GP-mean} and~\pref{eq:GP-var}, we need the information of the whole training data set to evaluate the mean value and the covariance which may lead to a high computational load for large data sets. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

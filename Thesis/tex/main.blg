@@ -1,18 +1,18 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is 'main.blg'
-[32] biber-MSWIN32:313> INFO - === 
-[64] Biber.pm:371> INFO - Reading 'main.bcf'
-[161] Biber.pm:857> INFO - Found 32 citekeys in bib section 0
-[176] Biber.pm:3976> INFO - Processing section 0
-[189] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[193] bibtex.pm:1500> INFO - LaTeX decoding ...
-[235] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
-[348] Utils.pm:193> WARN - I didn't find a database entry for 'baehr2006heatandmasstransfer' (section 0)
-[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[372] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[372] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[392] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'ascii'
-[392] bbl.pm:618> INFO - Converting UTF-8 to TeX macros on output to .bbl
-[415] bbl.pm:720> INFO - Output to main.bbl
-[421] Biber.pm:110> INFO - WARNINGS: 1
+[0] Config.pm:304> INFO - This is Biber 2.14
+[1] Config.pm:307> INFO - Logfile is 'main.blg'
+[114] biber-MSWIN64:322> INFO - === 
+[136] Biber.pm:415> INFO - Reading 'main.bcf'
+[269] Biber.pm:943> INFO - Found 32 citekeys in bib section 0
+[293] Biber.pm:4256> INFO - Processing section 0
+[293] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
+[306] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
+[327] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[333] bibtex.pm:1653> INFO - LaTeX decoding ...
+[424] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
+[611] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[612] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[612] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[612] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[641] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'ascii'
+[641] bbl.pm:653> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[678] bbl.pm:755> INFO - Output to main.bbl
