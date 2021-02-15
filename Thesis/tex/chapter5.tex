@@ -49,7 +49,7 @@ To fit the models listed above, we perform a randomized train-validation split o
 \end{figure}
 %
 
-The mean squared errors $\mathrm{MSE}_{\mathrm{val}}$ evaluated on the validations set $\mathcal{D}_{\text{val}}$ as well as the effective degree of freedom EDoF of the models are given in~\pref{tab:ebner-mse-val}. According to these, the superior model is M4, i.e. the shape-constraint tensor-product B-spline with a monotonicity constraint in the mass flow dimension. The models M3, i.e. the tensor-product B-spline, and M6, i.e. the additive model using shape-constraints, perform nearly as well as M4 according to the mean squared error on the validation set but both possess a significantly higher EDoF which allows for some overfitting. 
+The mean squared errors $\mathrm{MSE}_{\mathrm{val}}$ evaluated on the validations set $\mathcal{D}_{\text{val}}$ as well as the effective degree of freedom EDoF of the models are given in~\pref{tab:ebner-mse-val}. According to these, the superior model is M4, i.e. the shape-constraint tensor-product B-spline with a monotonicity constraint in the mass flow dimension. The models M3, i.e. the tensor-product P-spline, and M6, i.e. the additive model using shape-constraints, perform nearly as well as M4 according to the mean squared error on the validation set but both possess a significantly higher EDoF which allows for some overfitting. 
 
 \begin{table}[H]
 	\begin{center}
@@ -101,7 +101,8 @@ To summarized, we see that the incorporation of a priori domain knowledge improv
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Surrogate Servo-Compensation} \label{sec:real-world-application2}
 
-As second example, we will now investigate the behavior of a servo-compensation. \pref{fig:blockschaltbild} shows the block diagram of the control concept including the servo-compensation. The region of interest is marked by the red square. Here we aim to find a model which approximates the static non-linear mapping of two inputs to the differential current $i_m^d$. The first input is the measured position of the main valve $s_h$. The second input is the differential flow $q_p^d$. 
+As a second example, we will investigate on a hybrid modeling approach of a hydraulic 4/3 two-stage directional control valve for which a mathematical model and a model-based control strategy was derived and validated by means of measurements on a test bench in a former project at the Austrian Institute of Technology. Since the pilot valve is of overlapping design, the system has a large dead zone. This system characteristic makes good positioning accuracy difficult and places high demands on the controller design. For the design of the control system, a reduced order model was derived using singular perturbation techniques. The reduced order model can then be formulated as a Hammerstein system which consists of a linear system and a static input nonlinearity.
+
 
 \begin{figure}[H]
 	\centering
@@ -110,7 +111,20 @@ As second example, we will now investigate the behavior of a servo-compensation.
 	\label{fig:blockschaltbild}
 \end{figure}
 
-The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the position $s_h = 0$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the differential flow $q_p^d$. We further constrain the models to be monotonic increasing with the differential flow $q_p^d$ to enforce a smooth transition at the discontinuity at $s_h = 0$.
+
+The proposed cascaded control concept, which is depicted in~\pref{fig:blockschaltbild}, consists of a subordinate current controller, the already mentioned servo compensation with pressure observer $\hat{\Sigma}$ and a superimposed position controller $R_{sh}$ for the main valve piston position. Thereby, the servo compensation with pressure observer describes the inverse static input non-linearity 
+
+\begin{align}
+	i_m^d = f(q_p^d, s_h^d),
+\end{align}
+%
+with the inputs $s_h^d$ as the main valve piston position and $q_p^d$ as the desired differential volume flow, calculated by the superordinate PID position controller. The output $i_m^d$ describes the differential current. 
+
+
+As this static nonlinearity represents the most complex part (in terms of the amount of operations and the number of parameters) of the designed control strategy, we aim to replace it with the help of the proposed static function approximator and thus simplifying commissioning. This further lays the foundation for adaptive or learning operation of the control strategy. The region of interest is marked by a red square in the depicted block diagram.
+
+
+The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the main valve piston position $s_h = 0$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential flow $q_p^d$. We further constrain the models to be monotonic increasing with the desired differential flow $q_p^d$ to enforce a smooth transition at the discontinuity at $s_h = 0$.
 
 \begin{figure}[H]
 	\centering

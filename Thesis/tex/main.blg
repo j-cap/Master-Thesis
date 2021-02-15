@@ -1,19 +1,18 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[31] biber-MSWIN32:313> INFO - === 
+[32] biber-MSWIN32:313> INFO - === 
 [64] Biber.pm:371> INFO - Reading 'main.bcf'
-[163] Biber.pm:857> INFO - Found 32 citekeys in bib section 0
-[179] Biber.pm:3976> INFO - Processing section 0
-[192] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[203] bibtex.pm:1500> INFO - LaTeX decoding ...
-[261] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
-[439] Utils.pm:193> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[440] Utils.pm:193> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
-[468] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[468] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[469] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[469] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[491] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'ascii'
-[491] bbl.pm:618> INFO - Converting UTF-8 to TeX macros on output to .bbl
-[516] bbl.pm:720> INFO - Output to main.bbl
-[522] Biber.pm:110> INFO - WARNINGS: 2
+[161] Biber.pm:857> INFO - Found 32 citekeys in bib section 0
+[176] Biber.pm:3976> INFO - Processing section 0
+[189] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[193] bibtex.pm:1500> INFO - LaTeX decoding ...
+[235] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[348] Utils.pm:193> WARN - I didn't find a database entry for 'baehr2006heatandmasstransfer' (section 0)
+[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[372] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[372] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[392] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'ascii'
+[392] bbl.pm:618> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[415] bbl.pm:720> INFO - Output to main.bbl
+[421] Biber.pm:110> INFO - WARNINGS: 1

@@ -115,13 +115,13 @@ The quantile-based B-spline (black) in~\pref{fig:sparse-example-quantile} shows 
 	\caption{Mean squared errors on the validation set $\mathcal{D}_{\mathrm{val}}$ and the true validation set $\mathcal{D}_{\mathrm{val},\mathrm{true}}$ for quantile-based knot placement.}
 	\label{tab:sparse-example-quantile}
 \end{table}
-
-
+%
+To summarize, we can conclude that equidistant knot placement is superior to quantile-based knot placement in this example as it yields lower mean squared errors MSE on the validation set $\mathcal{D}_{\mathrm{val}}$ and on the true validation set $\mathcal{D}_{\mathrm{val}, \mathrm{true}}$, seen in~\pref{tab:sparse-example-equidistant} and~\pref{tab:sparse-example-quantile}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{The Effect of the Constraint Parameter $\lambda_c$} \label{sec:lambda_c_sec}
 
-We will now discuss the effect of the constraint parameter $\lambda_c$. As noted in~\pref{sec:peak-behav-noisy}, the shape-constraint acts as "fine-tuning" of the estimate according to the a priori domain knowledge, i.e. it only changes the estimate at places where it violates the user-defined shape constraint. We use the constraint parameter $\lambda_c$ as a measure of trust in the a priori domain knowledge, such that high trust is reflected by high values of $\lambda_c$. To show this in practice, we use the data $\mathcal{D}$ given in~\pref{sec:peak-behav-noisy} and fit shape-constraint P-splines using various values of the parameter $\lambda_c$. The results are show in~\pref{fig:example-lambdas}. Since most constraint violations are present for larger $x > 0.55$, we focus on this part of the data. 
+We will now discuss the effect of the constraint parameter $\lambda_c$. As noted in~\pref{sec:peak-behav-noisy}, the shape-constraint acts as "fine-tuning" of the estimate according to the a priori domain knowledge, i.e. it only changes the estimate at locations where it violates the user-defined shape constraint. We use the constraint parameter $\lambda_c$ as a measure of trust in the a priori domain knowledge, such that high trust is reflected by high values of $\lambda_c$. To show this in practice, we use the data $\mathcal{D}$ given in~\pref{sec:peak-behav-noisy} and fit shape-constraint P-splines using various values of the parameter $\lambda_c$. The results are show in~\pref{fig:example-lambdas}. Since most constraint violations are present for larger $x > 0.55$, we focus on this part of the data. 
 
 \begin{figure}[H]
 	\centering
