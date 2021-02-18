@@ -23,7 +23,7 @@ We will now discuss commonly used data-driven algorithms. The discussion include
 %
 We will focus on the interpretability, computational efficiency and the ability to include domain knowledge of the individual modeling approaches. The list given above is not intended to give a complete overview of the field of data-driven modelling but rather to be an introduction.
 
-The common starting point for the different data-driven modeling approaches is that we have some multi-variate data $\mathcal{D}$, i.e.
+The common starting point for the various data-driven modeling approaches is that we have some multi-variate data $\mathcal{D}$, i.e.
 
 \begin{align}
 	\mathcal{D} = \left\{ (x_1^{(i)}, \dots, x_q^{(i)}; y^{(i)} ), \ i = 1, \dots, n\right\},
@@ -46,7 +46,7 @@ According to \cite{nelles2013nonlinear}, parametric models are defined as models
 	y= f(x) = \beta_0 + \beta_1 x.
 \end{align}
 %
-Both parameters $\beta_0$ and $\beta_1$ allow for a direct interpretation as $\beta_0$ is the intercept, i.e. the output for the input $x=0$, and $\beta_1$ is the slope, i.e. the constant defining the relationship between the increase of the output $y$ with respect to the increase of the input $x$.  The interpretability of linear regression models is therefore very high. 
+Both parameters $\beta_0$ and $\beta_1$ allow for a direct interpretation as $\beta_0$ is the intercept, i.e. the output for the input $x=0$, and $\beta_1$ is the slope, i.e. the constant defining the relationship between the change of the output $y$ with respect to the change of the input $x$.  The interpretability of linear regression models is therefore very high. 
 
 Linear regression models are widely used and part of standard software tools. Their parameters can be efficiently computed using the least squares algorithm. One major drawback is that they can only recover linear relationships between input and output variables. They are therefore quite restrictive and do not allow the incorporation of a priori domain knowledge except being increasing or decreasing by the sign of the slope $\beta_1$. 
 
@@ -58,7 +58,7 @@ An extension of the linear regression model is given by polynomial regression. H
 %
 Polynomial regression introduces more flexibility in the fitting process, since the restriction of linear relationship is relaxed to a polynomial relationship of degree $p$. As for linear models, the interpretability of the parameters is given. We can use the least squares algorithm for parameter estimation. The incorporation of some a priori domain knowledge is possible, e.g. as the degree of the polynomial regression model. The major problem of polynomial regression is that the model function becomes quite wiggly for high polynomial degrees $p$. 
 
-Linear and polynomial regression models are so-called global models. Their parameters act on the complete input space. This property makes the incorporation of specific a priori domain knowledge, e.g. unimodal behavior, difficult and in most cases nearly impossible for parametric models. 
+Linear and polynomial regression models are so-called global models. Their parameters act on the complete input space. This property makes the incorporation of specific a priori domain knowledge, e.g. unimodal behavior, difficult and in most cases almost impossible for parametric models. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-parametric Models}
@@ -69,7 +69,7 @@ In \cite{nelles2013nonlinear}, non-parametric models are defined as models which
 	y = f(x) = \sum_{i=1}^d \Phi_i(x, \theta_i) \beta_i,
 \end{align} 
 %
-with the basis functions $\Phi_i(\cdot)$, the parameters $\beta_i$, the input variable $x$ and the basis function parameters $\theta_i$. The output $y$ is therefore given by a linear combination of $d$ basis functions $\Phi_i(\cdot)$. To model a nonlinear relationship between $y$ and $x$, the basis functions $\Phi_i(\cdot)$ need to be nonlinear. Commonly used basis functions are, e.g. the \emph{hat function}, the \emph{Gaussian}, \emph{splines} or the \emph{hinge function} \cite{friedman2001elements}. 
+with the basis functions $\Phi_i(\cdot)$, the parameters $\beta_i$, the input variable $x$ and the basis function parameters $\theta_i$. The output $y$ is therefore given by a linear combination of $d$ basis functions $\Phi_i(\cdot)$. To model a nonlinear relationship between $y$ and $x$, the basis functions $\Phi_i(\cdot)$ need to be nonlinear. Commonly used basis functions are, e.g. the \emph{hat function}, the \emph{Gaussian}, the \emph{hinge function} or \emph{splines} \cite{friedman2001elements}. 
 
 A widely used algorithm utilizing the basis function approach is called Multivariate Adaptive Regression Splines (MARS) \cite{friedman1991multivariate}. MARS approximates data, as example again for a single input dimension, using the following model
 
