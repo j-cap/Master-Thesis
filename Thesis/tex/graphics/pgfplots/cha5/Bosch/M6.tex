@@ -42,7 +42,7 @@
 			xmin=-0.003,xmax=0.003,
 			ymin=-0.0003,ymax=0.0003,
 			zmin=-1,zmax=1,
-			xtick scale label code/.code={\pgfmathparse{int(-#1)}$s_h \cdot 10^{-\pgfmathresult}$ [\si{\m}]},
+			xtick scale label code/.code={\pgfmathparse{int(-#1)}$s_h^d \cdot 10^{-\pgfmathresult}$ [\si{\m}]},
 			every x tick scale label/.style={at={(xticklabel cs:0.5)}, anchor = north},		
 			ytick scale label code/.code={\pgfmathparse{int(-#1)}$q_p^d \cdot 10^{-\pgfmathresult}$ [\si{\m\cubed\per\s}]},
 			every y tick scale label/.style={at={(yticklabel cs:0.5)}, anchor = north},

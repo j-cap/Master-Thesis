@@ -149,7 +149,7 @@ and
 	\text{Var}(x)  = k(x, x) - k(x, \vec{X}) (k(\vec{X}, \vec{X}))^{-1}k(\vec{X}, x).
 \end{align}
 %
-The usage of Gaussian Process regression allows for the incorporation of a priori knowledge through the definition of the covariance function $k(x,x')$. An example can be found in the standard textbook on Gaussian Process regression in \cite{rasmussen2005GPforML}, in which they fit the Mauna Loa Atmospheric Carbon Dioxide data set using a complex covariance function derived by combining simple, interpretable covariance functions.  Nevertheless, as seen~\pref{eq:GP-mean} and~\pref{eq:GP-var}, we need the information of the whole training data set to evaluate the mean value and the covariance which may lead to a high computational load for large data sets. 
+The usage of Gaussian Process regression allows for the incorporation of a priori knowledge through the definition of the covariance function $k(x,x')$. An example can be found in the standard textbook on Gaussian Process regression in \cite{rasmussen2005GPforML}, in which they fit the Mauna Loa Atmospheric Carbon Dioxide data set using a complex covariance function derived by combining simple, interpretable covariance functions.  Nevertheless, as seen in~\pref{eq:GP-mean} and~\pref{eq:GP-var}, we need the information of the whole training data set to evaluate the mean value and the covariance which may lead to a high computational load for large data sets. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

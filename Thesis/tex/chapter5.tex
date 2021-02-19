@@ -1,6 +1,6 @@
 \chapter{Practical Applications} \label{cha:practical-appl}
 
-We will now apply the concept of shape-constraint P-splines onto real-world data to incorporated a priori domain knowledge into the modeling process. In the first example, see~\pref{sec:real-world-application}, we use the domain knowledge to enhance the estimation of the heat transfer coefficient in a heat-treatment process. The main challenge here is the sparse and noisy data situation combined with a highly non-linear process. In the second example, see~\pref{sec:real-world-application2}, we investigate the behavior of a servo compensation which possesses a discontinuity as main challenge.  
+We will now apply the concept of shape-constraint P-splines at real-world data to incorporated a priori domain knowledge into the modeling process. In the first example, see~\pref{sec:real-world-application}, we use the domain knowledge to enhance the estimation of the heat transfer coefficient in a heat-treatment process. The main challenge here is the sparse and noisy data situation combined with a highly non-linear process. In the second example, see~\pref{sec:real-world-application2}, we investigate the behavior of a servo compensation which possesses a discontinuity as main challenge.  
 
 \section{Parameter Estimation} \label{sec:real-world-application}
 
@@ -113,32 +113,27 @@ To summarized, we see that the incorporation of a priori domain knowledge improv
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Surrogate Servo Compensation} \label{sec:real-world-application2}
+\section{Hybrid modeling and control example} \label{sec:real-world-application2}
 
-As a second example, we will investigate on a hybrid modeling approach of a hydraulic 4/3 two-stage directional control valve for which a mathematical model and a model-based control strategy was derived and validated by means of measurements on a test bench in a former project at the Austrian Institute of Technology. Since the pilot valve is of overlapping design, the system has a large dead zone. This system characteristic makes good positioning accuracy difficult and places high demands on the controller design. For the design of the control system, a reduced order model was derived using singular perturbation techniques. The reduced order model can then be formulated as a Hammerstein system which consists of a linear system and a static input nonlinearity.
+As a second example, we consider a hybrid modeling and control concept applied to a hydraulic 4/3 two-stage directional control valve. A mathematical model and a model-based control concept was derived and validated by means of measurements on a test bench in a former project at the Austrian Institute of Technology. Since the pilot valve is of overlapping design, the system has a large dead zone. This dead zone aggravates high precision positioning and places high demands on the controller design. A reduced-order model $\Sigma$ was derived using singular perturbation techniques. It can be formulated as a Hammerstein system which consists of a linear system and a static input nonlinearity. Here, the input is given by the voltage $u$ and outputs are the main valve piston position $s_h$ and the current $i_p$, respectively. 
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\columnwidth]{graphics/pgfplots/cha5/Bosch/blockschaltbild.png}
-	\caption{Block diagram of the servo compensation.}
+	\caption{Block diagram of the control concept.}
 	\label{fig:blockschaltbild}
 \end{figure}
+%
+The proposed (cascaded) control concept, which is depicted in~\pref{fig:blockschaltbild}, consists of a current controller $R_i$, a compensation (marked in red) and a position controller $R_{sh}$ for the main valve piston position. The compensation is composed of a pressure observer $\hat{\Sigma}$ and a servo compensation, and can be described by a function of the form 
 
-
-The proposed cascaded control concept, which is depicted in~\pref{fig:blockschaltbild}, consists of a subordinate current controller, the already mentioned servo compensation with pressure observer $\hat{\Sigma}$ and a superimposed position controller $R_{sh}$ for the main valve piston position. Thereby, the servo compensation with pressure observer describes the inverse static input non-linearity 
-
-\begin{align}
+\begin{align} \label{eq:ex-2-equation}
 	i_m^d = f(q_p^d, s_h^d),
 \end{align}
 %
-with the inputs $s_h^d$ as the main valve piston position and $q_p^d$ as the desired differential volume flow, calculated by the superordinate PID position controller. The output $i_m^d$ describes the differential current. 
+where $s_h^d$ denotes the desired main valve piston position and $q_p^d$ is the desired differential volume flow. The function~\pref{eq:ex-2-equation} represents the most complex part (in terms of the amount of operations and the number of parameters) of the designed control concept. Therefore, we aim to replace it by a function approximation. 
 
-
-As this static nonlinearity represents the most complex part (in terms of the amount of operations and the number of parameters) of the designed control strategy, we aim to replace it with the help of the proposed static function approximator and thus simplifying commissioning. The region of interest is marked by a red square in the depicted block diagram.
-
-
-The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the main valve piston position $s_h = 0 \ \si{m}$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential volume flow $q_p^d$. We further constrain the models to be monotonic increasing with the main valve piston position $s_h$ to enforce a smooth transition at the discontinuity at $s_h = 0 \ \si{m}$.
+The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model-based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the desired main valve piston position $s_h^d = 0 \ \si{m}$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential volume flow $q_p^d$. We further constrain the models to be monotonic increasing with the desired main valve piston position $s_h^d$ to enforce a smooth transition at the discontinuity at $s_h^d = 0 \ \si{m}$.
 
 \begin{figure}[H]
 	\centering
@@ -147,15 +142,15 @@ The data $\mathcal{D}$ consisting of 1000 points is generated using a validated 
 	\label{fig:bosch_data_situation}
 \end{figure}
 
-We will now use various models based on B-spline bases, tensor-product B-spline bases and their shape-constraint alternatives to recover a model for the differential current $i_m^d$. The following list, in which $s(x_i)$ denotes the use of a B-spline basis for input $x_i \in \{q_p^d, s_h\}$ and $t(q_p^d, s_h)$ denotes the use of a tensor-product B-spline basis, describes the models that are analyzed.
+We will now use various models based on B-spline bases, tensor-product B-spline bases and their shape-constraint alternatives to recover a model for the differential current $i_m^d$. The following list, in which $s(x_i)$ denotes the use of a B-spline basis for input $x_i \in \{q_p^d, s_h^d\}$ and $t(q_p^d, s_h^d)$ denotes the use of a tensor-product B-spline basis, describes the models that are analyzed.
 
 \begin{enumerate}[(i)]
-	\item M1 $= s(q_p^d) + s(s_h)$, without constraints
-	\item M2 $= s(q_p^d) + s(s_h)$, with monotonicity for $s(s_h)$
-	\item M3 $= t(q_p^d,s_h)$, without constraints
-	\item M4 $= t(q_p^d,s_h)$, with monotonicity for input $s(q_p^d)$ and $s(s_h)$
-	\item M5 $= s(s_h) + t(q_p^d,s_h)$, as additive model without constraints
-	\item M6 $= s(s_h) + t(q_p^d,s_h)$, as additive model with the constraints defined in M2 and M4
+	\item M1 $= s(q_p^d) + s(s_h^d)$, without constraints
+	\item M2 $= s(q_p^d) + s(s_h^d)$, with monotonicity for $s(s_h^d)$
+	\item M3 $= t(q_p^d,s_h^d)$, without constraints
+	\item M4 $= t(q_p^d,s_h^d)$, with monotonicity for input $s(q_p^d)$ and $s(s_h^d)$
+	\item M5 $= s(s_h^d) + t(q_p^d,s_h^d)$, as additive model without constraints
+	\item M6 $= s(s_h^d) + t(q_p^d,s_h^d)$, as additive model with the constraints defined in M2 and M4
 \end{enumerate}
 %
 Note that we use a smoothness penalty optimized via generalized cross-validation for each individual basis. The unconstraint models M1, M3 and M5 are therefore P-spline models rather than pure B-spline models. The shape-constraint models M2, M4 and M6 are SCP-spline models. 
@@ -181,7 +176,7 @@ The mean squared errors $\mathrm{MSE}_{\mathrm{val}}$ evaluated on the validatio
 	\label{tab:bosch-mse-val}
 \end{table}
 
-The purely B-spline based models M1 and M2 show low degrees of freedom but higher values of the mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Therefore, they lack some flexibility to model the data accurately. The predictions of these models are visualized in~\pref{fig:bosch-M1} and~\pref{fig:bosch-M2}. Note the left plot is the projection of the three dimensional data onto the $s_h$ axis for better visualization of the model predictions. The purely tensor-product B-spline models M3 and M4 have a significantly lower mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Both models are visualized in~\pref{fig:bosch-M3} and~\pref{fig:bosch-M4}. With regards to the effective degree of freedom, we see that the regularization through the shape-constraints clearly decreases the model flexibility which leads to a better generalization behavior seen by the lower $\text{MSE}_{\text{val}}$ of M4 compared to M3. This can also be seen in the left plot of~\pref{fig:bosch-M3}. Note, for example, the prediction point (red) at $q_p^d \approx 0.7 \cdot 10^{-4} \ \si{\cubic m s^{-1}}$. Such a prediction is only possible for a very wiggly and non-smooth function. The additive models using B-splines and tensor-product B-splines, i.e. M5 and M6, both show low mean squared errors on the validation set $\text{MSE}_{\text{val}}$. We again see the effect of the shape-constraint in the effective degree of freedom as well as in the visualizations in~\pref{fig:bosch-M5} and~\pref{fig:bosch-M6}. 
+The purely B-spline based models M1 and M2 show low degrees of freedom but higher values of the mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Therefore, they lack some flexibility to model the data accurately. The predictions of these models are visualized in~\pref{fig:bosch-M1} and~\pref{fig:bosch-M2}. Note the left plot is the projection of the three dimensional data onto the $s_h^d$ axis for better visualization of the model predictions. The purely tensor-product B-spline models M3 and M4 have a significantly lower mean squared error on the validation set $\mathcal{D}_{\text{val}}$. Both models are visualized in~\pref{fig:bosch-M3} and~\pref{fig:bosch-M4}. With regards to the effective degree of freedom, we see that the regularization through the shape-constraints clearly decreases the model flexibility which leads to a better generalization behavior seen by the lower $\text{MSE}_{\text{val}}$ of M4 compared to M3. This can also be seen in the left plot of~\pref{fig:bosch-M3}. Note, for example, the prediction point (red) at $q_p^d \approx 0.7 \cdot 10^{-4} \ \si{\cubic m s^{-1}}$. Such a prediction is only possible for a very wiggly and non-smooth function. The additive models using B-splines and tensor-product B-splines, i.e. M5 and M6, both show low mean squared errors on the validation set $\text{MSE}_{\text{val}}$. We again see the effect of the shape-constraint in the effective degree of freedom as well as in the visualizations in~\pref{fig:bosch-M5} and~\pref{fig:bosch-M6}. 
 
 \begin{figure}[H]
 	\centering 
