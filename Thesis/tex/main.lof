@@ -1,0 +1,37 @@
+\babel@toc {USenglish}{}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {USenglish}{}
+\babel@toc {USenglish}{}
+\babel@toc {USenglish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Bias-variance trade-off.\relax }}{15}{figure.caption.12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces B-spline basis function of order $l=0, 1, 2, 3$ given by the superscript $l$ in $B_j^l$ for equidistant (left) and non-equidistant (right) knots.\relax }}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Spatial neighborhood or adjacent parameters for a tensor-product B-spline.\relax }}{30}{figure.caption.23}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces B-spline, P-spline and SCP-spline fit for the data $\mathcal {D}$.\relax }}{41}{figure.caption.26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Equidistant B-spline, P-spline and SCP-spline fit for sparse data $\mathcal {D}$.\relax }}{43}{figure.caption.28}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Quantile-based B-spline, P-spline and SCP-spline fit for sparse data $\mathcal {D}$.\relax }}{44}{figure.caption.30}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces SCP-splines for different $\lambda _c$ for data $\mathcal {D}$.\relax }}{46}{figure.caption.32}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces L-curve evaluated on the validation data $\mathcal {D}_{\mathrm {val}}$.\relax }}{47}{figure.caption.33}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Decreasing constraint for increasing data and various $\lambda _c$.\relax }}{48}{figure.caption.34}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces B-spline, P-spline and SCP-spline fit for data $\mathcal {D}$.\relax }}{49}{figure.caption.35}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematic representation of the aluminum strip and the water beam.\relax }}{51}{figure.caption.36}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Nukiyama curve.\relax }}{52}{figure.caption.37}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Data distribution.\relax }}{52}{figure.caption.38}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and training set $\mathcal {D}_{\text {train}}$.\relax }}{54}{figure.caption.39}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and predictions by model M4.\relax }}{55}{figure.caption.41}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and predictions by model M6.\relax }}{56}{figure.caption.42}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and predictions by model M3.\relax }}{57}{figure.caption.43}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Block diagram of the control concept.\relax }}{58}{figure.caption.44}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Data Situation\relax }}{59}{figure.caption.45}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Data $\mathcal {D}$ and predictions by model M1.\relax }}{61}{figure.caption.47}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Data $\mathcal {D}$ and predictions by model M2.\relax }}{61}{figure.caption.48}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Data $\mathcal {D}$ and predictions by model M3.\relax }}{62}{figure.caption.49}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Data $\mathcal {D}$ and predictions by model M4.\relax }}{62}{figure.caption.50}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Data $\mathcal {D}$ and predictions by model M5.\relax }}{63}{figure.caption.51}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Data $\mathcal {D}$ and predictions by model M6.\relax }}{63}{figure.caption.52}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

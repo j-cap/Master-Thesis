@@ -6,7 +6,7 @@ This chapter summarizes the fundamentals of regression. Excellent overviews can 
 \section{Linear Models} \label{sec:LinModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Given the data set $\mathcal{D} = \{(x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\}$ comprising of $n$ data points, we aim to model the relation between the $q$ inputs $x_1, \dots, x_q$ and the output $y$ with a deterministic function $f(x_1, \dots, x_q)$. Since we cannot assume that the relationship between the inputs and the output is exact, we will include a random part $\epsilon$, which is used to model e.g. measurement errors. It is typically assumed that this part is additive and thus  
+Given the data set $\mathcal{D} = \{(x^{(i)}_1, \dots, x^{(i)}_q, y^{(i)}), \ i=1,2, \dots, n\}$ comprising $n$ data points, we aim to model the relation between the $q$ inputs $x_1, \dots, x_q$ and the output $y$ with a deterministic function $f(x_1, \dots, x_q)$. Since we cannot assume that the relationship between the inputs and the output is exact, we will include a random part $\epsilon$, which is used to model e.g. measurement errors. It is typically assumed that this part is additive and thus  
 
 \begin{align} \label{eq:model-structure}
 	y = f(x_{1}, \dots, x_{q}) + \epsilon.
@@ -233,7 +233,7 @@ Therefore, we need techniques and criteria to select the \emph{best possible mod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Model Assessment Criteria} \label{subsec:MAC}
 
-One way of comparing various models, i.e. models using different sets of inputs, is the use of model assessment criteria. Generally, model assessment criteria can be split in two components. The first one measures the goodness of fit, e.g., using the sum of squared errors, while the second measures the complexity of the model. Most model assessment criteria are based on the sum of the expected squared prediction error (SPSE), which is also known as \emph{generalization error}. Therefore, the derivation of the SPSE is given next. 
+One way of comparing various models, i.e. models using different sets of inputs, is the use of model assessment criteria. Generally, model assessment criteria can be split in two components. The first one measures the quality of fit, e.g., using the sum of squared errors, while the second measures the complexity of the model. Most model assessment criteria are based on the sum of the expected squared prediction error (SPSE), which is also known as \emph{generalization error}. Therefore, the derivation of the SPSE is given next. 
 
 \subsubsection{Sum of Expected Squared Prediction Error} \label{subsubsec:SPSE}
 
@@ -444,7 +444,7 @@ The trace can therefore be computed from the product of two matrices of shape $\
 
 To make use of the various model assessment criteria, some algorithmic approach to model selection needs to be given. The most commonly used approaches are forward, backward and stepwise selction \cite{fahrmeir2007regression}. 
 
-In forward selection, we start with a candidate model, which includes a small number of variables. In each iteration of forward selection, an additional variable is added to the candidate model.  The added variable is the one with leads to the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is achieved.
+In forward selection, we start with a candidate model, which includes a small number of variables. In each iteration of forward selection, an additional variable is added to the candidate model.  The added variable is the one which leads to the largest reduction of a predefined model assessment criteria. The algorithm stops, if no further reduction is achieved.
 
 In backward selection, we start with a candidate model, which includes all variables. In each iteration of backward selection, we eliminate the variable from the model which elimination provides the largest improvement of a predefined model assessment criteria. The algorithm stops, if no further improvement is possible. 
 

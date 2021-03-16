@@ -24,12 +24,13 @@
 		grid style={line width=.1pt, draw=gray!10},
 		major grid style={line width=.2pt,draw=gray!50}, 
 		axis lines = left,
-		legend entries={B-spline, P-spline, SCP-spline, $\mathcal{D}$},
-		] 			
+		legend entries={True function, B-spline, P-spline, SCP-spline, $\mathcal{D}$},
+		]
+		 			
+		\addplot[blue, line width=0.4pt] table [x=xplot, y=yplot] {\fit};
 		\addplot[black, line width=0.4pt] table [x=xplot, y=Bspline_fit] {\fit};		  		
 		\addplot[green, line width=0.8pt] table [x=xplot, y=Pspline_fit] {\fit};		  		
 		\addplot[red, line width=0.8pt] table [x=xplot, y=SCP_spline_fit] {\fit};
-		%\addplot[blue, line width=1pt] table [x=xplot, y=yplot] {\fit};
 		\addplot[gray, only marks, mark=x, draw opacity=0.9] table [x=x, y=y] {\data};
 		
 	\end{axis}

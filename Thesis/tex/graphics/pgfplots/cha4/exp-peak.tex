@@ -25,13 +25,14 @@
 		grid style={line width=.1pt, draw=gray!10},
 		major grid style={line width=.2pt,draw=gray!50}, 
 		axis lines = left,
-		legend entries={B-spline, P-spline, SCP-spline, $\mathcal{D}$},
+		legend entries={True function, B-spline, P-spline, SCP-spline, $\mathcal{D}$},
 		] 			
 
+		\addplot[blue, line width=0.4pt] table [x=xplot, y=ytrue] {\exp};
 		\addplot[black, line width=0.4pt] table [x=xplot, y=Bspline_fit] {\exp};		  		
 		\addplot[green, line width=0.8pt] table [x=xplot, y=Pspline_fit] {\exp};		  		
 		\addplot[red, line width=0.8pt] table [x=xplot, y=SCP_spline_fit] {\exp};
-		%\addplot[blue, line width=0.8pt] table [x=xplot, y=ytrue] {\exp};
+
 		\addplot[gray, only marks, mark=x, draw opacity=0.9] table [x=xplot, y=yplot] {\exp};
 		
 		\coordinate (spypoint) at (axis cs:0.6,0.05);

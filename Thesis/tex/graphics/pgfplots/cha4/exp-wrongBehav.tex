@@ -1,0 +1,47 @@
+
+
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+%
+\begin{tikzpicture}
+	\pgfplotstableread{../../data/cha4/inc_data_dec_behav/data.txt}{\data};		
+	\pgfplotstableread{../../data/cha4/inc_data_dec_behav/fits.txt}{\fits};		
+	\begin{axis}[
+		width=1\textwidth,
+		height=0.8\textwidth,
+		xlabel=$x$,
+		xmin=0.1, xmax=0.38, 
+		%x label style={at={(axis description cs:0.5,-0.05),anchor=south}},
+		ylabel=$y$,
+		y label style={rotate=-90,anchor=south},
+		restrict y to domain=-60:100,
+		ymin=-0.2, ymax=2.5,
+		grid=both,
+		grid style={line width=.1pt, draw=gray!10},
+		major grid style={line width=.2pt,draw=gray!50}, 
+		axis lines = left,
+		legend entries={$\lambda_c = 10$,
+						$\lambda_c = 10^2$,
+						$\lambda_c = 10^5$,
+						$\lambda_c = 10^{14}$,
+						$\lambda_c = 10^{17}$,
+			 $\mathcal{D}$},
+		legend pos = north west,
+		]
+		 			
+		\addplot[black, line width=0.4pt] table [x=x, y=c10] {\fits};		  		
+		\addplot[blue, line width=0.4pt] table [x=x, y=c1000] {\fits};		  		
+		\addplot[orange, line width=0.4pt] table [x=x, y=c100000] {\fits};		  		
+		\addplot[green, line width=0.8pt] table [x=x, y=c100000000000000] {\fits};		  		
+		\addplot[red, line width=0.8pt] table [x=x,   y=c100000000000000000] {\fits};
+		\addplot[gray, only marks, mark=x, draw opacity=0.9] table [x=x, y=y] {\data};
+		
+	\end{axis}
+	
+\end{tikzpicture}
+%
+\end{document}
