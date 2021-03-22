@@ -439,6 +439,7 @@ The numerical advantage comes from the fact that the trace of a product of matri
 %
 The trace can therefore be computed from the product of two matrices of shape $\vert M \vert\times \vert M \vert$, see  \cite{fahrmeir2007regression}. Note that for a linear model as in~\pref{eq:LinearModel}, the trace of the hat matrix $\vec{H}$ is equal to the number of parameters $p$ of the linear model. For regularized or non-parametric models, the trace of the hat matrix $\vec{H}$ is smaller than $p$, where $p$ is the number of parameters of the regularized or non-parametric model. Therefore, the trace of the hat matrix $\vec{H}$ is also known as \emph{effective degree of freedom} EDoF of the model, see Section~\ref{subsec:Regularization}. 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Subset Selection Methods} \label{subsec:SSM}
 
@@ -496,6 +497,11 @@ with the trace of the hat matrix of the unpenalized model, see~\pref{eq:hat-matr
 \end{align}
 %
 When we use regularization to reduce the degree of freedom of a model, we need to make use of the effective degree of freedom EDoF instead of the number of parameters $p$ in model assessment criteria, see Section~\pref{subsec:MAC}. 
+
+\subsubsection{L-curve method} \label{subsubsec:L-curve}
+
+Another method for choosing the regularization parameter, additional to the model assessment criteria in Section~\pref{subsec:MAC}, is the so-called \emph{L-curve method}. The L-curve is given by the parametric curve $(\rho(\lambda), \eta(\lambda))$, where $\rho(\lambda)$ and $\eta(\lambda)$ measure the size of the regularized solution $\vec{\beta}$ and the residual $\vec{y} - \vec{X} \vec{\beta}$, see \cite{hansen1993use}. In the setting of Ridge regression, this curve then has a distinct L-shaped corner exactly where the solution $\vec{\beta}$ changes from being dominated by the regularization errors $\lambda \cdot \mathrm{pen}(\vec{\beta})$ to being dominated by the mean squared data errors $\lVert \vec{y} - \vec{X} \vec{\beta} \rVert$. This corner determines the smoothing parameter $\lambda$ as optimal trade-off between data fidelity and smoothness. Further information can be found in \cite{hansen1993use} and \cite{hansen1992analysis}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
