@@ -24,8 +24,8 @@
 \contentsline {subsection}{\numberline {2.2.1}Model Assessment Criteria}{13}{subsection.2.2.1}%
 \contentsline {subsubsection}{\nonumberline Sum of Expected Squared Prediction Error}{13}{subsubsection*.16}%
 \contentsline {subsubsection}{\nonumberline Mean Squared Error}{16}{subsubsection*.19}%
-\contentsline {subsubsection}{\nonumberline Corrected Coefficient of Determination $R_{\mathrm {corr}}^2$}{16}{subsubsection*.21}%
-\contentsline {subsubsection}{\nonumberline Corrected Coefficient of Determination after McFadden $R_{\mathrm {McFadden}}^2$}{17}{subsubsection*.23}%
+\contentsline {subsubsection}{\nonumberline Corrected Coefficient of Determination $\text {R}_{\mathrm {corr}}^2$}{16}{subsubsection*.21}%
+\contentsline {subsubsection}{\nonumberline Corrected Coefficient of Determination after McFadden $\text {R}_{\mathrm {McFadden}}^2$}{17}{subsubsection*.23}%
 \contentsline {subsubsection}{\nonumberline Mallow's $\mathbf {C_p}$}{17}{subsubsection*.25}%
 \contentsline {subsubsection}{\nonumberline Akaike Information Criterion}{17}{subsubsection*.27}%
 \contentsline {subsubsection}{\nonumberline Bayesian Information Criteria}{18}{subsubsection*.29}%
@@ -58,15 +58,15 @@
 \contentsline {section}{\numberline {4.1}Peak Constraint in Practice}{41}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Peak Constraint and Sparse Data}{42}{section.4.2}%
 \contentsline {section}{\numberline {4.3}The Effect of the Constraint Parameter $\lambda _c$}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Limits of the a priori Domain Knowledge}{47}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Discontinuous Data}{48}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Practical Applications}{50}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Parameter Estimation}{50}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Hybrid Modeling and Control Example}{57}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Summary and Outlook}{64}{chapter.6}%
-\contentsline {chapter}{Appendices}{65}{section*.69}%
-\contentsline {chapter}{\numberline {A}Appendix}{65}{appendix.1.A}%
-\contentsline {section}{\numberline {A.1}Kronecker product}{65}{section.1.A.1}%
-\contentsline {section}{\numberline {A.2}Row-wise Kronecker product}{65}{section.1.A.2}%
-\contentsline {section}{\numberline {A.3}Derivation of the iterative scheme}{66}{section.1.A.3}%
+\contentsline {section}{\numberline {4.4}Limits of the a priori Domain Knowledge}{48}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Discontinuous Data}{49}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Practical Applications}{51}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Parameter Estimation}{51}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Hybrid Modeling and Control Example}{58}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Summary and Outlook}{65}{chapter.6}%
+\contentsline {chapter}{Appendices}{66}{section*.70}%
+\contentsline {chapter}{\numberline {A}Appendix}{66}{appendix.1.A}%
+\contentsline {section}{\numberline {A.1}Kronecker product}{66}{section.1.A.1}%
+\contentsline {section}{\numberline {A.2}Row-wise Kronecker product}{66}{section.1.A.2}%
+\contentsline {section}{\numberline {A.3}Derivation of the iterative scheme}{67}{section.1.A.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

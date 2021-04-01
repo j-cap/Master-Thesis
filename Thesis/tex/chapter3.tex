@@ -166,7 +166,7 @@ Concave behavior can be introduced by penalizing positive second-order derivativ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Peak constraint} \label{subsec:PeakC}
 
-Peak behavior can be introduced by penalizing negative first-order derivatives for the increasing part and positive first-order derivatives for the decreasing part of the function. Therefore, we use the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, as mapping matrix $\vec{D}_1 \in \mathbb{R}^{(d-1)\times d}$. The weighting matrix $\vec{V}_c \in \mathbb{R}^{(d-1) \times (d-1)}$ now has a special structure. First, we find the data point $x^{(\text{max})}$ corresponding to the peak value in the data by finding its data index $\mathrm{max}$, i.e. $\text{max} = \max_i y^{(i)} \ \text{for} \ i=1,2,\dots, n$. Next, we automatically identify the dominant B-spline basis function $B_p^l(x)$ around $x^{(\text{max})}$, i.e. the B-spline basis function with the maximal value at $x^{(\text{max})}$, such that
+Peak behavior can be introduced by penalizing negative first-order derivatives for the increasing part and positive first-order derivatives for the decreasing part of the function. Therefore, we use the matrix form of the first-order finite difference operator, see~\pref{eq:FD-operator-order-1}, as mapping matrix $\vec{D}_1 \in \mathbb{R}^{(d-1)\times d}$. The weighting matrix $\vec{V}_c \in \mathbb{R}^{(d-1) \times (d-1)}$ now has a special structure. First, we find the data point $x^{(\text{max})}$ corresponding to the peak value in the data by finding its data index $\mathrm{max}$, i.e. $\text{max} = \arg \max_i y^{(i)} \ \text{for} \ i=1,2,\dots, n$. Next, we automatically identify the dominant B-spline basis function $B_p^l(x)$ around $x^{(\text{max})}$, i.e. the B-spline basis function with the maximal value at $x^{(\text{max})}$, such that
 
 \begin{align}
 	B_p^l(x^{(\text{max})}) \ge B_j^l(x^{(\text{max})}), \quad \text{for} \ j=1,2,\dots,d.
@@ -211,7 +211,7 @@ and
 	\end{cases}, \quad \text{for} \  j=p+1,p+2,\dots,d,
 \end{align}
 %
-for $p$ being the index of the dominant B-spline basis function $B_p^l(x)$ around $x^{(\text{min})}$ with $\text{min} = \min_i y^{(i)} \ \text{for} \ i=1,2,\dots,n$ as data index of the valley value. 
+for $p$ being the index of the dominant B-spline basis function $B_p^l(x)$ around $x^{(\text{min})}$ with $\text{min} = \arg \min_i y^{(i)} \ \text{for} \ i=1,2,\dots,n$ as data index of the valley value. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Jamming constraint} \label{subsec:JammC}
@@ -238,7 +238,7 @@ The user-defined constraint for boundedness from below by, e.g. $B=0$ uses as ma
 	\end{cases}, \text{for} \ j=1,2,\dots,n.
 \end{align}
 %
-Using different values of $B$ allows us to bound from below from any number $B$. Switching the comparison operators in~\pref{eq:v_boundedness} enables us to bound functions from above. 
+Using different values of $B$ allows us to bound from below from any number $B$. Swapping the comparison operators in~\pref{eq:v_boundedness} enables us to bound functions from above. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

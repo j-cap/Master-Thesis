@@ -70,7 +70,7 @@ The mean squared errors $\mathrm{MSE}_{\mathrm{val}}$ evaluated on the validatio
 		\pgfplotstabletypeset[
 		col sep=comma,
 		columns/Model/.style={string type},
-		columns/MSE_val/.style={column name={$\text{MSE}_{\text{val}}$}},
+		columns/MSE_val/.style={column name={$\text{MSE}_{\text{val}} [\si{\W \squared \per \m \tothe{4} \per \K \squared}]$}},
 		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
 		every last row/.style={after row=\bottomrule \bottomrule},
 		every nth row={1}{before row=\midrule},
@@ -115,7 +115,7 @@ To summarized, we see that the incorporation of a priori domain knowledge improv
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hybrid Modeling and Control Example} \label{sec:real-world-application2}
 
-As a second example, we consider a hybrid modeling and control concept applied to a hydraulic 4/3 two-stage directional control valve. A mathematical model and a model-based control concept was derived and validated by means of measurements on a test bench in a former project at the Austrian Institute of Technology. Since the pilot valve is of overlapping design, the system has a large dead zone. This dead zone aggravates high precision positioning and places high demands on the controller design. A reduced-order model $\Sigma$ was derived using singular perturbation techniques. It can be formulated as a Hammerstein system which consists of a linear system and a static input nonlinearity. Here, the input is given by the voltage $u$ and outputs are the main valve piston position $s_h$ and the current $i_p$, respectively. 
+As a second example, we consider a hybrid modeling and control concept applied to a hydraulic 4/3 two-stage directional control valve. A mathematical model and a model-based control concept was derived and validated by means of measurements on a test bench in a former project at the AIT Austrian Institute of Technology GmbH. Since the pilot valve is of overlapping design, the system has a large dead zone. This dead zone aggravates high precision positioning and places high demands on the controller design. A reduced-order model $\Sigma$ was derived using singular perturbation techniques. It can be formulated as a Hammerstein system which consists of a linear system and a static input nonlinearity. Here, the input is given by the voltage $u$ and outputs are the main valve piston position $s_h$ and the current $i_p$, respectively. 
 
 
 \begin{figure}[H]
@@ -133,7 +133,7 @@ The proposed (cascaded) control concept, which is depicted in~\pref{fig:blocksch
 %
 where $s_h^d$ denotes the desired main valve piston position and $q_p^d$ is the desired differential volume flow. The function~\pref{eq:ex-2-equation} represents the most complex part (in terms of the amount of operations and the number of parameters) of the designed control concept. Therefore, we aim to replace it by a function approximation. 
 
-The data $\mathcal{D}$ consisting of 1000 points is generated using a validated model-based on first-principles and visualized in Figure \ref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the desired main valve piston position $s_h^d = 0 \ \si{m}$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential volume flow $q_p^d$. We further constrain the models to be monotonic increasing with the desired main valve piston position $s_h^d$ to enforce a smooth transition at the discontinuity at $s_h^d = 0 \ \si{m}$.
+The data $\mathcal{D}$ consisting of 1000 points is generated using a validated first-principle model and is visualized in~\pref{fig:bosch_data_situation}. The figure shows two distinct model regions with a discontinuity at the desired main valve piston position $s_h^d = 0 \ \si{m}$. The main challenge here is to model the discontinuity in a smooth way without introducing modeling artifacts, i.e. over- or undershooting behavior. We know beforehand that the differential current $i_m^d$ is monotonic increasing with the desired differential volume flow $q_p^d$. We further constrain the models to be monotonic increasing with the desired main valve piston position $s_h^d$ to enforce a smooth transition at the discontinuity at $s_h^d = 0 \ \si{m}$.
 
 \begin{figure}[H]
 	\centering
@@ -166,7 +166,7 @@ The mean squared errors $\mathrm{MSE}_{\mathrm{val}}$ evaluated on the validatio
 		\pgfplotstabletypeset[
 		col sep=comma,
 		columns/Model/.style={string type},
-		columns/MSE_val/.style={column name={$\text{MSE}_{\text{val}}$}},
+		columns/MSE_val/.style={column name={$\text{MSE}_{\text{val}} [\si{\A \squared}]$}},
 		every head row/.style={before row=\toprule[1pt] \toprule,after row=\midrule[2pt]},
 		every last row/.style={after row=\bottomrule \bottomrule},
 		every nth row={1}{before row=\midrule},
@@ -220,4 +220,4 @@ The purely B-spline based models M1 and M2 show low degrees of freedom but highe
 	\label{fig:bosch-M6}
 \end{figure}
 
-To summarized, we see that the incorporation of a priori domain knowledge improves the quality of the fit for this example too. The constrained models show lower mean squared errors on the validation data as well as lower effective degrees of freedom. The superior model is clearly M6, since it has a significantly lower $\text{MSE}_{\text{val}}$ as well as EDoF. 
+To summarize, we see that the incorporation of a priori domain knowledge improves the quality of the fit for this example too. The constrained models show lower mean squared errors on the validation data as well as lower effective degrees of freedom. The superior model is clearly M6, since it has a significantly lower $\text{MSE}_{\text{val}}$ as well as EDoF. 

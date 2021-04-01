@@ -205,7 +205,7 @@ with the matrix
 	\vec{H} = \vec{X}(\transpose{\vec{X}} \vec{X})^{-1} \transpose{\vec{X}} \in \mathbb{R}^{n \times n}, 
 \end{align}
 %
-which is called \emph{hat matrix}. Using the hat matrix $\vec{H}$, we can express the residuals $\hat \epsilon^{(i)} = y^{(i)} - \hat y^{(i)}$ in matrix notation as
+which is called \emph{hat matrix}, cf.~\cite{fahrmeir2007regression}. Using the hat matrix $\vec{H}$, we can express the residuals $\hat \epsilon^{(i)} = y^{(i)} - \hat y^{(i)}$ in matrix notation as
 
 \begin{align} \label{eq:residal_with_hat_matrix}
 	\hat{\vec{\epsilon}} = \vec{y} - \hat{\vec{y}} = (\vec{I} - \vec{H}) \vec{y}.
@@ -237,7 +237,7 @@ One way of comparing various models, i.e. models using different sets of inputs,
 
 \subsubsection{Sum of Expected Squared Prediction Error} \label{subsubsec:SPSE}
 
-Given independent observations $y^{(i)}, \ i=1,2, \dots, n$ and a subset of inputs $\{x_0=1, x_1, \dots, \\ x_q\}$, we want to measure the prediction quality. The specific models are defined
+Given independent observations $y^{(i)}, \ i=1,2, \dots, n$ and a subset of $q$ inputs $\{x_0=1, x_1, x_2, \dots, x_q\}$, we want to measure the prediction quality. The specific models are defined
 by numbers $M \subset \{1, \dots, p\}$ of used inputs with corresponding design matrix $\vec{X}_M$. Moreover, $\vert M \vert$ is the cardinal number of $M$, i.e. the number of inputs included in the model. The least squares estimator for $\vec{\beta}$, cf.~\pref{eq:LS_estimator}, is then given by
 
 \begin{align*}
@@ -338,32 +338,32 @@ The mean squared error MSE is one of the standard metrics for regression and def
 %
 where $y^{(i)}$ is the given data and $\hat y^{(i)}_M$ is the model prediction for that point. 
 
-\subsubsection{Corrected Coefficient of Determination $R_{\mathrm{corr}}^2$}
+\subsubsection{Corrected Coefficient of Determination $\text{R}_{\mathrm{corr}}^2$}
 
-The corrected coefficient of determination $R^2_{\mathrm{corr}}$ is an improvement over the coefficient of determination $R^2$, which is defined as 
+The corrected coefficient of determination $\text{R}^2_{\mathrm{corr}}$ is an improvement over the coefficient of determination $\text{R}^2$, which is defined as 
 
 \begin{align}
-	R^2 = 1 - \frac{\sum_{i=1}^n \left( y^{(i)} - \hat y^{(i)}_M \right)^2}{\sum_{i=1}^n \left(y^{(i)} - \bar y\right)^2},
+	\text{R}^2 = 1 - \frac{\sum_{i=1}^n \left( y^{(i)} - \hat y^{(i)}_M \right)^2}{\sum_{i=1}^n \left(y^{(i)} - \bar y\right)^2},
 \end{align}
 %
-where $\bar y$ is the mean value of $\vec{y}$. The major drawback of $R^2$ is that it will never decrease when further inputs are included in the model, e.g. the $R^2$ of a model using $\{x_1, x_2, x_3\}$ is always larger or equal the $R^2$ of a model using $\{x_1, x_2\}$, even if the variable does not enhance the prediction quality. 
+where $\bar y$ is the mean value of $\vec{y}$. The major drawback of $\text{R}^2$ is that it will never decrease when further inputs are included in the model, e.g. the $\text{R}^2$ of a model using $\{x_1, x_2, x_3\}$ is always larger or equal the $\text{R}^2$ of a model using $\{x_1, x_2\}$, even if the variable does not enhance the prediction quality. 
 
-The corrected coefficient of determination $R_{\mathrm{corr}}^2$ reduces this problem by an correction term depending on the  number of parameters and is given by
+The corrected coefficient of determination $\text{R}_{\mathrm{corr}}^2$ reduces this problem by an correction term depending on the  number of parameters and is given by
 \begin{align}
-	R_{\mathrm{corr}}^2 = 1 - \frac{n-1}{n-p}(1-R^2).
+	\text{R}_{\mathrm{corr}}^2 = 1 - \frac{n-1}{n-p}(1-\text{R}^2).
 \end{align}
 
 The corrected coefficient of determination is a standard output parameter in many statistical programs and may be used to compare even models with different number of used variables \cite{fahrmeir2007regression}.
 
-\subsubsection{Corrected Coefficient of Determination after McFadden $R_{\mathrm{McFadden}}^2$}
+\subsubsection{Corrected Coefficient of Determination after McFadden $\text{R}_{\mathrm{McFadden}}^2$}
 
 The corrected coefficient of determination after McFadden is defined as
 
 \begin{align}
-	R_{\mathrm{McFadden}}^2 = 1 - \frac{\ln{(\mathcal{L}_M)} - \vert M \vert }{\ln{(\mathcal{L}_0)}}
+	\text{R}_{\mathrm{McFadden}}^2 = 1 - \frac{\ln{(\mathcal{L}_M)} - \vert M \vert }{\ln{(\mathcal{L}_0)}}
 \end{align}
 %
-using the likelihood of the model $M$ given by $\mathcal{L}_M$ and the likelihood of the zero model $\mathcal{L}_0$. A standard zero model is given by the mean value $\bar y$. Higher values of $R_{\mathrm{McFadden}}^2$ correspond to better fits.
+using the likelihood of the model $M$ given by $\mathcal{L}_M$ and the likelihood of the zero model $\mathcal{L}_0$. A standard zero model is given by the mean value $\bar y$. Higher values of $\text{R}_{\mathrm{McFadden}}^2$ correspond to better fits.
 
 \subsubsection{Mallow's $\mathbf{C_p}$}
 
@@ -482,7 +482,7 @@ However, the resulting penalized least squares problem  has no closed-form solut
 	\vec{\beta}^{[k+1]} = \left(\transpose{\vec{X}} \vec{X} + \lambda \vec{K}(\vec{\beta}^{[k]}) \right)^{-1} \transpose{\vec{X}} \vec{y},
 \end{align}
 %
-until $\lVert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]} \rVert \le \text{Tol}$ with $\text{Tol}$ being a given tolerance. The derivation of the iteration~\pref{eq:PLS-iterative-approach} is presented in~\pref{apx:AppendixB}.
+until $\left\lVert \vec{\beta}^{[k+1]} - \vec{\beta}^{[k]}  \right\rVert \le \text{Tol}$ with $\text{Tol}$ being a given tolerance. The derivation of the iteration~\pref{eq:PLS-iterative-approach} is presented in~\pref{apx:AppendixB}.
 
 Note that by the introduction of the penalty matrix $\vec{K} \ne \vec{0}$, we reduce the degrees of freedom of the model. This can be seen by comparing the trace of the hat matrix $\vec{H}$ of the regularized model, i.e.
 
@@ -500,7 +500,7 @@ When we use regularization to reduce the degree of freedom of a model, we need t
 
 \subsubsection{L-curve method} \label{subsubsec:L-curve}
 
-Another method for choosing the regularization parameter, additional to the model assessment criteria in Section~\pref{subsec:MAC}, is the so-called \emph{L-curve method}. The L-curve is given by the parametric curve $(\rho(\lambda), \eta(\lambda))$, where $\rho(\lambda)$ and $\eta(\lambda)$ measure the size of the regularized solution $\vec{\beta}$ and the residual $\vec{y} - \vec{X} \vec{\beta}$, see \cite{hansen1993use}. In the setting of Ridge regression, this curve then has a distinct L-shaped corner exactly where the solution $\vec{\beta}$ changes from being dominated by the regularization errors $\lambda \cdot \mathrm{pen}(\vec{\beta})$ to being dominated by the mean squared data errors $\lVert \vec{y} - \vec{X} \vec{\beta} \rVert$. This corner determines the smoothing parameter $\lambda$ as optimal trade-off between data fidelity and smoothness. Further information can be found in \cite{hansen1993use} and \cite{hansen1992analysis}.
+Another method for choosing the regularization parameter, additional to the model assessment criteria in Section~\pref{subsec:MAC}, is the so-called \emph{L-curve method}. The L-curve is given by the parametric curve $(\rho(\lambda), \eta(\lambda))$, where $\rho(\lambda)$ and $\eta(\lambda)$ measure the size of the regularization $\transpose{\vec{\beta}} \vec{K} \vec{\beta}$ and the residual $\lVert \vec{y} - \vec{X} \vec{\beta} \rVert_2^2$, see \cite{hansen1993use}. In the setting of Ridge regression, this curve then has a distinct L-shaped corner exactly where the solution $\vec{\beta}$ changes from being dominated by the regularization errors $\lambda \cdot \mathrm{pen}(\vec{\beta})$ to being dominated by the mean squared data errors $\lVert \vec{y} - \vec{X} \vec{\beta} \rVert$. This corner determines the smoothing parameter $\lambda$ as optimal trade-off between data fidelity and smoothness. The L-curve method can also be used when the data errors are correlated, a situation in which generalized cross-validation, see~\pref{subsubsec:Cross-validation}, fails to produce the optimal regularization parameter. Further information can be found in \cite{hansen1993use} and \cite{hansen1992analysis}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -539,7 +539,7 @@ using the knot sequence~\pref{eq:knot-sequence}. Hence it is composed of $(l+1)$
 \begin{figure}[H]
 	\centering
 	\includegraphics{graphics/pgfplots/cha2/spline-types.pdf}
-	\caption{B-spline basis function of order $l=0, 1, 2, 3$ given by the superscript $l$ in $B_j^l$ for equidistant (left) and non-equidistant (right) knots.}
+	\caption[B-spline basis functions of order $l=0,1,2,3$]{B-spline basis function of order $l=0, 1, 2, 3$ given by the superscript $l$ in $B_j^l$ for equidistant (left) and non-equidistant (right) knots.}
 	\label{fig:spline-types-both}
 \end{figure}
 
