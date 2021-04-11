@@ -2262,16 +2262,10 @@
     <bcf:citekey order="76">eilers1996flexible</bcf:citekey>
     <bcf:citekey order="77">eilers1996flexible</bcf:citekey>
     <bcf:citekey order="78">fahrmeir2007regression</bcf:citekey>
-    <bcf:citekey order="79">hofner2011monotonicity</bcf:citekey>
+    <bcf:citekey order="79">slyusar1997analytical</bcf:citekey>
     <bcf:citekey order="80">bollaerts2006simple</bcf:citekey>
     <bcf:citekey order="81">bollaerts2006simple</bcf:citekey>
-    <bcf:citekey order="82">hansen1993use</bcf:citekey>
-    <bcf:citekey order="83">mayinger2013stromung</bcf:citekey>
-    <bcf:citekey order="84">baehr2006heatandmasstransfer</bcf:citekey>
-    <bcf:citekey order="85">slyusar1997analytical</bcf:citekey>
-    <bcf:citekey order="86">bollaerts2006simple</bcf:citekey>
-    <bcf:citekey order="87">bollaerts2006simple</bcf:citekey>
-    <bcf:citekey order="88">bollaerts2006simple</bcf:citekey>
+    <bcf:citekey order="82">bollaerts2006simple</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

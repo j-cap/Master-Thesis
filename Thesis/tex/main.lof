@@ -9,31 +9,4 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces B-spline basis functions of order $l=0,1,2,3$}}{22}{figure.caption.34}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Spatial neighborhood or adjacent parameters for a tensor-product B-spline.\relax }}{30}{figure.caption.39}%
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces B-spline, P-spline and SCP-spline fit for the data $\mathcal {D}$.\relax }}{41}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Equidistant B-spline, P-spline and SCP-spline fit for sparse data $\mathcal {D}$.\relax }}{43}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Quantile-based B-spline, P-spline and SCP-spline fit for sparse data $\mathcal {D}$.\relax }}{44}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces SCP-splines for different $\lambda _c$ for data $\mathcal {D}$.\relax }}{46}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces L-curve evaluated on the validation data $\mathcal {D}_{\mathrm {val}}$.\relax }}{47}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces L-curve evaluated on the true validation data $\mathcal {D}_{\mathrm {val}, \mathrm {true}}$.\relax }}{48}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Decreasing constraint for increasing data and various $\lambda _c$.\relax }}{49}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces B-spline, P-spline and SCP-spline fit for data $\mathcal {D}$.\relax }}{50}{figure.caption.52}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematic representation of the aluminum strip and the water beam.\relax }}{52}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Nukiyama curve.\relax }}{53}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Data distribution.\relax }}{53}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and training set $\mathcal {D}_{\text {train}}$.\relax }}{55}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and predictions by model M4.\relax }}{56}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and predictions by model M6.\relax }}{57}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Validation set $\mathcal {D}_{\text {val}}$ and predictions by model M3.\relax }}{58}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Block diagram of the control concept.\relax }}{59}{figure.caption.61}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Data Situation\relax }}{60}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Data $\mathcal {D}$ and predictions by model M1.\relax }}{62}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Data $\mathcal {D}$ and predictions by model M2.\relax }}{62}{figure.caption.65}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Data $\mathcal {D}$ and predictions by model M3.\relax }}{63}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Data $\mathcal {D}$ and predictions by model M4.\relax }}{63}{figure.caption.67}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Data $\mathcal {D}$ and predictions by model M5.\relax }}{64}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Data $\mathcal {D}$ and predictions by model M6.\relax }}{64}{figure.caption.69}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
