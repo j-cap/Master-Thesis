@@ -7,23 +7,29 @@
 x = linspace(0,2*pi, 100)';
 y = 1.5*sin(x) + x + randn(size(x))*0.25;
 
-fig = figure();
-scatter(x,y); xlabel("x"); ylabel("f(x)");
-grid();
 
-%% plot for linear model
+%% plot for linear model (and polynomial)
 
-X = [ones(size(x)) x];
+X = [ones(size(x)) x x.^2 x.^3];
 
-clin = (X' * X) \ (X' * y);
+Xlin = X(:,1:2);
+Xquad = X(:,1:3);
+Xcub = X;
+c_lin = (Xlin' * Xlin) \ (Xlin' * y);
+c_quad = (Xquad' * Xquad) \ (Xquad' * y);
+c_cub = (Xcub' * Xcub) \ (Xcub' * y);
 
 fig = figure()
 scatter(x,y); hold on;
-plot(x, X * clin, 'LineWidth', 2');
-grid()
-title('Order l = 0')
+plot(x, Xlin* c_lin, 'LineWidth', 2');
+plot(x, Xquad * c_quad, 'LineWidth', 2');
+plot(x, Xcub * c_cub, 'LineWidth', 2');
+grid(); legend('Data', 'Linear', 'Quadratic', 'Cubic');
+%title('Order l = 0')
+xlabel("x"); ylabel("f(x)");
+legend("Data", "Linear Model", "Quad. Model", "Cubic Model");
 ax = gca;
-ax.FontSize = 15;
+ax.FontSize = 15; 
 
 %% generate B-spline of order 0, 1, 2, 3
 nr_splines = 25;
@@ -159,6 +165,29 @@ grid; xlim([min(x), max(x)]);
 title('$$\lambda = 1000$$', 'interpreter', 'latex')
 ax = gca;
 ax.FontSize = 15;
+
+
+%% Increasing behavior
+
+dUncon = {["s(1)", 25, "none", 0, "e"]};
+[cUnc, Bunc] = Stareg.fit(dUncon, x, y);
+
+dcon = {["s(1)", 25, "inc", 3000, "e"]};
+[c, B] = Stareg.fit(dcon, x, y);
+
+fig = figure(); hold on;
+scatter(x, y);
+plot(x, B*c, "LineWidth", 2); plot(x, Bunc*cUnc, "LineWidth", 2); 
+grid; xlim([min(x), max(x)]);
+legend("Data", "SC-P-spline", "P-spline");
+title('$$Inc. \ Constraint, \lambda_c=3000$$, d=25, l=3', 'interpreter', 'latex')
+ax = gca;
+ax.FontSize = 15;
+saveas(fig, "defensio/SCPspline_increasing", "png");
+
+
+
+
 
 
 
